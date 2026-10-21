@@ -1,0 +1,76 @@
+{
+  "task": "multiclass",
+  "model": "RandomForestClassifier",
+  "split": "stratified 80/20; random_state=42",
+  "seed": 42,
+  "scores": {
+    "macro_f1": 0.628538470153851,
+    "dummy_macro_f1": 0.048413590386444195,
+    "accuracy": 0.8291319721683587,
+    "weighted_f1": 0.8176709366119328
+  },
+  "seconds": 315.8,
+  "python": "3.12.3",
+  "sklearn": "1.5.2",
+  "pandas": "2.2.3",
+  "numpy": "1.26.4",
+  "input_sha256": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+  },
+  "source_commit": "a3ab6b96a82a63360c4f94fdb782cfaecd6b93e3",
+  "script_sha256": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+  "model_family": "optuna",
+  "model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 20,
+    "max_features": 0.8,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 150,
+    "n_jobs": 4,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "hypothesis": "Inner-split hyperparameter search improves the incumbent on the original outer validation",
+  "optuna": "4.2.1",
+  "tuning": {
+    "inner_split": "stratified 75/25 within outer training; random_state=42",
+    "requested_trials": 8,
+    "completed_trials": 8,
+    "timeout_seconds": 420,
+    "timeout_note": "applies to search, in-flight trial may finish; outer checks and final fit are extra",
+    "sampler": "TPESampler(seed=42,n_startup_trials=4)",
+    "trial_jobs": 1,
+    "best_trial": 5,
+    "best_inner_score": 0.597690246259533,
+    "candidate_parameters": {
+      "n_estimators": 100,
+      "max_depth": 28,
+      "min_samples_leaf": 4,
+      "max_features": 0.8
+    },
+    "incumbent_parameters": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_leaf": 2,
+      "max_features": 0.8
+    },
+    "outer_incumbent_score": 0.628538470153851,
+    "outer_candidate_score": 0.6203523622860305,
+    "selected": "incumbent"
+  },
+  "run_id": "multiclass-optuna-20261021-stage4",
+  "kind": "local_fixed_pipeline"
+}

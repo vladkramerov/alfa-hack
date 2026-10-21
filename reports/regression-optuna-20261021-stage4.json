@@ -1,0 +1,65 @@
+{
+  "task": "regression",
+  "model": "CatBoostRegressor",
+  "split": "Year_Factor < 5 train; == 5 validation",
+  "seed": 42,
+  "scores": {
+    "rmse": 45.93583634208973,
+    "dummy_rmse": 56.79943183188593
+  },
+  "seconds": 44.53,
+  "python": "3.12.3",
+  "sklearn": "1.5.2",
+  "pandas": "2.2.3",
+  "numpy": "1.26.4",
+  "input_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+  },
+  "source_commit": "a3ab6b96a82a63360c4f94fdb782cfaecd6b93e3",
+  "script_sha256": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+  "model_family": "optuna",
+  "model_parameters": {
+    "iterations": 500,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "l2_leaf_reg": 3.0,
+    "loss_function": "RMSE",
+    "thread_count": 4,
+    "random_seed": 42,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "hypothesis": "Inner-split hyperparameter search improves the incumbent on the original outer validation",
+  "catboost": "1.2.8",
+  "optuna": "4.2.1",
+  "tuning": {
+    "inner_split": "Year_Factor < 4 train; == 4 tuning",
+    "requested_trials": 8,
+    "completed_trials": 8,
+    "timeout_seconds": 420,
+    "timeout_note": "applies to search, in-flight trial may finish; outer checks and final fit are extra",
+    "sampler": "TPESampler(seed=42,n_startup_trials=4)",
+    "trial_jobs": 1,
+    "best_trial": 5,
+    "best_inner_score": 43.42146452181411,
+    "candidate_parameters": {
+      "iterations": 700,
+      "depth": 8,
+      "learning_rate": 0.10390991237859405,
+      "l2_leaf_reg": 3.7888252014533643
+    },
+    "incumbent_parameters": {
+      "iterations": 500,
+      "depth": 6,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0
+    },
+    "outer_incumbent_score": 45.93583634208973,
+    "outer_candidate_score": 46.924137940373335,
+    "selected": "incumbent"
+  },
+  "run_id": "regression-optuna-20261021-stage4",
+  "kind": "local_fixed_pipeline"
+}
