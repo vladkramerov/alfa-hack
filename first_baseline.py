@@ -14,6 +14,7 @@ from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.exceptions import ConvergenceWarning
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge, LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, f1_score, root_mean_squared_error
@@ -27,6 +28,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('task', choices=['regression', 'multiclass'])
+    parser.add_argument('--model', choices=['linear', 'forest'], default='linear')
     parser.add_argument('--data-dir', type=Path, default=ROOT.parent / 'data_for_participants', help='Folder containing both task directories')
     parser.add_argument('--out', type=Path, help='New output directory; existing directories are refused')
     args = parser.parse_args()
@@ -35,7 +37,7 @@ def main():
     folder = 'Регрессия' if regression else 'Многоклассовая классификация'
     target = 'site_eui' if regression else 'attack_cat'
     data = args.data_dir.resolve() / folder
-    out = args.out or ROOT / 'runs' / f'{args.task}-{time.strftime("%Y%m%d-%H%M%S")}'
+    out = args.out or ROOT / 'runs' / f'{args.task}-{args.model}-{time.strftime("%Y%m%d-%H%M%S")}'
     out.mkdir(parents=True, exist_ok=False)
     train = pd.read_csv(data / 'train.csv')
     test = pd.read_csv(data / 'test.csv')
@@ -58,6 +60,10 @@ def main():
         split = 'stratified 80/20; random_state=42'
         estimator = LogisticRegression(solver='lbfgs', max_iter=3000, random_state=42)
         dummy = DummyClassifier(strategy='most_frequent')
+    if args.model == 'forest':
+        forest_type = RandomForestRegressor if regression else RandomForestClassifier
+        estimator = forest_type(n_estimators=150, max_depth=20, min_samples_leaf=2,
+                                max_features=0.8, n_jobs=4, random_state=42)
     pd.DataFrame({'id': train.loc[fit_idx, 'id']}).to_csv(out / 'fit_ids.csv', index=False)
     pd.DataFrame({'id': train.loc[valid_idx, 'id']}).to_csv(out / 'validation_ids.csv', index=False)
     categorical = X.select_dtypes(include=['object', 'category', 'string']).columns.tolist()
@@ -107,9 +113,17 @@ def main():
     assert reopened.shape == sample.shape and reopened['id'].equals(test['id'])
     hashes = {f: hashlib.sha256((data / f).read_bytes()).hexdigest()
               for f in ['train.csv', 'test.csv', 'sample_submission.csv']}
-    report = {'task': args.task, 'model': type(estimator).__name__, 'split': split,
+    try:
+        import subprocess
+        source_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    except (OSError, subprocess.CalledProcessError):
+        source_commit = None
+    report = {'source_commit': source_commit, 'script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), 'task': args.task, 'model': type(estimator).__name__, 'split': split,
               'seed': 42, 'features': list(X), 'categorical': categorical,
               'scores': {k: float(v) for k, v in scores.items()},
+              'model_family': args.model,
+              'model_parameters': estimator.get_params(),
+              'hypothesis': 'Random Forest improves on the linear model using the same split' if args.model == 'forest' else 'Linear model improves on a constant prediction',
               'seconds': round(time.monotonic() - started, 2),
               'python': platform.python_version(), 'sklearn': sklearn.__version__,
               'pandas': pd.__version__, 'numpy': np.__version__, 'input_sha256': hashes}
