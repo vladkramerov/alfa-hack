@@ -1,0 +1,46 @@
+{
+  "task": "multiclass",
+  "model": "CatBoostClassifier",
+  "split": "stratified 80/20; random_state=42",
+  "seed": 42,
+  "categorical": [
+    "proto",
+    "service",
+    "state"
+  ],
+  "scores": {
+    "dummy_macro_f1": 0.048413590386444195,
+    "macro_f1": 0.5340999478722075,
+    "accuracy": 0.8191513630660431,
+    "weighted_f1": 0.7959417457781833
+  },
+  "seconds": 87.81,
+  "python": "3.12.3",
+  "sklearn": "1.5.2",
+  "pandas": "2.2.3",
+  "numpy": "1.26.4",
+  "input_sha256": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+  },
+  "source_commit": "b19d8e0b2899734dc7843239e788f085de9d156f",
+  "script_sha256": "628f5958589379c5869a739f10c863e26328ee48829c02fe9d6911675f57efa1",
+  "model_family": "boosting",
+  "model_parameters": {
+    "iterations": 500,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "l2_leaf_reg": 3.0,
+    "loss_function": "MultiClass",
+    "thread_count": 4,
+    "random_seed": 42,
+    "verbose": 100,
+    "allow_writing_files": false
+  },
+  "hypothesis": "CatBoost improves on Random Forest using the same split and preprocessing",
+  "catboost": "1.2.8",
+  "preprocessing": "median + StandardScaler; constant fill + OneHotEncoder(handle_unknown=ignore)",
+  "run_id": "multiclass-boosting-20261021-stage3",
+  "kind": "local_fixed_pipeline"
+}

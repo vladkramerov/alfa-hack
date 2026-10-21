@@ -1,0 +1,44 @@
+{
+  "task": "regression",
+  "model": "CatBoostRegressor",
+  "split": "Year_Factor < 5 train; == 5 validation",
+  "seed": 42,
+  "categorical": [
+    "State_Factor",
+    "building_class",
+    "facility_type"
+  ],
+  "scores": {
+    "dummy_rmse": 56.79943183188593,
+    "rmse": 45.93583634208973
+  },
+  "seconds": 8.49,
+  "python": "3.12.3",
+  "sklearn": "1.5.2",
+  "pandas": "2.2.3",
+  "numpy": "1.26.4",
+  "input_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+  },
+  "source_commit": "b19d8e0b2899734dc7843239e788f085de9d156f",
+  "script_sha256": "628f5958589379c5869a739f10c863e26328ee48829c02fe9d6911675f57efa1",
+  "model_family": "boosting",
+  "model_parameters": {
+    "iterations": 500,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "l2_leaf_reg": 3.0,
+    "loss_function": "RMSE",
+    "thread_count": 4,
+    "random_seed": 42,
+    "verbose": 100,
+    "allow_writing_files": false
+  },
+  "hypothesis": "CatBoost improves on Random Forest using the same split and preprocessing",
+  "catboost": "1.2.8",
+  "preprocessing": "median + StandardScaler; constant fill + OneHotEncoder(handle_unknown=ignore)",
+  "run_id": "regression-boosting-20261021-stage3",
+  "kind": "local_fixed_pipeline"
+}
