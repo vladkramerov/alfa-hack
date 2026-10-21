@@ -1,6 +1,7 @@
 """Copy small experiment records to reports/ for sharing through Git."""
 import argparse
 import json
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -23,6 +24,9 @@ def main():
         record['kind'] = 'local_fixed_pipeline'
         (reports / f'{source.parent.name}.json').write_text(
             json.dumps(record, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        details = source.parent / 'classification_report.txt'
+        if details.exists():
+            shutil.copyfile(details, reports / f'{source.parent.name}-classes.txt')
     lines = ['# Журнал экспериментов', '',
              'Метрики получены на локальной валидации, не на скрытом test. LLM не используется.', '',
              '| Запуск | Задача | Модель | RMSE ↓ / Macro F1 ↑ | Время, сек |',
