@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('task', choices=['regression', 'multiclass'])
-    parser.add_argument('--model', choices=['linear', 'forest'], default='linear')
+    parser.add_argument('--model', choices=['linear', 'forest', 'boosting'], default='linear')
     parser.add_argument('--data-dir', type=Path, default=ROOT.parent / 'data_for_participants', help='Folder containing both task directories')
     parser.add_argument('--out', type=Path, help='New output directory; existing directories are refused')
     args = parser.parse_args()
@@ -64,6 +64,16 @@ def main():
         forest_type = RandomForestRegressor if regression else RandomForestClassifier
         estimator = forest_type(n_estimators=150, max_depth=20, min_samples_leaf=2,
                                 max_features=0.8, n_jobs=4, random_state=42)
+    if args.model == 'boosting':
+        try:
+            from catboost import CatBoostClassifier, CatBoostRegressor
+        except ImportError:
+            raise SystemExit('Install boosting dependencies: python -m pip install -r requirements-boosting.txt')
+        boosting_type = CatBoostRegressor if regression else CatBoostClassifier
+        estimator = boosting_type(iterations=500, depth=6, learning_rate=0.05,
+                                  l2_leaf_reg=3.0, random_seed=42, thread_count=4,
+                                  loss_function='RMSE' if regression else 'MultiClass',
+                                  allow_writing_files=False, verbose=100)
     pd.DataFrame({'id': train.loc[fit_idx, 'id']}).to_csv(out / 'fit_ids.csv', index=False)
     pd.DataFrame({'id': train.loc[valid_idx, 'id']}).to_csv(out / 'validation_ids.csv', index=False)
     categorical = X.select_dtypes(include=['object', 'category', 'string']).columns.tolist()
@@ -82,7 +92,7 @@ def main():
     with warnings.catch_warnings():
         warnings.simplefilter('error', ConvergenceWarning)
         model.fit(X.loc[fit_idx], y.loc[fit_idx])
-    pred = model.predict(X.loc[valid_idx])
+    pred = np.asarray(model.predict(X.loc[valid_idx])).reshape(-1)
     if regression:
         scores = {'dummy_rmse': root_mean_squared_error(y.loc[valid_idx], dummy_pred),
                   'rmse': root_mean_squared_error(y.loc[valid_idx], pred)}
@@ -99,7 +109,7 @@ def main():
     with warnings.catch_warnings():
         warnings.simplefilter('error', ConvergenceWarning)
         final_model.fit(X, y)
-    test_pred = final_model.predict(test[X.columns])
+    test_pred = np.asarray(final_model.predict(test[X.columns])).reshape(-1)
     submission = pd.DataFrame({'id': test['id'], target: test_pred})
     assert submission.columns.tolist() == sample.columns.tolist()
     assert len(submission) == len(test) and submission['id'].equals(test['id'])
@@ -123,10 +133,16 @@ def main():
               'scores': {k: float(v) for k, v in scores.items()},
               'model_family': args.model,
               'model_parameters': estimator.get_params(),
-              'hypothesis': 'Random Forest improves on the linear model using the same split' if args.model == 'forest' else 'Linear model improves on a constant prediction',
+              'hypothesis': {'linear': 'Linear model improves on a constant prediction',
+                             'forest': 'Random Forest improves on the linear model using the same split',
+                             'boosting': 'CatBoost improves on Random Forest using the same split and preprocessing'}[args.model],
               'seconds': round(time.monotonic() - started, 2),
               'python': platform.python_version(), 'sklearn': sklearn.__version__,
               'pandas': pd.__version__, 'numpy': np.__version__, 'input_sha256': hashes}
+    if args.model == 'boosting':
+        import catboost
+        report['catboost'] = catboost.__version__
+        report['preprocessing'] = 'median + StandardScaler; constant fill + OneHotEncoder(handle_unknown=ignore)'
     (out / 'metrics.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'OK: {out.resolve() / "submission.csv"}', flush=True)
 

@@ -1,0 +1,3 @@
+-r requirements-local.txt
+# Same CatBoost version as organizers requirements.txt
+catboost==1.2.8

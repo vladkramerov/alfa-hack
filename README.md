@@ -79,3 +79,30 @@ python publish_results.py runs/ИМЯ_ПАПКИ_ЗАПУСКА
 суммы данных. В новых запусках также записываются commit и SHA-256 скрипта.
 Затем добавьте отчёты в коммит в sergey_branch и отправьте эту ветку на GitHub.
 Логи, секреты и CSV с ответами в отчёт не копируются. API/LLM на этом этапе нет.
+
+## Этап 3: градиентный бустинг CatBoost
+
+Используем разрешённый CatBoost 1.2.8. Первая гипотеза: CatBoost улучшит метрики
+случайного леса при прежних split, seed и предобработке. Одна фиксированная
+конфигурация: 500 итераций, depth=6, learning_rate=0.05, l2_leaf_reg=3,
+random_seed=42, thread_count=4. Для регрессии loss=RMSE, для классификации MultiClass.
+Без подбора параметров, ранней остановки и изменения весов классов.
+
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements-boosting.txt
+python -u first_baseline.py regression --model boosting
+python -u first_baseline.py multiclass --model boosting
+```
+
+Категории пока кодируются прежним OneHotEncoder; встроенное кодирование категорий
+CatBoost будет отдельной гипотезой. Выборки валидации не меняются. CatBoost выводит
+каждые 100 итераций ошибку на обучающих данных (learn); это не результат валидации.
+Сравнивать следует итоговые rmse / macro_f1 из metrics.json.
+
+Полные результаты сохраняются в runs/, короткие отчёты добавляются командой
+publish_results.py, как на предыдущем этапе. Линейные модели и лес остаются доступны
+без установки CatBoost. LLM и API не используются.
+
+Документация библиотеки: https://catboost.ai/docs/en/concepts/python-quickstart
+Параметры: https://catboost.ai/docs/en/references/training-parameters/

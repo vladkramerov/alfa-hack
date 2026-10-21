@@ -18,7 +18,7 @@ def main():
         m = json.loads(source.read_text(encoding='utf-8'))
         allowed = ['task', 'model', 'split', 'seed', 'categorical', 'scores', 'seconds',
                    'python', 'sklearn', 'pandas', 'numpy', 'input_sha256', 'source_commit',
-                   'script_sha256', 'model_family', 'model_parameters', 'hypothesis']
+                   'script_sha256', 'model_family', 'model_parameters', 'hypothesis', 'catboost', 'preprocessing']
         record = {k: m[k] for k in allowed if k in m}
         record['run_id'] = source.parent.name
         record['kind'] = 'local_fixed_pipeline'
