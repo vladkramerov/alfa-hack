@@ -1,18 +1,16 @@
-# Журнал экспериментов
+# Журнал экспериментов команды
 
-Метрики получены на локальной валидации, не на скрытом test. LLM не используется.
+[Итоги гипотез](HYPOTHESES.md) — что помогло и что не помогло.
+[Все эксперименты](EXPERIMENTS.md) — модели, изменения, настройки, метрики и выводы.
+[Excel с фильтрами](EXPERIMENTS.xlsx) · [CSV](EXPERIMENTS.csv) · [Полные данные JSON](experiment_registry.json)
 
-| Запуск | Задача | Модель | RMSE ↓ / Macro F1 ↑ | Время, сек |
-|---|---|---|---:|---:|
-| [multiclass-20261021-195652](multiclass-20261021-195652.json) | multiclass | LogisticRegression | 0.428852 | 23.26 |
-| [multiclass-boosting-20261021-stage3](multiclass-boosting-20261021-stage3.json) | multiclass | CatBoostClassifier | 0.534100 | 87.81 |
-| [multiclass-forest-20261021-stage2](multiclass-forest-20261021-stage2.json) | multiclass | RandomForestClassifier | 0.628538 | 95.60 |
-| [multiclass-optuna-20261021-stage4](multiclass-optuna-20261021-stage4.json) | multiclass | RandomForestClassifier | 0.628538 | 315.80 |
-| [regression-20261021-195542](regression-20261021-195542.json) | regression | Ridge | 50.079635 | 2.00 |
-| [regression-boosting-20261021-stage3](regression-boosting-20261021-stage3.json) | regression | CatBoostRegressor | 45.935836 | 8.49 |
-| [regression-forest-20261021-stage2](regression-forest-20261021-stage2.json) | regression | RandomForestRegressor | 47.470728 | 30.29 |
-| [regression-optuna-20261021-stage4](regression-optuna-20261021-stage4.json) | regression | CatBoostRegressor | 45.935836 | 44.53 |
+Учтено 33 оценок экспериментов и 16 внутренних попыток Optuna.
 
-Сравнивайте одинаковые задачи, разделения и контрольные суммы данных.
-Время включает обучение на части train, валидацию, переобучение на всём train и прогноз test.
-Полные CSV остаются в runs/ и не включаются в Git. Для публикации reports/ нужен commit и push.
+| Задача | Лучший основной результат | Запуск |
+|---|---:|---|
+| regression | rmse=43.004639 | H4-zero-year |
+| multiclass | macro_f1=0.628621 | H5-flow-ratios |
+
+RMSE меньше — лучше. Macro F1 больше — лучше. Метрики скрытого test неизвестны.
+Основная валидация, внутренний подбор, дополнительная проверка и технические повторы разделены.
+Для обновления CSV/Markdown/JSON: python build_experiment_registry.py. Excel — снимок на дату сборки. Для публикации на GitHub нужны commit и push в sergey_branch.

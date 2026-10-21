@@ -1,0 +1,27 @@
+{
+  "kind": "hypothesis_suite",
+  "source_commit": "e8ff7e7b9b0d483dd523c074230f33084e039b08",
+  "selected_secondary_candidates": {
+    "regression": "H4-zero-year",
+    "multiclass": "H5-flow-ratios"
+  },
+  "runs": [
+    "C00-forest-control",
+    "H1-balanced-forest",
+    "R00-catboost-control",
+    "H2-native-regression",
+    "C00-catboost-control",
+    "H2-native-multiclass",
+    "H3-missing-flags",
+    "H4-zero-year",
+    "H5-flow-ratios",
+    "R00-forest-control",
+    "H6-ensemble-regression",
+    "H6-ensemble-multiclass",
+    "S-regression-control",
+    "S-regression-candidate",
+    "S-multiclass-control",
+    "S-multiclass-candidate"
+  ],
+  "completed": true
+}

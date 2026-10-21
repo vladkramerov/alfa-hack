@@ -68,6 +68,22 @@ def main():
         if 'scores' not in m or 'task' not in m:continue
         run_id=m.get('run_id',path.stem)
         records.append(normalize(m,str(path.relative_to(ROOT)),run_id))
+    # Constant predictors were measured inside the first runs, not standalone jobs.
+    for task,parent_id in [('regression','regression-20261021-195542'),('multiclass','multiclass-20261021-195652')]:
+        parent=next((r for r in records if r['id']==parent_id),None)
+        if parent:
+            raw=json.loads((ROOT/parent['source_report']).read_text(encoding='utf-8'))
+            metric='rmse' if task=='regression' else 'macro_f1'
+            r=dict(parent)
+            r.update(id='constant-'+task+'-reference',model='DummyRegressor' if task=='regression' else 'DummyClassifier',
+                     hypothesis='reference',change='Постоянное среднее train' if task=='regression' else 'Всегда самый частый класс train',
+                     parameters='strategy=mean' if task=='regression' else 'strategy=most_frequent',
+                     full_parameters={'strategy':'mean' if task=='regression' else 'most_frequent'},
+                     value=raw['scores']['dummy_'+metric],rmse=raw['scores']['dummy_rmse'] if task=='regression' else None,
+                     macro_f1=raw['scores']['dummy_macro_f1'] if task=='multiclass' else None,accuracy=None,weighted_f1=None,
+                     seconds=None,pipeline_seconds=None,result='Простой ориентир, вычислен внутри первого запуска',
+                     timing_note='Входит в первый запуск; отдельное время не измерялось',submission_created=False)
+            records.append(r)
     # Capture completed local runs that have not yet been published.
     known={r['id'] for r in records}
     for path in sorted((ROOT/'runs').rglob('metrics.json')):
@@ -117,6 +133,19 @@ def main():
                                parameters=params,seconds=row.get('user_attrs_seconds'),state=row['state'],
                                duplicate_of=seen.get(signature),source_report=str(path.relative_to(ROOT))))
             seen.setdefault(signature,number)
+    order=['constant-regression-reference','constant-multiclass-reference',
+           'regression-20261021-195542','multiclass-20261021-195652',
+           'regression-forest-20261021-stage2','multiclass-forest-20261021-stage2',
+           'regression-boosting-20261021-stage3','multiclass-boosting-20261021-stage3',
+           'regression-optuna-20261021-stage4-candidate','regression-optuna-20261021-stage4',
+           'multiclass-optuna-20261021-stage4-candidate','multiclass-optuna-20261021-stage4',
+           'C00-forest-control','H1-balanced-forest','R00-catboost-control','H2-native-regression',
+           'C00-catboost-control','H2-native-multiclass','H3-missing-flags','H4-zero-year','H5-flow-ratios',
+           'R00-forest-control','H6-ensemble-regression','H6-ensemble-multiclass',
+           'S-regression-control','S-regression-candidate','S-multiclass-control','S-multiclass-candidate']
+    order={name:i for i,name in enumerate(order)}
+    kinds={'primary':0,'secondary_sensitivity':1,'diagnostic_failure':2,'technical_repeat':3}
+    records.sort(key=lambda r:(kinds.get(r['validation_kind'],9),order.get(r['id'],999),r['id']))
     primary=[r for r in records if r['validation_kind']=='primary' and r['value'] is not None]
     best={task:(min if task=='regression' else max)([r for r in primary if r['task']==task],key=lambda r:r['value']) for task in ['regression','multiclass']}
     # Prefer actual candidate experiments over tied repetitions in the leader display.
@@ -129,8 +158,15 @@ def main():
         elif preferred:best[task]=preferred[0]
     hypothesis_rows=[r for r in records if r['id'].startswith('H') and r['validation_kind']=='primary']
     secondary=[r for r in records if r['validation_kind']=='secondary_sensitivity']
+    recommendations={}
+    for task,old_id in [('regression','regression-boosting-20261021-stage3'),('multiclass','multiclass-forest-20261021-stage2')]:
+        old=next(r for r in records if r['id']==old_id)
+        check=next((r for r in secondary if r['task']==task and r['id'].endswith('candidate')),None)
+        winner=best[task]
+        primary_improves=winner['value']<old['value']-1e-10 if task=='regression' else winner['value']>old['value']+1e-10
+        recommendations[task]=winner['id'] if primary_improves and check and (check.get('gain') or 0)>0 else old_id
     catalog=dict(kind='experiment_registry',date='2026-10-21',records=records,optuna_trials=trials,
-                 best_primary={k:v['id'] for k,v in best.items()},hypotheses=[r['id'] for r in hypothesis_rows],
+                 best_primary={k:v['id'] for k,v in best.items()},recommendations=recommendations,hypotheses=[r['id'] for r in hypothesis_rows],
                  notes=['Все значения измерены локально. Ответы скрытого test неизвестны.',
                         'Внутренние попытки Optuna, основные проверки, диагностика и дополнительные split разделены.',
                         'Один запуск включает валидацию и финальное переобучение; отдельный fit без метрики не считается новым экспериментом.',
@@ -147,6 +183,7 @@ def main():
            f'В журнале {len(records)} оценок экспериментов и {len(trials)} внутренних попыток Optuna. Отдельное финальное переобучение включено во время родительского запуска.','',
            'RMSE: ниже лучше. Macro F1: выше лучше, каждый класс имеет одинаковый вес. Accuracy — доля верных ответов; Weighted F1 учитывает размеры классов.', '', '## Лучшие результаты основной валидации','', '| Задача | Запуск | Модель | Метрика |','|---|---|---|---:|']
     for task,r in best.items():lines.append(f'| {task} | {r["id"]} | {r["model"]} | {r["metric"]}={r["value"]:.6f} |')
+    lines+=['','Ориентиры для дальнейшей работы с учётом дополнительной проверки: '+', '.join(k+' — '+v for k,v in recommendations.items())+'. Малый основной прирост не считается устойчивым, если на другом split знак изменения обратный.']
     for kind,title in [('primary','Основная валидация'),('secondary_sensitivity','Дополнительные разделения'),('diagnostic_failure','Неудачная диагностика'),('technical_repeat','Технические повторы')]:
         group=[r for r in records if r['validation_kind']==kind]
         if not group:continue
@@ -163,7 +200,7 @@ def main():
     for r in hypothesis_rows:lines.append('| '+' | '.join(map(text,[r['hypothesis'],r['task'],r['change'],r['reference'],r['reference_value'],r['value'],r['gain'],r['result']]))+' |')
     lines+=['','Положительное улучшение означает лучший результат относительно указанного контроля, а не обязательно лучше всех моделей.','','## Проверка чувствительности','','Дополнительная регрессия использует год 4 (он уже применялся в Optuna); классификация — seed=2026. Это проверка чувствительности, не независимый скрытый тест. Кандидаты выбраны до просмотра этих результатов.','','| ID | Задача | Модель | Split | Значение | Контроль | Изменение к контролю |','|---|---|---|---|---:|---|---:|']
     for r in secondary:lines.append('| '+' | '.join(map(text,[r['id'],r['task'],r['model'],r['split'],r['value'],r['reference'],r['gain']]))+' |')
-    lines+=['','Все подробности: [общий журнал](EXPERIMENTS.md). Новые комбинации признаков друг с другом не проверялись: складывать их эффекты без отдельного эксперимента нельзя.','']
+    lines+=['','Для дальнейшей работы: регрессия — обработка нулевого года постройки, классификация — прежний лес без отношений трафика. Очень малый прирост отношений на основной выборке не перенёсся на дополнительную.', '', 'Все подробности: [общий журнал](EXPERIMENTS.md). Новые комбинации признаков друг с другом не проверялись: складывать их эффекты без отдельного эксперимента нельзя.','']
     (reports/'HYPOTHESES.md').write_text('\n'.join(lines),encoding='utf-8')
     readme=['# Журнал экспериментов команды','',
             '[Итоги гипотез](HYPOTHESES.md) — что помогло и что не помогло.',
