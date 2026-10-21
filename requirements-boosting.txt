@@ -1,3 +1,5 @@
 -r requirements-local.txt
 # Same CatBoost version as organizers requirements.txt
 catboost==1.2.8
+# CatBoost plotting dependency, pinned to organizers version
+matplotlib==3.9.4
