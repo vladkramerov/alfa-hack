@@ -1,0 +1,7 @@
+# Python 3.12; minimal subset of the organizers' versions
+numpy==1.26.4
+scipy==1.12.0
+pandas==2.2.3
+scikit-learn==1.5.2
+joblib==1.4.2
+threadpoolctl==3.6.0
