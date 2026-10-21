@@ -1,3 +1,6 @@
 -r requirements-boosting.txt
 # Organizers' allowed version
 optuna==4.2.1
+# Also match organizers versions for Optuna dependencies
+PyYAML==6.0.2
+tqdm==4.67.1
