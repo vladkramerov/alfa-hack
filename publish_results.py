@@ -30,21 +30,8 @@ def main():
         trials = source.parent / 'trials.csv'
         if trials.exists():
             shutil.copyfile(trials, reports / f'{source.parent.name}-trials.csv')
-    lines = ['# Журнал экспериментов', '',
-             'Метрики получены на локальной валидации, не на скрытом test. LLM не используется.', '',
-             '| Запуск | Задача | Модель | RMSE ↓ / Macro F1 ↑ | Время, сек |',
-             '|---|---|---|---:|---:|']
-    for path in sorted(reports.glob('*.json')):
-        m = json.loads(path.read_text(encoding='utf-8'))
-        if m.get('kind') != 'local_fixed_pipeline':
-            continue
-        metric = 'rmse' if m['task'] == 'regression' else 'macro_f1'
-        score = m['scores'][metric]
-        lines.append(f'| [{m["run_id"]}]({path.name}) | {m["task"]} | {m["model"]} | {score:.6f} | {m["seconds"]:.2f} |')
-    lines += ['', 'Сравнивайте одинаковые задачи, разделения и контрольные суммы данных.',
-              'Время включает обучение на части train, валидацию, переобучение на всём train и прогноз test.',
-              'Полные CSV остаются в runs/ и не включаются в Git. Для публикации reports/ нужен commit и push.', '']
-    (reports / 'README.md').write_text('\n'.join(lines), encoding='utf-8')
+    from build_experiment_registry import main as rebuild_registry
+    rebuild_registry()
     print(f'Updated {reports}; no Git commands or network requests executed.')
 
 

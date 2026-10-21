@@ -107,6 +107,8 @@ def main():
         seen={}
         for row in pd.read_csv(path).to_dict('records'):
             params={k.removeprefix('params_'):None if pd.isna(v) else v for k,v in row.items() if k.startswith('params_')}
+            for key in ['iterations','depth','n_estimators','max_depth','min_samples_leaf']:
+                if key in params and params[key] is not None:params[key]=int(params[key])
             signature=json.dumps(params,sort_keys=True)
             number=int(row['number'])
             trials.append(dict(id=f'{parent}-trial-{number}',parent=parent,task=task,
@@ -121,7 +123,10 @@ def main():
     for task in best:
         tied=[r for r in primary if r['task']==task and abs(r['value']-best[task]['value'])<1e-10]
         preferred=[r for r in tied if r['id'].startswith('H')]
-        if preferred:best[task]=preferred[0]
+        old_id='regression-boosting-20261021-stage3' if task=='regression' else 'multiclass-forest-20261021-stage2'
+        incumbent=[r for r in tied if r['id']==old_id]
+        if incumbent:best[task]=incumbent[0]
+        elif preferred:best[task]=preferred[0]
     hypothesis_rows=[r for r in records if r['id'].startswith('H') and r['validation_kind']=='primary']
     secondary=[r for r in records if r['validation_kind']=='secondary_sensitivity']
     catalog=dict(kind='experiment_registry',date='2026-10-21',records=records,optuna_trials=trials,
@@ -140,14 +145,15 @@ def main():
     def text(v):return '—' if v is None else f'{v:.6f}' if isinstance(v,float) else str(v).replace('|','/').replace('\n',' ')
     lines=['# Все эксперименты команды','','Дата: 21 октября 2026. Источник — сохранённые метрики, конфигурации и истории запусков.',
            f'В журнале {len(records)} оценок экспериментов и {len(trials)} внутренних попыток Optuna. Отдельное финальное переобучение включено во время родительского запуска.','',
-           '## Лучшие результаты основной валидации','', '| Задача | Запуск | Модель | Метрика |','|---|---|---|---:|']
+           'RMSE: ниже лучше. Macro F1: выше лучше, каждый класс имеет одинаковый вес. Accuracy — доля верных ответов; Weighted F1 учитывает размеры классов.', '', '## Лучшие результаты основной валидации','', '| Задача | Запуск | Модель | Метрика |','|---|---|---|---:|']
     for task,r in best.items():lines.append(f'| {task} | {r["id"]} | {r["model"]} | {r["metric"]}={r["value"]:.6f} |')
     for kind,title in [('primary','Основная валидация'),('secondary_sensitivity','Дополнительные разделения'),('diagnostic_failure','Неудачная диагностика'),('technical_repeat','Технические повторы')]:
         group=[r for r in records if r['validation_kind']==kind]
         if not group:continue
         lines+=['',f'## {title}','','| ID | Задача / модель | Что проверили | Параметры | Разделение | RMSE | Macro F1 | Accuracy | Weighted F1 | Итог | Секунды |','|---|---|---|---|---|---:|---:|---:|---:|---|---:|']
         for r in group:
-            cells=[r['id'],r['task']+' / '+r['model'],r['change'],r['parameters'],r['split'],r['rmse'],r['macro_f1'],r['accuracy'],r['weighted_f1'],r['result'],r['pipeline_seconds']]
+            link=f"[{r['id']}]({r['source_report'].removeprefix('reports/')})" if r['source_report'].startswith('reports/') else r['id']
+            cells=[link,r['task']+' / '+r['model'],r['change'],r['parameters'],r['split'],r['rmse'],r['macro_f1'],r['accuracy'],r['weighted_f1'],r['result'],r['pipeline_seconds']]
             lines.append('| '+' | '.join(map(text,cells))+' |')
     lines+=['','## Все внутренние попытки Optuna','','Их метрики рассчитаны на внутренних split и не сравниваются напрямую с основной таблицей.','','| ID | Задача | Параметры | Метрика | Секунды | Повтор trial |','|---|---|---|---:|---:|---|']
     for r in trials:lines.append('| '+' | '.join(map(text,[r['id'],r['task'],json.dumps(r['parameters'],ensure_ascii=False),r['value'],r['seconds'],r['duplicate_of']]))+' |')
@@ -159,6 +165,17 @@ def main():
     for r in secondary:lines.append('| '+' | '.join(map(text,[r['id'],r['task'],r['model'],r['split'],r['value'],r['reference'],r['gain']]))+' |')
     lines+=['','Все подробности: [общий журнал](EXPERIMENTS.md). Новые комбинации признаков друг с другом не проверялись: складывать их эффекты без отдельного эксперимента нельзя.','']
     (reports/'HYPOTHESES.md').write_text('\n'.join(lines),encoding='utf-8')
+    readme=['# Журнал экспериментов команды','',
+            '[Итоги гипотез](HYPOTHESES.md) — что помогло и что не помогло.',
+            '[Все эксперименты](EXPERIMENTS.md) — модели, изменения, настройки, метрики и выводы.',
+            '[Excel с фильтрами](EXPERIMENTS.xlsx) · [CSV](EXPERIMENTS.csv) · [Полные данные JSON](experiment_registry.json)','',
+            f'Учтено {len(records)} оценок экспериментов и {len(trials)} внутренних попыток Optuna.','',
+            '| Задача | Лучший основной результат | Запуск |','|---|---:|---|']
+    for task,r in best.items():readme.append(f'| {task} | {r["metric"]}={r["value"]:.6f} | {r["id"]} |')
+    readme+=['','RMSE меньше — лучше. Macro F1 больше — лучше. Метрики скрытого test неизвестны.',
+             'Основная валидация, внутренний подбор, дополнительная проверка и технические повторы разделены.',
+             'Для обновления CSV/Markdown/JSON: python build_experiment_registry.py. Excel — снимок на дату сборки. Для публикации на GitHub нужны commit и push в sergey_branch.','']
+    (reports/'README.md').write_text('\n'.join(readme),encoding='utf-8')
     print(f'Registry: {len(records)} experiment evaluations, {len(trials)} Optuna attempts; best:',catalog['best_primary'])
 
 
