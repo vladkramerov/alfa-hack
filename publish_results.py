@@ -18,7 +18,7 @@ def main():
         m = json.loads(source.read_text(encoding='utf-8'))
         allowed = ['task', 'model', 'split', 'seed', 'categorical', 'scores', 'seconds',
                    'python', 'sklearn', 'pandas', 'numpy', 'input_sha256', 'source_commit',
-                   'script_sha256', 'model_family', 'model_parameters', 'hypothesis', 'catboost', 'preprocessing']
+                   'script_sha256', 'model_family', 'model_parameters', 'hypothesis', 'catboost', 'preprocessing', 'optuna', 'tuning']
         record = {k: m[k] for k in allowed if k in m}
         record['run_id'] = source.parent.name
         record['kind'] = 'local_fixed_pipeline'
@@ -27,6 +27,9 @@ def main():
         details = source.parent / 'classification_report.txt'
         if details.exists():
             shutil.copyfile(details, reports / f'{source.parent.name}-classes.txt')
+        trials = source.parent / 'trials.csv'
+        if trials.exists():
+            shutil.copyfile(trials, reports / f'{source.parent.name}-trials.csv')
     lines = ['# Журнал экспериментов', '',
              'Метрики получены на локальной валидации, не на скрытом test. LLM не используется.', '',
              '| Запуск | Задача | Модель | RMSE ↓ / Macro F1 ↑ | Время, сек |',

@@ -1,0 +1,3 @@
+-r requirements-boosting.txt
+# Organizers' allowed version
+optuna==4.2.1

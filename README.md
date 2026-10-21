@@ -106,3 +106,45 @@ publish_results.py, как на предыдущем этапе. Линейны�
 
 Документация библиотеки: https://catboost.ai/docs/en/concepts/python-quickstart
 Параметры: https://catboost.ai/docs/en/references/training-parameters/
+
+## Этап 4: ограниченный подбор параметров Optuna
+
+Optuna 4.2.1 — версия из списка организаторов. Подбираем CatBoost для регрессии
+и Random Forest для классификации, сохраняя обработку признаков.
+Параметры выбираются по внутренней валидации, без использования основной
+проверочной выборки в objective Optuna:
+
+- Регрессия: внутри train годы 1–3 → 4; итоговое сравнение по прежнему году 5.
+- Классификация: прежние 80% делятся на 75/25; исходные 20% остаются для итога.
+
+До 8 попыток на задачу, включая стартовую конфигурацию. TPESampler(seed=42,
+n_startup_trials=4), попытки последовательно, каждая модель до 4 потоков.
+Поиск ограничен 420 секундами: текущая попытка может завершиться после лимита;
+проверка кандидата и финальное обучение выполняются дополнительно.
+
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements-tuning.txt
+python -u tune_models.py regression --trials 8 --timeout 420
+python -u tune_models.py multiclass --trials 8 --timeout 420
+```
+
+Скрипт фиксирует лучшего внутреннего кандидата до просмотра основной валидации.
+Затем сравнивает его с прежними настройками на исходной основной выборке.
+Если улучшения нет, для итогового CSV сохраняет прежнюю конфигурацию.
+Это не полностью независимый финальный тест: основная validation уже использовалась
+для сравнения семейств моделей. Метрики скрытого test по-прежнему неизвестны.
+
+Для воспроизведения сохраняются SQLite-журнал study.sqlite3, trials.csv со всеми
+попытками, параметры, id четырёх частей, прогнозы основной validation, метрики и
+submission.csv. Для краткого отчёта используйте publish_results.py runs/ИМЯ_ЗАПУСКА;
+он также копирует таблицу попыток в reports/. Новые данные и API не используются.
+
+Проверки разделения:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Документация: [Study](https://optuna.readthedocs.io/en/v4.2.1/reference/generated/optuna.study.Study.html),
+[TPESampler](https://optuna.readthedocs.io/en/v4.2.1/reference/samplers/generated/optuna.samplers.TPESampler.html).
