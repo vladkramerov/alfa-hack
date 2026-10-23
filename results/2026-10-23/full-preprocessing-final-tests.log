@@ -5,6 +5,6 @@ C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplot
 C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
   parser.resetCache()
 ----------------------------------------------------------------------
-Ran 74 tests in 4.585s
+Ran 75 tests in 3.570s
 
 OK

@@ -21,4 +21,6 @@
 
 ## Приёмка
 
+Фактически выполнено:75 unit-тестов; HYP-0212оценки с233 независимыми проверками;5 clean-extraction/mockHTTP сценариев; full refit обоих публичных наборов без validation-повторов. [Проверки](../platform-preflight.md) и [честный отрицательный результат](../../results/2026-10-23/FULL_PREPROCESSING_REPORT.md). Реальный API платформы и полный clean install requirements не проверены.
+
 Unit tests: train-only quantiles/median/scaler, finite unknown/out-of-range/all-null inputs, constants/duplicate columns, mixed/categorical-only data, normalisation on train, transform row preservation, exact5%cap/class safeguards, no target in detector, fingerprint separation. Два новых data runs с масками удаления и независимо пересчитанными метриками. Clean ZIP mock HTTP + nested CSV + переименованные target/id + child imports; full refit для выдачи submission не считается повтором validation гипотезы.

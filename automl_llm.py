@@ -4,6 +4,31 @@ import os
 import urllib.request
 
 
+def research_context(profile,observations):
+    """Keep measured feedback in a bounded, valid JSON prompt (never cut JSON)."""
+    compact={k:v for k,v in profile.items() if k not in ['numeric_summary','known','hashes','split_key']}
+    compact['task']=str(compact.get('task',''))[:9000]
+    numeric=profile.get('numeric_summary',{})
+    compact['numeric_summary']={k:numeric[k] for k in list(numeric)[:12]}
+    known=profile.get('known')
+    if known:
+        compact['known']={'records':[{'candidate':r.get('candidate'),'score':r.get('score')} for r in known.get('records',[])][-10:],
+                          'previous_directions':known.get('previous_directions',[])}
+    feedback=[{k:r[k] for k in ['candidate','status','score','metric','error','reason'] if k in r} for r in observations[-12:]]
+    for entry in feedback:
+        if isinstance(entry.get('candidate'),dict):
+            entry['candidate']=dict(entry['candidate'])
+            if 'feature_code' in entry['candidate']: entry['candidate']['feature_code']=entry['candidate']['feature_code'][:3000]
+    payload={'profile':compact,'observations':feedback}
+    encoded=json.dumps(payload,default=str)
+    if len(encoded)>30000:
+        compact.pop('numeric_summary',None); compact['task']=compact['task'][:5000]
+        for k in ['dtypes','missing','categories']:
+            if isinstance(compact.get(k),dict): compact[k]=dict(list(compact[k].items())[:40])
+        encoded=json.dumps(payload,default=str)
+    return encoded
+
+
 def parse_action(payload):
     choices=payload.get('choices') if isinstance(payload,dict) else None
     if not choices or not isinstance(choices,list): return None
@@ -33,7 +58,7 @@ def propose(profile,observations,timeout=45):
         'parameters':{'type':'object','properties':{'hypothesis':{'type':'string'},'family':{'enum':['xgboost','lightgbm','extra_trees','catboost','random_forest']},
         'parameters':{'type':'object'},'target_transform':{'enum':['none','log1p']},'feature_code':{'type':'string','description':'Optional def engineer(X), pandas/numpy available. Row-wise only, preserve index. No imports, I/O or fitted statistics.'}},'required':['hypothesis','family','parameters']}}}
     messages=[{'role':'system','content':'You are a tabular AutoResearch scientist. Inspect the declared primary metric, fit-only profile and measured previous evidence. Propose ONE genuinely new justified experiment using run_experiment. Mandatory full-v1 cleaning, capped training-only outlier removal, quantile-normal continuous features and scaling are applied automatically; do not bypass or duplicate them. No repeat even after seed/name change. No target leakage. Use previous error diagnostics and useful domain interactions; prefer new mechanisms over blind tuning. log1p target applies only to regression with valid domain. Families and bounds are enforced. If no useful new direction remains, return JSON {"stop":true}. The platform metric cannot be inferred from local score scaling.'},
-              {'role':'user','content':json.dumps({'profile':profile,'observations':observations[-18:]},default=str)[:24000]}]
+              {'role':'user','content':research_context(profile,observations)}]
     body=json.dumps({'model':model,'messages':messages,'tools':[schema],'tool_choice':'auto','max_tokens':2000,'temperature':.2}).encode()
     errors=[]
     for attempt in range(2):

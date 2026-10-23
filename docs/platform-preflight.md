@@ -1,5 +1,13 @@
 # Локальная приёмка перед отправкой на платформу
 
+## Актуальная доставка SPEC-005
+
+Новый архив [solution_full_preprocessing.zip](../dist/solution_full_preprocessing.zip): 9 корневых файлов, 24 463 байта; исходный requirements неизменён. [Манифест](../results/2026-10-23/package-manifest-full-preprocessing.json), [75 unit tests](../results/2026-10-23/full-preprocessing-final-tests.log), [233 независимые проверки новой обработки](../results/2026-10-23/full-preprocessing-verification.json), [результаты и ухудшение метрик](../results/2026-10-23/FULL_PREPROCESSING_REPORT.md).
+
+Полный refit из чистого ZIP выполнен на обеих публичных задачах, без validation fit: [доказательство](../results/2026-10-23/public-refit-verification-1792783336951206400/verification.json). Затем изменён только компактор LLM-контекста (сохраняет последние метрики и валидный JSON, не влияет на обучение); окончательный архив заново проверен mock HTTP/clean extraction: [5 сценариев](../results/2026-10-23/platform-verification-1792783528077373700/verification.json). Реальный API и установка полного requirements с нуля по-прежнему не проверены; платформа не вызывалась.
+
+Ниже сохранена историческая приёмка предыдущего пакета, её8файлов/15КБ не относятся к текущему ZIP.
+
 Статус: локальные проверки SPEC-003 выполнены; ZIP 15 230 байт. Реальный API платформы НЕ проверен (env отсутствуют), установка полного предоставленного requirements с нуля не выполнялась; проверены используемые версии Python3.12/numpy/pandas/scipy/sklearn/CatBoost/LightGBM.
 Основание: [уточнение организаторов](sources/platform-update-2026-10-23.md), [SPEC-001](specs/SPEC-001-automl-agent.md).
 Локальные ML-experiments в experiments/ являются отдельными инструментами и не соответствуют формату root-only ZIP автоматически.

@@ -28,6 +28,14 @@ class IntegrationContracts(unittest.TestCase):
                 action,status=propose({},[],timeout=.01)
                 self.assertIsNone(action); self.assertEqual(status['status'],'failed'); self.assertEqual(call.call_count,2)
 
+    def test_llm_context_retains_latest_measured_feedback_as_valid_json(self):
+        from automl_llm import research_context
+        profile={'task':'x'*100000,'numeric_summary':{str(i):{'mean':i,'max':i+10} for i in range(1000)}}
+        context=research_context(profile,[{'candidate':{'family':'extra_trees'},'score':.6123,'status':'completed'}])
+        decoded=json.loads(context)
+        self.assertEqual(decoded['observations'][-1]['score'],.6123)
+        self.assertLess(len(context),30000)
+
     def test_missing_api_configuration_is_explicit(self):
         with patch.dict('os.environ',{},clear=True):
             action,status=propose({},[])
