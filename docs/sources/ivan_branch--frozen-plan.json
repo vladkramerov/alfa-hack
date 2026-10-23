@@ -1,0 +1,193 @@
+{
+  "created": "2026-10-23T21:44:43.992975+03:00",
+  "candidates": [
+    {
+      "hypothesis": "HYP-011",
+      "task": "regression",
+      "family": "xgboost",
+      "transform": "none",
+      "parameters": {
+        "n_estimators": 600,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "reg_lambda": 1,
+        "tree_method": "hist",
+        "device": "cpu",
+        "random_state": 42,
+        "n_jobs": 4,
+        "objective": "reg:squarederror"
+      }
+    },
+    {
+      "hypothesis": "HYP-011",
+      "task": "multiclass",
+      "family": "xgboost",
+      "transform": "none",
+      "parameters": {
+        "n_estimators": 600,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "reg_lambda": 1,
+        "tree_method": "hist",
+        "device": "cpu",
+        "random_state": 42,
+        "n_jobs": 4,
+        "objective": "multi:softprob"
+      }
+    },
+    {
+      "hypothesis": "HYP-012",
+      "task": "regression",
+      "family": "extra_trees",
+      "transform": "log1p_target",
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": 24,
+        "min_samples_leaf": 2,
+        "max_features": 0.8,
+        "random_state": 42,
+        "n_jobs": 4
+      }
+    },
+    {
+      "hypothesis": "HYP-013",
+      "task": "regression",
+      "family": "lightgbm",
+      "transform": "none",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1,
+        "objective": "tweedie",
+        "tweedie_variance_power": 1.5
+      }
+    },
+    {
+      "hypothesis": "HYP-014",
+      "task": "regression",
+      "family": "lightgbm",
+      "transform": "linear_scaled",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1,
+        "linear_tree": true
+      }
+    },
+    {
+      "hypothesis": "HYP-015",
+      "task": "regression",
+      "family": "extra_trees",
+      "transform": "target_encode",
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": 24,
+        "min_samples_leaf": 2,
+        "max_features": 0.8,
+        "random_state": 42,
+        "n_jobs": 4
+      }
+    },
+    {
+      "hypothesis": "HYP-016",
+      "task": "multiclass",
+      "family": "lightgbm",
+      "transform": "categorical_cross",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1
+      }
+    },
+    {
+      "hypothesis": "HYP-017",
+      "task": "multiclass",
+      "family": "lightgbm",
+      "transform": "frequency",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1
+      }
+    },
+    {
+      "hypothesis": "HYP-018",
+      "task": "multiclass",
+      "family": "lightgbm",
+      "transform": "none",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1,
+        "objective": "multiclassova"
+      }
+    },
+    {
+      "hypothesis": "HYP-019",
+      "task": "multiclass",
+      "family": "lightgbm",
+      "transform": "hierarchical",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1
+      }
+    },
+    {
+      "hypothesis": "HYP-020",
+      "task": "multiclass",
+      "family": "lightgbm",
+      "transform": "inverse_group_weights",
+      "parameters": {
+        "n_estimators": 500,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "min_child_samples": 20,
+        "reg_lambda": 1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "verbosity": -1
+      }
+    }
+  ],
+  "reference_regression_rmse": 43.0046386479306,
+  "reference_grouped_macro_f1": 0.5838559593680208,
+  "source_sha256": {
+    "automl_data.py": "3cb398e9e4ddf611f4793e6d7bb395d001aa37a548e88759784e3588ebe827cd",
+    "automl_models.py": "a47d91065fbbb37b182c72163f47ff1117d03a61815d74c098d77f401269e8f6",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/novel_features.py": "216f08ba5e08f8ba8f542f50693b5dcebf629a6828d61278885dec8f1174e737",
+    "experiments/novel_worker.py": "cc34bc4dd9a40182089a4d7fcd60af1013e5c58d26e6c60f2c80ae1cb15c99bd",
+    "experiments/run_novel_hypotheses.py": "52c2321563a5942fa79d470e0a811edea1ae31d270a3d1fd43c394db24f26993"
+  }
+}
