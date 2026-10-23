@@ -11,6 +11,80 @@ from sklearn import metrics
 from sklearn.model_selection import StratifiedGroupKFold, train_test_split
 
 
+LOWER_IS_BETTER = {'rmse','mae','mse','rmsle','mape','log_loss'}
+CLASSIFICATION_METRICS = {'macro_f1','weighted_f1','accuracy','balanced_accuracy','roc_auc','log_loss'}
+REGRESSION_METRICS = {'rmse','mae','mse','rmsle','mape','r2'}
+_METRIC_PATTERNS = {
+    'balanced_accuracy': r'\bbalanced[\s_-]*accuracy\b',
+    'weighted_f1': r'\b(?:weighted[\s_-]*f1|f1[\s_-]*weighted)\b',
+    'macro_f1': r'\b(?:macro[\s_-]*f1|f1[\s_-]*macro)\b',
+    'roc_auc': r'\broc[\s_-]*auc\b',
+    'log_loss': r'\blog[\s_-]*loss\b',
+    'rmse': r'\brmse\b', 'mae': r'\bmae\b', 'mse': r'\bmse\b',
+    'rmsle': r'\brmsle\b', 'mape': r'\bmape\b', 'r2': r'\br(?:2|²|\^2)\b',
+    'accuracy': r'\b(?:accuracy|точност[ьи])\b',
+}
+_DECLARATION = re.compile(
+    r'\b(?:(?P<primary>primary|main|основн\w*)\s+)?'
+    r'(?:(?:evaluation|quality)\s+)?(?:metric|метрик\w*)\b(?:\s+(?:оценк\w*|качеств\w*))?', re.I)
+_SECONDARY = re.compile(r'\b(?:secondary|auxiliary|example\w*|diagnostic\w*|'
+                        r'дополнител\w*|вторичн\w*|справочн\w*|пример\w*)\b', re.I)
+
+
+def _metric_mentions(text):
+    # Keep the longest overlapping match: balanced accuracy is one metric,
+    # not a simultaneous mention of ordinary accuracy.
+    matches = [(m.start(),m.end(),key) for key,pattern in _METRIC_PATTERNS.items()
+               for m in re.finditer(pattern,text,re.I)]
+    accepted=[]
+    for start,end,key in sorted(matches,key=lambda m:(m[0],-(m[1]-m[0]))):
+        if not any(start<old_end and end>old_start for old_start,old_end,_ in accepted):
+            accepted.append((start,end,key))
+    return {key for _,_,key in accepted}
+
+
+def infer_metric(text,default='rmse'):
+    """Prefer explicit main metric, then declaration, then sole mention.
+
+    Unknown explicit metrics and conflicting declarations raise before fit;
+    a default applies only when no metric has been specified or mentioned.
+    """
+    lines=[re.sub(r'[*`]', '',line).strip() for line in text.splitlines()]
+    declarations=[]
+    for i,line in enumerate(lines):
+        for match in _DECLARATION.finditer(line):
+            primary=bool(match.group('primary'))
+            if _SECONDARY.search(line[:match.start()]) and not primary: continue
+            fragment=line[match.end():].strip()
+            heading=bool(re.match(r'^#{1,6}\s',line))
+            if not (primary or heading or re.match(r'^(?:[:—–=\-]|is\b|equals\b|выбран\w*\b|является\b)',fragment,re.I)):
+                continue
+            fragment=_SECONDARY.split(fragment,maxsplit=1)[0].strip()
+            if not fragment.strip(' :—–=-.'): 
+                fragment=next((following for following in lines[i+1:] if following), '')
+                if fragment.startswith('#'): fragment=''
+            value=re.sub(r'^[\s:—–=.,\-]*(?:(?:is|equals|the|will\s+be|выбран\w*|является)\b[\s:—–=.,\-]*)*',
+                         '',fragment,flags=re.I)
+            # A known diagnostic mentioned after an unknown explicit metric
+            # cannot silently replace it (e.g. SMAPE, with RMSE as comparison).
+            known_start=any(re.match(pattern,value,re.I) for pattern in _METRIC_PATTERNS.values())
+            declarations.append((2 if primary else 1,fragment,_metric_mentions(fragment) if known_start else set()))
+    if declarations:
+        rank=max(item[0] for item in declarations)
+        chosen=[item for item in declarations if item[0]==rank]
+        unsupported=[fragment for _,fragment,names in chosen if not names]
+        if unsupported:
+            raise ValueError('Unsupported explicit metric: '+repr(unsupported[0]))
+        names=set().union(*(names for _,_,names in chosen))
+    else:
+        names=_metric_mentions(text)
+    if len(names)>1: raise ValueError('Ambiguous metric: '+', '.join(sorted(names)))
+    if names: return next(iter(names))
+    if default not in CLASSIFICATION_METRICS|REGRESSION_METRICS:
+        raise ValueError('Unsupported default metric: '+str(default))
+    return default
+
+
 @dataclass
 class TaskData:
     task_path: Path
@@ -72,18 +146,10 @@ def load_task(path):
     if len(ids)>1: raise ValueError('Ambiguous identifier')
     identifier=ids[0] if ids else None
     lower=text.lower(); y=train[target]
-    metric=None
-    patterns=[('rmse',r'\brmse\b'),('mae',r'\bmae\b'),('r2',r'\br2\b'),
-              ('roc_auc',r'roc.?auc'),('log_loss',r'log.?loss'),('macro_f1',r'macro.?f1|f1.?macro'),
-              ('accuracy',r'accuracy|точност[ьи]')]
-    for key,pattern in patterns:
-        if re.search(pattern,lower): metric=key; break
-    classification=(metric in ['macro_f1','accuracy','roc_auc','log_loss'] or bool(re.search(r'classif|классифик',lower))
-                    or not pd.api.types.is_numeric_dtype(y))
-    if re.search(r'regression|регресс',lower) and metric not in ['macro_f1','accuracy','roc_auc','log_loss']:
-        classification=False
-    kind='classification' if classification else 'regression'
-    metric=metric or ('macro_f1' if classification else 'rmse')
+    classification=bool(re.search(r'classif|классифик',lower)) or not pd.api.types.is_numeric_dtype(y)
+    if re.search(r'regression|регресс',lower) and pd.api.types.is_numeric_dtype(y): classification=False
+    metric=infer_metric(text,default='macro_f1' if classification else 'rmse')
+    kind='classification' if metric in CLASSIFICATION_METRICS else 'regression'
     if y.isna().any(): raise ValueError('Training target contains missing values')
     expected=[c for c in train if c not in [target,identifier]]
     if set(expected)!=set(test.columns)-({identifier} if identifier else set()):
@@ -121,17 +187,25 @@ def split_key(fit,valid):
 
 def score(metric,y,prediction):
     if metric=='rmse': return float(np.sqrt(metrics.mean_squared_error(y,prediction)))
+    if metric=='mse': return float(metrics.mean_squared_error(y,prediction))
     if metric=='mae': return float(metrics.mean_absolute_error(y,prediction))
+    if metric=='mape': return float(metrics.mean_absolute_percentage_error(y,prediction))
+    if metric=='rmsle':
+        if np.any(np.asarray(y)<0): raise ValueError('RMSLE requires nonnegative actual targets')
+        return float(np.sqrt(metrics.mean_squared_log_error(y,np.maximum(np.asarray(prediction),0))))
     if metric=='r2': return float(metrics.r2_score(y,prediction))
     if metric=='accuracy': return float(metrics.accuracy_score(y,prediction))
+    if metric=='balanced_accuracy': return float(metrics.balanced_accuracy_score(y,prediction))
     if metric=='roc_auc': return float(metrics.roc_auc_score(y,prediction,multi_class='ovr' if np.ndim(prediction)>1 else 'raise'))
     if metric=='log_loss': return float(metrics.log_loss(y,prediction))
-    return float(metrics.f1_score(y,prediction,labels=sorted(pd.unique(y)),average='macro',zero_division=0))
+    if metric in ['macro_f1','weighted_f1']:
+        return float(metrics.f1_score(y,prediction,labels=sorted(pd.unique(np.asarray(y))),average='weighted' if metric=='weighted_f1' else 'macro',zero_division=0))
+    raise ValueError('Unsupported metric: '+str(metric))
 
 
 def better(metric,a,b):
     if b is None: return np.isfinite(a)
-    return np.isfinite(a) and (a<b if metric in ['rmse','mae','log_loss'] else a>b)
+    return np.isfinite(a) and (a<b if metric in LOWER_IS_BETTER else a>b)
 
 
 def make_submission(bundle,prediction):

@@ -15,6 +15,7 @@ def candidate_key(candidate):
     defaults={'extra_trees':dict(n_estimators=200,max_depth=24,min_samples_leaf=2,max_features=.8),
               'random_forest':dict(n_estimators=150,max_depth=20,min_samples_leaf=2,max_features=.8),
               'lightgbm':dict(n_estimators=500,learning_rate=.05,num_leaves=31,min_child_samples=20,reg_lambda=1),
+              'xgboost':dict(n_estimators=600,max_depth=6,learning_rate=.05,reg_lambda=1,tree_method='hist',device='cpu'),
               'catboost':dict(iterations=500,depth=6,learning_rate=.05,l2_leaf_reg=3)}
     parameters=dict(defaults.get(candidate['family'],{}))
     parameters.update({k:v for k,v in candidate.get('parameters',{}).items()
@@ -23,7 +24,8 @@ def candidate_key(candidate):
     code=candidate.get('feature_code','').strip()
     normalized=ast.dump(ast.parse(code),include_attributes=False) if code else ''
     identity={'family':candidate['family'],'parameters':parameters,'code':normalized,
-              'scale':bool(candidate.get('scale',False)),'preprocessing':candidate.get('preprocessing','default')}
+              'scale':bool(candidate.get('scale',False)),'preprocessing':candidate.get('preprocessing','default'),
+              'target_transform':candidate.get('target_transform') or 'none','max_outlier_fraction':candidate.get('max_outlier_fraction',0)}
     return hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
 
 
@@ -42,6 +44,10 @@ def already_known(candidate,records,prior=None):
     if prior and candidate['family'] in ['catboost','random_forest','ridge','logistic']:
         return True
     return False
+
+
+def compatible_policy(candidate):
+    return candidate.get('preprocessing')=='full-v1' and bool(candidate.get('scale')) and candidate.get('max_outlier_fraction')==.05
 
 
 def ledger_case(hashes,validation_key,metric):

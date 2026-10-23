@@ -20,7 +20,7 @@ def parse_action(payload):
             content=message.get('content')
             if not isinstance(content,str): return None
             action=json.loads(content)
-        return action if isinstance(action,dict) and action.get('family') else None
+        return action if isinstance(action,dict) and (action.get('family') or action.get('stop') is True) else None
     except (ValueError,TypeError,KeyError,IndexError): return None
 
 
@@ -30,18 +30,18 @@ def propose(profile,observations,timeout=45):
     url=base.rstrip('/')
     if not url.endswith('/chat/completions'): url+='/chat/completions'
     schema={'type':'function','function':{'name':'run_experiment','description':'Evaluate one genuinely new hypothesis on a fixed validation split.',
-        'parameters':{'type':'object','properties':{'hypothesis':{'type':'string'},'family':{'enum':['lightgbm','extra_trees','catboost','random_forest']},
-        'parameters':{'type':'object'},'feature_code':{'type':'string','description':'Optional def engineer(X), pandas/numpy available. Row-wise only, preserve index. No imports, I/O or fitted statistics.'}},'required':['hypothesis','family','parameters']}}}
-    messages=[{'role':'system','content':'You are a tabular AutoResearch scientist. Inspect task, profile and previous evidence. Propose ONE new justified experiment using run_experiment. Never repeat known experiments or disguise a repeat by changing seeds. No data access outside X; no target leakage. Prefer useful domain interactions. Families and resource bounds are enforced. Return JSON tool arguments.'},
-              {'role':'user','content':json.dumps({'profile':profile,'observations':observations},default=str)[:36000]}]
-    body=json.dumps({'model':model,'messages':messages,'tools':[schema],'tool_choice':'auto','max_tokens':3000,'temperature':.2}).encode()
+        'parameters':{'type':'object','properties':{'hypothesis':{'type':'string'},'family':{'enum':['xgboost','lightgbm','extra_trees','catboost','random_forest']},
+        'parameters':{'type':'object'},'target_transform':{'enum':['none','log1p']},'feature_code':{'type':'string','description':'Optional def engineer(X), pandas/numpy available. Row-wise only, preserve index. No imports, I/O or fitted statistics.'}},'required':['hypothesis','family','parameters']}}}
+    messages=[{'role':'system','content':'You are a tabular AutoResearch scientist. Inspect the declared primary metric, fit-only profile and measured previous evidence. Propose ONE genuinely new justified experiment using run_experiment. Mandatory full-v1 cleaning, capped training-only outlier removal, quantile-normal continuous features and scaling are applied automatically; do not bypass or duplicate them. No repeat even after seed/name change. No target leakage. Use previous error diagnostics and useful domain interactions; prefer new mechanisms over blind tuning. log1p target applies only to regression with valid domain. Families and bounds are enforced. If no useful new direction remains, return JSON {"stop":true}. The platform metric cannot be inferred from local score scaling.'},
+              {'role':'user','content':json.dumps({'profile':profile,'observations':observations[-18:]},default=str)[:24000]}]
+    body=json.dumps({'model':model,'messages':messages,'tools':[schema],'tool_choice':'auto','max_tokens':2000,'temperature':.2}).encode()
     errors=[]
     for attempt in range(2):
         try:
             request=urllib.request.Request(url,data=body,headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
             with urllib.request.urlopen(request,timeout=timeout) as response: payload=json.loads(response.read(2_000_000))
             action=parse_action(payload)
-            if action is not None: return action,{'status':'ok','attempts':attempt+1,'usage':payload.get('usage',{})}
+            if action is not None: return action,{'status':'ok','attempts':attempt+1,'usage':payload.get('usage',{}),'estimated_tokens':(len(body)//4+2000)*(attempt+1)}
             errors.append('empty/truncated/invalid response')
         except Exception as exc: errors.append(type(exc).__name__)
-    return None,{'status':'failed','errors':errors}
+    return None,{'status':'failed','errors':errors,'attempts':2,'estimated_tokens':2*(len(body)//4+2000)}

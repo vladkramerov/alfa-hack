@@ -1,0 +1,2386 @@
+{
+  "status": "passed",
+  "created_at_moscow": "2026-10-23T21:49:57.462933+03:00",
+  "series": "results/2026-10-23/series-ten-hypotheses-v1",
+  "passed_checks": 522,
+  "failed_checks": 0,
+  "checked_runs": 11,
+  "independent_metrics": [
+    {
+      "hypothesis": "HYP-011",
+      "task": "regression",
+      "rmse": 43.510161481164815
+    },
+    {
+      "hypothesis": "HYP-011",
+      "task": "multiclass",
+      "macro_f1": 0.5914513709191194,
+      "accuracy": 0.8284814188203722,
+      "weighted_f1": 0.8116289599992603
+    },
+    {
+      "hypothesis": "HYP-012",
+      "task": "regression",
+      "rmse": 42.19670002719412
+    },
+    {
+      "hypothesis": "HYP-013",
+      "task": "regression",
+      "rmse": 47.18831919578777
+    },
+    {
+      "hypothesis": "HYP-014",
+      "task": "regression",
+      "rmse": 178.08498786616641
+    },
+    {
+      "hypothesis": "HYP-015",
+      "task": "regression",
+      "rmse": 44.402896602005654
+    },
+    {
+      "hypothesis": "HYP-016",
+      "task": "multiclass",
+      "macro_f1": 0.5807635957092588,
+      "accuracy": 0.8308150049588705,
+      "weighted_f1": 0.8184847283044293
+    },
+    {
+      "hypothesis": "HYP-017",
+      "task": "multiclass",
+      "macro_f1": 0.5909684499124109,
+      "accuracy": 0.8294148532757716,
+      "weighted_f1": 0.8168380436324245
+    },
+    {
+      "hypothesis": "HYP-018",
+      "task": "multiclass",
+      "macro_f1": 0.578639858804918,
+      "accuracy": 0.82818972055306,
+      "weighted_f1": 0.8136511175849409
+    },
+    {
+      "hypothesis": "HYP-019",
+      "task": "multiclass",
+      "macro_f1": 0.5901110420481382,
+      "accuracy": 0.829473192929234,
+      "weighted_f1": 0.8182019930292331
+    },
+    {
+      "hypothesis": "HYP-020",
+      "task": "multiclass",
+      "macro_f1": 0.5829349072076985,
+      "accuracy": 0.8256811154541742,
+      "weighted_f1": 0.8127231379689482
+    }
+  ],
+  "checks": [
+    {
+      "name": "series/status",
+      "passed": true
+    },
+    {
+      "name": "series/eleven_records",
+      "passed": true
+    },
+    {
+      "name": "series/eleven_planned",
+      "passed": true
+    },
+    {
+      "name": "series/identities",
+      "passed": true
+    },
+    {
+      "name": "series/planned_identities",
+      "passed": true
+    },
+    {
+      "name": "series/summary_records",
+      "passed": true
+    },
+    {
+      "name": "series/planned_evaluations",
+      "passed": true
+    },
+    {
+      "name": "series/zero_baseline_refits",
+      "passed": true
+    },
+    {
+      "name": "series/twelve_planned_component_fits",
+      "passed": true
+    },
+    {
+      "name": "series/reference_rmse",
+      "passed": true
+    },
+    {
+      "name": "series/reference_macro_f1",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/completed",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/frozen_config",
+      "passed": true
+    },
+    {
+      "name": "source/frozen_plan_manifest",
+      "passed": true
+    },
+    {
+      "name": "source/manifest_nonempty",
+      "passed": true
+    },
+    {
+      "name": "source/unique_snapshot_basenames",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/automl_data.py",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/automl_models.py",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/experiments/novel_features.py",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/experiments/novel_worker.py",
+      "passed": true
+    },
+    {
+      "name": "source/snapshot/experiments/run_novel_hypotheses.py",
+      "passed": true
+    },
+    {
+      "name": "registry/unique_series_fingerprints",
+      "passed": true
+    },
+    {
+      "name": "registry/no_duplicate_fingerprints",
+      "passed": true
+    },
+    {
+      "name": "registry/eleven_claims",
+      "passed": true
+    },
+    {
+      "name": "registry/identities",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/one_claim",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/ledger_sha256_before_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/started",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/score",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/directory",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/ledger_hash_recorded",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/registry/started_before_finished",
+      "passed": true
+    },
+    {
+      "name": "data/regression/hashes_match_control",
+      "passed": true
+    },
+    {
+      "name": "data/regression/split_key_matches_control",
+      "passed": true
+    },
+    {
+      "name": "data/regression/split_sizes",
+      "passed": true
+    },
+    {
+      "name": "data/regression/split_partition",
+      "passed": true
+    },
+    {
+      "name": "data/regression/raw_X_groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "data/regression/temporal_split",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/finite_predictions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/regression/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-011/regression/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "data/multiclass/hashes_match_control",
+      "passed": true
+    },
+    {
+      "name": "data/multiclass/split_key_matches_control",
+      "passed": true
+    },
+    {
+      "name": "data/multiclass/split_sizes",
+      "passed": true
+    },
+    {
+      "name": "data/multiclass/split_partition",
+      "passed": true
+    },
+    {
+      "name": "data/multiclass/raw_X_groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/probability_mass",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-06
+      }
+    },
+    {
+      "name": "HYP-011/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-011/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-011/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-011/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-011/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-011/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-012/regression/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/finite_predictions",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-012/regression/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-012/regression/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-013/regression/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/finite_predictions",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-013/regression/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-013/regression/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-014/regression/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/finite_predictions",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-014/regression/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-014/regression/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/finite_predictions",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/n_fit",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/n_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/smoothing",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/n_splits",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/audit_no_leakage",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/artifact_keys",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/audit_folds",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/complete_partition",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/fold_number",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/train_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/train_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/valid_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/group_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/row_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold0/fold_fit_prior",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/complete_partition",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/fold_number",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/train_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/train_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/valid_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/group_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/row_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold1/fold_fit_prior",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/complete_partition",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/fold_number",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/train_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/train_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/valid_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/group_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/row_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold2/fold_fit_prior",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/complete_partition",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/fold_number",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/train_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/train_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/valid_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/group_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/row_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold3/fold_fit_prior",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/complete_partition",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/fold_number",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/train_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/train_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/valid_groups",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/group_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/row_overlap",
+      "passed": true
+    },
+    {
+      "name": "HYP-015/regression/oof/fold4/fold_fit_prior",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-015/regression/oof/coverage_once",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/probability_mass",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-06
+      }
+    },
+    {
+      "name": "HYP-016/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-016/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-016/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-016/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-016/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-016/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/probability_mass",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-06
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-017/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-017/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-018/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-018/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-018/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-018/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-018/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-018/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/probability_mass",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-06
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/normal",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/global_classes",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/attack_classes",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/binary_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/attack_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-019/multiclass/hierarchy/separate_preprocessing",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/artifact_within_results",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/evidence_equals_record",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/request_candidate",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/status",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/split_key",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/source_manifest",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/fit_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/valid_rows",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/input_features",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/id_target_excluded",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/saved_fit_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/saved_valid_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/actual_target",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/prediction_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/metrics_class_order",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/probability_shape",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/finite_probabilities",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/probability_bounds",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/probability_mass",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-06
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/probability_row_sum_range",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/accuracy",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weighted_f1",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/metric_name",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/independent_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/record_score",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weights/positions",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/weights/exact_inverse_group_frequency",
+      "passed": true
+    },
+    {
+      "name": "HYP-020/multiclass/weights/sum_equals_groups",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weights/audit_sum",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weights/audit_min",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weights/audit_max",
+      "passed": true,
+      "detail": {
+        "rtol": 1e-10,
+        "atol": 1e-12
+      }
+    },
+    {
+      "name": "HYP-020/multiclass/weights/not_normalized",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Historical ledger hashes and separate hierarchy preprocessing are checked against saved claims/audits; artifacts alone cannot prove historical execution."
+  ]
+}

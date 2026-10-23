@@ -1,0 +1,49 @@
+{
+  "fingerprint": "79de129a5c09cb380e09b7e8b6293712c0977456ecf685c155671c35a86a0592",
+  "candidate_key": "d780d68fd0745ba58b2d7ece6c9980d2a2863264c411db93eb93bfa6dfebdaf8",
+  "candidate": {
+    "hypothesis": "HYP-014",
+    "task": "regression",
+    "family": "lightgbm",
+    "transform": "linear_scaled",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "linear_tree": true
+    }
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "status": "completed",
+  "started": "2026-10-23T21:46:52.104939+03:00",
+  "ledger_sha256_before_fit": "94d8f6d95b60be3c60fa08a86e41794e6de4d32a8820970138fd2043541325b7",
+  "directory": "results/2026-10-23/HYP-014-01-regression-linear_scaled",
+  "metric": "rmse",
+  "score": 178.08498786616641,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "warnings": [],
+  "packages": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "lightgbm": "4.6.0",
+    "xgboost": "2.1.4"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "seconds": 3.687000000005355,
+  "planned_model_fit_count": 1,
+  "conclusion": "Не подтверждена по заданному критерию"
+}

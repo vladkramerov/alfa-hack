@@ -1,0 +1,22 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "candidate": {
+    "hypothesis": "HYP-018",
+    "task": "multiclass",
+    "family": "lightgbm",
+    "transform": "none",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "objective": "multiclassova"
+    }
+  },
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-018-01-multiclass-none",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-018-01-multiclass-none\\splits.npz"
+}

@@ -1,5 +1,7 @@
 # Alfa Hack: AutoResearch ML-агент
 
+Новая серия [SPEC-004: десять гипотез](docs/specs/SPEC-004-ten-new-hypotheses.md) завершена: **ExtraTrees с log1p таргета — RMSE42.196700027194**, **XGBoost — grouped Macro F1 0.591451370919**. [Все11 оценок, выводы и ограничения](results/2026-10-23/TEN_HYPOTHESES_REPORT.md), [522 независимые проверки](results/2026-10-23/series-ten-hypotheses-v1/independent-verification.json). Новые методы реализованы в experiments/; платформенный solution.py/ZIP автоматически не подменялись экспериментальными победителями.
+
 Рабочая ветка: `ivan_branch`. Агент, результаты предобработки, CatBoost/Random Forest, новые LightGBM/ExtraTrees и сохранённая история проверок.
 Готовый [ZIP](dist/solution_ivan_branch.zip): 15 230 байт, только корневые Python-модули и неизменённый requirements.txt организаторов. Реальный API пока не проверен: env отсутствовали.
 

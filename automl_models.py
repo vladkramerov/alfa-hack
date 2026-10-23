@@ -2,10 +2,61 @@
 import ast
 import numpy as np
 import pandas as pd
-from sklearn.base import BaseEstimator,TransformerMixin
+from sklearn.base import BaseEstimator,TransformerMixin,clone
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder
+
+
+def canonical_candidate(candidate):
+    result=dict(candidate)
+    result['parameters']=dict(candidate.get('parameters',{}))
+    result.update(preprocessing='full-v1',scale=True,max_outlier_fraction=.05)
+    if result.get('target_transform') not in [None,'none','log1p']: raise ValueError('Unsupported target transformation')
+    return result
+
+
+class PreparedModel(BaseEstimator):
+    """Mandatory train-only preparation, bounded row filtering and invertible labels."""
+    def __init__(self,estimator,kind='regression',native=False,target_transform=None,feature_code=''):
+        self.estimator=estimator; self.kind=kind; self.native=native
+        self.target_transform=target_transform; self.feature_code=feature_code
+    def fit(self,X,y):
+        from automl_preprocessing import FullPreprocessor,TrainingOutlierFilter
+        target=np.asarray(y)
+        if self.kind=='regression' and self.target_transform=='log1p' and (np.any(target<=-1) or not np.isfinite(target).all()): raise ValueError('Invalid log1p target domain')
+        self.features_=FeatureCode(self.feature_code).fit(X)
+        featured=self.features_.transform(X)
+        self.outlier_filter_=TrainingOutlierFilter()
+        kept,target,self.keep_mask_=self.outlier_filter_.fit_filter(featured,target,classification=self.kind=='classification')
+        self.preprocessor_=FullPreprocessor(native=self.native)
+        values=self.preprocessor_.fit_transform(kept,target)
+        if self.kind=='classification':
+            self.labels_=LabelEncoder().fit(target); self.classes_=self.labels_.classes_; target=self.labels_.transform(target)
+        elif self.target_transform=='log1p': target=np.log1p(target)
+        self.estimator_=clone(self.estimator).fit(values,target)
+        self.removed_positions_=np.flatnonzero(~self.keep_mask_)
+        numeric_values=values.select_dtypes(include='number').to_numpy(dtype=float) if isinstance(values,pd.DataFrame) else np.asarray(values[:,:len(self.preprocessor_.numeric_output_columns_)],dtype=float)
+        deviations=numeric_values.std(axis=0) if numeric_values.shape[1] else np.empty(0)
+        mean_error=float(np.max(np.abs(numeric_values.mean(axis=0)))) if numeric_values.shape[1] else 0.
+        std_error=float(np.max(np.abs(deviations[deviations>1e-8]-1))) if np.any(deviations>1e-8) else 0.
+        self.audit_={'policy':'full-v1','fit_original_rows':len(X),'fit_retained_rows':int(self.keep_mask_.sum()),
+                     'target_transform':self.target_transform,'outliers':self.outlier_filter_.audit_,'preprocessing':self.preprocessor_.audit_,
+                     'normalized_training_mean_abs_max':mean_error,'normalized_training_std_error_max':std_error}
+        return self
+    def _values(self,X): return self.preprocessor_.transform(self.features_.transform(X))
+    def predict(self,X):
+        prediction=np.asarray(self.estimator_.predict(self._values(X))).reshape(-1)
+        if self.kind=='classification': return self.labels_.inverse_transform(prediction.astype(int))
+        if self.target_transform=='log1p': prediction=np.expm1(prediction)
+        if not np.isfinite(prediction).all(): raise ValueError('Nonfinite predictions')
+        return prediction
+    def predict_proba(self,X):
+        if self.kind!='classification': raise ValueError('Regression has no class probabilities')
+        p=np.asarray(self.estimator_.predict_proba(self._values(X)))
+        if not np.isfinite(p).all(): raise ValueError('Nonfinite class scores')
+        return p
 
 
 class FeatureCode(TransformerMixin,BaseEstimator):
@@ -66,13 +117,19 @@ class Encoder(TransformerMixin,BaseEstimator):
 
 
 def build_pipeline(kind,candidate,threads=4):
+    candidate=canonical_candidate(candidate)
     family=candidate['family']; regression=kind=='regression'; p=dict(candidate.get('parameters',{}))
     for k in ['random_state','random_seed','seed','n_jobs','thread_count','verbose']: p.pop(k,None)
-    allowed_parameters={'n_estimators','iterations','learning_rate','num_leaves','min_child_samples','reg_lambda','reg_alpha','max_depth','min_samples_leaf','max_features','depth','l2_leaf_reg','subsample','colsample_bytree','class_weight','criterion'}
+    allowed_parameters={'n_estimators','iterations','learning_rate','num_leaves','min_child_samples','reg_lambda','reg_alpha','max_depth','min_samples_leaf','max_features','depth','l2_leaf_reg','subsample','colsample_bytree','class_weight','criterion','tree_method','device'}
     if set(p)-allowed_parameters: raise ValueError('Unsupported model parameters')
     for key,upper in [('n_estimators',1200),('iterations',1200),('max_depth',32),('depth',10),('num_leaves',128)]:
         if key in p and (not isinstance(p[key],int) or not 1<=p[key]<=upper): raise ValueError('Parameter exceeds worker resource bounds: '+key)
-    if family=='lightgbm':
+    if family=='xgboost':
+        from xgboost import XGBRegressor,XGBClassifier
+        if p.get('device','cpu')!='cpu': raise ValueError('Only CPU training is permitted')
+        settings=dict(n_estimators=600,max_depth=6,learning_rate=.05,reg_lambda=1,tree_method='hist',device='cpu')
+        settings.update(p); model=(XGBRegressor if regression else XGBClassifier)(**settings,random_state=42,n_jobs=threads)
+    elif family=='lightgbm':
         from lightgbm import LGBMRegressor,LGBMClassifier
         settings=dict(n_estimators=500,learning_rate=.05,num_leaves=31,min_child_samples=20,reg_lambda=1)
         settings.update(p); model=(LGBMRegressor if regression else LGBMClassifier)(**settings,random_state=42,n_jobs=threads,verbosity=-1)
@@ -86,13 +143,7 @@ def build_pipeline(kind,candidate,threads=4):
         settings=dict(iterations=500,depth=6,learning_rate=.05,l2_leaf_reg=3)
         settings.update(p); model=(CatBoostRegressor if regression else CatBoostClassifier)(**settings,random_seed=42,thread_count=threads,verbose=False,allow_writing_files=False)
     else: raise ValueError('Unsupported model family')
-    encoder=Encoder(native=family=='lightgbm',scale=candidate.get('scale',False))
-    if candidate.get('preprocessing')=='legacy_standard':
-        from sklearn.compose import ColumnTransformer,make_column_selector
-        encoder=ColumnTransformer([
-            ('numeric',Pipeline([('fill',SimpleImputer(strategy='median')),('scale',StandardScaler())]),make_column_selector(dtype_include=np.number)),
-            ('categorical',Pipeline([('fill',SimpleImputer(strategy='constant',fill_value='missing')),('encode',OneHotEncoder(handle_unknown='ignore'))]),make_column_selector(dtype_exclude=np.number))])
-    return Pipeline([('features',FeatureCode(candidate.get('feature_code',''))),('encode',encoder),('model',model)])
+    return PreparedModel(model,kind=kind,native=family=='lightgbm',target_transform=candidate.get('target_transform'),feature_code=candidate.get('feature_code',''))
 
 
 def predict_for_metric(model,X,metric):

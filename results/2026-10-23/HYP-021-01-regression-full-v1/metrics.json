@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 43.837201829105254,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "fit_retained_rows": 33250,
+  "seconds": 35.35999999998603
+}

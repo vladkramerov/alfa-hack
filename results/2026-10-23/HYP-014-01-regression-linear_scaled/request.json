@@ -1,0 +1,22 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\regression\\task.md",
+  "candidate": {
+    "hypothesis": "HYP-014",
+    "task": "regression",
+    "family": "lightgbm",
+    "transform": "linear_scaled",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "linear_tree": true
+    }
+  },
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-014-01-regression-linear_scaled",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-014-01-regression-linear_scaled\\splits.npz"
+}

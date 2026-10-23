@@ -1,0 +1,41 @@
+{
+  "task": "regression",
+  "candidate": {
+    "family": "extra_trees",
+    "parameters": {},
+    "target_transform": "log1p",
+    "hypothesis": "HYP-021: mandatory full-v1 normalization, bounded normal quantiles and <=5% training outliers",
+    "preprocessing": "full-v1",
+    "scale": true,
+    "max_outlier_fraction": 0.05
+  },
+  "candidate_key": "59d074021c388209a16be01001b2cf306bdda459af03e46680a93d1392c3f1b3",
+  "reference": 42.19670002719412,
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "ledger_sha256_before_fit": "76d52d0b7210974f27e775729dbe72f8b6b9020ad292e22099df32616a79e3f9",
+  "code_sha256": {
+    "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_worker.py": "aa2934726c0ea3148fad13c676a379b15a455308f8663bf0e4323581f6cacaef",
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_history.py": "c77f276966ec1b58481af6af1993bbaf9f13ce113398adb1582749027a1e623e",
+    "experiments/evaluate_full_preprocessing.py": "aa018e6e5d6a79e6de734ae0e7995a9c73dbdffac0ed8a4dddca1a0887d8213c"
+  },
+  "directory": "results/2026-10-23/HYP-021-01-regression-full-v1",
+  "started": "2026-10-23T22:05:55.397272+03:00",
+  "status": "completed",
+  "metric": "rmse",
+  "score": 43.837201829105254,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "fit_retained_rows": 33250,
+  "seconds": 35.35999999998603,
+  "finished": "2026-10-23T22:06:32.722779+03:00",
+  "conclusion": "Не подтверждена по заданному критерию"
+}

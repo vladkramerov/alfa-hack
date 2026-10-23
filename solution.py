@@ -8,9 +8,10 @@ import sys
 import time
 import numpy as np
 import pandas as pd
-from automl_data import load_task,validation_split,split_key,better,fallback_submission,atomic_submission,validate_submission
-from automl_history import candidate_key,known_task,already_known,ledger_case,read_ledger,write_ledger
+from automl_data import load_task,validation_split,split_key,better,fallback_submission,atomic_submission,validate_submission,LOWER_IS_BETTER
+from automl_history import candidate_key,known_task,already_known,ledger_case,read_ledger,write_ledger,compatible_policy
 from automl_llm import propose
+from automl_models import canonical_candidate
 
 
 def save(path,value): path.write_text(json.dumps(value,ensure_ascii=False,indent=2,default=str),encoding='utf-8')
@@ -50,9 +51,13 @@ def main(task_path):
     if prior:
         for record in prior['records']:
             if record.get('status','completed')=='completed' and better(bundle.metric,record['score'],best_score): best,best_score=record['candidate'],record['score']
+    training=bundle.X.iloc[fit]; training_y=bundle.y.iloc[fit]
     profile={'task':bundle.text,'target':bundle.target,'id':bundle.id_column,'type':bundle.task_type,'metric':bundle.metric,'split':description,
-             'shape':list(bundle.X.shape),'dtypes':bundle.X.dtypes.astype(str).to_dict(),'missing':bundle.X.isna().mean().to_dict(),
-             'categories':{c:bundle.X[c].nunique() for c in bundle.X.select_dtypes(exclude='number')},'known':prior,'hashes':bundle.hashes,'split_key':split_key(fit,valid)}
+             'shape':list(training.shape),'dtypes':training.dtypes.astype(str).to_dict(),'missing':training.isna().mean().to_dict(),
+             'categories':{c:training[c].nunique() for c in training.select_dtypes(exclude='number')},
+             'numeric_summary':training.select_dtypes(include='number').replace([np.inf,-np.inf],np.nan).describe(percentiles=[.01,.5,.99]).to_dict(),
+             'target_fit_summary':training_y.value_counts().to_dict() if bundle.task_type=='classification' else training_y.describe(percentiles=[.01,.5,.99]).to_dict(),
+             'preprocessing_policy':'full-v1 mandatory; validation/test rows never removed','known':prior,'hashes':bundle.hashes,'split_key':split_key(fit,valid)}
     for earlier in sorted(root.parent.glob('*/profile.json')):
         if earlier.parent==root: continue
         try:
@@ -75,8 +80,8 @@ def main(task_path):
         result=worker(bundle,candidate,'refit',directory,root/'splits.npz',min(1800,remaining))
         if result['status']=='completed': atomic_submission(bundle,pd.read_csv(directory/'candidate_submission.csv'))
         return result
-    available=(list(prior['records']) if prior else [])+[r for r in records if r.get('status')=='completed' and 'score' in r]
-    available.sort(key=lambda r:r['score'],reverse=bundle.metric not in ['rmse','mae','log_loss'])
+    available=[r for r in ((list(prior['records']) if prior else [])+[r for r in records if r.get('status')=='completed' and 'score' in r]) if compatible_policy(r['candidate'])]
+    available.sort(key=lambda r:r['score'],reverse=bundle.metric not in LOWER_IS_BETTER)
     best=None; best_score=None; attempted=set(); initial=[]
     for r in available:
         identity=candidate_key(r['candidate'])
@@ -86,21 +91,25 @@ def main(task_path):
         if result['status']=='completed': best,best_score=r['candidate'],r['score']; break
         if len(initial)>=3: break
     save(root/'initial_refit.json',initial)
-    candidates=[{'family':'lightgbm','parameters':{},'hypothesis':'Native categorical boosting, a new model family'},
-                {'family':'extra_trees','parameters':{},'hypothesis':'Random thresholds reduce variance, a new model family'}]
+    candidates=[{'family':'xgboost','parameters':{},'hypothesis':'Histogram boosting with mandatory full-v1'},
+                {'family':'extra_trees','parameters':{},'hypothesis':'Random thresholds with full-v1','target_transform':'log1p' if bundle.task_type=='regression' and training_y.min()>-1 else 'none'},
+                {'family':'lightgbm','parameters':{},'hypothesis':'Native categorical boosting with full-v1'}]
     if os.getenv('AUTOML_PORTFOLIO','1')=='0': candidates=[]
-    limit=min(6,max(0,int(os.getenv('AUTOML_MAX_EXPERIMENTS','4'))))
-    llm_calls=0
+    limit=min(16,max(0,int(os.getenv('AUTOML_MAX_EXPERIMENTS','12'))))
+    llm_calls=0; llm_token_estimate=0
     inherited=len(records)
     while len([r for r in records[inherited:] if r['status']!='skipped'])<limit and budget-(time.monotonic()-started)>max(30,min(600,budget*.2)):
         if candidates: candidate=candidates.pop(0)
-        elif llm_calls<3:
+        elif llm_calls<6 and llm_token_estimate<48000:
             llm_calls+=1
             candidate,status=propose(profile,records,timeout=min(45,max(1,budget-(time.monotonic()-started))))
             llm.append(status); save(root/'llm.json',llm)
+            llm_token_estimate+=max(status.get('usage',{}).get('total_tokens',0),status.get('estimated_tokens',8000))
             if candidate is None: break
+            if candidate.get('stop') is True: break
         else: break
         try:
+            candidate=canonical_candidate(candidate)
             identity=candidate_key(candidate)
             checked=read_ledger(ledger,case) # Read the persistent file before EVERY attempted hypothesis.
             if already_known(candidate,checked['records'],prior):
@@ -118,6 +127,7 @@ def main(task_path):
     frame=pd.read_csv(bundle.task_path.parent/'submission.csv'); validate_submission(bundle,frame)
     summary={'status':'completed','metric':bundle.metric,'selected_score':best_score,'selected':best,'validation':description,'cached_history':bool(prior),
              'experiments':records,'llm':llm,'seconds':time.monotonic()-started,'submission_rows':len(frame),
+             'preprocessing_policy':'full-v1','llm_calls':llm_calls,'llm_token_estimate':llm_token_estimate,
              'limitation':'Validation selection is exploratory, not a hidden-platform score; real API requires platform environment.'}
     save(root/'summary.json',summary)
     print(json.dumps({k:summary[k] for k in ['status','metric','selected_score','cached_history','seconds','submission_rows']}))

@@ -91,3 +91,25 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 | HYP-010-01-regression-extra_trees | rmse=43.56756773832011 | [отчёт](2026-10-23/HYP-010-01-regression-extra_trees/report.md) |
 | HYP-009-02-multiclass-lightgbm | macro_f1=0.5838559593680208 | [отчёт](2026-10-23/HYP-009-02-multiclass-lightgbm/report.md) |
 | HYP-010-02-multiclass-extra_trees | macro_f1=0.5804952756940901 | [отчёт](2026-10-23/HYP-010-02-multiclass-extra_trees/report.md) |
+
+- SPEC-004 HYP-011/regression: completed, rmse=43.510161481164815; [отчёт](2026-10-23/HYP-011-01-regression-none/report.md).
+
+- SPEC-004 HYP-011/multiclass: completed, macro_f1=0.5914513709191194; [отчёт](2026-10-23/HYP-011-02-multiclass-none/report.md).
+
+- SPEC-004 HYP-012/regression: completed, rmse=42.19670002719412; [отчёт](2026-10-23/HYP-012-01-regression-log1p_target/report.md).
+
+- SPEC-004 HYP-013/regression: completed, rmse=47.18831919578777; [отчёт](2026-10-23/HYP-013-01-regression-none/report.md).
+
+- SPEC-004 HYP-014/regression: completed, rmse=178.08498786616641; [отчёт](2026-10-23/HYP-014-01-regression-linear_scaled/report.md).
+
+- SPEC-004 HYP-015/regression: completed, rmse=44.402896602005654; [отчёт](2026-10-23/HYP-015-01-regression-target_encode/report.md).
+
+- SPEC-004 HYP-016/multiclass: completed, macro_f1=0.5807635957092588; [отчёт](2026-10-23/HYP-016-01-multiclass-categorical_cross/report.md).
+
+- SPEC-004 HYP-017/multiclass: completed, macro_f1=0.5909684499124109; [отчёт](2026-10-23/HYP-017-01-multiclass-frequency/report.md).
+
+- SPEC-004 HYP-018/multiclass: completed, macro_f1=0.578639858804918; [отчёт](2026-10-23/HYP-018-01-multiclass-none/report.md).
+
+- SPEC-004 HYP-019/multiclass: completed, macro_f1=0.5901110420481382; [отчёт](2026-10-23/HYP-019-01-multiclass-hierarchical/report.md).
+
+- SPEC-004 HYP-020/multiclass: completed, macro_f1=0.5829349072076985; [отчёт](2026-10-23/HYP-020-01-multiclass-inverse_group_weights/report.md).
