@@ -1,0 +1,129 @@
+TDD RED: .venv-ml/Scripts/python.exe -m unittest discover -s tests -p test_research_neighbors.py -v
+test_all_missing_constants_and_infinities_remain_finite (test_research_neighbors.MixedNeighborsTests.test_all_missing_constants_and_infinities_remain_finite) ... FAIL
+test_blocked_distance_matches_scalar_brute_force (test_research_neighbors.MixedNeighborsTests.test_blocked_distance_matches_scalar_brute_force) ... FAIL
+test_categorical_only_preserves_missing_and_lexical_values (test_research_neighbors.MixedNeighborsTests.test_categorical_only_preserves_missing_and_lexical_values) ... FAIL
+test_column_reordering_is_safe_and_invalid_shapes_are_rejected (test_research_neighbors.MixedNeighborsTests.test_column_reordering_is_safe_and_invalid_shapes_are_rejected) ... FAIL
+test_default_25_neighbors_equal_votes_and_short_training (test_research_neighbors.MixedNeighborsTests.test_default_25_neighbors_equal_votes_and_short_training) ... FAIL
+test_numeric_missing_flag_distinguishes_imputed_equal_values (test_research_neighbors.MixedNeighborsTests.test_numeric_missing_flag_distinguishes_imputed_equal_values) ... FAIL
+test_train_class_order_row_ties_and_opaque_labels (test_research_neighbors.MixedNeighborsTests.test_train_class_order_row_ties_and_opaque_labels) ... FAIL
+test_train_only_statistics_and_query_batch_invariance (test_research_neighbors.MixedNeighborsTests.test_train_only_statistics_and_query_batch_invariance) ... FAIL
+
+======================================================================
+FAIL: test_all_missing_constants_and_infinities_remain_finite (test_research_neighbors.MixedNeighborsTests.test_all_missing_constants_and_infinities_remain_finite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_blocked_distance_matches_scalar_brute_force (test_research_neighbors.MixedNeighborsTests.test_blocked_distance_matches_scalar_brute_force)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_categorical_only_preserves_missing_and_lexical_values (test_research_neighbors.MixedNeighborsTests.test_categorical_only_preserves_missing_and_lexical_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_column_reordering_is_safe_and_invalid_shapes_are_rejected (test_research_neighbors.MixedNeighborsTests.test_column_reordering_is_safe_and_invalid_shapes_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_default_25_neighbors_equal_votes_and_short_training (test_research_neighbors.MixedNeighborsTests.test_default_25_neighbors_equal_votes_and_short_training)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_numeric_missing_flag_distinguishes_imputed_equal_values (test_research_neighbors.MixedNeighborsTests.test_numeric_missing_flag_distinguishes_imputed_equal_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_train_class_order_row_ties_and_opaque_labels (test_research_neighbors.MixedNeighborsTests.test_train_class_order_row_ties_and_opaque_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+======================================================================
+FAIL: test_train_only_statistics_and_query_batch_invariance (test_research_neighbors.MixedNeighborsTests.test_train_only_statistics_and_query_batch_invariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 55, in setUp
+    self.assertIsNotNone(MixedNeighborsClassifier, "MixedNeighborsClassifier is not implemented")
+AssertionError: unexpectedly None : MixedNeighborsClassifier is not implemented
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+FAILED (failures=8)
+TDD GREEN attempt: .venv-ml/Scripts/python.exe -m unittest discover -s tests -p test_research_neighbors.py -v
+test_all_missing_constants_and_infinities_remain_finite (test_research_neighbors.MixedNeighborsTests.test_all_missing_constants_and_infinities_remain_finite) ... ok
+test_blocked_distance_matches_scalar_brute_force (test_research_neighbors.MixedNeighborsTests.test_blocked_distance_matches_scalar_brute_force) ... ok
+test_categorical_only_preserves_missing_and_lexical_values (test_research_neighbors.MixedNeighborsTests.test_categorical_only_preserves_missing_and_lexical_values) ... ok
+test_column_reordering_is_safe_and_invalid_shapes_are_rejected (test_research_neighbors.MixedNeighborsTests.test_column_reordering_is_safe_and_invalid_shapes_are_rejected) ... ok
+test_default_25_neighbors_equal_votes_and_short_training (test_research_neighbors.MixedNeighborsTests.test_default_25_neighbors_equal_votes_and_short_training) ... ok
+test_numeric_missing_flag_distinguishes_imputed_equal_values (test_research_neighbors.MixedNeighborsTests.test_numeric_missing_flag_distinguishes_imputed_equal_values) ... ok
+test_train_class_order_row_ties_and_opaque_labels (test_research_neighbors.MixedNeighborsTests.test_train_class_order_row_ties_and_opaque_labels) ... ok
+test_train_only_statistics_and_query_batch_invariance (test_research_neighbors.MixedNeighborsTests.test_train_only_statistics_and_query_batch_invariance) ... FAIL
+
+======================================================================
+FAIL: test_train_only_statistics_and_query_batch_invariance (test_research_neighbors.MixedNeighborsTests.test_train_only_statistics_and_query_batch_invariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_neighbors.py", line 86, in test_train_only_statistics_and_query_batch_invariance
+    np.testing.assert_array_equal(batched[:1], [[0, 1, 0, 0, 0]])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\numpy\testing\_private\utils.py", line 920, in assert_array_equal
+    assert_array_compare(operator.__eq__, x, y, err_msg=err_msg,
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\numpy\testing\_private\utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 5 (40%)
+Max absolute difference: 1.
+Max relative difference: 1.
+ x: array([[0., 0., 1., 0., 0.]])
+ y: array([[0, 1, 0, 0, 0]])
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.301s
+
+FAILED (failures=1)
+TDD GREEN final: .venv-ml/Scripts/python.exe -m unittest discover -s tests -p test_research_neighbors.py -v
+test_all_missing_constants_and_infinities_remain_finite (test_research_neighbors.MixedNeighborsTests.test_all_missing_constants_and_infinities_remain_finite) ... ok
+test_blocked_distance_matches_scalar_brute_force (test_research_neighbors.MixedNeighborsTests.test_blocked_distance_matches_scalar_brute_force) ... ok
+test_categorical_only_preserves_missing_and_lexical_values (test_research_neighbors.MixedNeighborsTests.test_categorical_only_preserves_missing_and_lexical_values) ... ok
+test_column_reordering_is_safe_and_invalid_shapes_are_rejected (test_research_neighbors.MixedNeighborsTests.test_column_reordering_is_safe_and_invalid_shapes_are_rejected) ... ok
+test_default_25_neighbors_equal_votes_and_short_training (test_research_neighbors.MixedNeighborsTests.test_default_25_neighbors_equal_votes_and_short_training) ... ok
+test_numeric_missing_flag_distinguishes_imputed_equal_values (test_research_neighbors.MixedNeighborsTests.test_numeric_missing_flag_distinguishes_imputed_equal_values) ... ok
+test_train_class_order_row_ties_and_opaque_labels (test_research_neighbors.MixedNeighborsTests.test_train_class_order_row_ties_and_opaque_labels) ... ok
+test_train_only_statistics_and_query_batch_invariance (test_research_neighbors.MixedNeighborsTests.test_train_only_statistics_and_query_batch_invariance) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.315s
+
+OK
+SYNTHETIC PERFORMANCE ONLY: 7000 train x 1700 query, 16 numeric + 6 categorical; fit+predict=0.800s; finite=True; max_normalization_error=1.11e-16; linear-pair-count extrapolation to 70000x17000=80.0s (not full-scale verification).

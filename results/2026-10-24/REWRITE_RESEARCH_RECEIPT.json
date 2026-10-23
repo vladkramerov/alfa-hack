@@ -1,0 +1,59 @@
+{
+  "status": "implemented_not_promoted",
+  "spec": "SPEC010",
+  "comparisons": {
+    "regression": {
+      "control": 42.46005247026025,
+      "candidate": 58.58032538035888,
+      "relative_gain": -0.3796573949452734,
+      "inner": 61.25577980475285
+    },
+    "multiclass": {
+      "control": 0.6103340454456273,
+      "candidate": 0.4803098632106223,
+      "relative_gain": -0.21303773434442702,
+      "inner": 0.459744100268895
+    }
+  },
+  "verification_checks": 113,
+  "unit_tests": 257,
+  "clean_cli_cases": 4,
+  "synthetic_cli_fits": 8,
+  "new_scientific_learner_fits": 4,
+  "authorized_control_component_fits": 17,
+  "top_level_fit_claims": 6,
+  "old_outer_validation_refits": 0,
+  "production_sources_match_frozen": {
+    "automl_advanced.py": true,
+    "automl_class_combo.py": true,
+    "automl_combo_memory.py": true,
+    "automl_combo_policy.py": true,
+    "automl_data.py": true,
+    "automl_feature_sets.py": true,
+    "automl_history.py": true,
+    "automl_known.py": true,
+    "automl_llm.py": true,
+    "automl_models.py": true,
+    "automl_next_class.py": true,
+    "automl_next_reg.py": true,
+    "automl_preprocessing.py": true,
+    "automl_reg_combo.py": true,
+    "automl_temporal_memory.py": true,
+    "automl_worker.py": true,
+    "experiments/clean_control_worker.py": true,
+    "research_agent.py": true,
+    "research_data.py": true,
+    "research_fm.py": true,
+    "research_memory.py": true,
+    "research_neighbors.py": true,
+    "rewrite_solution.py": true
+  },
+  "new_archive_created": false,
+  "preserved_archive": "dist\\solution_alternative_v2.zip",
+  "preserved_archive_sha256": "a51d351d8657aa04bd6a1628fa0204de3a805f49a1de29f732aa793dd8901cb7",
+  "preserved_archive_bytes": 61330,
+  "platform_api_verified": false,
+  "private_quality_verified": false,
+  "branch": "ivan_branch",
+  "report": "series-clean-rewrite-v1/REPORT.md"
+}

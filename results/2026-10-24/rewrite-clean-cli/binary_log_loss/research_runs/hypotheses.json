@@ -1,0 +1,71 @@
+[
+  {
+    "recipe": {
+      "family": "mixed_neighbors",
+      "parameters": {
+        "n_neighbors": 25
+      }
+    },
+    "X_sha256": "c53e53663692fbfa35ef63ec0d49aca52c10db78e83317beefac5fc5890f3db0",
+    "y_sha256": "593af6a79ea8abf42d64e1a3ee89aab65d76646843cd73c5ac90a49bc97588c0",
+    "fingerprint": "52a68da231cb31e611bf07284898fcd898dd50d10b2ae7f08f5701afcf3922b9",
+    "status": "completed",
+    "stage": "evaluate",
+    "started": "2026-10-24T01:02:17.268445+03:00",
+    "ledger_sha256": "ad8102550d800d51a037c97f5c389722b7f2a1da171a60746f3630e71ca6e37b",
+    "mode": "evaluate",
+    "metric": "log_loss",
+    "score": 2.220446049250313e-16,
+    "fit_rows": 64,
+    "valid_rows": 26,
+    "validation_X_sha256": "662b896ead24e00e0d7ad7ccbf8c68fa4cba7a3d6215f07803028956a6e71113",
+    "validation_y_sha256": "c59f8fdbc271a11ac320d02d4040fa6c10538ab0c9b9509af9dbb219f06c08fe",
+    "diagnostics": {
+      "task_type": "classification",
+      "rows": 26,
+      "classes": 2,
+      "per_class": [
+        {
+          "class": "NA",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 13
+        },
+        {
+          "class": "001",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 13
+        }
+      ],
+      "omitted_classes": 0,
+      "confusion_pairs": []
+    },
+    "seconds": 0.046000000002095476,
+    "finished": "2026-10-24T01:02:17.293477+03:00"
+  },
+  {
+    "recipe": {
+      "family": "mixed_neighbors",
+      "parameters": {
+        "n_neighbors": 25
+      }
+    },
+    "X_sha256": "3ac0e132d7f26f7c3ff22ee964b3a646f4356b3433a1f60720c68819f2941179",
+    "y_sha256": "1235ceed8973de627bdb0f3eaba81008bec8f954bce695edd68141f5bd742d02",
+    "fingerprint": "16c03094500fc22f1f3814f145ce2cbbfd3db8763bb1d553b3168f3e3daad9ca",
+    "status": "completed",
+    "stage": "refit",
+    "started": "2026-10-24T01:02:19.303603+03:00",
+    "ledger_sha256": "ad8102550d800d51a037c97f5c389722b7f2a1da171a60746f3630e71ca6e37b",
+    "mode": "refit",
+    "train_rows": 90,
+    "submission_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\research_runs\\final-1792792937488472200\\candidate_submission.csv",
+    "test_X_sha256": "5fd862b4b380bbedac8b52a8b394e886979ddb7fdba7465c07dc15e0635dd92c",
+    "sample_sha256": "0f7bc9dc57c8d90cecabdd2d149fd361d43b19514b7126e7e515669aef7cac97",
+    "seconds": 0.0470000000204891,
+    "finished": "2026-10-24T01:02:19.320988+03:00"
+  }
+]

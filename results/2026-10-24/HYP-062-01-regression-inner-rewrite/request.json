@@ -1,0 +1,20 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\regression\\task.md",
+  "recipe": {
+    "family": "factorization_machine",
+    "parameters": {
+      "rank": 8,
+      "epochs": 20,
+      "batch_size": 512,
+      "learning_rate": 0.005,
+      "l2": 0.001
+    }
+  },
+  "mode": "inner",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-062-01-regression-inner-rewrite",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-062-01-regression-inner-rewrite\\splits.npz",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md",
+  "worker_source": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\source\\research_agent.py",
+  "control_fit_log": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\control-fits"
+}

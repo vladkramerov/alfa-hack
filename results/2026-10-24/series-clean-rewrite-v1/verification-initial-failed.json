@@ -1,0 +1,477 @@
+{
+  "status": "failed",
+  "checks_passed": 110,
+  "checks": [
+    {
+      "name": "immutable source automl_advanced.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_class_combo.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_combo_memory.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_combo_policy.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_data.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_feature_sets.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_history.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_known.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_llm.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_models.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_next_class.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_next_reg.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_reg_combo.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_temporal_memory.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source automl_worker.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source experiments/clean_control_worker.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source research_agent.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source research_data.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source research_fm.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source research_memory.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source research_neighbors.py",
+      "passed": true
+    },
+    {
+      "name": "immutable source rewrite_solution.py",
+      "passed": true
+    },
+    {
+      "name": "no old agent dependency research_agent.py",
+      "passed": true
+    },
+    {
+      "name": "no old agent dependency research_data.py",
+      "passed": true
+    },
+    {
+      "name": "no old agent dependency research_fm.py",
+      "passed": true
+    },
+    {
+      "name": "no old agent dependency research_memory.py",
+      "passed": true
+    },
+    {
+      "name": "no old agent dependency research_neighbors.py",
+      "passed": true
+    },
+    {
+      "name": "original train SHA regression",
+      "passed": true
+    },
+    {
+      "name": "original test SHA regression",
+      "passed": true
+    },
+    {
+      "name": "original sample SHA regression",
+      "passed": true
+    },
+    {
+      "name": "original dictionary SHA regression",
+      "passed": true
+    },
+    {
+      "name": "original task SHA regression",
+      "passed": true
+    },
+    {
+      "name": "regression/inner frozen split",
+      "passed": true
+    },
+    {
+      "name": "regression/inner disjoint valid positions",
+      "passed": true
+    },
+    {
+      "name": "inner strictly past training",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation frozen split",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation disjoint valid positions",
+      "passed": true
+    },
+    {
+      "name": "confirmation strictly past training",
+      "passed": true
+    },
+    {
+      "name": "regression inner wholly inside confirmation training",
+      "passed": true
+    },
+    {
+      "name": "regression confirmation differs from old outer",
+      "passed": true
+    },
+    {
+      "name": "regression/inner terminal status",
+      "passed": true
+    },
+    {
+      "name": "regression/inner human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "regression/inner per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "regression/inner actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "regression/inner saved y from original CSV",
+      "passed": false
+    },
+    {
+      "name": "regression/inner exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "regression/inner independent score",
+      "passed": true
+    },
+    {
+      "name": "regression/inner finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation terminal status",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation saved y from original CSV",
+      "passed": false
+    },
+    {
+      "name": "regression/confirmation exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation independent score",
+      "passed": true
+    },
+    {
+      "name": "regression/confirmation finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "regression/control terminal status",
+      "passed": true
+    },
+    {
+      "name": "regression/control human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "regression/control per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "regression/control actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "regression/control saved y from original CSV",
+      "passed": false
+    },
+    {
+      "name": "regression/control exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "regression/control independent score",
+      "passed": true
+    },
+    {
+      "name": "regression/control finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "regression no foreign frozen meta",
+      "passed": true
+    },
+    {
+      "name": "original train SHA multiclass",
+      "passed": true
+    },
+    {
+      "name": "original test SHA multiclass",
+      "passed": true
+    },
+    {
+      "name": "original sample SHA multiclass",
+      "passed": true
+    },
+    {
+      "name": "original dictionary SHA multiclass",
+      "passed": true
+    },
+    {
+      "name": "original task SHA multiclass",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner frozen split",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner disjoint valid positions",
+      "passed": true
+    },
+    {
+      "name": "inner raw groups do not cross",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation frozen split",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation disjoint valid positions",
+      "passed": true
+    },
+    {
+      "name": "confirmation raw groups do not cross",
+      "passed": true
+    },
+    {
+      "name": "multiclass inner wholly inside confirmation training",
+      "passed": true
+    },
+    {
+      "name": "multiclass confirmation differs from old outer",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner terminal status",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner saved y from original CSV",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner independent score",
+      "passed": true
+    },
+    {
+      "name": "multiclass/inner finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "inner class/probability contract",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation terminal status",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation saved y from original CSV",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation independent score",
+      "passed": true
+    },
+    {
+      "name": "multiclass/confirmation finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "confirmation class/probability contract",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control terminal status",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control human ledger read before fit",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control per-run split equals frozen protocol",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control actual fit lineage matches frozen training data",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control saved y from original CSV",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control exact validation positions",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control independent score",
+      "passed": true
+    },
+    {
+      "name": "multiclass/control finite correct-shape predictions",
+      "passed": true
+    },
+    {
+      "name": "control class/probability contract",
+      "passed": true
+    },
+    {
+      "name": "multiclass no foreign frozen meta",
+      "passed": true
+    },
+    {
+      "name": "H48 newly learned training-only meta",
+      "passed": true
+    },
+    {
+      "name": "actual learner claims all unique",
+      "passed": true
+    },
+    {
+      "name": "actual learner claims all terminal and ledger read",
+      "passed": true
+    },
+    {
+      "name": "old component fits unique",
+      "passed": true
+    },
+    {
+      "name": "HYP-052 within total 900sec worker budget",
+      "passed": true
+    },
+    {
+      "name": "HYP-062 within total 900sec worker budget",
+      "passed": true
+    }
+  ],
+  "comparisons": {
+    "regression": {
+      "control": 42.46005247026025,
+      "candidate": 58.58032538035887,
+      "relative_gain": -0.37965739494527323,
+      "inner": 61.25577980475285
+    },
+    "multiclass": {
+      "control": 0.6103340454456273,
+      "candidate": 0.4803098632106223,
+      "relative_gain": -0.21303773434442702,
+      "inner": 0.459744100268895
+    }
+  },
+  "promotion": false,
+  "learner_claims": 6,
+  "old_component_fit_claims": 17,
+  "verifier_model_fits": 0,
+  "private_score_verified": false
+}

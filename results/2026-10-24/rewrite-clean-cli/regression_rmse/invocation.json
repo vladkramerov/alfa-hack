@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\.venv-ml\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\source\\solution.py",
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\regression_rmse\\task.md",
+    "--max-experiments",
+    "1",
+    "--time-budget",
+    "45",
+    "--hypothesis-budget",
+    "15"
+  ],
+  "cwd": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\source",
+  "api_environment_cleared": true,
+  "input_sha256": {
+    "task.md": "6b5b6afa11a374bc945ca508da44dd5128d98c608a246397c7cc061a205a9587",
+    "inputs\\unfamiliar\\column_notes.csv": "f45ce873458aab6793c860273c8e30dbad25c89b50fd46b0d0cf49051320aa8c",
+    "inputs\\unfamiliar\\expected_format.csv": "30c6c50a3f1477eee9495b3f0d352ae140dcec7b950f96a7c538e4f6c01ff820",
+    "inputs\\unfamiliar\\learning_table.csv": "90bdc28d3ed110dc430a43d0563c34413f20414338248b14ae86522daa0f26a5",
+    "inputs\\unfamiliar\\unknown_rows.csv": "2cafc688baf11d095200daeeeda3a4f381c3aeceeca0d46c485f6f8af8718e23"
+  }
+}

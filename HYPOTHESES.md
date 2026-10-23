@@ -373,3 +373,21 @@ Optuna: все16 параметрических попыток сохранен�
 - SPEC009 2026-10-24T00:17:48.826368+03:00: **HYP-060/multiclass**: completed, macro_f1=0.567987406329944; Не подтверждена по заданному критерию; [отчёт](results/2026-10-24/HYP-060-02-multiclass-alternatives/report.md). Повтор запрещён.
 
 - HYP-065 диагностика:6/8выявиладвеошибки; послеотдельногоCSVcodecfix8/8green,publicdata/dtypes/splitстрогонеизменны,publicfits0. [Первыйотчёт](results/2026-10-24/HYP-065-01-schema-semantics/report.md), [fixverification](results/2026-10-24/HYP-065-02-schema-codec-fix/verification.json). Не новаямодельнаяметрика.
+
+- Grill-me, 2026-10-24: завершён read-only аудит текущего решения и срезов сохранённых ошибок; 0 новых fit, H52/H62/H61 не запускались. [Отчёт и прямые решения пользователя Q1–Q5](results/2026-10-24/grill-current-solution/report.md). Лимит новой гипотезы 900 секунд, предобработка по данным/модели; разрешено одно дополнительное сравнение финалистов с текущим лидером. При компромиссе выигрыш строго >15%, ухудшение другой метрики строго <10%, проценты относительные; без просадки достаточно подтверждённого выигрыша. Конкретный план ожидает итогового подтверждения в запрошенном grilling.
+
+- SPEC010, 2026-10-24, **до новых fit**: пользователь явно подтвердил итоговый план grill. Зарегистрированы [HYP-052](docs/hypotheses/HYP-052.md) и [HYP-062](docs/hypotheses/HYP-062.md) для новых frozen inner/confirmation протоколов. H52: exact25NN mixed capped L1+categorical; H62: rank8 FM squaredloss originalscale,20epochs Adam. На каждую до900сек; старый outer не переобучается. Однократный контроль H48/H69 на дополнительном confirmation прямо разрешён, без frozen meta-state чужого fold. Исходы пока не получены; перепись агента не считается победой.
+
+- SPEC010 итог2026-10-24: **HYP-052 и HYP-062 не подтверждены по критерию улучшения**, повтор запрещён. На сопоставимых новых confirmation: H52 Macro-F1.4803098632106223 vs H48.6103340454456273 (−21.3038%); H62 RMSE58.58032538035888 vs H6942.46005247026025 (+37.9657%ошибка).113/113сверок,257unit,4cleanCLI; научные4newlearnerfits+17authorizedcontrolcomponents, старыйouter0refits. Прежний baseline/ZIPсохранён; новое исследовательское решение не продвинуто. [Итог](results/2026-10-24/series-clean-rewrite-v1/REPORT.md).
+
+- SPEC010 2026-10-24T00:56:45.500264+03:00: **HYP-062/regression/inner**: completed, rmse=61.25577980475285; [отчёт](results/2026-10-24/HYP-062-01-regression-inner-rewrite/report.md). Новый механизм; параметры не выбирались по confirmation. Повтор этой проверки запрещён.
+
+- SPEC010 2026-10-24T00:56:49.641920+03:00: **HYP-062/regression/confirmation**: completed, rmse=58.58032538035888; [отчёт](results/2026-10-24/HYP-062-02-regression-confirmation-rewrite/report.md). Новый механизм; параметры не выбирались по confirmation. Повтор этой проверки запрещён.
+
+- SPEC010 2026-10-24T00:57:14.468637+03:00: **HYP-062/regression/control**: completed, rmse=42.46005247026025; [отчёт](results/2026-10-24/HYP-062-03-regression-control-rewrite/report.md). Это разрешённая сравнительная проверка старого лидера на новом confirmation, без frozen public meta-state. Повтор этой проверки запрещён.
+
+- SPEC010 2026-10-24T00:59:06.521233+03:00: **HYP-052/multiclass/inner**: completed, macro_f1=0.459744100268895; [отчёт](results/2026-10-24/HYP-052-01-multiclass-inner-rewrite/report.md). Новый механизм; параметры не выбирались по confirmation. Повтор этой проверки запрещён.
+
+- SPEC010 2026-10-24T01:01:14.673014+03:00: **HYP-052/multiclass/confirmation**: completed, macro_f1=0.4803098632106223; [отчёт](results/2026-10-24/HYP-052-02-multiclass-confirmation-rewrite/report.md). Новый механизм; параметры не выбирались по confirmation. Повтор этой проверки запрещён.
+
+- SPEC010 2026-10-24T01:08:03.686011+03:00: **HYP-052/multiclass/control**: completed, macro_f1=0.6103340454456273; [отчёт](results/2026-10-24/HYP-052-03-multiclass-control-rewrite/report.md). Это разрешённая сравнительная проверка старого лидера на новом confirmation, без frozen public meta-state. Повтор этой проверки запрещён.

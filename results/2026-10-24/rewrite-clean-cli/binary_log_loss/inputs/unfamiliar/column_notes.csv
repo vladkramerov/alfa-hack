@@ -1,0 +1,7 @@
+column,description
+opaque_key,opaque_key
+signal,signal
+category,category
+partly_missing,partly_missing
+empty_feature,empty_feature
+outcome_strange,outcome_strange

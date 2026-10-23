@@ -1,0 +1,119 @@
+{
+  "created": "2026-10-24T00:56:29.616887+03:00",
+  "sources": {
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_combo_policy.py": "8935f17b1cda3723cd0982a416c7fd40261a598bc0c2d01e8a1b18310a89325a",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_history.py": "2326759cf9f5bc0035429a2ca18fa97a9f7265f0ea1b0c671914570e673438b7",
+    "automl_known.py": "1f30881571f6027f97499402dfffcbb19c8c0f886204d763891f5f794b491638",
+    "automl_llm.py": "b045e5598bdcad98a698b476a26937041457cfd9638b9f14724f2743d7c943b8",
+    "automl_models.py": "be94f1bd0635385ee0f015d736b6039909d2eaa966bc2b96c86d55f354e899b3",
+    "automl_next_class.py": "2200fa118a5022ab7fdc61f5aedf5eda3f1a9e60bd7ddadfdff6e2d90c01bf36",
+    "automl_next_reg.py": "52de1f880e2b77adf1d1b5182b67fb26dbe9a945d4e6b61a6d9fea0184dacd6d",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "automl_worker.py": "2e864601d00265a35e9708bdf556ab5b5e267d807f3c6fd33b333f536a09d514",
+    "experiments/clean_control_worker.py": "fe4b072223374759673e74bd0f975876c05fb57e252b78ba3fa35400d55fad92",
+    "research_agent.py": "560a29497550081594cfd198292eef30d44eb0a3200f5485bd14d457ecf181f1",
+    "research_data.py": "326ad14b24a9fad0c0478caa9afb5125929223bb8fdb94429493dcd467769b62",
+    "research_fm.py": "18697281eeabb5ce3f992abaacde353175507c53f04f3f0b838afccce9d61f61",
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8",
+    "research_neighbors.py": "5bce0c914cadf324898e603f7c1b35add9f5405a94acbfaf4750b230ce053b88",
+    "rewrite_solution.py": "448ad7527f6f3e4155fea4992623fe35151177985d9bb1121c12866a71433559"
+  },
+  "jobs": [
+    {
+      "hypothesis": "HYP-052",
+      "task": "multiclass",
+      "recipe": {
+        "family": "mixed_neighbors",
+        "parameters": {
+          "n_neighbors": 25
+        }
+      }
+    },
+    {
+      "hypothesis": "HYP-062",
+      "task": "regression",
+      "recipe": {
+        "family": "factorization_machine",
+        "parameters": {
+          "rank": 8,
+          "epochs": 20,
+          "batch_size": 512,
+          "learning_rate": 0.005,
+          "l2": 0.001
+        }
+      }
+    }
+  ],
+  "datasets": {
+    "multiclass": {
+      "hashes": {
+        "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+        "task": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+      },
+      "description": {
+        "kind": "stratified_group",
+        "n_splits": 5,
+        "fold": 0,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": 43379,
+        "fit_rows": 56025,
+        "valid_rows": 13721
+      },
+      "stages": {
+        "inner": {
+          "fit_rows": 56025,
+          "valid_rows": 13721,
+          "split_sha256": "caaf0e17364fc125aeeb5be2c4d915dad1eccbf17ab1fe7aa78cb46ab505103b"
+        },
+        "confirmation": {
+          "fit_rows": 69746,
+          "valid_rows": 17924,
+          "split_sha256": "568d58068d965b21bc078e43e30f6dbb92f48b7d687d08028184abc6449ca586"
+        }
+      }
+    },
+    "regression": {
+      "hashes": {
+        "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+        "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+      },
+      "description": {
+        "kind": "temporal",
+        "column": "Year_Factor",
+        "cutoff": 3.0,
+        "fit_rows": 11175,
+        "valid_rows": 10879
+      },
+      "stages": {
+        "inner": {
+          "fit_rows": 11175,
+          "valid_rows": 10879,
+          "split_sha256": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198"
+        },
+        "confirmation": {
+          "fit_rows": 22054,
+          "valid_rows": 12946,
+          "split_sha256": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5"
+        }
+      }
+    }
+  },
+  "budget_seconds_per_hypothesis": 900,
+  "control_exception": "user confirmed Q3 + final plan",
+  "old_outer_validation_refits": 0,
+  "additional_confirmation_is_not_private_proof": true
+}

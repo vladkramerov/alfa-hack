@@ -1,0 +1,14 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "recipe": {
+    "family": "old_leader",
+    "strategy": "probability_stacking"
+  },
+  "mode": "control",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-052-03-multiclass-control-rewrite",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-052-03-multiclass-control-rewrite\\splits.npz",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md",
+  "worker_source": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\source\\experiments\\clean_control_worker.py",
+  "control_fit_log": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\control-fits"
+}

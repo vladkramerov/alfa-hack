@@ -1,5 +1,9 @@
 # Alfa Hack: AutoResearch ML-агент
 
+## Независимая реализация SPEC010 — без продвижения
+
+После согласованного grill-me написан отдельный [rewrite_solution.py](rewrite_solution.py) с research_*.py: диагностика inner-ошибок, preprocessing по модели, persistent history, bounded LLM/fallback, новые FM и mixed25NN. **H52/H62 не улучшили метрики**, поэтому прежние solution.py/baseline/ZIP ниже сохранены. На дополнительных одинаковых разбиениях RMSE58.580325 vs42.460052; Macro-F1.480310 vs.610334. [Отчёт и113сверок](results/2026-10-24/series-clean-rewrite-v1/REPORT.md);257unitтестов и4cleanCLI. Не загружать исследовательскую реализацию как доказанно улучшенную поставку; новогоZIPнет.
+
 ## Текущая версия — SPEC-009
 
 [Новый ZIP](dist/solution_alternative_v2.zip): 61 330 байт, 16 файлов в корне, исходный requirements.txt. Временная память по физическому профилю использует только train-годы строго раньше года запроса, без ID в ключе, и возвращается к H43 для неизвестных профилей. **Локальный RMSE 39.39219382766771** вместо40.972997661684175; **Macro-F1 0.6495311620074445**, лучшим остался H48. Конфигурации в [baseline.json](baseline.json).

@@ -1,0 +1,263 @@
+{
+  "hypothesis": "HYP-052",
+  "task": "multiclass",
+  "stage": "confirmation",
+  "recipe": {
+    "family": "mixed_neighbors",
+    "parameters": {
+      "n_neighbors": 25
+    }
+  },
+  "status": "completed",
+  "started": "2026-10-24T00:59:06.523793+03:00",
+  "directory": "results\\2026-10-24\\HYP-052-02-multiclass-confirmation-rewrite",
+  "ledger_sha256_before_fit": "ef999517e54e0445280de4a779ac3a40034610223c5e2d43697e7b09b8e0f622",
+  "sources": {
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_combo_policy.py": "8935f17b1cda3723cd0982a416c7fd40261a598bc0c2d01e8a1b18310a89325a",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_history.py": "2326759cf9f5bc0035429a2ca18fa97a9f7265f0ea1b0c671914570e673438b7",
+    "automl_known.py": "1f30881571f6027f97499402dfffcbb19c8c0f886204d763891f5f794b491638",
+    "automl_llm.py": "b045e5598bdcad98a698b476a26937041457cfd9638b9f14724f2743d7c943b8",
+    "automl_models.py": "be94f1bd0635385ee0f015d736b6039909d2eaa966bc2b96c86d55f354e899b3",
+    "automl_next_class.py": "2200fa118a5022ab7fdc61f5aedf5eda3f1a9e60bd7ddadfdff6e2d90c01bf36",
+    "automl_next_reg.py": "52de1f880e2b77adf1d1b5182b67fb26dbe9a945d4e6b61a6d9fea0184dacd6d",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "automl_worker.py": "2e864601d00265a35e9708bdf556ab5b5e267d807f3c6fd33b333f536a09d514",
+    "experiments/clean_control_worker.py": "fe4b072223374759673e74bd0f975876c05fb57e252b78ba3fa35400d55fad92",
+    "research_agent.py": "560a29497550081594cfd198292eef30d44eb0a3200f5485bd14d457ecf181f1",
+    "research_data.py": "326ad14b24a9fad0c0478caa9afb5125929223bb8fdb94429493dcd467769b62",
+    "research_fm.py": "18697281eeabb5ce3f992abaacde353175507c53f04f3f0b838afccce9d61f61",
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8",
+    "research_neighbors.py": "5bce0c914cadf324898e603f7c1b35add9f5405a94acbfaf4750b230ce053b88",
+    "rewrite_solution.py": "448ad7527f6f3e4155fea4992623fe35151177985d9bb1121c12866a71433559"
+  },
+  "data": {
+    "hashes": {
+      "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+      "task": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+    },
+    "description": {
+      "kind": "stratified_group",
+      "n_splits": 5,
+      "fold": 0,
+      "shuffle": true,
+      "random_state": 42,
+      "groups": 43379,
+      "fit_rows": 56025,
+      "valid_rows": 13721
+    },
+    "stages": {
+      "inner": {
+        "fit_rows": 56025,
+        "valid_rows": 13721,
+        "split_sha256": "caaf0e17364fc125aeeb5be2c4d915dad1eccbf17ab1fe7aa78cb46ab505103b"
+      },
+      "confirmation": {
+        "fit_rows": 69746,
+        "valid_rows": 17924,
+        "split_sha256": "568d58068d965b21bc078e43e30f6dbb92f48b7d687d08028184abc6449ca586"
+      }
+    }
+  },
+  "source_snapshot": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\source",
+  "split_sha256": "568d58068d965b21bc078e43e30f6dbb92f48b7d687d08028184abc6449ca586",
+  "mode": "confirmation",
+  "metric": "macro_f1",
+  "score": 0.4803098632106223,
+  "fit_rows": 69746,
+  "valid_rows": 17924,
+  "validation_X_sha256": "477e9ff6bade2d9dbc04a4e398b1f552f02a75c8605f0dce92a871d819091192",
+  "validation_y_sha256": "517ee4444c006c8acd8968aa2ff3e21b48b5d5237b2d2a2523e595523dacd390",
+  "diagnostics": {
+    "task_type": "classification",
+    "rows": 17924,
+    "classes": 10,
+    "per_class": [
+      {
+        "class": "Normal",
+        "precision": 0.9123034227567067,
+        "recall": 0.9089400921658987,
+        "f1": 0.9106186518928902,
+        "support": 5425
+      },
+      {
+        "class": "Exploits",
+        "precision": 0.6151399491094147,
+        "recall": 0.8206506364922207,
+        "f1": 0.7031874924251605,
+        "support": 3535
+      },
+      {
+        "class": "Reconnaissance",
+        "precision": 0.7604673807205453,
+        "recall": 0.6911504424778762,
+        "f1": 0.7241539174779786,
+        "support": 1130
+      },
+      {
+        "class": "Fuzzers",
+        "precision": 0.6689497716894978,
+        "recall": 0.6606538895152199,
+        "f1": 0.6647759500850823,
+        "support": 1774
+      },
+      {
+        "class": "DoS",
+        "precision": 0.3526570048309179,
+        "recall": 0.21693907875185736,
+        "f1": 0.2686292548298068,
+        "support": 1346
+      },
+      {
+        "class": "Backdoor",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 181
+      },
+      {
+        "class": "Generic",
+        "precision": 0.9965836993655441,
+        "recall": 0.9719181342217992,
+        "f1": 0.9840963855421687,
+        "support": 4202
+      },
+      {
+        "class": "Analysis",
+        "precision": 0.5769230769230769,
+        "recall": 0.075,
+        "f1": 0.13274336283185842,
+        "support": 200
+      },
+      {
+        "class": "Shellcode",
+        "precision": 0.5492957746478874,
+        "recall": 0.3333333333333333,
+        "f1": 0.4148936170212766,
+        "support": 117
+      },
+      {
+        "class": "Worms",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 14
+      }
+    ],
+    "omitted_classes": 0,
+    "confusion_pairs": [
+      {
+        "actual": "DoS",
+        "predicted": "Exploits",
+        "count": 969
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Fuzzers",
+        "count": 389
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "DoS",
+        "count": 356
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Normal",
+        "count": 322
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "Exploits",
+        "count": 292
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Exploits",
+        "count": 155
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "Exploits",
+        "count": 133
+      },
+      {
+        "actual": "Analysis",
+        "predicted": "Exploits",
+        "count": 125
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Fuzzers",
+        "count": 107
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Normal",
+        "count": 89
+      },
+      {
+        "actual": "Generic",
+        "predicted": "Exploits",
+        "count": 83
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Reconnaissance",
+        "count": 70
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Reconnaissance",
+        "count": 64
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Reconnaissance",
+        "count": 55
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "DoS",
+        "count": 54
+      },
+      {
+        "actual": "Analysis",
+        "predicted": "DoS",
+        "count": 42
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Exploits",
+        "count": 42
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "DoS",
+        "count": 38
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "DoS",
+        "count": 35
+      },
+      {
+        "actual": "Shellcode",
+        "predicted": "Reconnaissance",
+        "count": 34
+      }
+    ]
+  },
+  "seconds": 126.42199999999139,
+  "fingerprint": "f9d0c023a1bd88aee8d87bcd6ea17284fbaf58ba073905333c62718eba0e289d",
+  "finished": "2026-10-24T01:01:14.664493+03:00"
+}

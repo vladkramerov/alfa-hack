@@ -208,3 +208,19 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 
 | HYP-065 | schema diagnosis6/8→fixed8/8 | model fits0 | [proof](2026-10-24/HYP-065-02-schema-codec-fix/verification.json) |
 | HYP-068 | platformprovenance incomplete, score1376.762oldimprovedZIP | model fits0 | [report](2026-10-24/HYP-068-01-platform-provenance/report.md) |
+
+| grill-me 2026-10-24 | Аудит архитектуры, повторного использования holdout и срезов ошибок; Q1–Q5 зафиксированы | model fits 0; новых модельных метрик нет | [report](2026-10-24/grill-current-solution/report.md) |
+
+| SPEC010 итог | H52/H62 обе отрицательные; прежняя поставка сохранена |113/113audit,257unit,4cleanCLI; no newZIP|[report](2026-10-24/series-clean-rewrite-v1/REPORT.md)|
+
+| HYP-062 | regression/inner | completed, rmse=61.25577980475285 | [report](../results/2026-10-24/HYP-062-01-regression-inner-rewrite/report.md) |
+
+| HYP-062 | regression/confirmation | completed, rmse=58.58032538035888 | [report](../results/2026-10-24/HYP-062-02-regression-confirmation-rewrite/report.md) |
+
+| HYP-062 | regression/control | completed, rmse=42.46005247026025 | [report](../results/2026-10-24/HYP-062-03-regression-control-rewrite/report.md) |
+
+| HYP-052 | multiclass/inner | completed, macro_f1=0.459744100268895 | [report](../results/2026-10-24/HYP-052-01-multiclass-inner-rewrite/report.md) |
+
+| HYP-052 | multiclass/confirmation | completed, macro_f1=0.4803098632106223 | [report](../results/2026-10-24/HYP-052-02-multiclass-confirmation-rewrite/report.md) |
+
+| HYP-052 | multiclass/control | completed, macro_f1=0.6103340454456273 | [report](../results/2026-10-24/HYP-052-03-multiclass-control-rewrite/report.md) |

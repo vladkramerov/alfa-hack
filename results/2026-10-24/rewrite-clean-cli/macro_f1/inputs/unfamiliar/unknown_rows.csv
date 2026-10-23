@@ -1,0 +1,13 @@
+opaque_key,signal,category,partly_missing,empty_feature
+001,0.025,001,,
++1,10.025,NA,1.0,
+NA,0.025,001,0.0,
+test-000,10.025,NA,1.0,
+test-001,0.025,001,0.0,
+test-002,10.025,NA,1.0,
+test-003,0.025,001,0.0,
+test-004,10.025,NA,1.0,
+test-005,0.025,001,0.0,
+test-006,10.025,NA,1.0,
+test-007,0.025,001,0.0,
+test-008,10.025,unseen_category,1.0,

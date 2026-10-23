@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "mode": "evaluate",
+  "metric": "log_loss",
+  "score": 2.220446049250313e-16,
+  "fit_rows": 64,
+  "valid_rows": 26,
+  "validation_X_sha256": "662b896ead24e00e0d7ad7ccbf8c68fa4cba7a3d6215f07803028956a6e71113",
+  "validation_y_sha256": "c59f8fdbc271a11ac320d02d4040fa6c10538ab0c9b9509af9dbb219f06c08fe",
+  "diagnostics": {
+    "task_type": "classification",
+    "rows": 26,
+    "classes": 2,
+    "per_class": [
+      {
+        "class": "NA",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 13
+      },
+      {
+        "class": "001",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 13
+      }
+    ],
+    "omitted_classes": 0,
+    "confusion_pairs": []
+  },
+  "seconds": 0.046000000002095476,
+  "fingerprint": "52a68da231cb31e611bf07284898fcd898dd50d10b2ae7f08f5701afcf3922b9"
+}
