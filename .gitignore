@@ -11,3 +11,8 @@ results/**/submission.csv
 results/**/candidate_submission.csv
 results/**/preprocessor.joblib
 results/**/validation_predictions.npz
+results/**/*-model.joblib
+results/**/component-models/*.joblib
+results/**/regression-models/*.joblib
+# Local OOF arrays, fitted estimators and synthetic training data stay in results.
+results/**/cache/

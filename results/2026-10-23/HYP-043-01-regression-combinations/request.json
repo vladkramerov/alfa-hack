@@ -1,0 +1,27 @@
+{
+  "job": {
+    "number": 43,
+    "hypothesis": "HYP-043",
+    "task": "regression",
+    "candidate": {
+      "strategy": "reg_feature_experts",
+      "parameters": {},
+      "family": "extra_trees",
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "group_column": "building_class",
+      "minimum_expert_rows": 500,
+      "shrinkage": 500.0
+    },
+    "version": "spec008-v1",
+    "reference": 41.480963027907194
+  },
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\regression\\task.md",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-043-01-regression-combinations",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-043-01-regression-combinations\\splits.npz",
+  "cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache",
+  "legacy_cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache"
+}

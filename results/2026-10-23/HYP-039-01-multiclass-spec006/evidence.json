@@ -1,0 +1,49 @@
+{
+  "candidate": {
+    "number": 39,
+    "hypothesis": "HYP-039",
+    "task": "multiclass",
+    "version": "spec006-v1",
+    "policy": "light",
+    "reference": 0.5914513709191194,
+    "method": "advanced",
+    "configuration_source": "experiments/twenty_advanced.py"
+  },
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "fingerprint": "ca9b8fe5b7dc8bfd3b4afaa6b72086fe27d45efe0ad4f89e4a91065205b77462",
+  "directory": "results/2026-10-23/HYP-039-01-multiclass-spec006",
+  "status": "completed",
+  "started": "2026-10-23T23:06:51.973594+03:00",
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+    "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+    "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+    "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+  },
+  "ledger_sha256_before_fit": "803b5706209c454547222a22c5152e5a2bad3eb01f7fb9e4744a6da3c3cfd281",
+  "metric": "macro_f1",
+  "score": 0.5795834428470248,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "warnings": [],
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "seconds": 47.219000000011874,
+  "conclusion": "Не подтверждена по заданному критерию",
+  "finished": "2026-10-23T23:07:41.727174+03:00"
+}

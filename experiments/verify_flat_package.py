@@ -116,7 +116,9 @@ def main(archive_path=None):
     parent=ROOT/'results'/date/('platform-verification-'+str(time.time_ns())); parent.mkdir(parents=True,exist_ok=False)
     extracted=ROOT/'tmp'/('flat-'+str(time.time_ns())); extracted.mkdir(parents=True)
     with zipfile.ZipFile(archive_path) as archive:
-        assert len(archive.namelist())==len(MODULES) and set(archive.namelist())==MODULES
+        optional={'automl_advanced.py','automl_combo_memory.py','automl_feature_sets.py','automl_reg_combo.py','automl_class_combo.py','automl_combo_policy.py'}
+        expected_modules=MODULES | (optional & set(archive.namelist()))
+        assert len(archive.namelist())==len(expected_modules) and set(archive.namelist())==expected_modules
         assert all('/' not in name and '\\' not in name for name in archive.namelist())
         assert archive.read('requirements.txt')==(ROOT/'requirements.txt').read_bytes()
         archive.extractall(extracted)
@@ -181,7 +183,7 @@ def main(archive_path=None):
     finally: server.shutdown(); server.server_close()
     status='failed' if failure else 'passed'
     record={'status':status,'error':failure,'archive':str(archive_path),'archive_sha256':hashlib.sha256(archive_path.read_bytes()).hexdigest(),
-            'archive_root_files':sorted(MODULES),'mock_http_calls':Mock.calls,'real_platform_api_tested':False,'clean_extraction':str(extracted),'scenarios':results}
+            'archive_root_files':sorted(expected_modules),'mock_http_calls':Mock.calls,'real_platform_api_tested':False,'clean_extraction':str(extracted),'scenarios':results}
     (parent/'verification.json').write_text(json.dumps(record,indent=2,ensure_ascii=False),encoding='utf-8')
     (parent/'report.md').write_text('# Приёмка плоского пакета full-v1\n\nСтатус: '+status+'. Детали и фактически завершённые сценарии — [verification.json](verification.json). Пакет содержит только9 корневых файлов с неизменённым requirements; родительский и дочерние процессы запускаются из чистой распаковки. Сценарии: regression/classification с переименованными target/id, вложенными CSV, missing/unknown категориями и numeric; LLM-попытка отключить full-v1 принудительно канонизируется; worker/refit сохраняют preprocessing-audit и маски с пределом5%; primary MAE при примере RMSE сохраняет правильную метрику; пустой API сохраняет fallback; история допускает до6 skipped запросов, без нового validation fit. Полный refit истории допустим. HTTP-вызовы подсчитаны фактически, без предположения фиксированного числа. Синтетические данные — техническая проверка, не новая публичная ML-гипотеза. Реальный платформенный API не проверен; полный requirements с нуля не переустанавливался.\n',encoding='utf-8')
     print(json.dumps({'status':status,'scenarios':len(results),'mock_calls':Mock.calls,'verification':str(parent/'verification.json')}))

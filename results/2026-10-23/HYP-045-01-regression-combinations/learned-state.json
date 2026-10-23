@@ -1,0 +1,8 @@
+{
+  "candidate": {
+    "strategy": "target_tail_mixture",
+    "parameters": {},
+    "family": "xgboost",
+    "tail_quantile": 0.8
+  }
+}

@@ -1,6 +1,10 @@
 # Результаты проверок
 
-Актуально: [10 новых гипотез/11оценок](2026-10-23/TEN_HYPOTHESES_REPORT.md), затем [обязательная full-v1/2оценки](2026-10-23/FULL_PREPROCESSING_REPORT.md). Составная полная обработка ухудшила обе локальные метрики; нормализация выполнена по прямому требованию пользователя. [Итоговый новый ZIP](../dist/solution_full_preprocessing.zip), [75 тестов](2026-10-23/full-preprocessing-final-tests.log).
+Актуальная поставка SPEC-008: [solution_combined_metrics.zip](../dist/solution_combined_metrics.zip),57110байт; H43RMSE40.972998/H48Macro-F1.649531. [Семь сравнений](2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md),63проверки/24новыхfitбезповторов; [baseline](../baseline.json). Состояния приёмки ZIP фиксируются отдельными отчётами, скрытый score не измерен. Крупные OOFcache/модели/синтетические данные сохраняются локально и исключены из Git.
+
+Текущая поставка: [улучшенный ZIP](../dist/solution_improved_metrics.zip), H35RMSE41.480963/H37Macro-F1.628605; [сверка ZIP](2026-10-23/IMPROVED_DELIVERY.json). Все20новыхгипотеззавершены: [23метрикии2техническиеостановки](2026-10-23/TWENTY_HYPOTHESES_REPORT.md),539checksOK.126unitтестов,5mockсценариев,2fullrefit; повторныхvalidationfitнет.
+
+Предыдущая поставка: [10 новых гипотез/11оценок](2026-10-23/TEN_HYPOTHESES_REPORT.md), затем [обязательная full-v1/2оценки](2026-10-23/FULL_PREPROCESSING_REPORT.md). Составная полная обработка ухудшила обе локальные метрики; нормализация выполнена по прямому требованию пользователя. [Итоговый новый ZIP](../dist/solution_full_preprocessing.zip), [75 тестов](2026-10-23/full-preprocessing-final-tests.log).
 
 [Итоговый отчёт](2026-10-23/EXPERIMENT_REPORT.md) и [CSV всех оценок](2026-10-23/comparison.csv) доступны после завершения серии.
 
@@ -115,3 +119,67 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 - SPEC-004 HYP-019/multiclass: completed, macro_f1=0.5901110420481382; [отчёт](2026-10-23/HYP-019-01-multiclass-hierarchical/report.md).
 
 - SPEC-004 HYP-020/multiclass: completed, macro_f1=0.5829349072076985; [отчёт](2026-10-23/HYP-020-01-multiclass-inverse_group_weights/report.md).
+
+- SPEC-006 HYP-022/regression: completed, rmse=42.203267904780695; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-022-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-022/multiclass: completed, macro_f1=0.5615525355321143; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-022-02-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-023/regression: completed, rmse=43.19210947337134; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-023-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-024/regression: completed, rmse=42.18354628369281; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-024-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-025/multiclass: completed, macro_f1=0.5771726314994396; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-025-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-026/multiclass: completed, macro_f1=0.5793987048589155; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-026-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-027/multiclass: completed, macro_f1=0.5857385909681803; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-027-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-028/regression: failed, None=None; Недостаточно данных; [отчёт](2026-10-23/HYP-028-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-028/multiclass: failed, None=None; Недостаточно данных; [отчёт](2026-10-23/HYP-028-02-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-029/regression: completed, rmse=42.08610226703874; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-029-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-030/regression: completed, rmse=41.993466003366024; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-030-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-031/regression: completed, rmse=42.00460393727476; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-031-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-032/regression: completed, rmse=43.810373477573165; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-032-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-033/regression: completed, rmse=42.974266298635236; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-033-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-034/regression: completed, rmse=44.42393495521875; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-034-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-035/regression: completed, rmse=41.480963027907194; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-035-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-036/regression: completed, rmse=42.25509131431627; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-036-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-037/multiclass: completed, macro_f1=0.6286047899141216; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-037-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-038/multiclass: completed, macro_f1=0.595178021245499; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-038-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-039/multiclass: completed, macro_f1=0.5795834428470248; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-039-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-040/multiclass: completed, macro_f1=0.5922402460598002; Подтверждена в проверенных условиях; [отчёт](2026-10-23/HYP-040-01-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-041/regression: completed, rmse=42.19670002719412; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-041-01-regression-spec006/report.md).
+
+- SPEC-006 HYP-041/multiclass: completed, macro_f1=0.5914513709191194; Не подтверждена по заданному критерию; [отчёт](2026-10-23/HYP-041-02-multiclass-spec006/report.md).
+
+- SPEC-006 HYP-028/regression, техническое продолжение безповтораinner: completed, rmse=42.245303736669484; Не подтверждена по заданному критерию; [отчёт](../results/2026-10-23/HYP-028-03-regression-guard-continuation/report.md). Повтор не запускать.
+
+- SPEC-006 HYP-028/multiclass, техническое продолжение безповтораinner: completed, macro_f1=0.5676156935900548; Не подтверждена по заданному критерию; [отчёт](../results/2026-10-23/HYP-028-04-multiclass-guard-continuation/report.md). Повтор не запускать.
+
+| HYP-042 | regression | completed, rmse=41.5048413147343; Не подтверждена по заданному критерию | [report](../results/2026-10-23/HYP-042-01-regression-combinations/report.md) |
+
+| HYP-043 | regression | completed, rmse=40.972997661684175; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-043-01-regression-combinations/report.md) |
+
+| HYP-044 | regression | completed, rmse=41.94416116050523; Не подтверждена по заданному критерию | [report](../results/2026-10-23/HYP-044-01-regression-combinations/report.md) |
+
+| HYP-045 | regression | completed, rmse=41.406800898690484; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-045-01-regression-combinations/report.md) |
+
+| HYP-046 | multiclass | completed, macro_f1=0.6154359833457845; Не подтверждена по заданному критерию | [report](../results/2026-10-23/HYP-046-01-multiclass-combinations/report.md) |
+
+| HYP-047 | multiclass | completed, macro_f1=0.6336560111990485; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-047-01-multiclass-combinations/report.md) |
+
+| HYP-048 | multiclass | completed, macro_f1=0.6495311620074445; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-048-01-multiclass-combinations/report.md) |

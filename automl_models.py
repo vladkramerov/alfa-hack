@@ -12,7 +12,35 @@ from sklearn.preprocessing import LabelEncoder
 def canonical_candidate(candidate):
     result=dict(candidate)
     result['parameters']=dict(candidate.get('parameters',{}))
-    result.update(preprocessing='full-v1',scale=True,max_outlier_fraction=.05)
+    strategy=result.get('strategy')
+    if strategy in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}:
+        from automl_combo_policy import canonical_combo
+        return canonical_combo(result)
+    if strategy in ['group_experts','macro_f1_calibrated']:
+        if result.get('feature_code','').strip(): raise ValueError('Advanced strategies use their versioned preprocessing without generated features')
+        if strategy=='group_experts':
+            if result.get('family')!='extra_trees': raise ValueError('Group experts require ExtraTrees')
+            if result.get('target_transform') not in [None,'log1p']: raise ValueError('Group experts require log1p target')
+            result.update(preprocessing='group-experts-v1',scale=False,max_outlier_fraction=0,target_transform='log1p')
+            result.setdefault('group_column','building_class'); result.setdefault('minimum_expert_rows',500); result.setdefault('shrinkage',500.)
+            if not isinstance(result['group_column'],str) or not result['group_column']: raise ValueError('Group column must be named')
+            if isinstance(result['minimum_expert_rows'],bool) or not isinstance(result['minimum_expert_rows'],int) or result['minimum_expert_rows']<500: raise ValueError('Expert sample minimum must be at least 500')
+            if isinstance(result['shrinkage'],bool) or not isinstance(result['shrinkage'],(int,float)) or not np.isfinite(result['shrinkage']) or result['shrinkage']<=0: raise ValueError('Invalid expert shrinkage')
+        else:
+            if result.get('family')!='xgboost': raise ValueError('Macro-F1 calibration requires XGBoost')
+            if result.get('target_transform') not in [None,'none']: raise ValueError('Calibration has no target transform')
+            result.update(preprocessing='macro-f1-v1',scale=False,max_outlier_fraction=0,target_transform='none')
+            result.setdefault('calibration_folds',3)
+            if result['calibration_folds']!=3: raise ValueError('Calibration requires the versioned three-fold protocol')
+            multipliers=result.get('class_multipliers')
+            if multipliers is not None:
+                if not isinstance(multipliers,dict) or not multipliers: raise ValueError('Class multipliers must be a nonempty label mapping')
+                if any(not isinstance(k,str) or isinstance(v,bool) or not isinstance(v,(int,float)) or not np.isfinite(v) or v<=0 for k,v in multipliers.items()): raise ValueError('Class multipliers must be finite and positive')
+                result['class_multipliers']={k:float(v) for k,v in sorted(multipliers.items())}
+    elif strategy not in [None,'','full']:
+        raise ValueError('Unsupported strategy')
+    else:
+        result.update(preprocessing='full-v1',scale=True,max_outlier_fraction=.05)
     if result.get('target_transform') not in [None,'none','log1p']: raise ValueError('Unsupported target transformation')
     return result
 
@@ -118,6 +146,17 @@ class Encoder(TransformerMixin,BaseEstimator):
 
 def build_pipeline(kind,candidate,threads=4):
     candidate=canonical_candidate(candidate)
+    if candidate.get('strategy') in {'reg_feature_experts','reg_convex_blend','target_tail_mixture'}:
+        if kind!='regression':raise ValueError('Regression strategy cannot solve classification')
+        from automl_reg_combo import build_reg_combo
+        return build_reg_combo(candidate,threads)
+    if candidate.get('strategy') in {'smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}:
+        if kind!='classification':raise ValueError('Classification strategy cannot solve regression')
+        from automl_class_combo import build_class_combo
+        return build_class_combo(candidate,threads)
+    if candidate.get('strategy') in ['group_experts','macro_f1_calibrated']:
+        from automl_advanced import build_advanced
+        return build_advanced(kind,candidate,threads)
     family=candidate['family']; regression=kind=='regression'; p=dict(candidate.get('parameters',{}))
     for k in ['random_state','random_seed','seed','n_jobs','thread_count','verbose']: p.pop(k,None)
     allowed_parameters={'n_estimators','iterations','learning_rate','num_leaves','min_child_samples','reg_lambda','reg_alpha','max_depth','min_samples_leaf','max_features','depth','l2_leaf_reg','subsample','colsample_bytree','class_weight','criterion','tree_method','device'}

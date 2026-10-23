@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\twenty_worker.py", line 44, in main
+    evaluated=evaluate_advanced(job['number'],job['task'],X,y,Xvalid,context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\twenty_advanced.py", line 381, in evaluate_advanced
+    return _permutation(task, X, y, Xvalid, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\twenty_advanced.py", line 319, in _permutation
+    model.fit(X[keep], y)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\twenty_common.py", line 68, in fit
+    raise RuntimeError('Known outer baseline fit prohibited; use saved predictions')
+RuntimeError: Known outer baseline fit prohibited; use saved predictions

@@ -1,0 +1,13 @@
+# HYP-044
+
+Started before fit. [SPEC-008](../../../docs/specs/SPEC-008-combinations.md).
+
+Command: `.venv-ml/Scripts/python.exe -X utf8 -u -m experiments.run_combinations`.
+
+[evidence](evidence.json), [request](request.json), [frozen sources](../series-combinations-v1/source/).
+
+Result: **completed, rmse=41.94416116050523; Не подтверждена по заданному критерию**.
+
+Baseline 41.480963027907194 reused without fit. [metrics](metrics.json), [audit](audit.json), [log](worker.log), [predictions](validation_predictions.npz).
+
+Repeated exploratory outer; hidden platform score unknown. No outer target used for learned choices.

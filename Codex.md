@@ -1,6 +1,12 @@
 # Правила проекта для Codex
 
+Актуальное дополнение SPEC-008: завершены семь новых комбинаций HYP-042…048, независимая сверка 63/63, 24 новых fit без повторов. В baseline включены только лучшие: H43 RMSE40.972997661684175 и H48 Macro-F1.6495311620074445; конфигурации и frozen state в [baseline.json](baseline.json). [Сравнение](results/2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md), [ZIP](dist/solution_combined_metrics.zip). Платформенный балл предыдущего решения 1376.762 сообщён пользователем без SHA архива/формулы; не считать его public RMSE. Новый запрос: опубликовать проверенное решение в ivan_branch и подготовить ещё20 новых идей, не объявляя их проверенными.
+
 ## Текущее состояние
+
+Готова поставка [SPEC-007](docs/specs/SPEC-007-improved-delivery.md): [solution_improved_metrics.zip](dist/solution_improved_metrics.zip),33128байт,10rootфайлов. ЛучшиеизмеренныеH35RMSE41.480963027907194/H37Macro-F1.6286047899141216,точнаяlegacyобработкадляэтихстратегий; обязательностьfull-v1изSPEC005длянихснята.126тестов,539сверокметрик,5mockсценариев,2fullrefit/0повторныхvalidation. [Проверкадоставки](results/2026-10-23/IMPROVED_DELIVERY.json). ПользовательсамзагружаетZIPнаплатформу; hiddenplatformscoreнеизвестен.
+
+Актуальная работа2026-10-23: по прямому поручению проверены **все20 HYP-022…041**, [SPEC-006](docs/specs/SPEC-006-twenty-hypotheses.md), [PLAN-006](docs/plans/PLAN-006-twenty-hypotheses.md),23запланированныевнешниеоценки. Реестр `results/spec006-attempts.json`, snapshots/cache/fit-журнал в `results/2026-10-23/series-twenty-hypotheses-v1/`. КаждыйисходсразудописываетсявHYPOTHESES.md и results/. Старыеbaselinefitзапрещены; техническуюостановкуневыдаватьзапровереннуюметрику. ТекущийZIPнепересобираетсядоотдельногорешенияовнедрении.
 
 Получены материалы хакатона: требуется универсальный LLM-агент для самостоятельного решения ML-задач.
 Требования по источникам собраны в [SPEC-001](docs/specs/SPEC-001-automl-agent.md), статус — черновик.

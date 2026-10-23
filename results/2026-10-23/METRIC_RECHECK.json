@@ -1,0 +1,18 @@
+{
+  "verdict": "latest_full_preprocessing_worse_on_both_tasks",
+  "regression": {
+    "before_rmse": 42.19670002719412,
+    "after_rmse": 43.837201829105254,
+    "change": 1.6405018019111353,
+    "percent_increase": 3.8877490440103024
+  },
+  "classification": {
+    "before_macro_f1": 0.5914513709191194,
+    "after_macro_f1": 0.5637871673383791,
+    "change": -0.027664203580740288,
+    "percentage_point_change": -2.7664203580740288
+  },
+  "verification": "recomputed from saved predictions; no model fit",
+  "archive_sha256": "8e5c266d9b2f54ce87ba2eef79a5e6e8c36d4c55a36ebf3c160cc2f59a25d5ea",
+  "hidden_platform_score_verified": false
+}

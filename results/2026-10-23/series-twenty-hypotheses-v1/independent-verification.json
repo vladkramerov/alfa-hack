@@ -1,0 +1,2176 @@
+{
+  "status": "passed",
+  "checks_passed": 539,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "23 planned cases",
+      "passed": true
+    },
+    {
+      "check": "all planned cases have metric",
+      "passed": true
+    },
+    {
+      "check": "all20 hypotheses",
+      "passed": true
+    },
+    {
+      "check": "no duplicate attempts",
+      "passed": true
+    },
+    {
+      "check": "provided requirements unchanged",
+      "passed": true
+    },
+    {
+      "check": "source immutable automl_data.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable automl_models.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/twenty_features.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/twenty_common.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/twenty_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/twenty_worker.py",
+      "passed": true
+    },
+    {
+      "check": "source immutable experiments/run_twenty_hypotheses.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-022/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-023/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-024/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-025/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-026/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-027/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-029/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-030/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-031/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-032/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-033/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-034/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-035/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression weight positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression finite positive weights",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression normalized weights",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression exact weight formula",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-036/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-037/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass synthetic original positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass accepted mask count",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass synthetic perclass cap",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer spkts",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dpkts",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer sbytes",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dbytes",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer sttl",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dttl",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer sloss",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dloss",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer swin",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer stcpb",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dtcpb",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dwin",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer smean",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer dmean",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer trans_depth",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer response_body_len",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_srv_src",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_state_ttl",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_dst_ltm",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_src_dport_ltm",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_dst_sport_ltm",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_dst_src_ltm",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer is_ftp_login",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_ftp_cmd",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_flw_http_mthd",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_src_ltm",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass integer ct_srv_dst",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass category joint support",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-038/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass weight positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass finite positive weights",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass normalized weights",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass exact weight formula",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-039/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-040/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-041/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression prior prefit stop retained",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation no inner refit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression reduced columns differ",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source automl_data.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source automl_models.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/twenty_features.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/twenty_common.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/twenty_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/twenty_worker.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/run_twenty_hypotheses.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression continuation source experiments/continue_twenty_blocked_selection.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression time directed",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression finite prediction",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/regression audit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass terminal",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass data hashes",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass ledger read before fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass prior prefit stop retained",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation no inner refit",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass reduced columns differ",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source automl_data.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source automl_models.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/twenty_features.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/twenty_common.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/twenty_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/twenty_worker.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/run_twenty_hypotheses.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass continuation source experiments/continue_twenty_blocked_selection.py",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass split hash",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass split disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass raw groups disjoint",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass report.md",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass evidence.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass metrics.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass request.json",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass exact validation order",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass unchanged truth",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass prediction shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass metric recomputation",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass probability shape",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass finite probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass normalized probabilities",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass labels in classes",
+      "passed": true
+    },
+    {
+      "check": "HYP-028/multiclass audit",
+      "passed": true
+    },
+    {
+      "check": "all model fingerprints unique",
+      "passed": true
+    },
+    {
+      "check": "all model attempts finished",
+      "passed": true
+    },
+    {
+      "check": "all model fits read ledger",
+      "passed": true
+    },
+    {
+      "check": "technical continuations only new outer fits",
+      "passed": true
+    },
+    {
+      "check": "cache\\11abe0ee727ecd51aed8226061ccfd379631d2793bb22226fa6a0887d4133ae9\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\11abe0ee727ecd51aed8226061ccfd379631d2793bb22226fa6a0887d4133ae9\\fold-0.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\11abe0ee727ecd51aed8226061ccfd379631d2793bb22226fa6a0887d4133ae9\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\11abe0ee727ecd51aed8226061ccfd379631d2793bb22226fa6a0887d4133ae9\\fold-1.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\380c7759af35ef10f7e745afa50943c52ff57311bfff32ec32bc56e853bc7f64\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\380c7759af35ef10f7e745afa50943c52ff57311bfff32ec32bc56e853bc7f64\\fold-0.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\380c7759af35ef10f7e745afa50943c52ff57311bfff32ec32bc56e853bc7f64\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\380c7759af35ef10f7e745afa50943c52ff57311bfff32ec32bc56e853bc7f64\\fold-1.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\7c44c75c09f8a032744552b0b5d073a8f3ee9099cf90ce37dcb552c83e3a0655\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\7c44c75c09f8a032744552b0b5d073a8f3ee9099cf90ce37dcb552c83e3a0655\\fold-0.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\7c44c75c09f8a032744552b0b5d073a8f3ee9099cf90ce37dcb552c83e3a0655\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\7c44c75c09f8a032744552b0b5d073a8f3ee9099cf90ce37dcb552c83e3a0655\\fold-1.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-0.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-1.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-2.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-2.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\cbb1befb785e2ba827be6e8fe2f9eed6545371df4421b3d93be9833e5503aa66\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\cbb1befb785e2ba827be6e8fe2f9eed6545371df4421b3d93be9833e5503aa66\\fold-0.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\cbb1befb785e2ba827be6e8fe2f9eed6545371df4421b3d93be9833e5503aa66\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\cbb1befb785e2ba827be6e8fe2f9eed6545371df4421b3d93be9833e5503aa66\\fold-1.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\e76104bf1f7265a5f94908fba8f7fcfc373e2ee9980ca3ba951177cdd4df2417\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\e76104bf1f7265a5f94908fba8f7fcfc373e2ee9980ca3ba951177cdd4df2417\\fold-0.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\e76104bf1f7265a5f94908fba8f7fcfc373e2ee9980ca3ba951177cdd4df2417\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\e76104bf1f7265a5f94908fba8f7fcfc373e2ee9980ca3ba951177cdd4df2417\\fold-1.npz temporal",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-0.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-0.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-1.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-1.npz groupdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-2.npz rowdisjoint",
+      "passed": true
+    },
+    {
+      "check": "cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-2.npz groupdisjoint",
+      "passed": true
+    }
+  ],
+  "model_fit_attempts": 39,
+  "completed_evaluations": 23,
+  "technical_stops": 2,
+  "pending_cases": 0,
+  "verifier_sha256": "fc7a2b6e94d60d986a64dd8a2321822d3058cedcb808f083e3e997b8de0e9ae7",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "xgboost": "2.1.4",
+    "lightgbm": "4.6.0",
+    "imbalanced-learn": "0.12.4"
+  }
+}

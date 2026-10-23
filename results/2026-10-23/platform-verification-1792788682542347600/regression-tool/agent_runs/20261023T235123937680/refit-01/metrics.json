@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "mode": "refit",
+  "train_rows": 100,
+  "test_rows": 3,
+  "fit_retained_rows": 95,
+  "seconds": 0.29699999999138527
+}

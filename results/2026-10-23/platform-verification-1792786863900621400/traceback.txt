@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\verify_flat_package.py", line 142, in main
+    if mode=='tool': assert next(iter(ledger['cases'].values()))['records'][0]['status']=='completed'
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

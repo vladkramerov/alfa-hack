@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "metric": "mae",
+  "score": 0.39165203961422446,
+  "fit_rows": 80,
+  "valid_rows": 20,
+  "fit_retained_rows": 76,
+  "seconds": 0.2970000000204891
+}

@@ -1,0 +1,3 @@
+{"task": "regression", "rows": 22449, "selected_score": 40.972997661684175, "strategy": "reg_feature_experts", "seconds": 97.70300000000861}
+{"task": "multiclass", "rows": 41166, "selected_score": 0.6495311620074445, "strategy": "probability_stacking", "seconds": 241.84400000001187}
+{"verification": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\combination-delivery-1792788672312889000\\verification.json", "status": "passed"}

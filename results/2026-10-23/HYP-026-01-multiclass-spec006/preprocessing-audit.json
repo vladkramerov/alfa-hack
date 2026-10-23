@@ -1,0 +1,98 @@
+{
+  "input_features": [
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "outer_validation_unmodified": true,
+  "outer_y_not_passed_to_method": true,
+  "policy": "light",
+  "fit_rows": 70529,
+  "retained_rows": 70529,
+  "removed_positions": [],
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "policy": "light",
+    "feature": {
+      "class": "experiments.twenty_features.ZeroAtomGaussian",
+      "parameters": {
+        "lower_fraction": 0.2,
+        "min_positive_unique": 20,
+        "upper_fraction": 0.8
+      }
+    },
+    "target_transform": null,
+    "parameters": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1,
+      "tree_method": "hist"
+    }
+  },
+  "fingerprint": "fe43c55cf672041e84ffa9db5d429b016914bce1c09b87f26f51516db9afdb34",
+  "outliers": {
+    "removed": 0
+  },
+  "feature": {
+    "n_fit": 70529,
+    "target_used": false,
+    "row_deletion": false,
+    "transformed_columns": [
+      "dpkts",
+      "dbytes",
+      "dload",
+      "sloss",
+      "dloss",
+      "dinpkt",
+      "sjit",
+      "djit",
+      "stcpb",
+      "dtcpb",
+      "tcprtt",
+      "synack",
+      "ackdat",
+      "dmean"
+    ]
+  }
+}

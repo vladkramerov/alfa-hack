@@ -1,0 +1,8 @@
+{
+  "source": "User message, 2026-10-23",
+  "reported_previous_solution_score": 1376.762,
+  "archive_sha256": null,
+  "platform_metric_formula_verified": false,
+  "comparable_local_metric": null,
+  "note": "Сообщённый балл сохранён отдельно. Точный архив, состав задач, формула и скрытые targets не установлены; не приравнивать к public RMSE или Macro-F1."
+}

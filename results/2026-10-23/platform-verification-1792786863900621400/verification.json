@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "error": "IndexError: list index out of range",
+  "archive": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_improved_metrics.zip",
+  "archive_sha256": "30f485a78bf8fbc82db85f4d5ded44461eb87012aa642ae9695eae39e31b63a0",
+  "archive_root_files": [
+    "automl_advanced.py",
+    "automl_data.py",
+    "automl_history.py",
+    "automl_known.py",
+    "automl_llm.py",
+    "automl_models.py",
+    "automl_preprocessing.py",
+    "automl_worker.py",
+    "requirements.txt",
+    "solution.py"
+  ],
+  "mock_http_calls": 0,
+  "real_platform_api_tested": false,
+  "clean_extraction": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\flat-1792786863901154300",
+  "scenarios": []
+}

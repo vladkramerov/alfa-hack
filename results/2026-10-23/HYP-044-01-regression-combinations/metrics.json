@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 41.94416116050523,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "seconds": 46.90700000000652,
+  "candidate": {
+    "strategy": "reg_convex_blend",
+    "parameters": {},
+    "family": "extra_trees"
+  },
+  "learned_state": {
+    "blend_weights": [
+      9.714451465470116e-17,
+      0.05341283063914514,
+      0.0,
+      0.9465871693608547
+    ]
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "outer_baseline_refits": 0
+}

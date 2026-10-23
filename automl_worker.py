@@ -39,6 +39,11 @@ def run(manifest):
             result={'status':'completed','mode':'refit','train_rows':len(bundle.train),'test_rows':len(bundle.test)}
         if hasattr(model,'audit_'):
             result['fit_retained_rows']=model.audit_['fit_retained_rows']
+            if hasattr(model,'learned_state_'):result['learned_state']=model.learned_state_
+            if request['candidate'].get('strategy')=='reg_convex_blend' and hasattr(model,'weights_'):
+                result['learned_state']={'blend_weights':np.asarray(model.weights_).tolist()}
+            if hasattr(model,'calibration_multipliers_'):
+                result['calibration_multipliers']={str(k):float(v) for k,v in model.calibration_multipliers_.items()}
             (output/'preprocessing-audit.json').write_text(json.dumps(model.audit_,indent=2,default=str),encoding='utf-8')
             np.savez_compressed(output/'training-filter.npz',keep_mask=model.keep_mask_,removed_positions=model.removed_positions_)
         result['seconds']=time.monotonic()-started

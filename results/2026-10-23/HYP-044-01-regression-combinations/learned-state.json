@@ -1,0 +1,13 @@
+{
+  "candidate": {
+    "strategy": "reg_convex_blend",
+    "parameters": {},
+    "family": "extra_trees"
+  },
+  "blend_weights": [
+    9.714451465470116e-17,
+    0.05341283063914514,
+    0.0,
+    0.9465871693608547
+  ]
+}
