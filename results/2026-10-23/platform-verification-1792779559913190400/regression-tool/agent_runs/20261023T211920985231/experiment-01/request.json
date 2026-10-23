@@ -1,0 +1,16 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\platform-verification-1792779559913190400\\regression-tool\\task.md",
+  "candidate": {
+    "family": "extra_trees",
+    "parameters": {
+      "n_estimators": 12,
+      "max_depth": 6
+    },
+    "hypothesis": "Synthetic interaction protocol check",
+    "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+  },
+  "mode": "evaluate",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\platform-verification-1792779559913190400\\regression-tool\\agent_runs\\20261023T211920985231\\experiment-01",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\platform-verification-1792779559913190400\\regression-tool\\agent_runs\\20261023T211920985231\\splits.npz",
+  "threads": 4
+}

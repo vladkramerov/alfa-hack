@@ -1,0 +1,77 @@
+{
+  "frozen_at": "2026-10-23T16:07:22+03:00",
+  "selection": "inner only; outer never changes configuration",
+  "preprocessing": {
+    "catboost": {
+      "family": "catboost",
+      "recipe": "vif"
+    },
+    "forest": {
+      "family": "forest",
+      "recipe": "baseline"
+    }
+  },
+  "catboost_native_l2": {
+    "family": "catboost",
+    "recipe": "vif",
+    "strength": 1
+  },
+  "linear": {
+    "l1": {
+      "family": "l1",
+      "recipe": "engineered",
+      "strength": 1
+    },
+    "l2": {
+      "family": "l2",
+      "recipe": "engineered",
+      "strength": 10
+    }
+  },
+  "linear_inner_converged": {
+    "l1": true,
+    "l2": true
+  },
+  "best_tree_for_final_refit": {
+    "family": "catboost",
+    "recipe": "vif",
+    "strength": 1
+  },
+  "outer_panel": [
+    {
+      "family": "catboost",
+      "recipe": "baseline"
+    },
+    {
+      "family": "catboost",
+      "recipe": "engineered"
+    },
+    {
+      "family": "catboost",
+      "recipe": "vif"
+    },
+    {
+      "family": "forest",
+      "recipe": "baseline"
+    },
+    {
+      "family": "forest",
+      "recipe": "engineered"
+    },
+    {
+      "family": "catboost",
+      "recipe": "vif",
+      "strength": 1
+    },
+    {
+      "family": "l1",
+      "recipe": "engineered",
+      "strength": 1
+    },
+    {
+      "family": "l2",
+      "recipe": "engineered",
+      "strength": 10
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-23T16:29:18.473312+03:00",
+  "records_completed": 4,
+  "all_converged": true,
+  "metrics_oracle_rtol": 1e-09,
+  "final_features": 138,
+  "final_arrays_finite": true,
+  "id_order_matches": true,
+  "reloaded_first32_match": true,
+  "initial_technical_failure_preserved": true
+}

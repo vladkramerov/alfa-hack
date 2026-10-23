@@ -1,0 +1,31 @@
+2026-10-23T16:04:49+03:00 regression: {'description': 'temporal outer: years <5 -> 5; inner: <4 -> 4', 'sizes': {'inner_fit': 22054, 'inner_valid': 12946, 'outer_fit': 35000, 'outer_valid': 18308}}
+2026-10-23T16:04:57+03:00 regression inner catboost/baseline: {'rmse': 45.518715477760836}, 8.188s, converged=True
+2026-10-23T16:05:05+03:00 regression inner catboost/correlation: {'rmse': 45.32052344905627}, 7.14s, converged=True
+2026-10-23T16:05:10+03:00 regression inner catboost/vif: {'rmse': 45.000826848085644}, 5.39s, converged=True
+2026-10-23T16:05:15+03:00 regression inner catboost/scaled: {'rmse': 45.00084665392861}, 5.406s, converged=True
+2026-10-23T16:05:21+03:00 regression inner catboost/gaussian: {'rmse': 45.12283523338561}, 5.359s, converged=True
+2026-10-23T16:05:27+03:00 regression inner catboost/engineered: {'rmse': 45.26398406382808}, 5.843s, converged=True
+2026-10-23T16:05:50+03:00 regression inner forest/baseline: {'rmse': 46.1639294892355}, 22.844s, converged=True
+2026-10-23T16:06:08+03:00 regression inner forest/correlation: {'rmse': 46.36248309741696}, 18.469s, converged=True
+2026-10-23T16:06:23+03:00 regression inner forest/vif: {'rmse': 46.68533131938694}, 14.75s, converged=True
+2026-10-23T16:06:37+03:00 regression inner forest/scaled: {'rmse': 46.67970603881967}, 14.14s, converged=True
+2026-10-23T16:06:53+03:00 regression inner forest/gaussian: {'rmse': 46.71183260529205}, 15.906s, converged=True
+2026-10-23T16:07:08+03:00 regression inner forest/engineered: {'rmse': 46.94636373340831}, 14.453s, converged=True
+2026-10-23T16:07:11+03:00 regression inner catboost/vif-1: {'rmse': 44.55882835878972}, 3.625s, converged=True
+2026-10-23T16:07:15+03:00 regression inner catboost/vif-10: {'rmse': 45.603991717078685}, 3.609s, converged=True
+2026-10-23T16:07:19+03:00 regression inner catboost/vif-30: {'rmse': 46.330352267082525}, 3.578s, converged=True
+2026-10-23T16:07:20+03:00 regression inner l1/engineered-0.01: {'rmse': 611.1450350874579}, 1.547s, converged=True
+2026-10-23T16:07:21+03:00 regression inner l1/engineered-0.1: {'rmse': 517.4284040167722}, 0.218s, converged=True
+2026-10-23T16:07:21+03:00 regression inner l1/engineered-1: {'rmse': 54.19713785600558}, 0.062s, converged=True
+2026-10-23T16:07:21+03:00 regression inner l2/engineered-0.1: {'rmse': 878.1770374661244}, 0.203s, converged=True
+2026-10-23T16:07:21+03:00 regression inner l2/engineered-1: {'rmse': 884.6729602261103}, 0.203s, converged=True
+2026-10-23T16:07:22+03:00 regression inner l2/engineered-10: {'rmse': 719.0247942438682}, 0.172s, converged=True
+2026-10-23T16:07:34+03:00 regression outer catboost/baseline: {'rmse': 45.93583634208973}, 12.656s, converged=True
+2026-10-23T16:07:45+03:00 regression outer catboost/engineered: {'rmse': 46.99974168722143}, 10.391s, converged=True
+2026-10-23T16:07:54+03:00 regression outer catboost/vif: {'rmse': 54.62842812078608}, 8.547s, converged=True
+2026-10-23T16:08:36+03:00 regression outer forest/baseline: {'rmse': 48.565980842466}, 42.141s, converged=True
+2026-10-23T16:09:01+03:00 regression outer forest/engineered: {'rmse': 46.87784630178003}, 24.891s, converged=True
+2026-10-23T16:09:06+03:00 regression outer catboost/vif-1: {'rmse': 52.94239384982671}, 4.938s, converged=True
+2026-10-23T16:09:06+03:00 regression outer l1/engineered-1: {'rmse': 58.664647652489585}, 0.094s, converged=True
+2026-10-23T16:09:06+03:00 regression outer l2/engineered-10: {'rmse': 65.452603887892}, 0.282s, converged=True
+2026-10-23T16:09:19+03:00 regression FINAL: {'family': 'catboost', 'recipe': 'vif', 'strength': 1} -> C:\Users\User\PycharmProjects\Alpha_Hackathon\results\2026-10-23\HYP-005-05-regression-full-refit

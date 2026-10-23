@@ -1,0 +1,1928 @@
+{
+  "task": "multiclass",
+  "completed_at": "2026-10-23T17:17:17+03:00",
+  "directory": "results\\2026-10-23\\series-multiclass-preprocessing-v1",
+  "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+  "inner_selected": {
+    "catboost": "HYP-001-05-multiclass-inner-baseline-catboost",
+    "forest": "HYP-001-09-multiclass-inner-baseline-forest"
+  },
+  "frozen": {
+    "frozen_at": "2026-10-23T16:52:33+03:00",
+    "selection": "inner only; outer never changes configuration",
+    "preprocessing": {
+      "catboost": {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      "forest": {
+        "family": "forest",
+        "recipe": "baseline"
+      }
+    },
+    "catboost_native_l2": {
+      "family": "catboost",
+      "recipe": "baseline",
+      "strength": 1
+    },
+    "linear": {
+      "l1": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "l2": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.1
+      }
+    },
+    "linear_inner_converged": {
+      "l1": true,
+      "l2": true
+    },
+    "best_tree_for_final_refit": {
+      "family": "forest",
+      "recipe": "baseline"
+    },
+    "outer_panel": [
+      {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      {
+        "family": "catboost",
+        "recipe": "baseline",
+        "strength": 1
+      },
+      {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.1
+      }
+    ]
+  },
+  "records": [
+    {
+      "run_id": "HYP-001-05-multiclass-inner-baseline-catboost",
+      "path": "results\\2026-10-23\\HYP-001-05-multiclass-inner-baseline-catboost",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:58+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:09:11+03:00",
+      "seconds": 193.25,
+      "scores": {
+        "macro_f1": 0.5283017428570587,
+        "accuracy": 0.8088028367197614,
+        "weighted_f1": 0.7860891259009041
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 193,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-001-08-multiclass-inner-correlation-catboost",
+      "path": "results\\2026-10-23\\HYP-001-08-multiclass-inner-correlation-catboost",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "correlation"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:09:12+03:00",
+      "reference": "HYP-001-05-multiclass-inner-baseline-catboost",
+      "finished": "2026-10-23T16:11:21+03:00",
+      "seconds": 129.812,
+      "scores": {
+        "macro_f1": 0.5132340783634113,
+        "accuracy": 0.8030618562503518,
+        "weighted_f1": 0.7798450938735185
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.015067664493647381
+    },
+    {
+      "run_id": "HYP-002-04-multiclass-inner-vif-catboost",
+      "path": "results\\2026-10-23\\HYP-002-04-multiclass-inner-vif-catboost",
+      "hypothesis": "HYP-002",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:11:22+03:00",
+      "reference": "HYP-001-08-multiclass-inner-correlation-catboost",
+      "finished": "2026-10-23T16:13:27+03:00",
+      "seconds": 124.86,
+      "scores": {
+        "macro_f1": 0.5132340783634113,
+        "accuracy": 0.8030618562503518,
+        "weighted_f1": 0.7798450938735185
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.0
+    },
+    {
+      "run_id": "HYP-003-03-multiclass-inner-scaled-catboost",
+      "path": "results\\2026-10-23\\HYP-003-03-multiclass-inner-scaled-catboost",
+      "hypothesis": "HYP-003",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "scaled"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:13:27+03:00",
+      "reference": "HYP-002-04-multiclass-inner-vif-catboost",
+      "finished": "2026-10-23T16:15:36+03:00",
+      "seconds": 128.36,
+      "scores": {
+        "macro_f1": 0.5107662999640583,
+        "accuracy": 0.802724151516857,
+        "weighted_f1": 0.7787386827217957
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.002467778399352971
+    },
+    {
+      "run_id": "HYP-004-03-multiclass-inner-gaussian-catboost",
+      "path": "results\\2026-10-23\\HYP-004-03-multiclass-inner-gaussian-catboost",
+      "hypothesis": "HYP-004",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "gaussian"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:15:36+03:00",
+      "reference": "HYP-003-03-multiclass-inner-scaled-catboost",
+      "finished": "2026-10-23T16:17:28+03:00",
+      "seconds": 111.219,
+      "scores": {
+        "macro_f1": 0.5128290768670659,
+        "accuracy": 0.8033432768615973,
+        "weighted_f1": 0.7796028566047394
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.0020627769030076015
+    },
+    {
+      "run_id": "HYP-005-06-multiclass-inner-engineered-catboost",
+      "path": "results\\2026-10-23\\HYP-005-06-multiclass-inner-engineered-catboost",
+      "hypothesis": "HYP-005",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:17:28+03:00",
+      "reference": "HYP-004-03-multiclass-inner-gaussian-catboost",
+      "finished": "2026-10-23T16:18:48+03:00",
+      "seconds": 79.609,
+      "scores": {
+        "macro_f1": 0.5128290768670659,
+        "accuracy": 0.8033432768615973,
+        "weighted_f1": 0.7796028566047394
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.0
+    },
+    {
+      "run_id": "HYP-001-09-multiclass-inner-baseline-forest",
+      "path": "results\\2026-10-23\\HYP-001-09-multiclass-inner-baseline-forest",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:18:48+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:19:33+03:00",
+      "seconds": 45.125,
+      "scores": {
+        "macro_f1": 0.6023505992999411,
+        "accuracy": 0.8206225023920752,
+        "weighted_f1": 0.8055785391931077
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 193,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-001-10-multiclass-inner-correlation-forest",
+      "path": "results\\2026-10-23\\HYP-001-10-multiclass-inner-correlation-forest",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "correlation"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:19:33+03:00",
+      "reference": "HYP-001-09-multiclass-inner-baseline-forest",
+      "finished": "2026-10-23T16:20:09+03:00",
+      "seconds": 35.532,
+      "scores": {
+        "macro_f1": 0.5614586103126855,
+        "accuracy": 0.8122361681769573,
+        "weighted_f1": 0.796936329997139
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.040891988987255545
+    },
+    {
+      "run_id": "HYP-002-05-multiclass-inner-vif-forest",
+      "path": "results\\2026-10-23\\HYP-002-05-multiclass-inner-vif-forest",
+      "hypothesis": "HYP-002",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "vif"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:20:09+03:00",
+      "reference": "HYP-001-10-multiclass-inner-correlation-forest",
+      "finished": "2026-10-23T16:20:42+03:00",
+      "seconds": 32.688,
+      "scores": {
+        "macro_f1": 0.5614586103126855,
+        "accuracy": 0.8122361681769573,
+        "weighted_f1": 0.796936329997139
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.0
+    },
+    {
+      "run_id": "HYP-003-04-multiclass-inner-scaled-forest",
+      "path": "results\\2026-10-23\\HYP-003-04-multiclass-inner-scaled-forest",
+      "hypothesis": "HYP-003",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "scaled"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:20:43+03:00",
+      "reference": "HYP-002-05-multiclass-inner-vif-forest",
+      "finished": "2026-10-23T16:21:12+03:00",
+      "seconds": 29.36,
+      "scores": {
+        "macro_f1": 0.554820917280919,
+        "accuracy": 0.8147689536781674,
+        "weighted_f1": 0.7987640272318586
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.006637693031766534
+    },
+    {
+      "run_id": "HYP-004-04-multiclass-inner-gaussian-forest",
+      "path": "results\\2026-10-23\\HYP-004-04-multiclass-inner-gaussian-forest",
+      "hypothesis": "HYP-004",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "gaussian"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:21:12+03:00",
+      "reference": "HYP-003-04-multiclass-inner-scaled-forest",
+      "finished": "2026-10-23T16:21:55+03:00",
+      "seconds": 42.578,
+      "scores": {
+        "macro_f1": 0.5629527561008232,
+        "accuracy": 0.81460010131142,
+        "weighted_f1": 0.7985038277657371
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.008131838819904202
+    },
+    {
+      "run_id": "HYP-005-07-multiclass-inner-engineered-forest",
+      "path": "results\\2026-10-23\\HYP-005-07-multiclass-inner-engineered-forest",
+      "hypothesis": "HYP-005",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:21:55+03:00",
+      "reference": "HYP-004-04-multiclass-inner-gaussian-forest",
+      "finished": "2026-10-23T16:22:45+03:00",
+      "seconds": 49.453,
+      "scores": {
+        "macro_f1": 0.5629527561008232,
+        "accuracy": 0.81460010131142,
+        "weighted_f1": 0.7985038277657371
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.0
+    },
+    {
+      "run_id": "HYP-006-05-multiclass-inner-baseline-catboost-1",
+      "path": "results\\2026-10-23\\HYP-006-05-multiclass-inner-baseline-catboost-1",
+      "hypothesis": "HYP-006",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:22:45+03:00",
+      "reference": "HYP-001-05-multiclass-inner-baseline-catboost",
+      "finished": "2026-10-23T16:25:23+03:00",
+      "seconds": 157.484,
+      "scores": {
+        "macro_f1": 0.5418208400891047,
+        "accuracy": 0.8097033826757472,
+        "weighted_f1": 0.788208632780246
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 193,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 1,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.013519097232046029
+    },
+    {
+      "run_id": "HYP-006-06-multiclass-inner-baseline-catboost-10",
+      "path": "results\\2026-10-23\\HYP-006-06-multiclass-inner-baseline-catboost-10",
+      "hypothesis": "HYP-006",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline",
+        "strength": 10
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:25:23+03:00",
+      "reference": "HYP-001-05-multiclass-inner-baseline-catboost",
+      "finished": "2026-10-23T16:28:17+03:00",
+      "seconds": 174.187,
+      "scores": {
+        "macro_f1": 0.5095018586287922,
+        "accuracy": 0.8075083019080317,
+        "weighted_f1": 0.7822626380885134
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 193,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 10,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.018799884228266506
+    },
+    {
+      "run_id": "HYP-006-07-multiclass-inner-baseline-catboost-30",
+      "path": "results\\2026-10-23\\HYP-006-07-multiclass-inner-baseline-catboost-30",
+      "hypothesis": "HYP-006",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline",
+        "strength": 30
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:28:18+03:00",
+      "reference": "HYP-001-05-multiclass-inner-baseline-catboost",
+      "finished": "2026-10-23T16:31:35+03:00",
+      "seconds": 197.344,
+      "scores": {
+        "macro_f1": 0.48214773380255344,
+        "accuracy": 0.8042438228175831,
+        "weighted_f1": 0.7737147046898298
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 193,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 30,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.04615400905450523
+    },
+    {
+      "run_id": "HYP-007-09-multiclass-inner-engineered-l1-0.01",
+      "path": "results\\2026-10-23\\HYP-007-09-multiclass-inner-engineered-l1-0.01",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 0.01
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:31:36+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:35:10+03:00",
+      "seconds": 214.437,
+      "scores": {
+        "macro_f1": 0.37638188670830286,
+        "accuracy": 0.7522935779816514,
+        "weighted_f1": 0.7286123191429368
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 0.01,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l1",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        247
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-10-multiclass-inner-engineered-l1-0.1",
+      "path": "results\\2026-10-23\\HYP-007-10-multiclass-inner-engineered-l1-0.1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 0.1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:35:11+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:39:27+03:00",
+      "seconds": 256.172,
+      "scores": {
+        "macro_f1": 0.3755980101778375,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7312061160286761
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 0.1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l1",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        338
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-11-multiclass-inner-engineered-l1-1",
+      "path": "results\\2026-10-23\\HYP-007-11-multiclass-inner-engineered-l1-1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:39:28+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:43:50+03:00",
+      "seconds": 262.453,
+      "scores": {
+        "macro_f1": 0.3775319090469025,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7325445954190413
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l1",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        321
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-12-multiclass-inner-engineered-l2-0.01",
+      "path": "results\\2026-10-23\\HYP-007-12-multiclass-inner-engineered-l2-0.01",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.01
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:43:51+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:46:34+03:00",
+      "seconds": 163.421,
+      "scores": {
+        "macro_f1": 0.3762205998776406,
+        "accuracy": 0.7576968537175662,
+        "weighted_f1": 0.7311719750658902
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 0.01,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        293
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-13-multiclass-inner-engineered-l2-0.1",
+      "path": "results\\2026-10-23\\HYP-007-13-multiclass-inner-engineered-l2-0.1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:46:35+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:49:33+03:00",
+      "seconds": 178.375,
+      "scores": {
+        "macro_f1": 0.37751467232812563,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7325440492227051
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 0.1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        322
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-14-multiclass-inner-engineered-l2-1",
+      "path": "results\\2026-10-23\\HYP-007-14-multiclass-inner-engineered-l2-1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:49:34+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:52:32+03:00",
+      "seconds": 178.765,
+      "scores": {
+        "macro_f1": 0.3775030371857732,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.732542202308974
+      },
+      "n_fit": 52762,
+      "n_validation": 17767,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        322
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-001-11-multiclass-outer-baseline-catboost",
+      "path": "results\\2026-10-23\\HYP-001-11-multiclass-outer-baseline-catboost",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:52:33+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:56:15+03:00",
+      "seconds": 222.234,
+      "scores": {
+        "macro_f1": 0.5239534323156312,
+        "accuracy": 0.8157633743655562,
+        "weighted_f1": 0.7922194332917473
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 194,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-005-09-multiclass-outer-engineered-catboost",
+      "path": "results\\2026-10-23\\HYP-005-09-multiclass-outer-engineered-catboost",
+      "hypothesis": "HYP-005",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:56:16+03:00",
+      "reference": "HYP-001-11-multiclass-outer-baseline-catboost",
+      "finished": "2026-10-23T16:58:49+03:00",
+      "seconds": 153.406,
+      "scores": {
+        "macro_f1": 0.5075268759704035,
+        "accuracy": 0.8052038970888513,
+        "weighted_f1": 0.7803248081892851
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 178,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.016426556345227716
+    },
+    {
+      "run_id": "HYP-001-12-multiclass-outer-baseline-forest",
+      "path": "results\\2026-10-23\\HYP-001-12-multiclass-outer-baseline-forest",
+      "hypothesis": "HYP-001",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:58:50+03:00",
+      "reference": null,
+      "finished": "2026-10-23T17:00:25+03:00",
+      "seconds": 95.016,
+      "scores": {
+        "macro_f1": 0.572183507286843,
+        "accuracy": 0.8278980222857476,
+        "weighted_f1": 0.8157534962058391
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 194,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-005-10-multiclass-outer-engineered-forest",
+      "path": "results\\2026-10-23\\HYP-005-10-multiclass-outer-engineered-forest",
+      "hypothesis": "HYP-005",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T17:00:25+03:00",
+      "reference": "HYP-001-12-multiclass-outer-baseline-forest",
+      "finished": "2026-10-23T17:01:30+03:00",
+      "seconds": 64.36,
+      "scores": {
+        "macro_f1": 0.5594984742922693,
+        "accuracy": 0.8220057172860393,
+        "weighted_f1": 0.8088471303088757
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 178,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -0.012685032994573686
+    },
+    {
+      "run_id": "HYP-006-08-multiclass-outer-baseline-catboost-1",
+      "path": "results\\2026-10-23\\HYP-006-08-multiclass-outer-baseline-catboost-1",
+      "hypothesis": "HYP-006",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T17:01:30+03:00",
+      "reference": "HYP-001-11-multiclass-outer-baseline-catboost",
+      "finished": "2026-10-23T17:05:21+03:00",
+      "seconds": 230.36,
+      "scores": {
+        "macro_f1": 0.5270879065570541,
+        "accuracy": 0.8150632985240067,
+        "weighted_f1": 0.7912883328576368
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 194,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 1,
+        "loss_function": "MultiClass",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": 0.00313447424142288
+    },
+    {
+      "run_id": "HYP-007-15-multiclass-outer-engineered-l1-1",
+      "path": "results\\2026-10-23\\HYP-007-15-multiclass-outer-engineered-l1-1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T17:05:21+03:00",
+      "reference": null,
+      "finished": "2026-10-23T17:11:00+03:00",
+      "seconds": 338.672,
+      "scores": {
+        "macro_f1": 0.3716414811191194,
+        "accuracy": 0.7544483985765125,
+        "weighted_f1": 0.7316911360704531
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l1",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        299
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42"
+    },
+    {
+      "run_id": "HYP-007-16-multiclass-outer-engineered-l2-0.1",
+      "path": "results\\2026-10-23\\HYP-007-16-multiclass-outer-engineered-l2-0.1",
+      "hypothesis": "HYP-007",
+      "task": "multiclass",
+      "stage": "outer",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.1
+      },
+      "status": "completed",
+      "started": "2026-10-23T17:11:00+03:00",
+      "reference": "HYP-007-15-multiclass-outer-engineered-l1-1",
+      "finished": "2026-10-23T17:14:59+03:00",
+      "seconds": 239.218,
+      "scores": {
+        "macro_f1": 0.3715427929049082,
+        "accuracy": 0.7543317192695875,
+        "weighted_f1": 0.731579052317665
+      },
+      "n_fit": 70529,
+      "n_validation": 17141,
+      "n_features": 178,
+      "model_parameters": {
+        "C": 0.1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": 1,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        299
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+        }
+      },
+      "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+      "gain": -9.868821421116225e-05
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "started": "2026-10-23T17:15:00+03:00",
+    "task": "multiclass",
+    "config": {
+      "family": "forest",
+      "recipe": "baseline"
+    },
+    "selection": "frozen inner-only winner; full refit is not a new validation measurement",
+    "finished": "2026-10-23T17:17:17+03:00",
+    "fit_seconds": 133.125,
+    "path": "results\\2026-10-23\\HYP-005-12-multiclass-full-refit",
+    "n_features": 194,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.12.0",
+      "sklearn": "1.5.2",
+      "catboost": "1.2.8",
+      "joblib": "1.4.2",
+      "threads": 2,
+      "data_sha256": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      "code_sha256": {
+        "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+        "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+      }
+    },
+    "submission_sha256": "eefad2a0de3499face76cf2a950a353a2b1025484760215b111d4e64a468dea5"
+  },
+  "limitation": "Outer panel is descriptive held-out comparison of inner-frozen choices; no general superiority claim."
+}

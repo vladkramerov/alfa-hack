@@ -1,0 +1,4201 @@
+{
+  "kind": "structural_inventory_no_model_training",
+  "created_at_moscow": "2026-10-23T15:54:02.834060+03:00",
+  "manifest": "docs/sources/intake-manifest.json",
+  "manifest_sha256": "95925fc4087949875e5448c4bad80caea8752fc2dda6ee30683ac797480ad199",
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "executable": "C:\\Users\\User\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe"
+  },
+  "definitions": {
+    "descriptive_statistics_scope": "Train only, except explicitly labeled test schema, row count, IDs, and Year_Factor support inventory.",
+    "missing": "pandas.read_csv defaults; count per column and total.",
+    "constant": "At most one distinct train value, counting missing as a distinct value.",
+    "nearconstant": "Nonconstant train column whose most frequent value (including missing) occurs in at least 99% of train rows.",
+    "skewness": "pandas.Series.skew(): unbiased sample skewness on numeric train values, excluding missing; null if undefined.",
+    "correlations": "Pairwise complete observed numeric train feature values; exclude id and target; emit unique pairs with absolute coefficient >= 0.95. Pearson and Spearman separately.",
+    "dtype": "pandas inferred dtype from unmodified CSV; not the data dictionary declared dtype.",
+    "raw_integrity": "Every ZIP SHA256, CRC, member byte length, and member SHA256 checked against intake manifest before writing; path traversal and symlink checks passed; existing differing outputs are refused."
+  },
+  "datasets": {
+    "multiclass": {
+      "directory": "data/multiclass",
+      "target": "attack_cat",
+      "id_column": "id",
+      "archive_sha256": "d12e7ded01107913fbe9a26b1aef4d77eea599ce8bb0ea809105af23035c3f47",
+      "files": {
+        "sample_submission.csv": {
+          "bytes": 565229,
+          "sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+          "verified_unchanged": true
+        },
+        "data_dictionary.csv": {
+          "bytes": 3532,
+          "sha256": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+          "verified_unchanged": true
+        },
+        "task.md": {
+          "bytes": 4699,
+          "sha256": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+          "verified_unchanged": true
+        },
+        "test.csv": {
+          "bytes": 7556373,
+          "sha256": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "verified_unchanged": true
+        },
+        "train.csv": {
+          "bytes": 16567584,
+          "sha256": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "verified_unchanged": true
+        }
+      },
+      "train": {
+        "rows": 87670,
+        "columns": 44,
+        "feature_columns_excluding_id_target": 42,
+        "numeric_features": 39,
+        "categorical_features": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "missing_cells": 0,
+        "columns_with_missing": 0,
+        "constant_columns": [],
+        "nearconstant_columns": [],
+        "column_profile": {
+          "id": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 87670,
+            "most_frequent_fraction": 1.1406410402646287e-05,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 9.007105368165612e-17,
+            "min": 0.0,
+            "max": 87669.0
+          },
+          "dur": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 39673,
+            "most_frequent_fraction": 0.1314702863009011,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 7.565947898615336,
+            "min": 0.0,
+            "max": 59.999989
+          },
+          "proto": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 133,
+            "most_frequent_fraction": 0.4576023725333638,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "tcp": 40118,
+              "udp": 31668,
+              "unas": 5949,
+              "arp": 1424,
+              "ospf": 1287,
+              "sctp": 575,
+              "any": 152,
+              "sun-nd": 111,
+              "mobile": 106,
+              "gre": 97,
+              "rsvp": 95,
+              "sep": 95,
+              "ipv6": 93,
+              "pim": 88,
+              "swipe": 85,
+              "ax.25": 64,
+              "sdrp": 61,
+              "compaq-peer": 61,
+              "chaos": 60,
+              "larp": 59,
+              "bbn-rcc": 59,
+              "ipv6-no": 59,
+              "iso-tp4": 58,
+              "micp": 58,
+              "qnx": 57,
+              "tp++": 57,
+              "cpnx": 57,
+              "ip": 57,
+              "pup": 56,
+              "tcf": 56,
+              "ddp": 56,
+              "ib": 56,
+              "wb-mon": 56,
+              "idpr": 56,
+              "trunk-2": 55,
+              "snp": 55,
+              "cbt": 55,
+              "iatp": 55,
+              "srp": 55,
+              "trunk-1": 54,
+              "ipx-n-ip": 54,
+              "ipcv": 54,
+              "a/n": 53,
+              "sccopmce": 53,
+              "rvd": 53,
+              "xnet": 53,
+              "ipv6-frag": 53,
+              "merit-inp": 53,
+              "nvp": 52,
+              "xtp": 52,
+              "ifmp": 52,
+              "sat-mon": 52,
+              "pipe": 52,
+              "visa": 52,
+              "sprite-rpc": 52,
+              "br-sat-mon": 52,
+              "bna": 52,
+              "pvp": 52,
+              "encap": 51,
+              "xns-idp": 51,
+              "ptp": 51,
+              "ipv6-route": 51,
+              "pnni": 51,
+              "prm": 51,
+              "sm": 51,
+              "aris": 50,
+              "egp": 50,
+              "ddx": 50,
+              "emcon": 50,
+              "sps": 50,
+              "tlsp": 50,
+              "ttp": 50,
+              "vrrp": 50,
+              "ipv6-opts": 50,
+              "igp": 49,
+              "stp": 49,
+              "iso-ip": 49,
+              "iplt": 49,
+              "isis": 49,
+              "uti": 49,
+              "leaf-2": 49,
+              "secure-vmtp": 49,
+              "i-nlsp": 49,
+              "cphb": 49,
+              "kryptolan": 49,
+              "il": 48,
+              "ipip": 48,
+              "vmtp": 48,
+              "mtp": 48,
+              "etherip": 48,
+              "ggp": 48,
+              "mfe-nsp": 47,
+              "cftp": 47,
+              "idrp": 47,
+              "leaf-1": 47,
+              "scps": 47,
+              "wsn": 47,
+              "vines": 46,
+              "wb-expak": 46,
+              "aes-sp3-d": 46,
+              "ippc": 46,
+              "skip": 46,
+              "l2tp": 45,
+              "narp": 45,
+              "dgp": 45,
+              "rdp": 45,
+              "argus": 45,
+              "gmtp": 45,
+              "sat-expak": 45,
+              "nsfnet-igp": 45,
+              "smp": 45,
+              "mhrp": 44,
+              "ipcomp": 44,
+              "mux": 44,
+              "eigrp": 44,
+              "pgm": 44,
+              "irtp": 43,
+              "idpr-cmtp": 43,
+              "fire": 41,
+              "dcn": 41,
+              "fc": 41,
+              "ipnip": 40,
+              "crtp": 40,
+              "zero": 40,
+              "netblt": 40,
+              "crudp": 39,
+              "hmp": 38,
+              "3pc": 38,
+              "st2": 38,
+              "pri-enc": 37,
+              "igmp": 9,
+              "icmp": 9,
+              "rtp": 1
+            }
+          },
+          "service": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 13,
+            "most_frequent_fraction": 0.5372533363750428,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "-": 47101,
+              "dns": 23587,
+              "http": 9350,
+              "smtp": 2476,
+              "ftp-data": 2053,
+              "ftp": 1701,
+              "ssh": 665,
+              "pop3": 589,
+              "dhcp": 52,
+              "snmp": 47,
+              "ssl": 33,
+              "irc": 9,
+              "radius": 7
+            }
+          },
+          "state": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 9,
+            "most_frequent_fraction": 0.46809627010379834,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "INT": 41038,
+              "FIN": 39084,
+              "CON": 6527,
+              "REQ": 971,
+              "RST": 41,
+              "ECO": 6,
+              "no": 1,
+              "URN": 1,
+              "PAR": 1
+            }
+          },
+          "spkts": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 365,
+            "most_frequent_fraction": 0.4844302498003878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 39.36410088787467,
+            "min": 1.0,
+            "max": 9492.0
+          },
+          "dpkts": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 347,
+            "most_frequent_fraction": 0.47928595870879437,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 40.36907268319027,
+            "min": 0.0,
+            "max": 10974.0
+          },
+          "sbytes": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 4694,
+            "most_frequent_fraction": 0.2230181361925402,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 43.76848907405682,
+            "min": 28.0,
+            "max": 12594395.0
+          },
+          "dbytes": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 4353,
+            "most_frequent_fraction": 0.47928595870879437,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 43.31894980219837,
+            "min": 0.0,
+            "max": 14655550.0
+          },
+          "rate": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 40528,
+            "most_frequent_fraction": 0.1313676286072773,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 3.3266429868274305,
+            "min": 0.0,
+            "max": 1000000.003
+          },
+          "sttl": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 10,
+            "most_frequent_fraction": 0.6546024865974678,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.6792684022559348,
+            "min": 0.0,
+            "max": 255.0
+          },
+          "dttl": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 5,
+            "most_frequent_fraction": 0.4797764343561081,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.8808730785103488,
+            "min": 0.0,
+            "max": 254.0
+          },
+          "sload": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 42785,
+            "most_frequent_fraction": 0.06892893806319152,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 8.796809069502718,
+            "min": 0.0,
+            "max": 5344000000.0
+          },
+          "dload": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 40609,
+            "most_frequent_fraction": 0.479297365119197,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 4.7116028680440865,
+            "min": 0.0,
+            "max": 22353024.0
+          },
+          "sloss": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 287,
+            "most_frequent_fraction": 0.5426941941371051,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 43.40528165403117,
+            "min": 0.0,
+            "max": 4745.0
+          },
+          "dloss": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 281,
+            "most_frequent_fraction": 0.5492642865290294,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 44.938321676948064,
+            "min": 0.0,
+            "max": 5484.0
+          },
+          "sinpkt": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 39953,
+            "most_frequent_fraction": 0.14878521729211816,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 7.899615324595374,
+            "min": 0.0,
+            "max": 60009.92
+          },
+          "dinpkt": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 38776,
+            "most_frequent_fraction": 0.4793087715295996,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 28.85025926793617,
+            "min": 0.0,
+            "max": 56716.824
+          },
+          "sjit": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 40179,
+            "most_frequent_fraction": 0.5033762974791833,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 17.662929786610807,
+            "min": 0.0,
+            "max": 1460480.016
+          },
+          "djit": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 39616,
+            "most_frequent_fraction": 0.532245922208281,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 27.56589551524025,
+            "min": 0.0,
+            "max": 259865.7489
+          },
+          "swin": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 8,
+            "most_frequent_fraction": 0.5423976274666362,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.17031516781444947,
+            "min": 0.0,
+            "max": 255.0
+          },
+          "stcpb": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 38629,
+            "most_frequent_fraction": 0.5469487852172921,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.078876574986996,
+            "min": 0.0,
+            "max": 4294958913.0
+          },
+          "dtcpb": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 38531,
+            "most_frequent_fraction": 0.5469944108589027,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.0779254957856164,
+            "min": 0.0,
+            "max": 4294881924.0
+          },
+          "dwin": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 4,
+            "most_frequent_fraction": 0.5469944108589027,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.18890224366737943,
+            "min": 0.0,
+            "max": 255.0
+          },
+          "tcprtt": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 24042,
+            "most_frequent_fraction": 0.5472567582981636,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 3.8421062118920974,
+            "min": 0.0,
+            "max": 2.30526
+          },
+          "synack": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 22984,
+            "most_frequent_fraction": 0.5472567582981636,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 4.947895765250014,
+            "min": 0.0,
+            "max": 1.598661
+          },
+          "ackdat": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 21912,
+            "most_frequent_fraction": 0.5472567582981636,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 5.6858551904179695,
+            "min": 0.0,
+            "max": 1.499852
+          },
+          "smean": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 1274,
+            "most_frequent_fraction": 0.23116231322002967,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 3.7176421684059577,
+            "min": 28.0,
+            "max": 1500.0
+          },
+          "dmean": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 1229,
+            "most_frequent_fraction": 0.47928595870879437,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 2.8160692050024543,
+            "min": 0.0,
+            "max": 1458.0
+          },
+          "trans_depth": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 7,
+            "most_frequent_fraction": 0.8982776320292004,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 205.48222410355714,
+            "min": 0.0,
+            "max": 172.0
+          },
+          "response_body_len": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 1555,
+            "most_frequent_fraction": 0.935793315843504,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 63.78180587489059,
+            "min": 0.0,
+            "max": 5242880.0
+          },
+          "ct_srv_src": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 52,
+            "most_frequent_fraction": 0.20765370138017566,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.5167642737975473,
+            "min": 1.0,
+            "max": 63.0
+          },
+          "ct_state_ttl": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 5,
+            "most_frequent_fraction": 0.46688719060111783,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.910809587196557,
+            "min": 0.0,
+            "max": 6.0
+          },
+          "ct_dst_ltm": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 49,
+            "most_frequent_fraction": 0.3221284361811338,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 2.0440742544753436,
+            "min": 1.0,
+            "max": 51.0
+          },
+          "ct_src_dport_ltm": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 47,
+            "most_frequent_fraction": 0.5297365119196988,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 2.1686740555758637,
+            "min": 1.0,
+            "max": 51.0
+          },
+          "ct_dst_sport_ltm": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 32,
+            "most_frequent_fraction": 0.6257784875099807,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.7010557129148283,
+            "min": 1.0,
+            "max": 46.0
+          },
+          "ct_dst_src_ltm": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 53,
+            "most_frequent_fraction": 0.2685525265199042,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.5504342018434685,
+            "min": 1.0,
+            "max": 63.0
+          },
+          "is_ftp_login": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 4,
+            "most_frequent_fraction": 0.9857077677654842,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 10.105706556958514,
+            "min": 0.0,
+            "max": 4.0
+          },
+          "ct_ftp_cmd": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 4,
+            "most_frequent_fraction": 0.9857077677654842,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 10.105706556958514,
+            "min": 0.0,
+            "max": 4.0
+          },
+          "ct_flw_http_mthd": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 10,
+            "most_frequent_fraction": 0.8982776320292004,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 22.78480358256391,
+            "min": 0.0,
+            "max": 30.0
+          },
+          "ct_src_ltm": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 49,
+            "most_frequent_fraction": 0.24416562107904644,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.8401568759220674,
+            "min": 1.0,
+            "max": 51.0
+          },
+          "ct_srv_dst": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 52,
+            "most_frequent_fraction": 0.24174746207368542,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.5240683849153918,
+            "min": 1.0,
+            "max": 62.0
+          },
+          "is_sm_ips_ports": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 2,
+            "most_frequent_fraction": 0.9843047792859587,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 7.793053731567299,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "attack_cat": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 10,
+            "most_frequent_fraction": 0.31937949127409604,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "Normal": 28000,
+              "Generic": 20000,
+              "Exploits": 16696,
+              "Fuzzers": 9092,
+              "DoS": 6132,
+              "Reconnaissance": 5245,
+              "Analysis": 1000,
+              "Backdoor": 873,
+              "Shellcode": 567,
+              "Worms": 65
+            }
+          }
+        },
+        "constant_columns_count": 0,
+        "nearconstant_columns_count": 0
+      },
+      "schema": {
+        "train_columns": [
+          "id",
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports",
+          "attack_cat"
+        ],
+        "test_columns": [
+          "id",
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "train_dtypes": {
+          "id": "int64",
+          "dur": "float64",
+          "proto": "str",
+          "service": "str",
+          "state": "str",
+          "spkts": "int64",
+          "dpkts": "int64",
+          "sbytes": "int64",
+          "dbytes": "int64",
+          "rate": "float64",
+          "sttl": "int64",
+          "dttl": "int64",
+          "sload": "float64",
+          "dload": "float64",
+          "sloss": "int64",
+          "dloss": "int64",
+          "sinpkt": "float64",
+          "dinpkt": "float64",
+          "sjit": "float64",
+          "djit": "float64",
+          "swin": "int64",
+          "stcpb": "int64",
+          "dtcpb": "int64",
+          "dwin": "int64",
+          "tcprtt": "float64",
+          "synack": "float64",
+          "ackdat": "float64",
+          "smean": "int64",
+          "dmean": "int64",
+          "trans_depth": "int64",
+          "response_body_len": "int64",
+          "ct_srv_src": "int64",
+          "ct_state_ttl": "int64",
+          "ct_dst_ltm": "int64",
+          "ct_src_dport_ltm": "int64",
+          "ct_dst_sport_ltm": "int64",
+          "ct_dst_src_ltm": "int64",
+          "is_ftp_login": "int64",
+          "ct_ftp_cmd": "int64",
+          "ct_flw_http_mthd": "int64",
+          "ct_src_ltm": "int64",
+          "ct_srv_dst": "int64",
+          "is_sm_ips_ports": "int64",
+          "attack_cat": "str"
+        },
+        "test_dtypes": {
+          "id": "int64",
+          "dur": "float64",
+          "proto": "str",
+          "service": "str",
+          "state": "str",
+          "spkts": "int64",
+          "dpkts": "int64",
+          "sbytes": "int64",
+          "dbytes": "int64",
+          "rate": "float64",
+          "sttl": "int64",
+          "dttl": "int64",
+          "sload": "float64",
+          "dload": "float64",
+          "sloss": "int64",
+          "dloss": "int64",
+          "sinpkt": "float64",
+          "dinpkt": "float64",
+          "sjit": "float64",
+          "djit": "float64",
+          "swin": "int64",
+          "stcpb": "int64",
+          "dtcpb": "int64",
+          "dwin": "int64",
+          "tcprtt": "float64",
+          "synack": "float64",
+          "ackdat": "float64",
+          "smean": "int64",
+          "dmean": "int64",
+          "trans_depth": "int64",
+          "response_body_len": "int64",
+          "ct_srv_src": "int64",
+          "ct_state_ttl": "int64",
+          "ct_dst_ltm": "int64",
+          "ct_src_dport_ltm": "int64",
+          "ct_dst_sport_ltm": "int64",
+          "ct_dst_src_ltm": "int64",
+          "is_ftp_login": "int64",
+          "ct_ftp_cmd": "int64",
+          "ct_flw_http_mthd": "int64",
+          "ct_src_ltm": "int64",
+          "ct_srv_dst": "int64",
+          "is_sm_ips_ports": "int64"
+        },
+        "test_rows": 41166,
+        "test_matches_train_without_target_in_order": true,
+        "dtype_differences": {},
+        "sample_columns": [
+          "id",
+          "attack_cat"
+        ],
+        "sample_rows": 41166,
+        "sample_id_order_matches_test": true,
+        "dictionary_covers_train_columns": true,
+        "train_unique_ids": 87670,
+        "test_unique_ids": 41166,
+        "train_test_id_overlap": 41166
+      },
+      "high_correlations": {
+        "pearson": [
+          {
+            "feature_a": "is_ftp_login",
+            "feature_b": "ct_ftp_cmd",
+            "coefficient": 1.0
+          },
+          {
+            "feature_a": "dbytes",
+            "feature_b": "dloss",
+            "coefficient": 0.9969968634671739
+          },
+          {
+            "feature_a": "sbytes",
+            "feature_b": "sloss",
+            "coefficient": 0.9968462910510475
+          },
+          {
+            "feature_a": "swin",
+            "feature_b": "dwin",
+            "coefficient": 0.9907253181265493
+          },
+          {
+            "feature_a": "dpkts",
+            "feature_b": "dloss",
+            "coefficient": 0.9803072786102914
+          },
+          {
+            "feature_a": "ct_srv_src",
+            "feature_b": "ct_srv_dst",
+            "coefficient": 0.979686407946073
+          },
+          {
+            "feature_a": "dpkts",
+            "feature_b": "dbytes",
+            "coefficient": 0.974551499739242
+          },
+          {
+            "feature_a": "spkts",
+            "feature_b": "sloss",
+            "coefficient": 0.9732362114136459
+          },
+          {
+            "feature_a": "ct_dst_src_ltm",
+            "feature_b": "ct_srv_dst",
+            "coefficient": 0.9719011511372574
+          },
+          {
+            "feature_a": "spkts",
+            "feature_b": "sbytes",
+            "coefficient": 0.9670684512649489
+          },
+          {
+            "feature_a": "ct_srv_src",
+            "feature_b": "ct_dst_src_ltm",
+            "coefficient": 0.9663531450649968
+          },
+          {
+            "feature_a": "ct_dst_ltm",
+            "feature_b": "ct_src_dport_ltm",
+            "coefficient": 0.9622686267873716
+          }
+        ],
+        "spearman": [
+          {
+            "feature_a": "is_ftp_login",
+            "feature_b": "ct_ftp_cmd",
+            "coefficient": 1.0
+          },
+          {
+            "feature_a": "trans_depth",
+            "feature_b": "ct_flw_http_mthd",
+            "coefficient": 0.999615779471747
+          },
+          {
+            "feature_a": "tcprtt",
+            "feature_b": "synack",
+            "coefficient": 0.9967338431065518
+          },
+          {
+            "feature_a": "tcprtt",
+            "feature_b": "ackdat",
+            "coefficient": 0.9935830951510619
+          },
+          {
+            "feature_a": "swin",
+            "feature_b": "dwin",
+            "coefficient": 0.9907779826198657
+          },
+          {
+            "feature_a": "dpkts",
+            "feature_b": "dbytes",
+            "coefficient": 0.9897519876707647
+          },
+          {
+            "feature_a": "synack",
+            "feature_b": "ackdat",
+            "coefficient": 0.9840604117484553
+          },
+          {
+            "feature_a": "dbytes",
+            "feature_b": "dmean",
+            "coefficient": 0.9629755109227427
+          },
+          {
+            "feature_a": "dload",
+            "feature_b": "dmean",
+            "coefficient": 0.9629268857205081
+          },
+          {
+            "feature_a": "rate",
+            "feature_b": "sload",
+            "coefficient": 0.9603982336470808
+          },
+          {
+            "feature_a": "dttl",
+            "feature_b": "dinpkt",
+            "coefficient": 0.9592311036888941
+          },
+          {
+            "feature_a": "dpkts",
+            "feature_b": "dloss",
+            "coefficient": 0.9568520024906666
+          },
+          {
+            "feature_a": "sloss",
+            "feature_b": "dloss",
+            "coefficient": 0.9550730664053206
+          },
+          {
+            "feature_a": "rate",
+            "feature_b": "sinpkt",
+            "coefficient": -0.9505107391330423
+          }
+        ]
+      },
+      "target_distribution": {
+        "missing": 0,
+        "class_count": 10,
+        "counts": {
+          "Normal": 28000,
+          "Generic": 20000,
+          "Exploits": 16696,
+          "Fuzzers": 9092,
+          "DoS": 6132,
+          "Reconnaissance": 5245,
+          "Analysis": 1000,
+          "Backdoor": 873,
+          "Shellcode": 567,
+          "Worms": 65
+        },
+        "fractions": {
+          "Normal": 0.31937949127409604,
+          "Generic": 0.22812820805292575,
+          "Exploits": 0.1904414280825824,
+          "Fuzzers": 0.10370708338086004,
+          "DoS": 0.06994410858902703,
+          "Reconnaissance": 0.059826622561879775,
+          "Analysis": 0.011406410402646287,
+          "Backdoor": 0.009957796281510209,
+          "Shellcode": 0.006467434698300445,
+          "Worms": 0.0007414166761720086
+        },
+        "majority_to_minority_ratio": 430.7692307692308
+      },
+      "exact_feature_duplicates": {
+        "definition": "Exact equality of all original feature values excluding id and target, no rounding; pandas MultiIndex factorization over combined train/test feature tuples. This is structural inventory only.",
+        "train_unique_feature_rows": 54228,
+        "train_duplicate_groups": 5816,
+        "train_rows_in_duplicate_groups": 39258,
+        "train_duplicate_rows_after_first": 33442,
+        "train_max_duplicate_group_size": 207,
+        "train_mixed_target_groups": 1458,
+        "train_rows_in_mixed_target_groups": 14829,
+        "train_mixed_target_duplicate_groups": 1458,
+        "train_test_shared_distinct_feature_rows": 796,
+        "train_rows_with_exact_feature_match_in_test": 4523,
+        "test_rows_with_exact_feature_match_in_train": 3556,
+        "test_unique_feature_rows": 29223,
+        "test_duplicate_rows_after_first": 11943,
+        "train_duplicate_group_size_distribution": {
+          "2": 1846,
+          "3": 543,
+          "4": 429,
+          "5": 373,
+          "6": 319,
+          "7": 370,
+          "8": 334,
+          "9": 341,
+          "10": 285,
+          "11": 239,
+          "12": 172,
+          "13": 112,
+          "14": 65,
+          "15": 45,
+          "16": 41,
+          "17": 27,
+          "18": 26,
+          "19": 32,
+          "20": 15,
+          "21": 31,
+          "22": 24,
+          "23": 11,
+          "24": 5,
+          "25": 12,
+          "26": 7,
+          "27": 7,
+          "28": 7,
+          "29": 6,
+          "30": 3,
+          "31": 5,
+          "32": 1,
+          "33": 6,
+          "34": 7,
+          "35": 4,
+          "36": 1,
+          "37": 5,
+          "38": 2,
+          "39": 4,
+          "40": 6,
+          "43": 10,
+          "44": 3,
+          "45": 2,
+          "46": 4,
+          "47": 1,
+          "48": 2,
+          "49": 3,
+          "50": 2,
+          "52": 1,
+          "54": 2,
+          "57": 2,
+          "59": 2,
+          "65": 1,
+          "66": 1,
+          "67": 1,
+          "68": 1,
+          "69": 1,
+          "70": 1,
+          "73": 1,
+          "74": 1,
+          "84": 2,
+          "90": 1,
+          "116": 1,
+          "146": 1,
+          "207": 1
+        }
+      },
+      "numeric_linear_dependencies": {
+        "scope": "Purely diagnostic full TRAIN features, excludes id and target; no estimator fitted and no split/experiment score computed.",
+        "method": "Median impute each numeric column on full TRAIN for inventory only, center and scale by population standard deviation; rank from SVD using max(shape)*eps*largest singular value. VIF diagnostics use diag(pinv(correlation, rcond=1e-12)); for nonzero exact nullspace loading classical VIF is infinite and pseudoinverse diagonal must not be interpreted as classical VIF.",
+        "unpruned": {
+          "rows": 87670,
+          "input_numeric_feature_count": 39,
+          "constant_after_imputation": [],
+          "analyzed_columns": [
+            "dur",
+            "spkts",
+            "dpkts",
+            "sbytes",
+            "dbytes",
+            "rate",
+            "sttl",
+            "dttl",
+            "sload",
+            "dload",
+            "sloss",
+            "dloss",
+            "sinpkt",
+            "dinpkt",
+            "sjit",
+            "djit",
+            "swin",
+            "stcpb",
+            "dtcpb",
+            "dwin",
+            "tcprtt",
+            "synack",
+            "ackdat",
+            "smean",
+            "dmean",
+            "trans_depth",
+            "response_body_len",
+            "ct_srv_src",
+            "ct_state_ttl",
+            "ct_dst_ltm",
+            "ct_src_dport_ltm",
+            "ct_dst_sport_ltm",
+            "ct_dst_src_ltm",
+            "is_ftp_login",
+            "ct_ftp_cmd",
+            "ct_flw_http_mthd",
+            "ct_src_ltm",
+            "ct_srv_dst",
+            "is_sm_ips_ports"
+          ],
+          "matrix_rank": 37,
+          "rank_tolerance": 1.817209936280174e-08,
+          "rank_deficiency": 2,
+          "singular_values": [
+            933.4990295295261,
+            578.9524470788919,
+            558.8519504099065,
+            514.3329770809227,
+            460.3080885646804,
+            431.85196404567864,
+            417.23951314378644,
+            404.2300244516189,
+            325.6342853212362,
+            319.61753740293915,
+            284.79140152890403,
+            274.2153237008982,
+            253.26720491753974,
+            251.01033499255198,
+            244.79799962945665,
+            236.52327411021093,
+            211.0875660368785,
+            185.71934154617,
+            175.76358337584276,
+            169.8401511707265,
+            160.85598531947878,
+            154.25819631931623,
+            148.99627974080104,
+            134.60397443715144,
+            132.99830099526721,
+            119.09685893534493,
+            100.5210557289196,
+            92.60826081176442,
+            64.54645773561202,
+            54.960263085065876,
+            45.43779715254121,
+            40.04599836935777,
+            31.059989778870523,
+            22.68203612801143,
+            21.668245421383276,
+            10.568717061118928,
+            6.3916008161239395,
+            2.3264566912078164e-12,
+            1.1657074752399676e-12
+          ],
+          "condition_number": 800800414647216.6,
+          "pseudoinverse_rcond": 1e-12,
+          "vif": {
+            "dur": {
+              "pseudoinverse_diagonal": 1.483909434837957,
+              "classical_vif": 1.483909434837957,
+              "nullspace_squared_loading": 4.709661422027473e-32
+            },
+            "spkts": {
+              "pseudoinverse_diagonal": 117.86761916464671,
+              "classical_vif": 117.86761916464671,
+              "nullspace_squared_loading": 1.493204464830131e-29
+            },
+            "dpkts": {
+              "pseudoinverse_diagonal": 697.4794223469816,
+              "classical_vif": 697.4794223469816,
+              "nullspace_squared_loading": 8.211340956778364e-29
+            },
+            "sbytes": {
+              "pseudoinverse_diagonal": 383.75166250820354,
+              "classical_vif": 383.75166250820354,
+              "nullspace_squared_loading": 4.3234790604911913e-29
+            },
+            "dbytes": {
+              "pseudoinverse_diagonal": 330.5626061468978,
+              "classical_vif": 330.5626061468978,
+              "nullspace_squared_loading": 1.5018971204103134e-28
+            },
+            "rate": {
+              "pseudoinverse_diagonal": 2.276928452220896,
+              "classical_vif": 2.276928452220896,
+              "nullspace_squared_loading": 1.1245695614317473e-30
+            },
+            "sttl": {
+              "pseudoinverse_diagonal": 3.628413589666192,
+              "classical_vif": 3.628413589666192,
+              "nullspace_squared_loading": 1.5223472466104275e-30
+            },
+            "dttl": {
+              "pseudoinverse_diagonal": 6.774562613096974,
+              "classical_vif": 6.774562613096974,
+              "nullspace_squared_loading": 8.076910693085187e-29
+            },
+            "sload": {
+              "pseudoinverse_diagonal": 1.994794027056437,
+              "classical_vif": 1.994794027056437,
+              "nullspace_squared_loading": 8.276346273853065e-32
+            },
+            "dload": {
+              "pseudoinverse_diagonal": 1.9680345005942996,
+              "classical_vif": 1.9680345005942996,
+              "nullspace_squared_loading": 4.035222787030189e-31
+            },
+            "sloss": {
+              "pseudoinverse_diagonal": 452.3240124585802,
+              "classical_vif": 452.3240124585802,
+              "nullspace_squared_loading": 3.40639625099531e-29
+            },
+            "dloss": {
+              "pseudoinverse_diagonal": 1222.2312957687338,
+              "classical_vif": 1222.2312957687338,
+              "nullspace_squared_loading": 4.297700396527931e-28
+            },
+            "sinpkt": {
+              "pseudoinverse_diagonal": 10.776463976894467,
+              "classical_vif": 10.776463976894467,
+              "nullspace_squared_loading": 4.859306219473923e-30
+            },
+            "dinpkt": {
+              "pseudoinverse_diagonal": 2.0821621185331147,
+              "classical_vif": 2.0821621185331147,
+              "nullspace_squared_loading": 2.1383496502112928e-30
+            },
+            "sjit": {
+              "pseudoinverse_diagonal": 2.2874784936014136,
+              "classical_vif": 2.2874784936014136,
+              "nullspace_squared_loading": 2.926663602786112e-31
+            },
+            "djit": {
+              "pseudoinverse_diagonal": 1.4648009789151475,
+              "classical_vif": 1.4648009789151475,
+              "nullspace_squared_loading": 1.3894445292667456e-30
+            },
+            "swin": {
+              "pseudoinverse_diagonal": 79.2563149235547,
+              "classical_vif": 79.2563149235547,
+              "nullspace_squared_loading": 1.8374959427975268e-30
+            },
+            "stcpb": {
+              "pseudoinverse_diagonal": 2.6445697201391596,
+              "classical_vif": 2.6445697201391596,
+              "nullspace_squared_loading": 1.0291815578290505e-30
+            },
+            "dtcpb": {
+              "pseudoinverse_diagonal": 2.654017249714061,
+              "classical_vif": 2.654017249714061,
+              "nullspace_squared_loading": 1.3621038565698783e-30
+            },
+            "dwin": {
+              "pseudoinverse_diagonal": 94.09925311996831,
+              "classical_vif": 94.09925311996831,
+              "nullspace_squared_loading": 6.789545193582969e-30
+            },
+            "tcprtt": {
+              "pseudoinverse_diagonal": 0.39903432596179866,
+              "classical_vif": "infinite",
+              "nullspace_squared_loading": 0.6417443407011902
+            },
+            "synack": {
+              "pseudoinverse_diagonal": 2.642671478405505,
+              "classical_vif": "infinite",
+              "nullspace_squared_loading": 0.18846459344216226
+            },
+            "ackdat": {
+              "pseudoinverse_diagonal": 2.928619953818352,
+              "classical_vif": "infinite",
+              "nullspace_squared_loading": 0.16979106585664835
+            },
+            "smean": {
+              "pseudoinverse_diagonal": 1.4043906642853672,
+              "classical_vif": 1.4043906642853672,
+              "nullspace_squared_loading": 4.520629780986416e-31
+            },
+            "dmean": {
+              "pseudoinverse_diagonal": 3.1515968586498255,
+              "classical_vif": 3.1515968586498255,
+              "nullspace_squared_loading": 5.021391885246649e-30
+            },
+            "trans_depth": {
+              "pseudoinverse_diagonal": 1.1195671082729408,
+              "classical_vif": 1.1195671082729408,
+              "nullspace_squared_loading": 6.403100979615363e-32
+            },
+            "response_body_len": {
+              "pseudoinverse_diagonal": 1.3660868173116438,
+              "classical_vif": 1.3660868173116438,
+              "nullspace_squared_loading": 1.0810574564255631e-31
+            },
+            "ct_srv_src": {
+              "pseudoinverse_diagonal": 29.947964983367406,
+              "classical_vif": 29.947964983367406,
+              "nullspace_squared_loading": 3.5600422397363856e-30
+            },
+            "ct_state_ttl": {
+              "pseudoinverse_diagonal": 4.37359503468182,
+              "classical_vif": 4.37359503468182,
+              "nullspace_squared_loading": 2.7441175492439144e-31
+            },
+            "ct_dst_ltm": {
+              "pseudoinverse_diagonal": 16.840988439466464,
+              "classical_vif": 16.840988439466464,
+              "nullspace_squared_loading": 1.5894799474309463e-30
+            },
+            "ct_src_dport_ltm": {
+              "pseudoinverse_diagonal": 25.470408928195493,
+              "classical_vif": 25.470408928195493,
+              "nullspace_squared_loading": 5.059690111391831e-31
+            },
+            "ct_dst_sport_ltm": {
+              "pseudoinverse_diagonal": 6.624941972716501,
+              "classical_vif": 6.624941972716501,
+              "nullspace_squared_loading": 2.5638491627478187e-32
+            },
+            "ct_dst_src_ltm": {
+              "pseudoinverse_diagonal": 27.074636113863885,
+              "classical_vif": 27.074636113863885,
+              "nullspace_squared_loading": 2.5722201903777733e-31
+            },
+            "is_ftp_login": {
+              "pseudoinverse_diagonal": 0.29069116466122963,
+              "classical_vif": "infinite",
+              "nullspace_squared_loading": 0.5000000000000034
+            },
+            "ct_ftp_cmd": {
+              "pseudoinverse_diagonal": 0.290691164667195,
+              "classical_vif": "infinite",
+              "nullspace_squared_loading": 0.49999999999999717
+            },
+            "ct_flw_http_mthd": {
+              "pseudoinverse_diagonal": 1.16746858536191,
+              "classical_vif": 1.16746858536191,
+              "nullspace_squared_loading": 1.4063185335622723e-31
+            },
+            "ct_src_ltm": {
+              "pseudoinverse_diagonal": 5.5103410720157315,
+              "classical_vif": 5.5103410720157315,
+              "nullspace_squared_loading": 1.3077848162152104e-29
+            },
+            "ct_srv_dst": {
+              "pseudoinverse_diagonal": 35.97013893220655,
+              "classical_vif": 35.97013893220655,
+              "nullspace_squared_loading": 1.9885570577915763e-31
+            },
+            "is_sm_ips_ports": {
+              "pseudoinverse_diagonal": 10.821014083514623,
+              "classical_vif": 10.821014083514623,
+              "nullspace_squared_loading": 4.244709716756265e-30
+            }
+          },
+          "infinite_classical_vif_features": [
+            "tcprtt",
+            "synack",
+            "ackdat",
+            "is_ftp_login",
+            "ct_ftp_cmd"
+          ],
+          "finite_classical_vif_ge_10": {
+            "spkts": 117.86761916464671,
+            "dpkts": 697.4794223469816,
+            "sbytes": 383.75166250820354,
+            "dbytes": 330.5626061468978,
+            "sloss": 452.3240124585802,
+            "dloss": 1222.2312957687338,
+            "sinpkt": 10.776463976894467,
+            "swin": 79.2563149235547,
+            "dwin": 94.09925311996831,
+            "ct_srv_src": 29.947964983367406,
+            "ct_dst_ltm": 16.840988439466464,
+            "ct_src_dport_ltm": 25.470408928195493,
+            "ct_dst_src_ltm": 27.074636113863885,
+            "ct_srv_dst": 35.97013893220655,
+            "is_sm_ips_ports": 10.821014083514623
+          }
+        },
+        "pearson_threshold_095_pruning": {
+          "rule": "Traverse original CSV numeric column order; drop a column if absolute Pearson correlation on median-imputed TRAIN with any already kept column is >=0.95. No target or test used. This deterministic diagnostic is not a validated preprocessing recommendation.",
+          "dropped": [
+            {
+              "feature": "sbytes",
+              "kept_correlated_feature": "spkts",
+              "pearson": 0.9670684512649489
+            },
+            {
+              "feature": "dbytes",
+              "kept_correlated_feature": "dpkts",
+              "pearson": 0.974551499739242
+            },
+            {
+              "feature": "sloss",
+              "kept_correlated_feature": "spkts",
+              "pearson": 0.9732362114136459
+            },
+            {
+              "feature": "dloss",
+              "kept_correlated_feature": "dpkts",
+              "pearson": 0.9803072786102914
+            },
+            {
+              "feature": "dwin",
+              "kept_correlated_feature": "swin",
+              "pearson": 0.9907253181265493
+            },
+            {
+              "feature": "ct_src_dport_ltm",
+              "kept_correlated_feature": "ct_dst_ltm",
+              "pearson": 0.9622686267873716
+            },
+            {
+              "feature": "ct_dst_src_ltm",
+              "kept_correlated_feature": "ct_srv_src",
+              "pearson": 0.9663531450649968
+            },
+            {
+              "feature": "ct_ftp_cmd",
+              "kept_correlated_feature": "is_ftp_login",
+              "pearson": 1.0
+            },
+            {
+              "feature": "ct_srv_dst",
+              "kept_correlated_feature": "ct_srv_src",
+              "pearson": 0.979686407946073
+            }
+          ],
+          "retained": [
+            "dur",
+            "spkts",
+            "dpkts",
+            "rate",
+            "sttl",
+            "dttl",
+            "sload",
+            "dload",
+            "sinpkt",
+            "dinpkt",
+            "sjit",
+            "djit",
+            "swin",
+            "stcpb",
+            "dtcpb",
+            "tcprtt",
+            "synack",
+            "ackdat",
+            "smean",
+            "dmean",
+            "trans_depth",
+            "response_body_len",
+            "ct_srv_src",
+            "ct_state_ttl",
+            "ct_dst_ltm",
+            "ct_dst_sport_ltm",
+            "is_ftp_login",
+            "ct_flw_http_mthd",
+            "ct_src_ltm",
+            "is_sm_ips_ports"
+          ],
+          "retained_diagnostics": {
+            "rows": 87670,
+            "input_numeric_feature_count": 30,
+            "constant_after_imputation": [],
+            "analyzed_columns": [
+              "dur",
+              "spkts",
+              "dpkts",
+              "rate",
+              "sttl",
+              "dttl",
+              "sload",
+              "dload",
+              "sinpkt",
+              "dinpkt",
+              "sjit",
+              "djit",
+              "swin",
+              "stcpb",
+              "dtcpb",
+              "tcprtt",
+              "synack",
+              "ackdat",
+              "smean",
+              "dmean",
+              "trans_depth",
+              "response_body_len",
+              "ct_srv_src",
+              "ct_state_ttl",
+              "ct_dst_ltm",
+              "ct_dst_sport_ltm",
+              "is_ftp_login",
+              "ct_flw_http_mthd",
+              "ct_src_ltm",
+              "is_sm_ips_ports"
+            ],
+            "matrix_rank": 29,
+            "rank_tolerance": 1.5592381593990405e-08,
+            "rank_deficiency": 1,
+            "singular_values": [
+              800.9791711704547,
+              522.0036035711169,
+              460.4324672998015,
+              428.3521200374662,
+              401.79880431348187,
+              385.38531471170086,
+              331.48800488379504,
+              317.4715414371144,
+              311.81842830146945,
+              299.84981931419316,
+              273.52717028146185,
+              253.29306831264893,
+              249.53583722135207,
+              246.2609471231053,
+              231.1919722470965,
+              208.2553099019701,
+              199.28600597910417,
+              175.76162382678876,
+              165.3340419848183,
+              161.09799733230642,
+              153.9005949346863,
+              144.61741035084654,
+              136.98706162542626,
+              134.31393574058166,
+              124.67547500777164,
+              115.24323038917628,
+              91.19230264692803,
+              86.46842073950154,
+              64.48749395092,
+              6.325200617421488e-12
+            ],
+            "condition_number": 126633006542799.5,
+            "pseudoinverse_rcond": 1e-12,
+            "vif": {
+              "dur": {
+                "pseudoinverse_diagonal": 1.3212555543601223,
+                "classical_vif": 1.3212555543601223,
+                "nullspace_squared_loading": 3.9188585194976593e-31
+              },
+              "spkts": {
+                "pseudoinverse_diagonal": 1.3137997783947781,
+                "classical_vif": 1.3137997783947781,
+                "nullspace_squared_loading": 4.36160099491439e-31
+              },
+              "dpkts": {
+                "pseudoinverse_diagonal": 1.7334893028084721,
+                "classical_vif": 1.7334893028084721,
+                "nullspace_squared_loading": 1.8402919220347075e-31
+              },
+              "rate": {
+                "pseudoinverse_diagonal": 2.2714514723199764,
+                "classical_vif": 2.2714514723199764,
+                "nullspace_squared_loading": 1.0612391087652145e-31
+              },
+              "sttl": {
+                "pseudoinverse_diagonal": 3.2461574992836444,
+                "classical_vif": 3.2461574992836444,
+                "nullspace_squared_loading": 4.801654167158508e-30
+              },
+              "dttl": {
+                "pseudoinverse_diagonal": 6.082613633879014,
+                "classical_vif": 6.082613633879014,
+                "nullspace_squared_loading": 9.449449109540512e-28
+              },
+              "sload": {
+                "pseudoinverse_diagonal": 1.982405835977197,
+                "classical_vif": 1.982405835977197,
+                "nullspace_squared_loading": 8.504658222308532e-33
+              },
+              "dload": {
+                "pseudoinverse_diagonal": 1.8524194378951713,
+                "classical_vif": 1.8524194378951713,
+                "nullspace_squared_loading": 1.4638311040834067e-31
+              },
+              "sinpkt": {
+                "pseudoinverse_diagonal": 10.766280077873821,
+                "classical_vif": 10.766280077873821,
+                "nullspace_squared_loading": 6.3705132167438255e-31
+              },
+              "dinpkt": {
+                "pseudoinverse_diagonal": 2.0765652075307237,
+                "classical_vif": 2.0765652075307237,
+                "nullspace_squared_loading": 3.835152190026204e-32
+              },
+              "sjit": {
+                "pseudoinverse_diagonal": 2.285026312366273,
+                "classical_vif": 2.285026312366273,
+                "nullspace_squared_loading": 4.237295959066192e-31
+              },
+              "djit": {
+                "pseudoinverse_diagonal": 1.4552458871433673,
+                "classical_vif": 1.4552458871433673,
+                "nullspace_squared_loading": 1.0935178296487214e-33
+              },
+              "swin": {
+                "pseudoinverse_diagonal": 7.3876890975432365,
+                "classical_vif": 7.3876890975432365,
+                "nullspace_squared_loading": 4.6096061449570466e-33
+              },
+              "stcpb": {
+                "pseudoinverse_diagonal": 2.601597510887478,
+                "classical_vif": 2.601597510887478,
+                "nullspace_squared_loading": 2.3302721732821335e-32
+              },
+              "dtcpb": {
+                "pseudoinverse_diagonal": 2.6122690184073405,
+                "classical_vif": 2.6122690184073405,
+                "nullspace_squared_loading": 1.4127079940931666e-33
+              },
+              "tcprtt": {
+                "pseudoinverse_diagonal": 0.3938896803786763,
+                "classical_vif": "infinite",
+                "nullspace_squared_loading": 0.6417443407011765
+              },
+              "synack": {
+                "pseudoinverse_diagonal": 2.6343410326676016,
+                "classical_vif": "infinite",
+                "nullspace_squared_loading": 0.1884645934421712
+              },
+              "ackdat": {
+                "pseudoinverse_diagonal": 2.925233301916227,
+                "classical_vif": "infinite",
+                "nullspace_squared_loading": 0.16979106585665288
+              },
+              "smean": {
+                "pseudoinverse_diagonal": 1.3752034467538354,
+                "classical_vif": 1.3752034467538354,
+                "nullspace_squared_loading": 6.544649760072561e-34
+              },
+              "dmean": {
+                "pseudoinverse_diagonal": 2.6535780692652704,
+                "classical_vif": 2.6535780692652704,
+                "nullspace_squared_loading": 3.2616543034917396e-34
+              },
+              "trans_depth": {
+                "pseudoinverse_diagonal": 1.113545310501825,
+                "classical_vif": 1.113545310501825,
+                "nullspace_squared_loading": 1.2188233588978744e-32
+              },
+              "response_body_len": {
+                "pseudoinverse_diagonal": 1.2883777806260381,
+                "classical_vif": 1.2883777806260381,
+                "nullspace_squared_loading": 6.061422133851756e-35
+              },
+              "ct_srv_src": {
+                "pseudoinverse_diagonal": 4.222375649488517,
+                "classical_vif": 4.222375649488517,
+                "nullspace_squared_loading": 2.232585173872821e-33
+              },
+              "ct_state_ttl": {
+                "pseudoinverse_diagonal": 2.8456549524827786,
+                "classical_vif": 2.8456549524827786,
+                "nullspace_squared_loading": 4.131588250282449e-38
+              },
+              "ct_dst_ltm": {
+                "pseudoinverse_diagonal": 7.8916203559025,
+                "classical_vif": 7.8916203559025,
+                "nullspace_squared_loading": 1.88535723360092e-32
+              },
+              "ct_dst_sport_ltm": {
+                "pseudoinverse_diagonal": 5.5927762534914605,
+                "classical_vif": 5.5927762534914605,
+                "nullspace_squared_loading": 4.997733295083653e-33
+              },
+              "is_ftp_login": {
+                "pseudoinverse_diagonal": 1.0903766563493449,
+                "classical_vif": 1.0903766563493449,
+                "nullspace_squared_loading": 6.728672249468308e-34
+              },
+              "ct_flw_http_mthd": {
+                "pseudoinverse_diagonal": 1.1552555575796088,
+                "classical_vif": 1.1552555575796088,
+                "nullspace_squared_loading": 3.1585187195638536e-33
+              },
+              "ct_src_ltm": {
+                "pseudoinverse_diagonal": 4.7797540192287595,
+                "classical_vif": 4.7797540192287595,
+                "nullspace_squared_loading": 7.44032407281835e-33
+              },
+              "is_sm_ips_ports": {
+                "pseudoinverse_diagonal": 10.777004538843961,
+                "classical_vif": 10.777004538843961,
+                "nullspace_squared_loading": 1.937356574212893e-34
+              }
+            },
+            "infinite_classical_vif_features": [
+              "tcprtt",
+              "synack",
+              "ackdat"
+            ],
+            "finite_classical_vif_ge_10": {
+              "sinpkt": 10.766280077873821,
+              "is_sm_ips_ports": 10.777004538843961
+            }
+          }
+        },
+        "verified_relations": {
+          "is_ftp_login_equals_ct_ftp_cmd_all_rows": true,
+          "tcprtt_minus_synack_minus_ackdat_max_abs_float64": 2.220446049250313e-16,
+          "tcprtt_equals_sum_within_1e_minus_12": true
+        }
+      }
+    },
+    "regression": {
+      "directory": "data/regression",
+      "target": "site_eui",
+      "id_column": "id",
+      "archive_sha256": "8167c8365a1341393133e5919392ca63c198fcd409367878389e20527f5bb4f8",
+      "files": {
+        "sample_submission.csv": {
+          "bytes": 222554,
+          "sha256": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+          "verified_unchanged": true
+        },
+        "data_dictionary.csv": {
+          "bytes": 7408,
+          "sha256": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+          "verified_unchanged": true
+        },
+        "task.md": {
+          "bytes": 11089,
+          "sha256": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+          "verified_unchanged": true
+        },
+        "test.csv": {
+          "bytes": 18346633,
+          "sha256": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "verified_unchanged": true
+        },
+        "train.csv": {
+          "bytes": 43416931,
+          "sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "verified_unchanged": true
+        }
+      },
+      "train": {
+        "rows": 53308,
+        "columns": 64,
+        "feature_columns_excluding_id_target": 62,
+        "numeric_features": 59,
+        "categorical_features": [
+          "State_Factor",
+          "building_class",
+          "facility_type"
+        ],
+        "missing_cells": 136533,
+        "columns_with_missing": 6,
+        "constant_columns": [],
+        "nearconstant_columns": [
+          "days_above_43C"
+        ],
+        "column_profile": {
+          "Year_Factor": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 5,
+            "most_frequent_fraction": 0.3434381331132288,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.4643647532000272,
+            "min": 1.0,
+            "max": 5.0
+          },
+          "State_Factor": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 7,
+            "most_frequent_fraction": 0.70951827117881,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "State_6": 37823,
+              "State_1": 4582,
+              "State_2": 3470,
+              "State_11": 3191,
+              "State_8": 2543,
+              "State_4": 1688,
+              "State_10": 11
+            }
+          },
+          "building_class": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 2,
+            "most_frequent_fraction": 0.5895550386433556,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "Residential": 31428,
+              "Commercial": 21880
+            }
+          },
+          "facility_type": {
+            "dtype": "str",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 60,
+            "most_frequent_fraction": 0.5480228108351467,
+            "constant": false,
+            "nearconstant": false,
+            "value_counts": {
+              "Multifamily_Uncategorized": 29214,
+              "Office_Uncategorized": 9272,
+              "Education_Other_classroom": 1734,
+              "Lodging_Hotel": 1507,
+              "Commercial_Other": 1197,
+              "Warehouse_Nonrefrigerated": 961,
+              "2to4_Unit_Building": 954,
+              "Retail_Uncategorized": 804,
+              "Education_College_or_university": 692,
+              "Education_Uncategorized": 688,
+              "5plus_Unit_Building": 623,
+              "Nursing_Home": 528,
+              "Lodging_Dormitory_or_fraternity_sorority": 468,
+              "Warehouse_Distribution_or_Shipping_center": 446,
+              "Mixed_Use_Commercial_and_Residential": 429,
+              "Warehouse_Selfstorage": 401,
+              "Office_Medical_non_diagnostic": 304,
+              "Grocery_store_or_food_market": 298,
+              "Health_Care_Inpatient": 293,
+              "Industrial": 282,
+              "Religious_worship": 262,
+              "Mixed_Use_Predominantly_Commercial": 202,
+              "Parking_Garage": 176,
+              "Warehouse_Uncategorized": 162,
+              "Office_Bank_or_other_financial": 136,
+              "Retail_Enclosed_mall": 85,
+              "Public_Assembly_Other": 85,
+              "Warehouse_Refrigerated": 77,
+              "Retail_Strip_shopping_mall": 72,
+              "Public_Assembly_Entertainment_culture": 71,
+              "Commercial_Unknown": 71,
+              "Laboratory": 61,
+              "Public_Assembly_Social_meeting": 61,
+              "Retail_Vehicle_dealership_showroom": 59,
+              "Service_Uncategorized": 50,
+              "Public_Assembly_Recreation": 48,
+              "Public_Assembly_Library": 45,
+              "Public_Assembly_Drama_theater": 43,
+              "Food_Sales": 43,
+              "Food_Service_Restaurant_or_cafeteria": 42,
+              "Service_Vehicle_service_repair_shop": 36,
+              "Health_Care_Uncategorized": 35,
+              "Public_Safety_Uncategorized": 30,
+              "Health_Care_Outpatient_Clinic": 27,
+              "Health_Care_Outpatient_Uncategorized": 27,
+              "Public_Assembly_Movie_Theater": 25,
+              "Public_Safety_Penitentiary": 24,
+              "Lodging_Other": 23,
+              "Public_Safety_Fire_or_police_station": 22,
+              "Data_Center": 20,
+              "Public_Assembly_Uncategorized": 16,
+              "Food_Service_Other": 13,
+              "Office_Mixed_use": 13,
+              "Public_Safety_Courthouse": 13,
+              "Food_Service_Uncategorized": 12,
+              "Service_Drycleaning_or_Laundry": 7,
+              "Education_Preschool_or_daycare": 6,
+              "Mixed_Use_Predominantly_Residential": 6,
+              "Public_Assembly_Stadium": 6,
+              "Lodging_Uncategorized": 1
+            }
+          },
+          "floor_area": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 17519,
+            "most_frequent_fraction": 0.003395362797328731,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 6.509867229527133,
+            "min": 943.0,
+            "max": 6385382.0
+          },
+          "year_built": {
+            "dtype": "float64",
+            "missing_count": 1727,
+            "missing_fraction": 0.03239663840324154,
+            "unique_including_missing": 168,
+            "most_frequent_fraction": 0.03239663840324154,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -13.837640741546142,
+            "min": 0.0,
+            "max": 2014.0
+          },
+          "energy_star_rating": {
+            "dtype": "float64",
+            "missing_count": 22222,
+            "missing_fraction": 0.41686050874165226,
+            "unique_including_missing": 102,
+            "most_frequent_fraction": 0.41686050874165226,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.5015250055792049,
+            "min": 0.0,
+            "max": 100.0
+          },
+          "ELEVATION": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 178,
+            "most_frequent_fraction": 0.25204472124259025,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 9.750197168077765,
+            "min": -6.4,
+            "max": 1924.5
+          },
+          "january_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 56,
+            "most_frequent_fraction": 0.21951677046597134,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.1115972818513906,
+            "min": -28.333333333333336,
+            "max": 9.444444444444445
+          },
+          "january_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 153,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.0575836878211335,
+            "min": -11.77419355,
+            "max": 18.19892473333333
+          },
+          "january_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 47,
+            "most_frequent_fraction": 0.1903466646657162,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.5238486626143646,
+            "min": 5.555555555555555,
+            "max": 32.77777777777778
+          },
+          "february_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 49,
+            "most_frequent_fraction": 0.2217115629924214,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.2702081107961696,
+            "min": -25.0,
+            "max": 8.88888888888889
+          },
+          "february_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 157,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.42300493346695894,
+            "min": -10.416666666666668,
+            "max": 18.39285714444444
+          },
+          "february_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 43,
+            "most_frequent_fraction": 0.2164778269678097,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.02552412673723642,
+            "min": 3.333333333333333,
+            "max": 31.666666666666668
+          },
+          "march_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 52,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.22504905473675363,
+            "min": -22.77777777777778,
+            "max": 11.11111111111111
+          },
+          "march_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 155,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.9714281130005976,
+            "min": -3.413978494444445,
+            "max": 20.976702511111117
+          },
+          "march_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 42,
+            "most_frequent_fraction": 0.19995122683274555,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.4230855155244426,
+            "min": 11.666666666666668,
+            "max": 35.0
+          },
+          "april_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 34,
+            "most_frequent_fraction": 0.21961056501838372,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.6129753170481742,
+            "min": -9.444444444444445,
+            "max": 11.11111111111111
+          },
+          "april_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 151,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.2892657514342656,
+            "min": 4.6000000000000005,
+            "max": 23.61111111111111
+          },
+          "april_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 33,
+            "most_frequent_fraction": 0.19537405267502064,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.6268994964969982,
+            "min": 16.666666666666668,
+            "max": 40.0
+          },
+          "may_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 35,
+            "most_frequent_fraction": 0.33124484129961734,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.1130764167872522,
+            "min": -5.0,
+            "max": 14.444444444444445
+          },
+          "may_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 154,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.009127421712184397,
+            "min": 8.305555555555557,
+            "max": 27.84050179444445
+          },
+          "may_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 38,
+            "most_frequent_fraction": 0.24309672094244766,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.38906999977468837,
+            "min": 17.77777777777778,
+            "max": 44.44444444444444
+          },
+          "june_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 36,
+            "most_frequent_fraction": 0.19950101298116604,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.9131376666231952,
+            "min": -1.1111111111111112,
+            "max": 20.0
+          },
+          "june_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 150,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.3379870034103931,
+            "min": 12.27777777777778,
+            "max": 31.97222222222222
+          },
+          "june_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 43,
+            "most_frequent_fraction": 0.274780520747355,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.8466659895084996,
+            "min": 19.444444444444446,
+            "max": 48.333333333333336
+          },
+          "july_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 31,
+            "most_frequent_fraction": 0.3468334959105575,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.3837394156202558,
+            "min": 2.7777777777777777,
+            "max": 23.333333333333336
+          },
+          "july_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 149,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.5797885073082052,
+            "min": 12.679211472222224,
+            "max": 34.68637992777778
+          },
+          "july_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 41,
+            "most_frequent_fraction": 0.2654010655061154,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.22239612601342998,
+            "min": 18.333333333333336,
+            "max": 47.22222222222222
+          },
+          "august_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 31,
+            "most_frequent_fraction": 0.3315262249568545,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.6722560059712206,
+            "min": -0.5555555555555556,
+            "max": 25.0
+          },
+          "august_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 155,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.95614938880484,
+            "min": 13.718637994444444,
+            "max": 34.94623656111111
+          },
+          "august_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 41,
+            "most_frequent_fraction": 0.33700382681773844,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.6810370186082468,
+            "min": 18.88888888888889,
+            "max": 46.66666666666667
+          },
+          "september_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 36,
+            "most_frequent_fraction": 0.20707961281608764,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.5134550621269517,
+            "min": -3.333333333333333,
+            "max": 18.333333333333336
+          },
+          "september_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 153,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.5439299226101519,
+            "min": 12.000000000000002,
+            "max": 32.28703703888889
+          },
+          "september_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 37,
+            "most_frequent_fraction": 0.20186463570195842,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.9135227474039272,
+            "min": 17.77777777777778,
+            "max": 43.88888888888889
+          },
+          "october_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 39,
+            "most_frequent_fraction": 0.203609214376829,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.12043493609836747,
+            "min": -7.777777777777779,
+            "max": 16.11111111111111
+          },
+          "october_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 155,
+            "most_frequent_fraction": 0.34715239738875964,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.478516746636869,
+            "min": 7.0519713277777765,
+            "max": 27.078853044444443
+          },
+          "october_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 34,
+            "most_frequent_fraction": 0.3900165078412246,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.5733789301585626,
+            "min": 22.22222222222222,
+            "max": 42.22222222222222
+          },
+          "november_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 44,
+            "most_frequent_fraction": 0.19057177159150596,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.036284918284676455,
+            "min": -15.555555555555555,
+            "max": 11.11111111111111
+          },
+          "november_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 149,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.8074907613964927,
+            "min": -0.6851851833333338,
+            "max": 19.675925927777776
+          },
+          "november_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 37,
+            "most_frequent_fraction": 0.1904404592181286,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.05548467186874503,
+            "min": 11.666666666666668,
+            "max": 35.55555555555556
+          },
+          "december_min_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 41,
+            "most_frequent_fraction": 0.19045921812861108,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.08705568177123474,
+            "min": -26.666666666666668,
+            "max": 6.666666666666667
+          },
+          "december_avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 151,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.7450176944988258,
+            "min": -3.5304659499999995,
+            "max": 16.550179211111114
+          },
+          "december_max_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 36,
+            "most_frequent_fraction": 0.25609664590680575,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.3394599237659646,
+            "min": 10.0,
+            "max": 30.0
+          },
+          "cooling_degree_days_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 151,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.8518923149243011,
+            "min": 0.0,
+            "max": 2748.888888888889
+          },
+          "heating_degree_days_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 157,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -1.2217258596239668,
+            "min": 221.11111111111111,
+            "max": 4405.0
+          },
+          "precipitation_inches": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 159,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.9628564549973666,
+            "min": 0.0,
+            "max": 97.12
+          },
+          "snowfall_inches": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 60,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": -0.31816102947267794,
+            "min": 0.0,
+            "max": 127.3
+          },
+          "snowdepth_inches": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 53,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.26692035906273565,
+            "min": 0.0,
+            "max": 1292.0
+          },
+          "avg_temp_c": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 160,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.5795789997215912,
+            "min": 6.951293761111113,
+            "max": 25.136225266666667
+          },
+          "days_below_minus1C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 73,
+            "most_frequent_fraction": 0.1904404592181286,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.012085136761904352,
+            "min": 0.0,
+            "max": 170.0
+          },
+          "days_below_minus7C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 35,
+            "most_frequent_fraction": 0.19032790575523373,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.7655642419374221,
+            "min": 0.0,
+            "max": 93.0
+          },
+          "days_below_minus12C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 28,
+            "most_frequent_fraction": 0.46827868237412773,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 2.2504382422599014,
+            "min": 0.0,
+            "max": 59.0
+          },
+          "days_below_minus18C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 18,
+            "most_frequent_fraction": 0.9489194867562092,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 5.00147460013205,
+            "min": 0.0,
+            "max": 31.0
+          },
+          "days_above_27C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 102,
+            "most_frequent_fraction": 0.3295190215352292,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.17276956404816157,
+            "min": 0.0,
+            "max": 260.0
+          },
+          "days_above_32C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 85,
+            "most_frequent_fraction": 0.19029038793426878,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 4.55154327544485,
+            "min": 0.0,
+            "max": 185.0
+          },
+          "days_above_38C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 40,
+            "most_frequent_fraction": 0.923820064530652,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 19.771912594643133,
+            "min": 0.0,
+            "max": 119.0
+          },
+          "days_above_43C": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 9,
+            "most_frequent_fraction": 0.9988557064605688,
+            "constant": false,
+            "nearconstant": true,
+            "skewness": 70.97559239896177,
+            "min": 0.0,
+            "max": 16.0
+          },
+          "direction_max_wind_speed": {
+            "dtype": "float64",
+            "missing_count": 26309,
+            "missing_fraction": 0.4935281758835447,
+            "unique_including_missing": 11,
+            "most_frequent_fraction": 0.4935281758835447,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.1226047861889448,
+            "min": 1.0,
+            "max": 360.0
+          },
+          "direction_peak_wind_speed": {
+            "dtype": "float64",
+            "missing_count": 27038,
+            "missing_fraction": 0.507203421625272,
+            "unique_including_missing": 9,
+            "most_frequent_fraction": 0.507203421625272,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.244144872082298,
+            "min": 1.0,
+            "max": 360.0
+          },
+          "max_wind_speed": {
+            "dtype": "float64",
+            "missing_count": 26309,
+            "missing_fraction": 0.4935281758835447,
+            "unique_including_missing": 17,
+            "most_frequent_fraction": 0.4935281758835447,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 1.199166879163062,
+            "min": 1.0,
+            "max": 23.3
+          },
+          "days_with_fog": {
+            "dtype": "float64",
+            "missing_count": 32928,
+            "missing_fraction": 0.6176934043670743,
+            "unique_including_missing": 37,
+            "most_frequent_fraction": 0.6176934043670743,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.8252005612312798,
+            "min": 12.0,
+            "max": 311.0
+          },
+          "site_eui": {
+            "dtype": "float64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 51502,
+            "most_frequent_fraction": 0.00015007128385983342,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 4.764385252234557,
+            "min": 1.001169302,
+            "max": 993.4282595
+          },
+          "id": {
+            "dtype": "int64",
+            "missing_count": 0,
+            "missing_fraction": 0.0,
+            "unique_including_missing": 53308,
+            "most_frequent_fraction": 1.8758910482479177e-05,
+            "constant": false,
+            "nearconstant": false,
+            "skewness": 0.29482251616720584,
+            "min": 0.0,
+            "max": 72535.0
+          }
+        },
+        "constant_columns_count": 0,
+        "nearconstant_columns_count": 1
+      },
+      "schema": {
+        "train_columns": [
+          "Year_Factor",
+          "State_Factor",
+          "building_class",
+          "facility_type",
+          "floor_area",
+          "year_built",
+          "energy_star_rating",
+          "ELEVATION",
+          "january_min_temp_c",
+          "january_avg_temp_c",
+          "january_max_temp_c",
+          "february_min_temp_c",
+          "february_avg_temp_c",
+          "february_max_temp_c",
+          "march_min_temp_c",
+          "march_avg_temp_c",
+          "march_max_temp_c",
+          "april_min_temp_c",
+          "april_avg_temp_c",
+          "april_max_temp_c",
+          "may_min_temp_c",
+          "may_avg_temp_c",
+          "may_max_temp_c",
+          "june_min_temp_c",
+          "june_avg_temp_c",
+          "june_max_temp_c",
+          "july_min_temp_c",
+          "july_avg_temp_c",
+          "july_max_temp_c",
+          "august_min_temp_c",
+          "august_avg_temp_c",
+          "august_max_temp_c",
+          "september_min_temp_c",
+          "september_avg_temp_c",
+          "september_max_temp_c",
+          "october_min_temp_c",
+          "october_avg_temp_c",
+          "october_max_temp_c",
+          "november_min_temp_c",
+          "november_avg_temp_c",
+          "november_max_temp_c",
+          "december_min_temp_c",
+          "december_avg_temp_c",
+          "december_max_temp_c",
+          "cooling_degree_days_c",
+          "heating_degree_days_c",
+          "precipitation_inches",
+          "snowfall_inches",
+          "snowdepth_inches",
+          "avg_temp_c",
+          "days_below_minus1C",
+          "days_below_minus7C",
+          "days_below_minus12C",
+          "days_below_minus18C",
+          "days_above_27C",
+          "days_above_32C",
+          "days_above_38C",
+          "days_above_43C",
+          "direction_max_wind_speed",
+          "direction_peak_wind_speed",
+          "max_wind_speed",
+          "days_with_fog",
+          "site_eui",
+          "id"
+        ],
+        "test_columns": [
+          "Year_Factor",
+          "State_Factor",
+          "building_class",
+          "facility_type",
+          "floor_area",
+          "year_built",
+          "energy_star_rating",
+          "ELEVATION",
+          "january_min_temp_c",
+          "january_avg_temp_c",
+          "january_max_temp_c",
+          "february_min_temp_c",
+          "february_avg_temp_c",
+          "february_max_temp_c",
+          "march_min_temp_c",
+          "march_avg_temp_c",
+          "march_max_temp_c",
+          "april_min_temp_c",
+          "april_avg_temp_c",
+          "april_max_temp_c",
+          "may_min_temp_c",
+          "may_avg_temp_c",
+          "may_max_temp_c",
+          "june_min_temp_c",
+          "june_avg_temp_c",
+          "june_max_temp_c",
+          "july_min_temp_c",
+          "july_avg_temp_c",
+          "july_max_temp_c",
+          "august_min_temp_c",
+          "august_avg_temp_c",
+          "august_max_temp_c",
+          "september_min_temp_c",
+          "september_avg_temp_c",
+          "september_max_temp_c",
+          "october_min_temp_c",
+          "october_avg_temp_c",
+          "october_max_temp_c",
+          "november_min_temp_c",
+          "november_avg_temp_c",
+          "november_max_temp_c",
+          "december_min_temp_c",
+          "december_avg_temp_c",
+          "december_max_temp_c",
+          "cooling_degree_days_c",
+          "heating_degree_days_c",
+          "precipitation_inches",
+          "snowfall_inches",
+          "snowdepth_inches",
+          "avg_temp_c",
+          "days_below_minus1C",
+          "days_below_minus7C",
+          "days_below_minus12C",
+          "days_below_minus18C",
+          "days_above_27C",
+          "days_above_32C",
+          "days_above_38C",
+          "days_above_43C",
+          "direction_max_wind_speed",
+          "direction_peak_wind_speed",
+          "max_wind_speed",
+          "days_with_fog",
+          "id"
+        ],
+        "train_dtypes": {
+          "Year_Factor": "int64",
+          "State_Factor": "str",
+          "building_class": "str",
+          "facility_type": "str",
+          "floor_area": "float64",
+          "year_built": "float64",
+          "energy_star_rating": "float64",
+          "ELEVATION": "float64",
+          "january_min_temp_c": "float64",
+          "january_avg_temp_c": "float64",
+          "january_max_temp_c": "float64",
+          "february_min_temp_c": "float64",
+          "february_avg_temp_c": "float64",
+          "february_max_temp_c": "float64",
+          "march_min_temp_c": "float64",
+          "march_avg_temp_c": "float64",
+          "march_max_temp_c": "float64",
+          "april_min_temp_c": "float64",
+          "april_avg_temp_c": "float64",
+          "april_max_temp_c": "float64",
+          "may_min_temp_c": "float64",
+          "may_avg_temp_c": "float64",
+          "may_max_temp_c": "float64",
+          "june_min_temp_c": "float64",
+          "june_avg_temp_c": "float64",
+          "june_max_temp_c": "float64",
+          "july_min_temp_c": "float64",
+          "july_avg_temp_c": "float64",
+          "july_max_temp_c": "float64",
+          "august_min_temp_c": "float64",
+          "august_avg_temp_c": "float64",
+          "august_max_temp_c": "float64",
+          "september_min_temp_c": "float64",
+          "september_avg_temp_c": "float64",
+          "september_max_temp_c": "float64",
+          "october_min_temp_c": "float64",
+          "october_avg_temp_c": "float64",
+          "october_max_temp_c": "float64",
+          "november_min_temp_c": "float64",
+          "november_avg_temp_c": "float64",
+          "november_max_temp_c": "float64",
+          "december_min_temp_c": "float64",
+          "december_avg_temp_c": "float64",
+          "december_max_temp_c": "float64",
+          "cooling_degree_days_c": "float64",
+          "heating_degree_days_c": "float64",
+          "precipitation_inches": "float64",
+          "snowfall_inches": "float64",
+          "snowdepth_inches": "int64",
+          "avg_temp_c": "float64",
+          "days_below_minus1C": "int64",
+          "days_below_minus7C": "int64",
+          "days_below_minus12C": "int64",
+          "days_below_minus18C": "int64",
+          "days_above_27C": "int64",
+          "days_above_32C": "int64",
+          "days_above_38C": "int64",
+          "days_above_43C": "int64",
+          "direction_max_wind_speed": "float64",
+          "direction_peak_wind_speed": "float64",
+          "max_wind_speed": "float64",
+          "days_with_fog": "float64",
+          "site_eui": "float64",
+          "id": "int64"
+        },
+        "test_dtypes": {
+          "Year_Factor": "int64",
+          "State_Factor": "str",
+          "building_class": "str",
+          "facility_type": "str",
+          "floor_area": "float64",
+          "year_built": "float64",
+          "energy_star_rating": "float64",
+          "ELEVATION": "float64",
+          "january_min_temp_c": "float64",
+          "january_avg_temp_c": "float64",
+          "january_max_temp_c": "float64",
+          "february_min_temp_c": "float64",
+          "february_avg_temp_c": "float64",
+          "february_max_temp_c": "float64",
+          "march_min_temp_c": "float64",
+          "march_avg_temp_c": "float64",
+          "march_max_temp_c": "float64",
+          "april_min_temp_c": "float64",
+          "april_avg_temp_c": "float64",
+          "april_max_temp_c": "float64",
+          "may_min_temp_c": "float64",
+          "may_avg_temp_c": "float64",
+          "may_max_temp_c": "float64",
+          "june_min_temp_c": "float64",
+          "june_avg_temp_c": "float64",
+          "june_max_temp_c": "float64",
+          "july_min_temp_c": "float64",
+          "july_avg_temp_c": "float64",
+          "july_max_temp_c": "float64",
+          "august_min_temp_c": "float64",
+          "august_avg_temp_c": "float64",
+          "august_max_temp_c": "float64",
+          "september_min_temp_c": "float64",
+          "september_avg_temp_c": "float64",
+          "september_max_temp_c": "float64",
+          "october_min_temp_c": "float64",
+          "october_avg_temp_c": "float64",
+          "october_max_temp_c": "float64",
+          "november_min_temp_c": "float64",
+          "november_avg_temp_c": "float64",
+          "november_max_temp_c": "float64",
+          "december_min_temp_c": "float64",
+          "december_avg_temp_c": "float64",
+          "december_max_temp_c": "float64",
+          "cooling_degree_days_c": "float64",
+          "heating_degree_days_c": "float64",
+          "precipitation_inches": "float64",
+          "snowfall_inches": "float64",
+          "snowdepth_inches": "int64",
+          "avg_temp_c": "float64",
+          "days_below_minus1C": "int64",
+          "days_below_minus7C": "int64",
+          "days_below_minus12C": "int64",
+          "days_below_minus18C": "int64",
+          "days_above_27C": "int64",
+          "days_above_32C": "int64",
+          "days_above_38C": "int64",
+          "days_above_43C": "int64",
+          "direction_max_wind_speed": "float64",
+          "direction_peak_wind_speed": "float64",
+          "max_wind_speed": "float64",
+          "days_with_fog": "float64",
+          "id": "int64"
+        },
+        "test_rows": 22449,
+        "test_matches_train_without_target_in_order": true,
+        "dtype_differences": {},
+        "sample_columns": [
+          "id",
+          "site_eui"
+        ],
+        "sample_rows": 22449,
+        "sample_id_order_matches_test": true,
+        "dictionary_covers_train_columns": true,
+        "train_unique_ids": 53308,
+        "test_unique_ids": 22449,
+        "train_test_id_overlap": 0
+      },
+      "high_correlations": {
+        "pearson": [
+          {
+            "feature_a": "direction_max_wind_speed",
+            "feature_b": "direction_peak_wind_speed",
+            "coefficient": 0.9997689900789793
+          },
+          {
+            "feature_a": "direction_peak_wind_speed",
+            "feature_b": "max_wind_speed",
+            "coefficient": 0.9916921329172084
+          },
+          {
+            "feature_a": "direction_max_wind_speed",
+            "feature_b": "max_wind_speed",
+            "coefficient": 0.9879566445047951
+          },
+          {
+            "feature_a": "february_min_temp_c",
+            "feature_b": "february_avg_temp_c",
+            "coefficient": 0.9804838196697087
+          },
+          {
+            "feature_a": "january_min_temp_c",
+            "feature_b": "january_avg_temp_c",
+            "coefficient": 0.9714025929936341
+          },
+          {
+            "feature_a": "august_avg_temp_c",
+            "feature_b": "cooling_degree_days_c",
+            "coefficient": 0.9530373467885966
+          }
+        ],
+        "spearman": [
+          {
+            "feature_a": "direction_max_wind_speed",
+            "feature_b": "direction_peak_wind_speed",
+            "coefficient": 0.9991579576762358
+          },
+          {
+            "feature_a": "direction_peak_wind_speed",
+            "feature_b": "max_wind_speed",
+            "coefficient": 0.9904294714546217
+          },
+          {
+            "feature_a": "february_min_temp_c",
+            "feature_b": "february_avg_temp_c",
+            "coefficient": 0.9834108749934735
+          },
+          {
+            "feature_a": "february_min_temp_c",
+            "feature_b": "days_below_minus7C",
+            "coefficient": -0.983338099200807
+          },
+          {
+            "feature_a": "january_min_temp_c",
+            "feature_b": "january_avg_temp_c",
+            "coefficient": 0.9825607313242575
+          },
+          {
+            "feature_a": "direction_max_wind_speed",
+            "feature_b": "max_wind_speed",
+            "coefficient": 0.9793273092019411
+          },
+          {
+            "feature_a": "february_avg_temp_c",
+            "feature_b": "days_below_minus7C",
+            "coefficient": -0.969891894296471
+          },
+          {
+            "feature_a": "august_avg_temp_c",
+            "feature_b": "cooling_degree_days_c",
+            "coefficient": 0.9508738013336024
+          }
+        ]
+      },
+      "target_distribution": {
+        "count": 53308,
+        "missing": 0,
+        "mean": 83.96157549617597,
+        "std": 58.71451534143933,
+        "skewness": 4.764385252234557,
+        "nonpositive_count": 0,
+        "quantiles": {
+          "0": 1.001169302,
+          "0.001": 1.607385680401,
+          "0.01": 6.088717756,
+          "0.05": 20.355980256000002,
+          "0.25": 56.2503962025,
+          "0.5": 76.78808258500001,
+          "0.75": 98.8256697175,
+          "0.95": 162.78323070499997,
+          "0.99": 306.366136637,
+          "0.999": 700.3192815,
+          "1": 993.4282595
+        }
+      },
+      "year_factor": {
+        "train_counts": {
+          "1": 2117,
+          "2": 9058,
+          "3": 10879,
+          "4": 12946,
+          "5": 18308
+        },
+        "test_counts": {
+          "6": 22449
+        },
+        "train_target_by_year": {
+          "1": {
+            "rows": 2117,
+            "mean": 93.82141985284694,
+            "std": 81.64903817112314,
+            "median": 78.12027964
+          },
+          "2": {
+            "rows": 9058,
+            "mean": 82.70937519282724,
+            "std": 53.5492791504046,
+            "median": 76.39781846
+          },
+          "3": {
+            "rows": 10879,
+            "mean": 85.54410505247274,
+            "std": 60.92209946845012,
+            "median": 77.99610202
+          },
+          "4": {
+            "rows": 12946,
+            "mean": 86.99140414479847,
+            "std": 58.43439809194024,
+            "median": 79.33054590500001
+          },
+          "5": {
+            "rows": 18308,
+            "mean": 80.35815836249897,
+            "std": 56.53519661297605,
+            "median": 74.30053671499999
+          }
+        }
+      },
+      "exact_feature_duplicates": {
+        "definition": "Exact equality of all original feature values excluding id and target, no rounding; pandas MultiIndex factorization over combined train/test feature tuples. This is structural inventory only.",
+        "train_unique_feature_rows": 52981,
+        "train_duplicate_groups": 270,
+        "train_rows_in_duplicate_groups": 597,
+        "train_duplicate_rows_after_first": 327,
+        "train_max_duplicate_group_size": 6,
+        "train_mixed_target_groups": 243,
+        "train_rows_in_mixed_target_groups": 538,
+        "train_mixed_target_duplicate_groups": 243,
+        "train_test_shared_distinct_feature_rows": 0,
+        "train_rows_with_exact_feature_match_in_test": 0,
+        "test_rows_with_exact_feature_match_in_train": 0,
+        "test_unique_feature_rows": 22412,
+        "test_duplicate_rows_after_first": 37,
+        "train_duplicate_group_size_distribution": {
+          "2": 232,
+          "3": 26,
+          "4": 8,
+          "5": 1,
+          "6": 3
+        }
+      },
+      "numeric_linear_dependencies": {
+        "scope": "Purely diagnostic full TRAIN features, excludes id and target; no estimator fitted and no split/experiment score computed.",
+        "method": "Median impute each numeric column on full TRAIN for inventory only, center and scale by population standard deviation; rank from SVD using max(shape)*eps*largest singular value. VIF diagnostics use diag(pinv(correlation, rcond=1e-12)); for nonzero exact nullspace loading classical VIF is infinite and pseudoinverse diagonal must not be interpreted as classical VIF.",
+        "unpruned": {
+          "rows": 53308,
+          "input_numeric_feature_count": 59,
+          "constant_after_imputation": [],
+          "analyzed_columns": [
+            "Year_Factor",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_avg_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "cooling_degree_days_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "matrix_rank": 59,
+          "rank_tolerance": 1.1627622639988725e-08,
+          "rank_deficiency": 0,
+          "singular_values": [
+            982.3320512616862,
+            795.864700847348,
+            551.0469818237575,
+            537.251318743997,
+            398.0955845239407,
+            380.53754845138593,
+            310.09380454578,
+            266.08352938488616,
+            260.60631124307486,
+            243.37515083300036,
+            239.46487762481968,
+            232.8423520436948,
+            223.11367007816804,
+            203.13052710845847,
+            180.7965791489206,
+            152.12322767857827,
+            142.78075124484377,
+            124.78141306770507,
+            103.643667162277,
+            95.36840139982802,
+            87.44354198667826,
+            79.18569227193531,
+            70.34071465613525,
+            68.41937090734939,
+            61.06901041795642,
+            55.51712191465669,
+            50.4024880783636,
+            46.58514726383161,
+            38.445874944127056,
+            32.54329329307412,
+            29.91488868373667,
+            27.59851254787878,
+            23.586295738764353,
+            21.33901610982099,
+            19.664349583036945,
+            18.31878146042734,
+            16.572288663474506,
+            15.808017750950166,
+            14.490705223527085,
+            12.817515066318645,
+            12.32772170566435,
+            11.35242228772461,
+            10.549342264510445,
+            9.865605166311227,
+            8.86704634393285,
+            8.595410406532471,
+            8.260008903476411,
+            7.453726460161226,
+            6.876454027272367,
+            6.349669945825013,
+            6.043143000192286,
+            5.033131580143708,
+            4.881381825011095,
+            4.1005652541662325,
+            3.8600995109699627,
+            3.3660199348354447,
+            2.8025645389794254,
+            0.8305451566235605,
+            0.4583304975076397
+          ],
+          "condition_number": 2143.2831910674067,
+          "pseudoinverse_rcond": 1e-12,
+          "vif": {
+            "Year_Factor": {
+              "pseudoinverse_diagonal": 269.5489462456083,
+              "classical_vif": 269.5489462456083,
+              "nullspace_squared_loading": 0.0
+            },
+            "floor_area": {
+              "pseudoinverse_diagonal": 1.0872897600181082,
+              "classical_vif": 1.0872897600181082,
+              "nullspace_squared_loading": 0.0
+            },
+            "year_built": {
+              "pseudoinverse_diagonal": 1.064762738462731,
+              "classical_vif": 1.064762738462731,
+              "nullspace_squared_loading": 0.0
+            },
+            "energy_star_rating": {
+              "pseudoinverse_diagonal": 1.0427730755458815,
+              "classical_vif": 1.0427730755458815,
+              "nullspace_squared_loading": 0.0
+            },
+            "ELEVATION": {
+              "pseudoinverse_diagonal": 2.199934526466975,
+              "classical_vif": 2.199934526466975,
+              "nullspace_squared_loading": 0.0
+            },
+            "january_min_temp_c": {
+              "pseudoinverse_diagonal": 1329.4202911638442,
+              "classical_vif": 1329.4202911638442,
+              "nullspace_squared_loading": 0.0
+            },
+            "january_avg_temp_c": {
+              "pseudoinverse_diagonal": 17211.172472087346,
+              "classical_vif": 17211.172472087346,
+              "nullspace_squared_loading": 0.0
+            },
+            "january_max_temp_c": {
+              "pseudoinverse_diagonal": 411.32007963244723,
+              "classical_vif": 411.32007963244723,
+              "nullspace_squared_loading": 0.0
+            },
+            "february_min_temp_c": {
+              "pseudoinverse_diagonal": 1920.9025682886993,
+              "classical_vif": 1920.9025682886993,
+              "nullspace_squared_loading": 0.0
+            },
+            "february_avg_temp_c": {
+              "pseudoinverse_diagonal": 15904.709176217719,
+              "classical_vif": 15904.709176217719,
+              "nullspace_squared_loading": 0.0
+            },
+            "february_max_temp_c": {
+              "pseudoinverse_diagonal": 757.0279842974464,
+              "classical_vif": 757.0279842974464,
+              "nullspace_squared_loading": 0.0
+            },
+            "march_min_temp_c": {
+              "pseudoinverse_diagonal": 1039.6620957119237,
+              "classical_vif": 1039.6620957119237,
+              "nullspace_squared_loading": 0.0
+            },
+            "march_avg_temp_c": {
+              "pseudoinverse_diagonal": 10202.756627237108,
+              "classical_vif": 10202.756627237108,
+              "nullspace_squared_loading": 0.0
+            },
+            "march_max_temp_c": {
+              "pseudoinverse_diagonal": 618.650358337089,
+              "classical_vif": 618.650358337089,
+              "nullspace_squared_loading": 0.0
+            },
+            "april_min_temp_c": {
+              "pseudoinverse_diagonal": 223.3492092808049,
+              "classical_vif": 223.3492092808049,
+              "nullspace_squared_loading": 0.0
+            },
+            "april_avg_temp_c": {
+              "pseudoinverse_diagonal": 1463.3805579565744,
+              "classical_vif": 1463.3805579565744,
+              "nullspace_squared_loading": 0.0
+            },
+            "april_max_temp_c": {
+              "pseudoinverse_diagonal": 316.5203389821109,
+              "classical_vif": 316.5203389821109,
+              "nullspace_squared_loading": 0.0
+            },
+            "may_min_temp_c": {
+              "pseudoinverse_diagonal": 313.16169829840703,
+              "classical_vif": 313.16169829840703,
+              "nullspace_squared_loading": 0.0
+            },
+            "may_avg_temp_c": {
+              "pseudoinverse_diagonal": 2992.1135699111983,
+              "classical_vif": 2992.1135699111983,
+              "nullspace_squared_loading": 0.0
+            },
+            "may_max_temp_c": {
+              "pseudoinverse_diagonal": 82.97218539180083,
+              "classical_vif": 82.97218539180083,
+              "nullspace_squared_loading": 0.0
+            },
+            "june_min_temp_c": {
+              "pseudoinverse_diagonal": 299.404905546429,
+              "classical_vif": 299.404905546429,
+              "nullspace_squared_loading": 0.0
+            },
+            "june_avg_temp_c": {
+              "pseudoinverse_diagonal": 2976.544533463354,
+              "classical_vif": 2976.544533463354,
+              "nullspace_squared_loading": 0.0
+            },
+            "june_max_temp_c": {
+              "pseudoinverse_diagonal": 212.20980594051218,
+              "classical_vif": 212.20980594051218,
+              "nullspace_squared_loading": 0.0
+            },
+            "july_min_temp_c": {
+              "pseudoinverse_diagonal": 494.16660839226915,
+              "classical_vif": 494.16660839226915,
+              "nullspace_squared_loading": 0.0
+            },
+            "july_avg_temp_c": {
+              "pseudoinverse_diagonal": 3077.0514220729315,
+              "classical_vif": 3077.0514220729315,
+              "nullspace_squared_loading": 0.0
+            },
+            "july_max_temp_c": {
+              "pseudoinverse_diagonal": 144.1805958679838,
+              "classical_vif": 144.1805958679838,
+              "nullspace_squared_loading": 0.0
+            },
+            "august_min_temp_c": {
+              "pseudoinverse_diagonal": 314.68613294523857,
+              "classical_vif": 314.68613294523857,
+              "nullspace_squared_loading": 0.0
+            },
+            "august_avg_temp_c": {
+              "pseudoinverse_diagonal": 2517.6745902716507,
+              "classical_vif": 2517.6745902716507,
+              "nullspace_squared_loading": 0.0
+            },
+            "august_max_temp_c": {
+              "pseudoinverse_diagonal": 165.17464175070228,
+              "classical_vif": 165.17464175070228,
+              "nullspace_squared_loading": 0.0
+            },
+            "september_min_temp_c": {
+              "pseudoinverse_diagonal": 385.23371794519744,
+              "classical_vif": 385.23371794519744,
+              "nullspace_squared_loading": 0.0
+            },
+            "september_avg_temp_c": {
+              "pseudoinverse_diagonal": 2891.357511825763,
+              "classical_vif": 2891.357511825763,
+              "nullspace_squared_loading": 0.0
+            },
+            "september_max_temp_c": {
+              "pseudoinverse_diagonal": 225.15741112276461,
+              "classical_vif": 225.15741112276461,
+              "nullspace_squared_loading": 0.0
+            },
+            "october_min_temp_c": {
+              "pseudoinverse_diagonal": 493.1210613059344,
+              "classical_vif": 493.1210613059344,
+              "nullspace_squared_loading": 0.0
+            },
+            "october_avg_temp_c": {
+              "pseudoinverse_diagonal": 3346.6385336643334,
+              "classical_vif": 3346.6385336643334,
+              "nullspace_squared_loading": 0.0
+            },
+            "october_max_temp_c": {
+              "pseudoinverse_diagonal": 339.89586458543783,
+              "classical_vif": 339.89586458543783,
+              "nullspace_squared_loading": 0.0
+            },
+            "november_min_temp_c": {
+              "pseudoinverse_diagonal": 556.8504866491425,
+              "classical_vif": 556.8504866491425,
+              "nullspace_squared_loading": 0.0
+            },
+            "november_avg_temp_c": {
+              "pseudoinverse_diagonal": 6356.47646630814,
+              "classical_vif": 6356.47646630814,
+              "nullspace_squared_loading": 0.0
+            },
+            "november_max_temp_c": {
+              "pseudoinverse_diagonal": 360.76278587258196,
+              "classical_vif": 360.76278587258196,
+              "nullspace_squared_loading": 0.0
+            },
+            "december_min_temp_c": {
+              "pseudoinverse_diagonal": 639.9722498936637,
+              "classical_vif": 639.9722498936637,
+              "nullspace_squared_loading": 0.0
+            },
+            "december_avg_temp_c": {
+              "pseudoinverse_diagonal": 7904.847807395268,
+              "classical_vif": 7904.847807395268,
+              "nullspace_squared_loading": 0.0
+            },
+            "december_max_temp_c": {
+              "pseudoinverse_diagonal": 214.15946858015369,
+              "classical_vif": 214.15946858015369,
+              "nullspace_squared_loading": 0.0
+            },
+            "cooling_degree_days_c": {
+              "pseudoinverse_diagonal": 9742.61921933474,
+              "classical_vif": 9742.61921933474,
+              "nullspace_squared_loading": 0.0
+            },
+            "heating_degree_days_c": {
+              "pseudoinverse_diagonal": 57507.93238608456,
+              "classical_vif": 57507.93238608456,
+              "nullspace_squared_loading": 0.0
+            },
+            "precipitation_inches": {
+              "pseudoinverse_diagonal": 230.3243961409152,
+              "classical_vif": 230.3243961409152,
+              "nullspace_squared_loading": 0.0
+            },
+            "snowfall_inches": {
+              "pseudoinverse_diagonal": 475.69284087432123,
+              "classical_vif": 475.69284087432123,
+              "nullspace_squared_loading": 0.0
+            },
+            "snowdepth_inches": {
+              "pseudoinverse_diagonal": 585.9566322305891,
+              "classical_vif": 585.9566322305891,
+              "nullspace_squared_loading": 0.0
+            },
+            "avg_temp_c": {
+              "pseudoinverse_diagonal": 202463.70842717454,
+              "classical_vif": 202463.70842717454,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_below_minus1C": {
+              "pseudoinverse_diagonal": 755.9948335350929,
+              "classical_vif": 755.9948335350929,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_below_minus7C": {
+              "pseudoinverse_diagonal": 1765.0932100936923,
+              "classical_vif": 1765.0932100936923,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_below_minus12C": {
+              "pseudoinverse_diagonal": 1153.8952202147261,
+              "classical_vif": 1153.8952202147261,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_below_minus18C": {
+              "pseudoinverse_diagonal": 153.83787497528326,
+              "classical_vif": 153.83787497528326,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_above_27C": {
+              "pseudoinverse_diagonal": 197.4554590943489,
+              "classical_vif": 197.4554590943489,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_above_32C": {
+              "pseudoinverse_diagonal": 75.95024556797854,
+              "classical_vif": 75.95024556797854,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_above_38C": {
+              "pseudoinverse_diagonal": 25.88044382366654,
+              "classical_vif": 25.88044382366654,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_above_43C": {
+              "pseudoinverse_diagonal": 4.98878683882256,
+              "classical_vif": 4.98878683882256,
+              "nullspace_squared_loading": 0.0
+            },
+            "direction_max_wind_speed": {
+              "pseudoinverse_diagonal": 114.58633170306955,
+              "classical_vif": 114.58633170306955,
+              "nullspace_squared_loading": 0.0
+            },
+            "direction_peak_wind_speed": {
+              "pseudoinverse_diagonal": 13.567722759213826,
+              "classical_vif": 13.567722759213826,
+              "nullspace_squared_loading": 0.0
+            },
+            "max_wind_speed": {
+              "pseudoinverse_diagonal": 75.81647886426008,
+              "classical_vif": 75.81647886426008,
+              "nullspace_squared_loading": 0.0
+            },
+            "days_with_fog": {
+              "pseudoinverse_diagonal": 3.366594338480892,
+              "classical_vif": 3.366594338480892,
+              "nullspace_squared_loading": 0.0
+            }
+          },
+          "infinite_classical_vif_features": [],
+          "finite_classical_vif_ge_10": {
+            "Year_Factor": 269.5489462456083,
+            "january_min_temp_c": 1329.4202911638442,
+            "january_avg_temp_c": 17211.172472087346,
+            "january_max_temp_c": 411.32007963244723,
+            "february_min_temp_c": 1920.9025682886993,
+            "february_avg_temp_c": 15904.709176217719,
+            "february_max_temp_c": 757.0279842974464,
+            "march_min_temp_c": 1039.6620957119237,
+            "march_avg_temp_c": 10202.756627237108,
+            "march_max_temp_c": 618.650358337089,
+            "april_min_temp_c": 223.3492092808049,
+            "april_avg_temp_c": 1463.3805579565744,
+            "april_max_temp_c": 316.5203389821109,
+            "may_min_temp_c": 313.16169829840703,
+            "may_avg_temp_c": 2992.1135699111983,
+            "may_max_temp_c": 82.97218539180083,
+            "june_min_temp_c": 299.404905546429,
+            "june_avg_temp_c": 2976.544533463354,
+            "june_max_temp_c": 212.20980594051218,
+            "july_min_temp_c": 494.16660839226915,
+            "july_avg_temp_c": 3077.0514220729315,
+            "july_max_temp_c": 144.1805958679838,
+            "august_min_temp_c": 314.68613294523857,
+            "august_avg_temp_c": 2517.6745902716507,
+            "august_max_temp_c": 165.17464175070228,
+            "september_min_temp_c": 385.23371794519744,
+            "september_avg_temp_c": 2891.357511825763,
+            "september_max_temp_c": 225.15741112276461,
+            "october_min_temp_c": 493.1210613059344,
+            "october_avg_temp_c": 3346.6385336643334,
+            "october_max_temp_c": 339.89586458543783,
+            "november_min_temp_c": 556.8504866491425,
+            "november_avg_temp_c": 6356.47646630814,
+            "november_max_temp_c": 360.76278587258196,
+            "december_min_temp_c": 639.9722498936637,
+            "december_avg_temp_c": 7904.847807395268,
+            "december_max_temp_c": 214.15946858015369,
+            "cooling_degree_days_c": 9742.61921933474,
+            "heating_degree_days_c": 57507.93238608456,
+            "precipitation_inches": 230.3243961409152,
+            "snowfall_inches": 475.69284087432123,
+            "snowdepth_inches": 585.9566322305891,
+            "avg_temp_c": 202463.70842717454,
+            "days_below_minus1C": 755.9948335350929,
+            "days_below_minus7C": 1765.0932100936923,
+            "days_below_minus12C": 1153.8952202147261,
+            "days_below_minus18C": 153.83787497528326,
+            "days_above_27C": 197.4554590943489,
+            "days_above_32C": 75.95024556797854,
+            "days_above_38C": 25.88044382366654,
+            "direction_max_wind_speed": 114.58633170306955,
+            "direction_peak_wind_speed": 13.567722759213826,
+            "max_wind_speed": 75.81647886426008
+          }
+        },
+        "pearson_threshold_095_pruning": {
+          "rule": "Traverse original CSV numeric column order; drop a column if absolute Pearson correlation on median-imputed TRAIN with any already kept column is >=0.95. No target or test used. This deterministic diagnostic is not a validated preprocessing recommendation.",
+          "dropped": [
+            {
+              "feature": "january_avg_temp_c",
+              "kept_correlated_feature": "january_min_temp_c",
+              "pearson": 0.9714025929936341
+            },
+            {
+              "feature": "february_avg_temp_c",
+              "kept_correlated_feature": "february_min_temp_c",
+              "pearson": 0.9804838196697087
+            },
+            {
+              "feature": "cooling_degree_days_c",
+              "kept_correlated_feature": "august_avg_temp_c",
+              "pearson": 0.9530373467885966
+            },
+            {
+              "feature": "max_wind_speed",
+              "kept_correlated_feature": "direction_max_wind_speed",
+              "pearson": 0.9896820439700245
+            }
+          ],
+          "retained": [
+            "Year_Factor",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "days_with_fog"
+          ],
+          "retained_diagnostics": {
+            "rows": 53308,
+            "input_numeric_feature_count": 55,
+            "constant_after_imputation": [],
+            "analyzed_columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "days_with_fog"
+            ],
+            "matrix_rank": 55,
+            "rank_tolerance": 1.0954538047567322e-08,
+            "rank_deficiency": 0,
+            "singular_values": [
+              925.4680998919507,
+              765.5662139077743,
+              537.4562177921714,
+              535.9009257510081,
+              395.60921131639503,
+              351.5774935686689,
+              307.4126294741823,
+              265.27847830905455,
+              251.9437017995522,
+              241.16910988322718,
+              232.90070800175494,
+              228.78478434550382,
+              220.9911208051544,
+              202.99524363620947,
+              179.55699857166658,
+              151.5729541410669,
+              141.99073372492015,
+              123.78668242984952,
+              102.6497410560848,
+              95.0270422795654,
+              87.20689037807155,
+              78.72125582067513,
+              69.3102562120188,
+              60.15477116325971,
+              55.16917349299381,
+              51.74011075913106,
+              48.951713702755264,
+              46.24357347991429,
+              38.357128039779525,
+              32.282705363440506,
+              29.747871067831188,
+              27.34078412386583,
+              22.960360203012563,
+              21.08061255456396,
+              19.466962226212654,
+              17.52328692123665,
+              15.688117015679435,
+              14.452766936530937,
+              12.60303721432845,
+              11.871411746134829,
+              11.285819522744802,
+              10.279736980956919,
+              9.73248010569446,
+              8.45532389780394,
+              8.225304588008795,
+              7.757203835918328,
+              7.012369513346822,
+              6.2948710014014075,
+              5.871940487907641,
+              5.650686308064533,
+              4.850943959772367,
+              4.099693790976381,
+              4.0308092859356766,
+              2.5084417099089142,
+              1.392801708968281
+            ],
+            "condition_number": 664.4650806592505,
+            "pseudoinverse_rcond": 1e-12,
+            "vif": {
+              "Year_Factor": {
+                "pseudoinverse_diagonal": 206.89391149644015,
+                "classical_vif": 206.89391149644015,
+                "nullspace_squared_loading": 0.0
+              },
+              "floor_area": {
+                "pseudoinverse_diagonal": 1.086457096116239,
+                "classical_vif": 1.086457096116239,
+                "nullspace_squared_loading": 0.0
+              },
+              "year_built": {
+                "pseudoinverse_diagonal": 1.0647023457845073,
+                "classical_vif": 1.0647023457845073,
+                "nullspace_squared_loading": 0.0
+              },
+              "energy_star_rating": {
+                "pseudoinverse_diagonal": 1.04273622245713,
+                "classical_vif": 1.04273622245713,
+                "nullspace_squared_loading": 0.0
+              },
+              "ELEVATION": {
+                "pseudoinverse_diagonal": 2.148384705109207,
+                "classical_vif": 2.148384705109207,
+                "nullspace_squared_loading": 0.0
+              },
+              "january_min_temp_c": {
+                "pseudoinverse_diagonal": 755.9288911178534,
+                "classical_vif": 755.9288911178534,
+                "nullspace_squared_loading": 0.0
+              },
+              "january_max_temp_c": {
+                "pseudoinverse_diagonal": 333.8981411210071,
+                "classical_vif": 333.8981411210071,
+                "nullspace_squared_loading": 0.0
+              },
+              "february_min_temp_c": {
+                "pseudoinverse_diagonal": 1336.9655892814849,
+                "classical_vif": 1336.9655892814849,
+                "nullspace_squared_loading": 0.0
+              },
+              "february_max_temp_c": {
+                "pseudoinverse_diagonal": 268.5643695869777,
+                "classical_vif": 268.5643695869777,
+                "nullspace_squared_loading": 0.0
+              },
+              "march_min_temp_c": {
+                "pseudoinverse_diagonal": 998.9690517150669,
+                "classical_vif": 998.9690517150669,
+                "nullspace_squared_loading": 0.0
+              },
+              "march_avg_temp_c": {
+                "pseudoinverse_diagonal": 3501.7437990798944,
+                "classical_vif": 3501.7437990798944,
+                "nullspace_squared_loading": 0.0
+              },
+              "march_max_temp_c": {
+                "pseudoinverse_diagonal": 415.98721017264705,
+                "classical_vif": 415.98721017264705,
+                "nullspace_squared_loading": 0.0
+              },
+              "april_min_temp_c": {
+                "pseudoinverse_diagonal": 210.51293750620565,
+                "classical_vif": 210.51293750620565,
+                "nullspace_squared_loading": 0.0
+              },
+              "april_avg_temp_c": {
+                "pseudoinverse_diagonal": 448.7046654710705,
+                "classical_vif": 448.7046654710705,
+                "nullspace_squared_loading": 0.0
+              },
+              "april_max_temp_c": {
+                "pseudoinverse_diagonal": 303.806187725599,
+                "classical_vif": 303.806187725599,
+                "nullspace_squared_loading": 0.0
+              },
+              "may_min_temp_c": {
+                "pseudoinverse_diagonal": 306.65420589180025,
+                "classical_vif": 306.65420589180025,
+                "nullspace_squared_loading": 0.0
+              },
+              "may_avg_temp_c": {
+                "pseudoinverse_diagonal": 1125.3610387061092,
+                "classical_vif": 1125.3610387061092,
+                "nullspace_squared_loading": 0.0
+              },
+              "may_max_temp_c": {
+                "pseudoinverse_diagonal": 82.08261014637027,
+                "classical_vif": 82.08261014637027,
+                "nullspace_squared_loading": 0.0
+              },
+              "june_min_temp_c": {
+                "pseudoinverse_diagonal": 254.78599558847296,
+                "classical_vif": 254.78599558847296,
+                "nullspace_squared_loading": 0.0
+              },
+              "june_avg_temp_c": {
+                "pseudoinverse_diagonal": 1355.2489936105007,
+                "classical_vif": 1355.2489936105007,
+                "nullspace_squared_loading": 0.0
+              },
+              "june_max_temp_c": {
+                "pseudoinverse_diagonal": 207.72104576579204,
+                "classical_vif": 207.72104576579204,
+                "nullspace_squared_loading": 0.0
+              },
+              "july_min_temp_c": {
+                "pseudoinverse_diagonal": 470.12759863283424,
+                "classical_vif": 470.12759863283424,
+                "nullspace_squared_loading": 0.0
+              },
+              "july_avg_temp_c": {
+                "pseudoinverse_diagonal": 976.4618107044835,
+                "classical_vif": 976.4618107044835,
+                "nullspace_squared_loading": 0.0
+              },
+              "july_max_temp_c": {
+                "pseudoinverse_diagonal": 125.92835685946653,
+                "classical_vif": 125.92835685946653,
+                "nullspace_squared_loading": 0.0
+              },
+              "august_min_temp_c": {
+                "pseudoinverse_diagonal": 217.80366768768525,
+                "classical_vif": 217.80366768768525,
+                "nullspace_squared_loading": 0.0
+              },
+              "august_avg_temp_c": {
+                "pseudoinverse_diagonal": 904.1563429570805,
+                "classical_vif": 904.1563429570805,
+                "nullspace_squared_loading": 0.0
+              },
+              "august_max_temp_c": {
+                "pseudoinverse_diagonal": 161.61586750981,
+                "classical_vif": 161.61586750981,
+                "nullspace_squared_loading": 0.0
+              },
+              "september_min_temp_c": {
+                "pseudoinverse_diagonal": 331.3762134820669,
+                "classical_vif": 331.3762134820669,
+                "nullspace_squared_loading": 0.0
+              },
+              "september_avg_temp_c": {
+                "pseudoinverse_diagonal": 769.4114000019948,
+                "classical_vif": 769.4114000019948,
+                "nullspace_squared_loading": 0.0
+              },
+              "september_max_temp_c": {
+                "pseudoinverse_diagonal": 219.87629327143858,
+                "classical_vif": 219.87629327143858,
+                "nullspace_squared_loading": 0.0
+              },
+              "october_min_temp_c": {
+                "pseudoinverse_diagonal": 445.7642247700032,
+                "classical_vif": 445.7642247700032,
+                "nullspace_squared_loading": 0.0
+              },
+              "october_avg_temp_c": {
+                "pseudoinverse_diagonal": 1142.647765712642,
+                "classical_vif": 1142.647765712642,
+                "nullspace_squared_loading": 0.0
+              },
+              "october_max_temp_c": {
+                "pseudoinverse_diagonal": 208.81712416502836,
+                "classical_vif": 208.81712416502836,
+                "nullspace_squared_loading": 0.0
+              },
+              "november_min_temp_c": {
+                "pseudoinverse_diagonal": 536.2786318016614,
+                "classical_vif": 536.2786318016614,
+                "nullspace_squared_loading": 0.0
+              },
+              "november_avg_temp_c": {
+                "pseudoinverse_diagonal": 1402.7776101899642,
+                "classical_vif": 1402.7776101899642,
+                "nullspace_squared_loading": 0.0
+              },
+              "november_max_temp_c": {
+                "pseudoinverse_diagonal": 332.99757216423245,
+                "classical_vif": 332.99757216423245,
+                "nullspace_squared_loading": 0.0
+              },
+              "december_min_temp_c": {
+                "pseudoinverse_diagonal": 600.7118545987958,
+                "classical_vif": 600.7118545987958,
+                "nullspace_squared_loading": 0.0
+              },
+              "december_avg_temp_c": {
+                "pseudoinverse_diagonal": 2273.57601989333,
+                "classical_vif": 2273.57601989333,
+                "nullspace_squared_loading": 0.0
+              },
+              "december_max_temp_c": {
+                "pseudoinverse_diagonal": 153.8924735849155,
+                "classical_vif": 153.8924735849155,
+                "nullspace_squared_loading": 0.0
+              },
+              "heating_degree_days_c": {
+                "pseudoinverse_diagonal": 6369.259293259494,
+                "classical_vif": 6369.259293259494,
+                "nullspace_squared_loading": 0.0
+              },
+              "precipitation_inches": {
+                "pseudoinverse_diagonal": 202.34271092036593,
+                "classical_vif": 202.34271092036593,
+                "nullspace_squared_loading": 0.0
+              },
+              "snowfall_inches": {
+                "pseudoinverse_diagonal": 452.7007886679165,
+                "classical_vif": 452.7007886679165,
+                "nullspace_squared_loading": 0.0
+              },
+              "snowdepth_inches": {
+                "pseudoinverse_diagonal": 564.6169102411857,
+                "classical_vif": 564.6169102411857,
+                "nullspace_squared_loading": 0.0
+              },
+              "avg_temp_c": {
+                "pseudoinverse_diagonal": 21446.777648744388,
+                "classical_vif": 21446.777648744388,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_below_minus1C": {
+                "pseudoinverse_diagonal": 731.6898385279234,
+                "classical_vif": 731.6898385279234,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_below_minus7C": {
+                "pseudoinverse_diagonal": 1733.067183976164,
+                "classical_vif": 1733.067183976164,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_below_minus12C": {
+                "pseudoinverse_diagonal": 1010.3746707585365,
+                "classical_vif": 1010.3746707585365,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_below_minus18C": {
+                "pseudoinverse_diagonal": 113.52485788193043,
+                "classical_vif": 113.52485788193043,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_above_27C": {
+                "pseudoinverse_diagonal": 171.57406681391043,
+                "classical_vif": 171.57406681391043,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_above_32C": {
+                "pseudoinverse_diagonal": 72.6478222329014,
+                "classical_vif": 72.6478222329014,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_above_38C": {
+                "pseudoinverse_diagonal": 25.304991681749836,
+                "classical_vif": 25.304991681749836,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_above_43C": {
+                "pseudoinverse_diagonal": 4.927731229413717,
+                "classical_vif": 4.927731229413717,
+                "nullspace_squared_loading": 0.0
+              },
+              "direction_max_wind_speed": {
+                "pseudoinverse_diagonal": 10.883234886951675,
+                "classical_vif": 10.883234886951675,
+                "nullspace_squared_loading": 0.0
+              },
+              "direction_peak_wind_speed": {
+                "pseudoinverse_diagonal": 10.033286777582862,
+                "classical_vif": 10.033286777582862,
+                "nullspace_squared_loading": 0.0
+              },
+              "days_with_fog": {
+                "pseudoinverse_diagonal": 2.773233189820344,
+                "classical_vif": 2.773233189820344,
+                "nullspace_squared_loading": 0.0
+              }
+            },
+            "infinite_classical_vif_features": [],
+            "finite_classical_vif_ge_10": {
+              "Year_Factor": 206.89391149644015,
+              "january_min_temp_c": 755.9288911178534,
+              "january_max_temp_c": 333.8981411210071,
+              "february_min_temp_c": 1336.9655892814849,
+              "february_max_temp_c": 268.5643695869777,
+              "march_min_temp_c": 998.9690517150669,
+              "march_avg_temp_c": 3501.7437990798944,
+              "march_max_temp_c": 415.98721017264705,
+              "april_min_temp_c": 210.51293750620565,
+              "april_avg_temp_c": 448.7046654710705,
+              "april_max_temp_c": 303.806187725599,
+              "may_min_temp_c": 306.65420589180025,
+              "may_avg_temp_c": 1125.3610387061092,
+              "may_max_temp_c": 82.08261014637027,
+              "june_min_temp_c": 254.78599558847296,
+              "june_avg_temp_c": 1355.2489936105007,
+              "june_max_temp_c": 207.72104576579204,
+              "july_min_temp_c": 470.12759863283424,
+              "july_avg_temp_c": 976.4618107044835,
+              "july_max_temp_c": 125.92835685946653,
+              "august_min_temp_c": 217.80366768768525,
+              "august_avg_temp_c": 904.1563429570805,
+              "august_max_temp_c": 161.61586750981,
+              "september_min_temp_c": 331.3762134820669,
+              "september_avg_temp_c": 769.4114000019948,
+              "september_max_temp_c": 219.87629327143858,
+              "october_min_temp_c": 445.7642247700032,
+              "october_avg_temp_c": 1142.647765712642,
+              "october_max_temp_c": 208.81712416502836,
+              "november_min_temp_c": 536.2786318016614,
+              "november_avg_temp_c": 1402.7776101899642,
+              "november_max_temp_c": 332.99757216423245,
+              "december_min_temp_c": 600.7118545987958,
+              "december_avg_temp_c": 2273.57601989333,
+              "december_max_temp_c": 153.8924735849155,
+              "heating_degree_days_c": 6369.259293259494,
+              "precipitation_inches": 202.34271092036593,
+              "snowfall_inches": 452.7007886679165,
+              "snowdepth_inches": 564.6169102411857,
+              "avg_temp_c": 21446.777648744388,
+              "days_below_minus1C": 731.6898385279234,
+              "days_below_minus7C": 1733.067183976164,
+              "days_below_minus12C": 1010.3746707585365,
+              "days_below_minus18C": 113.52485788193043,
+              "days_above_27C": 171.57406681391043,
+              "days_above_32C": 72.6478222329014,
+              "days_above_38C": 25.304991681749836,
+              "direction_max_wind_speed": 10.883234886951675,
+              "direction_peak_wind_speed": 10.033286777582862
+            }
+          }
+        }
+      }
+    }
+  }
+}

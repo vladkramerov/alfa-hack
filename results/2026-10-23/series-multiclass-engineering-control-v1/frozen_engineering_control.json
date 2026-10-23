@@ -1,0 +1,93 @@
+{
+  "frozen_at": "2026-10-23T16:29:09+03:00",
+  "hypothesis": "HYP-008",
+  "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+  "recipe": {
+    "engineer": true
+  },
+  "panel": [
+    {
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineering_only"
+      },
+      "reference_selector": {
+        "stage": "inner",
+        "config": {
+          "family": "catboost",
+          "recipe": "baseline"
+        }
+      }
+    },
+    {
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "engineering_only"
+      },
+      "reference_selector": {
+        "stage": "inner",
+        "config": {
+          "family": "forest",
+          "recipe": "baseline"
+        }
+      }
+    },
+    {
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineering_only"
+      },
+      "reference_selector": {
+        "stage": "outer",
+        "config": {
+          "family": "catboost",
+          "recipe": "baseline"
+        }
+      }
+    },
+    {
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "engineering_only"
+      },
+      "reference_selector": {
+        "stage": "outer",
+        "config": {
+          "family": "forest",
+          "recipe": "baseline"
+        }
+      }
+    }
+  ],
+  "original_series": "results\\2026-10-23\\series-multiclass-preprocessing-v1",
+  "primary_winner_changes_allowed": false,
+  "smoke": {
+    "status": "passed",
+    "new_feature_names": [
+      "dbytes_log1p",
+      "dpkts_log1p",
+      "dst_bytes_per_packet",
+      "sbytes_log1p",
+      "spkts_log1p",
+      "src_bytes_per_packet"
+    ],
+    "shape": [
+      3,
+      10
+    ],
+    "model_fit_performed": false
+  },
+  "source_sha256": {
+    "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+    "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+    "experiments\\reporting.py": "014937e8a5b1bfc40cb2d529b58add2bef19987fe584b2076b331a4da160917d",
+    "experiments\\run_engineering_control.py": "b5e7190af843baec9ca1831e76b63a14a617862dbc6343dfaa9ed379a0e5e8d4",
+    "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+    "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+    "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+  }
+}

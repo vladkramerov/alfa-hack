@@ -1,0 +1,68 @@
+{
+  "run_id": "HYP-007-16-multiclass-outer-engineered-l2-0.1",
+  "path": "results\\2026-10-23\\HYP-007-16-multiclass-outer-engineered-l2-0.1",
+  "hypothesis": "HYP-007",
+  "task": "multiclass",
+  "stage": "outer",
+  "config": {
+    "family": "l2",
+    "recipe": "engineered",
+    "strength": 0.1
+  },
+  "status": "completed",
+  "started": "2026-10-23T17:11:00+03:00",
+  "reference": "HYP-007-15-multiclass-outer-engineered-l1-1",
+  "finished": "2026-10-23T17:14:59+03:00",
+  "seconds": 239.218,
+  "scores": {
+    "macro_f1": 0.3715427929049082,
+    "accuracy": 0.7543317192695875,
+    "weighted_f1": 0.731579052317665
+  },
+  "n_fit": 70529,
+  "n_validation": 17141,
+  "n_features": 178,
+  "model_parameters": {
+    "C": 0.1,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": null,
+    "max_iter": 1000,
+    "multi_class": "deprecated",
+    "n_jobs": 1,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "saga",
+    "tol": 0.001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "warnings": [],
+  "converged": true,
+  "n_iter": [
+    299
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.12.0",
+    "sklearn": "1.5.2",
+    "catboost": "1.2.8",
+    "joblib": "1.4.2",
+    "threads": 2,
+    "data_sha256": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+    },
+    "code_sha256": {
+      "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+      "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+    }
+  },
+  "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+  "gain": -9.868821421116225e-05
+}

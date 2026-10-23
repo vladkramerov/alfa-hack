@@ -1,0 +1,464 @@
+{
+  "task": "regression",
+  "status": "completed",
+  "completed_at": "2026-10-23T16:28:17+03:00",
+  "directory": "results\\2026-10-23\\series-regression-engineering-control-v1",
+  "frozen": {
+    "frozen_at": "2026-10-23T16:24:17+03:00",
+    "hypothesis": "HYP-008",
+    "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+    "recipe": {
+      "engineer": true
+    },
+    "panel": [
+      {
+        "stage": "inner",
+        "config": {
+          "family": "catboost",
+          "recipe": "engineering_only"
+        },
+        "reference_selector": {
+          "stage": "inner",
+          "config": {
+            "family": "catboost",
+            "recipe": "baseline"
+          }
+        }
+      },
+      {
+        "stage": "inner",
+        "config": {
+          "family": "forest",
+          "recipe": "engineering_only"
+        },
+        "reference_selector": {
+          "stage": "inner",
+          "config": {
+            "family": "forest",
+            "recipe": "baseline"
+          }
+        }
+      },
+      {
+        "stage": "outer",
+        "config": {
+          "family": "catboost",
+          "recipe": "engineering_only"
+        },
+        "reference_selector": {
+          "stage": "outer",
+          "config": {
+            "family": "catboost",
+            "recipe": "baseline"
+          }
+        }
+      },
+      {
+        "stage": "outer",
+        "config": {
+          "family": "forest",
+          "recipe": "engineering_only"
+        },
+        "reference_selector": {
+          "stage": "outer",
+          "config": {
+            "family": "forest",
+            "recipe": "baseline"
+          }
+        }
+      }
+    ],
+    "original_series": "results\\2026-10-23\\series-regression-preprocessing-v1",
+    "primary_winner_changes_allowed": false,
+    "smoke": {
+      "status": "passed",
+      "new_feature_names": [
+        "dbytes_log1p",
+        "dpkts_log1p",
+        "dst_bytes_per_packet",
+        "sbytes_log1p",
+        "spkts_log1p",
+        "src_bytes_per_packet"
+      ],
+      "shape": [
+        3,
+        10
+      ],
+      "model_fit_performed": false
+    },
+    "source_sha256": {
+      "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+      "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+      "experiments\\reporting.py": "b2fa5ed29f39f4243ad7b6f67e0689d4dff4a347e05bbd5b9bd97ecfa4a5bf51",
+      "experiments\\run_engineering_control.py": "a3ea9f912bb58ea15e00d012a1e561d86ae1a23e478bca5d36447fbe1c3627f5",
+      "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+      "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+      "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+    }
+  },
+  "supplemental_selection": {
+    "frozen_at": "2026-10-23T16:26:48+03:00",
+    "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+    "selection": "inner only across original baseline and engineering-only for both families",
+    "candidates": [
+      {
+        "run_id": "HYP-001-01-regression-inner-baseline-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "rmse": 45.518715477760836
+        }
+      },
+      {
+        "run_id": "HYP-001-03-regression-inner-baseline-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "rmse": 46.1639294892355
+        }
+      },
+      {
+        "run_id": "HYP-008-01-regression-inner-engineering_only-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "rmse": 44.976674584166
+        }
+      },
+      {
+        "run_id": "HYP-008-02-regression-inner-engineering_only-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "rmse": 46.12352152733562
+        }
+      }
+    ],
+    "selected_run_id": "HYP-008-01-regression-inner-engineering_only-catboost",
+    "selected_config": {
+      "family": "catboost",
+      "recipe": "engineering_only"
+    },
+    "primary_winner_changed": false
+  },
+  "final": {
+    "status": "completed",
+    "started": "2026-10-23T16:27:57+03:00",
+    "task": "regression",
+    "config": {
+      "family": "catboost",
+      "recipe": "engineering_only"
+    },
+    "selection": "frozen inner-only winner; full refit is not a new validation measurement",
+    "finished": "2026-10-23T16:28:17+03:00",
+    "fit_seconds": 14.579,
+    "path": "results\\2026-10-23\\HYP-005-08-regression-full-refit",
+    "n_features": 138,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.12.0",
+      "sklearn": "1.5.2",
+      "catboost": "1.2.8",
+      "joblib": "1.4.2",
+      "threads": 2,
+      "data_sha256": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      "code_sha256": {
+        "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+        "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+        "experiments\\reporting.py": "014937e8a5b1bfc40cb2d529b58add2bef19987fe584b2076b331a4da160917d",
+        "experiments\\run_engineering_control.py": "b5e7190af843baec9ca1831e76b63a14a617862dbc6343dfaa9ed379a0e5e8d4",
+        "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+        "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+        "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+      }
+    },
+    "submission_sha256": "f96592f5b36f03f3c4ac83e12307bd9a04374b0bba858ae0d3c7b24a21115a12"
+  },
+  "records": [
+    {
+      "run_id": "HYP-008-01-regression-inner-engineering_only-catboost",
+      "path": "results\\2026-10-23\\HYP-008-01-regression-inner-engineering_only-catboost",
+      "hypothesis": "HYP-008",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineering_only"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:24:17+03:00",
+      "reference": "HYP-001-01-regression-inner-baseline-catboost",
+      "finished": "2026-10-23T16:24:26+03:00",
+      "seconds": 8.188,
+      "scores": {
+        "rmse": 44.976674584166
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 129,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\reporting.py": "b2fa5ed29f39f4243ad7b6f67e0689d4dff4a347e05bbd5b9bd97ecfa4a5bf51",
+          "experiments\\run_engineering_control.py": "a3ea9f912bb58ea15e00d012a1e561d86ae1a23e478bca5d36447fbe1c3627f5",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+          "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+          "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.5420408935948373
+    },
+    {
+      "run_id": "HYP-008-02-regression-inner-engineering_only-forest",
+      "path": "results\\2026-10-23\\HYP-008-02-regression-inner-engineering_only-forest",
+      "hypothesis": "HYP-008",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "engineering_only"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:24:26+03:00",
+      "reference": "HYP-001-03-regression-inner-baseline-forest",
+      "finished": "2026-10-23T16:24:50+03:00",
+      "seconds": 23.938,
+      "scores": {
+        "rmse": 46.12352152733562
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 129,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\reporting.py": "b2fa5ed29f39f4243ad7b6f67e0689d4dff4a347e05bbd5b9bd97ecfa4a5bf51",
+          "experiments\\run_engineering_control.py": "a3ea9f912bb58ea15e00d012a1e561d86ae1a23e478bca5d36447fbe1c3627f5",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+          "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+          "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.04040796189988072
+    },
+    {
+      "run_id": "HYP-008-03-regression-outer-engineering_only-catboost",
+      "path": "results\\2026-10-23\\HYP-008-03-regression-outer-engineering_only-catboost",
+      "hypothesis": "HYP-008",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineering_only"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:26:48+03:00",
+      "reference": "HYP-001-06-regression-outer-baseline-catboost",
+      "finished": "2026-10-23T16:27:03+03:00",
+      "seconds": 14.375,
+      "scores": {
+        "rmse": 45.204914878207624
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 134,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\reporting.py": "014937e8a5b1bfc40cb2d529b58add2bef19987fe584b2076b331a4da160917d",
+          "experiments\\run_engineering_control.py": "b5e7190af843baec9ca1831e76b63a14a617862dbc6343dfaa9ed379a0e5e8d4",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+          "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+          "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.7309214638821047
+    },
+    {
+      "run_id": "HYP-008-04-regression-outer-engineering_only-forest",
+      "path": "results\\2026-10-23\\HYP-008-04-regression-outer-engineering_only-forest",
+      "hypothesis": "HYP-008",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "engineering_only"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:27:03+03:00",
+      "reference": "HYP-001-07-regression-outer-baseline-forest",
+      "finished": "2026-10-23T16:27:56+03:00",
+      "seconds": 53.766,
+      "scores": {
+        "rmse": 46.70829342223722
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 134,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\reporting.py": "014937e8a5b1bfc40cb2d529b58add2bef19987fe584b2076b331a4da160917d",
+          "experiments\\run_engineering_control.py": "b5e7190af843baec9ca1831e76b63a14a617862dbc6343dfaa9ed379a0e5e8d4",
+          "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+          "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+          "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 1.8576874202287783
+    }
+  ],
+  "primary_winner_changed": false,
+  "final_refit_performed": true,
+  "limitation": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged."
+}

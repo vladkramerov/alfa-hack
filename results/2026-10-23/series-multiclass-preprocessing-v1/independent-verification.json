@@ -1,0 +1,3599 @@
+{
+  "task": "multiclass",
+  "series": "results\\2026-10-23\\series-multiclass-preprocessing-v1",
+  "verified_at": "2026-10-23T20:51:39+03:00",
+  "status": "passed",
+  "metric_relative_tolerance": 1e-09,
+  "check_count": 650,
+  "failure_count": 0,
+  "failures": [],
+  "evidence": {
+    "status_counts": {
+      "completed": 28
+    },
+    "convergence_counts": {
+      "True": 28
+    },
+    "data_sha256": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+    },
+    "source_snapshots": {
+      "experiments\\preprocessing.py": {
+        "path": "results\\2026-10-23\\series-multiclass-preprocessing-v1\\source\\preprocessing.py",
+        "expected_sha256": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+        "actual_sha256": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd"
+      },
+      "experiments\\run_suite.py": {
+        "path": "results\\2026-10-23\\series-multiclass-preprocessing-v1\\source\\run_suite.py",
+        "expected_sha256": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+        "actual_sha256": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+      }
+    },
+    "pipeline_replay_preprocessing_source": "results\\2026-10-23\\series-multiclass-preprocessing-v1\\source\\preprocessing.py",
+    "exact_feature_group_overlap_counts": {
+      "inner": 0,
+      "outer": 0
+    },
+    "recomputed_scores": {
+      "HYP-001-05-multiclass-inner-baseline-catboost": {
+        "macro_f1": 0.5283017428570587,
+        "accuracy": 0.8088028367197614,
+        "weighted_f1": 0.7860891259009041
+      },
+      "HYP-001-08-multiclass-inner-correlation-catboost": {
+        "macro_f1": 0.5132340783634113,
+        "accuracy": 0.8030618562503518,
+        "weighted_f1": 0.7798450938735185
+      },
+      "HYP-002-04-multiclass-inner-vif-catboost": {
+        "macro_f1": 0.5132340783634113,
+        "accuracy": 0.8030618562503518,
+        "weighted_f1": 0.7798450938735185
+      },
+      "HYP-003-03-multiclass-inner-scaled-catboost": {
+        "macro_f1": 0.5107662999640583,
+        "accuracy": 0.802724151516857,
+        "weighted_f1": 0.7787386827217957
+      },
+      "HYP-004-03-multiclass-inner-gaussian-catboost": {
+        "macro_f1": 0.5128290768670659,
+        "accuracy": 0.8033432768615973,
+        "weighted_f1": 0.7796028566047394
+      },
+      "HYP-005-06-multiclass-inner-engineered-catboost": {
+        "macro_f1": 0.5128290768670659,
+        "accuracy": 0.8033432768615973,
+        "weighted_f1": 0.7796028566047394
+      },
+      "HYP-001-09-multiclass-inner-baseline-forest": {
+        "macro_f1": 0.6023505992999411,
+        "accuracy": 0.8206225023920752,
+        "weighted_f1": 0.8055785391931077
+      },
+      "HYP-001-10-multiclass-inner-correlation-forest": {
+        "macro_f1": 0.5614586103126855,
+        "accuracy": 0.8122361681769573,
+        "weighted_f1": 0.796936329997139
+      },
+      "HYP-002-05-multiclass-inner-vif-forest": {
+        "macro_f1": 0.5614586103126855,
+        "accuracy": 0.8122361681769573,
+        "weighted_f1": 0.796936329997139
+      },
+      "HYP-003-04-multiclass-inner-scaled-forest": {
+        "macro_f1": 0.554820917280919,
+        "accuracy": 0.8147689536781674,
+        "weighted_f1": 0.7987640272318586
+      },
+      "HYP-004-04-multiclass-inner-gaussian-forest": {
+        "macro_f1": 0.5629527561008232,
+        "accuracy": 0.81460010131142,
+        "weighted_f1": 0.7985038277657371
+      },
+      "HYP-005-07-multiclass-inner-engineered-forest": {
+        "macro_f1": 0.5629527561008232,
+        "accuracy": 0.81460010131142,
+        "weighted_f1": 0.7985038277657371
+      },
+      "HYP-006-05-multiclass-inner-baseline-catboost-1": {
+        "macro_f1": 0.5418208400891047,
+        "accuracy": 0.8097033826757472,
+        "weighted_f1": 0.788208632780246
+      },
+      "HYP-006-06-multiclass-inner-baseline-catboost-10": {
+        "macro_f1": 0.5095018586287922,
+        "accuracy": 0.8075083019080317,
+        "weighted_f1": 0.7822626380885134
+      },
+      "HYP-006-07-multiclass-inner-baseline-catboost-30": {
+        "macro_f1": 0.48214773380255344,
+        "accuracy": 0.8042438228175831,
+        "weighted_f1": 0.7737147046898298
+      },
+      "HYP-007-09-multiclass-inner-engineered-l1-0.01": {
+        "macro_f1": 0.37638188670830286,
+        "accuracy": 0.7522935779816514,
+        "weighted_f1": 0.7286123191429368
+      },
+      "HYP-007-10-multiclass-inner-engineered-l1-0.1": {
+        "macro_f1": 0.3755980101778375,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7312061160286761
+      },
+      "HYP-007-11-multiclass-inner-engineered-l1-1": {
+        "macro_f1": 0.3775319090469025,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7325445954190413
+      },
+      "HYP-007-12-multiclass-inner-engineered-l2-0.01": {
+        "macro_f1": 0.3762205998776406,
+        "accuracy": 0.7576968537175662,
+        "weighted_f1": 0.7311719750658902
+      },
+      "HYP-007-13-multiclass-inner-engineered-l2-0.1": {
+        "macro_f1": 0.37751467232812563,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.7325440492227051
+      },
+      "HYP-007-14-multiclass-inner-engineered-l2-1": {
+        "macro_f1": 0.3775030371857732,
+        "accuracy": 0.759047672651545,
+        "weighted_f1": 0.732542202308974
+      },
+      "HYP-001-11-multiclass-outer-baseline-catboost": {
+        "macro_f1": 0.5239534323156312,
+        "accuracy": 0.8157633743655562,
+        "weighted_f1": 0.7922194332917473
+      },
+      "HYP-005-09-multiclass-outer-engineered-catboost": {
+        "macro_f1": 0.5075268759704035,
+        "accuracy": 0.8052038970888513,
+        "weighted_f1": 0.7803248081892851
+      },
+      "HYP-001-12-multiclass-outer-baseline-forest": {
+        "macro_f1": 0.572183507286843,
+        "accuracy": 0.8278980222857476,
+        "weighted_f1": 0.8157534962058391
+      },
+      "HYP-005-10-multiclass-outer-engineered-forest": {
+        "macro_f1": 0.5594984742922693,
+        "accuracy": 0.8220057172860393,
+        "weighted_f1": 0.8088471303088757
+      },
+      "HYP-006-08-multiclass-outer-baseline-catboost-1": {
+        "macro_f1": 0.5270879065570541,
+        "accuracy": 0.8150632985240067,
+        "weighted_f1": 0.7912883328576368
+      },
+      "HYP-007-15-multiclass-outer-engineered-l1-1": {
+        "macro_f1": 0.3716414811191194,
+        "accuracy": 0.7544483985765125,
+        "weighted_f1": 0.7316911360704531
+      },
+      "HYP-007-16-multiclass-outer-engineered-l2-0.1": {
+        "macro_f1": 0.3715427929049082,
+        "accuracy": 0.7543317192695875,
+        "weighted_f1": 0.731579052317665
+      }
+    },
+    "prediction_serialization": {
+      "HYP-001-05-multiclass-inner-baseline-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5283017428570587,
+          "accuracy": 0.8088028367197614,
+          "weighted_f1": 0.7860891259009041
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5283017428570587,
+          "accuracy": 0.8088028367197614,
+          "weighted_f1": 0.7860891259009041
+        }
+      },
+      "HYP-001-08-multiclass-inner-correlation-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5132340783634113,
+          "accuracy": 0.8030618562503518,
+          "weighted_f1": 0.7798450938735185
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5132340783634113,
+          "accuracy": 0.8030618562503518,
+          "weighted_f1": 0.7798450938735185
+        }
+      },
+      "HYP-002-04-multiclass-inner-vif-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5132340783634113,
+          "accuracy": 0.8030618562503518,
+          "weighted_f1": 0.7798450938735185
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5132340783634113,
+          "accuracy": 0.8030618562503518,
+          "weighted_f1": 0.7798450938735185
+        }
+      },
+      "HYP-003-03-multiclass-inner-scaled-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5107662999640583,
+          "accuracy": 0.802724151516857,
+          "weighted_f1": 0.7787386827217957
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5107662999640583,
+          "accuracy": 0.802724151516857,
+          "weighted_f1": 0.7787386827217957
+        }
+      },
+      "HYP-004-03-multiclass-inner-gaussian-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5128290768670659,
+          "accuracy": 0.8033432768615973,
+          "weighted_f1": 0.7796028566047394
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5128290768670659,
+          "accuracy": 0.8033432768615973,
+          "weighted_f1": 0.7796028566047394
+        }
+      },
+      "HYP-005-06-multiclass-inner-engineered-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5128290768670659,
+          "accuracy": 0.8033432768615973,
+          "weighted_f1": 0.7796028566047394
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5128290768670659,
+          "accuracy": 0.8033432768615973,
+          "weighted_f1": 0.7796028566047394
+        }
+      },
+      "HYP-001-09-multiclass-inner-baseline-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.6023505992999411,
+          "accuracy": 0.8206225023920752,
+          "weighted_f1": 0.8055785391931077
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.6023505992999411,
+          "accuracy": 0.8206225023920752,
+          "weighted_f1": 0.8055785391931077
+        }
+      },
+      "HYP-001-10-multiclass-inner-correlation-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5614586103126855,
+          "accuracy": 0.8122361681769573,
+          "weighted_f1": 0.796936329997139
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5614586103126855,
+          "accuracy": 0.8122361681769573,
+          "weighted_f1": 0.796936329997139
+        }
+      },
+      "HYP-002-05-multiclass-inner-vif-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5614586103126855,
+          "accuracy": 0.8122361681769573,
+          "weighted_f1": 0.796936329997139
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5614586103126855,
+          "accuracy": 0.8122361681769573,
+          "weighted_f1": 0.796936329997139
+        }
+      },
+      "HYP-003-04-multiclass-inner-scaled-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.554820917280919,
+          "accuracy": 0.8147689536781674,
+          "weighted_f1": 0.7987640272318586
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.554820917280919,
+          "accuracy": 0.8147689536781674,
+          "weighted_f1": 0.7987640272318586
+        }
+      },
+      "HYP-004-04-multiclass-inner-gaussian-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5629527561008232,
+          "accuracy": 0.81460010131142,
+          "weighted_f1": 0.7985038277657371
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5629527561008232,
+          "accuracy": 0.81460010131142,
+          "weighted_f1": 0.7985038277657371
+        }
+      },
+      "HYP-005-07-multiclass-inner-engineered-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5629527561008232,
+          "accuracy": 0.81460010131142,
+          "weighted_f1": 0.7985038277657371
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5629527561008232,
+          "accuracy": 0.81460010131142,
+          "weighted_f1": 0.7985038277657371
+        }
+      },
+      "HYP-006-05-multiclass-inner-baseline-catboost-1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5418208400891047,
+          "accuracy": 0.8097033826757472,
+          "weighted_f1": 0.788208632780246
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5418208400891047,
+          "accuracy": 0.8097033826757472,
+          "weighted_f1": 0.788208632780246
+        }
+      },
+      "HYP-006-06-multiclass-inner-baseline-catboost-10": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5095018586287922,
+          "accuracy": 0.8075083019080317,
+          "weighted_f1": 0.7822626380885134
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5095018586287922,
+          "accuracy": 0.8075083019080317,
+          "weighted_f1": 0.7822626380885134
+        }
+      },
+      "HYP-006-07-multiclass-inner-baseline-catboost-30": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.48214773380255344,
+          "accuracy": 0.8042438228175831,
+          "weighted_f1": 0.7737147046898298
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.48214773380255344,
+          "accuracy": 0.8042438228175831,
+          "weighted_f1": 0.7737147046898298
+        }
+      },
+      "HYP-007-09-multiclass-inner-engineered-l1-0.01": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.37638188670830286,
+          "accuracy": 0.7522935779816514,
+          "weighted_f1": 0.7286123191429368
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.37638188670830286,
+          "accuracy": 0.7522935779816514,
+          "weighted_f1": 0.7286123191429368
+        }
+      },
+      "HYP-007-10-multiclass-inner-engineered-l1-0.1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3755980101778375,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7312061160286761
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3755980101778375,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7312061160286761
+        }
+      },
+      "HYP-007-11-multiclass-inner-engineered-l1-1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3775319090469025,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7325445954190413
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3775319090469025,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7325445954190413
+        }
+      },
+      "HYP-007-12-multiclass-inner-engineered-l2-0.01": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3762205998776406,
+          "accuracy": 0.7576968537175662,
+          "weighted_f1": 0.7311719750658902
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3762205998776406,
+          "accuracy": 0.7576968537175662,
+          "weighted_f1": 0.7311719750658902
+        }
+      },
+      "HYP-007-13-multiclass-inner-engineered-l2-0.1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.37751467232812563,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7325440492227051
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.37751467232812563,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.7325440492227051
+        }
+      },
+      "HYP-007-14-multiclass-inner-engineered-l2-1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3775030371857732,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.732542202308974
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3775030371857732,
+          "accuracy": 0.759047672651545,
+          "weighted_f1": 0.732542202308974
+        }
+      },
+      "HYP-001-11-multiclass-outer-baseline-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5239534323156312,
+          "accuracy": 0.8157633743655562,
+          "weighted_f1": 0.7922194332917473
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5239534323156312,
+          "accuracy": 0.8157633743655562,
+          "weighted_f1": 0.7922194332917473
+        }
+      },
+      "HYP-005-09-multiclass-outer-engineered-catboost": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5075268759704035,
+          "accuracy": 0.8052038970888513,
+          "weighted_f1": 0.7803248081892851
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5075268759704035,
+          "accuracy": 0.8052038970888513,
+          "weighted_f1": 0.7803248081892851
+        }
+      },
+      "HYP-001-12-multiclass-outer-baseline-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.572183507286843,
+          "accuracy": 0.8278980222857476,
+          "weighted_f1": 0.8157534962058391
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.572183507286843,
+          "accuracy": 0.8278980222857476,
+          "weighted_f1": 0.8157534962058391
+        }
+      },
+      "HYP-005-10-multiclass-outer-engineered-forest": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5594984742922693,
+          "accuracy": 0.8220057172860393,
+          "weighted_f1": 0.8088471303088757
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5594984742922693,
+          "accuracy": 0.8220057172860393,
+          "weighted_f1": 0.8088471303088757
+        }
+      },
+      "HYP-006-08-multiclass-outer-baseline-catboost-1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.5270879065570541,
+          "accuracy": 0.8150632985240067,
+          "weighted_f1": 0.7912883328576368
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.5270879065570541,
+          "accuracy": 0.8150632985240067,
+          "weighted_f1": 0.7912883328576368
+        }
+      },
+      "HYP-007-15-multiclass-outer-engineered-l1-1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3716414811191194,
+          "accuracy": 0.7544483985765125,
+          "weighted_f1": 0.7316911360704531
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3716414811191194,
+          "accuracy": 0.7544483985765125,
+          "weighted_f1": 0.7316911360704531
+        }
+      },
+      "HYP-007-16-multiclass-outer-engineered-l2-0.1": {
+        "expected_original_dtype": "class_label",
+        "basis": "tree regression float64 or categorical classification predictions",
+        "raw_csv_inferred_dtype_scores": {
+          "macro_f1": 0.3715427929049082,
+          "accuracy": 0.7543317192695875,
+          "weighted_f1": 0.731579052317665
+        },
+        "original_dtype_restored_scores": {
+          "macro_f1": 0.3715427929049082,
+          "accuracy": 0.7543317192695875,
+          "weighted_f1": 0.731579052317665
+        }
+      }
+    },
+    "final_directory": "results\\2026-10-23\\HYP-005-12-multiclass-full-refit"
+  },
+  "checks": [
+    {
+      "name": "series/task",
+      "passed": true
+    },
+    {
+      "name": "series/records_snapshot",
+      "passed": true
+    },
+    {
+      "name": "series/unique_run_ids",
+      "passed": true
+    },
+    {
+      "name": "series/all_records_completed",
+      "passed": true
+    },
+    {
+      "name": "sources/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_exists/experiments\\preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_hash/experiments\\preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_exists/experiments\\run_suite.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_hash/experiments\\run_suite.py",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/size",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/size",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/size",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/size",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/row_disjoint",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/exact_feature_group_leakage",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/fit/all_classes",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/valid/all_classes",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/row_disjoint",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/exact_feature_group_leakage",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/fit/all_classes",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/valid/all_classes",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_partition",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_partition_of_outer_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-05-multiclass-inner-baseline-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-08-multiclass-inner-correlation-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-04-multiclass-inner-vif-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-003-03-multiclass-inner-scaled-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-004-03-multiclass-inner-gaussian-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-06-multiclass-inner-engineered-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-09-multiclass-inner-baseline-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-10-multiclass-inner-correlation-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-05-multiclass-inner-vif-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-003-04-multiclass-inner-scaled-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-004-04-multiclass-inner-gaussian-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-07-multiclass-inner-engineered-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-05-multiclass-inner-baseline-catboost-1/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-06-multiclass-inner-baseline-catboost-10/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-07-multiclass-inner-baseline-catboost-30/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-09-multiclass-inner-engineered-l1-0.01/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-10-multiclass-inner-engineered-l1-0.1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-11-multiclass-inner-engineered-l1-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-12-multiclass-inner-engineered-l2-0.01/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-13-multiclass-inner-engineered-l2-0.1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-14-multiclass-inner-engineered-l2-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-11-multiclass-outer-baseline-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-09-multiclass-outer-engineered-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-12-multiclass-outer-baseline-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-10-multiclass-outer-engineered-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-08-multiclass-outer-baseline-catboost-1/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-15-multiclass-outer-engineered-l1-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/actual_from_source",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/valid_classes",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/metric_oracle/macro_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/metric_oracle/accuracy",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/metric_oracle/weighted_f1",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-007-16-multiclass-outer-engineered-l2-0.1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "frozen/summary_matches_file",
+      "passed": true
+    },
+    {
+      "name": "frozen/after_all_inner",
+      "passed": true
+    },
+    {
+      "name": "frozen/before_all_outer",
+      "passed": true
+    },
+    {
+      "name": "frozen/outer_configs_exactly_panel",
+      "passed": true
+    },
+    {
+      "name": "protocol/catboost/all_six_recipes",
+      "passed": true
+    },
+    {
+      "name": "frozen/catboost/preprocessing_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/catboost/selected_run",
+      "passed": true
+    },
+    {
+      "name": "protocol/forest/all_six_recipes",
+      "passed": true
+    },
+    {
+      "name": "frozen/forest/preprocessing_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/forest/selected_run",
+      "passed": true
+    },
+    {
+      "name": "protocol/native_l2/all_strengths",
+      "passed": true
+    },
+    {
+      "name": "frozen/native_l2_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "protocol/l1/all_strengths",
+      "passed": true
+    },
+    {
+      "name": "protocol/l1/engineered_recipe",
+      "passed": true
+    },
+    {
+      "name": "frozen/l1/inner_config_including_strength",
+      "passed": true
+    },
+    {
+      "name": "frozen/l1/convergence",
+      "passed": true
+    },
+    {
+      "name": "protocol/l2/all_strengths",
+      "passed": true
+    },
+    {
+      "name": "protocol/l2/engineered_recipe",
+      "passed": true
+    },
+    {
+      "name": "frozen/l2/inner_config_including_strength",
+      "passed": true
+    },
+    {
+      "name": "frozen/l2/convergence",
+      "passed": true
+    },
+    {
+      "name": "frozen/final_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/panel_reconstructed_from_inner_only",
+      "passed": true
+    },
+    {
+      "name": "final/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "final/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "final/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "final/exists/model.joblib",
+      "passed": true
+    },
+    {
+      "name": "final/exists/preprocessed_data.npz",
+      "passed": true
+    },
+    {
+      "name": "final/exists/submission.csv",
+      "passed": true
+    },
+    {
+      "name": "final/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "final/status",
+      "passed": true
+    },
+    {
+      "name": "final/environment",
+      "passed": true
+    },
+    {
+      "name": "final/config_frozen",
+      "passed": true
+    },
+    {
+      "name": "final/started_after_freeze",
+      "passed": true
+    },
+    {
+      "name": "final/feature_width",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/shape",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/dtype",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/finite",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/shape",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/dtype",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/finite",
+      "passed": true
+    },
+    {
+      "name": "final/train_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/test_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/feature_names",
+      "passed": true
+    },
+    {
+      "name": "final/y_train_shape",
+      "passed": true
+    },
+    {
+      "name": "final/target_order",
+      "passed": true
+    },
+    {
+      "name": "final/submission_columns",
+      "passed": true
+    },
+    {
+      "name": "final/submission_rows",
+      "passed": true
+    },
+    {
+      "name": "final/submission_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/template_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/submission_unique_ids",
+      "passed": true
+    },
+    {
+      "name": "final/submission_no_missing",
+      "passed": true
+    },
+    {
+      "name": "final/submission_valid_classes",
+      "passed": true
+    },
+    {
+      "name": "final/submission_sha256",
+      "passed": true
+    },
+    {
+      "name": "final/model_feature_names",
+      "passed": true
+    },
+    {
+      "name": "final/npz_matches_train_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "final/npz_matches_test_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "final/reloaded_predictions_first32",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/README.md",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessor.joblib",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessed_data.npz",
+      "passed": true
+    },
+    {
+      "name": "requested/task",
+      "passed": true
+    },
+    {
+      "name": "requested/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/train_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/test_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "requested/preprocessor_source_hash",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/shape",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/finite",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/shape",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/finite",
+      "passed": true
+    },
+    {
+      "name": "requested/train_id_order",
+      "passed": true
+    },
+    {
+      "name": "requested/test_id_order",
+      "passed": true
+    },
+    {
+      "name": "requested/feature_names",
+      "passed": true
+    },
+    {
+      "name": "requested/y_train_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/target_order",
+      "passed": true
+    },
+    {
+      "name": "requested/all_requested_steps_enabled",
+      "passed": true
+    },
+    {
+      "name": "requested/feature_names",
+      "passed": true
+    },
+    {
+      "name": "requested/train_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "requested/test_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    }
+  ]
+}

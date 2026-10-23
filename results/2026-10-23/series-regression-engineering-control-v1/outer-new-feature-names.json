@@ -1,0 +1,12 @@
+[
+  "monthly_temp_mean",
+  "monthly_temp_spread",
+  "heating_cooling_total",
+  "floor_area_log1p",
+  "year_built_missing",
+  "energy_star_rating_missing",
+  "direction_max_wind_speed_missing",
+  "direction_peak_wind_speed_missing",
+  "max_wind_speed_missing",
+  "days_with_fog_missing"
+]

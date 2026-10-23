@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "selected_score": null,
+  "selected": null,
+  "validation": "random80/20:seed42",
+  "cached_history": false,
+  "experiments": [],
+  "llm": [
+    {
+      "status": "failed",
+      "errors": [
+        "empty/truncated/invalid response",
+        "empty/truncated/invalid response"
+      ]
+    }
+  ],
+  "seconds": 0.046999999991385266,
+  "submission_rows": 3,
+  "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+}

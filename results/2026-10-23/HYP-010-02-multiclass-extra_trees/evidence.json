@@ -1,0 +1,31 @@
+{
+  "task": "multiclass",
+  "candidate": {
+    "family": "extra_trees",
+    "parameters": {},
+    "hypothesis": "HYP-010: new model family"
+  },
+  "candidate_key": "d46a0e99c22473b66a311effd3430318aa80d3a538d3078bd2c6552f67e57fa4",
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "code_sha256": {
+    "automl_models.py": "de460c286a15dbab64f997c92bc9b9ee911ec173a449fb3c8ea6723057fc1700",
+    "automl_data.py": "3cb398e9e4ddf611f4793e6d7bb395d001aa37a548e88759784e3588ebe827cd",
+    "automl_worker.py": "61de0ed54fd5b13a5609a2660f4eb2ca9bbf6c4cc7194d7b4b58fe031a089806",
+    "experiments/run_new_families.py": "dd05f3b43fa08ba70ef2c5a98a6de571f0e22aa1131cb007213d27e14f66d390"
+  },
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.5804952756940901,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "seconds": 44.125,
+  "directory": "results\\2026-10-23\\HYP-010-02-multiclass-extra_trees"
+}

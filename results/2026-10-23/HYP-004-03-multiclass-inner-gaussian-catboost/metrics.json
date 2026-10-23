@@ -1,0 +1,60 @@
+{
+  "run_id": "HYP-004-03-multiclass-inner-gaussian-catboost",
+  "path": "results\\2026-10-23\\HYP-004-03-multiclass-inner-gaussian-catboost",
+  "hypothesis": "HYP-004",
+  "task": "multiclass",
+  "stage": "inner",
+  "config": {
+    "family": "catboost",
+    "recipe": "gaussian"
+  },
+  "status": "completed",
+  "started": "2026-10-23T16:15:36+03:00",
+  "reference": "HYP-003-03-multiclass-inner-scaled-catboost",
+  "finished": "2026-10-23T16:17:28+03:00",
+  "seconds": 111.219,
+  "scores": {
+    "macro_f1": 0.5128290768670659,
+    "accuracy": 0.8033432768615973,
+    "weighted_f1": 0.7796028566047394
+  },
+  "n_fit": 52762,
+  "n_validation": 17767,
+  "n_features": 178,
+  "model_parameters": {
+    "iterations": 500,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "l2_leaf_reg": 3,
+    "loss_function": "MultiClass",
+    "thread_count": 2,
+    "random_seed": 42,
+    "use_best_model": false,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "warnings": [],
+  "converged": true,
+  "n_iter": null,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.12.0",
+    "sklearn": "1.5.2",
+    "catboost": "1.2.8",
+    "joblib": "1.4.2",
+    "threads": 2,
+    "data_sha256": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+    },
+    "code_sha256": {
+      "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+      "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+    }
+  },
+  "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+  "gain": 0.0020627769030076015
+}

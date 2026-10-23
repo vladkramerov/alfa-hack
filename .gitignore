@@ -1,0 +1,13 @@
+.idea/
+.venv*/
+__pycache__/
+*.pyc
+tmp/
+data/
+results/**/model.joblib
+results/**/preprocessed_data.npz
+results/**/validation_predictions.csv
+results/**/submission.csv
+results/**/candidate_submission.csv
+results/**/preprocessor.joblib
+results/**/validation_predictions.npz

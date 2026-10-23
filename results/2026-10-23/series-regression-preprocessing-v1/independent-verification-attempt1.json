@@ -1,0 +1,2940 @@
+{
+  "task": "regression",
+  "series": "results\\2026-10-23\\series-regression-preprocessing-v1",
+  "verified_at": "2026-10-23T16:15:03+03:00",
+  "status": "failed",
+  "metric_relative_tolerance": 1e-09,
+  "check_count": 611,
+  "failure_count": 5,
+  "failures": [
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    }
+  ],
+  "evidence": {
+    "status_counts": {
+      "completed": 29
+    },
+    "convergence_counts": {
+      "True": 29
+    },
+    "data_sha256": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+    },
+    "source_snapshots": {
+      "experiments\\preprocessing.py": {
+        "path": "results\\2026-10-23\\series-regression-preprocessing-v1\\source\\preprocessing.py",
+        "expected_sha256": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+        "actual_sha256": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd"
+      },
+      "experiments\\run_suite.py": {
+        "path": "results\\2026-10-23\\series-regression-preprocessing-v1\\source\\run_suite.py",
+        "expected_sha256": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5",
+        "actual_sha256": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+      }
+    },
+    "exact_feature_group_overlap_counts": {
+      "inner": 0,
+      "outer": 0
+    },
+    "recomputed_scores": {
+      "HYP-001-01-regression-inner-baseline-catboost": {
+        "rmse": 45.518715477760836
+      },
+      "HYP-001-02-regression-inner-correlation-catboost": {
+        "rmse": 45.32052344905627
+      },
+      "HYP-002-01-regression-inner-vif-catboost": {
+        "rmse": 45.000826848085644
+      },
+      "HYP-003-01-regression-inner-scaled-catboost": {
+        "rmse": 45.00084665392861
+      },
+      "HYP-004-01-regression-inner-gaussian-catboost": {
+        "rmse": 45.122835233385615
+      },
+      "HYP-005-01-regression-inner-engineered-catboost": {
+        "rmse": 45.26398406382808
+      },
+      "HYP-001-03-regression-inner-baseline-forest": {
+        "rmse": 46.1639294892355
+      },
+      "HYP-001-04-regression-inner-correlation-forest": {
+        "rmse": 46.36248309741696
+      },
+      "HYP-002-02-regression-inner-vif-forest": {
+        "rmse": 46.68533131938694
+      },
+      "HYP-003-02-regression-inner-scaled-forest": {
+        "rmse": 46.67970603881967
+      },
+      "HYP-004-02-regression-inner-gaussian-forest": {
+        "rmse": 46.71183260529205
+      },
+      "HYP-005-02-regression-inner-engineered-forest": {
+        "rmse": 46.94636373340831
+      },
+      "HYP-006-01-regression-inner-vif-catboost-1": {
+        "rmse": 44.55882835878972
+      },
+      "HYP-006-02-regression-inner-vif-catboost-10": {
+        "rmse": 45.603991717078685
+      },
+      "HYP-006-03-regression-inner-vif-catboost-30": {
+        "rmse": 46.330352267082525
+      },
+      "HYP-007-01-regression-inner-engineered-l1-0.01": {
+        "rmse": 611.1450373528461
+      },
+      "HYP-007-02-regression-inner-engineered-l1-0.1": {
+        "rmse": 517.4284030853629
+      },
+      "HYP-007-03-regression-inner-engineered-l1-1": {
+        "rmse": 54.197137834981085
+      },
+      "HYP-007-04-regression-inner-engineered-l2-0.1": {
+        "rmse": 878.1770398930184
+      },
+      "HYP-007-05-regression-inner-engineered-l2-1": {
+        "rmse": 884.6729520285888
+      },
+      "HYP-007-06-regression-inner-engineered-l2-10": {
+        "rmse": 719.0247932826954
+      },
+      "HYP-001-06-regression-outer-baseline-catboost": {
+        "rmse": 45.93583634208973
+      },
+      "HYP-005-03-regression-outer-engineered-catboost": {
+        "rmse": 46.99974168722143
+      },
+      "HYP-002-03-regression-outer-vif-catboost": {
+        "rmse": 54.62842812078609
+      },
+      "HYP-001-07-regression-outer-baseline-forest": {
+        "rmse": 48.565980842466
+      },
+      "HYP-005-04-regression-outer-engineered-forest": {
+        "rmse": 46.87784630178003
+      },
+      "HYP-006-04-regression-outer-vif-catboost-1": {
+        "rmse": 52.94239384982671
+      },
+      "HYP-007-07-regression-outer-engineered-l1-1": {
+        "rmse": 58.66464764568709
+      },
+      "HYP-007-08-regression-outer-engineered-l2-10": {
+        "rmse": 65.45260387964018
+      }
+    },
+    "final_directory": "results\\2026-10-23\\HYP-005-05-regression-full-refit"
+  },
+  "checks": [
+    {
+      "name": "series/task",
+      "passed": true
+    },
+    {
+      "name": "series/records_snapshot",
+      "passed": true
+    },
+    {
+      "name": "series/unique_run_ids",
+      "passed": true
+    },
+    {
+      "name": "series/all_records_completed",
+      "passed": true
+    },
+    {
+      "name": "sources/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_exists/experiments\\preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_hash/experiments\\preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_exists/experiments\\run_suite.py",
+      "passed": true
+    },
+    {
+      "name": "sources/snapshot_hash/experiments\\run_suite.py",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/size",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/size",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/size",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/integer",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/bounds",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/size",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/unique",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/row_disjoint",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/exact_feature_group_leakage",
+      "passed": true
+    },
+    {
+      "name": "splits/inner/temporal_order",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/row_disjoint",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/exact_feature_group_leakage",
+      "passed": true
+    },
+    {
+      "name": "splits/outer/temporal_order",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_partition",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_partition_of_outer_fit",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_fit/actual_year_indices",
+      "passed": true
+    },
+    {
+      "name": "splits/inner_valid/actual_year_indices",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_fit/actual_year_indices",
+      "passed": true
+    },
+    {
+      "name": "splits/outer_valid/actual_year_indices",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-01-regression-inner-baseline-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-02-regression-inner-correlation-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-01-regression-inner-vif-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-003-01-regression-inner-scaled-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-004-01-regression-inner-gaussian-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-01-regression-inner-engineered-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-03-regression-inner-baseline-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-04-regression-inner-correlation-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-02-regression-inner-vif-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-003-02-regression-inner-scaled-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-004-02-regression-inner-gaussian-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-02-regression-inner-engineered-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-01-regression-inner-vif-catboost-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-02-regression-inner-vif-catboost-10/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-03-regression-inner-vif-catboost-30/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-01-regression-inner-engineered-l1-0.01/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-02-regression-inner-engineered-l1-0.1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-03-regression-inner-engineered-l1-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-04-regression-inner-engineered-l2-0.1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-05-regression-inner-engineered-l2-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/metric_oracle/rmse",
+      "passed": false,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-06-regression-inner-engineered-l2-10/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-06-regression-outer-baseline-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-03-regression-outer-engineered-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-002-03-regression-outer-vif-catboost/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-001-07-regression-outer-baseline-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-005-04-regression-outer-engineered-forest/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/native_l2_default_reference",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-006-04-regression-outer-vif-catboost-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-07-regression-outer-engineered-l1-1/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/exists/validation_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/status",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/environment",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/audit_width",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/n_validation",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/n_fit",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/row_position",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/id_order",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/actual_from_source",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/finite_prediction",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/metric_oracle/rmse",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 0.0
+      }
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/reference_exists",
+      "passed": true
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/gain",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-09,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    {
+      "name": "runs/HYP-007-08-regression-outer-engineered-l2-10/vif_threshold",
+      "passed": true
+    },
+    {
+      "name": "frozen/summary_matches_file",
+      "passed": true
+    },
+    {
+      "name": "frozen/after_all_inner",
+      "passed": true
+    },
+    {
+      "name": "frozen/before_all_outer",
+      "passed": true
+    },
+    {
+      "name": "frozen/outer_configs_exactly_panel",
+      "passed": true
+    },
+    {
+      "name": "frozen/catboost/preprocessing_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/catboost/selected_run",
+      "passed": true
+    },
+    {
+      "name": "frozen/forest/preprocessing_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/forest/selected_run",
+      "passed": true
+    },
+    {
+      "name": "frozen/native_l2_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/l1/inner_config_including_strength",
+      "passed": true
+    },
+    {
+      "name": "frozen/l1/convergence",
+      "passed": true
+    },
+    {
+      "name": "frozen/l2/inner_config_including_strength",
+      "passed": true
+    },
+    {
+      "name": "frozen/l2/convergence",
+      "passed": true
+    },
+    {
+      "name": "frozen/final_inner_winner",
+      "passed": true
+    },
+    {
+      "name": "frozen/panel_reconstructed_from_inner_only",
+      "passed": true
+    },
+    {
+      "name": "final/exists/report.md",
+      "passed": true
+    },
+    {
+      "name": "final/exists/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "final/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "final/exists/model.joblib",
+      "passed": true
+    },
+    {
+      "name": "final/exists/preprocessed_data.npz",
+      "passed": true
+    },
+    {
+      "name": "final/exists/submission.csv",
+      "passed": true
+    },
+    {
+      "name": "final/summary_matches_metrics",
+      "passed": true
+    },
+    {
+      "name": "final/status",
+      "passed": true
+    },
+    {
+      "name": "final/environment",
+      "passed": true
+    },
+    {
+      "name": "final/config_frozen",
+      "passed": true
+    },
+    {
+      "name": "final/started_after_freeze",
+      "passed": true
+    },
+    {
+      "name": "final/feature_width",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/shape",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/dtype",
+      "passed": true
+    },
+    {
+      "name": "final/X_train/finite",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/shape",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/dtype",
+      "passed": true
+    },
+    {
+      "name": "final/X_test/finite",
+      "passed": true
+    },
+    {
+      "name": "final/train_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/test_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/feature_names",
+      "passed": true
+    },
+    {
+      "name": "final/y_train_shape",
+      "passed": true
+    },
+    {
+      "name": "final/target_order",
+      "passed": true
+    },
+    {
+      "name": "final/submission_columns",
+      "passed": true
+    },
+    {
+      "name": "final/submission_rows",
+      "passed": true
+    },
+    {
+      "name": "final/submission_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/template_id_order",
+      "passed": true
+    },
+    {
+      "name": "final/submission_unique_ids",
+      "passed": true
+    },
+    {
+      "name": "final/submission_no_missing",
+      "passed": true
+    },
+    {
+      "name": "final/submission_finite",
+      "passed": true
+    },
+    {
+      "name": "final/submission_sha256",
+      "passed": true
+    },
+    {
+      "name": "final/model_feature_names",
+      "passed": true
+    },
+    {
+      "name": "final/npz_matches_train_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "final/npz_matches_test_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "final/reloaded_predictions_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-10,
+        "absolute_tolerance": 1e-10
+      }
+    },
+    {
+      "name": "requested/exists/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/README.md",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessing_audit.json",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessor.joblib",
+      "passed": true
+    },
+    {
+      "name": "requested/exists/preprocessed_data.npz",
+      "passed": true
+    },
+    {
+      "name": "requested/task",
+      "passed": true
+    },
+    {
+      "name": "requested/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/train_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/test_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/data_hashes",
+      "passed": true
+    },
+    {
+      "name": "requested/preprocessor_source_hash",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/shape",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/X_train/finite",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/shape",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/dtype",
+      "passed": true
+    },
+    {
+      "name": "requested/X_test/finite",
+      "passed": true
+    },
+    {
+      "name": "requested/train_id_order",
+      "passed": true
+    },
+    {
+      "name": "requested/test_id_order",
+      "passed": true
+    },
+    {
+      "name": "requested/feature_names",
+      "passed": true
+    },
+    {
+      "name": "requested/y_train_shape",
+      "passed": true
+    },
+    {
+      "name": "requested/target_order",
+      "passed": true
+    },
+    {
+      "name": "requested/all_requested_steps_enabled",
+      "passed": true
+    },
+    {
+      "name": "requested/feature_names",
+      "passed": true
+    },
+    {
+      "name": "requested/train_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    },
+    {
+      "name": "requested/test_transform_first32",
+      "passed": true,
+      "detail": {
+        "relative_tolerance": 1e-06,
+        "absolute_tolerance": 1e-06
+      }
+    }
+  ]
+}

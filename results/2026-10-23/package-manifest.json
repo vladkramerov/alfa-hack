@@ -1,0 +1,17 @@
+{
+  "file": "dist\\solution_ivan_branch.zip",
+  "bytes": 15230,
+  "sha256": "71a0208e86471768340bef577e2cf00bc52813f9ed91d52acb012a78b5a7b075",
+  "files": {
+    "solution.py": "b00ab9febe17732bb582f5712f30338714969b20571628d9772b808eb3a077e4",
+    "automl_data.py": "3cb398e9e4ddf611f4793e6d7bb395d001aa37a548e88759784e3588ebe827cd",
+    "automl_models.py": "a47d91065fbbb37b182c72163f47ff1117d03a61815d74c098d77f401269e8f6",
+    "automl_history.py": "e272f18ba3113137e37cc27c262d0f620d0c78eb3a411dd58bbf9c0533ab4f9a",
+    "automl_known.py": "4fb6f86e3708551e27c981f3abb3d86dcacdc953ce8688da0deaa9eb2b7d9d93",
+    "automl_llm.py": "e691f367a355d38fe3a8b546cf133217416bf2e19eb8fe6a443de2206f66bb56",
+    "automl_worker.py": "61de0ed54fd5b13a5609a2660f4eb2ca9bbf6c4cc7194d7b4b58fe031a089806",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "requirements_exact": true,
+  "no_data_models_secrets": true
+}

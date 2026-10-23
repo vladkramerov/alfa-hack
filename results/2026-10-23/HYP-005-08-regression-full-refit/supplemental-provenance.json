@@ -1,0 +1,59 @@
+{
+  "series": "results\\2026-10-23\\series-regression-engineering-control-v1",
+  "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+  "frozen_selection": {
+    "frozen_at": "2026-10-23T16:26:48+03:00",
+    "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+    "selection": "inner only across original baseline and engineering-only for both families",
+    "candidates": [
+      {
+        "run_id": "HYP-001-01-regression-inner-baseline-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "rmse": 45.518715477760836
+        }
+      },
+      {
+        "run_id": "HYP-001-03-regression-inner-baseline-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "rmse": 46.1639294892355
+        }
+      },
+      {
+        "run_id": "HYP-008-01-regression-inner-engineering_only-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "rmse": 44.976674584166
+        }
+      },
+      {
+        "run_id": "HYP-008-02-regression-inner-engineering_only-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "rmse": 46.12352152733562
+        }
+      }
+    ],
+    "selected_run_id": "HYP-008-01-regression-inner-engineering_only-catboost",
+    "selected_config": {
+      "family": "catboost",
+      "recipe": "engineering_only"
+    },
+    "primary_winner_changed": false
+  },
+  "primary_winner_changed": false,
+  "technical_refit_not_new_validation": true
+}

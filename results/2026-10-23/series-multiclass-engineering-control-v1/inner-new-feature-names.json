@@ -1,0 +1,8 @@
+[
+  "src_bytes_per_packet",
+  "dst_bytes_per_packet",
+  "sbytes_log1p",
+  "dbytes_log1p",
+  "spkts_log1p",
+  "dpkts_log1p"
+]

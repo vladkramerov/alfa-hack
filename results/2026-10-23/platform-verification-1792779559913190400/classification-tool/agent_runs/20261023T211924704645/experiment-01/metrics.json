@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 1.0,
+  "fit_rows": 80,
+  "valid_rows": 20,
+  "seconds": 0.09400000001187436
+}

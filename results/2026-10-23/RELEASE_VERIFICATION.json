@@ -1,0 +1,11 @@
+{
+  "zip_bytes": 15230,
+  "sha256": "71a0208e86471768340bef577e2cf00bc52813f9ed91d52acb012a78b5a7b075",
+  "root_files": 8,
+  "requirements_exact": true,
+  "mock_scenarios": 4,
+  "public_final_refits": 2,
+  "repeated_validation_fits": 0,
+  "real_api_tested": false,
+  "hypothesis_memory": "HYPOTHESES.md + persistent task-local hypotheses.json"
+}

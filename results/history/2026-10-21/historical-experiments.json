@@ -1,0 +1,4513 @@
+{
+  "provenance": "Imported historical team results; NOT recomputed in this workspace",
+  "original_source": "C:\\Users\\User\\Downloads\\EXPERIMENTS.xlsx",
+  "source_sha256": "68056e365ecb24099bc425c0dd9d104e9943231385abdcb8ae3028715b698ff7",
+  "sheets": {
+    "Итоги": [
+      {
+        "Задача": "Регрессия",
+        "Лучшая модель": "CatBoostRegressor",
+        "Метрика": "rmse",
+        "Значение": 43.0046386479306,
+        "ID": "H4-zero-year"
+      },
+      {
+        "Задача": "Классификация",
+        "Лучшая модель": "RandomForestClassifier",
+        "Метрика": "macro_f1",
+        "Значение": 0.628620730127727,
+        "ID": "H5-flow-ratios"
+      },
+      {
+        "Задача": "Ориентиры с учётом дополнительной проверки: регрессия — нулевой год как пропуск; классификация — прежний лес."
+      },
+      {
+        "Задача": "Проверенные гипотезы"
+      },
+      {
+        "Задача": "Гипотеза",
+        "Лучшая модель": "Задача",
+        "Метрика": "Что изменили",
+        "Значение": "Контроль",
+        "ID": "Результат"
+      },
+      {
+        "Задача": "H1",
+        "Лучшая модель": "Классификация",
+        "Метрика": "Только class_weight=balanced",
+        "Значение": 0.628538470153851,
+        "ID": 0.6133163856531635
+      },
+      {
+        "Задача": "H2",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Нативные категории CatBoost вместо OneHotEncoder",
+        "Значение": 45.93583634208973,
+        "ID": 51.31822671778022
+      },
+      {
+        "Задача": "H2",
+        "Лучшая модель": "Классификация",
+        "Метрика": "Нативные категории CatBoost вместо OneHotEncoder",
+        "Значение": 0.5340999478722075,
+        "ID": 0.5417317719703455
+      },
+      {
+        "Задача": "H3",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Шесть индикаторов пропусков; прочее без изменений",
+        "Значение": 45.93583634208973,
+        "ID": 46.80246419128978
+      },
+      {
+        "Задача": "H4",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Только year_built=0 заменён на пропуск",
+        "Значение": 45.93583634208973,
+        "ID": 43.0046386479306
+      },
+      {
+        "Задача": "H5",
+        "Лучшая модель": "Классификация",
+        "Метрика": "Четыре отношения объёмов/пакетов, знаменатель +1",
+        "Значение": 0.628538470153851,
+        "ID": 0.628620730127727
+      },
+      {
+        "Задача": "H6",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Среднее прогнозов исходных леса и CatBoost, веса 50/50",
+        "Значение": 45.93583634208973,
+        "ID": 44.61680775576098
+      },
+      {
+        "Задача": "H6",
+        "Лучшая модель": "Классификация",
+        "Метрика": "Среднее вероятностей исходных леса и CatBoost, веса 50/50",
+        "Значение": 0.628538470153851,
+        "ID": 0.5788370836114318
+      },
+      {
+        "Задача": "Чувствительность к разделению данных"
+      },
+      {
+        "Задача": "Роль",
+        "Лучшая модель": "Задача",
+        "Метрика": "Разделение",
+        "Значение": "Метрика",
+        "ID": "Значение"
+      },
+      {
+        "Задача": "Контроль",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Year_Factor < 4 train; == 4 validation",
+        "Значение": "rmse",
+        "ID": 45.51876878464039
+      },
+      {
+        "Задача": "Кандидат",
+        "Лучшая модель": "Регрессия",
+        "Метрика": "Year_Factor < 4 train; == 4 validation",
+        "Значение": "rmse",
+        "ID": 45.31673513065655
+      },
+      {
+        "Задача": "Контроль",
+        "Лучшая модель": "Классификация",
+        "Метрика": "stratified 80/20; random_state=2026",
+        "Значение": "macro_f1",
+        "ID": 0.6082047994072377
+      },
+      {
+        "Задача": "Кандидат",
+        "Лучшая модель": "Классификация",
+        "Метрика": "stratified 80/20; random_state=2026",
+        "Значение": "macro_f1",
+        "ID": 0.6013008205545127
+      },
+      {
+        "Задача": "Положительное улучшение означает выигрыш относительно указанного контроля.",
+        "Лучшая модель": null,
+        "Метрика": null,
+        "Значение": null,
+        "ID": null
+      },
+      {
+        "Задача": "Год 4 уже использовался в Optuna; случайные split пересекаются. Это проверка чувствительности, не независимый тест.",
+        "Лучшая модель": null,
+        "Метрика": null,
+        "Значение": null,
+        "ID": null
+      },
+      {
+        "Задача": "Технические повторы и неудачная диагностика сохранены в журнале и не являются новыми подтверждениями.",
+        "Лучшая модель": null,
+        "Метрика": null,
+        "Значение": null,
+        "ID": null
+      }
+    ],
+    "Запуски": [
+      {
+        "ID": "constant-regression-reference",
+        "Задача": "Регрессия",
+        "RMSE ↓": 56.79943183188593,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "DummyRegressor",
+        "Что изменили": "Постоянное среднее train",
+        "Основные параметры": "strategy=mean",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Простой ориентир, вычислен внутри первого запуска",
+        "Время с компонентами, с": null,
+        "Тип проверки": "Основная валидация",
+        "Commit": "не записан",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID": "constant-multiclass-reference",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.048413590386444195,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "DummyClassifier",
+        "Что изменили": "Всегда самый частый класс train",
+        "Основные параметры": "strategy=most_frequent",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Простой ориентир, вычислен внутри первого запуска",
+        "Время с компонентами, с": null,
+        "Тип проверки": "Основная валидация",
+        "Commit": "не записан",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID": "regression-20261021-195542",
+        "Задача": "Регрессия",
+        "RMSE ↓": 50.079635494578994,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "Ridge",
+        "Что изменили": "Первый линейный ориентир; Ridge",
+        "Основные параметры": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 2,
+        "Тип проверки": "Основная валидация",
+        "Commit": "не записан",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID": "multiclass-20261021-195652",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.4288518821725383,
+        "Accuracy": 0.7731835291433786,
+        "Weighted F1": 0.7560984216904937,
+        "Модель": "LogisticRegression",
+        "Что изменили": "Первый линейный классификатор",
+        "Основные параметры": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 23.26,
+        "Тип проверки": "Основная валидация",
+        "Commit": "не записан",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID": "regression-forest-20261021-stage2",
+        "Задача": "Регрессия",
+        "RMSE ↓": 47.470727845698555,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "RandomForestRegressor",
+        "Что изменили": "Замена линейной модели на Random Forest",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 30.29,
+        "Тип проверки": "Основная валидация",
+        "Commit": "9658f1a2",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID": "multiclass-forest-20261021-stage2",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.628538470153851,
+        "Accuracy": 0.8291319721683587,
+        "Weighted F1": 0.8176709366119328,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Замена линейной модели на Random Forest",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 95.6,
+        "Тип проверки": "Основная валидация",
+        "Commit": "9658f1a2",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID": "regression-boosting-20261021-stage3",
+        "Задача": "Регрессия",
+        "RMSE ↓": 45.93583634208973,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Замена модели на CatBoost; категории OneHotEncoder",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 8.49,
+        "Тип проверки": "Основная валидация",
+        "Commit": "b19d8e0b",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID": "multiclass-boosting-20261021-stage3",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.5340999478722075,
+        "Accuracy": 0.8191513630660431,
+        "Weighted F1": 0.7959417457781833,
+        "Модель": "CatBoostClassifier",
+        "Что изменили": "Замена модели на CatBoost; категории OneHotEncoder",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 87.81,
+        "Тип проверки": "Основная валидация",
+        "Commit": "b19d8e0b",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-candidate",
+        "Задача": "Регрессия",
+        "RMSE ↓": 46.924137940373335,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Лучший по внутренней проверке кандидат Optuna, до решения о сохранении",
+        "Основные параметры": "{\"depth\": 8, \"iterations\": 700, \"l2_leaf_reg\": 3.7888252014533643, \"learning_rate\": 0.10390991237859405}",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": "regression-optuna-20261021-stage4-incumbent",
+        "Метрика контроля": 45.93583634208973,
+        "Улучшение": -0.9883015982836056,
+        "Вывод": "Кандидат отклонён",
+        "Время с компонентами, с": null,
+        "Тип проверки": "Основная валидация",
+        "Commit": "a3ab6b96",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4",
+        "Задача": "Регрессия",
+        "RMSE ↓": 45.93583634208973,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Итог подбора: сохранена прежняя модель",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Подбор не улучшил основную метрику",
+        "Время с компонентами, с": 44.53,
+        "Тип проверки": "Основная валидация",
+        "Commit": "a3ab6b96",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-candidate",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.6203523622860305,
+        "Accuracy": 0.8252537926314589,
+        "Weighted F1": 0.8159893285088261,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Лучший по внутренней проверке кандидат Optuna, до решения о сохранении",
+        "Основные параметры": "{\"max_depth\": 28, \"max_features\": 0.8, \"min_samples_leaf\": 4, \"n_estimators\": 100}",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": "multiclass-optuna-20261021-stage4-incumbent",
+        "Метрика контроля": 0.628538470153851,
+        "Улучшение": -0.00818610786782048,
+        "Вывод": "Кандидат отклонён",
+        "Время с компонентами, с": null,
+        "Тип проверки": "Основная валидация",
+        "Commit": "a3ab6b96",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.628538470153851,
+        "Accuracy": 0.8291319721683587,
+        "Weighted F1": 0.8176709366119328,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Итог подбора: сохранена прежняя модель",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Подбор не улучшил основную метрику",
+        "Время с компонентами, с": 315.8,
+        "Тип проверки": "Основная валидация",
+        "Commit": "a3ab6b96",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID": "C00-forest-control",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.628538470153851,
+        "Accuracy": 0.8291319721683587,
+        "Weighted F1": 0.8176709366119328,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Повтор прежнего Random Forest; контроль воспроизводимости",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 79.36,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID": "H1-balanced-forest",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.6133163856531635,
+        "Accuracy": 0.7784304779285959,
+        "Weighted F1": 0.8036258092920007,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Только class_weight=balanced",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=balanced",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": "C00-forest-control",
+        "Метрика контроля": 0.628538470153851,
+        "Улучшение": -0.015222084500687516,
+        "Вывод": "Хуже контроля",
+        "Время с компонентами, с": 87.24,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID": "R00-catboost-control",
+        "Задача": "Регрессия",
+        "RMSE ↓": 45.93583634208973,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Повтор CatBoost с OneHotEncoder; контроль",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 6.91,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID": "H2-native-regression",
+        "Задача": "Регрессия",
+        "RMSE ↓": 51.31822671778022,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Нативные категории CatBoost вместо OneHotEncoder",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": "R00-catboost-control",
+        "Метрика контроля": 45.93583634208973,
+        "Улучшение": -5.382390375690491,
+        "Вывод": "Хуже контроля",
+        "Время с компонентами, с": 6.33,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID": "C00-catboost-control",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.5340999478722075,
+        "Accuracy": 0.8191513630660431,
+        "Weighted F1": 0.7959417457781833,
+        "Модель": "CatBoostClassifier",
+        "Что изменили": "Повтор CatBoost с OneHotEncoder; контроль",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 86.87,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID": "H2-native-multiclass",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.5417317719703455,
+        "Accuracy": 0.8214896771985856,
+        "Weighted F1": 0.7995464716006146,
+        "Модель": "CatBoostClassifier",
+        "Что изменили": "Нативные категории CatBoost вместо OneHotEncoder",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": "C00-catboost-control",
+        "Метрика контроля": 0.5340999478722075,
+        "Улучшение": 0.007631824098138007,
+        "Вывод": "Лучше контроля",
+        "Время с компонентами, с": 552.26,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID": "H3-missing-flags",
+        "Задача": "Регрессия",
+        "RMSE ↓": 46.80246419128978,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Шесть индикаторов пропусков; прочее без изменений",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": "R00-catboost-control",
+        "Метрика контроля": 45.93583634208973,
+        "Улучшение": -0.8666278492000501,
+        "Вывод": "Хуже контроля",
+        "Время с компонентами, с": 6.96,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID": "H4-zero-year",
+        "Задача": "Регрессия",
+        "RMSE ↓": 43.0046386479306,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Только year_built=0 заменён на пропуск",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": "R00-catboost-control",
+        "Метрика контроля": 45.93583634208973,
+        "Улучшение": 2.931197694159131,
+        "Вывод": "Лучше контроля",
+        "Время с компонентами, с": 6.68,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID": "H5-flow-ratios",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.628620730127727,
+        "Accuracy": 0.8275921067640014,
+        "Weighted F1": 0.8156666564196723,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Четыре отношения объёмов/пакетов, знаменатель +1",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": "C00-forest-control",
+        "Метрика контроля": 0.628538470153851,
+        "Улучшение": 8.225997387600881e-05,
+        "Вывод": "Лучше контроля",
+        "Время с компонентами, с": 90.51,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID": "R00-forest-control",
+        "Задача": "Регрессия",
+        "RMSE ↓": 47.470727845698555,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "RandomForestRegressor",
+        "Что изменили": "Повтор прежнего Random Forest для ансамбля",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 18.4,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID": "H6-ensemble-regression",
+        "Задача": "Регрессия",
+        "RMSE ↓": 44.61680775576098,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "EqualWeightEnsemble",
+        "Что изменили": "Среднее прогнозов исходных леса и CatBoost, веса 50/50",
+        "Основные параметры": "equal_weights=[0.5, 0.5]",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": "R00-catboost-control",
+        "Метрика контроля": 45.93583634208973,
+        "Улучшение": 1.3190285863287485,
+        "Вывод": "Лучше контроля",
+        "Время с компонентами, с": 25.36,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID": "H6-ensemble-multiclass",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.5788370836114318,
+        "Accuracy": 0.8271358503478955,
+        "Weighted F1": 0.8107892122430977,
+        "Модель": "EqualWeightEnsemble",
+        "Что изменили": "Среднее вероятностей исходных леса и CatBoost, веса 50/50",
+        "Основные параметры": "equal_weights=[0.5, 0.5]",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": "C00-forest-control",
+        "Метрика контроля": 0.628538470153851,
+        "Улучшение": -0.04970138654241918,
+        "Вывод": "Хуже контроля",
+        "Время с компонентами, с": 166.7,
+        "Тип проверки": "Основная валидация",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID": "S-regression-control",
+        "Задача": "Регрессия",
+        "RMSE ↓": 45.51876878464039,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Контроль на дополнительном разделении",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 4 train; == 4 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 1.8,
+        "Тип проверки": "Другое разделение",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID": "S-regression-candidate",
+        "Задача": "Регрессия",
+        "RMSE ↓": 45.31673513065655,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "CatBoostRegressor",
+        "Что изменили": "Кандидат H4-zero-year на дополнительном разделении",
+        "Основные параметры": "iterations=500; depth=6; learning_rate=0.05; l2_leaf_reg=3.0",
+        "Разделение": "Year_Factor < 4 train; == 4 validation",
+        "Контроль": "S-regression-control",
+        "Метрика контроля": 45.51876878464039,
+        "Улучшение": 0.20203365398384676,
+        "Вывод": "Лучше контроля",
+        "Время с компонентами, с": 1.8,
+        "Тип проверки": "Другое разделение",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID": "S-multiclass-control",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.6082047994072377,
+        "Accuracy": 0.8295311965324512,
+        "Weighted F1": 0.8168266632512022,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Контроль на дополнительном разделении",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=2026",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Исходный ориентир / без парного сравнения",
+        "Время с компонентами, с": 35.2,
+        "Тип проверки": "Другое разделение",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID": "S-multiclass-candidate",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.6013008205545127,
+        "Accuracy": 0.8291319721683587,
+        "Weighted F1": 0.8172760273096971,
+        "Модель": "RandomForestClassifier",
+        "Что изменили": "Кандидат H5-flow-ratios на дополнительном разделении",
+        "Основные параметры": "n_estimators=150; max_depth=20; min_samples_leaf=2; max_features=0.8; class_weight=None",
+        "Разделение": "stratified 80/20; random_state=2026",
+        "Контроль": "S-multiclass-control",
+        "Метрика контроля": 0.6082047994072377,
+        "Улучшение": -0.006903978852724979,
+        "Вывод": "Хуже контроля",
+        "Время с компонентами, с": 38.37,
+        "Тип проверки": "Другое разделение",
+        "Commit": "e8ff7e7b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID": "diagnostic-ols-regression",
+        "Задача": "Регрессия",
+        "RMSE ↓": 10615239987723.564,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "LinearRegression",
+        "Что изменили": "LinearRegression",
+        "Основные параметры": "LinearRegression(); настройки по умолчанию, диагностический запуск",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Численно нестабильная OLS; не использовать",
+        "Время с компонентами, с": 0.99,
+        "Тип проверки": "Неудачная диагностика",
+        "Commit": "не записан",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID": "technical-repository-check-multiclass",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.4288518821725383,
+        "Accuracy": 0.7731835291433786,
+        "Weighted F1": 0.7560984216904937,
+        "Модель": "LogisticRegression",
+        "Что изменили": "Первый линейный классификатор",
+        "Основные параметры": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Технический повтор, не новая гипотеза",
+        "Время с компонентами, с": 23.97,
+        "Тип проверки": "Технический повтор",
+        "Commit": "не записан",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID": "technical-repository-check-regression",
+        "Задача": "Регрессия",
+        "RMSE ↓": 50.079635494578994,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "Ridge",
+        "Что изменили": "Первый линейный ориентир; Ridge",
+        "Основные параметры": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Технический повтор, не новая гипотеза",
+        "Время с компонентами, с": 1.93,
+        "Тип проверки": "Технический повтор",
+        "Commit": "не записан",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID": "technical-verified-multiclass",
+        "Задача": "Классификация",
+        "RMSE ↓": null,
+        "Macro F1 ↑": 0.4288518821725383,
+        "Accuracy": 0.7731835291433786,
+        "Weighted F1": 0.7560984216904937,
+        "Модель": "LogisticRegression",
+        "Что изменили": "Первый линейный классификатор",
+        "Основные параметры": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Разделение": "stratified 80/20; random_state=42",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Технический повтор, не новая гипотеза",
+        "Время с компонентами, с": 24.04,
+        "Тип проверки": "Технический повтор",
+        "Commit": "не записан",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID": "technical-verified-regression",
+        "Задача": "Регрессия",
+        "RMSE ↓": 50.079635494578994,
+        "Macro F1 ↑": null,
+        "Accuracy": null,
+        "Weighted F1": null,
+        "Модель": "Ridge",
+        "Что изменили": "Первый линейный ориентир; Ridge",
+        "Основные параметры": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Разделение": "Year_Factor < 5 train; == 5 validation",
+        "Контроль": null,
+        "Метрика контроля": null,
+        "Улучшение": null,
+        "Вывод": "Технический повтор, не новая гипотеза",
+        "Время с компонентами, с": 1.53,
+        "Тип проверки": "Технический повтор",
+        "Commit": "не записан",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      }
+    ],
+    "Optuna": [
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-0",
+        "Задача": "Классификация",
+        "Trial": 0,
+        "Метрика": "macro_f1",
+        "Значение": 0.5963541428248464,
+        "Параметры": "{\"max_depth\":20,\"max_features\":0.8,\"min_samples_leaf\":2,\"n_estimators\":150}",
+        "Время, с": 27.22,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-1",
+        "Задача": "Классификация",
+        "Trial": 1,
+        "Метрика": "macro_f1",
+        "Значение": 0.5709077026434727,
+        "Параметры": "{\"max_depth\":12,\"max_features\":0.5,\"min_samples_leaf\":1,\"n_estimators\":150}",
+        "Время, с": 11.22,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-2",
+        "Задача": "Классификация",
+        "Trial": 2,
+        "Метрика": "macro_f1",
+        "Значение": 0.5719014694499962,
+        "Параметры": "{\"max_depth\":null,\"max_features\":0.5,\"min_samples_leaf\":8,\"n_estimators\":250}",
+        "Время, с": 23.07,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-3",
+        "Задача": "Классификация",
+        "Trial": 3,
+        "Метрика": "macro_f1",
+        "Значение": 0.5911399030716868,
+        "Параметры": "{\"max_depth\":null,\"max_features\":1,\"min_samples_leaf\":1,\"n_estimators\":250}",
+        "Время, с": 69.36,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-4",
+        "Задача": "Классификация",
+        "Trial": 4,
+        "Метрика": "macro_f1",
+        "Значение": 0.5963541428248464,
+        "Параметры": "{\"max_depth\":20,\"max_features\":0.8,\"min_samples_leaf\":2,\"n_estimators\":150}",
+        "Время, с": 23.49,
+        "Статус": "COMPLETE",
+        "Повтор trial": 0,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-5",
+        "Задача": "Классификация",
+        "Trial": 5,
+        "Метрика": "macro_f1",
+        "Значение": 0.597690246259533,
+        "Параметры": "{\"max_depth\":28,\"max_features\":0.8,\"min_samples_leaf\":4,\"n_estimators\":100}",
+        "Время, с": 15.75,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-6",
+        "Задача": "Классификация",
+        "Trial": 6,
+        "Метрика": "macro_f1",
+        "Значение": 0.597690246259533,
+        "Параметры": "{\"max_depth\":28,\"max_features\":0.8,\"min_samples_leaf\":4,\"n_estimators\":100}",
+        "Время, с": 15.95,
+        "Статус": "COMPLETE",
+        "Повтор trial": 5,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "multiclass-optuna-20261021-stage4-trial-7",
+        "Задача": "Классификация",
+        "Trial": 7,
+        "Метрика": "macro_f1",
+        "Значение": 0.593874465313297,
+        "Параметры": "{\"max_depth\":28,\"max_features\":1,\"min_samples_leaf\":4,\"n_estimators\":100}",
+        "Время, с": 19.44,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-0",
+        "Задача": "Регрессия",
+        "Trial": 0,
+        "Метрика": "rmse",
+        "Значение": 45.51876878464039,
+        "Параметры": "{\"depth\":6,\"iterations\":500,\"l2_leaf_reg\":3,\"learning_rate\":0.05}",
+        "Время, с": 2.14,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-1",
+        "Задача": "Регрессия",
+        "Trial": 1,
+        "Метрика": "rmse",
+        "Значение": 43.992092456566546,
+        "Параметры": "{\"depth\":8,\"iterations\":500,\"l2_leaf_reg\":4.426505507739147,\"learning_rate\":0.0874116944886467}",
+        "Время, с": 2.97,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-2",
+        "Задача": "Регрессия",
+        "Trial": 2,
+        "Метрика": "rmse",
+        "Значение": 47.05707797940996,
+        "Параметры": "{\"depth\":4,\"iterations\":400,\"l2_leaf_reg\":8.605201659336437,\"learning_rate\":0.0224831270535195}",
+        "Время, с": 1.44,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-3",
+        "Задача": "Регрессия",
+        "Trial": 3,
+        "Метрика": "rmse",
+        "Значение": 45.94774596732988,
+        "Параметры": "{\"depth\":7,\"iterations\":700,\"l2_leaf_reg\":11.135469245723131,\"learning_rate\":0.020846957895078}",
+        "Время, с": 3.06,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-4",
+        "Задача": "Регрессия",
+        "Trial": 4,
+        "Метрика": "rmse",
+        "Значение": 44.751591826319405,
+        "Параметры": "{\"depth\":8,\"iterations\":1000,\"l2_leaf_reg\":1.0456446489411726,\"learning_rate\":0.1410699020300044}",
+        "Время, с": 5.69,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-5",
+        "Задача": "Регрессия",
+        "Trial": 5,
+        "Метрика": "rmse",
+        "Значение": 43.42146452181411,
+        "Параметры": "{\"depth\":8,\"iterations\":700,\"l2_leaf_reg\":3.788825201453364,\"learning_rate\":0.103909912378594}",
+        "Время, с": 3.94,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-6",
+        "Задача": "Регрессия",
+        "Trial": 6,
+        "Метрика": "rmse",
+        "Значение": 44.37181982109653,
+        "Параметры": "{\"depth\":6,\"iterations\":800,\"l2_leaf_reg\":2.4226293262246146,\"learning_rate\":0.0657251405566256}",
+        "Время, с": 2.97,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      },
+      {
+        "ID": "regression-optuna-20261021-stage4-trial-7",
+        "Задача": "Регрессия",
+        "Trial": 7,
+        "Метрика": "rmse",
+        "Значение": 44.590037224861774,
+        "Параметры": "{\"depth\":4,\"iterations\":900,\"l2_leaf_reg\":5.804889321664829,\"learning_rate\":0.1479628341547509}",
+        "Время, с": 2.57,
+        "Статус": "COMPLETE",
+        "Повтор trial": null,
+        "Источник": "reports/regression-optuna-20261021-stage4-trials.csv"
+      }
+    ],
+    "Параметры": [
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "strategy",
+        "Значение": "mean",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": null,
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Входит в первый запуск; отдельное время не измерялось",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-regression-reference",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "strategy",
+        "Значение": "most_frequent",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": null,
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Входит в первый запуск; отдельное время не измерялось",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "constant-multiclass-reference",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 2,
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "regression-20261021-195542",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-20261021-195542.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 23.26,
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "multiclass-20261021-195652",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-20261021-195652.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "criterion",
+        "Значение": "squared_error",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 30.29,
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "a96ac9b578a9fc443785401ae099eb1aba02fe9ea8e9cad78732dbccaf572503",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 95.6,
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "a96ac9b578a9fc443785401ae099eb1aba02fe9ea8e9cad78732dbccaf572503",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "multiclass-forest-20261021-stage2",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-forest-20261021-stage2.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "verbose",
+        "Значение": 100,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 8.49,
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "628f5958589379c5869a739f10c863e26328ee48829c02fe9d6911675f57efa1",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "loss_function",
+        "Значение": "MultiClass",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "verbose",
+        "Значение": 100,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 87.81,
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "628f5958589379c5869a739f10c863e26328ee48829c02fe9d6911675f57efa1",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "multiclass-boosting-20261021-stage3",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-boosting-20261021-stage3.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "iterations",
+        "Значение": 700,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "depth",
+        "Значение": 8,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.10390991237859405,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3.7888252014533643,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": null,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Оценка входит в родительский запуск; отдельное время не записано",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 44.53,
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "regression-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/regression-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 100,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "max_depth",
+        "Значение": 28,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 4,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": null,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Оценка входит в родительский запуск; отдельное время не записано",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4-candidate",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 315.8,
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "8209044b823a48546ad16d735708144c197110d9f420467d954e83834707e818",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "multiclass-optuna-20261021-stage4",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/multiclass-optuna-20261021-stage4.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 79.36,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "C00-forest-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-forest-control.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "class_weight",
+        "Значение": "balanced",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "recipe.class_weight",
+        "Значение": "balanced",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 87.24,
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "H1-balanced-forest",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/H1-balanced-forest.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 6.91,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "R00-catboost-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-catboost-control.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "cat_features",
+        "Значение": "[\"State_Factor\",\"building_class\",\"facility_type\"]",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "native",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 6.33,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "H2-native-regression",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-regression.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "loss_function",
+        "Значение": "MultiClass",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 86.87,
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "C00-catboost-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/C00-catboost-control.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "loss_function",
+        "Значение": "MultiClass",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "cat_features",
+        "Значение": "[\"proto\",\"service\",\"state\"]",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "native",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 552.26,
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H2-native-multiclass",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/H2-native-multiclass.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "missing_flags",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 6.96,
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H3-missing-flags",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/H3-missing-flags.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "zero_year",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 6.68,
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H4-zero-year",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/H4-zero-year.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "flow_ratios",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 90.51,
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "H5-flow-ratios",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/H5-flow-ratios.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "criterion",
+        "Значение": "squared_error",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 18.4,
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "R00-forest-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/R00-forest-control.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "equal_weights",
+        "Значение": "[0.5,0.5]",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "members",
+        "Значение": "[\"R00-forest-control\",\"R00-catboost-control\"]",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "ensemble",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Время усреднения; полная оценка стоимости включает компоненты",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-regression",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-regression.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "equal_weights",
+        "Значение": "[0.5,0.5]",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "members",
+        "Значение": "[\"C00-forest-control\",\"C00-catboost-control\"]",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "ensemble",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 0.47,
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Время усреднения; полная оценка стоимости включает компоненты",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "H6-ensemble-multiclass",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/H6-ensemble-multiclass.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 4 train; == 4 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 1.8,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Весь запуск; дополнительная проверка без финального обучения",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-control.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "iterations",
+        "Значение": 500,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "learning_rate",
+        "Значение": 0.05,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "depth",
+        "Значение": 6,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "l2_leaf_reg",
+        "Значение": 3,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "loss_function",
+        "Значение": "RMSE",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "thread_count",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "random_seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "verbose",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "allow_writing_files",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "catboost",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "zero_year",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 4 train; == 4 validation",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 1.8,
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Весь запуск; дополнительная проверка без финального обучения",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-regression-candidate",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/hypotheses-20261021-stage5/S-regression-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "plain",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=2026",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "seed",
+        "Значение": 2026,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 35.2,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Весь запуск; дополнительная проверка без финального обучения",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-control",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-control.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "bootstrap",
+        "Значение": true,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "ccp_alpha",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "class_weight",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "criterion",
+        "Значение": "gini",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "max_depth",
+        "Значение": 20,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "max_features",
+        "Значение": 0.8,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "max_leaf_nodes",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "max_samples",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "min_impurity_decrease",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "min_samples_leaf",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "min_samples_split",
+        "Значение": 2,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "min_weight_fraction_leaf",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "monotonic_cst",
+        "Значение": "None",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "n_estimators",
+        "Значение": 150,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "n_jobs",
+        "Значение": 4,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "oob_score",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "random_state",
+        "Значение": 42,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "verbose",
+        "Значение": 0,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "warm_start",
+        "Значение": false,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "recipe.family",
+        "Значение": "forest",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "recipe.variant",
+        "Значение": "flow_ratios",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=2026",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "seed",
+        "Значение": 2026,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 38.37,
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Весь запуск; дополнительная проверка без финального обучения",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "SHA-256 кода",
+        "Значение": "c042517deb5c06d2882d27a21e1ed4a2bdea3c40106f37781fa18fc8f6c9df8b",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "S-multiclass-candidate",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/hypotheses-20261021-stage5/S-multiclass-candidate.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "LinearRegression(); настройки по умолчанию, диагностический запуск",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 0.99,
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "diagnostic-ols-regression",
+        "Параметр / сведения": "Архивное происхождение",
+        "Значение": "Архивная диагностика до общего журнала; метрики сохранены, отдельный commit кода не записан.",
+        "Источник": "reports/diagnostics/diagnostic-ols-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 23.97,
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-multiclass",
+        "Параметр / сведения": "Архивное происхождение",
+        "Значение": "Архивная диагностика до общего журнала; метрики сохранены, отдельный commit кода не записан.",
+        "Источник": "reports/diagnostics/technical-repository-check-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 1.93,
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-repository-check-regression",
+        "Параметр / сведения": "Архивное происхождение",
+        "Значение": "Архивная диагностика до общего журнала; метрики сохранены, отдельный commit кода не записан.",
+        "Источник": "reports/diagnostics/technical-repository-check-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "solver=lbfgs; max_iter=3000; random_state=42 (по коду первого этапа)",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "split",
+        "Значение": "stratified 80/20; random_state=42",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 24.04,
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-multiclass",
+        "Параметр / сведения": "Архивное происхождение",
+        "Значение": "Архивная диагностика до общего журнала; метрики сохранены, отдельный commit кода не записан.",
+        "Источник": "reports/diagnostics/technical-verified-multiclass.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "Конфигурация по сохранившимся сведениям",
+        "Значение": "alpha=1; solver=lsqr; tol=1e-6 (восстановлено по коду первого этапа)",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "split",
+        "Значение": "Year_Factor < 5 train; == 5 validation",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "seed",
+        "Значение": 42,
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "seconds (собственное время)",
+        "Значение": 1.53,
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "Примечание времени",
+        "Значение": "Полный запуск с финальным обучением, если не указано иное",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "SHA-256 train.csv",
+        "Значение": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "SHA-256 test.csv",
+        "Значение": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "SHA-256 sample_submission.csv",
+        "Значение": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      },
+      {
+        "ID запуска": "technical-verified-regression",
+        "Параметр / сведения": "Архивное происхождение",
+        "Значение": "Архивная диагностика до общего журнала; метрики сохранены, отдельный commit кода не записан.",
+        "Источник": "reports/diagnostics/technical-verified-regression.json"
+      }
+    ]
+  }
+}

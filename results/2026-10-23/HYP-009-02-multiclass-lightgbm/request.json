@@ -1,0 +1,12 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "candidate": {
+    "family": "lightgbm",
+    "parameters": {},
+    "hypothesis": "HYP-009: new model family"
+  },
+  "mode": "evaluate",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-009-02-multiclass-lightgbm",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\new-split-multiclass.npz",
+  "threads": 4
+}

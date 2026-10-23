@@ -1,0 +1,67 @@
+{
+  "series": "results\\2026-10-23\\series-multiclass-engineering-control-v1",
+  "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+  "frozen_selection": {
+    "frozen_at": "2026-10-23T16:34:15+03:00",
+    "notice": "Exploratory analysis after inspecting primary-series inner diagnostics and part of regression outer; reused validation splits, not an independent confirmatory test; primary frozen winner is unchanged.",
+    "selection": "inner only across original baseline and engineering-only for both families",
+    "candidates": [
+      {
+        "run_id": "HYP-001-05-multiclass-inner-baseline-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "macro_f1": 0.5283017428570587,
+          "accuracy": 0.8088028367197614,
+          "weighted_f1": 0.7860891259009041
+        }
+      },
+      {
+        "run_id": "HYP-001-09-multiclass-inner-baseline-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "baseline"
+        },
+        "scores": {
+          "macro_f1": 0.6023505992999411,
+          "accuracy": 0.8206225023920752,
+          "weighted_f1": 0.8055785391931077
+        }
+      },
+      {
+        "run_id": "HYP-008-05-multiclass-inner-engineering_only-catboost",
+        "config": {
+          "family": "catboost",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "macro_f1": 0.5265158705817645,
+          "accuracy": 0.8094219620645016,
+          "weighted_f1": 0.7851927470223338
+        }
+      },
+      {
+        "run_id": "HYP-008-06-multiclass-inner-engineering_only-forest",
+        "config": {
+          "family": "forest",
+          "recipe": "engineering_only"
+        },
+        "scores": {
+          "macro_f1": 0.594619984096699,
+          "accuracy": 0.8203410817808297,
+          "weighted_f1": 0.8055492959128074
+        }
+      }
+    ],
+    "selected_run_id": "HYP-001-09-multiclass-inner-baseline-forest",
+    "selected_config": {
+      "family": "forest",
+      "recipe": "baseline"
+    },
+    "primary_winner_changed": false
+  },
+  "primary_winner_changed": false,
+  "technical_refit_not_new_validation": true
+}
