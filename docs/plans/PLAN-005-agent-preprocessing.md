@@ -9,4 +9,6 @@
 - [x] Пройти unit/protocol review; два новых HYP-021 evaluation без прежних baseline fit, записать audit/маски/метрики/ошибки отдельно и сразу обновить память.
 - [x] Независимая сверка метрик и доли удаления, нормализации и непрерывных преобразований; честный вывод о выигрыше/проигрыше.
 - [x] Новый root-only ZIP solution_full_preprocessing.zip и неизменённый requirements; clean extraction/mock API/подпроцессы/полный refit с финальными submission.
-- [ ] Отчёт, 10+1 гипотеза в журнале, commit/push ivan_branch, проверка удалённого SHA и архива.
+- [x] Отчёт, 10+1 гипотеза в журнале, commit/push ivan_branch, проверка удалённого SHA и архива.
+
+Фактическая приёмка:75 unit tests,522 проверки SPEC-004,233 проверки HYP-021,5 clean-extraction scenarios,2 полных refit без validation-повторов. Код и ZIP опубликованы в ivan_branch коммитомa3c79a2953a686aa7543373bc579fcd4d9d09924; реальный API платформы не проверен.
