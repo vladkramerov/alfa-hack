@@ -9,7 +9,7 @@ import sys
 import time
 import numpy as np
 import pandas as pd
-from automl_data import load_task,validation_split,split_key,better,fallback_submission,atomic_submission,validate_submission,LOWER_IS_BETTER
+from automl_data import load_task,validation_split,split_key,better,fallback_submission,atomic_submission,validate_submission,read_submission,LOWER_IS_BETTER
 from automl_history import candidate_key,known_task,already_known,ledger_case,read_ledger,write_ledger,compatible_policy
 from automl_llm import propose
 from automl_models import canonical_candidate
@@ -35,6 +35,10 @@ def portfolio_candidates(kind,metric,training,training_y):
     log_valid=kind=='regression' and np.isfinite(target).all() and np.all(target>-1)
     candidates=[]
     if log_valid:
+        profile={'State_Factor','building_class','facility_type','floor_area','year_built','ELEVATION','Year_Factor'}
+        if profile.issubset(training.columns) and pd.api.types.is_numeric_dtype(training['Year_Factor']) and training['Year_Factor'].nunique()>=2:
+            candidates.append({'family':'extra_trees','parameters':{},'strategy':'temporal_profile_memory',
+                'hypothesis':'Strictly past targets of a fixed physical profile with feature-expert fallback'})
         grouping=[c for c in training.select_dtypes(exclude='number') if 2<=training[c].nunique()<=6]
         if 'building_class' in grouping: grouping.remove('building_class'); grouping.insert(0,'building_class')
         for column in grouping:
@@ -98,7 +102,7 @@ def main(task_path):
              'categories':{c:training[c].nunique() for c in training.select_dtypes(exclude='number')},
              'numeric_summary':training.select_dtypes(include='number').replace([np.inf,-np.inf],np.nan).describe(percentiles=[.01,.5,.99]).to_dict(),
              'target_fit_summary':training_y.value_counts().to_dict() if bundle.task_type=='classification' else training_y.describe(percentiles=[.01,.5,.99]).to_dict(),
-             'preprocessing_policy':'Versioned measured strategies: reg-feature-experts-v1 combines train-only weather/group features; probability-stacking-v1 combines grouped OOF raw/SMOTE/frequency probabilities. group-experts-v1 and macro-f1-v1 remain compatible; full-v1 default. Validation/test rows never removed. Known scores require matching hashes/split/metric.',
+             'preprocessing_policy':'Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. Older compatible strategies and full-v1 default remain available. No validation/test row deletion. Known scores require matching hashes/split/metric.',
              'known':prior,'hashes':bundle.hashes,'split_key':split_key(fit,valid)}
     for earlier in sorted(root.parent.glob('*/profile.json')):
         if earlier.parent==root: continue
@@ -120,7 +124,7 @@ def main(task_path):
         refit_count+=1; directory=root/f'refit-{refit_count:02d}'
         remaining=budget-(time.monotonic()-started)
         result=worker(bundle,candidate,'refit',directory,root/'splits.npz',min(1800,remaining))
-        if result['status']=='completed': atomic_submission(bundle,pd.read_csv(directory/'candidate_submission.csv'))
+        if result['status']=='completed': atomic_submission(bundle,read_submission(bundle,directory/'candidate_submission.csv'))
         return result
     available=[r for r in ((list(prior['records']) if prior else [])+[r for r in records if r.get('status')=='completed' and 'score' in r]) if compatible_policy(r['candidate'])]
     available.sort(key=lambda r:r['score'],reverse=bundle.metric not in LOWER_IS_BETTER)
@@ -169,7 +173,7 @@ def main(task_path):
         except Exception as exc:
             llm.append({'status':'candidate_rejected','error':type(exc).__name__}); save(root/'llm.json',llm)
             if len(llm)>8: break
-    frame=pd.read_csv(bundle.task_path.parent/'submission.csv'); validate_submission(bundle,frame)
+    frame=read_submission(bundle,bundle.task_path.parent/'submission.csv'); validate_submission(bundle,frame)
     summary={'status':'completed','metric':bundle.metric,'selected_score':best_score,'selected':best,'validation':description,'cached_history':bool(prior),
              'experiments':records,'llm':llm,'seconds':time.monotonic()-started,'submission_rows':len(frame),
              'preprocessing_policy':best.get('preprocessing') if best else 'full-v1','llm_calls':llm_calls,'llm_token_estimate':llm_token_estimate,

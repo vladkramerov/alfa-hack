@@ -1,5 +1,7 @@
 # Правила проекта для Codex
 
+Актуальное состояние SPEC009: [solution_alternative_v2.zip](dist/solution_alternative_v2.zip), H69RMSE39.39219382766771 и H48MacroF1.6495311620074445. Перваяволна9ID/10terminal:9scores+1technicalfailureH53,22уникальныхfit,65независимыхсверок. H65выявилапотерюстроковыхID/classes, исправлениепрошло8/8 и exactpublicdata/splits invariance;206unitтестов. [Альтернативы](results/2026-10-24/series-alternatives-v1/ALTERNATIVES_REPORT.md). Остальныеиз20новыхидейнеобъявлятьпроверенными. Предыдущийsolution_combined_metrics.zip сохранён. Новыйархивпубликуетсявivan_branch послеcleanpreflight/fullrefit. Userуточнил:1376.762относитсякsolution_improved_metrics.zip, формула/runID/SHAплатформынеизвестны, обещать10xнельзя.
+
 Актуальное дополнение SPEC-008: завершены семь новых комбинаций HYP-042…048, независимая сверка 63/63, 24 новых fit без повторов. В baseline включены только лучшие: H43 RMSE40.972997661684175 и H48 Macro-F1.6495311620074445; конфигурации и frozen state в [baseline.json](baseline.json). [Сравнение](results/2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md), [ZIP](dist/solution_combined_metrics.zip). Платформенный балл предыдущего решения 1376.762 сообщён пользователем без SHA архива/формулы; не считать его public RMSE. Новый запрос: опубликовать проверенное решение в ivan_branch и подготовить ещё20 новых идей, не объявляя их проверенными.
 
 ## Текущее состояние

@@ -32,7 +32,7 @@ def candidate_key(candidate):
         identity.update(strategy=candidate['strategy'],group_column=candidate.get('group_column'),
                         minimum_expert_rows=candidate.get('minimum_expert_rows'),shrinkage=candidate.get('shrinkage'),
                         calibration_folds=candidate.get('calibration_folds'),class_multipliers=candidate.get('class_multipliers'))
-        if candidate['strategy'] in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}:
+        if candidate['strategy'] in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking','temporal_profile_memory'}:
             identity.update({k:candidate.get(k) for k in ['feature_numbers','blend_weights','tail_quantile','meta_state','component_parameters','gate_parameters']})
     return hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
 
@@ -52,13 +52,13 @@ def already_known(candidate,records,prior=None):
         # A changed coefficient, seed or title does not authorize repeating a
         # measured strategy on the same data/split/metric.
         strategy=candidate.get('strategy')
-        if strategy and any(r.get('candidate',{}).get('strategy')==strategy for r in prior.get('spec008_attempts',[])):return True
+        if strategy and any(r.get('candidate',{}).get('strategy')==strategy for r in prior.get('spec008_attempts',[])+prior.get('spec009_attempts',[])):return True
         if strategy in ['group_experts','macro_f1_calibrated'] and any(r['candidate'].get('strategy')==strategy for r in prior['records']): return True
         mentioned={int(v) for v in re.findall(r'\bHYP[-_ ]?0*(\d+)\b',str(candidate.get('hypothesis','')),flags=re.IGNORECASE)}
         if candidate.get('number') is not None:
             try: mentioned.add(int(candidate['number']))
             except (ValueError,TypeError): pass
-        tested={int(r['number']) for r in prior.get('spec006_attempts',[])+prior.get('spec008_attempts',[])}
+        tested={int(r['number']) for r in prior.get('spec006_attempts',[])+prior.get('spec008_attempts',[])+prior.get('spec009_attempts',[])}
         if mentioned & tested: return True
     # A renamed ordinary baseline or another strength is not a new direction.
     if prior and candidate['family'] in ['catboost','random_forest','ridge','logistic']:
@@ -68,7 +68,7 @@ def already_known(candidate,records,prior=None):
 
 def compatible_policy(candidate):
     if candidate.get('preprocessing')=='full-v1' and bool(candidate.get('scale')) and candidate.get('max_outlier_fraction')==.05 and candidate.get('strategy') in [None,'','full']: return True
-    if candidate.get('strategy') in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}:
+    if candidate.get('strategy') in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking','temporal_profile_memory'}:
         try:
             from automl_models import canonical_candidate
             expected=canonical_candidate(candidate)

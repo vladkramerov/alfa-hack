@@ -1,0 +1,5 @@
+feature,role,dtype
+opaque_key,id,int
+measurement,feature,float
+kind,feature,category
+response_value,target,float

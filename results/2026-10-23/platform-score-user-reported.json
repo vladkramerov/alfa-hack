@@ -4,5 +4,8 @@
   "archive_sha256": null,
   "platform_metric_formula_verified": false,
   "comparable_local_metric": null,
-  "note": "Сообщённый балл сохранён отдельно. Точный архив, состав задач, формула и скрытые targets не установлены; не приравнивать к public RMSE или Macro-F1."
+  "note": "Сообщённый балл сохранён отдельно. Точный архив, состав задач, формула и скрытые targets не установлены; не приравнивать к public RMSE или Macro-F1.",
+  "archive_filename_user_confirmed": "solution_improved_metrics.zip",
+  "confirmation_date_moscow": "2026-10-24",
+  "archive_sha256_confirmed_by_platform": false
 }

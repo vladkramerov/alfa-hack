@@ -1,0 +1,7 @@
+Command: .venv-ml/Scripts/python.exe -X utf8 -m experiments.check_schema_semantics
+Process exit code: 0 (diagnostic finished; individual case failures are preserved in evidence.json)
+{"hypothesis": "HYP-065", "status": "completed", "passed": 6, "failed": 2, "model_fits": 0, "conclusion": "Не подтверждена по заданному критерию"}
+
+Regression unit command: .venv-ml/Scripts/python.exe -X utf8 -m unittest tests.test_schema_semantics -v
+Process exit code: 1; 8 tests, 2 failures (S05 and S07).
+Full output: unit-tests.log. No estimator or model training was performed.

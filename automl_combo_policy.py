@@ -1,7 +1,7 @@
 """Versioned candidate contracts for measured combination architectures."""
 import copy
 import numpy as np
-REG={'reg_feature_experts','reg_convex_blend','target_tail_mixture'}
+REG={'reg_feature_experts','reg_convex_blend','target_tail_mixture','temporal_profile_memory'}
 CLASS={'smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}
 STRATEGIES=REG|CLASS
 
@@ -9,7 +9,7 @@ def canonical_combo(candidate):
     c=copy.deepcopy(candidate);strategy=c['strategy']
     if strategy not in STRATEGIES:raise ValueError('Unknown combination')
     if c.get('feature_code','').strip():raise ValueError('Versioned combinations have fixed feature processing')
-    reg=strategy in REG;family='extra_trees' if strategy in ['reg_feature_experts','reg_convex_blend'] else 'xgboost'
+    reg=strategy in REG;family='extra_trees' if strategy in ['reg_feature_experts','reg_convex_blend','temporal_profile_memory'] else 'xgboost'
     if c.get('family')!=family:raise ValueError('Combination family mismatch')
     p=dict(c.get('parameters',{}))
     for k in ['random_state','random_seed','seed','n_jobs','thread_count','verbose']:p.pop(k,None)
@@ -23,7 +23,7 @@ def canonical_combo(candidate):
     active={'reg_feature_experts':{'feature_numbers','group_column','minimum_expert_rows','shrinkage'},
             'reg_convex_blend':{'blend_weights'},'target_tail_mixture':{'tail_quantile'},
             'smote_macro_f1':{'class_multipliers'},'frequency_blend_macro_f1':{'class_multipliers'},
-            'probability_stacking':{'meta_state'}}[strategy]
+            'probability_stacking':{'meta_state'},'temporal_profile_memory':set()}[strategy]
     behavior_fields={'feature_numbers','group_column','minimum_expert_rows','shrinkage','blend_weights','tail_quantile','class_multipliers','meta_state'}
     if any(k in c for k in behavior_fields-active):raise ValueError('Inactive combination fields are forbidden')
     if c.get('target_transform') not in [None,'log1p' if reg else 'none']:raise ValueError('Versioned target transform mismatch')

@@ -1,0 +1,203 @@
+{
+  "hypothesis": "HYP-065",
+  "started": "2026-10-24T00:15:28.993817+03:00",
+  "status": "completed",
+  "conclusion": "Не подтверждена по заданному критерию",
+  "case_count": 8,
+  "passed": 6,
+  "failed": 2,
+  "model_fits": 0,
+  "public_metric_evaluations": 0,
+  "http_requests": 0,
+  "scientific_independent_metric_test": false,
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "experiments/check_schema_semantics.py": "3f5a034207af2d7de9e64859c8b5c480c77b92ca0dc006aff0109ce3c8a140a2",
+    "tests/test_schema_semantics.py": "4ae283da01223e405ee470f682a5183b58a09beb54f660f139e09b7b6f44a45f"
+  },
+  "sources_unchanged": true,
+  "ledger_sha256_before_check": "5219c32b8c8013ad425a063181b93c36a0d40ccbb9be416184f8bb38490267a8",
+  "cases": [
+    {
+      "id": "S01",
+      "name": "train_row_and_feature_column_reordering",
+      "status": "passed",
+      "detail": {
+        "feature_order": [
+          "kind",
+          "signal"
+        ],
+        "restored_train_rows": 8
+      }
+    },
+    {
+      "id": "S02",
+      "name": "test_permutation_and_inverse_id_alignment",
+      "status": "passed",
+      "detail": {
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "original_ids": [
+          91,
+          23,
+          74
+        ],
+        "written_ids": [
+          74,
+          91,
+          23
+        ]
+      }
+    },
+    {
+      "id": "S03",
+      "name": "consistent_target_id_feature_renaming",
+      "status": "passed",
+      "detail": {
+        "rename": {
+          "record_id": "opaque_key",
+          "target": "response_value",
+          "signal": "measurement"
+        },
+        "parsed_target": "response_value",
+        "parsed_id": "opaque_key"
+      }
+    },
+    {
+      "id": "S04",
+      "name": "lexical_class_label_bijection",
+      "status": "passed",
+      "detail": {
+        "bijection": {
+          "red": "класс-А",
+          "blue": "β-метка"
+        },
+        "restored_predictions": [
+          "blue",
+          "red",
+          "blue"
+        ]
+      }
+    },
+    {
+      "id": "S05",
+      "name": "numeric_looking_class_labels_preserve_lexical_values",
+      "status": "failed",
+      "error": "Class label parsing changed lexical values: expected=['001', '010'], actual=[1, 10], dtype=int64",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "S06",
+      "name": "probability_class_order_to_sample_column_mapping",
+      "status": "passed",
+      "detail": {
+        "model_classes": [
+          "red",
+          "blue"
+        ],
+        "sample_output_columns": [
+          "blue",
+          "red"
+        ],
+        "explicit_mapping": {
+          "red": 0,
+          "blue": 1
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "name": "opaque_leading_zero_identifier_roundtrip",
+      "status": "failed",
+      "error": "Identifier parsing lost original representation: expected=['0007', '0012', '0100'], actual=['7', '12', '100']",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "S08",
+      "name": "target_unit_prediction_roundtrip_1024",
+      "status": "passed",
+      "detail": {
+        "unit_factor": 1024.0,
+        "original_predictions": [
+          0.125,
+          1.5,
+          9.25
+        ],
+        "restored_predictions": [
+          0.125,
+          1.5,
+          9.25
+        ],
+        "training_or_metric_comparison_performed": false
+      }
+    }
+  ],
+  "artifact_hashes": {
+    "cases\\S01\\base\\data_dictionary.csv": "34103bc6ffe995048599674ce3a599b6f62a8e5b89489a6daa7379f5a7c5e5cd",
+    "cases\\S01\\base\\sample_submission.csv": "03cc5bc2cdaa7e9aceaed1c2607dca33fe0e9bf949b7ff84224f10c03b4d7dd1",
+    "cases\\S01\\base\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S01\\base\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S01\\base\\train.csv": "434db2488aa06e6d5a32baa258c8480ed1d8a566cf0ead1da0fe2a0ceec7f9e5",
+    "cases\\S01\\transformed\\data_dictionary.csv": "34103bc6ffe995048599674ce3a599b6f62a8e5b89489a6daa7379f5a7c5e5cd",
+    "cases\\S01\\transformed\\sample_submission.csv": "03cc5bc2cdaa7e9aceaed1c2607dca33fe0e9bf949b7ff84224f10c03b4d7dd1",
+    "cases\\S01\\transformed\\submission.csv": "55f4885857d34a23909d064c329839e0e358b776db53fbd86462b3ade0c9bf5f",
+    "cases\\S01\\transformed\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S01\\transformed\\test.csv": "d82fdd1a77dd66e059ec2251f4db1ba38cccf1679d067d61989812dd3424325e",
+    "cases\\S01\\transformed\\train.csv": "b74dcb2b7165131975ecaf4c27115844c18fe279e7ad9905c9a0194796eba562",
+    "cases\\S02\\base\\data_dictionary.csv": "34103bc6ffe995048599674ce3a599b6f62a8e5b89489a6daa7379f5a7c5e5cd",
+    "cases\\S02\\base\\sample_submission.csv": "03cc5bc2cdaa7e9aceaed1c2607dca33fe0e9bf949b7ff84224f10c03b4d7dd1",
+    "cases\\S02\\base\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S02\\base\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S02\\base\\train.csv": "434db2488aa06e6d5a32baa258c8480ed1d8a566cf0ead1da0fe2a0ceec7f9e5",
+    "cases\\S02\\transformed\\data_dictionary.csv": "34103bc6ffe995048599674ce3a599b6f62a8e5b89489a6daa7379f5a7c5e5cd",
+    "cases\\S02\\transformed\\sample_submission.csv": "c70bbf5ac1825c3f5ca009e00d28411945b76978c39aaecce6873d9264501e55",
+    "cases\\S02\\transformed\\submission.csv": "843d9931558f7a88a19bfe66a0e269904c7bf6d79326ec44909ffbef0cf3cee0",
+    "cases\\S02\\transformed\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S02\\transformed\\test.csv": "92f24eb992840c1f3d3aa6a85c16da6c4d1de18944fa970d9dadcba1f0a05f0b",
+    "cases\\S02\\transformed\\train.csv": "434db2488aa06e6d5a32baa258c8480ed1d8a566cf0ead1da0fe2a0ceec7f9e5",
+    "cases\\S03\\transformed\\data_dictionary.csv": "2a58087bad4eec43dbf8d1c271bd3cc832edea47dc7efbd6aa491d846ff6ecb6",
+    "cases\\S03\\transformed\\sample_submission.csv": "07c231888ae25b8103ffe60ff4235bca96a73f48274d9434e6123b34eaa36e93",
+    "cases\\S03\\transformed\\submission.csv": "55f5eb411611944c308b21ed6109f4afdd5f7be045b0fbd81e7827948838c648",
+    "cases\\S03\\transformed\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S03\\transformed\\test.csv": "abbfbae875b67dd09475d7435925da5cda19b59262f09d77d04d3d62de76b9c0",
+    "cases\\S03\\transformed\\train.csv": "c80ddfca8f49c398b63cbe8b54d4391f7d742ca1a220ff6276fc92ce0eb49978",
+    "cases\\S04\\transformed\\data_dictionary.csv": "03d25870d0f703d637b6d2c149c14225de39167f8cdf4bd82e30488ec8d352b9",
+    "cases\\S04\\transformed\\sample_submission.csv": "216992ac1c6791294162c9ee32ed42ab4b91a7b5e676ef0c425113f5475226ab",
+    "cases\\S04\\transformed\\submission.csv": "6585422da268cae2365fc7eab6194e334fcaeae1706c68cd793b9e1456465a30",
+    "cases\\S04\\transformed\\task.md": "b6a25eed98f82043e0b6dafc32e3ab2e7c19fde7071e93772e2280b8a816bb08",
+    "cases\\S04\\transformed\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S04\\transformed\\train.csv": "054925e951a0a6e5b72550df64de399fb933cae38fa4d702feb9310602119a33",
+    "cases\\S05\\transformed\\data_dictionary.csv": "03d25870d0f703d637b6d2c149c14225de39167f8cdf4bd82e30488ec8d352b9",
+    "cases\\S05\\transformed\\sample_submission.csv": "ef23a5ef65c649774c80bd72374dbfed292f6da3fca571cb7fdbe3ecaf2f43a1",
+    "cases\\S05\\transformed\\task.md": "b6a25eed98f82043e0b6dafc32e3ab2e7c19fde7071e93772e2280b8a816bb08",
+    "cases\\S05\\transformed\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S05\\transformed\\train.csv": "a1f13be2b6524dd8fbe4b0bd89c64ced5da66ed1dad4f0d4b2c1581ac6b2ae88",
+    "cases\\S06\\transformed\\data_dictionary.csv": "03d25870d0f703d637b6d2c149c14225de39167f8cdf4bd82e30488ec8d352b9",
+    "cases\\S06\\transformed\\sample_submission.csv": "75065ef88713325f4bb4739df777652155ea9d2b800c99f14d47c3d8ed410637",
+    "cases\\S06\\transformed\\submission.csv": "4659810cdf607d185aee338b6e94ab606c3993cb1fba1cd7014a8d8e3297af22",
+    "cases\\S06\\transformed\\task.md": "7d428921d16fd0f701119e40cbadc62371e7890609d831b42a4aed9869d3e0ab",
+    "cases\\S06\\transformed\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S06\\transformed\\train.csv": "234a99238077f07c91fbc9da1d1a0fa536bc860f2be8a158b6c6cdc0aa44be13",
+    "cases\\S07\\transformed\\data_dictionary.csv": "b1aaa2d56e2c5a5ed328c998d6664bb8edd902488c848b8f5598f8c58de78cf9",
+    "cases\\S07\\transformed\\sample_submission.csv": "7694557fbf9e9ff532081414c7875aaf37159cb89046b68734287f534cc84258",
+    "cases\\S07\\transformed\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S07\\transformed\\test.csv": "f3f0351b1aba1809108bef85a6abe1630fd61120ef4b72af0cbd61b560040669",
+    "cases\\S07\\transformed\\train.csv": "92b5538a02d25d7c742b2e4b0269e618138f8d18841efb1788e96e4ce2d26a70",
+    "cases\\S08\\transformed\\data_dictionary.csv": "34103bc6ffe995048599674ce3a599b6f62a8e5b89489a6daa7379f5a7c5e5cd",
+    "cases\\S08\\transformed\\sample_submission.csv": "03cc5bc2cdaa7e9aceaed1c2607dca33fe0e9bf949b7ff84224f10c03b4d7dd1",
+    "cases\\S08\\transformed\\submission.csv": "99acf2bcbb50ba0c2959657ca94b77f69d5852d949a60ba4a057c478d6331ed3",
+    "cases\\S08\\transformed\\task.md": "bee3e1f310c582593ad9f4a795563b4c4be10a4f147e6326429172d062d9b9bc",
+    "cases\\S08\\transformed\\test.csv": "f1e81c224e15b34a1c0178bd4509be3030c66f8e157163b4e2e0f02179181f89",
+    "cases\\S08\\transformed\\train.csv": "1a91ba92457c16c32a8bfacc34b4080368450766150cc2fb0ce39598395315bb"
+  },
+  "seconds": 0.28099999998812564,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "pandas": "2.2.3",
+    "numpy": "1.26.4",
+    "platform": "Windows-11-10.0.26300-SP0"
+  }
+}

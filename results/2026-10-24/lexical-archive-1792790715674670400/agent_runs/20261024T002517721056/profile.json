@@ -1,0 +1,56 @@
+{
+  "task": "Classification. Primary metric: Macro F1.\n`nested/inputs/train.csv` `nested/inputs/test.csv` `nested/inputs/sample_submission.csv` `nested/inputs/data_dictionary.csv`.\n",
+  "target": "answer",
+  "id": "key",
+  "type": "classification",
+  "metric": "macro_f1",
+  "split": "stratified80/20:seed42",
+  "shape": [
+    64,
+    2
+  ],
+  "dtypes": {
+    "x": "int64",
+    "flag": "int64"
+  },
+  "missing": {
+    "x": 0.0,
+    "flag": 0.0
+  },
+  "categories": {},
+  "numeric_summary": {
+    "x": {
+      "count": 64.0,
+      "mean": 39.125,
+      "std": 23.544284515213736,
+      "min": 0.0,
+      "1%": 0.63,
+      "50%": 40.0,
+      "99%": 76.10999999999999,
+      "max": 78.0
+    },
+    "flag": {
+      "count": 64.0,
+      "mean": 0.5,
+      "std": 0.5039526306789697,
+      "min": 0.0,
+      "1%": 0.0,
+      "50%": 0.5,
+      "99%": 1.0,
+      "max": 1.0
+    }
+  },
+  "target_fit_summary": {
+    "010": 32,
+    "001": 32
+  },
+  "preprocessing_policy": "Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. Older compatible strategies and full-v1 default remain available. No validation/test row deletion. Known scores require matching hashes/split/metric.",
+  "known": null,
+  "hashes": {
+    "train.csv": "5971cbf23facb2f3872669e0c7d1bfbe58fa310574e03565339ef3175ca0a91d",
+    "test.csv": "6c5f4e4f60b9e3275109ca6381d2d23e10b5c3b7802bec72669e67e90472fc6f",
+    "sample_submission.csv": "68aaaa496ac679910f515aea806a23eb272b7652f5f7de51d6c1b3f1fb90ac65",
+    "data_dictionary.csv": "cdca978ea78302936decdcb26a5e9d72e748f034f18dcb2bfd7e1d4bf5137c44"
+  },
+  "split_key": "d86e7937c7924af44f74186b9c712d571da89e5a7033f170d7091e7b5beadf76"
+}

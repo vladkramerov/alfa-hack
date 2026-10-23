@@ -1,0 +1,27 @@
+{
+  "fit_original_rows": 35000,
+  "fit_retained_rows": 35000,
+  "profile_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built",
+    "ELEVATION"
+  ],
+  "profile_count": 27735,
+  "same_profile_year_multiple_rows": 359,
+  "profile_is_proven_building_identity": false,
+  "strict_past_only": true,
+  "id_or_weather_as_key": false,
+  "age_decay": 0.5,
+  "maximum_memory_weight": 0.9,
+  "staleness_decay": 0.25,
+  "query_rows": 18308,
+  "matched_rows": 3386,
+  "matched_fraction": 0.18494647148787416,
+  "memory_weight_mean": 0.09658811248853286,
+  "past_rows_sum": 5430,
+  "no_query_targets_used": true,
+  "baseline": "read_only_H43_outer_predictions"
+}

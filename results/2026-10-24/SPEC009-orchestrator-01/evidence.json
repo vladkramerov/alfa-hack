@@ -1,0 +1,34 @@
+{
+  "status": "orchestration_guard_stop",
+  "error": "Unregistered hypothesis",
+  "root_cause": "Abbreviated HYP-049/051/053 list lacked explicit HYP-051 string required by guard",
+  "missing_ids_before": [
+    "HYP-050",
+    "HYP-051",
+    "HYP-052",
+    "HYP-053",
+    "HYP-054",
+    "HYP-055",
+    "HYP-056",
+    "HYP-057",
+    "HYP-058",
+    "HYP-059",
+    "HYP-060",
+    "HYP-061",
+    "HYP-062",
+    "HYP-063",
+    "HYP-064",
+    "HYP-065",
+    "HYP-066",
+    "HYP-067"
+  ],
+  "fix": "Appended full proposed ID registry; no training source change",
+  "completed_before_stop": [
+    69,
+    49
+  ],
+  "failed_model_attempts": 0,
+  "retry_fit_count": 0,
+  "resume": "existing completed cases skipped by registry",
+  "log_sha256": "e621577e3827f7fbbc9700edd8a631e70ca9c55f5405b74c93e9f8d69092c912"
+}

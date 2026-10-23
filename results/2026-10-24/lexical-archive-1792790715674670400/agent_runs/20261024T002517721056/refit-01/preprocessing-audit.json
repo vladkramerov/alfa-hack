@@ -1,0 +1,32 @@
+{
+  "policy": "macro-f1-v1",
+  "strategy": "macro_f1_calibrated",
+  "fit_original_rows": 80,
+  "fit_retained_rows": 80,
+  "target_transform": "none",
+  "encoder": {
+    "native": false,
+    "scale": false
+  },
+  "calibration_multipliers": {
+    "001": 1.0,
+    "010": 1.0
+  },
+  "multipliers": {
+    "001": 1.0,
+    "010": 1.0
+  },
+  "calibration_source": "frozen_candidate",
+  "calibration_skip_reason": null,
+  "inner_macro_f1": null,
+  "folds": [],
+  "calibration_grid": [
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "calibration_passes": 1,
+  "fixed_anchor": "001"
+}

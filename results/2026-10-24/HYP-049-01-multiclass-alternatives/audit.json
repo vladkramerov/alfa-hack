@@ -1,0 +1,141 @@
+{
+  "strategy": "soft_distillation",
+  "fit_original_rows": 70529,
+  "fit_retained_rows": 70529,
+  "validation_target_used": false,
+  "outer_model_fits": 1,
+  "inner_model_fits": 0,
+  "teacher_source": "in_sample_meta_on_base_grouped_oof",
+  "teacher_is_independent_oof": false,
+  "hard_target_weight": 0.7,
+  "teacher_target_weight": 0.3,
+  "teacher_refits": 0,
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "parameters": {
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1.0,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_estimators": 600
+    },
+    "encoder": {
+      "native": false,
+      "scale": false
+    },
+    "objective": "soft_distillation",
+    "custom_objective": "shifted_soft_cross_entropy",
+    "base_score": 0.0,
+    "soft_targets_sha256": "26622df78b888cfb749dc282570ab3eb94a710e1d55ee1afe0b6350ddbc39ca8",
+    "log_count_shift": null,
+    "hessian": "diagonal_PSD_upper_bound_2p1mp_floor1e-6"
+  },
+  "fit_model_rows": 70529,
+  "teacher": {
+    "teacher_source": "in_sample_meta_on_base_grouped_oof",
+    "teacher_is_independent_oof": false,
+    "teacher_refits": 0,
+    "meta_fitted_on_same_base_oof_targets": true,
+    "base_oof_artifacts": [
+      {
+        "component": "raw",
+        "fold": 0,
+        "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+        "fit_rows": 47075,
+        "valid_rows": 23454,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "raw",
+        "fold": 1,
+        "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz",
+        "fit_rows": 46893,
+        "valid_rows": 23636,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "raw",
+        "fold": 2,
+        "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz",
+        "fit_rows": 47090,
+        "valid_rows": 23439,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "smote",
+        "fold": 0,
+        "key": "2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-0.npz",
+        "fit_rows": 47075,
+        "valid_rows": 23454,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "smote",
+        "fold": 1,
+        "key": "2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-1.npz",
+        "fit_rows": 46893,
+        "valid_rows": 23636,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "smote",
+        "fold": 2,
+        "key": "2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-2.npz",
+        "fit_rows": 47090,
+        "valid_rows": 23439,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "frequency",
+        "fold": 0,
+        "key": "96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-0.npz",
+        "fit_rows": 47075,
+        "valid_rows": 23454,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "frequency",
+        "fold": 1,
+        "key": "96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-1.npz",
+        "fit_rows": 46893,
+        "valid_rows": 23636,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      },
+      {
+        "component": "frequency",
+        "fold": 2,
+        "key": "96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3",
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-2.npz",
+        "fit_rows": 47090,
+        "valid_rows": 23439,
+        "status": "reused_read_only",
+        "raw_groups_disjoint": true
+      }
+    ],
+    "component_order": [
+      "raw",
+      "smote",
+      "frequency"
+    ],
+    "target_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-049-01-multiclass-alternatives\\distillation-targets.npz"
+  },
+  "training_lineage_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-049-01-multiclass-alternatives\\training-lineage.npz"
+}

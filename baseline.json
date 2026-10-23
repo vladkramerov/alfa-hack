@@ -1,28 +1,20 @@
 {
   "regression": {
     "metric": "rmse",
-    "score": 40.972997661684175,
+    "score": 39.39219382766771,
     "candidate": {
-      "strategy": "reg_feature_experts",
+      "strategy": "temporal_profile_memory",
       "parameters": {},
       "family": "extra_trees",
-      "feature_numbers": [
-        29,
-        30,
-        31
-      ],
-      "group_column": "building_class",
-      "minimum_expert_rows": 500,
-      "shrinkage": 500.0,
-      "hypothesis": "HYP-043: verified combination; frozen train-only state",
-      "preprocessing": "reg-feature-experts-v1",
+      "hypothesis": "HYP-069: verified past-only profile retrieval, final refit only",
+      "preprocessing": "temporal-profile-memory-v1",
       "scale": false,
       "max_outlier_fraction": 0,
       "target_transform": "log1p"
     },
-    "source": "results/2026-10-23/HYP-043-01-regression-combinations/report.md",
-    "hypothesis": "HYP-043",
-    "previous_best": 41.480963027907194
+    "source": "results/2026-10-24/HYP-069-01-regression-alternatives/report.md",
+    "hypothesis": "HYP-069",
+    "previous_best": 40.972997661684175
   },
   "multiclass": {
     "metric": "macro_f1",

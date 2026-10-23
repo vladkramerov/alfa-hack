@@ -1,5 +1,7 @@
 # Результаты проверок
 
+Новая поставка SPEC009: [solution_alternative_v2.zip](../dist/solution_alternative_v2.zip),61 330байт/16rootfiles; RMSE39.392194 и MacroF1.649531. [9численныхоценок+1техническийисход](2026-10-24/series-alternatives-v1/ALTERNATIVES_REPORT.md),65independentchecks/22newfits;206units. [H65CSVисправление](2026-10-24/HYP-065-02-schema-codec-fix/verification.json), [H68неполнаядиагностикаscore](2026-10-24/HYP-068-01-platform-provenance/report.md). СтарыеZIP/негативныеотчётысохранены, hidden scoreнеизмерен.
+
 Актуальная поставка SPEC-008: [solution_combined_metrics.zip](../dist/solution_combined_metrics.zip),57110байт; H43RMSE40.972998/H48Macro-F1.649531. [Семь сравнений](2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md),63проверки/24новыхfitбезповторов; [baseline](../baseline.json). Состояния приёмки ZIP фиксируются отдельными отчётами, скрытый score не измерен. Крупные OOFcache/модели/синтетические данные сохраняются локально и исключены из Git.
 
 Текущая поставка: [улучшенный ZIP](../dist/solution_improved_metrics.zip), H35RMSE41.480963/H37Macro-F1.628605; [сверка ZIP](2026-10-23/IMPROVED_DELIVERY.json). Все20новыхгипотеззавершены: [23метрикии2техническиеостановки](2026-10-23/TWENTY_HYPOTHESES_REPORT.md),539checksOK.126unitтестов,5mockсценариев,2fullrefit; повторныхvalidationfitнет.
@@ -183,3 +185,26 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 | HYP-047 | multiclass | completed, macro_f1=0.6336560111990485; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-047-01-multiclass-combinations/report.md) |
 
 | HYP-048 | multiclass | completed, macro_f1=0.6495311620074445; Подтверждена в проверенных условиях | [report](../results/2026-10-23/HYP-048-01-multiclass-combinations/report.md) |
+
+| HYP-069 | regression | completed, rmse=39.39219382766771; Подтверждена в проверенных условиях | [report](../results/2026-10-24/HYP-069-01-regression-alternatives/report.md) |
+
+| HYP-049 | multiclass | completed, macro_f1=0.6149071035851954; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-049-01-multiclass-alternatives/report.md) |
+
+| HYP-051 | multiclass | completed, macro_f1=0.5632041224667611; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-051-01-multiclass-alternatives/report.md) |
+
+| HYP-053 | multiclass | failed, None=None; Недостаточно данных | [report](../results/2026-10-24/HYP-053-01-multiclass-alternatives/report.md) |
+
+| HYP-054 | regression | completed, rmse=44.388898407039605; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-054-01-regression-alternatives/report.md) |
+
+| HYP-055 | regression | completed, rmse=47.44104483605545; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-055-01-regression-alternatives/report.md) |
+
+| HYP-056 | regression | completed, rmse=43.063770695804266; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-056-01-regression-alternatives/report.md) |
+
+| HYP-058 | regression | completed, rmse=42.36424466952146; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-058-01-regression-alternatives/report.md) |
+
+| HYP-060 | regression | completed, rmse=42.46179807398836; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-060-01-regression-alternatives/report.md) |
+
+| HYP-060 | multiclass | completed, macro_f1=0.567987406329944; Не подтверждена по заданному критерию | [report](../results/2026-10-24/HYP-060-02-multiclass-alternatives/report.md) |
+
+| HYP-065 | schema diagnosis6/8→fixed8/8 | model fits0 | [proof](2026-10-24/HYP-065-02-schema-codec-fix/verification.json) |
+| HYP-068 | platformprovenance incomplete, score1376.762oldimprovedZIP | model fits0 | [report](2026-10-24/HYP-068-01-platform-provenance/report.md) |

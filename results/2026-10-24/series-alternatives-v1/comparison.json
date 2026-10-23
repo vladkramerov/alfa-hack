@@ -1,0 +1,243 @@
+{
+  "status": "passed",
+  "baseline": {
+    "regression": 40.972997661684175,
+    "multiclass": 0.6495311620074445
+  },
+  "rows": [
+    {
+      "hypothesis": "HYP-069",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 39.39219382766771,
+      "recomputed_score": 39.39219382766771,
+      "previous_best": 40.972997661684175,
+      "improvement": 1.5808038340164643,
+      "improved": true,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-069-01-regression-alternatives",
+      "seconds": 1.0940000000118744,
+      "error": null,
+      "candidate": {
+        "strategy": "temporal_profile_memory",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Подтверждена в проверенных условиях"
+    },
+    {
+      "hypothesis": "HYP-049",
+      "task": "multiclass",
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.6149071035851954,
+      "recomputed_score": 0.6149071035851954,
+      "previous_best": 0.6495311620074445,
+      "improvement": -0.03462405842224914,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-049-01-multiclass-alternatives",
+      "seconds": 68.85899999999674,
+      "error": null,
+      "candidate": {
+        "strategy": "soft_distillation",
+        "parameters": {},
+        "family": "xgboost"
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-051",
+      "task": "multiclass",
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.5632041224667611,
+      "recomputed_score": 0.5632041224667611,
+      "previous_best": 0.6495311620074445,
+      "improvement": -0.08632703954068344,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-051-01-multiclass-alternatives",
+      "seconds": 54.84299999999348,
+      "error": null,
+      "candidate": {
+        "strategy": "balanced_softmax",
+        "parameters": {},
+        "family": "xgboost"
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-053",
+      "task": "multiclass",
+      "status": "failed",
+      "metric": "macro_f1",
+      "score": null,
+      "recomputed_score": null,
+      "previous_best": 0.6495311620074445,
+      "improvement": null,
+      "improved": false,
+      "verified": false,
+      "directory": "results/2026-10-24/HYP-053-01-multiclass-alternatives",
+      "seconds": 6.546999999991385,
+      "error": "FileNotFoundError(2, 'No such file or directory')",
+      "integrity_verified": true,
+      "scientific_conclusion": "Недостаточно данных"
+    },
+    {
+      "hypothesis": "HYP-054",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 44.388898407039605,
+      "recomputed_score": 44.388898407039605,
+      "previous_best": 40.972997661684175,
+      "improvement": -3.4159007453554295,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-054-01-regression-alternatives",
+      "seconds": 2.890999999974156,
+      "error": null,
+      "candidate": {
+        "strategy": "spline_gam",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-055",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 47.44104483605545,
+      "recomputed_score": 47.44104483605545,
+      "previous_best": 40.972997661684175,
+      "improvement": -6.4680471743712715,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-055-01-regression-alternatives",
+      "seconds": 4.469000000011874,
+      "error": null,
+      "candidate": {
+        "strategy": "quantile_mean",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-056",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 43.063770695804266,
+      "recomputed_score": 43.063770695804266,
+      "previous_best": 40.972997661684175,
+      "improvement": -2.0907730341200903,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-056-01-regression-alternatives",
+      "seconds": 42.98399999999674,
+      "error": null,
+      "candidate": {
+        "strategy": "h43_residual",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-058",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 42.36424466952146,
+      "recomputed_score": 42.36424466952146,
+      "previous_best": 40.972997661684175,
+      "improvement": -1.3912470078372863,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-058-01-regression-alternatives",
+      "seconds": 23.312000000005355,
+      "error": null,
+      "candidate": {
+        "strategy": "covariate_shift",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-060",
+      "task": "regression",
+      "status": "completed",
+      "metric": "rmse",
+      "score": 42.46179807398836,
+      "recomputed_score": 42.46179807398836,
+      "previous_best": 40.972997661684175,
+      "improvement": -1.4888004123041867,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-060-01-regression-alternatives",
+      "seconds": 64.60899999999674,
+      "error": null,
+      "candidate": {
+        "strategy": "masked_regression",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "hypothesis": "HYP-060",
+      "task": "multiclass",
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.567987406329944,
+      "recomputed_score": 0.567987406329944,
+      "previous_best": 0.6495311620074445,
+      "improvement": -0.0815437556775005,
+      "improved": false,
+      "verified": true,
+      "directory": "results/2026-10-24/HYP-060-02-multiclass-alternatives",
+      "seconds": 92.43700000000536,
+      "error": null,
+      "candidate": {
+        "strategy": "masked_augmentation",
+        "parameters": {},
+        "family": "xgboost"
+      },
+      "learned_state": {},
+      "integrity_verified": true,
+      "scientific_conclusion": "Не подтверждена по заданному критерию"
+    }
+  ],
+  "best": {
+    "regression": {
+      "hypothesis": "HYP-069",
+      "task": "regression",
+      "metric": "rmse",
+      "score": 39.39219382766771,
+      "candidate": {
+        "strategy": "temporal_profile_memory",
+        "parameters": {}
+      },
+      "learned_state": {},
+      "directory": "results/2026-10-24/HYP-069-01-regression-alternatives",
+      "improved": true,
+      "verified": true
+    }
+  }
+}

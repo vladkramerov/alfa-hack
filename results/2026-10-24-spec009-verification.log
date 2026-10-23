@@ -1,0 +1,2 @@
+{"status": "passed", "checks_passed": 65, "checks_failed": 0, "completed_evaluations": 9, "model_fit_attempts": 22}
+{"best": {"regression": {"hypothesis": "HYP-069", "task": "regression", "metric": "rmse", "score": 39.39219382766771, "candidate": {"strategy": "temporal_profile_memory", "parameters": {}}, "learned_state": {}, "directory": "results/2026-10-24/HYP-069-01-regression-alternatives", "improved": true, "verified": true}}}

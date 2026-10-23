@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.567987406329944,
+  "candidate": {
+    "strategy": "masked_augmentation",
+    "parameters": {},
+    "family": "xgboost"
+  },
+  "learned_state": {},
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "outer_baseline_refits": 0,
+  "seconds": 92.43700000000536,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

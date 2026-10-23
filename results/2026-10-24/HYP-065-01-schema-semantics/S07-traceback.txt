@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 141, in main
+    detail=run_case(case,output/'cases'/case);record={'id':case,'name':name,'status':'passed','detail':detail}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 118, in run_case
+    if actual!=original:raise AssertionError(f'Identifier parsing lost original representation: expected={original!r}, actual={actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Identifier parsing lost original representation: expected=['0007', '0012', '0100'], actual=['7', '12', '100']

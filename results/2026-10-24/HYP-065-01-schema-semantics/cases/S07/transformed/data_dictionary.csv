@@ -1,0 +1,5 @@
+feature,role,dtype
+record_id,id,str
+signal,feature,float
+kind,feature,category
+target,target,float

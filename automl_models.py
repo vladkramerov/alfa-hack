@@ -13,7 +13,7 @@ def canonical_candidate(candidate):
     result=dict(candidate)
     result['parameters']=dict(candidate.get('parameters',{}))
     strategy=result.get('strategy')
-    if strategy in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking'}:
+    if strategy in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking','temporal_profile_memory'}:
         from automl_combo_policy import canonical_combo
         return canonical_combo(result)
     if strategy in ['group_experts','macro_f1_calibrated']:
@@ -146,6 +146,10 @@ class Encoder(TransformerMixin,BaseEstimator):
 
 def build_pipeline(kind,candidate,threads=4):
     candidate=canonical_candidate(candidate)
+    if candidate.get('strategy')=='temporal_profile_memory':
+        if kind!='regression':raise ValueError('Temporal profile memory requires regression')
+        from automl_temporal_memory import TemporalProfileModel
+        return TemporalProfileModel(candidate,threads)
     if candidate.get('strategy') in {'reg_feature_experts','reg_convex_blend','target_tail_mixture'}:
         if kind!='regression':raise ValueError('Regression strategy cannot solve classification')
         from automl_reg_combo import build_reg_combo

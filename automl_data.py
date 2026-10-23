@@ -131,6 +131,24 @@ def resolve_paths(task_path,text):
     return result
 
 
+def _declared_string_columns(dictionary):
+    if 'feature' not in dictionary or 'dtype' not in dictionary:return set()
+    kinds=dictionary['dtype'].astype(str).str.strip().str.lower()
+    lexical=kinds.str.match(r'^(?:str|string|text|object|unicode|category|categorical)(?:\[.*\])?$')
+    return set(dictionary.loc[lexical,'feature'])
+
+
+def _raw_columns(path,columns):
+    # Restrict lexical rereads to semantic ID/label columns; numeric features
+    # retain pandas' historical parsing, missing-value and dtype behavior.
+    return pd.read_csv(path,usecols=columns,dtype=str,keep_default_na=False)
+
+
+def _lexical_loss(parsed,raw):
+    # A parser-inferred bool is never an opaque identifier/class codec.
+    return pd.api.types.is_bool_dtype(parsed) or not parsed.astype(str).equals(raw.astype(str))
+
+
 def load_task(path):
     path=Path(path).resolve(); text=path.read_text(encoding='utf-8-sig')
     paths=resolve_paths(path,text)
@@ -138,18 +156,42 @@ def load_task(path):
     extra=[c for c in train if c not in test]
     if len(extra)!=1: raise ValueError('Expected one training target absent from test')
     target=extra[0]
+    lower=text.lower();y=train[target]
+    classification=bool(re.search(r'classif|классифик',lower)) or not pd.api.types.is_numeric_dtype(y)
+    if re.search(r'regression|регресс',lower) and pd.api.types.is_numeric_dtype(y):classification=False
+    metric=infer_metric(text,default='macro_f1' if classification else 'rmse')
+    kind='classification' if metric in CLASSIFICATION_METRICS else 'regression'
+    lexical=_declared_string_columns(dictionary)
+    if kind=='classification':
+        raw=_raw_columns(paths['train.csv'],[target])[target]
+        # Empty CSV fields remain missing, while an explicitly string-typed
+        # literal such as 'NA' is a valid class name.
+        if raw.str.strip().eq('').any() or (target not in lexical and y.isna().any()):
+            raise ValueError('Training target contains missing values')
+        if target in lexical or _lexical_loss(y,raw):train[target]=raw
     common=[c for c in sample if c in test and c in train]
+    if common:
+        raw_test=_raw_columns(paths['test.csv'],common)
+        raw_sample=_raw_columns(paths['sample_submission.csv'],common)
+        restore=[]
+        for column in common:
+            # Restore before discovery: numeric inference can collapse unique
+            # opaque IDs such as '01' and '1' into the same integer.
+            possible_id=raw_sample[column].equals(raw_test[column]) and raw_test[column].is_unique
+            if possible_id and (column in lexical or _lexical_loss(test[column],raw_test[column])
+                                or _lexical_loss(sample[column],raw_sample[column])):
+                restore.append(column)
+        if restore:
+            raw_train=_raw_columns(paths['train.csv'],restore)
+            for column in restore:
+                train[column]=raw_train[column];test[column]=raw_test[column];sample[column]=raw_sample[column]
     ids=[c for c in common if sample[c].equals(test[c]) and test[c].is_unique]
     if 'role' in dictionary and 'feature' in dictionary:
         declared=dictionary.loc[dictionary.role.astype(str).str.lower().isin(['id','identifier']), 'feature'].tolist()
         ids=[c for c in ids if c in declared] or ids
     if len(ids)>1: raise ValueError('Ambiguous identifier')
     identifier=ids[0] if ids else None
-    lower=text.lower(); y=train[target]
-    classification=bool(re.search(r'classif|классифик',lower)) or not pd.api.types.is_numeric_dtype(y)
-    if re.search(r'regression|регресс',lower) and pd.api.types.is_numeric_dtype(y): classification=False
-    metric=infer_metric(text,default='macro_f1' if classification else 'rmse')
-    kind='classification' if metric in CLASSIFICATION_METRICS else 'regression'
+    y=train[target]
     if y.isna().any(): raise ValueError('Training target contains missing values')
     expected=[c for c in train if c not in [target,identifier]]
     if set(expected)!=set(test.columns)-({identifier} if identifier else set()):
@@ -248,10 +290,35 @@ def fallback_submission(bundle):
     return make_submission(bundle,pred)
 
 
+def read_submission(bundle,path):
+    """Read a submission using the task's ID/label codec, then validate it.
+
+    Dtype inference remains available for numeric regression/probability values;
+    opaque IDs and class labels are read literally, including 'NA' and zeroes.
+    """
+    dtypes={}
+    if bundle.id_column:
+        column=bundle.id_column;reference=bundle.test[column]
+        dtypes[column]=str if pd.api.types.is_object_dtype(reference) or pd.api.types.is_string_dtype(reference) else reference.dtype
+    outputs=[column for column in bundle.sample if column!=bundle.id_column]
+    numeric=bundle.task_type=='regression' or bundle.metric in ['roc_auc','log_loss'] or len(outputs)>1
+    if not numeric:
+        labels=bundle.y
+        dtypes[outputs[0]]=str if pd.api.types.is_object_dtype(labels) or pd.api.types.is_string_dtype(labels) else labels.dtype
+    frame=pd.read_csv(path,dtype=dtypes or None,keep_default_na=False)
+    if numeric:
+        for column in outputs:
+            if column in frame:
+                if pd.api.types.is_bool_dtype(frame[column]):raise ValueError('Boolean text is not a numeric prediction')
+                frame[column]=pd.to_numeric(frame[column],errors='raise')
+    validate_submission(bundle,frame)
+    return frame
+
+
 def atomic_submission(bundle,frame,destination=None):
     validate_submission(bundle,frame)
     target=Path(destination) if destination else bundle.task_path.parent/'submission.csv'
     temporary=target.with_name(target.name+'.tmp')
     frame.to_csv(temporary,index=False)
-    validate_submission(bundle,pd.read_csv(temporary))
+    read_submission(bundle,temporary)
     os.replace(temporary,target)
