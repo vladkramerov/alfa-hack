@@ -47,3 +47,28 @@ Regression inner: окна `<4 → 4` и `<3 → 3`, веса 0.65/0.35, клю�
 `.env.local` ignored, загружен только в окружение локального проверочного процесса. Ключ не печатался. В original baseline нет значений endpoint/model ID: используются OPENAI_* environment. Локально отсутствуют OPENAI_BASE_URL/OPENAI_MODEL; live API не вызывался и параметры не придуманы. [Статус](../results/local-api-check.json). Платформенный код не читает `.env.local`, не использует сторонний API, не требует dotenv/mcp; официальный requirements неизменён.
 
 Далее: (1) независимая проверка signed-log ET и замороженной search policy на новом временном окне без выбора по старому outer; (2) универсальное выделение повторных объектов для causal panel через стабильность ключа, сравнение с H70…H74 вместо повторения их fit; (3) ортогональная H48/H75 проверка shrinkage-калибровки редких классов на disjoint OOF с фиксированным бюджетом и групповым split.
+
+## Восстановление public score — 24.10.2026
+
+**ERRATUM к предыдущей итерации:** temporal search возвращал позиции внутри outer_fit без отображения в исходный train. В первом search-fit регрессии находились 3556 outer-строк года5, в search-valid499; во втором3041/515. Старые regression inner keys4b4a5483…/52607b5d… и заявления о независимости audit невалидны. Метрики реальных fit сохранены как exploratory. Исправленные keysf4bcbd8b…/b946d200… и составы годов: [диагноз](../results/score-recovery/temporal-index-diagnosis.json). Новый тест перемешивает строки и запрещает search/audit overlap. Классификационный mapping изначально был глобальным.
+
+Score13.7676, место118/186, top10=26.6404 сообщены пользователем; версия загруженного ZIP неизвестна (пользователь подтвердил). [Локальные SHA](../results/score-recovery/submission-provenance.json) ни одному score не приписаны. Нельзя установить виновную задачу или объяснить конкретный платформенный запуск без его SHA/логов.
+
+Доказанные ограничения кода: temporal-index ошибка; резервный CSV от более старого/меньшего окна; subsample LightGBM без subsample_freq; default12 trials при трёхчасовом бюджете; отсутствие автоматической causal history. Исправлены mapping, checkpoint крупнейшего fit и bagging; default36/hard64, сильный старт до LLM, до4 планов. Сбой метрики/submission/refit конкретного исторического запуска не доказан.
+
+Публично изучены [MUCG9](https://github.com/MUCG9/alfa-hack-automl), [hilhool](https://github.com/hilhool/alfa-automl-agent), а также найденные GitHub-поиском [NolReaction](https://github.com/NolReaction/alfa-automl-agent), [ilove4fak](https://github.com/alfahack-ilove4fak/alfahack-automl). [Commit/public visibility/license](../results/score-recovery/external-sources.json): все публичны, явная лицензия не найдена, чужой код не переносился. Связь с указанными leaderboard-командами не подтверждена; целевые web/GitHub запросы не дали такой связи.
+
+Пять применимых идей:
+1. Train-only entity discovery и strictly-past history с cold fallback (hilhool/entity.py, NolReaction/history_discovery.py). Наша реализация выбирает ключ без test/target, по recurrence и collision; не фиксирует колонки H70…H74.
+2. Metric-aware stopping на внутреннем grouped split и полный refit (MUCG9/model_utils.py, NolReaction/boosting_candidate.py). Внешний audit не выбирает iteration count.
+3. Выравненная композиция probability caches (MUCG9/ensemble_cache.py). Наша новая абляция — фиксированное geometric pooling, без OOF coefficients или повторного H37 threshold search; точное равенство обычному refit проверено при0 новых fit.
+4. Feedback-first контекст, reasoning-disable и JSON wrappers (MUCG9/agent_runner.py, hilhool/llm.py). Авторы сообщают reasoning-only/empty content и эффект reasoning.enabled=false; наш endpoint не проверен. Флаг запрашивается только для Qwen; один bounded400/422 retry без него. Мысли модели не сохраняются.
+5. Обязательный сильный старт и бюджет финального fit (MUCG9 runner, ilove4fak/runtime/budget.py). Существующие deadline/fallback сохранены; сильные рецепты запускаются до LLM.
+
+Локально ключ присутствует, BASE_URL/MODEL отсутствуют;0 платных вызовов. Чужие адрес/ID не подставлялись. [API status](../results/score-recovery/api-config.json).
+
+Абляции:
+- Исправленные period4/3, веса.65/.35: старый Cat/expert рецепт RMSE49.357414; ET log48.230237; auto-history LGB42.893677; auto-history ET40.499557. ET period4:44.950082→33.056728; period3:54.321953→54.321953 (ключ не найден, cold fallback). Frozen ET outer36.129126 против текущего ET42.282936; Sergey H73=34.520269 сильнее. [Данные](../results/score-recovery/panel.json):9 model fit,92.39с,peak873.4MB. Новые контроли необходимы: старые inner были несопоставимы.
+- Classification key64e73424…: XGB frequency/prior.3 inner.636708318/outer.637337946. Native Cat+stopping inner.556644350 — отвергнут; strong LGB+stopping.640445243; arithmetic XGB/LGB.642861247; geometric.644824653. Frozen geometric outer.644093520; Ivan H48=.649531162 сильнее. [Данные](../results/score-recovery/classification.json):158.06с, включая внутренние stopping probes и outer. Локальные prediction/probability NPZ сохранены по путям в JSON, не включены в Git/ZIP.
+
+75 tests passed;9 clean-room passed: [unit](../results/score-recovery/unit.xml), [package](../results/score-recovery/cleanroom.json). Frozen CLI E2E старой/новой политики на masked outer test и обеих исходных задачах выполняется; итог будет добавлен после завершения. На Boosters ничего не отправлялось.

@@ -1,0 +1,220 @@
+{
+  "metric": "rmse",
+  "data_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "control_inner": 49.35741440808056,
+  "control_outer": 43.70058963959562,
+  "team_best_outer": 34.520268654585415,
+  "recipes": [
+    {
+      "candidate": {
+        "family": "catboost",
+        "catboost_encoding": "onehot",
+        "hypothesis": "Measured train/test covariate shift: test removal of severely shifted numeric predictors on the untouched search fold.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [
+          "august_avg_temp_c",
+          "cooling_degree_days_c",
+          "june_max_temp_c"
+        ],
+        "frequency_columns": [],
+        "expert_column": "State_Factor",
+        "expert_min_rows": 1396,
+        "max_expert_groups": 4,
+        "parameters": {
+          "depth": 6,
+          "iterations": 500,
+          "l2_leaf_reg": 3.0,
+          "learning_rate": 0.05
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "folds": [
+        {
+          "score": 44.32527104609052,
+          "weight": 0.65,
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "fit_seconds": 1.8944854169967584,
+          "panel": null
+        },
+        {
+          "score": 58.70282350891919,
+          "weight": 0.35,
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "fit_seconds": 0.9918962499941699,
+          "panel": null
+        }
+      ],
+      "score": 49.35741440808056
+    },
+    {
+      "candidate": {
+        "family": "extra_trees",
+        "target_transform": "log1p",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "folds": [
+        {
+          "score": 44.95008199915953,
+          "weight": 0.65,
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "fit_seconds": 11.879890166979749,
+          "panel": null
+        },
+        {
+          "score": 54.32195266208476,
+          "weight": 0.35,
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "fit_seconds": 3.68263179200585,
+          "panel": null
+        }
+      ],
+      "score": 48.23023673118336
+    },
+    {
+      "candidate": {
+        "family": "lightgbm",
+        "panel_time_column": "Year_Factor",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 500,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 2.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "folds": [
+        {
+          "score": 33.755725737164745,
+          "weight": 0.65,
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "fit_seconds": 4.455252415995346,
+          "panel": {
+            "key_columns": [
+              "floor_area",
+              "year_built"
+            ],
+            "cross_period_coverage": 0.7522444907953206,
+            "within_period_uniqueness": 0.9784166137662103,
+            "uses_test_for_discovery": false
+          }
+        },
+        {
+          "score": 59.864157665145775,
+          "weight": 0.35,
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "fit_seconds": 2.0254789579776116,
+          "panel": {
+            "key_columns": []
+          }
+        }
+      ],
+      "score": 42.89367691195811
+    },
+    {
+      "candidate": {
+        "family": "extra_trees",
+        "panel_time_column": "Year_Factor",
+        "target_transform": "log1p",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "folds": [
+        {
+          "score": 33.056728433725006,
+          "weight": 0.65,
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "fit_seconds": 16.80646062499727,
+          "panel": {
+            "key_columns": [
+              "floor_area",
+              "year_built"
+            ],
+            "cross_period_coverage": 0.7522444907953206,
+            "within_period_uniqueness": 0.9784166137662103,
+            "uses_test_for_discovery": false
+          }
+        },
+        {
+          "score": 54.321952662084755,
+          "weight": 0.35,
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "fit_seconds": 3.698673792008776,
+          "panel": {
+            "key_columns": []
+          }
+        }
+      ],
+      "score": 40.49955691365092
+    }
+  ],
+  "fit_seconds": 92.39219016695279,
+  "frozen_selection": {
+    "family": "extra_trees",
+    "panel_time_column": "Year_Factor",
+    "target_transform": "log1p",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "max_depth": 24,
+      "max_features": 0.8,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "n_estimators": 200
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "selected_outer": 36.12912637828505,
+  "outer_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "outer_panel": {
+    "key_columns": [
+      "floor_area",
+      "year_built"
+    ],
+    "cross_period_coverage": 0.8694,
+    "within_period_uniqueness": 0.9782285714285714,
+    "uses_test_for_discovery": false
+  },
+  "peak_rss_mb": 873.390625,
+  "predictions_local": "/private/tmp/alfa-score-recovery-panel",
+  "status": "completed"
+}

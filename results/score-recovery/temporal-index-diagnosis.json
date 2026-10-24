@@ -1,0 +1,57 @@
+[
+  {
+    "declared": "temporal:Year_Factor:train_last=4:test_after_train",
+    "old_key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+    "correct_key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+    "old_fit_overlaps_outer": 3556,
+    "old_valid_overlaps_outer": 499,
+    "old_fit_periods": {
+      "2": 9044,
+      "3": 5485,
+      "5": 3556,
+      "1": 2104,
+      "4": 1865
+    },
+    "old_valid_periods": {
+      "4": 7850,
+      "3": 4570,
+      "5": 499,
+      "2": 14,
+      "1": 13
+    },
+    "correct_fit_periods": {
+      "3": 10879,
+      "2": 9058,
+      "1": 2117
+    },
+    "correct_valid_periods": {
+      "4": 12946
+    }
+  },
+  {
+    "declared": "temporal:Year_Factor:train_last=3:test_after_train",
+    "old_key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+    "correct_key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+    "old_fit_overlaps_outer": 3041,
+    "old_valid_overlaps_outer": 515,
+    "old_fit_periods": {
+      "2": 4989,
+      "5": 3041,
+      "1": 2104,
+      "4": 1041
+    },
+    "old_valid_periods": {
+      "3": 5485,
+      "2": 4055,
+      "4": 824,
+      "5": 515
+    },
+    "correct_fit_periods": {
+      "2": 9058,
+      "1": 2117
+    },
+    "correct_valid_periods": {
+      "3": 10879
+    }
+  }
+]

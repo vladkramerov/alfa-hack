@@ -1,0 +1,28 @@
+{
+  "reported_score": 13.7676,
+  "rank": [
+    118,
+    186
+  ],
+  "top10_reference_score": 26.6404,
+  "score_source": "user report 2026-10-24",
+  "matching_run_version": "unknown; user confirmed unknown",
+  "known_local_archives": [
+    {
+      "path": "/Users/maxchibisov/Projects/HACKS/alfa-hack/dist/alfa_autoresearch_submission.zip",
+      "sha256": "c25be92e3cb0d7644d4c7310116c8a1c5cada3e3cb8512b04960760eefd46495",
+      "bytes": 46306
+    },
+    {
+      "path": "/Users/maxchibisov/Projects/HACKS/alfa-hack/dist/alfa_autoresearch_be9d9ae.zip",
+      "sha256": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+      "bytes": 41690
+    },
+    {
+      "path": "/Users/maxchibisov/Projects/HACKS/alfa-ultimate/dist/alfa_autoresearch_submission.zip",
+      "sha256": "38f044709e619ac35c593baea533db1b50d0f971d0b427a86b5fe1aa2c96800c",
+      "bytes": 40652
+    }
+  ],
+  "uploaded_to_boosters_this_iteration": false
+}

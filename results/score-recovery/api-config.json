@@ -1,0 +1,8 @@
+{
+  "present": {
+    "OPENAI_API_KEY": true,
+    "OPENAI_BASE_URL": false,
+    "OPENAI_MODEL": false
+  },
+  "live_calls": 0
+}

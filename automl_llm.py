@@ -1,6 +1,7 @@
 """Small bounded OpenAI-compatible research client; no default credentials/endpoint."""
 import json
 import os
+import re
 import time
 import urllib.request
 
@@ -40,7 +41,10 @@ def parse_action(payload):
                 return None
             action = json.loads(function['arguments'])
         else:
-            action = json.loads(message.get('content') or '')
+            content = message.get('content') or ''
+            content = re.sub(r'<think>.*?</think>', '', content, flags=re.S).strip()
+            content = re.sub(r'^```(?:json)?\s*|\s*```$', '', content).strip()
+            action = json.loads(content)
         if isinstance(action, dict) and (action.get('family') or action.get('stop') is True):
             return action
     except (ValueError, TypeError, KeyError, IndexError):
@@ -61,6 +65,9 @@ def propose(profile, observations, timeout=25):
         'parameters': {'type': 'object'},
         'target_transform': {'enum': ['none', 'log1p']},
         'numeric_view': {'enum': ['none', 'signed_log'], 'description': 'Append sign(x)*log1p(abs(x)) views to at most 128 numeric columns, retaining raw features. Measured benefit for log-target ExtraTrees regression; validate on this task before selecting.'},
+        'panel_time_column': {'type': 'string', 'description': 'Regression only, an actual temporal column: discover recurrent entities using fit features and add strictly-past target history. No fixed entity columns or test statistics.'},
+        'early_stopping': {'type': 'boolean', 'description': 'CatBoost/LightGBM: grouped train-only stopping probe and refit all fitting rows. Classification stopping metric is Macro F1; use for Macro F1 tasks.'},
+        'blend_mode': {'enum': ['arithmetic', 'geometric'], 'description': 'Geometric probability pooling applies only to classification; members are aligned by class value.'},
         'catboost_encoding': {'enum': ['onehot', 'native'], 'description': 'CatBoost only: compare train-only one-hot encoding vs native categorical statistics.'},
         'feature_operations': {'type': 'array', 'maxItems': 24, 'items': {'type': 'object'},
             'description': 'Ordered row-wise operations {op,name,left,right}; op add/sub/mul/div/log1p/abs. left/right are existing numeric column names. log1p clips negatives to zero; division replaces zero denominators with missing. Generates actual Python. No free Python or I/O.'},
@@ -102,18 +109,33 @@ def propose(profile, observations, timeout=25):
         {'role': 'user', 'content': research_context(profile, observations)}],
         'tools': [schema], 'tool_choice': 'auto', 'max_tokens': 2200, 'temperature': .2}).encode()
     started = time.monotonic()
+    attempts = 0
     try:
-        request = urllib.request.Request(url, data=body,
-            headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
-        with urllib.request.urlopen(request, timeout=max(.05, timeout)) as response:
-            payload = json.loads(response.read(1_000_001))
+        request_data = json.loads(body)
+        if 'qwen' in model.lower():
+            request_data['reasoning'] = {'enabled': False}
+        for compatibility in range(2):
+            request = urllib.request.Request(url, data=json.dumps(request_data).encode(),
+                headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
+            attempts += 1
+            try:
+                with urllib.request.urlopen(request, timeout=max(.05, timeout - (time.monotonic() - started))) as response:
+                    payload = json.loads(response.read(1_000_001))
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code not in (400, 422) or 'reasoning' not in request_data or time.monotonic() - started >= timeout - .1:
+                    raise
+                request_data.pop('reasoning')
         action = parse_action(payload)
-        return action, {'status': 'ok' if action else 'invalid_response', 'attempts': 1,
+        first = (payload.get('choices') or [{}])[0] if isinstance(payload, dict) else {}
+        return action, {'status': 'ok' if action else 'invalid_response', 'attempts': attempts,
+            'finish_reason': first.get('finish_reason') if isinstance(first, dict) else None,
+            'reasoning_disabled_requested': 'reasoning' in request_data,
             'usage': payload.get('usage', {}) if isinstance(payload, dict) else {},
             'estimated_tokens': len(body) // 4 + 2200, 'seconds': time.monotonic() - started}
     except Exception as exc:
         # Do not serialize exception messages: HTTP clients may include credentials or URLs.
-        return None, {'status': 'failed', 'error': type(exc).__name__, 'attempts': 1,
+        return None, {'status': 'failed', 'error': type(exc).__name__, 'attempts': attempts,
             'estimated_tokens': len(body) // 4 + 2200, 'seconds': time.monotonic() - started}
 
 

@@ -213,7 +213,7 @@ def run(manifest):
     try:
         bundle = load_task(request['task_path'])
         raw_candidate = request['candidate']
-        if isinstance(raw_candidate, dict) and 'reuse_probabilities' in raw_candidate:
+        if isinstance(raw_candidate, dict) and any(k in raw_candidate for k in ('reuse_probabilities', 'reuse_members')):
             raise ValueError('reuse_probabilities is an engine request field, not a candidate field')
         candidate = canonical_candidate(request['candidate'])
         model = None
@@ -233,7 +233,35 @@ def run(manifest):
             cache_eligible = (request['mode'] == 'evaluate' and bundle.task_type == 'classification'
                               and bundle.metric not in _PROBABILITY_METRICS and candidate['family'] != 'blend')
             reuse_path = request.get('reuse_probabilities') if cache_eligible else None
-            if reuse_path:
+            if request.get('reuse_members') and candidate['family'] == 'blend' and request['mode'] == 'evaluate':
+                paths = request['reuse_members']
+                if len(paths) != len(candidate['members']):
+                    raise ValueError('Cached blend member count mismatch')
+                priors = train_priors(fit_labels, bundle.classes)
+                valid_probabilities = np.zeros((len(valid), len(bundle.classes)))
+                test_probabilities = np.zeros((len(bundle.X_test), len(bundle.classes)))
+                audits = []
+                for path, member, weight in zip(paths, candidate['members'], candidate['weights']):
+                    vp, tp, member_priors, code, audit = _load_probability_cache(
+                        path, member, fit, valid, test_positions, bundle.classes, priors, output.resolve().parent)
+                    if not np.allclose(member_priors, priors):
+                        raise ValueError('Cached blend priors mismatch')
+                    if candidate.get('blend_mode') == 'geometric':
+                        vp, tp = np.log(np.maximum(vp, 1e-9)), np.log(np.maximum(tp, 1e-9))
+                    valid_probabilities += weight * vp
+                    test_probabilities += weight * tp
+                    audits.append(audit)
+                    generated += code + '\n' if code else ''
+                if candidate.get('blend_mode') == 'geometric':
+                    valid_probabilities = np.exp(valid_probabilities - valid_probabilities.max(axis=1, keepdims=True))
+                    test_probabilities = np.exp(test_probabilities - test_probabilities.max(axis=1, keepdims=True))
+                valid_probabilities /= valid_probabilities.sum(axis=1, keepdims=True)
+                test_probabilities /= test_probabilities.sum(axis=1, keepdims=True)
+                prediction = class_decisions(valid_probabilities, bundle.classes, priors, candidate.get('decision_power', 0))
+                test_prediction = class_decisions(test_probabilities, bundle.classes, priors, candidate.get('decision_power', 0))
+                model_audit = {'cached_blend_members': audits}
+                training_reused = True
+            elif reuse_path:
                 (valid_probabilities, test_probabilities, priors,
                  generated, cached_audit) = _load_probability_cache(
                     reuse_path, candidate, fit, valid, test_positions, bundle.classes,

@@ -1,0 +1,458 @@
+{
+  "control_inner": 0.6367083180924042,
+  "control_outer": 0.6373379463394646,
+  "data_hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "search_key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+  "recipes": [
+    {
+      "candidate": {
+        "family": "catboost",
+        "early_stopping": true,
+        "catboost_encoding": "native",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "depth": 8,
+          "iterations": 1200,
+          "l2_leaf_reg": 3.0,
+          "learning_rate": 0.05
+        },
+        "class_weight_power": 0.35,
+        "decision_power": 0
+      },
+      "score": 0.5566443497708232,
+      "fit_seconds": 84.1541130419937,
+      "stopping": {
+        "fit_rows": 45919,
+        "valid_rows": 10788,
+        "iterations": 180,
+        "split": "train-only grouped seed73",
+        "probe_fit_rows": 45919
+      }
+    },
+    {
+      "candidate": {
+        "family": "lightgbm",
+        "early_stopping": true,
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 0.85,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 10,
+          "n_estimators": 1200,
+          "num_leaves": 63,
+          "reg_alpha": 0.0,
+          "reg_lambda": 3.0,
+          "subsample": 0.8
+        },
+        "class_weight_power": 0.2,
+        "decision_power": 0
+      },
+      "score": 0.6404452430159495,
+      "fit_seconds": 35.11563508401741,
+      "stopping": {
+        "fit_rows": 45919,
+        "valid_rows": 10788,
+        "iterations": 155,
+        "split": "train-only grouped seed73",
+        "probe_fit_rows": 45919
+      }
+    }
+  ],
+  "fit_seconds": 158.0560470430064,
+  "ensembles": [
+    {
+      "score": 0.601276607586139,
+      "candidate": {
+        "family": "blend",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "catboost",
+            "early_stopping": true,
+            "catboost_encoding": "native",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "depth": 8,
+              "iterations": 1200,
+              "l2_leaf_reg": 3.0,
+              "learning_rate": 0.05
+            },
+            "class_weight_power": 0.35,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      }
+    },
+    {
+      "score": 0.6291885621819023,
+      "candidate": {
+        "family": "blend",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "blend_mode": "geometric",
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "catboost",
+            "early_stopping": true,
+            "catboost_encoding": "native",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "depth": 8,
+              "iterations": 1200,
+              "l2_leaf_reg": 3.0,
+              "learning_rate": 0.05
+            },
+            "class_weight_power": 0.35,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      }
+    },
+    {
+      "score": 0.6428612466075181,
+      "candidate": {
+        "family": "blend",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "lightgbm",
+            "early_stopping": true,
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "colsample_bytree": 0.85,
+              "learning_rate": 0.05,
+              "max_depth": -1,
+              "min_child_samples": 10,
+              "n_estimators": 1200,
+              "num_leaves": 63,
+              "reg_alpha": 0.0,
+              "reg_lambda": 3.0,
+              "subsample": 0.8
+            },
+            "class_weight_power": 0.2,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      }
+    },
+    {
+      "score": 0.6448246526268696,
+      "candidate": {
+        "family": "blend",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "blend_mode": "geometric",
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "lightgbm",
+            "early_stopping": true,
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "colsample_bytree": 0.85,
+              "learning_rate": 0.05,
+              "max_depth": -1,
+              "min_child_samples": 10,
+              "n_estimators": 1200,
+              "num_leaves": 63,
+              "reg_alpha": 0.0,
+              "reg_lambda": 3.0,
+              "subsample": 0.8
+            },
+            "class_weight_power": 0.2,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      }
+    }
+  ],
+  "frozen_selection": {
+    "family": "blend",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "blend_mode": "geometric",
+    "members": [
+      {
+        "family": "xgboost",
+        "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      {
+        "family": "lightgbm",
+        "early_stopping": true,
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 0.85,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 10,
+          "n_estimators": 1200,
+          "num_leaves": 63,
+          "reg_alpha": 0.0,
+          "reg_lambda": 3.0,
+          "subsample": 0.8
+        },
+        "class_weight_power": 0.2,
+        "decision_power": 0
+      }
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "class_weight_power": 0,
+    "decision_power": 0.3
+  },
+  "selected_outer": 0.6440935196396932,
+  "outer_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "per_class": {
+    "Analysis": {
+      "precision": 0.5294117647058824,
+      "recall": 0.2132701421800948,
+      "f1-score": 0.30405405405405406,
+      "support": 211.0
+    },
+    "Backdoor": {
+      "precision": 0.4166666666666667,
+      "recall": 0.15822784810126583,
+      "f1-score": 0.22935779816513763,
+      "support": 158.0
+    },
+    "DoS": {
+      "precision": 0.3733407079646018,
+      "recall": 0.5648535564853556,
+      "f1-score": 0.44955044955044954,
+      "support": 1195.0
+    },
+    "Exploits": {
+      "precision": 0.7232310582341891,
+      "recall": 0.7029823493609252,
+      "f1-score": 0.7129629629629629,
+      "support": 3286.0
+    },
+    "Fuzzers": {
+      "precision": 0.6899504281207751,
+      "recall": 0.8325176726481783,
+      "f1-score": 0.7545588960078856,
+      "support": 1839.0
+    },
+    "Generic": {
+      "precision": 0.9989050095811661,
+      "recall": 0.9774979908920439,
+      "f1-score": 0.9880855672894665,
+      "support": 3733.0
+    },
+    "Normal": {
+      "precision": 0.9636291757264281,
+      "recall": 0.876010781671159,
+      "f1-score": 0.9177334337349398,
+      "support": 5565.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8816234498308907,
+      "recall": 0.7689282202556539,
+      "f1-score": 0.8214285714285714,
+      "support": 1017.0
+    },
+    "Shellcode": {
+      "precision": 0.5679012345679012,
+      "recall": 0.7796610169491526,
+      "f1-score": 0.6571428571428571,
+      "support": 118.0
+    },
+    "Worms": {
+      "precision": 0.7142857142857143,
+      "recall": 0.5263157894736842,
+      "f1-score": 0.6060606060606061,
+      "support": 19.0
+    },
+    "accuracy": 0.8164051105536433,
+    "macro avg": {
+      "precision": 0.6858945209684215,
+      "recall": 0.6400265368017514,
+      "f1-score": 0.6440935196396932,
+      "support": 17141.0
+    },
+    "weighted avg": {
+      "precision": 0.836458843870728,
+      "recall": 0.8164051105536433,
+      "f1-score": 0.821900570445742,
+      "support": 17141.0
+    }
+  },
+  "peak_rss_mb": 1623.953125,
+  "predictions_local": "/private/tmp/alfa-score-recovery-class",
+  "status": "completed"
+}

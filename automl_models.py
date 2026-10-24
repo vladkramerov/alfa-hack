@@ -88,6 +88,16 @@ def canonical_candidate(candidate):
     if family not in FAMILIES:
         raise ValueError('Unsupported model family')
     result = {'family': family}
+    stopping = candidate.get('early_stopping', False)
+    if not isinstance(stopping, bool) or stopping and family not in {'catboost', 'lightgbm'}:
+        raise ValueError('early_stopping supports CatBoost/LightGBM only')
+    if stopping:
+        result['early_stopping'] = True
+    if candidate.get('panel_time_column') is not None:
+        column = candidate['panel_time_column']
+        if not isinstance(column, str) or not column or len(column) > 128 or family == 'blend':
+            raise ValueError('Invalid panel_time_column')
+        result['panel_time_column'] = column
     view = candidate.get('numeric_view', 'none')
     if view not in {'none', 'rank', 'signed_log', 'projection', 'rank_projection'}:
         raise ValueError('Unsupported numeric_view')
@@ -126,6 +136,11 @@ def canonical_candidate(candidate):
     elif any(key in candidate for key in ('expert_min_rows', 'max_expert_groups')):
         raise ValueError('expert_min_rows and max_expert_groups require expert_column')
     if family == 'blend':
+        mode = candidate.get('blend_mode', 'arithmetic')
+        if mode not in {'arithmetic', 'geometric'}:
+            raise ValueError('Unsupported blend_mode')
+        if mode != 'arithmetic':
+            result['blend_mode'] = mode
         if (result['feature_operations'] or result['drop_columns'] or result['frequency_columns']
                 or result['target_transform'] != 'none' or candidate.get('class_weight_power', 0)
                 or expert_column is not None):
@@ -303,6 +318,8 @@ class CandidateModel:
     def __init__(self, kind, candidate, threads=4):
         self.kind = kind
         self.candidate = canonical_candidate(candidate)
+        if kind == 'regression' and self.candidate.get('blend_mode') == 'geometric':
+            raise ValueError('Geometric probability pooling requires classification')
         if kind == 'regression' and (self.candidate.get('class_weight_power', 0) or self.candidate.get('decision_power', 0)):
             raise ValueError('Class weighting and decision correction require classification')
         if kind != 'regression' and self.candidate.get('target_transform') != 'none':
@@ -359,9 +376,46 @@ class CandidateModel:
         out = self.numeric_view_.transform(out)
         return _clean_infinities(out.reindex(columns=self.columns_))
 
-    def fit(self, X, y):
+    def fit(self, X, y, eval_set=None):
         y_series = pd.Series(y, index=X.index if isinstance(X, pd.DataFrame) else None)
+        self.stopping_ = None
+        if self.candidate.get('early_stopping') and eval_set is None and len(X) >= 300:
+            from sklearn.model_selection import GroupShuffleSplit, StratifiedGroupKFold
+            groups = pd.util.hash_pandas_object(X, index=False).to_numpy()
+            if self.kind == 'classification':
+                fit, valid = next(StratifiedGroupKFold(5, shuffle=True, random_state=73).split(X, y_series, groups))
+                missing = set(y_series.iloc[valid]) - set(y_series.iloc[fit])
+                if missing:
+                    move = set(groups[np.flatnonzero(y_series.isin(missing).to_numpy())])
+                    valid = valid[~np.isin(groups[valid], list(move))]
+                    fit = np.setdiff1d(np.arange(len(X)), valid)
+            else:
+                fit, valid = next(GroupShuffleSplit(test_size=.2, random_state=73).split(X, y_series, groups))
+            if len(valid):
+                probe = CandidateModel(self.kind, {**self.candidate, 'early_stopping': False}, self.threads)
+                probe.fit(X.iloc[fit], y_series.iloc[fit], eval_set=(X.iloc[valid], y_series.iloc[valid]))
+                if self.candidate['family'] == 'catboost':
+                    count = probe.model_.get_best_iteration() + 1
+                    parameter = 'iterations'
+                else:
+                    count = probe.model_.best_iteration_
+                    parameter = 'n_estimators'
+                count = max(50, min(self.candidate['parameters'][parameter], int(count or 50)))
+                self.effective_parameters_ = {**self.candidate['parameters'], parameter: count}
+                self.stopping_ = {'fit_rows': len(fit), 'valid_rows': len(valid), 'iterations': count,
+                                  'split': 'train-only grouped seed73', 'probe_fit_rows': probe.audit_['fit_rows']}
+        self.panel_ = None
+        if self.candidate.get('panel_time_column'):
+            if self.kind != 'regression':
+                raise ValueError('Causal panel currently supports regression only')
+            from automl_panel import CausalPanelFeatures
+            self.panel_ = CausalPanelFeatures(self.candidate['panel_time_column']).fit(X, y_series)
+            X = self.panel_.transform(X)
         Xf = self._prepare_fit(X)
+        if self.panel_ is not None:
+            self.audit_['causal_panel'] = getattr(self.panel_, 'audit_', {'key_columns': []})
+        if self.stopping_ is not None:
+            self.audit_['early_stopping'] = self.stopping_
         family = self.candidate['family']
         if family == 'blend':
             self.members_ = [build_pipeline(self.kind, m, self.threads).fit(X, y_series) for m in self.candidate['members']]
@@ -412,12 +466,41 @@ class CandidateModel:
         if (self.candidate['family'] == 'catboost' and self.categorical_columns_
                 and self.candidate['catboost_encoding'] == 'native'):
             kwargs['cat_features'] = self.categorical_columns_
+        if eval_set is not None:
+            valid_X, valid_y = eval_set
+            if self.panel_ is not None:
+                valid_X = self.panel_.transform(valid_X)
+            valid_matrix = self.preprocessor_.transform(self._prepare(valid_X))
+            if self.is_regression_:
+                valid_target = np.asarray(valid_y, float)
+                if self.candidate.get('target_transform') == 'log1p':
+                    valid_target = np.log1p(valid_target)
+            else:
+                valid_target = np.asarray([self.label_to_index_[_class_key(v)] for v in valid_y])
+            kwargs['eval_set'] = (valid_matrix, valid_target) if family == 'catboost' else [(valid_matrix, valid_target)]
+            if family == 'catboost':
+                if not self.is_regression_:
+                    metric = 'TotalF1:average=Macro'
+                    if self.candidate.get('class_weight_power', 0):
+                        metric += ';use_weights=false'
+                    self.model_.set_params(eval_metric=metric)
+                kwargs.update(early_stopping_rounds=60, use_best_model=True, verbose=False)
+            else:
+                import lightgbm as lgb
+                kwargs['callbacks'] = [lgb.early_stopping(60, verbose=False)]
+                if not self.is_regression_:
+                    from sklearn.metrics import f1_score
+                    def macro_f1(actual, probabilities):
+                        labels = (probabilities > .5).astype(int) if probabilities.ndim == 1 else probabilities.argmax(axis=1)
+                        return 'macro_f1', f1_score(actual, labels, labels=np.arange(len(self.classes_)), average='macro', zero_division=0), True
+                    self.model_.set_params(metric='None')
+                    kwargs['eval_metric'] = macro_f1
         self.model_.fit(matrix, y_fit, **kwargs)
         return self
 
     def _build_estimator(self, X, y):
         family = self.candidate['family']
-        params = self.candidate.get('parameters', {})
+        params = getattr(self, 'effective_parameters_', self.candidate.get('parameters', {}))
         numeric = _numeric_frame(X)
         categorical = [c for c in X if c not in numeric]
         self.categorical_columns_ = categorical
@@ -445,6 +528,7 @@ class CandidateModel:
             model = model_cls(n_estimators=params.get('n_estimators', 500), max_depth=params.get('max_depth', -1),
                 learning_rate=params.get('learning_rate', .05), num_leaves=params.get('num_leaves', 31),
                 min_child_samples=params.get('min_child_samples', 20), subsample=params.get('subsample', 1.0),
+                subsample_freq=1 if params.get('subsample', 1.0) < 1.0 else 0,
                 colsample_bytree=params.get('colsample_bytree', 1.0), reg_lambda=params.get('reg_lambda', 0.0),
                 reg_alpha=params.get('reg_alpha', 0.0), n_jobs=self.threads, random_state=42, verbosity=-1)
             return model, _NativeFrame(frame, categorical)
@@ -479,6 +563,8 @@ class CandidateModel:
         return model, pre
 
     def _matrix(self, X):
+        if self.panel_ is not None:
+            X = self.panel_.transform(X)
         prepared = self._prepare(X)
         if self.family_ in {'catboost', 'lightgbm'}:
             return self.preprocessor_.transform(prepared)
@@ -503,11 +589,15 @@ class CandidateModel:
             raise AttributeError('Regression candidates do not expose predict_proba')
         if self.candidate['family'] == 'blend':
             result = np.zeros((len(X), len(self.classes_)), dtype=float)
+            geometric = self.candidate.get('blend_mode') == 'geometric'
             for weight, model in zip(self.candidate['weights'], self.members_):
                 probs = model.predict_proba(X)
                 source = list(map(_class_key, model.classes_))
                 target = list(map(_class_key, self.classes_))
-                result += weight * probs[:, [source.index(c) for c in target]]
+                aligned = probs[:, [source.index(c) for c in target]]
+                result += weight * (np.log(np.maximum(aligned, 1e-9)) if geometric else aligned)
+            if geometric:
+                result = np.exp(result - result.max(axis=1, keepdims=True))
         else:
             raw = np.asarray(self.model_.predict_proba(self._matrix(X)), dtype=float)
             result = np.zeros((len(X), len(self.classes_)), dtype=float)

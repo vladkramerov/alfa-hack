@@ -63,6 +63,7 @@ def profile_data(bundle, fit, validation):
         'target_skew': float(y.skew()) if bundle.task_type == 'regression' and len(y) > 2 and np.isfinite(y.skew()) else 0.,
         'classes': list(bundle.classes) if bundle.classes else None,
         'positive_class': bundle.positive_class,
+        'time_column': validation.split(':')[1] if validation.startswith('temporal:') else None,
         'validation_warning': 'Search split is reused adaptively; audit targets are withheld until proposals stop.'}
 
 
@@ -99,10 +100,30 @@ def offline_proposal(profile, observations, seen):
             profile['shape'][1] > max(20, profile['shape'][0] * .03)):
         proposals.append({'family': 'linear',
             'hypothesis': 'Fit-only linear association or feature-to-row ratio justifies a cheap regularized linear comparison.'})
+    if not classification and profile.get('time_column'):
+        proposals.extend([
+            {'family': 'extra_trees', 'target_transform': 'log1p' if profile['target_min'] > -1 else 'none',
+             'panel_time_column': profile['time_column'],
+             'hypothesis': 'Discover recurrent entity keys using fit features and test strictly-past history with randomized trees.'},
+            {'family': 'lightgbm', 'parameters': {'n_estimators': 500, 'reg_lambda': 2},
+             'panel_time_column': profile['time_column'],
+             'hypothesis': 'Compare direct-loss boosting on automatically discovered causal history; cold starts retain raw features.'},
+        ])
     if classification:
+        if profile['metric'] == 'macro_f1':
+            frequency = [c for c, n in profile['categories'].items() if 3 <= n <= 10000][:8]
+            proposals.append({'family': 'xgboost', 'parameters': {'n_estimators': 600},
+                'frequency_columns': frequency, 'decision_power': .3,
+                'hypothesis': 'Establish a strong frequency-aware histogram control before spending budget on exploratory hypotheses.'})
         if 'xgboost' not in families:
             proposals.append({'family': 'xgboost', 'parameters': {'n_estimators': 600},
                               'hypothesis': 'Test histogram boosting against the measured baseline.'})
+        if profile['metric'] == 'macro_f1':
+            proposals.append({'family': 'lightgbm', 'early_stopping': True,
+                'parameters': {'n_estimators': 1200, 'num_leaves': 63, 'min_child_samples': 10,
+                               'reg_lambda': 3, 'subsample': .8, 'colsample_bytree': .85},
+                'class_weight_power': .2,
+                'hypothesis': 'Compare stronger native boosting with grouped train-only Macro-F1 stopping and actual row subsampling.'})
         diagnostic = ordered[0].get('diagnostics', {}).get('per_class', {}) if ordered else {}
         weak = [k for k, v in diagnostic.items() if isinstance(v, dict) and v.get('support', 0) > 0 and v.get('f1-score', 1) < .45]
         if weak and profile['metric'] in ('macro_f1', 'binary_f1', 'balanced_accuracy'):
@@ -161,6 +182,12 @@ def offline_proposal(profile, observations, seen):
             proposals.append({'family': 'blend', 'members': [best, diverse['candidate']], 'weights': [.8, .2],
                 'decision_power': best.get('decision_power', 0) if classification else 0,
                 'hypothesis': 'Test a conservative blend of the two measured distinct model families.'})
+            if (classification and profile['metric'] == 'macro_f1'
+                    and (best.get('early_stopping') or diverse['candidate'].get('early_stopping'))
+                    and ordered[0]['score'] - diverse['score'] < .05):
+                proposals.insert(0, {'family': 'blend', 'blend_mode': 'geometric',
+                    'members': [best, diverse['candidate']], 'weights': [.5, .5], 'decision_power': .3,
+                    'hypothesis': 'Test log-probability pooling of diverse measured classifiers; no OOF meta-model or fitted class thresholds.'})
     constants = [c for c, n in profile['nunique'].items() if n <= 1]
     if constants and len(constants) < profile['shape'][1]:
         proposals.append({**best, 'drop_columns': constants,
@@ -191,6 +218,9 @@ def _search_windows(bundle, outer_fit, budget_seconds):
             # A short run cannot fit every candidate twice without losing the
             # final refit; keep the newest origin only.
             windows = windows[:1]
+        for window in windows:
+            window['fit'] = outer_fit[window['fit']]
+            window['valid'] = outer_fit[window['valid']]
         return windows, 'rolling-origin'
     inner_fit, inner_valid, description = validation_split(inner_bundle)
     if not len(inner_fit) or not len(inner_valid):
@@ -226,13 +256,15 @@ def main(task_path, started=None, threads=4):
                'task_type': bundle.task_type, 'submission_rows': len(bundle.sample)}
     modules = Path(__file__).parent
 
-    def execute(candidate, mode, split_path, label, timeout, reuse_probabilities=None):
+    def execute(candidate, mode, split_path, label, timeout, reuse_probabilities=None, reuse_members=None):
         directory = root / label
         directory.mkdir()
         request = {'task_path': str(bundle.task_path), 'candidate': candidate, 'mode': mode,
                    'split_path': str(split_path), 'output': str(directory), 'threads': threads}
         if reuse_probabilities is not None:
             request['reuse_probabilities'] = str(reuse_probabilities)
+        if reuse_members is not None:
+            request['reuse_members'] = list(map(str, reuse_members))
         save_json(directory / 'request.json', request)
         process = run_child(modules / 'automl_worker.py', [directory / 'request.json'], directory,
                             min(timeout, budget.remaining()), threads)
@@ -261,6 +293,8 @@ def main(task_path, started=None, threads=4):
                         'description': outer_description + ':no-independent-audit', 'weight': 1.0}]
             search_policy = 'single-shared'
         for index, window in enumerate(windows, 1):
+            if nested and np.intersect1d(np.r_[window['fit'], window['valid']], outer_valid).size:
+                raise ValueError('Search positions overlap audit; refuse contaminated validation')
             window['key'] = split_key(window['fit'], window['valid'])
             window['path'] = root / f'search_split-{index:02d}.npz'
             np.savez_compressed(window['path'], fit=window['fit'], valid=window['valid'])
@@ -290,7 +324,7 @@ def main(task_path, started=None, threads=4):
             'data_hashes': bundle.hashes})
         seen = set()
         probability_cache = {}
-        max_experiments = min(24, max(0, int(os.getenv('AUTOML_MAX_EXPERIMENTS', '12'))))
+        max_experiments = min(64, max(0, int(os.getenv('AUTOML_MAX_EXPERIMENTS', '36'))))
         api_configured = all(os.getenv(k) for k in ('OPENAI_BASE_URL', 'OPENAI_API_KEY', 'OPENAI_MODEL'))
         llm_failures, llm_tokens = 0, 0
 
@@ -307,8 +341,14 @@ def main(task_path, started=None, threads=4):
             for index, window in enumerate(windows, 1):
                 share = max(15., timeout * max(len(window['fit']), 1) / total_rows)
                 reuse = probability_cache.get((training_key, index)) if cache_allowed else None
+                member_paths = None
+                if bundle.task_type == 'classification' and candidate['family'] == 'blend':
+                    possible = [probability_cache.get((candidate_key({**m, 'decision_power': 0}), index))
+                                for m in candidate['members']]
+                    if all(possible):
+                        member_paths = possible
                 result, directory = execute(candidate, 'evaluate', window['path'],
-                    f'{label}-fold{index:02d}', share, reuse)
+                    f'{label}-fold{index:02d}', share, reuse, member_paths)
                 results.append(result)
                 directories.append(directory)
                 cache_path = directory / 'probability_cache.npz'
@@ -345,13 +385,17 @@ def main(task_path, started=None, threads=4):
             aggregated['process'] = {'status': 'completed', 'seconds': aggregated['seconds'],
                 'peak_rss_mb': max(float(result.get('process', {}).get('peak_rss_mb', 0.)) for result in results)}
             save_json(directories[-1] / 'aggregate.json', aggregated)
-            return aggregated, directories[-1]
+            checkpoint = max(range(len(windows)), key=lambda i: len(windows[i]['fit']))
+            aggregated['checkpoint_window'] = checkpoint + 1
+            return aggregated, directories[checkpoint]
 
         for attempt in range(max_experiments * 3 + 1):
             if len(records) >= max_experiments or budget.remaining() <= budget.reserve(fit_seconds):
                 break
             candidate, source = None, 'adaptive_fallback'
-            if records and api_configured and len(api_records) < 8 and llm_failures < 3 and llm_tokens < 48000:
+            portfolio_ready = max_experiments < 8 or len(records) >= 4
+            llm_round = max_experiments < 8 or (len(records) - 4) % 3 == 0
+            if records and portfolio_ready and llm_round and api_configured and len(api_records) < 4 and llm_failures < 3 and llm_tokens < 48000:
                 call_dir = root / f'llm-{len(api_records) + 1:02d}'
                 call_dir.mkdir()
                 timeout = min(25., max(.1, (budget.remaining() - budget.reserve(fit_seconds)) / 2))

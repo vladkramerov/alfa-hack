@@ -1,10 +1,14 @@
 # Alfa Hack AutoResearch — рабочая память
 
+АКТУАЛЬНО: maxim/autoresearch; старая remote codex/research-optimized сохранена. Текущая серия score-recovery и E2E выполняется. ERRATUM: старые regression inner/audit использовали неверное отображение temporal-позиций и пересекались с outer год5. Не считать их независимыми. См. results/score-recovery/temporal-index-diagnosis.json и продолжение журнала.
+
+Новые абляции: generic causal history ET outer RMSE36.129126; geometric XGB/LGB MacroF1 .644093520. Итог политики ещё проверяется. 75 tests и9 clean-room passed. Qwen URL/model отсутствуют, live calls0; версия ZIP для13.7676 неизвестна. Не повторять завершённые fit: score_recovery_e2e.py сохраняет frozen ZIP и результаты поэтапно.
+
 Общение по-русски. Изменения минимальны; без попутного рефакторинга, субагентов и Superpowers. Не трогать main, ivan_branch, sergey_branch; без reset/clean/force push, секретов и данных в Git/ZIP.
 
 ## Состояние на 24.10.2026
 
-Ветка `codex/research-optimized`, база `eab478a`. Импортированы незакоммиченные наработки `/Users/maxchibisov/Projects/HACKS/alfa-ultimate`, public-v1…v5 и тесты. Оба прежних worktree оставлены без изменений. Инвентаризация: `docs/sources/research-optimized-intake.json`. Исторический журнал сохранён; текущая серия и ограничения — **`docs/EXPERIMENT_LOG.md`**.
+Ветка `maxim/autoresearch`, база `eab478a`. Импортированы незакоммиченные наработки `/Users/maxchibisov/Projects/HACKS/alfa-ultimate`, public-v1…v5 и тесты. Оба прежних worktree оставлены без изменений. Инвентаризация: `docs/sources/research-optimized-intake.json`. Исторический журнал сохранён; текущая серия и ограничения — **`docs/EXPERIMENT_LOG.md`**.
 
 14 исследовательских fit, 631.22 секунды; серия остановлена. Повторять `numeric_views_study.py`/`numeric_control_audit.py` нельзя: использовать готовые результаты.
 
