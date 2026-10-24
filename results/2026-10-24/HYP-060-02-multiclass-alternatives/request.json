@@ -1,0 +1,19 @@
+{
+  "job": {
+    "number": 60,
+    "hypothesis": "HYP-060",
+    "task": "multiclass",
+    "candidate": {
+      "strategy": "masked_augmentation",
+      "parameters": {}
+    },
+    "reference": 0.6495311620074445,
+    "version": "spec009-v1"
+  },
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-060-02-multiclass-alternatives",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-060-02-multiclass-alternatives\\splits.npz",
+  "cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-alternatives-v1\\cache",
+  "teacher_cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache",
+  "legacy_cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache"
+}

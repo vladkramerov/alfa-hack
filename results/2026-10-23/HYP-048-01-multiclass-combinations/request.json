@@ -1,0 +1,19 @@
+{
+  "job": {
+    "number": 48,
+    "hypothesis": "HYP-048",
+    "task": "multiclass",
+    "candidate": {
+      "strategy": "probability_stacking",
+      "parameters": {},
+      "family": "xgboost"
+    },
+    "version": "spec008-v1",
+    "reference": 0.6286047899141216
+  },
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-048-01-multiclass-combinations",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-048-01-multiclass-combinations\\splits.npz",
+  "cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache",
+  "legacy_cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache"
+}

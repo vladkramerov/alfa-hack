@@ -1,0 +1,43 @@
+test_S01_train_row_and_feature_column_reordering (tests.test_schema_semantics.SchemaSemanticsTests.test_S01_train_row_and_feature_column_reordering) ... ok
+test_S02_test_permutation_and_inverse_id_alignment (tests.test_schema_semantics.SchemaSemanticsTests.test_S02_test_permutation_and_inverse_id_alignment) ... ok
+test_S03_consistent_target_id_feature_renaming (tests.test_schema_semantics.SchemaSemanticsTests.test_S03_consistent_target_id_feature_renaming) ... ok
+test_S04_lexical_class_label_bijection (tests.test_schema_semantics.SchemaSemanticsTests.test_S04_lexical_class_label_bijection) ... ok
+test_S05_numeric_looking_class_labels_preserve_lexical_values (tests.test_schema_semantics.SchemaSemanticsTests.test_S05_numeric_looking_class_labels_preserve_lexical_values) ... FAIL
+test_S06_probability_class_order_to_sample_column_mapping (tests.test_schema_semantics.SchemaSemanticsTests.test_S06_probability_class_order_to_sample_column_mapping) ... ok
+test_S07_opaque_leading_zero_identifier_roundtrip (tests.test_schema_semantics.SchemaSemanticsTests.test_S07_opaque_leading_zero_identifier_roundtrip) ... FAIL
+test_S08_target_unit_prediction_roundtrip_1024 (tests.test_schema_semantics.SchemaSemanticsTests.test_S08_target_unit_prediction_roundtrip_1024) ... ok
+
+======================================================================
+FAIL: test_S05_numeric_looking_class_labels_preserve_lexical_values (tests.test_schema_semantics.SchemaSemanticsTests.test_S05_numeric_looking_class_labels_preserve_lexical_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_schema_semantics.py", line 14, in test
+    def test(self):self.check_case(case)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_schema_semantics.py", line 10, in check_case
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:run_case(case,folder)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 99, in run_case
+    if actual!=expected:raise AssertionError(f'Class label parsing changed lexical values: expected={transformed!r}, actual={sorted(actual)!r}, dtype={changed.y.dtype}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Class label parsing changed lexical values: expected=['001', '010'], actual=[1, 10], dtype=int64
+
+======================================================================
+FAIL: test_S07_opaque_leading_zero_identifier_roundtrip (tests.test_schema_semantics.SchemaSemanticsTests.test_S07_opaque_leading_zero_identifier_roundtrip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_schema_semantics.py", line 14, in test
+    def test(self):self.check_case(case)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_schema_semantics.py", line 10, in check_case
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:run_case(case,folder)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 118, in run_case
+    if actual!=original:raise AssertionError(f'Identifier parsing lost original representation: expected={original!r}, actual={actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Identifier parsing lost original representation: expected=['0007', '0012', '0100'], actual=['7', '12', '100']
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.259s
+
+FAILED (failures=2)

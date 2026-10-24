@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "archive": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_alternative_v2.zip",
+  "bytes": 61330,
+  "sha256": "a51d351d8657aa04bd6a1628fa0204de3a805f49a1de29f732aa793dd8901cb7",
+  "root_files": 16,
+  "baseline": {
+    "regression": {
+      "strategy": "temporal_profile_memory",
+      "metric": "rmse",
+      "score": 39.39219382766771
+    },
+    "multiclass": {
+      "strategy": "probability_stacking",
+      "metric": "macro_f1",
+      "score": 0.6495311620074445
+    }
+  },
+  "unit_tests": 206,
+  "planned_cases": 10,
+  "scored_cases": 9,
+  "technical_failures": 1,
+  "new_model_fits": 22,
+  "duplicate_validation_fits": 0,
+  "independent_checks": 65,
+  "mock_scenarios": 5,
+  "mock_calls": 11,
+  "lexical_e2e_scenarios": 1,
+  "public_full_refits": 2,
+  "submission_rows": {
+    "regression": 22449,
+    "multiclass": 41166
+  },
+  "verification": {
+    "public_full_refit": "results/2026-10-24/alternative-delivery-1792790663530173000/verification.json",
+    "flat_mock": "results/2026-10-24/platform-verification-1792790663025196800/verification.json",
+    "lexical_e2e": "results/2026-10-24/lexical-archive-1792790715674670400/verification.json",
+    "independent_metrics": "results/2026-10-24/series-alternatives-v1/verification.json",
+    "codec_fix": "results/2026-10-24/HYP-065-02-schema-codec-fix/verification.json"
+  },
+  "previous_combined_archive_sha256": "4080df23302d1bca674f081ace2c308a2783f31bd6ad9f261df08cd890ebe15c",
+  "platform_score_previous_reported": 1376.762,
+  "platform_archive_previous_user_confirmed": "solution_improved_metrics.zip",
+  "new_hidden_platform_score_verified": false,
+  "tenfold_improvement_verified": false,
+  "real_platform_api_tested": false
+}

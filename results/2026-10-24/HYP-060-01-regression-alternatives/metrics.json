@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 42.46179807398836,
+  "candidate": {
+    "strategy": "masked_regression"
+  },
+  "learned_state": {},
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "outer_baseline_refits": 0,
+  "seconds": 64.60899999999674,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "cases": {
+    "09523c5363b207ad5f516698a1a2bee3704dca9723125a45e84ab3b8b721c44b": {
+      "hashes": {
+        "train.csv": "89bdd10ebf5dbfac26ee836f19a5c598be5df08547253dd0fea3fda70ff14026",
+        "test.csv": "81e662972cbe4894dc421f3d10cbe694f5b8a66ad79028988e76024b472442f0",
+        "sample_submission.csv": "050f14222aace784896a8c20f0c9bddc3592236e7d0dd7272f9b5724ba33532e",
+        "data_dictionary.csv": "cd08b258aeb3ca0a62653b692971145703e7c701b3ad5c0a53bb15bdb70d2e0b"
+      },
+      "split_key": "7cad86b6c8561197613f40a18684dfdc57e4ce7a794a9b87aa11615af1e8218e",
+      "metric": "macro_f1",
+      "known": null,
+      "records": [
+        {
+          "candidate_key": "8cdf25bcb3486b06e5af3b08292c4dd03defc348802bd28b271c44fade21a55a",
+          "candidate": {
+            "family": "extra_trees",
+            "parameters": {
+              "n_estimators": 12,
+              "max_depth": 6
+            },
+            "hypothesis": "Synthetic interaction protocol check",
+            "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+          },
+          "status": "completed",
+          "metric": "macro_f1",
+          "score": 1.0,
+          "fit_rows": 80,
+          "valid_rows": 20,
+          "seconds": 0.09400000001187436
+        }
+      ]
+    }
+  }
+}

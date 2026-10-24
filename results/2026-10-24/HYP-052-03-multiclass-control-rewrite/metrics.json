@@ -1,0 +1,190 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.6103340454456273,
+  "fit_rows": 69746,
+  "valid_rows": 17924,
+  "seconds": 407.10899999999674,
+  "diagnostics": {
+    "task_type": "classification",
+    "rows": 17924,
+    "classes": 10,
+    "per_class": [
+      {
+        "class": "Analysis",
+        "precision": 0.2733333333333333,
+        "recall": 0.205,
+        "f1": 0.2342857142857143,
+        "support": 200
+      },
+      {
+        "class": "Backdoor",
+        "precision": 0.379746835443038,
+        "recall": 0.16574585635359115,
+        "f1": 0.23076923076923078,
+        "support": 181
+      },
+      {
+        "class": "DoS",
+        "precision": 0.356878573831147,
+        "recall": 0.788261515601783,
+        "f1": 0.4913174345913406,
+        "support": 1346
+      },
+      {
+        "class": "Exploits",
+        "precision": 0.8208832026413537,
+        "recall": 0.5626591230551626,
+        "f1": 0.6676737160120846,
+        "support": 3535
+      },
+      {
+        "class": "Fuzzers",
+        "precision": 0.671350861287398,
+        "recall": 0.8348365276211951,
+        "f1": 0.7442211055276382,
+        "support": 1774
+      },
+      {
+        "class": "Generic",
+        "precision": 0.9987801902903147,
+        "recall": 0.974297953355545,
+        "f1": 0.9863871822671967,
+        "support": 4202
+      },
+      {
+        "class": "Normal",
+        "precision": 0.9779086892488954,
+        "recall": 0.8567741935483871,
+        "f1": 0.9133425034387895,
+        "support": 5425
+      },
+      {
+        "class": "Reconnaissance",
+        "precision": 0.8843469591226321,
+        "recall": 0.7849557522123893,
+        "f1": 0.8316924519456165,
+        "support": 1130
+      },
+      {
+        "class": "Shellcode",
+        "precision": 0.5022421524663677,
+        "recall": 0.9572649572649573,
+        "f1": 0.6588235294117647,
+        "support": 117
+      },
+      {
+        "class": "Worms",
+        "precision": 0.3333333333333333,
+        "recall": 0.35714285714285715,
+        "f1": 0.3448275862068966,
+        "support": 14
+      }
+    ],
+    "omitted_classes": 0,
+    "confusion_pairs": [
+      {
+        "actual": "Exploits",
+        "predicted": "DoS",
+        "count": 1294
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Fuzzers",
+        "count": 654
+      },
+      {
+        "actual": "DoS",
+        "predicted": "Exploits",
+        "count": 218
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "DoS",
+        "count": 178
+      },
+      {
+        "actual": "Analysis",
+        "predicted": "DoS",
+        "count": 135
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "DoS",
+        "count": 132
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "DoS",
+        "count": 115
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Reconnaissance",
+        "count": 100
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Normal",
+        "count": 87
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Analysis",
+        "count": 76
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "Exploits",
+        "count": 57
+      },
+      {
+        "actual": "Generic",
+        "predicted": "DoS",
+        "count": 50
+      },
+      {
+        "actual": "Generic",
+        "predicted": "Exploits",
+        "count": 44
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Fuzzers",
+        "count": 40
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Shellcode",
+        "count": 40
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Exploits",
+        "count": 34
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "Exploits",
+        "count": 31
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Shellcode",
+        "count": 30
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Backdoor",
+        "count": 25
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Exploits",
+        "count": 25
+      }
+    ]
+  },
+  "fingerprint": "011c6d2ea416041fdcde562088a2c6cdfcecc941823be1387af1fc9f003ff6f2",
+  "frozen_public_meta_reused": false
+}

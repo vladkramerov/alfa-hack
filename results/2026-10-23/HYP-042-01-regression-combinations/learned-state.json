@@ -1,0 +1,13 @@
+{
+  "candidate": {
+    "strategy": "reg_feature_experts",
+    "parameters": {},
+    "family": "extra_trees",
+    "feature_numbers": [
+      30
+    ],
+    "group_column": "building_class",
+    "minimum_expert_rows": 500,
+    "shrinkage": 500.0
+  }
+}

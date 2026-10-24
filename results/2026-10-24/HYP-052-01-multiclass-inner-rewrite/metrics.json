@@ -1,0 +1,192 @@
+{
+  "status": "completed",
+  "mode": "inner",
+  "metric": "macro_f1",
+  "score": 0.459744100268895,
+  "fit_rows": 56025,
+  "valid_rows": 13721,
+  "validation_X_sha256": "86e031682f72f719cb0ba2e6e8c4507d23984b48dbf0e35dd274639e9676f6e7",
+  "validation_y_sha256": "3b7ae2b28abeb4b5a5f8bdc00ebdd04e71a90c63d6c39ff3437ca346a2a57619",
+  "diagnostics": {
+    "task_type": "classification",
+    "rows": 13721,
+    "classes": 10,
+    "per_class": [
+      {
+        "class": "Normal",
+        "precision": 0.9140070921985816,
+        "recall": 0.9014207650273224,
+        "f1": 0.9076702982282382,
+        "support": 4575
+      },
+      {
+        "class": "Exploits",
+        "precision": 0.6217587373167982,
+        "recall": 0.8381458966565349,
+        "f1": 0.713915857605178,
+        "support": 2632
+      },
+      {
+        "class": "Reconnaissance",
+        "precision": 0.7111111111111111,
+        "recall": 0.6863270777479893,
+        "f1": 0.6984993178717599,
+        "support": 746
+      },
+      {
+        "class": "Fuzzers",
+        "precision": 0.6369725385130609,
+        "recall": 0.6531593406593407,
+        "f1": 0.6449643947100712,
+        "support": 1456
+      },
+      {
+        "class": "DoS",
+        "precision": 0.33095238095238094,
+        "recall": 0.14662447257383968,
+        "f1": 0.20321637426900585,
+        "support": 948
+      },
+      {
+        "class": "Backdoor",
+        "precision": 1.0,
+        "recall": 0.015151515151515152,
+        "f1": 0.029850746268656716,
+        "support": 132
+      },
+      {
+        "class": "Generic",
+        "precision": 0.9939189189189189,
+        "recall": 0.9790349417637271,
+        "f1": 0.9864207879295893,
+        "support": 3005
+      },
+      {
+        "class": "Shellcode",
+        "precision": 0.36363636363636365,
+        "recall": 0.2,
+        "f1": 0.25806451612903225,
+        "support": 80
+      },
+      {
+        "class": "Analysis",
+        "precision": 0.5454545454545454,
+        "recall": 0.09022556390977443,
+        "f1": 0.15483870967741936,
+        "support": 133
+      },
+      {
+        "class": "Worms",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 14
+      }
+    ],
+    "omitted_classes": 0,
+    "confusion_pairs": [
+      {
+        "actual": "DoS",
+        "predicted": "Exploits",
+        "count": 750
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Fuzzers",
+        "count": 353
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Normal",
+        "count": 283
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "Exploits",
+        "count": 202
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "DoS",
+        "count": 195
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Exploits",
+        "count": 112
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Fuzzers",
+        "count": 106
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "Exploits",
+        "count": 95
+      },
+      {
+        "actual": "Analysis",
+        "predicted": "Exploits",
+        "count": 86
+      },
+      {
+        "actual": "Fuzzers",
+        "predicted": "Reconnaissance",
+        "count": 74
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Normal",
+        "count": 67
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Reconnaissance",
+        "count": 53
+      },
+      {
+        "actual": "Generic",
+        "predicted": "Exploits",
+        "count": 44
+      },
+      {
+        "actual": "Exploits",
+        "predicted": "Reconnaissance",
+        "count": 40
+      },
+      {
+        "actual": "Normal",
+        "predicted": "Exploits",
+        "count": 38
+      },
+      {
+        "actual": "Shellcode",
+        "predicted": "Fuzzers",
+        "count": 36
+      },
+      {
+        "actual": "DoS",
+        "predicted": "Fuzzers",
+        "count": 29
+      },
+      {
+        "actual": "Backdoor",
+        "predicted": "DoS",
+        "count": 23
+      },
+      {
+        "actual": "Reconnaissance",
+        "predicted": "DoS",
+        "count": 22
+      },
+      {
+        "actual": "Analysis",
+        "predicted": "DoS",
+        "count": 21
+      }
+    ]
+  },
+  "seconds": 82.125,
+  "fingerprint": "e7f9f3584b4d6d781febfc9692b90a70da042f7b67ca6b4915e4126984f4a489"
+}

@@ -1,0 +1,5 @@
+feature,role
+object_key,id
+signal,feature
+kind,feature
+response,target

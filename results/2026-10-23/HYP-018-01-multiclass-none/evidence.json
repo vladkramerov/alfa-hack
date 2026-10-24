@@ -1,0 +1,66 @@
+{
+  "fingerprint": "51b5f06466ef8916c9ac6f9c920d43494049a0f8b124422bf23e6171d7f131d7",
+  "candidate_key": "fa47ec3843073feda84cece50445609bfa06105a394c73dd8e72d6cfb63f32e4",
+  "candidate": {
+    "hypothesis": "HYP-018",
+    "task": "multiclass",
+    "family": "lightgbm",
+    "transform": "none",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "objective": "multiclassova"
+    }
+  },
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "status": "completed",
+  "started": "2026-10-23T21:48:07.377842+03:00",
+  "ledger_sha256_before_fit": "684e9dbc8e59979b4bcdc1989dbf3da90bcdd9ec16a1fbaffeaceaf40918c2a4",
+  "directory": "results/2026-10-23/HYP-018-01-multiclass-none",
+  "metric": "macro_f1",
+  "score": 0.578639858804918,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "warnings": [],
+  "packages": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "lightgbm": "4.6.0",
+    "xgboost": "2.1.4"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "accuracy": 0.82818972055306,
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "probability_row_sum_range": [
+    0.09743017472683135,
+    1.7645939029187696
+  ],
+  "seconds": 16.14100000000326,
+  "planned_model_fit_count": 1,
+  "conclusion": "Не подтверждена по заданному критерию"
+}

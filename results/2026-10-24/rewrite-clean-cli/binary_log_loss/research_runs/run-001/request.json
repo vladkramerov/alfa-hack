@@ -1,0 +1,15 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\task.md",
+  "recipe": {
+    "family": "mixed_neighbors",
+    "parameters": {
+      "n_neighbors": 25
+    },
+    "hypothesis": ""
+  },
+  "mode": "evaluate",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\research_runs\\run-001",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\research_runs\\inner-split.npz",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\research_runs\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md"
+}

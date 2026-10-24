@@ -1,0 +1,14 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\macro_f1\\task.md",
+  "recipe": {
+    "family": "mixed_neighbors",
+    "parameters": {
+      "n_neighbors": 25
+    },
+    "hypothesis": ""
+  },
+  "mode": "refit",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\macro_f1\\research_runs\\final-1792792931214711900",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\macro_f1\\research_runs\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md"
+}

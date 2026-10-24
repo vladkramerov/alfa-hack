@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "RuntimeError: Known outer baseline fit prohibited; use saved predictions",
+  "seconds": 441.5309999999881
+}

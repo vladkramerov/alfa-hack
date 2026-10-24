@@ -1,0 +1,48 @@
+{
+  "task": "multiclass",
+  "selected_family": "lightgbm",
+  "cached_validation_metric": "macro_f1",
+  "cached_validation_score": 0.5838559593680208,
+  "validation_fit_count": 0,
+  "full_refit_count": 1,
+  "rows": 41166,
+  "columns": [
+    "id",
+    "attack_cat"
+  ],
+  "seconds": 37.0,
+  "submission_sha256": "82baeb704d28ee1dcbaac981718a092c323208ee4e2b5fff45a9b39dcf835ab8",
+  "summary": {
+    "status": "completed",
+    "metric": "macro_f1",
+    "selected_score": 0.5838559593680208,
+    "selected": {
+      "family": "lightgbm",
+      "parameters": {},
+      "hypothesis": "HYP-009: new model family"
+    },
+    "validation": "stratified-group5:first:seed42",
+    "cached_history": true,
+    "experiments": [],
+    "llm": [],
+    "seconds": 36.0,
+    "submission_rows": 41166,
+    "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+  },
+  "refits": [
+    {
+      "candidate": {
+        "family": "lightgbm",
+        "parameters": {},
+        "hypothesis": "HYP-009: new model family"
+      },
+      "result": {
+        "status": "completed",
+        "mode": "refit",
+        "train_rows": 87670,
+        "test_rows": 41166,
+        "seconds": 24.34399999998277
+      }
+    }
+  ]
+}

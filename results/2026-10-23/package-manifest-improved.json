@@ -1,0 +1,37 @@
+{
+  "file": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_improved_metrics.zip",
+  "bytes": 33128,
+  "sha256": "30f485a78bf8fbc82db85f4d5ded44461eb87012aa642ae9695eae39e31b63a0",
+  "root_files": [
+    "solution.py",
+    "automl_data.py",
+    "automl_models.py",
+    "automl_preprocessing.py",
+    "automl_history.py",
+    "automl_known.py",
+    "automl_llm.py",
+    "automl_worker.py",
+    "automl_advanced.py",
+    "requirements.txt"
+  ],
+  "sources": {
+    "solution.py": "2d3b9c70c86f7b45b29da704b4814a326e7b0ee202a874f376c982397561108c",
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "94a1a2a263ae9429799724c4647d8591dbf168804e00909cc2de3c44699d29c6",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_history.py": "b03ba7b6883355010699fd02c595642f9afddb665649dfbcef6f824e20528369",
+    "automl_known.py": "3f713ddea88e83f4d227f451988f00b05588c60cac7d1712ffcf047fb3673e40",
+    "automl_llm.py": "e32ac20a39d70f1883fc899e2a570617eb6bbc89bd3e3067170399ec291440e2",
+    "automl_worker.py": "0e24216088b5d13a66442f1ca2d2c73c6464ceff2f7e6c2fc8f7dcf8e3310aa9",
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "provided_requirements_exact": true,
+  "data_or_models_included": false,
+  "metric_source": "results/2026-10-23/TWENTY_HYPOTHESES_REPORT.md",
+  "cached_metrics": {
+    "regression_rmse": 41.480963027907194,
+    "classification_macro_f1": 0.6286047899141216
+  },
+  "platform_score_verified": false
+}

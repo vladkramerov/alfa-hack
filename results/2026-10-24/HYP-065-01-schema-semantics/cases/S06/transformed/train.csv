@@ -1,0 +1,9 @@
+record_id,signal,kind,target
+100,0.0,a,red
+101,1.0,b,blue
+102,2.0,a,red
+103,3.0,b,blue
+104,4.0,a,red
+105,5.0,b,blue
+106,6.0,a,red
+107,7.0,b,blue

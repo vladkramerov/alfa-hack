@@ -1,0 +1,77 @@
+{
+  "spec": "SPEC010",
+  "status": "passed",
+  "synthetic_only": true,
+  "archive_created": false,
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "cases": {
+    "regression_rmse": {
+      "schema_ids_row_count": true,
+      "two_completed_fit_claims": true,
+      "full_refit_completed": true,
+      "inner_rows": 18,
+      "independent_inner_metric": 3.2277366691064864,
+      "inner_diagnostics_recomputed": true,
+      "history_fingerprints": [
+        "5be36ac5594406ead8e376c1bf7a744155786ed9f6c09ae805e2a9f1bb48e199",
+        "b750df16ee17aa9d69b3e0ad182019702c8d7abdc96c58f59c943e544dc5d81f"
+      ],
+      "submission_sha256": "97e3ac43db6f8b3d5dd173b4b3fe1a1bb27aaea68d9ae7cd18572f5bff3038b3",
+      "exit_code": 0,
+      "seconds": 5.577999999979511,
+      "status": "passed"
+    },
+    "macro_f1": {
+      "schema_ids_row_count": true,
+      "two_completed_fit_claims": true,
+      "full_refit_completed": true,
+      "inner_rows": 26,
+      "independent_inner_metric": 1.0,
+      "inner_diagnostics_recomputed": true,
+      "history_fingerprints": [
+        "52a68da231cb31e611bf07284898fcd898dd50d10b2ae7f08f5701afcf3922b9",
+        "16c03094500fc22f1f3814f145ce2cbbfd3db8763bb1d553b3168f3e3daad9ca"
+      ],
+      "submission_sha256": "a8e89cb57caea0c7dddd0a06b6df5db11ed3a1ee6fc4066aedcbb89d4e1a9334",
+      "exit_code": 0,
+      "seconds": 6.046999999991385,
+      "status": "passed"
+    },
+    "binary_log_loss": {
+      "schema_ids_row_count": true,
+      "two_completed_fit_claims": true,
+      "full_refit_completed": true,
+      "inner_rows": 26,
+      "independent_inner_metric": 2.220446049250313e-16,
+      "inner_diagnostics_recomputed": true,
+      "history_fingerprints": [
+        "52a68da231cb31e611bf07284898fcd898dd50d10b2ae7f08f5701afcf3922b9",
+        "16c03094500fc22f1f3814f145ce2cbbfd3db8763bb1d553b3168f3e3daad9ca"
+      ],
+      "submission_sha256": "77a63f39fc2c7c8ed0f73b7d81f806c3bdf1ef9d2ad93077749a49e7b15f5830",
+      "exit_code": 0,
+      "seconds": 6.187999999994645,
+      "status": "passed"
+    },
+    "multiclass_log_loss": {
+      "schema_ids_row_count": true,
+      "two_completed_fit_claims": true,
+      "full_refit_completed": true,
+      "inner_rows": 19,
+      "independent_inner_metric": 0.09547960270655433,
+      "inner_diagnostics_recomputed": true,
+      "history_fingerprints": [
+        "b7abdc4b4730a04e28278210c661edfae82a191e2f8ff417aec2def1761be738",
+        "4a23ce39329b30c13454ee5e615245304e067601ecb73d8947da471623a3ad72"
+      ],
+      "submission_sha256": "f438e21c41b94e67733fb75c0b778d8b7646aff08fd05eb6c24a319f36900122",
+      "exit_code": 0,
+      "seconds": 6.342999999993481,
+      "status": "passed"
+    }
+  },
+  "cases_passed": 4,
+  "total_completed_synthetic_fits": 8,
+  "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "isolated_flat_source": true
+}

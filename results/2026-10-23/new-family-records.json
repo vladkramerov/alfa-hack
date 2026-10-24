@@ -1,0 +1,126 @@
+[
+  {
+    "task": "regression",
+    "candidate": {
+      "family": "lightgbm",
+      "parameters": {},
+      "hypothesis": "HYP-009: new model family"
+    },
+    "candidate_key": "29b01df6f4d1dcf8deabeab20e9d9c1d3eec96b2be154ee8a73e0cc31a9d85b6",
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "code_sha256": {
+      "automl_models.py": "de460c286a15dbab64f997c92bc9b9ee911ec173a449fb3c8ea6723057fc1700",
+      "automl_data.py": "20bccf86bd1b218db52faa9c0aab5dbdd25c687b67cb18e9fd05c65bf7f5d045",
+      "automl_worker.py": "2dc5a811a00a8787114ccefcc06d3bf73a9eb0783e4a53ad261356304a7c72b9",
+      "experiments/run_new_families.py": "dd05f3b43fa08ba70ef2c5a98a6de571f0e22aa1131cb007213d27e14f66d390"
+    },
+    "status": "completed",
+    "metric": "rmse",
+    "score": 60.492688256313926,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "seconds": 1.7660000000032596,
+    "directory": "results\\2026-10-23\\HYP-009-01-regression-lightgbm"
+  },
+  {
+    "task": "regression",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {},
+      "hypothesis": "HYP-010: new model family"
+    },
+    "candidate_key": "d46a0e99c22473b66a311effd3430318aa80d3a538d3078bd2c6552f67e57fa4",
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "code_sha256": {
+      "automl_models.py": "de460c286a15dbab64f997c92bc9b9ee911ec173a449fb3c8ea6723057fc1700",
+      "automl_data.py": "20bccf86bd1b218db52faa9c0aab5dbdd25c687b67cb18e9fd05c65bf7f5d045",
+      "automl_worker.py": "2dc5a811a00a8787114ccefcc06d3bf73a9eb0783e4a53ad261356304a7c72b9",
+      "experiments/run_new_families.py": "dd05f3b43fa08ba70ef2c5a98a6de571f0e22aa1131cb007213d27e14f66d390"
+    },
+    "status": "completed",
+    "metric": "rmse",
+    "score": 43.56756773832011,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "seconds": 19.85899999999674,
+    "directory": "results\\2026-10-23\\HYP-010-01-regression-extra_trees"
+  },
+  {
+    "task": "multiclass",
+    "candidate": {
+      "family": "lightgbm",
+      "parameters": {},
+      "hypothesis": "HYP-009: new model family"
+    },
+    "candidate_key": "29b01df6f4d1dcf8deabeab20e9d9c1d3eec96b2be154ee8a73e0cc31a9d85b6",
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "code_sha256": {
+      "automl_models.py": "de460c286a15dbab64f997c92bc9b9ee911ec173a449fb3c8ea6723057fc1700",
+      "automl_data.py": "20bccf86bd1b218db52faa9c0aab5dbdd25c687b67cb18e9fd05c65bf7f5d045",
+      "automl_worker.py": "2dc5a811a00a8787114ccefcc06d3bf73a9eb0783e4a53ad261356304a7c72b9",
+      "experiments/run_new_families.py": "dd05f3b43fa08ba70ef2c5a98a6de571f0e22aa1131cb007213d27e14f66d390"
+    },
+    "status": "completed",
+    "metric": "macro_f1",
+    "score": 0.5838559593680208,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "seconds": 19.48399999999674,
+    "directory": "results\\2026-10-23\\HYP-009-02-multiclass-lightgbm"
+  },
+  {
+    "task": "multiclass",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {},
+      "hypothesis": "HYP-010: new model family"
+    },
+    "candidate_key": "d46a0e99c22473b66a311effd3430318aa80d3a538d3078bd2c6552f67e57fa4",
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "code_sha256": {
+      "automl_models.py": "de460c286a15dbab64f997c92bc9b9ee911ec173a449fb3c8ea6723057fc1700",
+      "automl_data.py": "3cb398e9e4ddf611f4793e6d7bb395d001aa37a548e88759784e3588ebe827cd",
+      "automl_worker.py": "61de0ed54fd5b13a5609a2660f4eb2ca9bbf6c4cc7194d7b4b58fe031a089806",
+      "experiments/run_new_families.py": "dd05f3b43fa08ba70ef2c5a98a6de571f0e22aa1131cb007213d27e14f66d390"
+    },
+    "status": "completed",
+    "metric": "macro_f1",
+    "score": 0.5804952756940901,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "seconds": 44.125,
+    "directory": "results\\2026-10-23\\HYP-010-02-multiclass-extra_trees"
+  }
+]

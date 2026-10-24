@@ -1,0 +1,10 @@
+{
+  "command": ".venv-ml/Scripts/python.exe -X utf8 -m unittest tests.test_schema_semantics -v",
+  "exit_code": 1,
+  "tests": 8,
+  "expected_diagnostic_failures": [
+    "S05",
+    "S07"
+  ],
+  "model_fits": 0
+}

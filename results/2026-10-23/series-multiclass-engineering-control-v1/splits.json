@@ -1,0 +1,59 @@
+{
+  "description": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+  "sizes": {
+    "inner_fit": 52762,
+    "inner_valid": 17767,
+    "outer_fit": 70529,
+    "outer_valid": 17141
+  },
+  "class_counts": {
+    "inner_fit": {
+      "Normal": 16912,
+      "Generic": 12262,
+      "Exploits": 9994,
+      "Fuzzers": 5404,
+      "DoS": 3649,
+      "Reconnaissance": 3100,
+      "Analysis": 566,
+      "Backdoor": 524,
+      "Shellcode": 321,
+      "Worms": 30
+    },
+    "inner_valid": {
+      "Normal": 5523,
+      "Generic": 4005,
+      "Exploits": 3416,
+      "Fuzzers": 1849,
+      "DoS": 1288,
+      "Reconnaissance": 1128,
+      "Analysis": 223,
+      "Backdoor": 191,
+      "Shellcode": 128,
+      "Worms": 16
+    },
+    "outer_fit": {
+      "Normal": 22435,
+      "Generic": 16267,
+      "Exploits": 13410,
+      "Fuzzers": 7253,
+      "DoS": 4937,
+      "Reconnaissance": 4228,
+      "Analysis": 789,
+      "Backdoor": 715,
+      "Shellcode": 449,
+      "Worms": 46
+    },
+    "outer_valid": {
+      "Normal": 5565,
+      "Generic": 3733,
+      "Exploits": 3286,
+      "Fuzzers": 1839,
+      "DoS": 1195,
+      "Reconnaissance": 1017,
+      "Analysis": 211,
+      "Backdoor": 158,
+      "Shellcode": 118,
+      "Worms": 19
+    }
+  }
+}

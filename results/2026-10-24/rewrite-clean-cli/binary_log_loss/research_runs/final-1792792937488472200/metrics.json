@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "mode": "refit",
+  "train_rows": 90,
+  "submission_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\research_runs\\final-1792792937488472200\\candidate_submission.csv",
+  "test_X_sha256": "5fd862b4b380bbedac8b52a8b394e886979ddb7fdba7465c07dc15e0635dd92c",
+  "sample_sha256": "0f7bc9dc57c8d90cecabdd2d149fd361d43b19514b7126e7e515669aef7cac97",
+  "seconds": 0.0470000000204891,
+  "fingerprint": "16c03094500fc22f1f3814f145ce2cbbfd3db8763bb1d553b3168f3e3daad9ca"
+}

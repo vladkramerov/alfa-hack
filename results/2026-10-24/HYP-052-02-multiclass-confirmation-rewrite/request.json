@@ -1,0 +1,16 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "recipe": {
+    "family": "mixed_neighbors",
+    "parameters": {
+      "n_neighbors": 25
+    }
+  },
+  "mode": "confirmation",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-052-02-multiclass-confirmation-rewrite",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-052-02-multiclass-confirmation-rewrite\\splits.npz",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md",
+  "worker_source": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\source\\research_agent.py",
+  "control_fit_log": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-clean-rewrite-v1\\control-fits"
+}

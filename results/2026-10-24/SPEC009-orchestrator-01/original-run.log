@@ -1,0 +1,17 @@
+START HYP-069/regression
+{"hypothesis": "HYP-069", "task": "regression", "status": "completed", "metric": "rmse", "score": 39.39219382766771, "error": null, "seconds": 1.0940000000118744, "improved": true}
+START HYP-049/multiclass
+{"hypothesis": "HYP-049", "task": "multiclass", "status": "completed", "metric": "macro_f1", "score": 0.6149071035851954, "error": null, "seconds": 68.85899999999674, "improved": false}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\run_alternatives.py", line 81, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--only',nargs='*',type=int);main(p.parse_args().only)
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\run_alternatives.py", line 48, in main
+    record=claim(ROOT,job,bundle.hashes,split_key(fit,valid));parent=ROOT/'results'/now()[:10];parent.mkdir(parents=True,exist_ok=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\run_alternatives.py", line 22, in claim
+    if job['hypothesis'] not in ledger:raise RuntimeError('Unregistered hypothesis')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unregistered hypothesis

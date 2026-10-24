@@ -1,0 +1,27 @@
+{
+  "strategy": "target_tail_mixture",
+  "fit_original_rows": 35000,
+  "fit_retained_rows": 35000,
+  "row_deletion": false,
+  "validation_target_used": false,
+  "tail_quantile": 0.8,
+  "threshold": 106.43045644000001,
+  "threshold_source": "training_target_quantile",
+  "low_rows": 28000,
+  "high_rows": 7000,
+  "gate_parameters": {
+    "n_estimators": 600,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "reg_lambda": 1.0,
+    "tree_method": "hist",
+    "device": "cpu"
+  },
+  "low_target_transform": "log1p",
+  "high_target_transform": "none",
+  "model_cache": {
+    "key": "5fa465cbbfc55f61e7e285d99867c8015d8c9f50692e3dba81c577b57518aeca",
+    "status": "fitted",
+    "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\regression-models\\5fa465cbbfc55f61e7e285d99867c8015d8c9f50692e3dba81c577b57518aeca.joblib"
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "stage": "inner",
+    "numpy_parse_max_abs_diff": 5.684341886080802e-14,
+    "pandas_parse_exact": true
+  },
+  {
+    "stage": "confirmation",
+    "numpy_parse_max_abs_diff": 5.684341886080802e-14,
+    "pandas_parse_exact": true
+  },
+  {
+    "stage": "control",
+    "numpy_parse_max_abs_diff": 5.684341886080802e-14,
+    "pandas_parse_exact": true
+  }
+]

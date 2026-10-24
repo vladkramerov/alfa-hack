@@ -1,0 +1,41 @@
+{
+  "n_training_rows": 90,
+  "numeric_columns": [
+    "signal",
+    "partly_missing"
+  ],
+  "categorical_columns": [
+    "category",
+    "empty_feature"
+  ],
+  "numeric_medians": {
+    "signal": 10.03,
+    "partly_missing": 1.0
+  },
+  "numeric_scales": {
+    "signal": 19.96,
+    "partly_missing": 1.25
+  },
+  "numeric_missing_flags": [
+    "signal",
+    "partly_missing"
+  ],
+  "categorical_vocabulary_sizes": {
+    "category": 3,
+    "empty_feature": 1
+  },
+  "fit_only": true,
+  "configuration": {
+    "model": "MixedNeighborsClassifier",
+    "n_neighbors": 25,
+    "query_block_size": 128,
+    "train_block_size": 8192,
+    "numeric": "train_median_iqr_capped_l1_3_with_all_original_missing_flags",
+    "numeric_denominator": "2 * number_of_numeric_columns",
+    "categorical": "mean_lexical_mismatch_separate_missing_and_unknown",
+    "type_weighting": "equal_available_components",
+    "weights": "uniform",
+    "neighbor_tie": "training_row_order",
+    "class_tie": "first_appearance_in_training"
+  }
+}

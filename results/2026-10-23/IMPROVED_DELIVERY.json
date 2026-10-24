@@ -1,0 +1,26 @@
+{
+  "status": "verified",
+  "archive": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_improved_metrics.zip",
+  "bytes": 33128,
+  "sha256": "30f485a78bf8fbc82db85f4d5ded44461eb87012aa642ae9695eae39e31b63a0",
+  "root_file_count": 10,
+  "unit_tests_passed": 126,
+  "new_hypotheses_checked": 20,
+  "validation_scores": 23,
+  "scientific_verification_checks": 539,
+  "mock_http_scenarios": 5,
+  "mock_http_calls": 11,
+  "mock_verification": "results\\2026-10-23\\platform-verification-1792786908070564000\\verification.json",
+  "public_refit_verification": "results\\2026-10-23\\improved-delivery-1792786865109066000\\verification.json",
+  "full_refit_pipelines": 2,
+  "repeated_public_validation_fits": 0,
+  "platform_score_verified": false,
+  "previous_best": {
+    "rmse": 42.19670002719412,
+    "macro_f1": 0.5914513709191194
+  },
+  "new_best": {
+    "regression_rmse": 41.480963027907194,
+    "classification_macro_f1": 0.6286047899141216
+  }
+}

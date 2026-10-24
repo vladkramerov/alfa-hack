@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "archive": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_improved_metrics.zip",
+  "archive_sha256": "30f485a78bf8fbc82db85f4d5ded44461eb87012aa642ae9695eae39e31b63a0",
+  "clean_extraction": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\improved-flat-1792786865109066000",
+  "records": [
+    {
+      "task": "regression",
+      "strategy": "group_experts",
+      "selected_validation_score": 41.480963027907194,
+      "validation_fit_count": 0,
+      "full_refit_count": 1,
+      "rows": 22449,
+      "columns": [
+        "id",
+        "site_eui"
+      ],
+      "seconds": 65.53200000000652,
+      "summary": {
+        "status": "completed",
+        "metric": "rmse",
+        "selected_score": 41.480963027907194,
+        "selected": {
+          "family": "extra_trees",
+          "parameters": {},
+          "strategy": "group_experts",
+          "preprocessing": "group-experts-v1",
+          "scale": false,
+          "max_outlier_fraction": 0,
+          "target_transform": "log1p",
+          "group_column": "building_class",
+          "minimum_expert_rows": 500,
+          "shrinkage": 500.0,
+          "hypothesis": "HYP-035: measured group experts, final refit only"
+        },
+        "validation": "temporal:Year_Factor:last=5",
+        "cached_history": true,
+        "experiments": [],
+        "llm": [],
+        "seconds": 63.26500000001397,
+        "submission_rows": 22449,
+        "preprocessing_policy": "group-experts-v1",
+        "llm_calls": 0,
+        "llm_token_estimate": 0,
+        "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+      },
+      "audit": {
+        "policy": "group-experts-v1",
+        "strategy": "group_experts",
+        "fit_original_rows": 53308,
+        "fit_retained_rows": 53308,
+        "target_transform": "log1p",
+        "group_column": "building_class",
+        "minimum_expert_rows": 500,
+        "shrinkage": 500.0,
+        "experts": [
+          {
+            "group": "Commercial",
+            "fit_rows": 21880,
+            "weight": 0.9776586237712243,
+            "fitted": true
+          },
+          {
+            "group": "Residential",
+            "fit_rows": 31428,
+            "weight": 0.9843397644700577,
+            "fitted": true
+          }
+        ],
+        "global_fit_rows": 53308,
+        "encoder": {
+          "native": false,
+          "scale": false
+        },
+        "fallback": "global model for missing/unseen/undersized groups"
+      },
+      "submission_sha256": "a80c83155e6132bcbe71a18c0979956e037e265c7a195aae86c0056cb9fdacef"
+    },
+    {
+      "task": "multiclass",
+      "strategy": "macro_f1_calibrated",
+      "selected_validation_score": 0.6286047899141216,
+      "validation_fit_count": 0,
+      "full_refit_count": 1,
+      "rows": 41166,
+      "columns": [
+        "id",
+        "attack_cat"
+      ],
+      "seconds": 70.89099999997416,
+      "summary": {
+        "status": "completed",
+        "metric": "macro_f1",
+        "selected_score": 0.6286047899141216,
+        "selected": {
+          "family": "xgboost",
+          "parameters": {},
+          "strategy": "macro_f1_calibrated",
+          "preprocessing": "macro-f1-v1",
+          "scale": false,
+          "max_outlier_fraction": 0,
+          "target_transform": "none",
+          "calibration_folds": 3,
+          "class_multipliers": {
+            "Analysis": 1.0,
+            "Backdoor": 1.25,
+            "DoS": 1.5,
+            "Exploits": 0.75,
+            "Fuzzers": 1.5,
+            "Generic": 1.5,
+            "Normal": 0.75,
+            "Reconnaissance": 0.75,
+            "Shellcode": 1.5,
+            "Worms": 2.0
+          },
+          "hypothesis": "HYP-037: measured inner-OOF multipliers, final refit only"
+        },
+        "validation": "stratified-group5:first:seed42",
+        "cached_history": true,
+        "experiments": [],
+        "llm": [],
+        "seconds": 69.01600000000326,
+        "submission_rows": 41166,
+        "preprocessing_policy": "macro-f1-v1",
+        "llm_calls": 0,
+        "llm_token_estimate": 0,
+        "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+      },
+      "audit": {
+        "policy": "macro-f1-v1",
+        "strategy": "macro_f1_calibrated",
+        "fit_original_rows": 87670,
+        "fit_retained_rows": 87670,
+        "target_transform": "none",
+        "encoder": {
+          "native": false,
+          "scale": false
+        },
+        "calibration_multipliers": {
+          "Analysis": 1.0,
+          "Backdoor": 1.25,
+          "DoS": 1.5,
+          "Exploits": 0.75,
+          "Fuzzers": 1.5,
+          "Generic": 1.5,
+          "Normal": 0.75,
+          "Reconnaissance": 0.75,
+          "Shellcode": 1.5,
+          "Worms": 2.0
+        },
+        "multipliers": {
+          "Analysis": 1.0,
+          "Backdoor": 1.25,
+          "DoS": 1.5,
+          "Exploits": 0.75,
+          "Fuzzers": 1.5,
+          "Generic": 1.5,
+          "Normal": 0.75,
+          "Reconnaissance": 0.75,
+          "Shellcode": 1.5,
+          "Worms": 2.0
+        },
+        "calibration_source": "frozen_candidate",
+        "calibration_skip_reason": null,
+        "inner_macro_f1": null,
+        "folds": [],
+        "calibration_grid": [
+          0.75,
+          1.0,
+          1.25,
+          1.5,
+          2.0
+        ],
+        "calibration_passes": 1,
+        "fixed_anchor": "Analysis"
+      },
+      "submission_sha256": "0820baeeb5352568c2f3c9ad4a2066cb54730641628b9627b551f9ea0dd1aa52"
+    }
+  ],
+  "real_platform_api_tested": false,
+  "hidden_score_verified": false,
+  "validation_fit_count": 0
+}

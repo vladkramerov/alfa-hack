@@ -1,0 +1,22 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "candidate": {
+    "hypothesis": "HYP-011",
+    "task": "multiclass",
+    "family": "xgboost",
+    "transform": "none",
+    "parameters": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1,
+      "tree_method": "hist",
+      "device": "cpu",
+      "random_state": 42,
+      "n_jobs": 4,
+      "objective": "multi:softprob"
+    }
+  },
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-011-02-multiclass-none",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-011-02-multiclass-none\\splits.npz"
+}

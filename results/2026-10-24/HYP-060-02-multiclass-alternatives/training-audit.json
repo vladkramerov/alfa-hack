@@ -1,0 +1,86 @@
+{
+  "strategy": "masked_augmentation",
+  "fit_original_rows": 70529,
+  "fit_retained_rows": 70529,
+  "validation_target_used": false,
+  "outer_model_fits": 1,
+  "inner_model_fits": 0,
+  "augmentation": {
+    "original_rows": 70529,
+    "augmented_rows": 70529,
+    "numeric_fields": [
+      "dur",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "sttl",
+      "dttl",
+      "sload",
+      "dload",
+      "sloss",
+      "dloss",
+      "sinpkt",
+      "dinpkt",
+      "sjit",
+      "djit",
+      "swin",
+      "stcpb",
+      "dtcpb",
+      "dwin",
+      "tcprtt",
+      "synack",
+      "ackdat",
+      "smean",
+      "dmean",
+      "trans_depth",
+      "response_body_len",
+      "ct_srv_src",
+      "ct_state_ttl",
+      "ct_dst_ltm",
+      "ct_src_dport_ltm",
+      "ct_dst_sport_ltm",
+      "ct_dst_src_ltm",
+      "is_ftp_login",
+      "ct_ftp_cmd",
+      "ct_flw_http_mthd",
+      "ct_src_ltm",
+      "ct_srv_dst",
+      "is_sm_ips_ports"
+    ],
+    "mask_probability": 0.05,
+    "seed": 42,
+    "masked_cells": 137449,
+    "categorical_keys_preserved": true,
+    "original_rows_preserved": true
+  },
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "parameters": {
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1.0,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_estimators": 600
+    },
+    "encoder": {
+      "native": false,
+      "scale": false
+    },
+    "objective": "masked_augmentation",
+    "augmentation": {
+      "numeric_mask_probability": 0.05,
+      "copies": 1,
+      "keys_preserved": [
+        "proto",
+        "service",
+        "state"
+      ]
+    }
+  },
+  "fit_model_rows": 141058,
+  "training_lineage_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-060-02-multiclass-alternatives\\training-lineage.npz"
+}

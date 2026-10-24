@@ -1,0 +1,36 @@
+{
+  "candidate": {
+    "number": 40,
+    "hypothesis": "HYP-040",
+    "task": "multiclass",
+    "version": "spec006-v1",
+    "policy": "light",
+    "reference": 0.5914513709191194,
+    "method": "advanced",
+    "configuration_source": "experiments/twenty_advanced.py"
+  },
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-040-01-multiclass-spec006",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-040-01-multiclass-spec006\\splits.npz",
+  "cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache",
+  "candidate_artifacts": {
+    "22:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-022-01-regression-spec006\\validation_predictions.npz",
+    "22:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-022-02-multiclass-spec006\\validation_predictions.npz",
+    "23:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-023-01-regression-spec006\\validation_predictions.npz",
+    "24:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-024-01-regression-spec006\\validation_predictions.npz",
+    "25:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-025-01-multiclass-spec006\\validation_predictions.npz",
+    "26:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-026-01-multiclass-spec006\\validation_predictions.npz",
+    "27:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-027-01-multiclass-spec006\\validation_predictions.npz",
+    "29:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-029-01-regression-spec006\\validation_predictions.npz",
+    "30:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-030-01-regression-spec006\\validation_predictions.npz",
+    "31:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-031-01-regression-spec006\\validation_predictions.npz",
+    "32:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-032-01-regression-spec006\\validation_predictions.npz",
+    "33:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-033-01-regression-spec006\\validation_predictions.npz",
+    "34:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-034-01-regression-spec006\\validation_predictions.npz",
+    "35:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-035-01-regression-spec006\\validation_predictions.npz",
+    "36:regression": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-036-01-regression-spec006\\validation_predictions.npz",
+    "37:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-037-01-multiclass-spec006\\validation_predictions.npz",
+    "38:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-038-01-multiclass-spec006\\validation_predictions.npz",
+    "39:multiclass": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-039-01-multiclass-spec006\\validation_predictions.npz"
+  }
+}

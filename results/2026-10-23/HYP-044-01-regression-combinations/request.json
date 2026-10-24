@@ -1,0 +1,19 @@
+{
+  "job": {
+    "number": 44,
+    "hypothesis": "HYP-044",
+    "task": "regression",
+    "candidate": {
+      "strategy": "reg_convex_blend",
+      "parameters": {},
+      "family": "extra_trees"
+    },
+    "version": "spec008-v1",
+    "reference": 41.480963027907194
+  },
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\regression\\task.md",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-044-01-regression-combinations",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-044-01-regression-combinations\\splits.npz",
+  "cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache",
+  "legacy_cache_dir": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache"
+}

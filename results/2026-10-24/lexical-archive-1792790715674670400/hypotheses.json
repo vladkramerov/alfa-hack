@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "cases": {
+    "de20e87b32d5b40c1e4d84a8e8aafc913a9999a8c7b66fa9c1e98f6fb607aa55": {
+      "hashes": {
+        "train.csv": "5971cbf23facb2f3872669e0c7d1bfbe58fa310574e03565339ef3175ca0a91d",
+        "test.csv": "6c5f4e4f60b9e3275109ca6381d2d23e10b5c3b7802bec72669e67e90472fc6f",
+        "sample_submission.csv": "68aaaa496ac679910f515aea806a23eb272b7652f5f7de51d6c1b3f1fb90ac65",
+        "data_dictionary.csv": "cdca978ea78302936decdcb26a5e9d72e748f034f18dcb2bfd7e1d4bf5137c44"
+      },
+      "split_key": "d86e7937c7924af44f74186b9c712d571da89e5a7033f170d7091e7b5beadf76",
+      "metric": "macro_f1",
+      "known": null,
+      "records": [
+        {
+          "candidate_key": "d7eeb241138f52402da0a025c24e048fbc4e6d0a9605c41cce9491b050c50c02",
+          "candidate": {
+            "family": "xgboost",
+            "parameters": {},
+            "strategy": "macro_f1_calibrated",
+            "calibration_folds": 3,
+            "hypothesis": "Grouped OOF class decision multipliers for Macro-F1",
+            "preprocessing": "macro-f1-v1",
+            "scale": false,
+            "max_outlier_fraction": 0,
+            "target_transform": "none"
+          },
+          "status": "completed",
+          "metric": "macro_f1",
+          "score": 1.0,
+          "fit_rows": 64,
+          "valid_rows": 16,
+          "fit_retained_rows": 64,
+          "calibration_multipliers": {
+            "001": 1.0,
+            "010": 1.0
+          },
+          "seconds": 0.26600000000325963,
+          "refit_candidate": {
+            "family": "xgboost",
+            "parameters": {},
+            "strategy": "macro_f1_calibrated",
+            "calibration_folds": 3,
+            "hypothesis": "Grouped OOF class decision multipliers for Macro-F1",
+            "preprocessing": "macro-f1-v1",
+            "scale": false,
+            "max_outlier_fraction": 0,
+            "target_transform": "none",
+            "class_multipliers": {
+              "001": 1.0,
+              "010": 1.0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

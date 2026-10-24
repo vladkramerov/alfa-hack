@@ -1,0 +1,526 @@
+{
+  "numeric_columns": [
+    "Year_Factor",
+    "floor_area",
+    "year_built",
+    "energy_star_rating",
+    "ELEVATION",
+    "january_max_temp_c",
+    "may_avg_temp_c",
+    "may_max_temp_c",
+    "june_min_temp_c",
+    "june_max_temp_c",
+    "october_min_temp_c",
+    "october_max_temp_c",
+    "november_avg_temp_c",
+    "days_below_minus12C",
+    "days_below_minus18C",
+    "days_above_38C",
+    "days_above_43C",
+    "direction_max_wind_speed",
+    "days_with_fog",
+    "year_built_missing",
+    "energy_star_rating_missing",
+    "direction_max_wind_speed_missing"
+  ],
+  "categorical_columns": [
+    "State_Factor",
+    "building_class",
+    "facility_type"
+  ],
+  "dropped_columns": [
+    {
+      "column": "january_avg_temp_c",
+      "correlated_with": "january_min_temp_c",
+      "coefficient": 0.9662400080422349,
+      "method": "pearson"
+    },
+    {
+      "column": "february_min_temp_c",
+      "correlated_with": "january_min_temp_c",
+      "coefficient": 0.9663783057976786,
+      "method": "pearson"
+    },
+    {
+      "column": "march_avg_temp_c",
+      "correlated_with": "february_avg_temp_c",
+      "coefficient": 0.9976182893701073,
+      "method": "spearman"
+    },
+    {
+      "column": "april_avg_temp_c",
+      "correlated_with": "february_avg_temp_c",
+      "coefficient": 0.9562575745905327,
+      "method": "spearman"
+    },
+    {
+      "column": "august_max_temp_c",
+      "correlated_with": "june_max_temp_c",
+      "coefficient": 0.9704291460948371,
+      "method": "spearman"
+    },
+    {
+      "column": "september_min_temp_c",
+      "correlated_with": "may_min_temp_c",
+      "coefficient": 0.9791515749414896,
+      "method": "pearson"
+    },
+    {
+      "column": "september_avg_temp_c",
+      "correlated_with": "july_max_temp_c",
+      "coefficient": 0.9630492093215522,
+      "method": "spearman"
+    },
+    {
+      "column": "november_max_temp_c",
+      "correlated_with": "august_min_temp_c",
+      "coefficient": -0.9593880450197402,
+      "method": "spearman"
+    },
+    {
+      "column": "december_avg_temp_c",
+      "correlated_with": "february_max_temp_c",
+      "coefficient": 0.9587657380723303,
+      "method": "spearman"
+    },
+    {
+      "column": "heating_degree_days_c",
+      "correlated_with": "february_avg_temp_c",
+      "coefficient": -0.9726746669688978,
+      "method": "pearson"
+    },
+    {
+      "column": "snowdepth_inches",
+      "correlated_with": "snowfall_inches",
+      "coefficient": 0.9988237084983362,
+      "method": "spearman"
+    },
+    {
+      "column": "days_below_minus7C",
+      "correlated_with": "january_min_temp_c",
+      "coefficient": -0.950479279405159,
+      "method": "spearman"
+    },
+    {
+      "column": "direction_peak_wind_speed",
+      "correlated_with": "direction_max_wind_speed",
+      "coefficient": 0.9999577916087358,
+      "method": "pearson"
+    },
+    {
+      "column": "max_wind_speed",
+      "correlated_with": "direction_max_wind_speed",
+      "coefficient": 0.9905375123580995,
+      "method": "pearson"
+    },
+    {
+      "column": "monthly_temp_mean",
+      "correlated_with": "avg_temp_c",
+      "coefficient": 0.9997901507766622,
+      "method": "pearson"
+    },
+    {
+      "column": "monthly_temp_spread",
+      "correlated_with": "january_min_temp_c",
+      "coefficient": -0.9702409057868334,
+      "method": "spearman"
+    },
+    {
+      "column": "heating_cooling_total",
+      "correlated_with": "february_avg_temp_c",
+      "coefficient": -0.9593654547086818,
+      "method": "pearson"
+    },
+    {
+      "column": "floor_area_log1p",
+      "correlated_with": "floor_area",
+      "coefficient": 1.0,
+      "method": "spearman"
+    },
+    {
+      "column": "direction_peak_wind_speed_missing",
+      "correlated_with": "direction_max_wind_speed_missing",
+      "coefficient": 0.9965476806981691,
+      "method": "pearson"
+    },
+    {
+      "column": "max_wind_speed_missing",
+      "correlated_with": "direction_max_wind_speed_missing",
+      "coefficient": 1.0,
+      "method": "pearson"
+    },
+    {
+      "column": "days_with_fog_missing",
+      "correlated_with": "direction_max_wind_speed_missing",
+      "coefficient": 0.9602078066024562,
+      "method": "pearson"
+    }
+  ],
+  "residual_max_abs_correlation": {
+    "pearson": 0.7191098940442097,
+    "spearman": 0.8532549438479643
+  },
+  "vif_dropped_columns": [
+    {
+      "column": "avg_temp_c",
+      "vif": 12664.887131318254,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "february_avg_temp_c",
+      "vif": 4656.676010513727,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "july_avg_temp_c",
+      "vif": 2140.872459765801,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "november_min_temp_c",
+      "vif": 1258.4682609546085,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "february_max_temp_c",
+      "vif": 1058.3149892566219,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "cooling_degree_days_c",
+      "vif": 747.7423158880712,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "june_avg_temp_c",
+      "vif": 640.1431367424874,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "january_min_temp_c",
+      "vif": 557.6641279316423,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "march_max_temp_c",
+      "vif": 476.1690048345605,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "august_avg_temp_c",
+      "vif": 420.99980115009043,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "may_min_temp_c",
+      "vif": 334.0258761898088,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "snowfall_inches",
+      "vif": 322.82991795138656,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "august_min_temp_c",
+      "vif": 260.0246950802694,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "precipitation_inches",
+      "vif": 243.01124299195598,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "december_min_temp_c",
+      "vif": 216.26120568211994,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "days_below_minus1C",
+      "vif": 202.22424825984695,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "march_min_temp_c",
+      "vif": 168.4558712577171,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "april_max_temp_c",
+      "vif": 160.34682609534926,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "october_avg_temp_c",
+      "vif": 121.10700492940597,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "december_max_temp_c",
+      "vif": 93.29347910883602,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "april_min_temp_c",
+      "vif": 85.95954463828028,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "july_min_temp_c",
+      "vif": 61.342242143643155,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "days_above_27C",
+      "vif": 56.274404294804945,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "july_max_temp_c",
+      "vif": 30.573288087942842,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "september_max_temp_c",
+      "vif": 25.20726892826646,
+      "reason": "vif_above_threshold"
+    },
+    {
+      "column": "days_above_32C",
+      "vif": 18.505869092099992,
+      "reason": "vif_above_threshold"
+    }
+  ],
+  "numeric_vif_before": {
+    "Year_Factor": 865.8714837861196,
+    "floor_area": 1.0920763868844536,
+    "year_built": 1.0644840503425668,
+    "energy_star_rating": 1.0982891088868239,
+    "ELEVATION": 2.27015490737112,
+    "january_min_temp_c": 805.5085246960748,
+    "january_max_temp_c": 355.66084687807245,
+    "february_avg_temp_c": 7306.385648481952,
+    "february_max_temp_c": 1303.4377657684906,
+    "march_min_temp_c": 479.3304584685581,
+    "march_max_temp_c": 1695.4552751184533,
+    "april_min_temp_c": 248.21781920758485,
+    "april_max_temp_c": 308.10973646440897,
+    "may_min_temp_c": 513.8197418449379,
+    "may_avg_temp_c": 518.1280522553152,
+    "may_max_temp_c": 48.72599880576495,
+    "june_min_temp_c": 271.5196933979312,
+    "june_avg_temp_c": 1781.2110763786147,
+    "june_max_temp_c": 273.9267674722694,
+    "july_min_temp_c": 1115.8970797047928,
+    "july_avg_temp_c": 2344.171225524926,
+    "july_max_temp_c": 240.7235080259204,
+    "august_min_temp_c": 414.2233206384921,
+    "august_avg_temp_c": 1713.0333670564648,
+    "september_max_temp_c": 192.01000792514623,
+    "october_min_temp_c": 340.01627301111694,
+    "october_avg_temp_c": 662.0572703292947,
+    "october_max_temp_c": 472.65505154789236,
+    "november_min_temp_c": 1448.8803511050824,
+    "november_avg_temp_c": 1532.1986038910516,
+    "december_min_temp_c": 491.8456628371117,
+    "december_max_temp_c": 523.3934627796525,
+    "cooling_degree_days_c": 878.6440994122682,
+    "precipitation_inches": 758.8158050520087,
+    "snowfall_inches": 428.4018764247387,
+    "avg_temp_c": 12664.887131318254,
+    "days_below_minus1C": 531.1550078408875,
+    "days_below_minus12C": 94.14660011595485,
+    "days_below_minus18C": 6.72181146810156,
+    "days_above_27C": 192.38039992480552,
+    "days_above_32C": 82.45153623214033,
+    "days_above_38C": 32.65054308750513,
+    "days_above_43C": 5.599598631163536,
+    "direction_max_wind_speed": 2.1129215314033347,
+    "days_with_fog": 8.453280268858029,
+    "year_built_missing": 1.4237685028219456,
+    "energy_star_rating_missing": 1.4325491863769915,
+    "direction_max_wind_speed_missing": 2.0531091195935898
+  },
+  "numeric_vif_after": {
+    "Year_Factor": 5.996002261891181,
+    "floor_area": 1.0902314319472093,
+    "year_built": 1.0626120905538892,
+    "energy_star_rating": 1.0974260523921133,
+    "ELEVATION": 1.526457327953723,
+    "january_max_temp_c": 3.01783335602149,
+    "may_avg_temp_c": 5.0861616645121455,
+    "may_max_temp_c": 6.4880215470633615,
+    "june_min_temp_c": 3.1240168092700142,
+    "june_max_temp_c": 6.200817306620825,
+    "october_min_temp_c": 4.381791687737972,
+    "october_max_temp_c": 5.664308044084932,
+    "november_avg_temp_c": 6.704835506526314,
+    "days_below_minus12C": 4.573284697892251,
+    "days_below_minus18C": 1.491568439380298,
+    "days_above_38C": 3.5502490256569157,
+    "days_above_43C": 1.8365213597361418,
+    "direction_max_wind_speed": 2.051224732215445,
+    "days_with_fog": 7.971010325073645,
+    "year_built_missing": 1.3048066859459548,
+    "energy_star_rating_missing": 1.4150646535450107,
+    "direction_max_wind_speed_missing": 1.9723720093730557
+  },
+  "missing_flag_columns": [
+    "year_built",
+    "energy_star_rating",
+    "direction_max_wind_speed",
+    "direction_peak_wind_speed",
+    "max_wind_speed",
+    "days_with_fog"
+  ],
+  "skewness_before": {
+    "Year_Factor": -0.6339513458200635,
+    "floor_area": 6.69707159882216,
+    "year_built": 0.04729870460229792,
+    "energy_star_rating": -2.322552573267639,
+    "ELEVATION": 16.88611255762725,
+    "january_max_temp_c": 0.6495119370739331,
+    "may_avg_temp_c": -0.6387799240682644,
+    "may_max_temp_c": 0.9261256170233517,
+    "june_min_temp_c": -0.6765339197386591,
+    "june_max_temp_c": 1.906985622129407,
+    "october_min_temp_c": -0.7715998665387054,
+    "october_max_temp_c": 0.9543421818356945,
+    "november_avg_temp_c": 1.8175670076021422,
+    "days_below_minus12C": 7.659387648446867,
+    "days_below_minus18C": 101.08093901343776,
+    "days_above_38C": 19.447428777696373,
+    "days_above_43C": 73.2703595018106,
+    "direction_max_wind_speed": 4.198701487498443,
+    "days_with_fog": -2.3080892536833,
+    "year_built_missing": 4.126919301764928,
+    "energy_star_rating_missing": -0.9603808422810236,
+    "direction_max_wind_speed_missing": 0.12248272375072324
+  },
+  "skewness_after": {
+    "Year_Factor": -0.6339513458200635,
+    "floor_area": -0.09608494010761327,
+    "year_built": 0.04729870460229792,
+    "energy_star_rating": 0.07278284523579587,
+    "ELEVATION": -0.24785103327836044,
+    "january_max_temp_c": 0.6495119370739331,
+    "may_avg_temp_c": -0.6387799240682644,
+    "may_max_temp_c": 0.9261256170233517,
+    "june_min_temp_c": -0.6765339197386591,
+    "june_max_temp_c": -0.42074274017958163,
+    "october_min_temp_c": -0.7715998665387054,
+    "october_max_temp_c": 0.9543421818356945,
+    "november_avg_temp_c": -0.03464178960201837,
+    "days_below_minus12C": 7.659387648446867,
+    "days_below_minus18C": 101.08093901343776,
+    "days_above_38C": 2.1892927358160117,
+    "days_above_43C": 73.2703595018106,
+    "direction_max_wind_speed": 4.198701487498443,
+    "days_with_fog": -2.3080892536833,
+    "year_built_missing": 4.126919301764928,
+    "energy_star_rating_missing": -0.9603808422810236,
+    "direction_max_wind_speed_missing": 0.12248272375072324
+  },
+  "gaussian_columns": [
+    "floor_area",
+    "energy_star_rating",
+    "ELEVATION",
+    "june_max_temp_c",
+    "november_avg_temp_c",
+    "days_above_38C"
+  ],
+  "gaussian_lambdas": {
+    "floor_area": -0.1613240116990909,
+    "energy_star_rating": 2.3881906751075905,
+    "ELEVATION": 0.14702865146845062,
+    "june_max_temp_c": -1.479510913451755,
+    "november_avg_temp_c": -2.9757379872757888,
+    "days_above_38C": -7.777126007628526
+  },
+  "gaussian_skipped": {},
+  "feature_names": [
+    "Year_Factor",
+    "floor_area",
+    "year_built",
+    "energy_star_rating",
+    "ELEVATION",
+    "january_max_temp_c",
+    "may_avg_temp_c",
+    "may_max_temp_c",
+    "june_min_temp_c",
+    "june_max_temp_c",
+    "october_min_temp_c",
+    "october_max_temp_c",
+    "november_avg_temp_c",
+    "days_below_minus12C",
+    "days_below_minus18C",
+    "days_above_38C",
+    "days_above_43C",
+    "direction_max_wind_speed",
+    "days_with_fog",
+    "year_built_missing",
+    "energy_star_rating_missing",
+    "direction_max_wind_speed_missing",
+    "State_Factor_State_1",
+    "State_Factor_State_10",
+    "State_Factor_State_2",
+    "State_Factor_State_6",
+    "State_Factor_State_8",
+    "building_class_Commercial",
+    "building_class_Residential",
+    "facility_type_5plus_Unit_Building",
+    "facility_type_Commercial_Other",
+    "facility_type_Commercial_Unknown",
+    "facility_type_Data_Center",
+    "facility_type_Education_College_or_university",
+    "facility_type_Education_Other_classroom",
+    "facility_type_Education_Uncategorized",
+    "facility_type_Food_Sales",
+    "facility_type_Food_Service_Other",
+    "facility_type_Food_Service_Restaurant_or_cafeteria",
+    "facility_type_Food_Service_Uncategorized",
+    "facility_type_Grocery_store_or_food_market",
+    "facility_type_Health_Care_Inpatient",
+    "facility_type_Health_Care_Outpatient_Clinic",
+    "facility_type_Health_Care_Outpatient_Uncategorized",
+    "facility_type_Health_Care_Uncategorized",
+    "facility_type_Industrial",
+    "facility_type_Laboratory",
+    "facility_type_Lodging_Dormitory_or_fraternity_sorority",
+    "facility_type_Lodging_Hotel",
+    "facility_type_Lodging_Other",
+    "facility_type_Mixed_Use_Commercial_and_Residential",
+    "facility_type_Mixed_Use_Predominantly_Commercial",
+    "facility_type_Multifamily_Uncategorized",
+    "facility_type_Nursing_Home",
+    "facility_type_Office_Bank_or_other_financial",
+    "facility_type_Office_Medical_non_diagnostic",
+    "facility_type_Office_Uncategorized",
+    "facility_type_Parking_Garage",
+    "facility_type_Public_Assembly_Drama_theater",
+    "facility_type_Public_Assembly_Entertainment_culture",
+    "facility_type_Public_Assembly_Library",
+    "facility_type_Public_Assembly_Movie_Theater",
+    "facility_type_Public_Assembly_Other",
+    "facility_type_Public_Assembly_Recreation",
+    "facility_type_Public_Assembly_Social_meeting",
+    "facility_type_Public_Assembly_Stadium",
+    "facility_type_Public_Assembly_Uncategorized",
+    "facility_type_Public_Safety_Courthouse",
+    "facility_type_Public_Safety_Fire_or_police_station",
+    "facility_type_Public_Safety_Penitentiary",
+    "facility_type_Religious_worship",
+    "facility_type_Retail_Enclosed_mall",
+    "facility_type_Retail_Strip_shopping_mall",
+    "facility_type_Retail_Uncategorized",
+    "facility_type_Retail_Vehicle_dealership_showroom",
+    "facility_type_Service_Drycleaning_or_Laundry",
+    "facility_type_Service_Uncategorized",
+    "facility_type_Service_Vehicle_service_repair_shop",
+    "facility_type_Warehouse_Distribution_or_Shipping_center",
+    "facility_type_Warehouse_Nonrefrigerated",
+    "facility_type_Warehouse_Refrigerated",
+    "facility_type_Warehouse_Selfstorage"
+  ]
+}

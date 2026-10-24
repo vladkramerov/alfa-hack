@@ -1,0 +1,30 @@
+{
+  "solution.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\rewrite_solution.py",
+    "sha256": "448ad7527f6f3e4155fea4992623fe35151177985d9bb1121c12866a71433559"
+  },
+  "research_agent.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\research_agent.py",
+    "sha256": "560a29497550081594cfd198292eef30d44eb0a3200f5485bd14d457ecf181f1"
+  },
+  "research_data.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\research_data.py",
+    "sha256": "326ad14b24a9fad0c0478caa9afb5125929223bb8fdb94429493dcd467769b62"
+  },
+  "research_fm.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\research_fm.py",
+    "sha256": "18697281eeabb5ce3f992abaacde353175507c53f04f3f0b838afccce9d61f61"
+  },
+  "research_memory.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\research_memory.py",
+    "sha256": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8"
+  },
+  "research_neighbors.py": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\research_neighbors.py",
+    "sha256": "5bce0c914cadf324898e603f7c1b35add9f5405a94acbfaf4750b230ce053b88"
+  },
+  "requirements.txt": {
+    "original": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\requirements.txt",
+    "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  }
+}

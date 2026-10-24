@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "zip_bytes": 24463,
+  "zip_sha256": "8e5c266d9b2f54ce87ba2eef79a5e6e8c36d4c55a36ebf3c160cc2f59a25d5ea",
+  "root_files": 9,
+  "requirements_exact": true,
+  "unit_tests": 75,
+  "spec004_independent_checks": 522,
+  "spec005_independent_checks": 233,
+  "clean_extraction_scenarios": 5,
+  "public_full_refits": 2,
+  "public_validation_refits": 0,
+  "real_platform_api_tested": false,
+  "important_limitation": "Mandatory full-v1 worsened RMSE and MacroF1 versus previous simpler winners; no hidden platform score measured."
+}

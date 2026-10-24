@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "mode": "refit",
+  "train_rows": 80,
+  "test_rows": 3,
+  "fit_retained_rows": 80,
+  "calibration_multipliers": {
+    "001": 1.0,
+    "010": 1.0
+  },
+  "seconds": 0.10999999998603016
+}

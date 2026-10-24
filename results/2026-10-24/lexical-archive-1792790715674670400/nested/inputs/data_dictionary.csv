@@ -1,0 +1,5 @@
+feature,role,dtype
+key,id,str
+x,feature,numeric
+flag,feature,numeric
+answer,target,str

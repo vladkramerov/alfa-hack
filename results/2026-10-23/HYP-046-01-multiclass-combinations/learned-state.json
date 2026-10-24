@@ -1,0 +1,31 @@
+{
+  "candidate": {
+    "strategy": "smote_macro_f1",
+    "family": "xgboost",
+    "parameters": {},
+    "class_multipliers": {
+      "Analysis": 1.0,
+      "Backdoor": 1.25,
+      "DoS": 2.0,
+      "Exploits": 1.0,
+      "Fuzzers": 1.25,
+      "Generic": 1.0,
+      "Normal": 0.75,
+      "Reconnaissance": 1.0,
+      "Shellcode": 1.0,
+      "Worms": 2.0
+    }
+  },
+  "class_multipliers": {
+    "Analysis": 1.0,
+    "Backdoor": 1.25,
+    "DoS": 2.0,
+    "Exploits": 1.0,
+    "Fuzzers": 1.25,
+    "Generic": 1.0,
+    "Normal": 0.75,
+    "Reconnaissance": 1.0,
+    "Shellcode": 1.0,
+    "Worms": 2.0
+  }
+}

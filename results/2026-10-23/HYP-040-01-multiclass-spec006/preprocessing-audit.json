@@ -1,0 +1,112 @@
+{
+  "input_features": [
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "outer_validation_unmodified": true,
+  "outer_y_not_passed_to_method": true,
+  "pair": [
+    "DoS",
+    "Exploits"
+  ],
+  "pair_selection": "maximum symmetric training OOF attack confusions, lexical tie",
+  "oof": {
+    "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+    "config": {
+      "policy": "legacy"
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "status": "reused",
+        "fit_rows": 47075,
+        "validation_rows": 23454,
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz"
+      },
+      {
+        "fold": 1,
+        "status": "reused",
+        "fit_rows": 46893,
+        "validation_rows": 23636,
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz"
+      },
+      {
+        "fold": 2,
+        "status": "reused",
+        "fit_rows": 47090,
+        "validation_rows": 23439,
+        "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+      }
+    ],
+    "selection_source": "training_grouped_oof"
+  },
+  "gated_rows": 1690,
+  "gate_margin": 0.15,
+  "mass_preserved": true,
+  "global_outer": "reused_saved_baseline",
+  "expert": {
+    "policy": "legacy",
+    "fit_rows": 18347,
+    "retained_rows": 18347,
+    "removed_positions": [],
+    "configuration": {
+      "task": "multiclass",
+      "family": "xgboost",
+      "policy": "legacy",
+      "feature": null,
+      "target_transform": null,
+      "parameters": {
+        "n_estimators": 600,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "reg_lambda": 1,
+        "tree_method": "hist"
+      }
+    },
+    "fingerprint": "3d4d1b88ee1aa7e91fd542ba884b93db583f893759ef2f3592a9bac85ec4fca9",
+    "outliers": {
+      "removed": 0
+    },
+    "feature": null
+  }
+}

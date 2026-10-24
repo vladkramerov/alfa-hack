@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 39.39219382766771,
+  "candidate": {
+    "strategy": "temporal_profile_memory",
+    "parameters": {}
+  },
+  "learned_state": {},
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "outer_baseline_refits": 0,
+  "seconds": 1.0940000000118744,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

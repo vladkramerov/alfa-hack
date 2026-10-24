@@ -1,0 +1,82 @@
+{
+  "task": "regression",
+  "rows": 22449,
+  "columns": [
+    "id",
+    "site_eui"
+  ],
+  "selected_score": 40.972997661684175,
+  "strategy": "reg_feature_experts",
+  "validation_fit_count": 0,
+  "full_refit_count": 1,
+  "seconds": 97.70300000000861,
+  "summary": {
+    "status": "completed",
+    "metric": "rmse",
+    "selected_score": 40.972997661684175,
+    "selected": {
+      "strategy": "reg_feature_experts",
+      "parameters": {},
+      "family": "extra_trees",
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "group_column": "building_class",
+      "minimum_expert_rows": 500,
+      "shrinkage": 500.0,
+      "hypothesis": "HYP-043: verified combination; frozen train-only state",
+      "preprocessing": "reg-feature-experts-v1",
+      "scale": false,
+      "max_outlier_fraction": 0,
+      "target_transform": "log1p"
+    },
+    "validation": "temporal:Year_Factor:last=5",
+    "cached_history": true,
+    "experiments": [],
+    "llm": [],
+    "seconds": 95.68700000000536,
+    "submission_rows": 22449,
+    "preprocessing_policy": "reg-feature-experts-v1",
+    "llm_calls": 0,
+    "llm_token_estimate": 0,
+    "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+  },
+  "audit": {
+    "strategy": "reg_feature_experts",
+    "fit_original_rows": 53308,
+    "fit_retained_rows": 53308,
+    "row_deletion": false,
+    "validation_target_used": false,
+    "feature_numbers": [
+      29,
+      30,
+      31
+    ],
+    "experts": [
+      {
+        "group": "Commercial",
+        "fit_rows": 21880,
+        "weight": 0.9776586237712243,
+        "fitted": true
+      },
+      {
+        "group": "Residential",
+        "fit_rows": 31428,
+        "weight": 0.9843397644700577,
+        "fitted": true
+      }
+    ],
+    "group_column": "building_class",
+    "minimum_expert_rows": 500,
+    "shrinkage": 500.0,
+    "global_reused": false,
+    "encoder": {
+      "scale": false,
+      "native": false
+    },
+    "global_fit_rows": 53308
+  },
+  "submission_sha256": "96231f8e88e05f317ddea15628b47ebf165b2f69fa0d139317267f504d400000"
+}

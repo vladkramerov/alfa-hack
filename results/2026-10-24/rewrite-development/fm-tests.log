@@ -1,0 +1,441 @@
+TDD RED: .venv-ml/Scripts/python.exe -m unittest discover -s tests -p test_research_fm.py -v
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... 
+  test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=['x', 'c']) ... ERROR
+  test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=[]) ... ERROR
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... ERROR
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... ERROR
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... ERROR
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... ERROR
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... ERROR
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... ERROR
+
+======================================================================
+ERROR: test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=['x', 'c'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 121, in test_constant_target_and_zero_feature_frame_return_constant
+    model = self.api().FactorizationRegressor().fit(X, [12345.] * 3)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 121, in test_constant_target_and_zero_feature_frame_return_constant
+    model = self.api().FactorizationRegressor().fit(X, [12345.] * 3)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 62, in test_default_training_learns_additive_and_pair_signal_in_original_units
+    model = self.api().FactorizationRegressor().fit(X.iloc[:8192], y[:8192])
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 128, in test_high_cardinality_data_remains_sparse_and_seed_is_deterministic
+    first = self.api().FactorizationRegressor(epochs=1).fit(X, target)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 139, in test_invalid_inputs_are_rejected_before_learning
+    api = self.api()
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 104, in test_predictions_do_not_depend_on_batch_companions_or_call_order
+    model = self.api().FactorizationRegressor(batch_size=7, epochs=3).fit(
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 34, in test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle
+    loss, db, dw, dv = self.api().fm_loss_gradient(
+                       ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+======================================================================
+ERROR: test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 75, in test_train_only_statistics_missing_flags_and_lexical_categories
+    model = self.api().FactorizationRegressor(epochs=2, batch_size=2).fit(
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 13, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+FAILED (errors=8)
+RED confirmation: expected missing-feature assertion failures
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... 
+  test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=['x', 'c']) ... FAIL
+  test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=[]) ... FAIL
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... FAIL
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... FAIL
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... FAIL
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... FAIL
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... FAIL
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... FAIL
+
+======================================================================
+FAIL: test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=['x', 'c'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 126, in test_constant_target_and_zero_feature_frame_return_constant
+    model = self.api().FactorizationRegressor().fit(X, [12345.] * 3)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) (columns=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 126, in test_constant_target_and_zero_feature_frame_return_constant
+    model = self.api().FactorizationRegressor().fit(X, [12345.] * 3)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 67, in test_default_training_learns_additive_and_pair_signal_in_original_units
+    model = self.api().FactorizationRegressor().fit(X.iloc[:8192], y[:8192])
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 133, in test_high_cardinality_data_remains_sparse_and_seed_is_deterministic
+    first = self.api().FactorizationRegressor(epochs=1).fit(X, target)
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 144, in test_invalid_inputs_are_rejected_before_learning
+    api = self.api()
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 109, in test_predictions_do_not_depend_on_batch_companions_or_call_order
+    model = self.api().FactorizationRegressor(batch_size=7, epochs=3).fit(
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 39, in test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle
+    loss, db, dw, dv = self.api().fm_loss_gradient(
+                       ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+======================================================================
+FAIL: test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 14, in api
+    return importlib.import_module("research_fm")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'research_fm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 80, in test_train_only_statistics_missing_flags_and_lexical_categories
+    model = self.api().FactorizationRegressor(epochs=2, batch_size=2).fit(
+            ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 17, in api
+    self.fail("SPEC010 FM implementation is missing")
+AssertionError: SPEC010 FM implementation is missing
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.018s
+
+FAILED (failures=8)
+TDD GREEN attempt: fixed default FM and exact sparse gradients
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... ok
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... ok
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... ok
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... ok
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... ok
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... ok
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.149s
+
+OK
+TDD boundary RED: failed refit must invalidate fitted state
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... ok
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... ok
+test_failed_refit_invalidates_prior_parameters (test_research_fm.FactorizationRegressorTests.test_failed_refit_invalidates_prior_parameters) ... FAIL
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... ok
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... ok
+test_nullable_and_all_missing_categories_keep_training_schema (test_research_fm.FactorizationRegressorTests.test_nullable_and_all_missing_categories_keep_training_schema) ... ok
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... ok
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... ok
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... ok
+
+======================================================================
+FAIL: test_failed_refit_invalidates_prior_parameters (test_research_fm.FactorizationRegressorTests.test_failed_refit_invalidates_prior_parameters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_research_fm.py", line 167, in test_failed_refit_invalidates_prior_parameters
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.157s
+
+FAILED (failures=1)
+TDD boundary GREEN + final FM verification
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... ok
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... ok
+test_failed_refit_invalidates_prior_parameters (test_research_fm.FactorizationRegressorTests.test_failed_refit_invalidates_prior_parameters) ... ok
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... ok
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... ok
+test_nullable_and_all_missing_categories_keep_training_schema (test_research_fm.FactorizationRegressorTests.test_nullable_and_all_missing_categories_keep_training_schema) ... ok
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... ok
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... ok
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.153s
+
+OK
+Final targeted FM check after review (no real data fits)
+test_constant_target_and_zero_feature_frame_return_constant (test_research_fm.FactorizationRegressorTests.test_constant_target_and_zero_feature_frame_return_constant) ... ok
+test_default_training_learns_additive_and_pair_signal_in_original_units (test_research_fm.FactorizationRegressorTests.test_default_training_learns_additive_and_pair_signal_in_original_units) ... ok
+test_failed_refit_invalidates_prior_parameters (test_research_fm.FactorizationRegressorTests.test_failed_refit_invalidates_prior_parameters) ... ok
+test_high_cardinality_data_remains_sparse_and_seed_is_deterministic (test_research_fm.FactorizationRegressorTests.test_high_cardinality_data_remains_sparse_and_seed_is_deterministic) ... ok
+test_invalid_inputs_are_rejected_before_learning (test_research_fm.FactorizationRegressorTests.test_invalid_inputs_are_rejected_before_learning) ... ok
+test_nullable_and_all_missing_categories_keep_training_schema (test_research_fm.FactorizationRegressorTests.test_nullable_and_all_missing_categories_keep_training_schema) ... ok
+test_predictions_do_not_depend_on_batch_companions_or_call_order (test_research_fm.FactorizationRegressorTests.test_predictions_do_not_depend_on_batch_companions_or_call_order) ... ok
+test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle (test_research_fm.FactorizationRegressorTests.test_sparse_prediction_and_all_analytic_gradients_match_pairwise_oracle) ... ok
+test_train_only_statistics_missing_flags_and_lexical_categories (test_research_fm.FactorizationRegressorTests.test_train_only_statistics_missing_flags_and_lexical_categories) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.146s
+
+OK

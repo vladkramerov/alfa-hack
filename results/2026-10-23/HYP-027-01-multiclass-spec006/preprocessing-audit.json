@@ -1,0 +1,88 @@
+{
+  "input_features": [
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "outer_validation_unmodified": true,
+  "outer_y_not_passed_to_method": true,
+  "policy": "light",
+  "fit_rows": 70529,
+  "retained_rows": 70529,
+  "removed_positions": [],
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "policy": "light",
+    "feature": {
+      "class": "experiments.twenty_features.TCPApplicability",
+      "parameters": {}
+    },
+    "target_transform": null,
+    "parameters": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1,
+      "tree_method": "hist"
+    }
+  },
+  "fingerprint": "eee7aec08abb64d697528289f14d65a58fd5c17e4781f8c2b142fb53fa928f8c",
+  "outliers": {
+    "removed": 0
+  },
+  "feature": {
+    "n_fit": 70529,
+    "target_used": false,
+    "row_deletion": false,
+    "validated_fields": [
+      "swin",
+      "dwin",
+      "stcpb",
+      "dtcpb",
+      "tcprtt",
+      "synack",
+      "ackdat"
+    ],
+    "semantic_source": "data/multiclass/data_dictionary.csv + task.md"
+  }
+}

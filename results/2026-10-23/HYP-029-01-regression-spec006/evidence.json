@@ -1,0 +1,49 @@
+{
+  "candidate": {
+    "number": 29,
+    "hypothesis": "HYP-029",
+    "task": "regression",
+    "version": "spec006-v1",
+    "policy": "light",
+    "reference": 42.19670002719412,
+    "method": "features",
+    "configuration_source": "experiments/twenty_features.py"
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "fingerprint": "cd30922b19418ccc6a928c3a31682075eb2c5744ae274297dbaea2720ce57945",
+  "directory": "results/2026-10-23/HYP-029-01-regression-spec006",
+  "status": "completed",
+  "started": "2026-10-23T23:02:15.437836+03:00",
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+    "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+    "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+    "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+  },
+  "ledger_sha256_before_fit": "97504d4ef03d2ddf8011e29e78cd651bf33cc909d3c42d951f186acfb01e4867",
+  "metric": "rmse",
+  "score": 42.08610226703874,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "warnings": [],
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "seconds": 21.969000000011874,
+  "conclusion": "Подтверждена в проверенных условиях",
+  "finished": "2026-10-23T23:02:39.422870+03:00"
+}

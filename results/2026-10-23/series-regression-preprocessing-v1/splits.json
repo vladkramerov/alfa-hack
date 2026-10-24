@@ -1,0 +1,9 @@
+{
+  "description": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+  "sizes": {
+    "inner_fit": 22054,
+    "inner_valid": 12946,
+    "outer_fit": 35000,
+    "outer_valid": 18308
+  }
+}

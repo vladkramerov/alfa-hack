@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 141, in main
+    detail=run_case(case,output/'cases'/case);record={'id':case,'name':name,'status':'passed','detail':detail}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\check_schema_semantics.py", line 99, in run_case
+    if actual!=expected:raise AssertionError(f'Class label parsing changed lexical values: expected={transformed!r}, actual={sorted(actual)!r}, dtype={changed.y.dtype}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Class label parsing changed lexical values: expected=['001', '010'], actual=[1, 10], dtype=int64

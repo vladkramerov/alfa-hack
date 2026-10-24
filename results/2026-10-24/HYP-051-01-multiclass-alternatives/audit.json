@@ -1,0 +1,57 @@
+{
+  "strategy": "balanced_softmax",
+  "fit_original_rows": 70529,
+  "fit_retained_rows": 70529,
+  "validation_target_used": false,
+  "outer_model_fits": 1,
+  "inner_model_fits": 0,
+  "class_counts": {
+    "Analysis": 789,
+    "Backdoor": 715,
+    "DoS": 4937,
+    "Exploits": 13410,
+    "Fuzzers": 7253,
+    "Generic": 16267,
+    "Normal": 22435,
+    "Reconnaissance": 4228,
+    "Shellcode": 449,
+    "Worms": 46
+  },
+  "training_shift": "log_fit_class_count",
+  "inference_shift": "none",
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "parameters": {
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1.0,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_estimators": 600
+    },
+    "encoder": {
+      "native": false,
+      "scale": false
+    },
+    "objective": "balanced_softmax",
+    "custom_objective": "shifted_soft_cross_entropy",
+    "base_score": 0.0,
+    "soft_targets_sha256": "de883343d361d66bf10986c774399469ed49a281b6acb811f7bea107057c2896",
+    "log_count_shift": [
+      6.670766320845874,
+      6.5722825426940075,
+      8.504513138258863,
+      9.503755976275723,
+      8.889170455363413,
+      9.696893794766453,
+      10.018377518410084,
+      8.349484346990128,
+      6.1070228877422545,
+      3.828641396489095
+    ],
+    "hessian": "diagonal_PSD_upper_bound_2p1mp_floor1e-6"
+  },
+  "fit_model_rows": 70529,
+  "training_lineage_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-051-01-multiclass-alternatives\\training-lineage.npz"
+}

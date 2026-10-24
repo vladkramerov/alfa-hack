@@ -1,0 +1,87 @@
+{
+  "task": "multiclass",
+  "candidate": {
+    "strategy": "smote_macro_f1",
+    "family": "xgboost",
+    "parameters": {},
+    "class_multipliers": {
+      "Analysis": 1.0,
+      "Backdoor": 1.25,
+      "DoS": 2.0,
+      "Exploits": 1.0,
+      "Fuzzers": 1.25,
+      "Generic": 1.0,
+      "Normal": 0.75,
+      "Reconnaissance": 1.0,
+      "Shellcode": 1.0,
+      "Worms": 2.0
+    }
+  },
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "fingerprint": "38df1fc9ca4222b40f1005f8b905fca9fec3c0c8b10e93208cde724dc0e70993",
+  "job": {
+    "number": 46,
+    "hypothesis": "HYP-046",
+    "task": "multiclass",
+    "candidate": {
+      "strategy": "smote_macro_f1",
+      "parameters": {},
+      "family": "xgboost"
+    },
+    "version": "spec008-v1",
+    "reference": 0.6286047899141216
+  },
+  "status": "completed",
+  "started": "2026-10-23T23:42:38.213111+03:00",
+  "ledger_sha256_before_fit": "3d01078d6baaac05bd00d84d5533c1200fdd4d7a3a2552329ec79a4f98e28cb0",
+  "directory": "results/2026-10-23/HYP-046-01-multiclass-combinations",
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "94a1a2a263ae9429799724c4647d8591dbf168804e00909cc2de3c44699d29c6",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_class_combo.py": "621a8d24b2b8ae51adf86867604a4decc5e3b7f4160332853bf8ab3599373023",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "experiments/twenty_common.py": "075b2a6bddbc77d623016fefbbe7779021d26f2c99439c88392361a31d11ffd0",
+    "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+    "experiments/reg_combinations.py": "5ef8928bf3d48996c11328cfc1236f833ed4329c8c32fa8089da703bc73303c1",
+    "experiments/class_combinations.py": "f56f557abf577a72e9e9b833f00642cc1e971b34693596718954ffa5c6d89e35",
+    "experiments/combo_worker.py": "c2711a094def2b5b6ebb89fc4e2388c4897cd63f9c95ce0e05412a241bda6dc8",
+    "experiments/run_combinations.py": "f7f2ab474048e3ff13b1266cc0459da86419af43e3f8f580cda77b7ab4a80fa5"
+  },
+  "metric": "macro_f1",
+  "score": 0.6154359833457845,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "seconds": 191.43799999999464,
+  "learned_state": {
+    "class_multipliers": {
+      "Analysis": 1.0,
+      "Backdoor": 1.25,
+      "DoS": 2.0,
+      "Exploits": 1.0,
+      "Fuzzers": 1.25,
+      "Generic": 1.0,
+      "Normal": 0.75,
+      "Reconnaissance": 1.0,
+      "Shellcode": 1.0,
+      "Worms": 2.0
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "outer_baseline_refits": 0,
+  "conclusion": "Не подтверждена по заданному критерию",
+  "improved": false,
+  "finished": "2026-10-23T23:45:52.471011+03:00"
+}

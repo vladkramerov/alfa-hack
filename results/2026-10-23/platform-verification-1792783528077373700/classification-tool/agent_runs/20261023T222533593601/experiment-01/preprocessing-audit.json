@@ -1,0 +1,116 @@
+{
+  "policy": "full-v1",
+  "fit_original_rows": 80,
+  "fit_retained_rows": 80,
+  "target_transform": null,
+  "outliers": {
+    "n_input": 80,
+    "n_retained": 80,
+    "n_removed": 0,
+    "removed_fraction": 0.0,
+    "max_fraction": 0.05,
+    "max_removed": 4,
+    "classification": true,
+    "classes": {
+      "negative": {
+        "before": 33,
+        "removed": 0,
+        "retained": 33,
+        "max_removed": 0,
+        "removed_fraction": 0.0
+      },
+      "positive": {
+        "before": 47,
+        "removed": 0,
+        "retained": 47,
+        "max_removed": 0,
+        "removed_fraction": 0.0
+      }
+    },
+    "reason": "no_eligible_negative_scores",
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "detector_numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "negative_score_candidates": 29,
+    "detector_parameters": {
+      "n_estimators": 100,
+      "max_samples": 80,
+      "contamination": "auto",
+      "random_state": 42,
+      "n_jobs": 4
+    },
+    "target_used_in_detector": false
+  },
+  "preprocessing": {
+    "policy": "full-v1",
+    "n_fit": 80,
+    "normalization_enabled": true,
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "categorical_columns": [
+      "kind"
+    ],
+    "numeric_output_columns": [
+      "signal",
+      "signal_square",
+      "signal__missing",
+      "signal_square__missing"
+    ],
+    "dropped_columns": [],
+    "continuous_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "missing_counts": {
+      "signal": 1,
+      "signal_square": 1
+    },
+    "missing_flag_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "scaler_mean": [
+      1.222866252703625e-12,
+      1.222610901407961e-12,
+      0.0125,
+      0.0125
+    ],
+    "scaler_scale": [
+      1.2489410152096443,
+      1.2489410152096447,
+      0.11110243021644485,
+      0.11110243021644485
+    ],
+    "skewness_before": {
+      "signal": -0.1570056594664135,
+      "signal_square": 1.4911024049121542,
+      "signal__missing": 8.944271909999165,
+      "signal_square__missing": 8.944271909999165
+    },
+    "skewness_after": {
+      "signal": 4.8898215016505585e-11,
+      "signal_square": 4.889743424625538e-11,
+      "signal__missing": 8.944271909999156,
+      "signal_square__missing": 8.944271909999156
+    },
+    "quantile_parameters": {
+      "output_distribution": "normal",
+      "n_quantiles": 80,
+      "subsample": null,
+      "random_state": 42
+    },
+    "native_categories": false,
+    "onehot_max_categories": 64,
+    "max_dense_cells": 32000000,
+    "fallback_bias": false
+  },
+  "normalized_training_mean_abs_max": 2.7939677238464355e-09,
+  "normalized_training_std_error_max": 3.7167743216492966e-08
+}

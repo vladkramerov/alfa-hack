@@ -1,0 +1,47 @@
+{
+  "status": "partial",
+  "checked": [
+    {
+      "hypothesis": "HYP-022",
+      "task": "regression",
+      "matches": true,
+      "score": 42.203267904780695
+    },
+    {
+      "hypothesis": "HYP-022",
+      "task": "multiclass",
+      "matches": true,
+      "score": 0.5615525355321143
+    },
+    {
+      "hypothesis": "HYP-023",
+      "task": "regression",
+      "matches": true,
+      "score": 43.19210947337134
+    },
+    {
+      "hypothesis": "HYP-024",
+      "task": "regression",
+      "matches": true,
+      "score": 42.18354628369281
+    },
+    {
+      "hypothesis": "HYP-025",
+      "task": "multiclass",
+      "matches": true,
+      "score": 0.5771726314994396
+    },
+    {
+      "hypothesis": "HYP-026",
+      "task": "multiclass",
+      "matches": true,
+      "score": 0.5793987048589155
+    },
+    {
+      "hypothesis": "HYP-027",
+      "task": "multiclass",
+      "matches": true,
+      "score": 0.5857385909681803
+    }
+  ]
+}

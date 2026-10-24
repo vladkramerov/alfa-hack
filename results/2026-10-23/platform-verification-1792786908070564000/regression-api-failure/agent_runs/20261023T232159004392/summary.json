@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "selected_score": null,
+  "selected": null,
+  "validation": "random80/20:seed42",
+  "cached_history": false,
+  "experiments": [],
+  "llm": [
+    {
+      "status": "failed",
+      "errors": [
+        "empty/truncated/invalid response",
+        "empty/truncated/invalid response"
+      ],
+      "attempts": 2,
+      "estimated_tokens": 5824
+    }
+  ],
+  "seconds": 0.07800000000861473,
+  "submission_rows": 3,
+  "preprocessing_policy": "full-v1",
+  "llm_calls": 1,
+  "llm_token_estimate": 5824,
+  "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+}

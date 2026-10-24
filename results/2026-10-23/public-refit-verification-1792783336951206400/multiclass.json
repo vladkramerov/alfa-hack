@@ -1,0 +1,62 @@
+{
+  "task": "multiclass",
+  "selected_family": "xgboost",
+  "cached_validation_metric": "macro_f1",
+  "cached_validation_score": 0.5637871673383791,
+  "validation_fit_count": 0,
+  "full_refit_count": 1,
+  "rows": 41166,
+  "columns": [
+    "id",
+    "attack_cat"
+  ],
+  "seconds": 98.43700000000536,
+  "submission_sha256": "faaa201aaef68f5f0b5864dc19a2f67d84f24c19f8728f41b2212473a5951340",
+  "summary": {
+    "status": "completed",
+    "metric": "macro_f1",
+    "selected_score": 0.5637871673383791,
+    "selected": {
+      "family": "xgboost",
+      "parameters": {},
+      "target_transform": null,
+      "hypothesis": "HYP-021: mandatory full-v1 normalization, bounded normal quantiles and <=5% training outliers",
+      "preprocessing": "full-v1",
+      "scale": true,
+      "max_outlier_fraction": 0.05
+    },
+    "validation": "stratified-group5:first:seed42",
+    "cached_history": true,
+    "experiments": [],
+    "llm": [],
+    "seconds": 96.5,
+    "submission_rows": 41166,
+    "preprocessing_policy": "full-v1",
+    "llm_calls": 0,
+    "llm_token_estimate": 0,
+    "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+  },
+  "refits": [
+    {
+      "candidate": {
+        "family": "xgboost",
+        "parameters": {},
+        "target_transform": null,
+        "hypothesis": "HYP-021: mandatory full-v1 normalization, bounded normal quantiles and <=5% training outliers",
+        "preprocessing": "full-v1",
+        "scale": true,
+        "max_outlier_fraction": 0.05
+      },
+      "result": {
+        "status": "completed",
+        "mode": "refit",
+        "train_rows": 87670,
+        "test_rows": 41166,
+        "fit_retained_rows": 84678,
+        "seconds": 77.25
+      }
+    }
+  ],
+  "archive": "dist\\solution_full_preprocessing.zip",
+  "archive_sha256": "9b5d688de0c0572b2e1cb46fee08c849b66d9a5ed8c33b9dda724230194bd96f"
+}

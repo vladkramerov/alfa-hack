@@ -1,0 +1,52 @@
+{
+  "candidate": {
+    "number": 28,
+    "hypothesis": "HYP-028",
+    "task": "regression",
+    "version": "spec006-v1",
+    "policy": "light",
+    "reference": 42.19670002719412,
+    "method": "advanced",
+    "configuration_source": "experiments/twenty_advanced.py"
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "fingerprint": "d2096883481c06c7968c2e8ecc476b9b1ffe4d4414b34d47aa145d09d206c5eb",
+  "directory": "results/2026-10-23/HYP-028-03-regression-guard-continuation",
+  "status": "completed",
+  "started": "2026-10-23T23:11:21.875860+03:00",
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "experiments/twenty_common.py": "075b2a6bddbc77d623016fefbbe7779021d26f2c99439c88392361a31d11ffd0",
+    "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+    "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+    "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615",
+    "experiments/continue_twenty_blocked_selection.py": "f927e98ccc20552751124fc12317e7b693890bc02a74b69fd986ddb5d28caa25"
+  },
+  "ledger_sha256_before_fit": "03ce838c1177a6d3a52f4e10f484bb5b456a440f98461059b90ad8fca77afcc7",
+  "source_root": "results/2026-10-23/series-twenty-hypotheses-v1/continuations/source",
+  "continuation_of": "7c077af3c39d03a9e6075b76a9dd258866eb153bfb02d7e287d46117c0e990f1",
+  "metric": "rmse",
+  "score": 42.245303736669484,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "warnings": [],
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "seconds": 13.969000000011874,
+  "finished": "2026-10-23T23:11:37.742852+03:00",
+  "conclusion": "Не подтверждена по заданному критерию"
+}

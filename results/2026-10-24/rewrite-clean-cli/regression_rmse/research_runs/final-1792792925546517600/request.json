@@ -1,0 +1,18 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\regression_rmse\\task.md",
+  "recipe": {
+    "family": "factorization_machine",
+    "parameters": {
+      "rank": 8,
+      "epochs": 20,
+      "batch_size": 512,
+      "learning_rate": 0.005,
+      "l2": 0.001
+    },
+    "hypothesis": ""
+  },
+  "mode": "refit",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\regression_rmse\\research_runs\\final-1792792925546517600",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\regression_rmse\\research_runs\\hypotheses.json",
+  "global_ledger": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\HYPOTHESES.md"
+}

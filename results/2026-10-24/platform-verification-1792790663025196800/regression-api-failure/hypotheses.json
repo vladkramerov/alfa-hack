@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "cases": {
+    "0c45c9fe6f23bd1c277127280c7ff53bdca7ca7990bb2fdfc9007ef04ff084a7": {
+      "hashes": {
+        "train.csv": "cd42191691332fae8bd41a5edc2b7bfd3546ad5a73faba6c3be89b30c393a8eb",
+        "test.csv": "53b2b1e77c6ec14319c29af25f0db195aaaad3588fce151421ffed260d5c335c",
+        "sample_submission.csv": "6b46fda327a76d5988b386814f9328984037852dd2dc720c116eb7344d3c3b73",
+        "data_dictionary.csv": "cd08b258aeb3ca0a62653b692971145703e7c701b3ad5c0a53bb15bdb70d2e0b"
+      },
+      "split_key": "64a89a0d19ecfe3c41af48343fdb5fbad3cf67d525aaae651d24982f2cdeb87b",
+      "metric": "rmse",
+      "known": null,
+      "records": []
+    }
+  }
+}

@@ -1,0 +1,21 @@
+test_blank_target_is_missing_even_with_declared_strings (tests.test_csv_codec.CsvCodecTests.test_blank_target_is_missing_even_with_declared_strings) ... ok
+test_declared_boolean_looking_labels_are_not_boolean_coerced (tests.test_csv_codec.CsvCodecTests.test_declared_boolean_looking_labels_are_not_boolean_coerced) ... ok
+test_declared_strings_survive_literal_na_signs_and_zeroes (tests.test_csv_codec.CsvCodecTests.test_declared_strings_survive_literal_na_signs_and_zeroes) ... ok
+test_irreversible_numeric_class_coercion_preserves_distinct_labels (tests.test_csv_codec.CsvCodecTests.test_irreversible_numeric_class_coercion_preserves_distinct_labels) ... ok
+test_numeric_output_does_not_accept_csv_boolean_text (tests.test_csv_codec.CsvCodecTests.test_numeric_output_does_not_accept_csv_boolean_text) ... ok
+test_ordinary_numeric_ids_and_regression_target_keep_types (tests.test_csv_codec.CsvCodecTests.test_ordinary_numeric_ids_and_regression_target_keep_types) ... ok
+test_probability_values_numeric_with_lexical_class_names (tests.test_csv_codec.CsvCodecTests.test_probability_values_numeric_with_lexical_class_names) ... ok
+test_undeclared_lexical_id_restored_before_unique_id_discovery (tests.test_csv_codec.CsvCodecTests.test_undeclared_lexical_id_restored_before_unique_id_discovery) ... ok
+test_S01_train_row_and_feature_column_reordering (tests.test_schema_semantics.SchemaSemanticsTests.test_S01_train_row_and_feature_column_reordering) ... ok
+test_S02_test_permutation_and_inverse_id_alignment (tests.test_schema_semantics.SchemaSemanticsTests.test_S02_test_permutation_and_inverse_id_alignment) ... ok
+test_S03_consistent_target_id_feature_renaming (tests.test_schema_semantics.SchemaSemanticsTests.test_S03_consistent_target_id_feature_renaming) ... ok
+test_S04_lexical_class_label_bijection (tests.test_schema_semantics.SchemaSemanticsTests.test_S04_lexical_class_label_bijection) ... ok
+test_S05_numeric_looking_class_labels_preserve_lexical_values (tests.test_schema_semantics.SchemaSemanticsTests.test_S05_numeric_looking_class_labels_preserve_lexical_values) ... ok
+test_S06_probability_class_order_to_sample_column_mapping (tests.test_schema_semantics.SchemaSemanticsTests.test_S06_probability_class_order_to_sample_column_mapping) ... ok
+test_S07_opaque_leading_zero_identifier_roundtrip (tests.test_schema_semantics.SchemaSemanticsTests.test_S07_opaque_leading_zero_identifier_roundtrip) ... ok
+test_S08_target_unit_prediction_roundtrip_1024 (tests.test_schema_semantics.SchemaSemanticsTests.test_S08_target_unit_prediction_roundtrip_1024) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.466s
+
+OK

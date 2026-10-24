@@ -1,0 +1,640 @@
+{
+  "status": "completed",
+  "records": [
+    {
+      "fingerprint": "f0a60cf7d5e60d39a4e9bda03f19b4db877cf4b3e3198a16f6eeb395490a6f9f",
+      "candidate_key": "09565ebd0c4dce12ad516369cb94019b1799a04d15aa2e9a38245a81835ccf7a",
+      "candidate": {
+        "hypothesis": "HYP-011",
+        "task": "regression",
+        "family": "xgboost",
+        "transform": "none",
+        "parameters": {
+          "n_estimators": 600,
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "reg_lambda": 1,
+          "tree_method": "hist",
+          "device": "cpu",
+          "random_state": 42,
+          "n_jobs": 4,
+          "objective": "reg:squarederror"
+        }
+      },
+      "hashes": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "status": "completed",
+      "started": "2026-10-23T21:44:44.907006+03:00",
+      "ledger_sha256_before_fit": "1c1438a0dff9ccb5ff964c69fbb7580438fd63a78f10e5c2ff8097b4f0ddbc38",
+      "directory": "results/2026-10-23/HYP-011-01-regression-none",
+      "metric": "rmse",
+      "score": 43.510161481164815,
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "seconds": 4.578000000008615,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "0375afd32d42531e19236c4a305c3ed47572025a9fcd7dd6fdc3718fb16eaa62",
+      "candidate_key": "db7f2ffd6354eb52474b598dbfc7758fa16664cf16d5355a1e92d8b1df0cd52d",
+      "candidate": {
+        "hypothesis": "HYP-011",
+        "task": "multiclass",
+        "family": "xgboost",
+        "transform": "none",
+        "parameters": {
+          "n_estimators": 600,
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "reg_lambda": 1,
+          "tree_method": "hist",
+          "device": "cpu",
+          "random_state": 42,
+          "n_jobs": 4,
+          "objective": "multi:softprob"
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:44:52.681850+03:00",
+      "ledger_sha256_before_fit": "f4afb65436c535fd34c5f17d97b444bfe253f737cc0c27f6d5ea0db7a91f67bd",
+      "directory": "results/2026-10-23/HYP-011-02-multiclass-none",
+      "metric": "macro_f1",
+      "score": 0.5914513709191194,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.8284814188203722,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.9999998211860657,
+        1.0000001192092896
+      ],
+      "seconds": 81.23499999998603,
+      "planned_model_fit_count": 1,
+      "conclusion": "Подтверждена в проверенных условиях"
+    },
+    {
+      "fingerprint": "0d0e85561270157a9d7ec03f612884d6de36428b04cd06202dc673165dce0c55",
+      "candidate_key": "361f2729968741247445e0402af0a5cad1525c9861a8e8c35069efbd2526828b",
+      "candidate": {
+        "hypothesis": "HYP-012",
+        "task": "regression",
+        "family": "extra_trees",
+        "transform": "log1p_target",
+        "parameters": {
+          "n_estimators": 200,
+          "max_depth": 24,
+          "min_samples_leaf": 2,
+          "max_features": 0.8,
+          "random_state": 42,
+          "n_jobs": 4
+        }
+      },
+      "hashes": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "status": "completed",
+      "started": "2026-10-23T21:46:17.176118+03:00",
+      "ledger_sha256_before_fit": "6f5fbaa3fdc4a89451db41a40fa0f04247765f439bb649418e07e9ce5c376fed",
+      "directory": "results/2026-10-23/HYP-012-01-regression-log1p_target",
+      "metric": "rmse",
+      "score": 42.19670002719412,
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "seconds": 26.28100000001723,
+      "planned_model_fit_count": 1,
+      "conclusion": "Подтверждена в проверенных условиях"
+    },
+    {
+      "fingerprint": "3153e3cb55e5370647e8a73646820faf72c3c54af3283e18d5cd4f303038b0ba",
+      "candidate_key": "3f2974b778532ea30e5dd431f2594a541a5bd47260cb7c1caa39820d01528383",
+      "candidate": {
+        "hypothesis": "HYP-013",
+        "task": "regression",
+        "family": "lightgbm",
+        "transform": "none",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1,
+          "objective": "tweedie",
+          "tweedie_variance_power": 1.5
+        }
+      },
+      "hashes": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "status": "completed",
+      "started": "2026-10-23T21:46:46.528535+03:00",
+      "ledger_sha256_before_fit": "55a8f3b14dfd6ae09635ea396a6d2ef5b8674b6936e1a5bd5a404266e93ee608",
+      "directory": "results/2026-10-23/HYP-013-01-regression-none",
+      "metric": "rmse",
+      "score": 47.18831919578777,
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "seconds": 2.4060000000172295,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "79de129a5c09cb380e09b7e8b6293712c0977456ecf685c155671c35a86a0592",
+      "candidate_key": "d780d68fd0745ba58b2d7ece6c9980d2a2863264c411db93eb93bfa6dfebdaf8",
+      "candidate": {
+        "hypothesis": "HYP-014",
+        "task": "regression",
+        "family": "lightgbm",
+        "transform": "linear_scaled",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1,
+          "linear_tree": true
+        }
+      },
+      "hashes": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "status": "completed",
+      "started": "2026-10-23T21:46:52.104939+03:00",
+      "ledger_sha256_before_fit": "94d8f6d95b60be3c60fa08a86e41794e6de4d32a8820970138fd2043541325b7",
+      "directory": "results/2026-10-23/HYP-014-01-regression-linear_scaled",
+      "metric": "rmse",
+      "score": 178.08498786616641,
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "seconds": 3.687000000005355,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "5864d59543d7f4de294ca097152326460d3ad69a5ea70e946f567392553a6636",
+      "candidate_key": "202de80b59e8ec3a393288df787fb7ae853e23375dfcba5490b71aca1f6b1f5d",
+      "candidate": {
+        "hypothesis": "HYP-015",
+        "task": "regression",
+        "family": "extra_trees",
+        "transform": "target_encode",
+        "parameters": {
+          "n_estimators": 200,
+          "max_depth": 24,
+          "min_samples_leaf": 2,
+          "max_features": 0.8,
+          "random_state": 42,
+          "n_jobs": 4
+        }
+      },
+      "hashes": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "status": "completed",
+      "started": "2026-10-23T21:46:59.298853+03:00",
+      "ledger_sha256_before_fit": "4db3711e3f26a1d65000abb81d985481cd2fa4ce48cfdf99f51a31a10a54a071",
+      "directory": "results/2026-10-23/HYP-015-01-regression-target_encode",
+      "metric": "rmse",
+      "score": 44.402896602005654,
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "seconds": 13.59399999998277,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "21b828b24260e2c430e41ef4e0e237243b4cfb83e0ed2e3ffe9fbf6be3b6a55f",
+      "candidate_key": "539ca33c1aed5e5b9668ab2d1073c2e84331a5c26f6854953f39ffd21ff638e3",
+      "candidate": {
+        "hypothesis": "HYP-016",
+        "task": "multiclass",
+        "family": "lightgbm",
+        "transform": "categorical_cross",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:47:15.929749+03:00",
+      "ledger_sha256_before_fit": "bf14b613129c7b167717986b95fcb75f6639a37da48118c5dda5f1dc7ee3af27",
+      "directory": "results/2026-10-23/HYP-016-01-multiclass-categorical_cross",
+      "metric": "macro_f1",
+      "score": 0.5807635957092588,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.8308150049588705,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.9999999999999994,
+        1.0000000000000004
+      ],
+      "seconds": 28.594000000011874,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "076a2ec1b3adc468ba0744e3b2c803a9dc2c15d38e1cd74addfec0a77fe69504",
+      "candidate_key": "4b126e8290cd68f5cdf486bc29fb3cd6edba4c0465c7b79a2bf33b04ba79ddc4",
+      "candidate": {
+        "hypothesis": "HYP-017",
+        "task": "multiclass",
+        "family": "lightgbm",
+        "transform": "frequency",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:47:47.261731+03:00",
+      "ledger_sha256_before_fit": "53fd8e4dbc1d5da14b47a5bfb9d927134709a9ffdaa405b1adaa9ede3b4d6727",
+      "directory": "results/2026-10-23/HYP-017-01-multiclass-frequency",
+      "metric": "macro_f1",
+      "score": 0.5909684499124109,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.8294148532757716,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.9999999999999993,
+        1.0000000000000007
+      ],
+      "seconds": 17.344000000011874,
+      "planned_model_fit_count": 1,
+      "conclusion": "Подтверждена в проверенных условиях"
+    },
+    {
+      "fingerprint": "51b5f06466ef8916c9ac6f9c920d43494049a0f8b124422bf23e6171d7f131d7",
+      "candidate_key": "fa47ec3843073feda84cece50445609bfa06105a394c73dd8e72d6cfb63f32e4",
+      "candidate": {
+        "hypothesis": "HYP-018",
+        "task": "multiclass",
+        "family": "lightgbm",
+        "transform": "none",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1,
+          "objective": "multiclassova"
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:48:07.377842+03:00",
+      "ledger_sha256_before_fit": "684e9dbc8e59979b4bcdc1989dbf3da90bcdd9ec16a1fbaffeaceaf40918c2a4",
+      "directory": "results/2026-10-23/HYP-018-01-multiclass-none",
+      "metric": "macro_f1",
+      "score": 0.578639858804918,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.82818972055306,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.09743017472683135,
+        1.7645939029187696
+      ],
+      "seconds": 16.14100000000326,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    },
+    {
+      "fingerprint": "268a61393c902d67f24bdc8b80e745c93d78dbaa68143f652f3d95377e7cd93f",
+      "candidate_key": "8c3ca5250e65cef2ef5df6d1570535c66440e565aae622e8b037a9adee35a397",
+      "candidate": {
+        "hypothesis": "HYP-019",
+        "task": "multiclass",
+        "family": "lightgbm",
+        "transform": "hierarchical",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:48:26.705197+03:00",
+      "ledger_sha256_before_fit": "2e5de351261fd0b95b11ba6020e73fcfff02363ca283265b3f13cf3457f11783",
+      "directory": "results/2026-10-23/HYP-019-01-multiclass-hierarchical",
+      "metric": "macro_f1",
+      "score": 0.5901110420481382,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.829473192929234,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.9999999999999994,
+        1.0000000000000004
+      ],
+      "seconds": 19.046999999991385,
+      "planned_model_fit_count": 2,
+      "conclusion": "Подтверждена в проверенных условиях"
+    },
+    {
+      "fingerprint": "ba9f989f6f133a80574c379680f0a3e670cd777670891adc87765de987457ec4",
+      "candidate_key": "b1e8cbccdf563c08c70a92e3a9ecaf49301f96c38ebb0ff70644d8cb272cb89c",
+      "candidate": {
+        "hypothesis": "HYP-020",
+        "task": "multiclass",
+        "family": "lightgbm",
+        "transform": "inverse_group_weights",
+        "parameters": {
+          "n_estimators": 500,
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_lambda": 1,
+          "random_state": 42,
+          "n_jobs": 4,
+          "verbosity": -1
+        }
+      },
+      "hashes": {
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "status": "completed",
+      "started": "2026-10-23T21:48:48.851680+03:00",
+      "ledger_sha256_before_fit": "e52fd0012ab8651677fcf9f78422f429618327ea30cd3df5746ad87044227554",
+      "directory": "results/2026-10-23/HYP-020-01-multiclass-inverse_group_weights",
+      "metric": "macro_f1",
+      "score": 0.5829349072076985,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "warnings": [],
+      "packages": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "sklearn": "1.5.2",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4"
+      },
+      "platform": "Windows-11-10.0.26300-SP0",
+      "accuracy": 0.8256811154541742,
+      "classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "probability_row_sum_range": [
+        0.9999999999999994,
+        1.0000000000000004
+      ],
+      "seconds": 29.219000000011874,
+      "planned_model_fit_count": 1,
+      "conclusion": "Не подтверждена по заданному критерию"
+    }
+  ],
+  "baseline_refits": 0,
+  "planned_evaluations": 11,
+  "finished": "2026-10-23T21:49:20.384190+03:00"
+}

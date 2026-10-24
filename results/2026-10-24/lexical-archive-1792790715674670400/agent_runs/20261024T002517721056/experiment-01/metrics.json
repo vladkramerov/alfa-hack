@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 1.0,
+  "fit_rows": 64,
+  "valid_rows": 16,
+  "fit_retained_rows": 64,
+  "calibration_multipliers": {
+    "001": 1.0,
+    "010": 1.0
+  },
+  "seconds": 0.26600000000325963
+}

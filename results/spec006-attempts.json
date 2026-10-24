@@ -1,0 +1,1259 @@
+[
+  {
+    "candidate": {
+      "number": 22,
+      "hypothesis": "HYP-022",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "gaussian",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "5f42e556114d078250426f59f6e1c34ec042b87f6766213a848ea275f02979c9",
+    "directory": "results/2026-10-23/HYP-022-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:49:12.065282+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "ccbcbda52249173246557755d4886093d3d82d25f68766572b1a344b6f9d0246",
+    "metric": "rmse",
+    "score": 42.203267904780695,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 27.34299999999348,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:49:41.469788+03:00"
+  },
+  {
+    "candidate": {
+      "number": 22,
+      "hypothesis": "HYP-022",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "gaussian",
+      "reference": 0.5914513709191194,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "bbfd0636719d7957bf0817fb17f7fd74febffe94ddf4adacbf48dae91eb8343e",
+    "directory": "results/2026-10-23/HYP-022-02-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:49:41.887375+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "9b81ca0164c308e579eddf12f0049484cb80297a8590600a9c98b39e7a2cc95b",
+    "metric": "macro_f1",
+    "score": 0.5615525355321143,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 38.655999999988126,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:50:22.578970+03:00"
+  },
+  {
+    "candidate": {
+      "number": 23,
+      "hypothesis": "HYP-023",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "584ff1209c7eb7f5d21ddf2ea44a8026e793790b855e51eb6ddc47a39138e275",
+    "directory": "results/2026-10-23/HYP-023-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:50:23.224265+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "b32fcaef347929a8aa48a1adbfb84e6855541d55ce59b2a2e85e84c6b8ac76b0",
+    "metric": "rmse",
+    "score": 43.19210947337134,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 19.389999999984866,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:50:44.666196+03:00"
+  },
+  {
+    "candidate": {
+      "number": 24,
+      "hypothesis": "HYP-024",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "3b3fa6c2a0d16a1a34aac9120f465203333cdf45b1a2a95b52c3f81139cfe1ab",
+    "directory": "results/2026-10-23/HYP-024-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:50:45.298029+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "8d485b333b2b7ad40a438e84e491e0200c1d65e6f797001944ce837e16ab5486",
+    "metric": "rmse",
+    "score": 42.18354628369281,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`"
+    ],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 33.48499999998603,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T22:51:20.837139+03:00"
+  },
+  {
+    "candidate": {
+      "number": 25,
+      "hypothesis": "HYP-025",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "6468cf417f98934455450c10b2c44d76b71f1cda195a1ee09f4cbe97bca7d508",
+    "directory": "results/2026-10-23/HYP-025-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:51:21.239597+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "02ffcf47c6657b1805e743b61355165767006cdadb89f96426181aca9570b1c3",
+    "metric": "macro_f1",
+    "score": 0.5771726314994396,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 59.64100000000326,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:52:22.947236+03:00"
+  },
+  {
+    "candidate": {
+      "number": 26,
+      "hypothesis": "HYP-026",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "eb61239cbd6752c5414ceabdb513bd51638a242213a5553a3b3f96a1bb9e993a",
+    "directory": "results/2026-10-23/HYP-026-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:52:23.365881+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "64f9e5b47b637b2fd98d3753daa5bad13878d2836ca48ba73a0acc5185770e5c",
+    "metric": "macro_f1",
+    "score": 0.5793987048589155,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 48.078000000008615,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:53:13.774215+03:00"
+  },
+  {
+    "candidate": {
+      "number": 27,
+      "hypothesis": "HYP-027",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "b7904b5b2c4e1ba6f5f65fc5320f530875fa2e1c2126c983732122f5a8a77fc9",
+    "directory": "results/2026-10-23/HYP-027-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T22:53:14.194823+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "b9362c0d33c3e735ac1008228ea3079436dd610b8d5e6e8d34bf403ea1f64c7c",
+    "metric": "macro_f1",
+    "score": 0.5857385909681803,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 46.312999999994645,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T22:54:02.507795+03:00"
+  },
+  {
+    "candidate": {
+      "number": 28,
+      "hypothesis": "HYP-028",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "7c077af3c39d03a9e6075b76a9dd258866eb153bfb02d7e287d46117c0e990f1",
+    "directory": "results/2026-10-23/HYP-028-01-regression-spec006",
+    "status": "failed",
+    "started": "2026-10-23T22:54:03.227560+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "c9b337dac3f0c5e436ed039cde745b3d776534d06645d3a7722fb4e46dc763d9",
+    "error": "RuntimeError: Known outer baseline fit prohibited; use saved predictions",
+    "seconds": 45.25,
+    "conclusion": "Недостаточно данных",
+    "finished": "2026-10-23T22:54:50.535524+03:00"
+  },
+  {
+    "candidate": {
+      "number": 28,
+      "hypothesis": "HYP-028",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "ee0668b4562bd5ff103bed9262c273c53df5f70cb8dc411eacedf67cf31b2721",
+    "directory": "results/2026-10-23/HYP-028-02-multiclass-spec006",
+    "status": "failed",
+    "started": "2026-10-23T22:54:50.956994+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "cb80dc71b4e0ac8ced4199e259cf84ae6c2602533c1d6593a8e055a909127f71",
+    "error": "RuntimeError: Known outer baseline fit prohibited; use saved predictions",
+    "seconds": 441.5309999999881,
+    "conclusion": "Недостаточно данных",
+    "finished": "2026-10-23T23:02:14.578232+03:00"
+  },
+  {
+    "candidate": {
+      "number": 29,
+      "hypothesis": "HYP-029",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "cd30922b19418ccc6a928c3a31682075eb2c5744ae274297dbaea2720ce57945",
+    "directory": "results/2026-10-23/HYP-029-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:02:15.437836+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "97504d4ef03d2ddf8011e29e78cd651bf33cc909d3c42d951f186acfb01e4867",
+    "metric": "rmse",
+    "score": 42.08610226703874,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 21.969000000011874,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:02:39.422870+03:00"
+  },
+  {
+    "candidate": {
+      "number": 30,
+      "hypothesis": "HYP-030",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "7b9c3922c21ba6e053fc0f93103f0f4f83848d98ceea0cabb34a5c9d462323ed",
+    "directory": "results/2026-10-23/HYP-030-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:02:40.077282+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "d9f38a079f20ac967e9eeeb8df9ea9c0c0c053bcf07eebf181ffddc46e57de39",
+    "metric": "rmse",
+    "score": 41.993466003366024,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 19.75,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:03:02.093548+03:00"
+  },
+  {
+    "candidate": {
+      "number": 31,
+      "hypothesis": "HYP-031",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "d4890dcf546596fded16d0d74db4bc87fbaf809ed9466a08b2259e6a29b86bd2",
+    "directory": "results/2026-10-23/HYP-031-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:03:02.821995+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "96805abf3610ee1f7c6d387261448378ec9355651a894d03fdaf36efebceae95",
+    "metric": "rmse",
+    "score": 42.00460393727476,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 25.51600000000326,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:03:30.279103+03:00"
+  },
+  {
+    "candidate": {
+      "number": 32,
+      "hypothesis": "HYP-032",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "features",
+      "configuration_source": "experiments/twenty_features.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "b8c7a41ee79a1918d9d07213e42fe09d7b732c59884c14a012872bd412a30286",
+    "directory": "results/2026-10-23/HYP-032-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:03:31.270856+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "d4d5cd148525354d20afcb0e6eec737c56271cec8692c65bdae407e4856b7623",
+    "metric": "rmse",
+    "score": 43.810373477573165,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 30.203000000008615,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:04:03.798131+03:00"
+  },
+  {
+    "candidate": {
+      "number": 33,
+      "hypothesis": "HYP-033",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "8cff1df65b563f09402cfb9fbca66df61a2bcc99bab87a75757cc6e919448b50",
+    "directory": "results/2026-10-23/HYP-033-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:04:04.452264+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "e2913bb50ffedff9cc6c4e4ea52c51c0241699b3af262e49defc4c377f281744",
+    "metric": "rmse",
+    "score": 42.974266298635236,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 0.860000000015134,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:04:07.387733+03:00"
+  },
+  {
+    "candidate": {
+      "number": 34,
+      "hypothesis": "HYP-034",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "be09a514ad70c437f5b471e2f3df3a304ed65b9df81eb9fd9b77d7536e93d3c3",
+    "directory": "results/2026-10-23/HYP-034-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:04:08.060412+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "30ffb07fb08840b17163e7efacdca1529530ab0ff96576160ee7c880bb978563",
+    "metric": "rmse",
+    "score": 44.42393495521875,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 7.875,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:04:17.991503+03:00"
+  },
+  {
+    "candidate": {
+      "number": 35,
+      "hypothesis": "HYP-035",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "587c5df5e7189c6cf56d01319c62f36ffb81929b7eecf2af180530652d4f9f02",
+    "directory": "results/2026-10-23/HYP-035-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:04:18.682330+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "1f7267c328e05033accccc574a1dc0cf9003086cc0552c67eebbdee1ffe78751",
+    "metric": "rmse",
+    "score": 41.480963027907194,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 8.625,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:04:29.420898+03:00"
+  },
+  {
+    "candidate": {
+      "number": 36,
+      "hypothesis": "HYP-036",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "04c35b62f9421a74b92ea9dd92c4cbe4c1b3c5d40dcdc463d3e36fd47fa6462f",
+    "directory": "results/2026-10-23/HYP-036-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:04:30.057663+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "a54462e9bb25a07403e879cf7a92a020064e0da4df8ee4d24cb3fd552ddb0cc8",
+    "metric": "rmse",
+    "score": 42.25509131431627,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 17.5,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:04:49.455906+03:00"
+  },
+  {
+    "candidate": {
+      "number": 37,
+      "hypothesis": "HYP-037",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "f1c505e08c8595109a4c7e00ea3664b8b84ba836780cd3d86a88d9e79a97be49",
+    "directory": "results/2026-10-23/HYP-037-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:04:49.902768+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "5ac3097d99cae5296979a5f61733ccc356cbbaabfc0f2862b42d3761db155b15",
+    "metric": "macro_f1",
+    "score": 0.6286047899141216,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 19.062000000005355,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:05:11.200813+03:00"
+  },
+  {
+    "candidate": {
+      "number": 38,
+      "hypothesis": "HYP-038",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "06b14c873d7d8295adb22b8032fb173a24feceb4619ab9af48cd6544f5ca63e4",
+    "directory": "results/2026-10-23/HYP-038-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:05:11.852219+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "42db1278cd5063691e09e3ee101640d4ad3cd8a65c738fe8073e542942a9bc43",
+    "metric": "macro_f1",
+    "score": 0.595178021245499,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 97.60999999998603,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:06:51.554022+03:00"
+  },
+  {
+    "candidate": {
+      "number": 39,
+      "hypothesis": "HYP-039",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "ca9b8fe5b7dc8bfd3b4afaa6b72086fe27d45efe0ad4f89e4a91065205b77462",
+    "directory": "results/2026-10-23/HYP-039-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:06:51.973594+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "803b5706209c454547222a22c5152e5a2bad3eb01f7fb9e4744a6da3c3cfd281",
+    "metric": "macro_f1",
+    "score": 0.5795834428470248,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 47.219000000011874,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:07:41.727174+03:00"
+  },
+  {
+    "candidate": {
+      "number": 40,
+      "hypothesis": "HYP-040",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "621ccf7b0babea64bd2bd4e5f3a6f12c0c51c369879f7a6c7519fef68e98b243",
+    "directory": "results/2026-10-23/HYP-040-01-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:07:42.329846+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "31cb5cbabd0269698bbc5beded70566742cfcb1818d1b214e3131ae3df2bf43b",
+    "metric": "macro_f1",
+    "score": 0.5922402460598002,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 7.437999999994645,
+    "conclusion": "Подтверждена в проверенных условиях",
+    "finished": "2026-10-23T23:07:51.965916+03:00"
+  },
+  {
+    "candidate": {
+      "number": 41,
+      "hypothesis": "HYP-041",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "4aef7cfd600239951814aab59917bae57c54c9200b07fede3c7dd68fde0fb909",
+    "directory": "results/2026-10-23/HYP-041-01-regression-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:07:52.683249+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "55da7cca8931a58d998f0b24373f0e5ffd4a49af3a738bf34ae1ed69662d7454",
+    "metric": "rmse",
+    "score": 42.19670002719412,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`",
+      "'oneOf' deprecated - use 'one_of'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'"
+    ],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 26.67200000002049,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:08:21.196287+03:00"
+  },
+  {
+    "candidate": {
+      "number": 41,
+      "hypothesis": "HYP-041",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "fd7e6f83548e90383de2706ff5291e6f5240f317d701715abbebb0c821738017",
+    "directory": "results/2026-10-23/HYP-041-02-multiclass-spec006",
+    "status": "completed",
+    "started": "2026-10-23T23:08:21.594668+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "dbeb07a94f71c6a846a6b91b0534f16f43922f67babea57223383ad5890cf4ec",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615"
+    },
+    "ledger_sha256_before_fit": "9b766226b284dc6e2847ac87060fc8541d7b4271bd047145deb91cda785966f1",
+    "metric": "macro_f1",
+    "score": 0.5914513709191194,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [
+      "'oneOf' deprecated - use 'one_of'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'",
+      "'parseString' deprecated - use 'parse_string'",
+      "'resetCache' deprecated - use 'reset_cache'"
+    ],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 157.90599999998813,
+    "conclusion": "Не подтверждена по заданному критерию",
+    "finished": "2026-10-23T23:11:01.808913+03:00"
+  },
+  {
+    "candidate": {
+      "number": 28,
+      "hypothesis": "HYP-028",
+      "task": "regression",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 42.19670002719412,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "fingerprint": "d2096883481c06c7968c2e8ecc476b9b1ffe4d4414b34d47aa145d09d206c5eb",
+    "directory": "results/2026-10-23/HYP-028-03-regression-guard-continuation",
+    "status": "completed",
+    "started": "2026-10-23T23:11:21.875860+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "075b2a6bddbc77d623016fefbbe7779021d26f2c99439c88392361a31d11ffd0",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615",
+      "experiments/continue_twenty_blocked_selection.py": "f927e98ccc20552751124fc12317e7b693890bc02a74b69fd986ddb5d28caa25"
+    },
+    "ledger_sha256_before_fit": "03ce838c1177a6d3a52f4e10f484bb5b456a440f98461059b90ad8fca77afcc7",
+    "source_root": "results/2026-10-23/series-twenty-hypotheses-v1/continuations/source",
+    "continuation_of": "7c077af3c39d03a9e6075b76a9dd258866eb153bfb02d7e287d46117c0e990f1",
+    "metric": "rmse",
+    "score": 42.245303736669484,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 13.969000000011874,
+    "finished": "2026-10-23T23:11:37.742852+03:00",
+    "conclusion": "Не подтверждена по заданному критерию"
+  },
+  {
+    "candidate": {
+      "number": 28,
+      "hypothesis": "HYP-028",
+      "task": "multiclass",
+      "version": "spec006-v1",
+      "policy": "light",
+      "reference": 0.5914513709191194,
+      "method": "advanced",
+      "configuration_source": "experiments/twenty_advanced.py"
+    },
+    "hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+    "fingerprint": "8b0af45a1ef788c5e1829009092addc2c9aa66dd49622683f9a1789926b686d3",
+    "directory": "results/2026-10-23/HYP-028-04-multiclass-guard-continuation",
+    "status": "completed",
+    "started": "2026-10-23T23:11:38.169673+03:00",
+    "sources": {
+      "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+      "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+      "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+      "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+      "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+      "experiments/twenty_common.py": "075b2a6bddbc77d623016fefbbe7779021d26f2c99439c88392361a31d11ffd0",
+      "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+      "experiments/twenty_worker.py": "6def43e23c11fdddec60b62ebd2b15156514f65e60baf1308a91d63a6785c8ea",
+      "experiments/run_twenty_hypotheses.py": "b8bbfcb6f86c6bbc228dae0434d92b8fc4c871c424f979822e7e0f45f5abe615",
+      "experiments/continue_twenty_blocked_selection.py": "f927e98ccc20552751124fc12317e7b693890bc02a74b69fd986ddb5d28caa25"
+    },
+    "ledger_sha256_before_fit": "6abf7f70a87a33bfda031745c5213a939085b0bd7ee62c0a4107e765abca8c2a",
+    "source_root": "results/2026-10-23/series-twenty-hypotheses-v1/continuations/source",
+    "continuation_of": "ee0668b4562bd5ff103bed9262c273c53df5f70cb8dc411eacedf67cf31b2721",
+    "metric": "macro_f1",
+    "score": 0.5676156935900548,
+    "fit_rows": 70529,
+    "valid_rows": 17141,
+    "warnings": [],
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "seconds": 44.453999999997905,
+    "finished": "2026-10-23T23:12:24.729322+03:00",
+    "conclusion": "Не подтверждена по заданному критерию"
+  }
+]

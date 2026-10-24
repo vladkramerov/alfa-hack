@@ -1,0 +1,69 @@
+{
+  "run_id": "HYP-005-07-multiclass-inner-engineered-forest",
+  "path": "results\\2026-10-23\\HYP-005-07-multiclass-inner-engineered-forest",
+  "hypothesis": "HYP-005",
+  "task": "multiclass",
+  "stage": "inner",
+  "config": {
+    "family": "forest",
+    "recipe": "engineered"
+  },
+  "status": "completed",
+  "started": "2026-10-23T16:21:55+03:00",
+  "reference": "HYP-004-04-multiclass-inner-gaussian-forest",
+  "finished": "2026-10-23T16:22:45+03:00",
+  "seconds": 49.453,
+  "scores": {
+    "macro_f1": 0.5629527561008232,
+    "accuracy": 0.81460010131142,
+    "weighted_f1": 0.7985038277657371
+  },
+  "n_fit": 52762,
+  "n_validation": 17767,
+  "n_features": 178,
+  "model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 20,
+    "max_features": 0.8,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 150,
+    "n_jobs": 2,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "warnings": [],
+  "converged": true,
+  "n_iter": null,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.12.0",
+    "sklearn": "1.5.2",
+    "catboost": "1.2.8",
+    "joblib": "1.4.2",
+    "threads": 2,
+    "data_sha256": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+    },
+    "code_sha256": {
+      "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+      "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35"
+    }
+  },
+  "split": "stratified group outer5/inner4 first folds; exact raw feature groups; seed42",
+  "gain": 0.0
+}

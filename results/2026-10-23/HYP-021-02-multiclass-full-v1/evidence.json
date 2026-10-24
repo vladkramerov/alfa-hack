@@ -1,0 +1,41 @@
+{
+  "task": "multiclass",
+  "candidate": {
+    "family": "xgboost",
+    "parameters": {},
+    "target_transform": null,
+    "hypothesis": "HYP-021: mandatory full-v1 normalization, bounded normal quantiles and <=5% training outliers",
+    "preprocessing": "full-v1",
+    "scale": true,
+    "max_outlier_fraction": 0.05
+  },
+  "candidate_key": "96bceb5b0fc7f2fc27def24e9339a11641cc0a3a3130f92295784f93d14618c3",
+  "reference": 0.5914513709191194,
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "ledger_sha256_before_fit": "7597033fa557b08f650b5e4d0dd5603279a65d04db7e1f3c8d42512aa52194b7",
+  "code_sha256": {
+    "automl_models.py": "257c4eb3a648b72a8e9f9ddc9db98d150e68cd0fa928a98a6373ff651371d765",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_worker.py": "aa2934726c0ea3148fad13c676a379b15a455308f8663bf0e4323581f6cacaef",
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_history.py": "c77f276966ec1b58481af6af1993bbaf9f13ce113398adb1582749027a1e623e",
+    "experiments/evaluate_full_preprocessing.py": "aa018e6e5d6a79e6de734ae0e7995a9c73dbdffac0ed8a4dddca1a0887d8213c"
+  },
+  "directory": "results/2026-10-23/HYP-021-02-multiclass-full-v1",
+  "started": "2026-10-23T22:06:33.378572+03:00",
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.5637871673383791,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "fit_retained_rows": 68241,
+  "seconds": 44.26500000001397,
+  "finished": "2026-10-23T22:07:19.676950+03:00",
+  "conclusion": "Не подтверждена по заданному критерию"
+}

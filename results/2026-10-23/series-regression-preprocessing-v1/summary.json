@@ -1,0 +1,1872 @@
+{
+  "task": "regression",
+  "completed_at": "2026-10-23T16:09:19+03:00",
+  "directory": "results\\2026-10-23\\series-regression-preprocessing-v1",
+  "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+  "inner_selected": {
+    "catboost": "HYP-002-01-regression-inner-vif-catboost",
+    "forest": "HYP-001-03-regression-inner-baseline-forest"
+  },
+  "frozen": {
+    "frozen_at": "2026-10-23T16:07:22+03:00",
+    "selection": "inner only; outer never changes configuration",
+    "preprocessing": {
+      "catboost": {
+        "family": "catboost",
+        "recipe": "vif"
+      },
+      "forest": {
+        "family": "forest",
+        "recipe": "baseline"
+      }
+    },
+    "catboost_native_l2": {
+      "family": "catboost",
+      "recipe": "vif",
+      "strength": 1
+    },
+    "linear": {
+      "l1": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "l2": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 10
+      }
+    },
+    "linear_inner_converged": {
+      "l1": true,
+      "l2": true
+    },
+    "best_tree_for_final_refit": {
+      "family": "catboost",
+      "recipe": "vif",
+      "strength": 1
+    },
+    "outer_panel": [
+      {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      {
+        "family": "catboost",
+        "recipe": "vif"
+      },
+      {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      {
+        "family": "catboost",
+        "recipe": "vif",
+        "strength": 1
+      },
+      {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 10
+      }
+    ]
+  },
+  "records": [
+    {
+      "run_id": "HYP-001-01-regression-inner-baseline-catboost",
+      "path": "results\\2026-10-23\\HYP-001-01-regression-inner-baseline-catboost",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:04:49+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:04:57+03:00",
+      "seconds": 8.188,
+      "scores": {
+        "rmse": 45.518715477760836
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 119,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-001-02-regression-inner-correlation-catboost",
+      "path": "results\\2026-10-23\\HYP-001-02-regression-inner-correlation-catboost",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "correlation"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:04:57+03:00",
+      "reference": "HYP-001-01-regression-inner-baseline-catboost",
+      "finished": "2026-10-23T16:05:04+03:00",
+      "seconds": 7.14,
+      "scores": {
+        "rmse": 45.32052344905627
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 105,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.1981920287045682
+    },
+    {
+      "run_id": "HYP-002-01-regression-inner-vif-catboost",
+      "path": "results\\2026-10-23\\HYP-002-01-regression-inner-vif-catboost",
+      "hypothesis": "HYP-002",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:05+03:00",
+      "reference": "HYP-001-02-regression-inner-correlation-catboost",
+      "finished": "2026-10-23T16:05:10+03:00",
+      "seconds": 5.39,
+      "scores": {
+        "rmse": 45.000826848085644
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.319696600970623
+    },
+    {
+      "run_id": "HYP-003-01-regression-inner-scaled-catboost",
+      "path": "results\\2026-10-23\\HYP-003-01-regression-inner-scaled-catboost",
+      "hypothesis": "HYP-003",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "scaled"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:10+03:00",
+      "reference": "HYP-002-01-regression-inner-vif-catboost",
+      "finished": "2026-10-23T16:05:15+03:00",
+      "seconds": 5.406,
+      "scores": {
+        "rmse": 45.00084665392861
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -1.9805842967457465e-05
+    },
+    {
+      "run_id": "HYP-004-01-regression-inner-gaussian-catboost",
+      "path": "results\\2026-10-23\\HYP-004-01-regression-inner-gaussian-catboost",
+      "hypothesis": "HYP-004",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "gaussian"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:15+03:00",
+      "reference": "HYP-003-01-regression-inner-scaled-catboost",
+      "finished": "2026-10-23T16:05:21+03:00",
+      "seconds": 5.359,
+      "scores": {
+        "rmse": 45.12283523338561
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.12198857945699615
+    },
+    {
+      "run_id": "HYP-005-01-regression-inner-engineered-catboost",
+      "path": "results\\2026-10-23\\HYP-005-01-regression-inner-engineered-catboost",
+      "hypothesis": "HYP-005",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:21+03:00",
+      "reference": "HYP-004-01-regression-inner-gaussian-catboost",
+      "finished": "2026-10-23T16:05:27+03:00",
+      "seconds": 5.843,
+      "scores": {
+        "rmse": 45.26398406382808
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.14114883044247506
+    },
+    {
+      "run_id": "HYP-001-03-regression-inner-baseline-forest",
+      "path": "results\\2026-10-23\\HYP-001-03-regression-inner-baseline-forest",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:27+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:05:50+03:00",
+      "seconds": 22.844,
+      "scores": {
+        "rmse": 46.1639294892355
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 119,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-001-04-regression-inner-correlation-forest",
+      "path": "results\\2026-10-23\\HYP-001-04-regression-inner-correlation-forest",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "correlation"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:05:50+03:00",
+      "reference": "HYP-001-03-regression-inner-baseline-forest",
+      "finished": "2026-10-23T16:06:08+03:00",
+      "seconds": 18.469,
+      "scores": {
+        "rmse": 46.36248309741696
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 105,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.19855360818146295
+    },
+    {
+      "run_id": "HYP-002-02-regression-inner-vif-forest",
+      "path": "results\\2026-10-23\\HYP-002-02-regression-inner-vif-forest",
+      "hypothesis": "HYP-002",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "vif"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:06:08+03:00",
+      "reference": "HYP-001-04-regression-inner-correlation-forest",
+      "finished": "2026-10-23T16:06:23+03:00",
+      "seconds": 14.75,
+      "scores": {
+        "rmse": 46.68533131938694
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.3228482219699771
+    },
+    {
+      "run_id": "HYP-003-02-regression-inner-scaled-forest",
+      "path": "results\\2026-10-23\\HYP-003-02-regression-inner-scaled-forest",
+      "hypothesis": "HYP-003",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "scaled"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:06:23+03:00",
+      "reference": "HYP-002-02-regression-inner-vif-forest",
+      "finished": "2026-10-23T16:06:37+03:00",
+      "seconds": 14.14,
+      "scores": {
+        "rmse": 46.67970603881967
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.005625280567272739
+    },
+    {
+      "run_id": "HYP-004-02-regression-inner-gaussian-forest",
+      "path": "results\\2026-10-23\\HYP-004-02-regression-inner-gaussian-forest",
+      "hypothesis": "HYP-004",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "gaussian"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:06:37+03:00",
+      "reference": "HYP-003-02-regression-inner-scaled-forest",
+      "finished": "2026-10-23T16:06:53+03:00",
+      "seconds": 15.906,
+      "scores": {
+        "rmse": 46.71183260529205
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.03212656647238532
+    },
+    {
+      "run_id": "HYP-005-02-regression-inner-engineered-forest",
+      "path": "results\\2026-10-23\\HYP-005-02-regression-inner-engineered-forest",
+      "hypothesis": "HYP-005",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:06:53+03:00",
+      "reference": "HYP-004-02-regression-inner-gaussian-forest",
+      "finished": "2026-10-23T16:07:08+03:00",
+      "seconds": 14.453,
+      "scores": {
+        "rmse": 46.94636373340831
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.23453112811625942
+    },
+    {
+      "run_id": "HYP-006-01-regression-inner-vif-catboost-1",
+      "path": "results\\2026-10-23\\HYP-006-01-regression-inner-vif-catboost-1",
+      "hypothesis": "HYP-006",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:08+03:00",
+      "reference": "HYP-002-01-regression-inner-vif-catboost",
+      "finished": "2026-10-23T16:07:11+03:00",
+      "seconds": 3.625,
+      "scores": {
+        "rmse": 44.55882835878972
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 1,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 0.44199848929592633
+    },
+    {
+      "run_id": "HYP-006-02-regression-inner-vif-catboost-10",
+      "path": "results\\2026-10-23\\HYP-006-02-regression-inner-vif-catboost-10",
+      "hypothesis": "HYP-006",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif",
+        "strength": 10
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:11+03:00",
+      "reference": "HYP-002-01-regression-inner-vif-catboost",
+      "finished": "2026-10-23T16:07:15+03:00",
+      "seconds": 3.609,
+      "scores": {
+        "rmse": 45.603991717078685
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 10,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -0.6031648689930407
+    },
+    {
+      "run_id": "HYP-006-03-regression-inner-vif-catboost-30",
+      "path": "results\\2026-10-23\\HYP-006-03-regression-inner-vif-catboost-30",
+      "hypothesis": "HYP-006",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif",
+        "strength": 30
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:15+03:00",
+      "reference": "HYP-002-01-regression-inner-vif-catboost",
+      "finished": "2026-10-23T16:07:19+03:00",
+      "seconds": 3.578,
+      "scores": {
+        "rmse": 46.330352267082525
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 79,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 30,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -1.3295254189968801
+    },
+    {
+      "run_id": "HYP-007-01-regression-inner-engineered-l1-0.01",
+      "path": "results\\2026-10-23\\HYP-007-01-regression-inner-engineered-l1-0.01",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 0.01
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:19+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:20+03:00",
+      "seconds": 1.547,
+      "scores": {
+        "rmse": 611.1450350874579
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 0.01,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": 10000,
+        "positive": false,
+        "precompute": false,
+        "random_state": null,
+        "selection": "cyclic",
+        "tol": 0.001,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": 374,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-02-regression-inner-engineered-l1-0.1",
+      "path": "results\\2026-10-23\\HYP-007-02-regression-inner-engineered-l1-0.1",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 0.1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:20+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:21+03:00",
+      "seconds": 0.218,
+      "scores": {
+        "rmse": 517.4284040167722
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 0.1,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": 10000,
+        "positive": false,
+        "precompute": false,
+        "random_state": null,
+        "selection": "cyclic",
+        "tol": 0.001,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": 61,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-03-regression-inner-engineered-l1-1",
+      "path": "results\\2026-10-23\\HYP-007-03-regression-inner-engineered-l1-1",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:21+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:21+03:00",
+      "seconds": 0.062,
+      "scores": {
+        "rmse": 54.19713785600558
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 1,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": 10000,
+        "positive": false,
+        "precompute": false,
+        "random_state": null,
+        "selection": "cyclic",
+        "tol": 0.001,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": 7,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-04-regression-inner-engineered-l2-0.1",
+      "path": "results\\2026-10-23\\HYP-007-04-regression-inner-engineered-l2-0.1",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 0.1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:21+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:21+03:00",
+      "seconds": 0.203,
+      "scores": {
+        "rmse": 878.1770374661244
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 0.1,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "lsqr",
+        "tol": 1e-06
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        164
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-05-regression-inner-engineered-l2-1",
+      "path": "results\\2026-10-23\\HYP-007-05-regression-inner-engineered-l2-1",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:21+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:21+03:00",
+      "seconds": 0.203,
+      "scores": {
+        "rmse": 884.6729602261103
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 1,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "lsqr",
+        "tol": 1e-06
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        164
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-06-regression-inner-engineered-l2-10",
+      "path": "results\\2026-10-23\\HYP-007-06-regression-inner-engineered-l2-10",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "inner",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 10
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:21+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:22+03:00",
+      "seconds": 0.172,
+      "scores": {
+        "rmse": 719.0247942438682
+      },
+      "n_fit": 22054,
+      "n_validation": 12946,
+      "n_features": 82,
+      "model_parameters": {
+        "alpha": 10,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "lsqr",
+        "tol": 1e-06
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        130
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-001-06-regression-outer-baseline-catboost",
+      "path": "results\\2026-10-23\\HYP-001-06-regression-outer-baseline-catboost",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:22+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:07:34+03:00",
+      "seconds": 12.656,
+      "scores": {
+        "rmse": 45.93583634208973
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 124,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-005-03-regression-outer-engineered-catboost",
+      "path": "results\\2026-10-23\\HYP-005-03-regression-outer-engineered-catboost",
+      "hypothesis": "HYP-005",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:34+03:00",
+      "reference": "HYP-001-06-regression-outer-baseline-catboost",
+      "finished": "2026-10-23T16:07:45+03:00",
+      "seconds": 10.391,
+      "scores": {
+        "rmse": 46.99974168722143
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 88,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -1.063905345131701
+    },
+    {
+      "run_id": "HYP-002-03-regression-outer-vif-catboost",
+      "path": "results\\2026-10-23\\HYP-002-03-regression-outer-vif-catboost",
+      "hypothesis": "HYP-002",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:45+03:00",
+      "reference": "HYP-001-06-regression-outer-baseline-catboost",
+      "finished": "2026-10-23T16:07:53+03:00",
+      "seconds": 8.547,
+      "scores": {
+        "rmse": 54.62842812078608
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 84,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -8.692591778696354
+    },
+    {
+      "run_id": "HYP-001-07-regression-outer-baseline-forest",
+      "path": "results\\2026-10-23\\HYP-001-07-regression-outer-baseline-forest",
+      "hypothesis": "HYP-001",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "baseline"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:07:54+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:08:36+03:00",
+      "seconds": 42.141,
+      "scores": {
+        "rmse": 48.565980842466
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 124,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-005-04-regression-outer-engineered-forest",
+      "path": "results\\2026-10-23\\HYP-005-04-regression-outer-engineered-forest",
+      "hypothesis": "HYP-005",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "forest",
+        "recipe": "engineered"
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:08:36+03:00",
+      "reference": "HYP-001-07-regression-outer-baseline-forest",
+      "finished": "2026-10-23T16:09:01+03:00",
+      "seconds": 24.891,
+      "scores": {
+        "rmse": 46.87784630178003
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 88,
+      "model_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 20,
+        "max_features": 0.8,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 1.6881345406859651
+    },
+    {
+      "run_id": "HYP-006-04-regression-outer-vif-catboost-1",
+      "path": "results\\2026-10-23\\HYP-006-04-regression-outer-vif-catboost-1",
+      "hypothesis": "HYP-006",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "catboost",
+        "recipe": "vif",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:09:01+03:00",
+      "reference": "HYP-002-03-regression-outer-vif-catboost",
+      "finished": "2026-10-23T16:09:06+03:00",
+      "seconds": 4.938,
+      "scores": {
+        "rmse": 52.94239384982671
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 84,
+      "model_parameters": {
+        "iterations": 500,
+        "learning_rate": 0.05,
+        "depth": 6,
+        "l2_leaf_reg": 1,
+        "loss_function": "RMSE",
+        "thread_count": 2,
+        "random_seed": 42,
+        "use_best_model": false,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": null,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": 1.6860342709593752
+    },
+    {
+      "run_id": "HYP-007-07-regression-outer-engineered-l1-1",
+      "path": "results\\2026-10-23\\HYP-007-07-regression-outer-engineered-l1-1",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "l1",
+        "recipe": "engineered",
+        "strength": 1
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:09:06+03:00",
+      "reference": null,
+      "finished": "2026-10-23T16:09:06+03:00",
+      "seconds": 0.094,
+      "scores": {
+        "rmse": 58.664647652489585
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 88,
+      "model_parameters": {
+        "alpha": 1,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": 10000,
+        "positive": false,
+        "precompute": false,
+        "random_state": null,
+        "selection": "cyclic",
+        "tol": 0.001,
+        "warm_start": false
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": 9,
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4"
+    },
+    {
+      "run_id": "HYP-007-08-regression-outer-engineered-l2-10",
+      "path": "results\\2026-10-23\\HYP-007-08-regression-outer-engineered-l2-10",
+      "hypothesis": "HYP-007",
+      "task": "regression",
+      "stage": "outer",
+      "config": {
+        "family": "l2",
+        "recipe": "engineered",
+        "strength": 10
+      },
+      "status": "completed",
+      "started": "2026-10-23T16:09:06+03:00",
+      "reference": "HYP-007-07-regression-outer-engineered-l1-1",
+      "finished": "2026-10-23T16:09:06+03:00",
+      "seconds": 0.282,
+      "scores": {
+        "rmse": 65.452603887892
+      },
+      "n_fit": 35000,
+      "n_validation": 18308,
+      "n_features": 88,
+      "model_parameters": {
+        "alpha": 10,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "lsqr",
+        "tol": 1e-06
+      },
+      "warnings": [],
+      "converged": true,
+      "n_iter": [
+        168
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.12.0",
+        "sklearn": "1.5.2",
+        "catboost": "1.2.8",
+        "joblib": "1.4.2",
+        "threads": 2,
+        "data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+        },
+        "code_sha256": {
+          "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+          "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+        }
+      },
+      "split": "temporal outer: years <5 -> 5; inner: <4 -> 4",
+      "gain": -6.787956235402412
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "started": "2026-10-23T16:09:06+03:00",
+    "task": "regression",
+    "config": {
+      "family": "catboost",
+      "recipe": "vif",
+      "strength": 1
+    },
+    "selection": "frozen inner-only winner; full refit is not a new validation measurement",
+    "finished": "2026-10-23T16:09:19+03:00",
+    "fit_seconds": 7.39,
+    "path": "results\\2026-10-23\\HYP-005-05-regression-full-refit",
+    "n_features": 91,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.12.0",
+      "sklearn": "1.5.2",
+      "catboost": "1.2.8",
+      "joblib": "1.4.2",
+      "threads": 2,
+      "data_sha256": {
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      "code_sha256": {
+        "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+        "experiments\\run_suite.py": "dd2b1c94b6ded30787f05cb29f4d2749254edd8b71337ec4f6b08515066076a5"
+      }
+    },
+    "submission_sha256": "c7d8e63793aba0b29a2e74a3e1c8102f3d584e1f66a59a721489b7693ebe2546"
+  },
+  "limitation": "Outer panel is descriptive held-out comparison of inner-frozen choices; no general superiority claim."
+}

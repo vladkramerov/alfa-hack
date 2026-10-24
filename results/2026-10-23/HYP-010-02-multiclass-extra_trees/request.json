@@ -1,0 +1,12 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\multiclass\\task.md",
+  "candidate": {
+    "family": "extra_trees",
+    "parameters": {},
+    "hypothesis": "HYP-010: new model family"
+  },
+  "mode": "evaluate",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-010-02-multiclass-extra_trees",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\new-split-multiclass.npz",
+  "threads": 4
+}

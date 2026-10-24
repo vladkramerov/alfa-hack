@@ -1,0 +1,40 @@
+{
+  "strategy": "reg_feature_experts",
+  "fit_original_rows": 35000,
+  "fit_retained_rows": 35000,
+  "row_deletion": false,
+  "validation_target_used": false,
+  "feature_numbers": [
+    29,
+    30,
+    31
+  ],
+  "experts": [
+    {
+      "group": "Commercial",
+      "fit_rows": 13995,
+      "weight": 0.965505346671266,
+      "fitted": true
+    },
+    {
+      "group": "Residential",
+      "fit_rows": 21005,
+      "weight": 0.9767495931178796,
+      "fitted": true
+    }
+  ],
+  "group_column": "building_class",
+  "minimum_expert_rows": 500,
+  "shrinkage": 500.0,
+  "global_reused": false,
+  "encoder": {
+    "scale": false,
+    "native": false
+  },
+  "global_fit_rows": 35000,
+  "model_cache": {
+    "key": "e8f1ae324f84530c95bb9c98a0099ef6bce9d0191edd835d2249c2b288b4f521",
+    "status": "fitted",
+    "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\regression-models\\e8f1ae324f84530c95bb9c98a0099ef6bce9d0191edd835d2249c2b288b4f521.joblib"
+  }
+}

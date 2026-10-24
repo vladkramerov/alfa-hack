@@ -1,0 +1,3 @@
+{"task": "regression", "strategy": "temporal_profile_memory", "selected_score": 39.39219382766771, "rows": 22449, "seconds": 64.28099999998813}
+{"task": "multiclass", "strategy": "probability_stacking", "selected_score": 0.6495311620074445, "rows": 41166, "seconds": 211.78200000000652}
+{"status": "passed", "verification": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\alternative-delivery-1792790663530173000\\verification.json"}

@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "mode": "refit",
+  "train_rows": 90,
+  "submission_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\regression_rmse\\research_runs\\final-1792792925546517600\\candidate_submission.csv",
+  "test_X_sha256": "945afa4b3ba3b3642dc7f1e16024d67d6da4512bb3af922fdfd4d441aad9143d",
+  "sample_sha256": "0f7bc9dc57c8d90cecabdd2d149fd361d43b19514b7126e7e515669aef7cac97",
+  "seconds": 0.030999999988125637,
+  "fingerprint": "b750df16ee17aa9d69b3e0ad182019702c8d7abdc96c58f59c943e544dc5d81f"
+}

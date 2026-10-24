@@ -1,0 +1,62 @@
+[
+  {
+    "candidate_key": "8cdf25bcb3486b06e5af3b08292c4dd03defc348802bd28b271c44fade21a55a",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {
+        "n_estimators": 12,
+        "max_depth": 6
+      },
+      "hypothesis": "Synthetic interaction protocol check",
+      "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+    },
+    "status": "completed",
+    "metric": "rmse",
+    "score": 0.29579904484172626,
+    "fit_rows": 80,
+    "valid_rows": 20,
+    "seconds": 0.09299999999348074
+  },
+  {
+    "candidate_key": "8cdf25bcb3486b06e5af3b08292c4dd03defc348802bd28b271c44fade21a55a",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {
+        "n_estimators": 12,
+        "max_depth": 6
+      },
+      "hypothesis": "Synthetic interaction protocol check",
+      "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+    },
+    "status": "skipped",
+    "reason": "already checked"
+  },
+  {
+    "candidate_key": "8cdf25bcb3486b06e5af3b08292c4dd03defc348802bd28b271c44fade21a55a",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {
+        "n_estimators": 12,
+        "max_depth": 6
+      },
+      "hypothesis": "Synthetic interaction protocol check",
+      "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+    },
+    "status": "skipped",
+    "reason": "already checked"
+  },
+  {
+    "candidate_key": "8cdf25bcb3486b06e5af3b08292c4dd03defc348802bd28b271c44fade21a55a",
+    "candidate": {
+      "family": "extra_trees",
+      "parameters": {
+        "n_estimators": 12,
+        "max_depth": 6
+      },
+      "hypothesis": "Synthetic interaction protocol check",
+      "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+    },
+    "status": "skipped",
+    "reason": "already checked"
+  }
+]

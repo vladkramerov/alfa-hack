@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 43.19210947337134,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "warnings": [],
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "seconds": 19.389999999984866
+}

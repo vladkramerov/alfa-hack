@@ -1,0 +1,16 @@
+{
+  "schema_ids_row_count": true,
+  "two_completed_fit_claims": true,
+  "full_refit_completed": true,
+  "inner_rows": 18,
+  "independent_inner_metric": 3.2277366691064864,
+  "inner_diagnostics_recomputed": true,
+  "history_fingerprints": [
+    "5be36ac5594406ead8e376c1bf7a744155786ed9f6c09ae805e2a9f1bb48e199",
+    "b750df16ee17aa9d69b3e0ad182019702c8d7abdc96c58f59c943e544dc5d81f"
+  ],
+  "submission_sha256": "97e3ac43db6f8b3d5dd173b4b3fe1a1bb27aaea68d9ae7cd18572f5bff3038b3",
+  "exit_code": 0,
+  "seconds": 5.577999999979511,
+  "status": "passed"
+}

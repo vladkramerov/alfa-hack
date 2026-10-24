@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.6154359833457845,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "seconds": 191.43799999999464,
+  "candidate": {
+    "strategy": "smote_macro_f1",
+    "family": "xgboost",
+    "parameters": {},
+    "class_multipliers": {
+      "Analysis": 1.0,
+      "Backdoor": 1.25,
+      "DoS": 2.0,
+      "Exploits": 1.0,
+      "Fuzzers": 1.25,
+      "Generic": 1.0,
+      "Normal": 0.75,
+      "Reconnaissance": 1.0,
+      "Shellcode": 1.0,
+      "Worms": 2.0
+    }
+  },
+  "learned_state": {
+    "class_multipliers": {
+      "Analysis": 1.0,
+      "Backdoor": 1.25,
+      "DoS": 2.0,
+      "Exploits": 1.0,
+      "Fuzzers": 1.25,
+      "Generic": 1.0,
+      "Normal": 0.75,
+      "Reconnaissance": 1.0,
+      "Shellcode": 1.0,
+      "Worms": 2.0
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "outer_baseline_refits": 0
+}

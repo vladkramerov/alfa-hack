@@ -1,0 +1,138 @@
+{
+  "created": "2026-10-24T00:10:17.597498+03:00",
+  "jobs": [
+    {
+      "number": 69,
+      "hypothesis": "HYP-069",
+      "task": "regression",
+      "candidate": {
+        "strategy": "temporal_profile_memory",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 49,
+      "hypothesis": "HYP-049",
+      "task": "multiclass",
+      "candidate": {
+        "strategy": "soft_distillation",
+        "parameters": {}
+      },
+      "reference": 0.6495311620074445,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 51,
+      "hypothesis": "HYP-051",
+      "task": "multiclass",
+      "candidate": {
+        "strategy": "balanced_softmax",
+        "parameters": {}
+      },
+      "reference": 0.6495311620074445,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 53,
+      "hypothesis": "HYP-053",
+      "task": "multiclass",
+      "candidate": {
+        "strategy": "nystrom_rbf",
+        "parameters": {}
+      },
+      "reference": 0.6495311620074445,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 54,
+      "hypothesis": "HYP-054",
+      "task": "regression",
+      "candidate": {
+        "strategy": "spline_gam",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 55,
+      "hypothesis": "HYP-055",
+      "task": "regression",
+      "candidate": {
+        "strategy": "quantile_mean",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 56,
+      "hypothesis": "HYP-056",
+      "task": "regression",
+      "candidate": {
+        "strategy": "h43_residual",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 58,
+      "hypothesis": "HYP-058",
+      "task": "regression",
+      "candidate": {
+        "strategy": "covariate_shift",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 60,
+      "hypothesis": "HYP-060",
+      "task": "regression",
+      "candidate": {
+        "strategy": "masked_regression",
+        "parameters": {}
+      },
+      "reference": 40.972997661684175,
+      "version": "spec009-v1"
+    },
+    {
+      "number": 60,
+      "hypothesis": "HYP-060",
+      "task": "multiclass",
+      "candidate": {
+        "strategy": "masked_augmentation",
+        "parameters": {}
+      },
+      "reference": 0.6495311620074445,
+      "version": "spec009-v1"
+    }
+  ],
+  "sources": {
+    "automl_data.py": "9ef747340b41c0f855c7803b23af35231daa317a23cb613b917455d2407dc538",
+    "automl_models.py": "5ac689fd350b83801720d4eb3f221393a0c4dfa1bafefd448a455b4d3e6c50e0",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_next_reg.py": "52de1f880e2b77adf1d1b5182b67fb26dbe9a945d4e6b61a6d9fea0184dacd6d",
+    "automl_next_class.py": "2200fa118a5022ab7fdc61f5aedf5eda3f1a9e60bd7ddadfdff6e2d90c01bf36",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "experiments/twenty_common.py": "075b2a6bddbc77d623016fefbbe7779021d26f2c99439c88392361a31d11ffd0",
+    "experiments/twenty_advanced.py": "de0d6853e6d48bac64e7379d737b34b622f07fabc61db38a5cef2434ff5546e1",
+    "experiments/twenty_features.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "experiments/novel_models.py": "c5451815f38382515aa3b9753409e9230c7973387bcf57e59ec20efc2188a533",
+    "experiments/next_regression.py": "d1b58198f3a4ecbaad5c3684ad577356a9db4d3db2b6c814f7be373c79d17e0d",
+    "experiments/next_classification.py": "8f22c21e06904dd024f5104c3014133c7b2fce576fe577ee488cd317a2536174",
+    "experiments/run_combinations.py": "f7f2ab474048e3ff13b1266cc0459da86419af43e3f8f580cda77b7ab4a80fa5",
+    "experiments/run_alternatives.py": "e47e3ee611a5a49024529eccb90f13b6782810ca272ad87c878b3d0d7b596880",
+    "experiments/alternative_worker.py": "a518aa9bdd61dea23ab067fff673502300f60713df3adaca1d4e166fdb475224"
+  },
+  "baseline_validation_refits": 0
+}

@@ -1,0 +1,17 @@
+{
+  "selected": {
+    "family": "mixed_neighbors",
+    "parameters": {
+      "n_neighbors": 25
+    },
+    "hypothesis": ""
+  },
+  "status": "completed",
+  "mode": "refit",
+  "train_rows": 90,
+  "submission_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\multiclass_log_loss\\research_runs\\final-1792792943781137900\\candidate_submission.csv",
+  "test_X_sha256": "f5de16fd4512eb5b5f978cd7e151cf3332e8a9fe482aa2f2ea354e814a3ccb44",
+  "sample_sha256": "8d48eeb4039b738583bd9d59b879b8131d1d2fbc4595255f3f06cd4442c4d3ea",
+  "seconds": 0.046000000002095476,
+  "fingerprint": "4a23ce39329b30c13454ee5e615245304e067601ecb73d8947da471623a3ad72"
+}

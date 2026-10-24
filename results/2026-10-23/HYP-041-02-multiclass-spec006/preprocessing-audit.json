@@ -1,0 +1,166 @@
+{
+  "input_features": [
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "outer_validation_unmodified": true,
+  "outer_y_not_passed_to_method": true,
+  "routes": [
+    {
+      "policy": "legacy"
+    },
+    {
+      "policy": "full"
+    },
+    {
+      "policy": "light",
+      "family": "lightgbm",
+      "feature_number": 26
+    }
+  ],
+  "inner_scores": [
+    0.5966582274000014,
+    0.591311489221806,
+    0.5904620473553172
+  ],
+  "selected": {
+    "policy": "legacy"
+  },
+  "oof": [
+    {
+      "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+      "config": {
+        "policy": "legacy"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "status": "reused",
+          "fit_rows": 47075,
+          "validation_rows": 23454,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz"
+        },
+        {
+          "fold": 1,
+          "status": "reused",
+          "fit_rows": 46893,
+          "validation_rows": 23636,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz"
+        },
+        {
+          "fold": 2,
+          "status": "reused",
+          "fit_rows": 47090,
+          "validation_rows": 23439,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+        }
+      ],
+      "selection_source": "training_grouped_oof"
+    },
+    {
+      "key": "9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd",
+      "config": {
+        "policy": "full"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "status": "fitted",
+          "fit_rows": 47075,
+          "validation_rows": 23454,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-0.npz"
+        },
+        {
+          "fold": 1,
+          "status": "fitted",
+          "fit_rows": 46893,
+          "validation_rows": 23636,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-1.npz"
+        },
+        {
+          "fold": 2,
+          "status": "fitted",
+          "fit_rows": 47090,
+          "validation_rows": 23439,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\9a44ad3bc645db6e4f0824f77e8f416a13cc80bc5792ae4e5f4b1058452011cd\\fold-2.npz"
+        }
+      ],
+      "selection_source": "training_grouped_oof"
+    },
+    {
+      "key": "f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0",
+      "config": {
+        "policy": "light",
+        "family": "lightgbm",
+        "feature_number": 26
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "status": "fitted",
+          "fit_rows": 47075,
+          "validation_rows": 23454,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-0.npz"
+        },
+        {
+          "fold": 1,
+          "status": "fitted",
+          "fit_rows": 46893,
+          "validation_rows": 23636,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-1.npz"
+        },
+        {
+          "fold": 2,
+          "status": "fitted",
+          "fit_rows": 47090,
+          "validation_rows": 23439,
+          "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\f468fd1edf53853dcffa0c560b74cbc1a837afc9ea759a2b934dcf74956ed9d0\\fold-2.npz"
+        }
+      ],
+      "selection_source": "training_grouped_oof"
+    }
+  ],
+  "selection": "maximum mean inner primary score, ties prefer legacy then full then new LightGBM route",
+  "maximum_routes": 3,
+  "outer_fit": "reused_saved_baseline"
+}

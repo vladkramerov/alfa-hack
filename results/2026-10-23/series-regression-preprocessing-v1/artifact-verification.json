@@ -1,0 +1,37 @@
+{
+  "task": "regression",
+  "series": "preprocessing-v1",
+  "checks": {
+    "process_exit_code": 0,
+    "records_completed": 29,
+    "records_total": 29,
+    "all_records_converged": true,
+    "final_artifacts_exist": [
+      "metrics.json",
+      "model.joblib",
+      "preprocessed_data.npz",
+      "preprocessing_audit.json",
+      "report.md",
+      "submission.csv"
+    ],
+    "X_train_shape": [
+      53308,
+      91
+    ],
+    "X_test_shape": [
+      22449,
+      91
+    ],
+    "transformed_arrays_finite": true,
+    "submission_shape": [
+      22449,
+      2
+    ],
+    "reloaded_pipeline_predictions_match_submission_first10": true,
+    "prediction_comparison_rtol": 1E-12
+  },
+  "final_directory": "results/2026-10-23/HYP-005-05-regression-full-refit",
+  "execution_log": "tmp/regression-suite.log",
+  "limitations": "Artifact verification covers all transformed values and the first 10 reloaded predictions; hidden test quality is unknown.",
+  "recorded_at_moscow": "2026-10-23T16:10:19.7286848+03:00"
+}

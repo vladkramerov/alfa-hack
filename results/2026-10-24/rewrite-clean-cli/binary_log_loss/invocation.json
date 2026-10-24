@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\.venv-ml\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\source\\solution.py",
+    "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\binary_log_loss\\task.md",
+    "--max-experiments",
+    "1",
+    "--time-budget",
+    "45",
+    "--hypothesis-budget",
+    "15"
+  ],
+  "cwd": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\rewrite-clean-cli\\source",
+  "api_environment_cleared": true,
+  "input_sha256": {
+    "task.md": "b9e42f9f9f0269707ae8ecb02b19a9a7ee5275ddc2f62f63441877ce6a130e51",
+    "inputs\\unfamiliar\\column_notes.csv": "f45ce873458aab6793c860273c8e30dbad25c89b50fd46b0d0cf49051320aa8c",
+    "inputs\\unfamiliar\\expected_format.csv": "30c6c50a3f1477eee9495b3f0d352ae140dcec7b950f96a7c538e4f6c01ff820",
+    "inputs\\unfamiliar\\learning_table.csv": "bd5912ca49b43eab50fb10ee2c530b8e47d4a0ef65e67cc9839cf444875b4894",
+    "inputs\\unfamiliar\\unknown_rows.csv": "499c85c5fa70807c01ac62a534813ec1d0d0dd852b18f8e21b84fc0bd482a471"
+  }
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "status": "failed",
+    "errors": [
+      "empty/truncated/invalid response",
+      "empty/truncated/invalid response"
+    ],
+    "attempts": 2,
+    "estimated_tokens": 5572
+  }
+]

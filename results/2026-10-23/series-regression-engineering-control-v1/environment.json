@@ -1,0 +1,24 @@
+{
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.12.0",
+  "sklearn": "1.5.2",
+  "catboost": "1.2.8",
+  "joblib": "1.4.2",
+  "threads": 2,
+  "data_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+  },
+  "code_sha256": {
+    "experiments\\export_preprocessed.py": "1a7042dc5385846a169dde8ae1848c50c420e193c39ddb6dc4f24c773b643570",
+    "experiments\\preprocessing.py": "73159d5cf102c5e59de77c668ea9d40931c79e2e2ca20f19ef7cc40233d335dd",
+    "experiments\\reporting.py": "b2fa5ed29f39f4243ad7b6f67e0689d4dff4a347e05bbd5b9bd97ecfa4a5bf51",
+    "experiments\\run_engineering_control.py": "a3ea9f912bb58ea15e00d012a1e561d86ae1a23e478bca5d36447fbe1c3627f5",
+    "experiments\\run_suite.py": "d2b5170f12bc6ad4d04338eba1e870b8c08783094d2bd7fcea082bd3e885ee35",
+    "experiments\\update_registry.py": "eef45fd871c182451dfd7d0f54ca0286ba79a4bce87bcc0c664ea617ec202c51",
+    "experiments\\verify_results.py": "c7b1aa603ebf8796dee5caeec634666864c48533dffe7604a05c8ba8058485e1"
+  }
+}

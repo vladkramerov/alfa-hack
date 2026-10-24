@@ -1,0 +1,12 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\data\\regression\\task.md",
+  "candidate": {
+    "family": "lightgbm",
+    "parameters": {},
+    "hypothesis": "HYP-009: new model family"
+  },
+  "mode": "evaluate",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-009-01-regression-lightgbm",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\new-split-regression.npz",
+  "threads": 4
+}

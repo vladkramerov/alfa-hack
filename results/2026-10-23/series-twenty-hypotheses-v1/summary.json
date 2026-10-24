@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "planned_evaluations": 23,
+  "attempted": 25,
+  "completed": 23,
+  "unique_hypotheses": 20,
+  "technical_stops": 2,
+  "pending_cases": 0,
+  "baseline_refits": 0,
+  "model_fit_attempts": 39,
+  "verification": "passed"
+}

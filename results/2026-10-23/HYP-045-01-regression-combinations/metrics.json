@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 41.406800898690484,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "seconds": 19.203000000008615,
+  "candidate": {
+    "strategy": "target_tail_mixture",
+    "parameters": {},
+    "family": "xgboost",
+    "tail_quantile": 0.8
+  },
+  "learned_state": {},
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "outer_baseline_refits": 0
+}

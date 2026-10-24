@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "archive": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\dist\\solution_combined_metrics.zip",
+  "bytes": 57110,
+  "sha256": "4080df23302d1bca674f081ace2c308a2783f31bd6ad9f261df08cd890ebe15c",
+  "local_metrics": {
+    "regression": 40.972997661684175,
+    "multiclass": 0.6495311620074445
+  },
+  "unit_tests": 161,
+  "independent_metric_checks": 63,
+  "new_unique_model_fits": 24,
+  "repeated_old_validation_fits": 0,
+  "clean_mock_scenarios": 5,
+  "clean_mock_calls": 11,
+  "public_refits": [
+    [
+      "regression",
+      22449,
+      "reg_feature_experts"
+    ],
+    [
+      "multiclass",
+      41166,
+      "probability_stacking"
+    ]
+  ],
+  "experiment_verification": "results/2026-10-23/series-combinations-v1/verification.json",
+  "flat_verification": "results/2026-10-23/platform-verification-1792788682542347600/verification.json",
+  "full_refit_verification": "results/2026-10-23/combination-delivery-1792788672312889000/verification.json",
+  "real_platform_api_tested": false,
+  "hidden_platform_score_verified": false
+}

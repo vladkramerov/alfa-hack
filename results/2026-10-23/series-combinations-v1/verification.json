@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "checks_passed": 63,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "exactly seven frozen graphs H42..H48",
+      "passed": true
+    },
+    {
+      "check": "seven registry attempts",
+      "passed": true
+    },
+    {
+      "check": "seven terminal outcomes",
+      "passed": true
+    },
+    {
+      "check": "seven completed outcomes",
+      "passed": true
+    },
+    {
+      "check": "all planned hypothesis IDs present",
+      "passed": true
+    },
+    {
+      "check": "attempt fingerprints unique",
+      "passed": true
+    },
+    {
+      "check": "frozen plan prohibits baseline refits",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_data.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_models.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_combo_memory.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_feature_sets.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_reg_combo.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot automl_class_combo.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/twenty_features.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/twenty_common.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/twenty_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/reg_combinations.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/class_combinations.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/combo_worker.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source snapshot experiments/run_combinations.py",
+      "passed": true
+    },
+    {
+      "check": "regression original train SHA",
+      "passed": true
+    },
+    {
+      "check": "multiclass original train SHA",
+      "passed": true
+    },
+    {
+      "check": "HYP-042 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-043 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-1 fold-0 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-2 fold-0 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-3 fold-0 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-1 fold-1 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-2 fold-1 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 component-3 fold-1 temporal positions",
+      "passed": true
+    },
+    {
+      "check": "HYP-044 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-045 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-046 smote inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-046 smote inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-046 smote inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-046 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 raw inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 raw inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 raw inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 frequency inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 frequency inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 frequency inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-047 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 raw inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 raw inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 raw inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 smote inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 smote inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 smote inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 frequency inner-fold-0 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 frequency inner-fold-1 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 frequency inner-fold-2 exact raw grouped split",
+      "passed": true
+    },
+    {
+      "check": "HYP-048 artifacts/protocol/independent score",
+      "passed": true
+    },
+    {
+      "check": "nonempty model fit journal",
+      "passed": true
+    },
+    {
+      "check": "all actual model fit fingerprints unique",
+      "passed": true
+    },
+    {
+      "check": "exactly one outcome per actual model attempt",
+      "passed": true
+    },
+    {
+      "check": "all model fits completed",
+      "passed": true
+    },
+    {
+      "check": "all model fits read ledger first",
+      "passed": true
+    },
+    {
+      "check": "only frozen hypotheses caused model fits",
+      "passed": true
+    },
+    {
+      "check": "old full outer raw baseline models not refitted",
+      "passed": true
+    }
+  ],
+  "planned_evaluations": 7,
+  "attempted": 7,
+  "completed_evaluations": 7,
+  "terminal_outcomes": 7,
+  "model_fit_attempts": 24,
+  "baseline_refits": 0,
+  "verified_at": "2026-10-23T23:49:52.334262+03:00",
+  "verifier_sha256": "be56a9107b4280c79522af9e1ed01e4f3ba54bddfa2bbcd8b911d2003b010272",
+  "source_verification": "frozen copies against pre-fit manifest; current production intentionally not compared",
+  "no_model_fit_performed": true
+}

@@ -1,0 +1,48 @@
+{
+  "task": "Classification.\nPrimary metric: Macro F1.\nData: nested/inputs/train.csv nested/inputs/test.csv nested/inputs/sample_submission.csv nested/inputs/data_dictionary.csv",
+  "target": "response",
+  "id": "object_key",
+  "type": "classification",
+  "metric": "macro_f1",
+  "split": "stratified80/20:seed42",
+  "shape": [
+    80,
+    2
+  ],
+  "dtypes": {
+    "signal": "float64",
+    "kind": "object"
+  },
+  "missing": {
+    "signal": 0.0125,
+    "kind": 0.1
+  },
+  "categories": {
+    "kind": 3
+  },
+  "numeric_summary": {
+    "signal": {
+      "count": 79.0,
+      "mean": 0.2054563379661684,
+      "std": 0.8663181682501447,
+      "min": -1.9902864130247395,
+      "1%": -1.7780777370906973,
+      "50%": 0.1006632102397099,
+      "99%": 1.8233470809823533,
+      "max": 1.8483440835780385
+    }
+  },
+  "target_fit_summary": {
+    "positive": 47,
+    "negative": 33
+  },
+  "preprocessing_policy": "Versioned measured strategies: reg-feature-experts-v1 combines train-only weather/group features; probability-stacking-v1 combines grouped OOF raw/SMOTE/frequency probabilities. group-experts-v1 and macro-f1-v1 remain compatible; full-v1 default. Validation/test rows never removed. Known scores require matching hashes/split/metric.",
+  "known": null,
+  "hashes": {
+    "train.csv": "0e2c728f1162779d834bb9d461400cb3b6d1a5a1db74eb265616b06ff3c062f9",
+    "test.csv": "53b2b1e77c6ec14319c29af25f0db195aaaad3588fce151421ffed260d5c335c",
+    "sample_submission.csv": "050f14222aace784896a8c20f0c9bddc3592236e7d0dd7272f9b5724ba33532e",
+    "data_dictionary.csv": "cd08b258aeb3ca0a62653b692971145703e7c701b3ad5c0a53bb15bdb70d2e0b"
+  },
+  "split_key": "7cad86b6c8561197613f40a18684dfdc57e4ce7a794a9b87aa11615af1e8218e"
+}

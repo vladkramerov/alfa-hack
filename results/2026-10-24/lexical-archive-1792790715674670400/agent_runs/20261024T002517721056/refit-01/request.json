@@ -1,0 +1,22 @@
+{
+  "task_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\lexical-archive-1792790715674670400\\task.md",
+  "candidate": {
+    "family": "xgboost",
+    "parameters": {},
+    "strategy": "macro_f1_calibrated",
+    "calibration_folds": 3,
+    "hypothesis": "Grouped OOF class decision multipliers for Macro-F1",
+    "preprocessing": "macro-f1-v1",
+    "scale": false,
+    "max_outlier_fraction": 0,
+    "target_transform": "none",
+    "class_multipliers": {
+      "001": 1.0,
+      "010": 1.0
+    }
+  },
+  "mode": "refit",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\lexical-archive-1792790715674670400\\agent_runs\\20261024T002517721056\\refit-01",
+  "split_path": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\lexical-archive-1792790715674670400\\agent_runs\\20261024T002517721056\\splits.npz",
+  "threads": 4
+}

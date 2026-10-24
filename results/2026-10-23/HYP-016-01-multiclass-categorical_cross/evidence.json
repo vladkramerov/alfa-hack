@@ -1,0 +1,65 @@
+{
+  "fingerprint": "21b828b24260e2c430e41ef4e0e237243b4cfb83e0ed2e3ffe9fbf6be3b6a55f",
+  "candidate_key": "539ca33c1aed5e5b9668ab2d1073c2e84331a5c26f6854953f39ffd21ff638e3",
+  "candidate": {
+    "hypothesis": "HYP-016",
+    "task": "multiclass",
+    "family": "lightgbm",
+    "transform": "categorical_cross",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1
+    }
+  },
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "status": "completed",
+  "started": "2026-10-23T21:47:15.929749+03:00",
+  "ledger_sha256_before_fit": "bf14b613129c7b167717986b95fcb75f6639a37da48118c5dda5f1dc7ee3af27",
+  "directory": "results/2026-10-23/HYP-016-01-multiclass-categorical_cross",
+  "metric": "macro_f1",
+  "score": 0.5807635957092588,
+  "fit_rows": 70529,
+  "valid_rows": 17141,
+  "warnings": [],
+  "packages": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "lightgbm": "4.6.0",
+    "xgboost": "2.1.4"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "accuracy": 0.8308150049588705,
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "probability_row_sum_range": [
+    0.9999999999999994,
+    1.0000000000000004
+  ],
+  "seconds": 28.594000000011874,
+  "planned_model_fit_count": 1,
+  "conclusion": "Не подтверждена по заданному критерию"
+}

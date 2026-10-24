@@ -1,0 +1,54 @@
+{
+  "task": "Regression.\nPrimary metric: RMSE.\nData: nested/inputs/train.csv nested/inputs/test.csv nested/inputs/sample_submission.csv nested/inputs/data_dictionary.csv",
+  "target": "response",
+  "id": "object_key",
+  "type": "regression",
+  "metric": "rmse",
+  "split": "random80/20:seed42",
+  "shape": [
+    80,
+    2
+  ],
+  "dtypes": {
+    "signal": "float64",
+    "kind": "object"
+  },
+  "missing": {
+    "signal": 0.0125,
+    "kind": 0.0625
+  },
+  "categories": {
+    "kind": 3
+  },
+  "numeric_summary": {
+    "signal": {
+      "count": 79.0,
+      "mean": 0.16640229206723187,
+      "std": 0.8849860406713518,
+      "min": -1.8673605083314675,
+      "1%": -1.7510340380581773,
+      "50%": 0.0730087977694461,
+      "99%": 1.8233470809823533,
+      "max": 1.8483440835780385
+    }
+  },
+  "target_fit_summary": {
+    "count": 80.0,
+    "mean": 0.8041779399505197,
+    "std": 0.9560495119055165,
+    "min": -0.2503024015952099,
+    "1%": -0.15495087678229855,
+    "50%": 0.42394940244279916,
+    "99%": 3.436767390136841,
+    "max": 3.4941696351082667
+  },
+  "preprocessing_policy": "full-v1 mandatory; validation/test rows never removed",
+  "known": null,
+  "hashes": {
+    "train.csv": "cd42191691332fae8bd41a5edc2b7bfd3546ad5a73faba6c3be89b30c393a8eb",
+    "test.csv": "53b2b1e77c6ec14319c29af25f0db195aaaad3588fce151421ffed260d5c335c",
+    "sample_submission.csv": "6b46fda327a76d5988b386814f9328984037852dd2dc720c116eb7344d3c3b73",
+    "data_dictionary.csv": "cd08b258aeb3ca0a62653b692971145703e7c701b3ad5c0a53bb15bdb70d2e0b"
+  },
+  "split_key": "64a89a0d19ecfe3c41af48343fdb5fbad3cf67d525aaae651d24982f2cdeb87b"
+}

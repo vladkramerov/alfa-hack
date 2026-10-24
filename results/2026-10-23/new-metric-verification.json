@@ -1,0 +1,30 @@
+[
+  {
+    "task": "regression",
+    "family": "lightgbm",
+    "metric": "rmse",
+    "score": 60.492688256313926,
+    "verified_without_fit": true
+  },
+  {
+    "task": "regression",
+    "family": "extra_trees",
+    "metric": "rmse",
+    "score": 43.56756773832011,
+    "verified_without_fit": true
+  },
+  {
+    "task": "multiclass",
+    "family": "lightgbm",
+    "metric": "macro_f1",
+    "score": 0.5838559593680208,
+    "verified_without_fit": true
+  },
+  {
+    "task": "multiclass",
+    "family": "extra_trees",
+    "metric": "macro_f1",
+    "score": 0.5804952756940901,
+    "verified_without_fit": true
+  }
+]

@@ -1,0 +1,280 @@
+{
+  "status": "passed",
+  "checks_passed": 65,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "ten frozen cases and nine hypothesis IDs",
+      "passed": true
+    },
+    {
+      "check": "ten registered cases",
+      "passed": true
+    },
+    {
+      "check": "ten terminal outcomes",
+      "passed": true
+    },
+    {
+      "check": "all completed evaluations contain primary metrics",
+      "passed": true
+    },
+    {
+      "check": "registered attempts unique",
+      "passed": true
+    },
+    {
+      "check": "frozen baseline validation refits forbidden",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_data.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_models.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_feature_sets.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_combo_memory.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_reg_combo.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_class_combo.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_next_reg.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_next_class.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy automl_temporal_memory.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/twenty_common.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/twenty_advanced.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/twenty_features.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/novel_models.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/next_regression.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/next_classification.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/run_combinations.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/run_alternatives.py",
+      "passed": true
+    },
+    {
+      "check": "frozen source copy experiments/alternative_worker.py",
+      "passed": true
+    },
+    {
+      "check": "regression original train SHA",
+      "passed": true
+    },
+    {
+      "check": "multiclass original train SHA",
+      "passed": true
+    },
+    {
+      "check": "HYP-069/regression independent row-past memory reconstruction",
+      "passed": true
+    },
+    {
+      "check": "HYP-069/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-049/multiclass class protocol/fit lineage and specialized formulas",
+      "passed": true
+    },
+    {
+      "check": "HYP-049/multiclass original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-051/multiclass class protocol/fit lineage and specialized formulas",
+      "passed": true
+    },
+    {
+      "check": "HYP-051/multiclass original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-053/multiclass original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-054/regression spline/Ridge frozen protocol and training statistics",
+      "passed": true
+    },
+    {
+      "check": "HYP-054/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-055/regression five original-scale quantiles averaged",
+      "passed": true
+    },
+    {
+      "check": "HYP-055/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-056/regression honest temporal residual targets and outer composition",
+      "passed": true
+    },
+    {
+      "check": "HYP-056/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-058/regression cross-fit X-density ratio and weighted fit identity",
+      "passed": true
+    },
+    {
+      "check": "HYP-058/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/regression regression masked-copy lineage",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/regression original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/multiclass class protocol/fit lineage and specialized formulas",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/multiclass original data/protocol/saved metric",
+      "passed": true
+    },
+    {
+      "check": "model/stateful fit journal present",
+      "passed": true
+    },
+    {
+      "check": "model/stateful fit fingerprints unique",
+      "passed": true
+    },
+    {
+      "check": "exactly one terminal outcome per actual fit",
+      "passed": true
+    },
+    {
+      "check": "all actual fit outcomes completed",
+      "passed": true
+    },
+    {
+      "check": "all fits read ledger first",
+      "passed": true
+    },
+    {
+      "check": "only frozen cases caused fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-069/regression exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-049/multiclass exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-051/multiclass exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-054/regression exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-055/regression exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-056/regression residual uses new temporal subsets and no H43 outer fit",
+      "passed": true
+    },
+    {
+      "check": "HYP-058/regression exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/regression exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/regression estimator trains on exactly two copies",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/multiclass exact fit count; no extra teacher/control fits",
+      "passed": true
+    },
+    {
+      "check": "HYP-060/multiclass estimator trains on exactly two copies",
+      "passed": true
+    },
+    {
+      "check": "known raw/H43 outer baseline ET not refitted",
+      "passed": true
+    }
+  ],
+  "planned_evaluations": 10,
+  "planned_hypotheses": 9,
+  "attempted": 10,
+  "completed_evaluations": 9,
+  "technical_failures": 1,
+  "terminal_outcomes": 10,
+  "model_fit_attempts": 22,
+  "no_model_fit_performed": true,
+  "baseline_validation_refits": 0,
+  "verified_at": "2026-10-24T00:19:08.702732+03:00",
+  "verifier_sha256": "e0cae55e0f8e3c08efe62d6210ed448a4da80a15470a18c475d1b7dbd4698567",
+  "shared_verification_helpers_sha256": "be56a9107b4280c79522af9e1ed01e4f3ba54bddfa2bbcd8b911d2003b010272",
+  "source_verification": "frozen source copies against pre-fit manifest, not mutable current production"
+}

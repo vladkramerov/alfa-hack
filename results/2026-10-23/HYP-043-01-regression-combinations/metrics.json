@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 40.972997661684175,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "seconds": 45.375,
+  "candidate": {
+    "strategy": "reg_feature_experts",
+    "parameters": {},
+    "family": "extra_trees",
+    "feature_numbers": [
+      29,
+      30,
+      31
+    ],
+    "group_column": "building_class",
+    "minimum_expert_rows": 500,
+    "shrinkage": 500.0
+  },
+  "learned_state": {},
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "outer_baseline_refits": 0
+}
