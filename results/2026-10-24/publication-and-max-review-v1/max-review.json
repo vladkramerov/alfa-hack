@@ -1,0 +1,39 @@
+{
+  "branch": "maxim/autoresearch",
+  "commit": "be9d9aec64c39a3a73a7507a742223a8d65a8dee",
+  "source_sha256": {
+    "docs/EXPERIMENT_LOG.md": "89469e23f02caa2da29ec420a3f1558c96ec23b8dc89d856b1cb142f80fe8da9",
+    "docs/HYPOTHESES.md": "bc64188debf380c05ab34bc3103a0f45f6826fdee2abfaf5558fbbb5e84b6cfb",
+    "results/numeric-views-v1.json": "b034d61be3aac973445e2f538b90538b5c7ae8867bf5aa1c6a51f502675a85c1",
+    "results/numeric-control-audit.json": "fc2bf7e64a5b5cb7f411d4e4c6119b9c5ca7009175fe7058fe85dc9ed7c66cf0",
+    "automl_engine.py": "f5ec19e41b61cbb095bff38fe4add7a12b200fa3372f35dae8ad78621f853cd8",
+    "automl_models.py": "40be4085fb6129c3f486113f274a83aada2218827d235cb0ed4a0374f7953b47",
+    "automl_runtime.py": "b2844fb877a8b2b27833eb27f128a11e8409e05111dfbf3a785145689afeb33f"
+  },
+  "reported_scores": {
+    "regression": {
+      "metric": "rmse",
+      "outer": 42.012317102393645,
+      "selection": "signed_log",
+      "data_hashes": {
+        "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      }
+    },
+    "multiclass": {
+      "metric": "macro_f1",
+      "outer": 0.6373379463394646,
+      "selection": "control",
+      "data_hashes": {
+        "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      }
+    }
+  },
+  "new_model_fits": 0,
+  "reported_metrics_independently_recomputed": false
+}

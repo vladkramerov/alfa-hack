@@ -1,0 +1,22 @@
+{
+  "hypothesis": "HYP-107",
+  "stage": "inner",
+  "started": "2026-10-24T13:12:24.337671+03:00",
+  "source_sha256": {
+    "fusion_weights.py": "ee774b42b4903b645bfe1d30a365e1ae6ceab7fec8ef631ae63fd06f4681a7a5",
+    "HYP-107-sergey-ivan-fusion.md": "09c0708c146de0a1fd515b2edd99f85cbf9de65b3a6676a735945d2796baf2d2",
+    "sergey_fusion.py": "8fb50e5e04b353d01ad28cdc4313d81e35fd6ec63ecd3c6e044ba8c4efea557b"
+  },
+  "inputs_sha256": {
+    "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-073-02-regression-panel-secondary\\validation_predictions.npz": "38e6f5095b7bafd2d3016df384182649dca5249ab06a2e842f84fbaa13b814e4",
+    "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-073-02-regression-panel-secondary\\splits.npz": "5f955b517b3dacfeb0642198dd1d0038bc1047e877ae68fb4b6225167bb06513",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\splits.npz": "6a1f08073f4fab3bc70181409618f526c62202d34f28e8dc30275567548064c7",
+    "results\\2026-10-24\\HYP-083-01-inner-default-sprint\\validation_predictions.npz": "1d49466421d974be3d159a815016ef27f68f6e71cae781b1a560ea7f5d94bdd5",
+    "results\\2026-10-24\\HYP-083-01-inner-default-sprint\\splits.npz": "6a1f08073f4fab3bc70181409618f526c62202d34f28e8dc30275567548064c7",
+    "results\\2026-10-24\\HYP-085-01-inner-default-sprint\\validation_predictions.npz": "1d7b7318e78c38ac5da3332fe099198292837c0883f5e57538fb29b4b4d07aad",
+    "results\\2026-10-24\\HYP-085-01-inner-default-sprint\\splits.npz": "6a1f08073f4fab3bc70181409618f526c62202d34f28e8dc30275567548064c7"
+  },
+  "train_sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+  "ledger_sha256": "dfcacd6268ad15aae7e3a22335cd43f0d01847bece9710b3192dc07babb10255"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "seconds": 0.25,
+  "inner": {
+    "status": "completed",
+    "hypothesis": "HYP-107",
+    "stage": "inner",
+    "metric": "rmse",
+    "score": 30.59160391991867,
+    "Sergey_control": 31.04663635241995,
+    "Ivan_best_control": 30.636363541581975,
+    "passes_gate": true,
+    "weights": [
+      0.2571292052062046,
+      0.08970756095466435,
+      0.6531632338391299,
+      1.1565171339013077e-15
+    ],
+    "components": [
+      "SergeyH73",
+      "IvanH70",
+      "IvanH83",
+      "IvanH85"
+    ],
+    "learner_fits": 0,
+    "parameter_fits": 1,
+    "old_model_refits": 0,
+    "relative_gain_vs_Sergey": 0.014656416474109037,
+    "relative_gain_vs_Ivan": 0.001460996557328205,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "cross_os_cached_components": true,
+    "hidden_score_verified": false,
+    "completed": "2026-10-24T13:12:24.372312+03:00"
+  },
+  "outer": {
+    "status": "completed",
+    "hypothesis": "HYP-107",
+    "stage": "outer",
+    "metric": "rmse",
+    "score": 34.142888130110755,
+    "Sergey_control": 34.520268654585415,
+    "Ivan_best_control": 34.21382789041039,
+    "passes_gate": true,
+    "weights": [
+      0.2571292052062046,
+      0.08970756095466435,
+      0.6531632338391299,
+      1.1565171339013077e-15
+    ],
+    "components": [
+      "SergeyH73",
+      "IvanH70",
+      "IvanH83",
+      "IvanH85"
+    ],
+    "learner_fits": 0,
+    "parameter_fits": 0,
+    "old_model_refits": 0,
+    "relative_gain_vs_Sergey": 0.010932143322833942,
+    "relative_gain_vs_Ivan": 0.0020734236615342558,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "cross_os_cached_components": true,
+    "hidden_score_verified": false,
+    "completed": "2026-10-24T13:12:24.472171+03:00"
+  },
+  "production_promoted": false
+}

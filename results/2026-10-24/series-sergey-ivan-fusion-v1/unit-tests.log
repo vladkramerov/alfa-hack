@@ -1,0 +1,12 @@
+.................C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 568 tests in 13.275s
+
+OK
+{"status": "completed", "metric": "macro_f1", "selected_score": 0.9, "cached_history": false, "seconds": 0.046999999991385266, "submission_rows": 2}

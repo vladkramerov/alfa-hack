@@ -1,5 +1,45 @@
 # Единый журнал гипотез
 
+SPEC011 доrealfit HYP-099 registered: [globalone-to-onerecordlinking](docs/hypotheses/HYP-099-global-entity-assignment.md), Hungarian/exactH70reserve/latestpastyear/alpha.35/cost≤1/dummy1.000001/capN*(M+N)4m, no H70beta refit. Этоnewjointallocationcohortconstraint, неH81localnearestparamповтор; querycohortdependent/noqueryy/physicalidentitynotproven. CachedH70fallback/stateSHA/source/config/data/splitsfreeze, firstinner, everyoutcomepreserved.
+
+SPEC011 доrealfit explicitregistered HYP-098: [exactempirical probabilityoffsets](docs/hypotheses/HYP-098-exact-empirical-f1-offsets.md),3rarefirstpasses/no tiedgroups/directactualF1onTRUEOOF RAWteacher(nonewteachers), неH37multipliers/H75expectedsoftcounts. HYP-100: [frozenH78+empiricaloffsets](docs/hypotheses/HYP-100-frozen-posterior-empirical-composition.md), noH78refit, newpostdecision offsets; innerproxytraininginsample/outerH48meta-insample explicitlyaudited, неindependentOOF. Новыеinputstate/source/config/data/splitsSHAfreeze; innerfirst, everyresultpreserved.
+
+SPEC011 доrealfit HYP-095 registered: [noise-robust GCE](docs/hypotheses/HYP-095-generalized-cross-entropy.md), q.7 exactgradient иinverse-sqrtTRAINclassweightsmean1; LGB300/63/lr.05/lambda5/2CPU/positiveCEsurrogate; TRUEOOFteacherреюзH88, нольteacherrefit. ОтличиеH50focal противоположноеdynamicdownweightневероятныхlabels, неH39staticweights/H49distillation/H51balancedsoftmax; всеlabels/rowsсохранены. Историяпрочитана/source/config/data/splitteacherSHAfreeze, innerfirst/≤900sec.
+
+SPEC011 доrealfit explicitregistered HYP-096 и HYP-097: [honestposterior decisions](docs/hypotheses/HYP-096-097-honest-posterior-decisions.md), прежниеH78properCE+F1/H75affineF1 с НОВЫМH88TRUEOOFtrainingteacher, неin-sampleматрицейстарыхfit. Параметрынеизменны/нольnewteacherfits/всеисточникиcacheпроверены. Source/config/data/split/teacherSHAfreeze, innerfirst; это новаякомбинация процедуры, не новыйseed/имяидентичноговхода.
+
+HYP-093 и HYP-094 явно registered доfit: таже frozenкарточка HYP-092-094, выше сокращённая запись HYP-092/093/094 не прошла literal-IDguard для093/094. Две preflight остановки без созданияfitclaim/безобучения сохранены отдельно; исправляется только записьID, научныеconfigнеизменны. HYP-092уже допущена. Историяперечитана передтехническимпродолжением.
+
+SPEC011 доrealfit registered [HYP-092/093/094](docs/hypotheses/HYP-092-094-honest-objectives.md): unchangedexactsoftF1LGB/LovaszLGB/softF1MLP с PROPEROOFteacher вместоinsampleпредыдущихH80/H77/H72. H88innerсделал3nestedteachers, все дальнейшие гипотезыТОЛЬКОreuseпроверенныхnpz+oldfrozensource/config/dataSHA, нольteacherrefit. ФиксированнаяinitialgridH92rounds300/900,H93rounds200,H94epochs40/150,2CPUeach,≤900sec/hypвсеварианты+outer. Иннерпервый/выборouterдоскоринга; историяпрочитана, source/config/data/splitsfrozen, отдельныеoutcomesresults.
+
+SPEC011 доrealfit registered [HYP-090](docs/hypotheses/HYP-090-observable-missingness-expert.md): observablemissingratinggateonly, originalRMSECat800/depth6/lr.05/l2=20/2CPU, subsetFeature29/30/31, min300, fixed.7expert+.3cachedH70; knownratingbitunchanged. ActualsubsetlearnerMemoryclaimдоfit+mask/indicesaudit, noH70refit; это неH35buildingclasslogy/H45targettailgate/H41wholetaskrouter. Историяпрочитана/source/config/data/splitsfrozen; firstinner andalloutcomesresults.
+
+SPEC011 доrealfit registered [HYP-088](docs/hypotheses/HYP-088-honest-context.md): rawteachertraining TRUEgroupedOOF via3NEWnested31kXGBsubsets inner (каждыйMemoryclaimдоfit); originalouter rawOOF/H11preds изготовогоcache,0oldrefits. H74fixedCat400/depth5 обучаетсянаOOFteacher, referenceouterпрежнийH48! [HYP-089](docs/hypotheses/HYP-089-panel-differences.md): withinentity Δy Ridge100 наdeltaweather/ratinginteraction+donory/age+facilityOHE, meanimputeStandardScalerfitonlypairs, boundedtransport; nooldfit. Историяпрочитана, source/config/data/splitsfrozen; innerfirst/≤900secsallcomponents.
+
+SPEC011 до вычислениявесов registered [HYP-091](docs/hypotheses/HYP-091-new-regression-mechanisms-pool.md): fixednewcomponentsetH70/H83/H85, simplexSLSQPinneronly200/1e-12; не повторH79H70/H76. Cachedinnerpredonly, weightfreeze beforeH85outer; ≥2active+strictinnergain required, nooldfit.
+
+SPEC011 доrealfit зарегистрирована [HYP-086](docs/hypotheses/HYP-086-state-space-history.md): causalKalman history normalized logy−frozenH70beta*q(rating), Q.01/R.04 fixed, reconstructconditionalmean withvariance, alpha.95/support.25/age.25; noH70betarefit, cachedH70fallback. Unknownqueryratingunchanged. Новыйstate-space filter всехpastobservations, неH69weightedrawmean/H70latestdonor/H83isotonicratio. Source/data/config/splitfreeze; firstinner/≤900sec.
+
+HYP-063 feature-only audit архивирован: [report](results/2026-10-24/HYP-063-01-feature-only-audit/report.md), counts.json. Нольmodelfits, нольqualitymetrics; сходство не доказывает buildingidentity/утечку, исходныйJSONTypeErrorиуспешноепродолжение сохранены.
+
+SPEC011 доfit зарегистрированы [HYP-084](docs/hypotheses/HYP-084-signature-posteriors.md): hierarchy numericpacket signature counts→Dirichletposterior, q=(counts+20pi)/(n+20), support≥8, alpha=.5n/(n+50), convexteacherpool (не posteriorproduct); [HYP-085](docs/hypotheses/HYP-085-conditional-lognormal.md): CatBoost800/depth6 RMSEWithUncertainty log1p(y), conditionalmean exp(mu+.5variance)-1 variancecap2, features29/30/31; [HYP-087](docs/hypotheses/HYP-087-query-cohort-f1.md): unlabeled querycohortprior expectedMacroF1 with H78cachedcalibration, notbatchinvariant/noquerylabels. Историяпрочитана, новыеsource/config/data/splitsfrozenдоfit; innerfirst/no oldrefits, отдельныеотчётывключаянегативные.
+
+SPEC011 доrealfit зарегистрирована [HYP-083](docs/hypotheses/HYP-083-original-loss-transport.md): withinprofile monotone ratio(current_y/donor_y) отdelta-rating, exact originalMSE via donor_y² weights, constrained isotonicexp±1.5 (noobservedratio clipping), facilitymin100/shrink200; alpha.95support.25age.25. ОтличиеH70логloss/H71globalratingnormalization. CachedH69fallback/nooldfits; фиксированыsource/config/data/split, strictpast/collisionreject, firstinner.
+
+SPEC011 доrealfit зарегистрирована [HYP-082](docs/hypotheses/HYP-082-network-semantics.md): networksemantic preprocessing — удалитьstcpb/dtcpb, TTLupperbucket/hopfraction, directionalimbalances/loss-per-packet/RTTconsistency, без повторныхzeroindicatorH26/H27. H74CatBoost400/depth5fixed/cachedteacher, rawrowsunchanged, 2CPU. Innerпервый/новыеsource/config/dataSHA/splitfrozen; не повторH5fourratios/H16categoryjoint/H17frequency.
+
+SPEC011 доrealfit HYP-050 переведена изproposed вregistered: [unweighted gamma2 focal](docs/hypotheses/HYP-050.md), exactgradient/LGB200/63leaves/lr.05/lambda5/2CPU/positiveCEapproxcurvature, cachedteacherinit. Не H39staticweights/H51balancedsoftmax. TDDfiniteDiff6/6, новыеsource/config/dataSHA/splitfrozen доfit; innerfirst, nooldlearnerrefit.
+
+SPEC011 зарегистрирована доfit [HYP-081](docs/hypotheses/HYP-081-fuzzy-temporal.md): консервативный fuzzytemporaloverlay поверх cachedH70(alpha.95), alpha.5/area.001/year±1/margin.5/age.25/support.25; no refitH70, перенос beta изсохранённогоH70audit. Новое приближённое сопоставление только ранее unmatched; feature-onlyH63audit не являлся metricfit и не доказывает identity. Строгоinnerfirst, source/config/dataSHA frozen; исход и отрицательные результаты отдельноresults.
+
+SPEC011 доrealfit HYP-080 зарегистрирована: [exact coupled softF1 residual LightGBM300](docs/hypotheses/HYP-080-soft-f1-residual-boosting.md). Комбинация H72objective с H77representation, вместоLovaszrank/MLP; параметрыfixed300rounds/63leaves/2CPU/positiveapproxhessian. Никакихстарыхfit; innerfirst, source/config/datafreeze.
+
+SPEC011 зарегистрирована до вычисления весов HYP-079: [новая комбинация H70+H76](docs/hypotheses/HYP-079-transport-panel-blend.md), analytical convexweight fromcachedinnersameYear4, только еслиinnerстроголучшеH70; wfreezebeforeouter, reuseH70outer/nooldfits. Это отдельная проверка комплементарности двух новых методов.
+
+SPEC011 вторая волна, зарегистрировано ДО fit: [HYP-076](docs/hypotheses/HYP-076-panel-transition.md) — CatBoost800/depth6/lr.05/l2=10 оригинальный y на strict-past entitypairs+lagtarget/weatherdelta, alpha.9/минимум32pairs; [HYP-077](docs/hypotheses/HYP-077-ambitious-classifier.md) — LovaszSoftmax rank gradient+.5CE, LGB200rounds/63leaves/2CPU, teacher init logits; [HYP-078](docs/hypotheses/HYP-078-posterior-macro-decision.md) — proper CEtemperature/classbias calibration перед expected affineMacroF1. Новые механизмы, nooldfits, frozen source/data/split/config, ≤900sec/hyp; каждое исследование сначалаinner, выборouterдоегоscore. SPEC011дополнение отмечает дальнейший адаптивный поиск после H70outer.
+
+SPEC011 зарегистрирована до fit HYP-075: аффинные a*p+b expected-MacroF1 decisions,25 iterations/damping.5/eps1e-8, training priors only, без inverse-prior correction; [карточка](docs/hypotheses/HYP-075-affine-macro-decision.md). Отличие от H37 — additive offsets и expected confusion objective. Inner cached raw teacher, без старых fit; outer только после выбора финалиста.
+
 SPEC009 актуальныйитог:10terminal9численныхоценок(9ID),22уникальныхfit,65независимыхсверок. H69memory — новыйbaselineRMSE39.39219382766771; H48MacroF1.6495311620074445сохранён. H53техническаяошибкабезscore, не отрицательнаянаучнаяпроверка. H65семантическаяпроверка6/8выявила2ошибки, затемисправлена8/8безpublicfit и с точнойнеизменностьюданных/split; H68platformprovenanceнедостаточноданных. [Отчёт](results/2026-10-24/series-alternatives-v1/ALTERNATIVES_REPORT.md). Не повторять завершённыеmodelконфигурации; остальныеproposedIDещёнезапущены.
 
 SPEC-008 завершена: семь новых комбинаций,63/63 независимых проверок,24 уникальныхfit,0 старых baselinevalidationrefit. Включены H43RMSE40.972997661684175 и H48MacroF1.6495311620074445; H42/H44/H46 проиграли, H45/H47 улучшили прежний incumbent, но уступили победителям. Все7 закрыты для повторов. [Отчёт](results/2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md).
@@ -391,3 +431,138 @@ Optuna: все16 параметрических попыток сохранен�
 - SPEC010 2026-10-24T01:01:14.673014+03:00: **HYP-052/multiclass/confirmation**: completed, macro_f1=0.4803098632106223; [отчёт](results/2026-10-24/HYP-052-02-multiclass-confirmation-rewrite/report.md). Новый механизм; параметры не выбирались по confirmation. Повтор этой проверки запрещён.
 
 - SPEC010 2026-10-24T01:08:03.686011+03:00: **HYP-052/multiclass/control**: completed, macro_f1=0.6103340454456273; [отчёт](results/2026-10-24/HYP-052-03-multiclass-control-rewrite/report.md). Это разрешённая сравнительная проверка старого лидера на новом confirmation, без frozen public meta-state. Повтор этой проверки запрещён.
+
+## SPEC011 зарегистрировано до realfit,2026-10-24
+
+Пользователь дал3часа до04:15:07MSK и потребовал ОБЕметрики20%: RMSE≤31.51375506213417, MacroF1≥.7794373944089334. HYP-070 (temporalentitylinker+ratingdelta;inneralpha.5/.8/.95), HYP-071 (ratingtargetnormalizer+g²weightedET), HYP-072 (teacherresidualMLP exactsoftF1), HYP-073 (15-bitECOC), HYP-074 (contextualCatBoostresiduallogits) — новые механизмы, пока proposed/registered. [SPEC011](docs/specs/SPEC-011-three-hour-improvement.md), [regcards](docs/hypotheses/HYP-070-regression-research.md), [classcards](docs/hypotheses/HYP-072-classification-research.md). До900сек/hyp, source/data/splits/configfrozen, nooldbaselinefits. Innerclass RAWcachedfold0 — proxy, не fullH48validation; oldouteralreadyviewedexploratory. H52/H62 не повторять.
+
+- SPEC011 2026-10-24T01:53:24.653979+03:00: **HYP-070/inner/low** completed; rmse=34.20894464756146; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-070-01-inner-low-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:53:28.936682+03:00: **HYP-070/inner/mid** completed; rmse=31.323933523598928; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-070-02-inner-mid-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:53:33.271713+03:00: **HYP-070/inner/high** completed; rmse=30.663255379972725; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-070-03-inner-high-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:53:49.523518+03:00: **HYP-072/inner/default** completed; macro_f1=0.6090378831239697; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-072-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:55:12.276645+03:00: **HYP-071/inner/default** completed; rmse=49.19259595219514; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-071-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:55:41.170632+03:00: **HYP-073/inner/default** completed; macro_f1=0.5803974034255268; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-073-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:56:31.254170+03:00: **HYP-070/outer/high** completed; rmse=34.318489927675174; reference=39.39219382766771; [отчёт](results/2026-10-24/HYP-070-04-outer-high-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T01:58:44.111277+03:00: **HYP-074/inner/default** completed; macro_f1=0.6143385510752261; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-074-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:01:05.171536+03:00: **HYP-075/inner/default** completed; macro_f1=0.6212181165985486; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-075-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:04:32.332095+03:00: **HYP-076/inner/default** completed; rmse=32.91081846583218; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-076-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:05:02.512911+03:00: **HYP-077/inner/default** completed; macro_f1=0.6110510854211656; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-077-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:05:53.164561+03:00: **HYP-078/inner/default** completed; macro_f1=0.6288481661155734; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-078-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+HYP-079 inner completed: RMSE=30.663255379972725 vsH70=30.663255379972725; w70=1.0; [report](results/2026-10-24/HYP-079-01-inner-combination-sprint/report.md). Повтор не запускать.
+
+- SPEC011 2026-10-24T02:07:00.052064+03:00: **HYP-078/outer/default** completed; macro_f1=0.6593084142037399; reference=0.6495311620074445; [отчёт](results/2026-10-24/HYP-078-02-outer-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:09:12.809950+03:00: **HYP-080/inner/default** completed; macro_f1=0.6140917642777984; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-080-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:11:52.194994+03:00: **HYP-081/inner/default** completed; rmse=30.689409165993794; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-081-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+HYP-081 inner incremental НЕ подтверждена:30.68940916599 против H70inner30.66325537997, прирост кH69 унаследован. Outer не запускать, повтор запрещён.
+
+- SPEC011 2026-10-24T02:13:39.220401+03:00: **HYP-050/inner/default** completed; macro_f1=0.5991047549783951; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-050-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:17:33.467742+03:00: **HYP-083/inner/default** completed; rmse=30.651578052812432; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-083-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:18:48.720601+03:00: **HYP-082/inner/default** completed; macro_f1=0.6150544797423486; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-082-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:20:21.025521+03:00: **HYP-087/inner/default** completed; macro_f1=0.6254419869564557; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-087-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:20:22.661130+03:00: **HYP-084/inner/default** completed; macro_f1=0.5580393390877207; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-084-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:20:38.588116+03:00: **HYP-085/inner/default** completed; rmse=46.02178005161315; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-085-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:23:18.973630+03:00: **HYP-086/inner/default** completed; rmse=31.12117379943106; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-086-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:24:31.976838+03:00: **HYP-083/outer/default** completed; rmse=34.32053895104047; reference=39.39219382766771; [отчёт](results/2026-10-24/HYP-083-02-outer-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+HYP-091/inner completed RMSE=30.636363541581975 vsH70=30.663255379972725 weights=[0.43908725498434387, 0.5446376329320275, 0.016275112083628654] [report](results/2026-10-24/HYP-091-01-inner-multiblend-sprint/report.md). Повтор не запускать.
+
+- SPEC011 2026-10-24T02:27:12.581611+03:00: **HYP-085/outer/default** completed; rmse=44.12424608516781; reference=39.39219382766771; [отчёт](results/2026-10-24/HYP-085-02-outer-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+HYP-091/outer completed RMSE=34.21382789041039 vsH70=34.318489927675174 weights=[0.43908725498434387, 0.5446376329320275, 0.016275112083628654] [report](results/2026-10-24/HYP-091-02-outer-multiblend-sprint/report.md). Повтор не запускать.
+
+- SPEC011 2026-10-24T02:28:38.828414+03:00: **HYP-089/inner/default** completed; rmse=31.05521238320071; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-089-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:29:25.099941+03:00: **HYP-090/inner/default** completed; rmse=34.86994782367874; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-090-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:33:42.665450+03:00: **HYP-088/inner/default** completed; macro_f1=0.5978384913324375; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-088-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:36:47.076490+03:00: **HYP-092/inner/default** completed; macro_f1=0.6075155330908212; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-092-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:36:54.448689+03:00: **HYP-094/inner/default** completed; macro_f1=0.6192492910174916; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-094-02-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:37:21.769093+03:00: **HYP-093/inner/default** completed; macro_f1=0.6002777710371685; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-093-02-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:38:09.656982+03:00: **HYP-094/inner/long** completed; macro_f1=0.6223414898157842; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-094-03-inner-long-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:40:16.964501+03:00: **HYP-092/inner/extended** completed; macro_f1=0.599340154183666; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-092-02-inner-extended-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:40:18.832303+03:00: **HYP-096/inner/default** completed; macro_f1=0.6291379699977411; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-096-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:40:57.430905+03:00: **HYP-097/inner/default** completed; macro_f1=0.6334156298867437; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-097-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:41:27.865741+03:00: **HYP-095/inner/default** completed; macro_f1=0.6227569652507932; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-095-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:48:40.764829+03:00: **HYP-100/inner/default** completed; macro_f1=0.550835584943435; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-100-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:48:47.448496+03:00: **HYP-098/inner/default** completed; macro_f1=0.6208270606519142; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-098-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:50:50.561132+03:00: **HYP-099/inner/default** completed; rmse=31.099625876123866; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-099-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:51:04.647022+03:00: **HYP-097/outer/default** completed; macro_f1=0.6384122468214593; reference=0.6495311620074445; [отчёт](results/2026-10-24/HYP-097-02-outer-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+SPEC011 03:00MSK: HYP-057 proposed→registered: known-rating native LightGBM700 monotone raw rating=-1, features29/30, overlay .7 only H70-unmatched; cachedH70 no refit; [card](docs/hypotheses/HYP-057.md). HYP-101 registered: shared vector-leaf XGBoost300 exact softF1+.5CE, trueH88cachedOOF,2CPU; [card](docs/hypotheses/HYP-101-vector-leaf-f1.md). Different model representation from scalar H92; frozen before fit; no known-repeat.
+
+- SPEC011 2026-10-24T02:58:56.387990+03:00: **HYP-057/inner/default** completed; rmse=30.00420378193599; reference=42.46005247026025; [отчёт](results/2026-10-24/HYP-057-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:59:42.157690+03:00: **HYP-057/outer/default** completed; rmse=43.038591928820146; reference=39.39219382766771; [отчёт](results/2026-10-24/HYP-057-02-outer-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+- SPEC011 2026-10-24T02:59:56.887724+03:00: **HYP-101/inner/default** completed; macro_f1=0.6178371238873426; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-101-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+SPEC011 HYP-103 registered before fit: Ordered boosting on unchanged H88 contextmodel400depth5, trueH88OOFreuse, no teacherfits; [card](docs/hypotheses/HYP-103-ordered-context.md). Novelty only OrderedvsPlain, source/configfixed,2synthetictestsPASS.
+
+SPEC011 HYP-102 registered before parameter fit: nonconvex amplitude calibration of cachedH91 relativeH69, lambda in[0,2] by original MSE on inner only, max0 inference; [card](docs/hypotheses/HYP-102-confidence-amplitude.md). Source/config/inputsha frozen; no learner fits.
+
+HYP-102/inner completed RMSE=30.449416831901488 vsH91=30.636363541581975 amplitude=1.1289189550164425 [report](results/2026-10-24/HYP-102-01-inner-amplitude-sprint/report.md). Повтор не запускать.
+
+HYP-102/outer completed RMSE=34.50690731292415 vsH91=34.21382789041039 amplitude=1.1289189550164425 [report](results/2026-10-24/HYP-102-02-outer-amplitude-sprint/report.md). Повтор не запускать.
+
+- SPEC011 2026-10-24T03:12:54.239971+03:00: **HYP-103/inner/default** completed; macro_f1=0.597392348204526; reference=0.5873380697311004; [отчёт](results/2026-10-24/HYP-103-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+Дополнение 2026-10-24 03:14 MSK: в строке регистрации H57/H101 ручная метка 03:00 приблизительна; фактическое started H57 02:58:56.387990+03:00 фиксирует launcher. Регистрация была записана командой до fit. Убран буквальный префикс backtick-n и нормализированы окончания строк; научные исходы не менялись. H50/H57 завершены, H63 только feature-only диагностика; прежний список proposed описывает исходное предложение, текущие запреты повторов определяются последующими outcome.
+
+SPEC011 HYP-104 registered before fit: DART scalar multiclass trees300 with dropout rate.1/skip.5, exact.5CE+.5softF1, trueH88cachedOOF reused. H92extended degradation is exploratory motivation, not proof of overfitting. [card](docs/hypotheses/HYP-104-dropout-f1.md). Four synthetic tests pass; configuration/source/data/splits frozen before real fit. Strict inner admission>.6334156298867437, otherwise no outer. Deadline reserve remains30minutes.
+
+- SPEC011 2026-10-24T03:33:58.022556+03:00: **HYP-104/inner/default** timeout; None=None; reference=None; [отчёт](results/2026-10-24/HYP-104-01-inner-default-sprint/report.md). Повтор этой конфигурации запрещён.
+
+2026-10-24 SPEC012: прочитаны журналы Ivan иSergey24e3311. Новых гипотез/публичныхfit0. [Сравнение](results/2026-10-24/branch-comparison-sergey-24e3311-v3/report.md): branch-scopedH70..75Sergey не смешиватьсIvanH70..75; nominalgains0.8877%/2.2623%vsSergey, differentOS/frozenmeta. H104timeout900secнеимеетметрики; не повторять. API-keyнехранится, endpointнеизвестен.
+
+SPEC013 HYP-105 registered before real fit: exactlags1/2/3+causalstate+fit-selected3changingfields, nativeNaNLightGBM1200/.03/63/minchild20/col.8/bag.8freq1/lambda5/seed42/4CPU. AllrowsoriginaltargetRMSE; notH76latestdonorCat/SergeyH72EWresidual. Cards/docs/tests frozen before900sec cumulative inner+outer. [card](docs/hypotheses/HYP-105-multilag-native-boosting.md). Two fixed inferencearms pure/blend75Sergey, outeronlybestinner<30.636363541581975; no oldrefits.
+
+HYP-105/inner: {"status": "completed", "hypothesis": "HYP-105", "stage": "inner", "metric": "rmse", "score": 32.01672432373479, "arm_scores": {"pure": 34.56623580026114, "blend75": 32.01672432373479}, "selected_arm": "blend75", "control_score": 31.04663635241995, "selected_on": "inner_only", "learner_fits": 1, "old_model_refits": 0, "fit_rows": 22054, "valid_rows": 12946, "eligible_for_outer": false, "seconds": 8.094000000011874, "fingerprint": "c0523370162349ee4ad3a8f474ce60306f6f816758b3a35777060ad20b0228de"}; [report](results/2026-10-24/HYP-105-01-inner-external-multilag/report.md). Не повторять.
+
+SPEC013 HYP-106 registered before keyfit: fit-only greedy≤6feature entitykey scorecoverage/meanrowsperiod, proxyquerylastFITperiod, coverage≥.2/std ratio≤.5, strictpasthalf-life1history+cachedSergeyfallback. NotfixedkeyH69/H70; nodependentqueryselection, nolearnerfits. CardHYP-106-training-key-discovery,6synthetictestsPASS;900sec cumulative, sameinnergate<30.636364 andfixedpure/blend75arms.
+
+HYP-106/inner: {"status": "completed", "hypothesis": "HYP-106", "stage": "inner", "metric": "rmse", "score": 30.963253972816442, "arm_scores": {"pure": 31.15263063723188, "blend75": 30.963253972816442}, "selected_arm": "blend75", "control_score": 31.04663635241995, "selected_on": "inner_only", "learner_fits": 0, "parameter_fits": 1, "old_model_refits": 0, "fit_rows": 22054, "valid_rows": 12946, "eligible_for_outer": false, "seconds": 11.90600000001723, "fingerprint": "58cced6f80dc02bd615b7ca46705d6be831d11aa1377f735e38c63356c19de61"}; [report](results/2026-10-24/HYP-106-01-inner-external-key/report.md). Не повторять.
+
+SPEC013closed: H105/H106 обе завершены наinner,2новыхpipelinechecks/4fixedarmmetrics/1learnerfit+1keyparameterfit,0oldrefits. H105выигрыша нет, H106только0.268571%vsSergey и не прошла preregisteredoutergate30.636364. Outerнеповторятьрадипросмотра; [review+nofitverification](results/2026-10-24/external-repositories-review-v1/report.md).562unitPASS; liveplatformscoreнепроверен. НоваяпоставкаНЕсоздана,Сергейостаетсяосновой.
+
+SPEC014 HYP-107 registered до parameter fit: новая композиция Sergey H73 + Ivan H70/H83/H85, simplex SLSQP200/ftol1e-12 на Year4 inner; веса freeze до outerload. Gate inner<30.636363541581975, outer<34.21382789041039; >=2active. Cards/SPEC014/PLAN014/tests3PASS; oldlearnerfits0,900sec. Не повтор H91 без Sergey или H102 amplitude.
+
+HYP-107/inner: RMSE=30.59160391991867; Sergey=31.04663635241995; Ivan=30.636363541581975; passes_gate=True; [report](results/2026-10-24/HYP-107-01-inner-sergey-fusion/report.md). Проверка завершена, не повторять.
+
+HYP-107/outer: RMSE=34.142888130110755; Sergey=34.520268654585415; Ivan=34.21382789041039; passes_gate=True; [report](results/2026-10-24/HYP-107-02-outer-sergey-fusion/report.md). Проверка завершена, не повторять.
+
+SPEC014 H107 закрыта: cached inner30.59160391991867/outer34.142888130110755, gain1.093214%vsSergey и0.207342%vsIvanH91. Одна настройка весов/0новыхscientificlearnerfits. Отдельнаяtask-localпоставка, technicalfullrefit17unique fit stages/10learner stages,295.578sec,22449testpredictions;568unit+271base,cleanZIP/replay/CLI PASS. Runtime-graphquality отдельнонеизмерено,20%bothнеполучены. [Отчёт](results/2026-10-24/series-sergey-ivan-fusion-v1/report.md). Не повторятьH107.
+
+Read-only обзор maxim/autoresearch@be9d9ae: NV1raw+ranks, NV2raw+signed_log, NV3raw+robustprojections, NV4raw+ranks+projections уже проверены Максом; не выдавать тот же контекст за новую гипотезу. Reported outerNV2RMSE42.012317102 и classifierMacroF1.637337946; наших моделей не обучали. [Обзор](results/2026-10-24/publication-and-max-review-v1/report.md).

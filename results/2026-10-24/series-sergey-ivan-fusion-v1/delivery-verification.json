@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "zip": "dist\\solution_sergey_ivan_fusion_v1.zip",
+  "bytes": 67803,
+  "sha256": "9a3924a53f6bf6191d27dd0717c44afc4137757557e469efe77c3eac28d1756a",
+  "root_files": 22,
+  "module_imports": {
+    "all_root_modules_imported": 21,
+    "known_tasks": 0,
+    "candidate_dispatch": true
+  },
+  "test_prediction_replay": {
+    "full_test_prediction_replay": true,
+    "test_rows": 22449,
+    "model_fits": 0
+  },
+  "classification_unchanged": true,
+  "unchanged_base_files": [
+    "automl_data.py",
+    "automl_preprocessing.py",
+    "automl_known.py",
+    "automl_llm.py",
+    "automl_worker.py",
+    "automl_advanced.py",
+    "automl_combo_memory.py",
+    "automl_feature_sets.py",
+    "automl_reg_combo.py",
+    "automl_class_combo.py",
+    "automl_combo_policy.py",
+    "automl_temporal_memory.py",
+    "automl_panel_memory.py",
+    "requirements.txt"
+  ],
+  "requirements_exact": true,
+  "clean_nested_cli": true,
+  "runtime_real_api_tested": false,
+  "platform_score_verified": false,
+  "technical_refit_seconds": 295.5779999999795,
+  "embedded_learned_state": false
+}

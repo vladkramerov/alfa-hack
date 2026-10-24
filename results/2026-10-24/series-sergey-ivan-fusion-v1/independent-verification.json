@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "learner_fits": 0,
+  "parameter_fits": 0,
+  "runs": [
+    {
+      "stage": "inner",
+      "rmse": 30.59160391991867,
+      "Sergey": 31.04663635241995,
+      "gain": 0.014656416474109037,
+      "source_data_truth_splits_verified": true,
+      "prediction_sha256": "e04efe8384667a2a84b5fb838de84336b9f2b3ded6686c0b3c058d1966df421f"
+    },
+    {
+      "stage": "outer",
+      "rmse": 34.142888130110755,
+      "Sergey": 34.520268654585415,
+      "gain": 0.010932143322833942,
+      "source_data_truth_splits_verified": true,
+      "prediction_sha256": "32ca16115a0f21433914b59aa4065c7dc88cbdb646e631331fa2ee27ac80f228"
+    }
+  ],
+  "cross_os_limitation": true,
+  "public_outer_adaptively_reused": true,
+  "runtime_graph_quality_separately_measured": false,
+  "platform_improvement_verified": false
+}

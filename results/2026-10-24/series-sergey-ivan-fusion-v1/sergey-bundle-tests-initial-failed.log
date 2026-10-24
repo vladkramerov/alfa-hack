@@ -1,0 +1,264 @@
+........E....C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+.................E..EEEEEEEE.................................E...........E....E...............E..............E..E.....EE..........................................................................................................................................
+======================================================================
+ERROR: test_attempt_claim_survives_rename (test_alternative_runner.AlternativeRunnerTests.test_attempt_claim_survives_rename)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_alternative_runner.py", line 12, in test_attempt_claim_survives_rename
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as d:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpby9bcabw'
+
+======================================================================
+ERROR: test_worker_metrics_transport_learned_state_to_refit (test_combo_integration.IntegrationTests.test_worker_metrics_transport_learned_state_to_refit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_combo_integration.py", line 60, in test_worker_metrics_transport_learned_state_to_refit
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as d:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmp70xahseh'
+
+======================================================================
+ERROR: test_blank_target_is_missing_even_with_declared_strings (test_csv_codec.CsvCodecTests.test_blank_target_is_missing_even_with_declared_strings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 67, in test_blank_target_is_missing_even_with_declared_strings
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmp4td8q8n0'
+
+======================================================================
+ERROR: test_declared_boolean_looking_labels_are_not_boolean_coerced (test_csv_codec.CsvCodecTests.test_declared_boolean_looking_labels_are_not_boolean_coerced)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 71, in test_declared_boolean_looking_labels_are_not_boolean_coerced
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpc2j0g0xu'
+
+======================================================================
+ERROR: test_declared_strings_survive_literal_na_signs_and_zeroes (test_csv_codec.CsvCodecTests.test_declared_strings_survive_literal_na_signs_and_zeroes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 27, in test_declared_strings_survive_literal_na_signs_and_zeroes
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpmo9pf1lp'
+
+======================================================================
+ERROR: test_irreversible_numeric_class_coercion_preserves_distinct_labels (test_csv_codec.CsvCodecTests.test_irreversible_numeric_class_coercion_preserves_distinct_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 42, in test_irreversible_numeric_class_coercion_preserves_distinct_labels
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpgvkvu7uq'
+
+======================================================================
+ERROR: test_numeric_output_does_not_accept_csv_boolean_text (test_csv_codec.CsvCodecTests.test_numeric_output_does_not_accept_csv_boolean_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 79, in test_numeric_output_does_not_accept_csv_boolean_text
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmp9s1zg8c0'
+
+======================================================================
+ERROR: test_ordinary_numeric_ids_and_regression_target_keep_types (test_csv_codec.CsvCodecTests.test_ordinary_numeric_ids_and_regression_target_keep_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 49, in test_ordinary_numeric_ids_and_regression_target_keep_types
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpm9konppr'
+
+======================================================================
+ERROR: test_probability_values_numeric_with_lexical_class_names (test_csv_codec.CsvCodecTests.test_probability_values_numeric_with_lexical_class_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 58, in test_probability_values_numeric_with_lexical_class_names
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpaufr_kxc'
+
+======================================================================
+ERROR: test_undeclared_lexical_id_restored_before_unique_id_discovery (test_csv_codec.CsvCodecTests.test_undeclared_lexical_id_restored_before_unique_id_discovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_csv_codec.py", line 36, in test_undeclared_lexical_id_restored_before_unique_id_discovery
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmppwqm149e'
+
+======================================================================
+ERROR: test_load_task_preserves_fixture_contract_and_metric_determines_kind (test_metric_inference.MetricInferenceTests.test_load_task_preserves_fixture_contract_and_metric_determines_kind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_metric_inference.py", line 63, in test_load_task_preserves_fixture_contract_and_metric_determines_kind
+    with tempfile.TemporaryDirectory(dir=Path.cwd() / "tmp") as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpcndzusij'
+
+======================================================================
+ERROR: test_offline_mask_artifacts_record_original_row_lineage (test_next_classification.NextClassificationTests.test_offline_mask_artifacts_record_original_row_lineage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_next_classification.py", line 111, in test_offline_mask_artifacts_record_original_row_lineage
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpx112swj7'
+
+======================================================================
+ERROR: test_teacher_cache_missing_never_calls_a_fit (test_next_classification.NextClassificationTests.test_teacher_cache_missing_never_calls_a_fit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_next_classification.py", line 103, in test_teacher_cache_missing_never_calls_a_fit
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as folder:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpzem6pfju'
+
+======================================================================
+ERROR: test_completed_or_started_hypothesis_cannot_be_registered_again (test_novel_models.NovelModelsTests.test_completed_or_started_hypothesis_cannot_be_registered_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_novel_models.py", line 49, in test_completed_or_started_hypothesis_cannot_be_registered_again
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpci70bzi9'
+
+======================================================================
+ERROR: test_classification_is_not_inferred_from_sample_placeholder (test_platform_agent.PlatformContractTests.test_classification_is_not_inferred_from_sample_placeholder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_platform_agent.py", line 38, in test_classification_is_not_inferred_from_sample_placeholder
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpd85s7a07'
+
+======================================================================
+ERROR: test_nested_paths_and_renamed_target_identifier (test_platform_agent.PlatformContractTests.test_nested_paths_and_renamed_target_identifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_platform_agent.py", line 30, in test_nested_paths_and_renamed_target_identifier
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpyquyruso'
+
+======================================================================
+ERROR: test_persistent_hypothesis_file_separates_data_and_survives_restart (test_platform_integration.IntegrationContracts.test_persistent_hypothesis_file_separates_data_and_survives_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_platform_integration.py", line 46, in test_persistent_hypothesis_file_separates_data_and_survives_restart
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpcwx1y_wi'
+
+======================================================================
+ERROR: test_probability_columns_follow_named_classes (test_platform_integration.IntegrationContracts.test_probability_columns_follow_named_classes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tmp\sergey-24e3311f6ba9\tests\test_platform_integration.py", line 56, in test_probability_columns_follow_named_classes
+    with tempfile.TemporaryDirectory(dir=Path.cwd()/'tmp') as root:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\deliveries\\sergey_ivan_fusion_v1\\tmp\\tmpggw7npl9'
+
+----------------------------------------------------------------------
+Ran 271 tests in 6.226s
+
+FAILED (errors=18)
+{"status": "completed", "metric": "macro_f1", "selected_score": 0.9, "cached_history": false, "seconds": 0.046000000002095476, "submission_rows": 2}
