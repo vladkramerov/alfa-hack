@@ -25,3 +25,47 @@ BASE_URL=https://changellenge.up.railway.app/v1 подтверждён поль�
 Python3.12 /private/tmp/alfa-research-venv/bin/python, pinnedMLpackages; DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib, MPLCONFIGDIR=/private/tmp/alfa-matplotlib. Linux/официальныйDocker не проверен. Данные drive-download-20261023T201455Z-1-001/{Регрессия,Многоклассовая классификация}; не коммитить. git/network/localhost/RSS требуют escalation. Полная новая серияостановлена; следующий расходтолькоотдельнымзаданием.
 
 Далее: (1) controlledwhole-policyonlineQwenvsfrozenoffline, потому что внешнийiloveжурнал сообщает возможныйregretLLM/длинныхrun, причина унас неустановлена; (2) freshteamfusion с genericroles и равнымpreprocessing/OS, а не переносcachedweights; (3) сначалаизучить итогH109/110Ивана дляneuralcomplementarity, недублировать pendingfits. Дляплатформенногоsubmit нужна отдельнаякоманда, сохранитьSHAиper-tasklogs.
+
+
+## Checkpoint перед compact — 24.10.2026
+
+По поручению пользователя выполнено только сохранение состояния: новых экспериментов, API-вызовов, обучений и compact не запускать. Никакие процессы не прерывались.
+
+### Git и пользовательская работа
+
+- Репозиторий: `/Users/maxchibisov/Projects/HACKS/alfa-hack`, ветка `maxim/autoresearch`.
+- Код, готовый ZIP и итог исследования зафиксированы и опубликованы коммитом **ced5e3229701550e8ec1a15df87cd3318956e40a**. Все runtime-файлы ZIP также побайтно соответствуют `052ebc1e4bfe5247c0fb5a69bfa94bc7ac7518ad`; это проверено в `results/strongest-team/final-audit.json`. Коммит текущего checkpoint содержит только AGENTS.md и этот файл, не новую поставку; его SHA смотреть в `git log -1`.
+- Перед обновлением памяти основная рабочая копия была чистой и синхронизированной с `origin/maxim/autoresearch`: посторонних tracked/untracked изменений в неё не включать. Игнорируемые `.env.local`, данные, ZIP-backups и `local_data/strongest-team` сохранить.
+- `/Users/maxchibisov/.codex/worktrees/ultimate-autoresearch-20261023/alfa-hack`: `codex/ultimate-autoresearch-20261023`, HEAD `eab478a039d1efd02c001f56f9984f1f623bad2d`, 33 записи dirty status; SHA256 статуса `8fccea66062f204529d8a6bb48d00e20b75fb193597d287d790611214b4e8ed8`.
+- `/Users/maxchibisov/Projects/HACKS/alfa-ultimate`: `codex/ultimate-autoresearch-20261024`, тот же HEAD, 33 записи dirty status; SHA256 статуса `aac6cf6a2f756bd22e3dca86037f6a78d525b07fc2a75560f8bc84038a780de3`.
+- Оба статуса совпали с финальным аудитом предыдущего этапа. Подробная исходная инвентаризация: `docs/sources/research-optimized-intake.json`; не переносить/не сбрасывать их изменения автоматически. `main`, `ivan_branch`, `sergey_branch` и старый remote `codex/research-optimized` сохранены.
+
+### Процессы и checkpoints
+
+Повышенная read-only проверка Python/pytest-процессов по cwd и путям проекта/окружения не обнаружила активных процессов проекта. Все ранее запущенные E2E, clean-room и live API CLI завершены. Не перезапускать завершённые sessions ради получения вывода и не пытаться присоединиться к уже завершённым PID из process-state.json.
+
+Основные checkpoints: `73d5aa4` — прежняя поставка; `d04ec91` — начало серии/память; `052ebc1` — runtime нового гибрида; `72ab5c6` — промежуточные доказательства; `ced5e32` — итоговая поставка. Ошибочный первый E2E сохранён в `/private/tmp/alfa-strongest-e2e`, успешный frozen v2 — `/private/tmp/alfa-strongest-e2e-v2`; scientific caches — `/private/tmp/alfa-strongest-team`, чистая распаковка — `/private/tmp/alfa-strongest-cleanroom`, живой CLI — `/private/tmp/alfa-strongest-live-cli`. Долговременные копии predictions лежат в ignored `local_data/strongest-team`; перечень и хеши — `results/strongest-team/predictions.json`. Ни один из этих каталогов не чистить.
+
+### Подтверждённая поставка и ограничения
+
+Лучший проверенный **наш whole-agent**, а не рекорд team research: `dist/alfa_autoresearch_submission.zip`, **49320 байт**, SHA256 **f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88**. Повторная проверка SHA перед checkpoint совпала. Архив: 9 корневых .py и неизменённый официальный requirements; старый ZIP e12… сохранён. Архитектура: solution → engine; data/schema/splits; models/DSL; panel discovery; residual hybrid; изолированные worker/runtime и bounded LLM. Платформа Python3.12/8CPU/32GB/3ч, `python3 solution.py task.md`, submission рядом с task, никаких обязательных вложенных модулей/внешних pretrained weights/сторонних LLM API.
+
+Сопоставимые whole-policy результаты: regression **37.578329562 → 36.951992372 RMSE (−1.66675%)**, Year<5→5,35000/18308; classification **.6494124789044244**, group outer70529/17141, byte-identical control CSV. Shadow:8CPU,1200sec,cap16, API отключён ради парного ML-сравнения. Оба outer многократно просмотрены, это не независимое подтверждение и не public/hidden score. Original E2E:1800sec/default trials, final refit completed,22449/41166 строк; меток originaltest нет. Все4arms исполнили один и тот же frozen ZIP. Лучшие team research33.979840/.660279593 не превзойдены; их cached/cross-OS/meta in-sample ограничения описаны выше. Связь public13.7676 с версией неизвестна.
+
+Ранее выполнены **81 unit test**, **9 clean-room сценариев**, **4 публичных CLI/refit** и **1 живой synthetic CLI** с Qwen:47 строк,7.619sec,1 LLM-предложение реально обучено. Receipts: unit.xml, cleanroom.json, e2e-v2.json, e2e-summary.json, live-cli.json, package-security.json, final-audit.json в `results/strongest-team/`. Эти проверки сейчас не повторялись. Linux/официальный Docker, hidden score и ML-качество полной public policy с живой Qwen не проверены.
+
+Закрытые направления: ST1/2 перенос доноров и multivariate transport, ST3 leaf retrieval, ST4 inferred driver, ST6 posterior transfer, ST9 groupOOF categorical TE отклонены. ST5b/ST7 дали лишь малый single-candidate gain, но fixed hybrid улучшил whole-policy и включён; ST8 one-SE replay не интегрирован. Подробные отрицательные исходы/параметры/стоимость в `docs/EXPERIMENT_LOG.md` и JSON; не переименовывать старые гипотезы в новые, не повторять fit без содержательной причины. Старый regression index leak исправлен; прежние inner numeric оценки не независимы.
+
+### API и договорённости
+
+Основной endpoint `https://changellenge.up.railway.app/v1`, model ID `qwen/qwen3.8-27b` найден через authenticated /models и соответствует Qwen из PDF. Два реальных generation за завершённую серию; оба с0reasoning tokens, tool-call формат работал. В checkpoint API не вызывается. `.env.local` исключён из Git (проверено), секрет не печатается/не включается в отчёты/ZIP. Локально ключ только в окружении тестового процесса; агент на Boosters получает OPENAI_BASE_URL/KEY/MODEL только из среды и не читает .env.local. Альтернативный endpoint для других треков не использовался.
+
+Работаем только в `maxim/autoresearch`. Пользователь разрешил перенос лучших механизмов из командных веток, сохраняя исходные ветки, историю и пользовательские изменения. Каждый подтверждённый прирост сохранять коммитом и пушить в эту ветку репозитория `https://github.com/vladkramerov/alfa-hack`. Без reset --hard/clean/force push; без субагентов/Superpowers. На Boosters ничего не отправлять без отдельного поручения.
+
+### Восстановление после compact
+
+1. Прочитать AGENTS.md, затем этот checkpoint; выполнить только `git status --short --branch`, `git log -3 --oneline` и read-only проверку процессов. Не переключать ветку при посторонних изменениях.
+2. Сверить текущий ZIP/manifest с SHA f3a… и прочитать короткий `results/strongest-team/README.md`. За деталями обращаться точечно к e2e-summary.json, final-audit.json и журналу, не перечитывать всю историю и не запускать fit заново.
+3. Сейчас незавершённого обучения нет. Исследовательская серия остановлена; ждать отдельного задания. Открытые направления: controlled online/offline Qwen whole-policy, Linux-контейнер, свежая проверка team fusion и результатов H109/110 без переноса public fitted weights. Это следующий этап, не автоматически разрешённый запуск после compact.
+
+Команды на будущее (сейчас не запускались): `/private/tmp/alfa-research-venv/bin/python -m pytest -p no:cacheprovider -q tests`; `python experiments/package_solution.py`; `python experiments/verify_package.py --output NEW_PATH`. Native macOS: DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib. Учитывать, что package/verify пересобирают основной ZIP; API smoke расходует реальный бюджет, а E2E — обучение. Сам compact пользователь пока не поручал.
