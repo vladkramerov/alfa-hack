@@ -1,5 +1,7 @@
 # Alfa Hack AutoResearch — рабочая память
 
+**Новая серия strongest-team (24.10): начата с чистого `73d5aa4`; origin/ivan_branch обновился до fe674da, Sergey24e3311. Точка продолжения — `docs/RESEARCH_STATE.md`. Не повторять готовые fit. Контроль: ZIP e12d6913…; новую поставку продвигать только после whole-agent проверки. Подтверждён BASE_URL=https://changellenge.up.railway.app/v1; разрешённый точный MODEL пока ищется, ключ не выводить.**
+
 Общение по-русски. Минимальные связные изменения; без субагентов и Superpowers. Не трогать main/ivan_branch/sergey_branch, не применять reset/clean/force push. Секреты, данные и обученные модели не включать в Git/ZIP.
 
 ## Текущее состояние — 24.10.2026

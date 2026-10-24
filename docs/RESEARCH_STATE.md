@@ -1,27 +1,19 @@
-# Состояние исследования
+# Состояние исследования — 24.10.2026
 
-Обновлено: 2026-10-23 (Москва). Эта заметка — краткая точка входа; подробные исходные материалы и SHA перечислены в [source manifest](sources/source-manifest.json). Состояние исходных веток `ivan_branch` и `sergey_branch` рассматривается как историческое evidence, а не как результаты текущего агента.
+## Точка продолжения strongest-team
 
-## Цель и текущий статус
+Активная просьба: превзойти лучшие решения команды по regression и multiclass, интегрировать и проверить всю политику, исследуя также первичные статьи/GitHub. Без отправки Boosters. Без субагентов/Superpowers, без изменения других веток и потери пользовательских файлов. Новая серия начинается с чистого maxim/autoresearch@73d5aa4d87ae4c90d61ec2268bdeb71fab2aa98b. Fetch показал новый origin/ivan_branch fe674da (в том числе fusion с Sergey и большой sprint), origin/sergey_branch24e3311. Предыдущие worktrees не трогать. Сначала точечно изучить их новые отчёты/код, не распечатывать огромные git diff.
 
-Создать один переносимый AutoResearch-агент, который читает `task.md` и табличные данные, предлагает и проверяет разные модели/преобразования, выбирает решение по валидации и сохраняет `submission.csv`. Публичные результаты дают ориентиры; качество на неизвестных приватных задачах пока не измерено.
+Контрольная поставка: dist/alfa_autoresearch_submission.zip, SHA256 e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641,46651B; исходники73d5aa4. Оставить backup перед изменением. Официальный requirements SHA9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6.
 
-В текущей реализации `solution.py` — точка входа; `automl_data.py` загружает задачу и строит разбиения; `automl_engine.py` ведёт ограниченный поиск; `automl_worker.py` запускает fit в дочернем процессе; `automl_runtime.py` ограничивает время и ресурсы; `automl_models.py` строит модели и компилирует генерируемые признаки из фиксированного DSL; `automl_llm.py` использует LLM API только при наличии предоставленных переменных среды. Если ключа/endpoint/model нет, поиск использует локальные предложения. На момент этой записи live LLM credentials не предоставлены, а реальное обращение к платформенному API не проверялось.
+Подтверждённые whole-agent результаты (results/score-recovery/e2e-final.json): regression masked год<5→5 44.810781→37.578330 RMSE; classification group outer .649412479 (CSV byte-identical control). Исторический лучший Сергей H73=34.520269, Иван H48=.649531162. Эти outer многократно просмотрены; НЕ независимые и НЕ Boosters score. Версия ZIP для public13.7676 неизвестна (подтверждено пользователем). Новые branch результаты ещё не изучены.
 
-Поиск должен использовать внутренний split и оставлять внешний audit split закрытым до окончания предложений. Затем выполняется один фиксированный audit этап: сравнивается первый baseline и выбранная поиском модель (если это разные кандидаты), без возвращения в поиск. После gate выбранный кандидат переобучается на доступных обучающих строках. Если nested split невозможен, отчет обязан пометить отсутствие независимого audit. Это описание архитектуры, а не свидетельство завершённой приёмки. **Метрики и результаты новых запусков текущей архитектуры пока pending.**
+Старый regression nested mapping давал утечку outer, исправлен384a5a7; старые inner numeric-study не независимы. Диагноз results/score-recovery/temporal-index-diagnosis.json. Последние regression policy окна — последние известные train периоды; classification — старый nested маршрут (новый boosting/geometric default проиграл E2E и откатан). Дополнительные causal history/ES/cache механизмы сохранены. 77 tests+9 cleanroom passed. Полные результаты и rejected направления в docs/EXPERIMENT_LOG.md, results/score-recovery/. Не повторять их fit без содержательной причины.
 
-## Доказательная база
+## API / среда / следующие действия
 
-Документы `docs/sources/ivan_branch--*` и `docs/sources/sergey_branch--*` — снимки исходных веток. Публичные данные не сохранены в Git; сравнение разрешено только при совпадении SHA входных CSV, целевой метрики и схемы split. Приватных датасетов и baseline-значений для их скрытого test в распоряжении команды нет.
+Организаторы через пользователя подтвердили OPENAI_BASE_URL=https://changellenge.up.railway.app/v1. .env.local содержит ключ и ignored; агент автоматически не загружает его. Точный разрешённый OPENAI_MODEL пока не найден: официальная PDF называет Qwen3.8-27B, baseline берёт ID из среды. Чужой default не подтверждение нашего track. Найти точную инструкцию/список, иначе спросить пользователя и продолжать ML. Live calls в предыдущей серии0. Секрет не печатать/коммитить/класть в ZIP; local API тест только отдельным процессом.
 
-Основной более новый протокол Ivan SPEC-004:
+Python3.12: /private/tmp/alfa-research-venv/bin/python. macOS env DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib; MPLCONFIGDIR=/private/tmp/alfa-matplotlib. Данные drive-download-20261023T201455Z-1-001/{Регрессия,Многоклассовая классификация}; не публиковать данные/predictions. Native dependencies exact official pins. Linux Docker не проверен. git/network/localhost/RSS могут требовать escalation.
 
-- Регрессия: `Year_Factor < 5` в fit и `Year_Factor == 5` в validation; 35 000/18 308 строк. Train SHA256 `096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775`.
-- Многоклассовая классификация: первый fold `StratifiedGroupKFold(5, shuffle=True, random_state=42)` с одинаковыми сырыми строками признаков в одной группе; 70 529/17 141 строк. Train SHA256 `171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0`.
-- Оценки SPEC-004 получены на outer validation, уже использовавшемся в истории. Независимый скрипт перепроверил сохранённые предсказания и артефакты: 11 runs, 522 checks, 0 failures; нового fit эта сверка не выполняла. Эти оценки пригодны для изучения гипотез на данном split, но не являются независимой оценкой generalization или платформенного score.
-
-SPEC-005 проверила составную обязательную full-v1 policy на том же outer split, переиспользовав старые контроли без нового fit. Regression RMSE изменился `42.196700 → 43.837202`; Macro F1 изменился `0.591451 → 0.563787`. Это отрицательные локальные результаты; по этим двум оценкам нельзя отделить эффект удаления выбросов, quantile transform, imputation и scaling.
-
-## Границы и дальнейшее состояние
-
-Выполнение всех требований, clean-room ZIP и platform preflight должны быть подтверждены проверками; пока ни один документ или локальный score не закрывает все критерии. См. [контракт платформы](PLATFORM_CONTRACT.md) и [реестр гипотез](HYPOTHESES.md). Не отправлять ZIP на Boosters без отдельного поручения. Публикация собственной ветки разрешена; merge не поручен.
+Дальше: короткий branch/results inventory, точная проверка model ID, литература и novel mechanism screening, конечная серия с сохранением прогресса/recipe до outer. Перед fit проверить HYPOTHESES и существующий кэш; сравнения разделить на exploratory outer, честный model-selection и whole-agent delivery. После серии сохранить лучший проверенный агент, ZIP/manifest/SHA, tests, журнал, commit и push maxim/autoresearch. Предыдущий полный журнал не переписывать.
