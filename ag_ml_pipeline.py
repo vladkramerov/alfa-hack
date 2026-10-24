@@ -21,15 +21,17 @@ from ag_ml_supervised import (SUPERVISED_BLOCKS, entity_history, entity_last_ind
 from ag_schemas import BINARY, MULTILABEL, RANKING, REGRESSION, PipelineSpec, TaskSpec
 
 def build_matrices(ds: Dataset, spec: PipelineSpec) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
-    """Признаки без таргета: исходные -> даты -> блоки чистки/генерации -> код LLM -> типы ->
+    """Признаки без таргета: исходные -> код LLM -> даты -> блоки чистки/генерации -> типы ->
     сгенерированные автопоиском -> удаление отобранных. Статистики считаются по строкам train."""
     n_tr = len(ds.X_train)
     full = pd.concat([ds.X_train, ds.X_test], axis=0, ignore_index=True)
     drop = [c for c in spec.drop_columns if c in full.columns]
-    if drop:
+    if drop and not spec.feature_code:
         full = full.drop(columns=drop)
+    if spec.feature_code:
+        full = apply_features(full, [], spec.feature_code, n_tr)
     full = expand_datetimes(full, [c for c in ds.datetime_cols if c in full.columns])
-    full = apply_features(full, [f for f in spec.features if f not in SUPERVISED_BLOCKS], spec.feature_code, n_tr)
+    full = apply_features(full, [f for f in spec.features if f not in SUPERVISED_BLOCKS], None, n_tr)
     if "group_relative" in spec.features and ds.groups is not None:
         full = group_relative(full, ds.groups)
     full, cat_cols = finalize_types(full, n_tr)

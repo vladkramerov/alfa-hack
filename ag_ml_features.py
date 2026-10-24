@@ -334,13 +334,15 @@ def apply_features(df: pd.DataFrame, blocks: list[str], code: str | None, n_fit:
     """Блоки применяются в порядке FEATURE_BLOCKS (чистка -> удаление лишнего -> генерация).
     n_fit — число первых строк df, относящихся к train: статистики блоков считаются только по ним."""
     n_fit = len(df) if n_fit is None else n_fit
+    # The planner contract promises original inputs. Destructive blocks such as
+    # drop_redundant must not remove the operands of an accepted hypothesis.
+    if code:
+        fn = compile_feature_code(code)
+        fn(df.head(200))
+        df = fn(df)
     done = set()
     for name, fn in FEATURE_BLOCKS.items():
         if name in blocks and fn not in done:
             df = fn(df, n_fit)
             done.add(fn)
-    if code:
-        fn = compile_feature_code(code)
-        fn(df.head(200))  # быстрый прогон до полного
-        df = fn(df)
     return df

@@ -20,10 +20,11 @@ from ag_io_contract import TaskPaths, llm_settings, resolve_task
 from ag_llm_client import LLMClient
 from ag_ml_models import MODELS
 import ag_ml_dataset as DS, ag_ml_metrics as M, ag_ml_structure as structure
-from ag_ml_pipeline import run_pipeline, warm_text_cache
+from ag_ml_pipeline import build_matrices, run_pipeline, warm_text_cache
+from ag_ml_supervised import SUPERVISED_BLOCKS
 import ag_research_diagnostics as D
 from ag_ml_shift import adjusted_estimate, composition, test_like_folds
-from ag_ml_validation import fold_groups, make_folds, split_halves
+from ag_ml_validation import fold_groups, make_folds, split_halves, unseen_duplicate_folds
 from ag_research_advisor import ModelAdvisor
 from ag_research_fallback import FallbackQueue, baseline_spec, default_class_weight
 from ag_research_memory import Memory
@@ -116,6 +117,13 @@ class Agent:
         if self.folds is None:
             self.folds = self._group_time_folds()
         if self.folds is None:
+            grouped = unseen_duplicate_folds(t, self.train[self.feature_cols], self.test[self.feature_cols],
+                                            y, self._n_folds(), self.cfg.seed)
+            if grouped is not None:
+                self.folds, duplicate_info = grouped
+                self.structure.update(validation="unseen_duplicate_groups", duplicate_validation=duplicate_info)
+                log.info("валидация по группам raw-X дублей: %s", duplicate_info)
+        if self.folds is None:
             groups = fold_groups(t, self.ds)
             if groups is not None:
                 log.info("ранжирование: группы теста новые, фолды по группам")
@@ -136,6 +144,15 @@ class Agent:
         if t.task_type == RANKING:
             self._fold_groups()
         covered = np.sort(np.concatenate([va for _, va in self.folds]))
+        # Under forward shift, historical folds diagnose drift but the most
+        # recent held-out period is the closest available deployment proxy.
+        # Never inspect external labels to select this evaluation window.
+        self.selection_idx = None
+        if self.structure.get("validation") in ("time", "group_time") and len(self.folds[-1][1]) >= 1000:
+            covered = np.sort(self.folds[-1][1])
+            self.selection_idx = covered
+            self.structure["selection_scope"] = "latest_temporal_fold"
+            log.info("выбор моделей/ансамбля: последний временной фолд (%d строк)", len(covered))
         a, b = split_halves(len(covered), y[covered], t.is_classification, self.cfg.seed,
                             y[covered, 1] if t.task_type == RANKING else None)
         self.A, self.B = covered[a], covered[b]
@@ -266,6 +283,10 @@ class Agent:
                 hyp.spec.feature_search, hyp.spec.search_seconds = None, 0.0
                 r = RunResult(exp_id, hyp, True, out["cv_mean"], out["cv_std"], out["fold_scores"], time.time() - t0,
                               oof=out["oof"], test_pred=out["test_pred"], feature_importance=out["importance"])
+                if self.selection_idx is not None:
+                    pooled = r.cv_mean
+                    r.cv_mean = M.score(self.metric, self.ds.y[self.selection_idx], r.oof[self.selection_idx])
+                    r.conclusion = f"selection=latest_temporal_fold; pooled_OOF={pooled:.6f}"
                 break
             except ExperimentTimeout as e:
                 r = RunResult(exp_id, hyp, False, duration=time.time() - t0, error=str(e))
@@ -288,7 +309,7 @@ class Agent:
             log.info("exp%d [%s] %s: %s=%.5f ±%.5f за %.0f с", exp_id, hyp.source, hyp.text[:80], self.metric.name,
                      r.cv_mean, r.cv_std, r.duration)
             if best_before is not None:
-                r.conclusion = self.planner.reflect(hyp, f"{r.cv_mean:.5f}", f"{best_before.cv_mean:.5f}",
+                r.conclusion += ("; " if r.conclusion else "") + self.planner.reflect(hyp, f"{r.cv_mean:.5f}", f"{best_before.cv_mean:.5f}",
                                                     r.feature_importance)
         else:
             log.info("exp%d [%s] %s: ОШИБКА %s", exp_id, hyp.source, hyp.text[:80], (r.error or "")[:300])
@@ -380,6 +401,43 @@ class Agent:
             return False
         return best.cv_mean >= target if self.metric.greater_is_better else best.cv_mean <= target
 
+    def _unchanged_features(self, hyp: Hypothesis) -> bool:
+        """Skip a deterministic preprocessing no-op, not a model or seed trial.
+
+        Compare complete matrices (including test and categorical dtypes), never
+        targets or external validation. Supervised blocks must match exactly.
+        Large/wide tasks and arbitrary generated code retain the usual path.
+        """
+        spec = hyp.spec
+        if (spec.feature_code or spec.feature_search or spec.tune_trials
+                or len(self.ds.X_train) * self.ds.X_train.shape[1] > 10_000_000):
+            return False
+        current = spec.to_dict()
+        current.pop("features")
+        sup = [f for f in spec.features if f in SUPERVISED_BLOCKS]
+        matches = []
+        for r in self.memory.ok_runs():
+            old = r.hypothesis.spec
+            other = old.to_dict()
+            other.pop("features")
+            if (current == other and spec.features != old.features
+                    and sup == [f for f in old.features if f in SUPERVISED_BLOCKS]):
+                matches.append(old)
+        if not matches:
+            return False
+        try:
+            a, b, cats = build_matrices(self.ds, spec)
+            for old in matches:
+                x, z, old_cats = build_matrices(self.ds, old)
+                if cats == old_cats and a.equals(x) and b.equals(z):
+                    self.memory.seen_keys.add(spec.key())
+                    self.memory.skip(hyp.text, "предобработка не изменила train/test матрицы; повторный fit не нужен")
+                    return True
+        except Exception:
+            # Preserve normal isolated execution and its diagnostic/repair path.
+            return False
+        return False
+
     def research(self) -> None:
         target_mode = self.cfg.target_score is not None
         max_iter = 10_000 if target_mode else self.cfg.max_iterations
@@ -414,6 +472,8 @@ class Agent:
             if hyp is None:
                 self.stop_reason = "гипотезы закончились"
                 break
+            if self._unchanged_features(hyp):
+                continue
             it += 1
             best = self.memory.best()
             factor = 8.0 if hyp.spec.tune_trials or hyp.spec.feature_search else \

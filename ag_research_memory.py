@@ -62,20 +62,33 @@ class Memory:
             return None
         return self.runs[exp_id]
 
-    def prompt_summary(self, top_k: int = 6, last_k: int = 6) -> list[dict]:
+    def prompt_summary(self, top_k: int = 3, last_k: int = 4) -> list[dict]:
         """Сжатая история для промпта: лучшие + последние (в т.ч. неудачные)."""
         chosen: dict[int, RunResult] = {}
         for r in self.ranked()[:top_k]:
             chosen[r.exp_id] = r
         for r in self.runs[-last_k:]:
             chosen[r.exp_id] = r
+        best = self.best()
+        if best is not None:
+            chosen[best.exp_id] = best
+        base_spec = best.hypothesis.spec.to_dict() if best else {}
         out = []
         for r in sorted(chosen.values(), key=lambda x: x.exp_id):
             s = r.summary()
             s.pop("source", None)
             spec = s["spec"]
+            s["hypothesis"] = s["hypothesis"][:220]
+            s["error"] = (s["error"] or "")[-200:] or None
+            s["conclusion"] = s["conclusion"][:220]
+            if best is not None and r.exp_id != best.exp_id:
+                # Repeated inherited drop lists/parameters used most of the
+                # original prompt. Every delta is relative to the displayed best.
+                s["vs_best"] = {k:v for k,v in spec.items() if v != base_spec.get(k)}
+                s.pop("spec")
+                spec = s["vs_best"]
             if spec.get("feature_code"):
-                spec["feature_code"] = spec["feature_code"][:400]
-            s["top_features"] = dict(list(s["top_features"].items())[:6])
+                spec["feature_code"] = spec["feature_code"][:1500]
+            s["top_features"] = dict(list(s["top_features"].items())[:4])
             out.append(s)
         return out

@@ -79,9 +79,23 @@ def profile(train: pd.DataFrame, test: pd.DataFrame, task: TaskSpec, feature_col
     return prof
 
 
-def compact(prof: dict, max_cols: int = 80) -> dict:
+def compact(prof: dict, max_cols: int = 80, important: list[str] | None = None) -> dict:
     """Урезанная версия для промпта."""
     p = dict(prof)
+    if important is not None:
+        cols = prof["columns"]
+        priority = {name: i for i, name in enumerate(important)}
+        ordered = sorted(cols, key=lambda c: (c["name"] not in priority,
+            priority.get(c["name"], 1000), -float(c.get("null", 0))))
+        p["columns"] = [{**c, **({"desc": c["desc"][:80]} if "desc" in c else {})}
+                        for c in ordered[:max_cols]]
+        # Preserve names/types beyond the detailed statistics, so feature code
+        # is not restricted to whichever columns happen to have been first.
+        p["schema"] = {c["name"]: c["dtype"] + (": " + c["desc"][:80] if c.get("desc") else "")
+                       for c in cols[:160]}
+        if len(cols)>160:
+            p["schema_truncated"] = len(cols)-160
+        return p
     p["columns"] = prof["columns"][:max_cols]
     if len(prof["columns"]) > max_cols:
         p["columns_truncated"] = len(prof["columns"]) - max_cols

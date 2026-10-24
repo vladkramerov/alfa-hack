@@ -38,7 +38,11 @@ class Planner:
         self.diagnostics: dict = {}     # разбор ошибок лучшего решения (agent/research/diagnostics.py)
 
     def next(self, memory: Memory, time_left: float, typical: float) -> Hypothesis | None:
-        use_llm = (self.llm.available() and not self.force_fallback and len(memory.runs) > self.warmup
+        warm = len(memory.runs) > self.warmup
+        # Slow fits must not consume the whole short-run research budget before
+        # the researcher gets a turn; keep baseline + three structural probes.
+        warm = warm or (len(memory.runs) >= 4 and time_left < 3 * typical)
+        use_llm = (self.llm.available() and not self.force_fallback and warm
                    and self.llm_rejects < 6)
         if use_llm:
             self.turn += 1
@@ -58,10 +62,10 @@ class Planner:
         self._time_left, self._typical = time_left, typical
         user = prompts.PLAN_TEMPLATE.format(
             task=json.dumps(self.task.short(), ensure_ascii=False),
-            profile=json.dumps(compact(self.profile, 60), ensure_ascii=False),
+            profile=json.dumps(compact(self.profile, 16, important=list(best.feature_importance)[:12] if best else []), ensure_ascii=False, separators=(",", ":")),
             models=json.dumps({k: MODEL_DOCS[k] for k in self._usable_models()}, ensure_ascii=False),
             blocks=json.dumps(self._usable_blocks(), ensure_ascii=False),
-            history=json.dumps(memory.prompt_summary(), ensure_ascii=False, default=str),
+            history=json.dumps(memory.prompt_summary(), ensure_ascii=False, default=str, separators=(",", ":")),
             advice=json.dumps(self.fallback.advisor.notes(memory) if self.fallback.advisor else {}, ensure_ascii=False)
             + "; отклонено без запуска: " + json.dumps(memory.skipped[-6:], ensure_ascii=False)
             + "; РАЗБОР ОШИБОК лучшего решения (где теряется метрика — гипотеза должна бить сюда): "

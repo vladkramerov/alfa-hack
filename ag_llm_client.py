@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import re
 import time
 
@@ -37,15 +38,16 @@ class LLMClient:
         self.disabled_reason: str | None = None
         if not cfg.llm_enabled:
             self.disabled_reason = "LLM выключена (LLM_DISABLED=1)"
-        elif not settings.base_url and not settings.api_key:
-            self.disabled_reason = "не заданы OPENAI_BASE_URL / OPENAI_API_KEY"
+        elif not all((settings.base_url, settings.api_key, settings.model)):
+            self.disabled_reason = "не заданы OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL"
         elif OpenAI is None and httpx is None:
             self.disabled_reason = "нет ни openai, ни httpx"
         self._sdk = None
         self._hints = True          # слать ли параметры отключения рассуждений (см. _extra)
+        self._prompt_tokens_per_byte = 0.5  # conservative first request; calibrate from actual usage
         self.last: dict = {}        # служебное о последнем ответе: finish_reason, токены (для local/llm_check.py)
         if not self.disabled_reason and OpenAI is not None:
-            self._sdk = OpenAI(api_key=settings.api_key or "EMPTY", base_url=settings.base_url,
+            self._sdk = OpenAI(api_key=settings.api_key, base_url=settings.base_url,
                                timeout=cfg.llm_timeout, max_retries=0)
 
     # ---- состояние ----
@@ -75,13 +77,29 @@ class LLMClient:
         temp = self.cfg.llm_temperature if temperature is None else temperature
         budget = max_tokens
         for attempt in range(3):   # обычный повтор, повтор с запасом токенов, повтор без параметров
+            if not self.available():
+                break
+            # Reserve prompt room before sending it: the previous implementation
+            # could send a 14k-token prompt with only 6k left in the entire budget.
+            prompt_reserve = math.ceil(len((system + user).encode("utf-8")) * self._prompt_tokens_per_byte) + 128
+            room = self.cfg.llm_max_tokens_total - self.tokens_in - self.tokens_out - prompt_reserve
+            if room < 64:
+                self.disabled_reason = "недостаточно бюджета для контекста и ответа LLM"
+                break
+            budget = min(budget, room)
+            wait_left = self.cfg.llm_time_share * self.cfg.time_limit - self.seconds
+            effective_timeout = min(timeout or self.cfg.llm_timeout, wait_left)
+            if effective_timeout <= 0:
+                break
             try:
                 self.calls += 1
                 t0 = time.time()
                 try:
-                    text, p_tok, c_tok, finish = self._request(messages, budget, temp, timeout or self.cfg.llm_timeout)
+                    text, p_tok, c_tok, finish = self._request(messages, budget, temp, effective_timeout)
                 finally:
                     self.seconds += time.time() - t0
+                if p_tok:
+                    self._prompt_tokens_per_byte = min(0.5, max(0.1, 1.2 * p_tok / max(1, len((system + user).encode("utf-8")))))
                 self.tokens_in += p_tok or len(system + user) // 3
                 self.tokens_out += c_tok or len(text) // 3
                 text = _strip_thinking(text)
@@ -99,10 +117,10 @@ class LLMClient:
             except Exception as e:  # noqa: BLE001
                 if self._hints and _rejects_params(e):
                     # прокси не знает параметров отключения рассуждений — больше их не шлём
-                    log.warning("LLM не принимает параметры отключения рассуждений, шлю без них: %s", e)
+                    log.warning("LLM не принимает параметры отключения рассуждений: %s", type(e).__name__)
                     self._hints = False
                     continue
-                log.warning("LLM ошибка (попытка %d): %s", attempt + 1, e)
+                log.warning("LLM ошибка (попытка %d): %s", attempt + 1, type(e).__name__)
                 time.sleep(2 * (attempt + 1))
         self.failures_in_row += 1
         if self.failures_in_row >= 3:
@@ -126,7 +144,9 @@ class LLMClient:
             u = r.usage
             return (r.choices[0].message.content or "", getattr(u, "prompt_tokens", 0) or 0,
                     getattr(u, "completion_tokens", 0) or 0, r.choices[0].finish_reason)
-        base = (self.s.base_url or "https://api.openai.com/v1").rstrip("/")
+        if not self.s.base_url:
+            raise ValueError("OPENAI_BASE_URL is required")
+        base = self.s.base_url.rstrip("/")
         url = base if base.endswith("/chat/completions") else f"{base}/chat/completions"
         headers = {"Authorization": f"Bearer {self.s.api_key or 'EMPTY'}"}
         payload = {"model": self.s.model, "messages": messages, "max_tokens": max_tokens, "temperature": temperature,
@@ -147,7 +167,7 @@ class LLMClient:
             return None
         obj = extract_json(text)
         if obj is None:
-            log.warning("LLM вернула не-JSON: %s", text[:200])
+            log.warning("LLM вернула не-JSON: %d символов", len(text))
         return obj
 
 

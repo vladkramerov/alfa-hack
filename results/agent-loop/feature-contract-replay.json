@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source": "control-live60 regression failed exp15 exact feature_code/spec",
+  "before": "KeyError heating_degree_days_c, no model fit",
+  "after": "full train/test preprocessing completed",
+  "train_shape": [
+    35000,
+    16
+  ],
+  "test_shape": [
+    18308,
+    16
+  ],
+  "seconds": 0.2449009170231875,
+  "new_fits": 0
+}

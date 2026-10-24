@@ -46,7 +46,7 @@ class TaskPaths:
 class LLMSettings:
     base_url: str | None
     api_key: str | None
-    model: str
+    model: str | None
 
 
 def _first_env(*names: str) -> str | None:
@@ -198,5 +198,5 @@ def llm_settings() -> LLMSettings:
     return LLMSettings(
         base_url=base.rstrip("/") if base else None,
         api_key=_first_env("OPENAI_API_KEY", "LLM_API_KEY"),
-        model=_first_env("OPENAI_MODEL", "LLM_MODEL") or "qwen/qwen3.8-27b",   # имя из инструкции организаторов; прокси всё равно подставит модель задачи
+        model=_first_env("OPENAI_MODEL", "LLM_MODEL"),
     )

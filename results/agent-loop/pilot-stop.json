@@ -1,0 +1,7 @@
+{
+  "reason": "Pilot iteration cap6 below mandatory warmup; preserve completedreg and anyclass checkpoints",
+  "active_task": "classification",
+  "child_pid": 74953,
+  "parent_pid": 74845,
+  "action": "SIGINT only verified pilot"
+}

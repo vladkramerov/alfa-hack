@@ -1,0 +1,166 @@
+{
+  "protocol": "600s/8CPU/60iterations/20k tokens/real Qwen; repeated research outer, not independent confirmation",
+  "rows": [
+    {
+      "variant": "control-live60",
+      "task": "regression",
+      "external_score": 44.02962396686467,
+      "seconds": 277.9688646249997,
+      "peak_rss_mb": 1356.765625,
+      "submission_valid": true,
+      "source_unchanged": true,
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "zip_sha256": "efa97f675a8c80409eedccacbd19d0a1c0d44100180ccabbd974aedf2da64d31",
+      "submission_sha256": "c5ce10fb56c32ec229768b7e2a8861dd32c1e16876a1c85e8db902856c51dcbb",
+      "experiment_runs": 46,
+      "successful_experiments": 45,
+      "llm_proposals_executed": 2,
+      "llm_successful_experiments": 1,
+      "llm_incumbent_improvements": 1,
+      "requests": 3,
+      "planning_requests": 2,
+      "tokens": 28688,
+      "llm_wait_seconds": 31.39838937399327,
+      "json_valid": 3,
+      "json_attempts": 3,
+      "internal_oof_score": 38.9089073852314,
+      "internal_B": 40.22918321963858,
+      "failed_experiments": [
+        {
+          "exp_id": 15,
+          "source": "llm",
+          "error": "^^^^^^^\n  File \"/private/tmp/alfa-another-live/control-live60/regression/task/ag_ml_features.py\", line 325, in run\n    out = fn(df.copy())\n          ^^^^^^^^^^^^^\n  File \"<make_features>\", line 8, in make_features\n  File \"/private/tmp/alfa-research-venv/lib/python3.12/site-packages/pandas/core/frame.py\", line 4102, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/alfa-research-venv/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3812, in get_loc\n    raise KeyError(key) from err\nKeyError: 'heating_degree_days_c'\n"
+        }
+      ],
+      "skipped": [
+        [
+          "Семейство моделей: нейросеть (MLP) на нормализованных признаках",
+          "линейная модель хуже лучшей на 21%: зависимость сильно нелинейная, на таблицах её лучше ловят деревья, чем нейросеть"
+        ]
+      ]
+    },
+    {
+      "variant": "control-live60",
+      "task": "classification",
+      "external_score": 0.6397114882299823,
+      "seconds": 452.1250075419957,
+      "peak_rss_mb": 1519.890625,
+      "submission_valid": true,
+      "source_unchanged": true,
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "zip_sha256": "efa97f675a8c80409eedccacbd19d0a1c0d44100180ccabbd974aedf2da64d31",
+      "submission_sha256": "fa91afa172962e03ea73484ca78eb054655a327b987a18f0be5cfa1c78794efa",
+      "experiment_runs": 5,
+      "successful_experiments": 5,
+      "llm_proposals_executed": 0,
+      "llm_successful_experiments": 0,
+      "llm_incumbent_improvements": 0,
+      "requests": 0,
+      "planning_requests": 0,
+      "tokens": 0,
+      "llm_wait_seconds": 0,
+      "json_valid": 0,
+      "json_attempts": 0,
+      "internal_oof_score": 0.6609568509555375,
+      "internal_B": 0.6597337805880766,
+      "failed_experiments": [],
+      "skipped": []
+    },
+    {
+      "variant": "candidate-al123",
+      "task": "regression",
+      "external_score": 44.02962396686467,
+      "seconds": 254.27326920902124,
+      "peak_rss_mb": 1109.34375,
+      "submission_valid": true,
+      "source_unchanged": true,
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "zip_sha256": "017b3fb61b80625a0f68e8e18e9b8fad51c27dde6ba0141eee865ff8ba331237",
+      "submission_sha256": "c5ce10fb56c32ec229768b7e2a8861dd32c1e16876a1c85e8db902856c51dcbb",
+      "experiment_runs": 45,
+      "successful_experiments": 45,
+      "llm_proposals_executed": 1,
+      "llm_successful_experiments": 1,
+      "llm_incumbent_improvements": 1,
+      "requests": 2,
+      "planning_requests": 1,
+      "tokens": 6938,
+      "llm_wait_seconds": 4.124109958996996,
+      "json_valid": 2,
+      "json_attempts": 3,
+      "internal_oof_score": 38.9089073852314,
+      "internal_B": 40.22918321963858,
+      "failed_experiments": [],
+      "skipped": [
+        [
+          "Семейство моделей: нейросеть (MLP) на нормализованных признаках",
+          "линейная модель хуже лучшей на 21%: зависимость сильно нелинейная, на таблицах её лучше ловят деревья, чем нейросеть"
+        ]
+      ]
+    },
+    {
+      "variant": "candidate-al123",
+      "task": "classification",
+      "external_score": 0.600425755894369,
+      "seconds": 460.01318595799967,
+      "peak_rss_mb": 807.671875,
+      "submission_valid": true,
+      "source_unchanged": true,
+      "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "zip_sha256": "017b3fb61b80625a0f68e8e18e9b8fad51c27dde6ba0141eee865ff8ba331237",
+      "submission_sha256": "d1a25bbc7b0f175e9cc9287d9878e992058e46135688f7de4d1821f7159d3f3d",
+      "experiment_runs": 5,
+      "successful_experiments": 5,
+      "llm_proposals_executed": 1,
+      "llm_successful_experiments": 1,
+      "llm_incumbent_improvements": 0,
+      "requests": 2,
+      "planning_requests": 1,
+      "tokens": 6257,
+      "llm_wait_seconds": 15.169229249993805,
+      "json_valid": 2,
+      "json_attempts": 2,
+      "internal_oof_score": 0.6590967461398181,
+      "internal_B": 0.649496971379958,
+      "failed_experiments": [],
+      "skipped": []
+    },
+    {
+      "variant": "candidate-al123456",
+      "task": "regression",
+      "external_score": 38.79719359840189,
+      "seconds": 495.7733400829893,
+      "peak_rss_mb": 1433.953125,
+      "submission_valid": true,
+      "source_unchanged": true,
+      "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "zip_sha256": "ea969e853318188ba34a8d23317fdbcaee7bf69bdd84b02c304e67f15a5af15e",
+      "submission_sha256": "c9ae10bdbcabbcf9e5ee4054b81f9eb1c9e61e5236ba490009527ad52661a12b",
+      "experiment_runs": 47,
+      "successful_experiments": 47,
+      "llm_proposals_executed": 1,
+      "llm_successful_experiments": 1,
+      "llm_incumbent_improvements": 0,
+      "requests": 3,
+      "planning_requests": 2,
+      "tokens": 14555,
+      "llm_wait_seconds": 8.190528874954907,
+      "json_valid": 3,
+      "json_attempts": 4,
+      "internal_oof_score": 29.799233615612472,
+      "internal_B": 31.31452082277081,
+      "failed_experiments": [],
+      "skipped": [
+        [
+          "Семейство моделей: нейросеть (MLP) на нормализованных признаках",
+          "линейная модель хуже лучшей на 404%: зависимость сильно нелинейная, на таблицах её лучше ловят деревья, чем нейросеть"
+        ],
+        [
+          "Пары категориальных признаков",
+          "предобработка не изменила train/test матрицы; повторный fit не нужен"
+        ]
+      ]
+    }
+  ],
+  "native_fit_count": "Not recorded; experiment runs may contain multiple CV/refit/tuning fits."
+}
