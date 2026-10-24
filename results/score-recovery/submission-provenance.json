@@ -24,5 +24,56 @@
       "bytes": 40652
     }
   ],
-  "uploaded_to_boosters_this_iteration": false
+  "uploaded_to_boosters_this_iteration": false,
+  "team_git_archive_inventory": [
+    {
+      "branch": "origin/ivan_branch",
+      "path": "dist/solution_alternative_v2.zip",
+      "bytes": 61330,
+      "sha256": "a51d351d8657aa04bd6a1628fa0204de3a805f49a1de29f732aa793dd8901cb7",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/ivan_branch",
+      "path": "dist/solution_combined_metrics.zip",
+      "bytes": 57110,
+      "sha256": "4080df23302d1bca674f081ace2c308a2783f31bd6ad9f261df08cd890ebe15c",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/ivan_branch",
+      "path": "dist/solution_full_preprocessing.zip",
+      "bytes": 24463,
+      "sha256": "8e5c266d9b2f54ce87ba2eef79a5e6e8c36d4c55a36ebf3c160cc2f59a25d5ea",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/sergey_branch",
+      "path": "dist/solution_alternative_v2.zip",
+      "bytes": 61330,
+      "sha256": "a51d351d8657aa04bd6a1628fa0204de3a805f49a1de29f732aa793dd8901cb7",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/sergey_branch",
+      "path": "dist/solution_combined_metrics.zip",
+      "bytes": 57110,
+      "sha256": "4080df23302d1bca674f081ace2c308a2783f31bd6ad9f261df08cd890ebe15c",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/sergey_branch",
+      "path": "dist/solution_full_preprocessing.zip",
+      "bytes": 24463,
+      "sha256": "8e5c266d9b2f54ce87ba2eef79a5e6e8c36d4c55a36ebf3c160cc2f59a25d5ea",
+      "linked_boosters_score": null
+    },
+    {
+      "branch": "origin/sergey_branch",
+      "path": "dist/solution_sergey_panel_v1.zip",
+      "bytes": 55183,
+      "sha256": "cae8cdbd83e32ece12d4ee0fa1e14997916db861e8732fb5402ce4707f96534c",
+      "linked_boosters_score": null
+    }
+  ]
 }

@@ -1,0 +1,6 @@
+{
+  "reason": "Stop superseded nested-policy run after completed paired shadow regression; preserve results/checkpoints before testing deployment-window selection.",
+  "runner_pid": 60405,
+  "child_count": 3,
+  "preserved_root": "/private/tmp/alfa-score-recovery-e2e"
+}

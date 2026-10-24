@@ -51,6 +51,7 @@ def _run_cli(task, workdir, budget, max_experiments):
     for key in ('OPENAI_BASE_URL', 'OPENAI_API_KEY', 'OPENAI_MODEL'):
         env.pop(key, None)
     env.update(AUTOML_TIME_LIMIT=str(budget),
+               AUTOML_VALIDATION_POLICY='nested',
                AUTOML_MAX_EXPERIMENTS=str(max_experiments),
                AUTOML_THREADS='2',
                PYTHONDONTWRITEBYTECODE='1',

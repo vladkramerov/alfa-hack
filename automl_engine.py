@@ -284,14 +284,26 @@ def main(task_path, started=None, threads=4):
         outer_fit, outer_valid, outer_description = validation_split(bundle)
         if not len(outer_fit) or not len(outer_valid):
             raise ValueError('No honest validation split is possible; retained the valid fallback submission')
-        nested = True
-        try:
-            windows, search_policy = _search_windows(bundle, outer_fit, budget.seconds)
-        except ValueError:
-            nested = False
-            windows = [{'fit': outer_fit, 'valid': outer_valid,
-                        'description': outer_description + ':no-independent-audit', 'weight': 1.0}]
-            search_policy = 'single-shared'
+        deployment = os.getenv('AUTOML_VALIDATION_POLICY', 'deployment') != 'nested'
+        nested = not deployment
+        if deployment:
+            windows = temporal_windows(bundle)
+            if windows:
+                if budget.seconds < 120:
+                    windows = windows[:1]
+                search_policy = 'deployment-rolling-origin'
+            else:
+                windows = [{'fit': outer_fit, 'valid': outer_valid,
+                            'description': outer_description, 'weight': 1.0}]
+                search_policy = 'deployment-group-or-random'
+        else:
+            try:
+                windows, search_policy = _search_windows(bundle, outer_fit, budget.seconds)
+            except ValueError:
+                nested = False
+                windows = [{'fit': outer_fit, 'valid': outer_valid,
+                            'description': outer_description + ':no-independent-audit', 'weight': 1.0}]
+                search_policy = 'single-shared'
         for index, window in enumerate(windows, 1):
             if nested and np.intersect1d(np.r_[window['fit'], window['valid']], outer_valid).size:
                 raise ValueError('Search positions overlap audit; refuse contaminated validation')
@@ -308,15 +320,17 @@ def main(task_path, started=None, threads=4):
         profile_fit = windows[-1]['fit']
         inner_description = ' + '.join(window['description'] for window in windows)
         profile = profile_data(bundle, profile_fit, inner_description)
+        if deployment:
+            profile['validation_warning'] = 'Selection uses known training labels, including the latest available period. Independent evaluation requires an external masked test, never these search scores.'
         profile['validation_windows'] = [
             {'description': window['description'], 'fit_rows': len(window['fit']),
              'valid_rows': len(window['valid']), 'key': window['key'], 'weight': window['weight']}
             for window in windows]
         save_json(root / 'profile.json', profile)
         np.savez_compressed(root / 'audit_split.npz', fit=outer_fit, valid=outer_valid)
-        save_json(root / 'validation.json', {'search': inner_description, 'audit': outer_description,
+        save_json(root / 'validation.json', {'search': inner_description, 'audit': outer_description if nested else 'external evaluation required',
             'nested': nested, 'search_policy': search_policy, 'search_key': search_key,
-            'audit_key': split_key(outer_fit, outer_valid),
+            'audit_key': split_key(outer_fit, outer_valid) if nested else None,
             'search_fit_rows': int(sum(len(window['fit']) for window in windows)),
             'search_valid_rows': int(sum(len(window['valid']) for window in windows)),
             'audit_rows': len(outer_valid), 'search_folds': profile['validation_windows'],
@@ -489,7 +503,7 @@ def main(task_path, started=None, threads=4):
             selected_search_score=best_score, search_selected=best,
             has_disjoint_search_and_audit=nested, independent_search_and_audit=nested and audit_completed,
             audit=audit, final_refit=refit, validation=inner_description, audit_validation=outer_description,
-            audit_status='completed' if audit_completed else 'skipped_or_failed',
+            audit_status='external_evaluation_required' if deployment else 'completed' if audit_completed else 'skipped_or_failed',
             audit_used_for_selection=False,
             best_submission_seconds=best_seconds, experiments=len(records),
             first_model_seconds=first_model_seconds, search_window_count=len(windows),
@@ -500,7 +514,7 @@ def main(task_path, started=None, threads=4):
             rejected_proposals=rejected_count,
             api_configured=api_configured,
             llm_status=('called' if api_records else 'configured_no_call' if api_configured else 'unconfigured'),
-            score_limitation='Search scores are adaptive. Audit evaluates frozen baseline and search-selected candidates without choosing between them. Public folds have historical exposure; neither score is a Boosters score.')
+            score_limitation='Search scores are adaptive, not Boosters scores. Deployment selection uses all known periods; its independent assessment is the external masked benchmark. Optional nested mode audits frozen candidates and has historically exposed public folds.')
     except Exception as exc:
         summary.update(status='recovered_error', error=type(exc).__name__ + ': ' + str(exc))
     validate_submission(bundle, pd.read_csv(bundle.task_path.parent / 'submission.csv'))

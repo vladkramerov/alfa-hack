@@ -124,3 +124,21 @@ def test_cached_geometric_ensemble_matches_refit_without_training():
             np.testing.assert_array_equal(a['prediction'], b['prediction'])
     finally:
         case.tearDown()
+
+
+def test_default_policy_selects_on_latest_known_period_and_reports_no_independent_audit(tmp_path):
+    import os
+    import subprocess
+    import sys
+    task = _make_task(tmp_path / 'deployment', periods=5, rows_per_period=60)
+    env = {k:v for k,v in os.environ.items() if not k.startswith('OPENAI_') and k != 'AUTOML_VALIDATION_POLICY'}
+    env.update(AUTOML_TIME_LIMIT='30', AUTOML_MAX_EXPERIMENTS='1', AUTOML_THREADS='2')
+    result = subprocess.run([sys.executable, str(Path(__file__).parents[1] / 'solution.py'), str(task)], env=env, capture_output=True, text=True, timeout=40)
+    assert result.returncode == 0, result.stdout + result.stderr
+    path = next((task.parent / 'agent_runs').glob('*/summary.json'))
+    summary = json.loads(path.read_text())
+    assert summary['search_policy'] == 'deployment-rolling-origin'
+    assert 'train_last=5:' in summary['validation']
+    assert summary['audit_status'] == 'external_evaluation_required'
+    assert not summary['independent_search_and_audit']
+    assert summary['final_refit']['status'] == 'completed'

@@ -1,0 +1,14 @@
+{
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "old_rmse": 44.810780971017344,
+  "new_rmse": 37.57832956234321,
+  "relative_gain_percent": 16.139980718818386,
+  "bootstrap_95_percent_gain": [
+    13.493492343715939,
+    18.94213493608949
+  ],
+  "bootstrap_repeats": 500,
+  "group_columns_from_model": null,
+  "resampling_units": 18308,
+  "limitation": "Conditional on this historically exposed public fold and frozen predictions. Does not include selection uncertainty or estimate hidden-platform gain."
+}
