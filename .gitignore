@@ -11,3 +11,7 @@ tmp/
 *.joblib
 *.pt
 # Historical untracked results remain local; new delivery files are added explicitly.
+
+# Local legacy research and clean-execution data copies; tracked reports stay versioned.
+results/2026-10-24/
+results/another_solution/**/task/
