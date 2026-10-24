@@ -1,0 +1,2192 @@
+{
+  "verification_source_sha256": "b53bfe4b06420d5c7d762ca546e8c73af2a27d8be794fc7d5367fe3fff1b70a2",
+  "prior_verification": {
+    "path": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/2026-10-24/sergey-scientific-v2/meta-independent-verification-v2.json",
+    "sha256": "179db8ac2a2c19a00158b4aa031b187b32ab5d0c498351fefc5e599c8019bce7",
+    "initial_path": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/2026-10-24/sergey-scientific-v2/meta-independent-verification.json",
+    "initial_sha256": "1bc46fec538f307247ead72b88e9d89cd66e68a5c01e65d6ab5953f592dd9c01",
+    "correction": "Initial verifier omitted row renormalization before log-feature SHA; v2 accounted for full-head normalization but not the extra crossfit-level normalization before partitioning. All scores/fingerprints already matched. v3 reproduces both normalization boundaries; no fits."
+  },
+  "status": "passed",
+  "new_fits_in_verifier": 0,
+  "total_checks": 523,
+  "passed": 523,
+  "failures": [],
+  "metrics": [
+    {
+      "hypothesis": 76,
+      "stage": "primary",
+      "score": 0.6435754122989765,
+      "control": 0.64472256711304,
+      "relative_gain": -0.0017792999230664686,
+      "accuracy": 0.8110962020885596
+    },
+    {
+      "hypothesis": 77,
+      "stage": "primary",
+      "score": 0.64472256711304,
+      "control": 0.64472256711304,
+      "relative_gain": 0.0,
+      "accuracy": 0.8089376349104487
+    },
+    {
+      "hypothesis": 78,
+      "stage": "primary",
+      "score": 0.6365166004610818,
+      "control": 0.64472256711304,
+      "relative_gain": -0.012727903551915554,
+      "accuracy": 0.7987865352079808
+    },
+    {
+      "hypothesis": 76,
+      "stage": "secondary",
+      "score": 0.6215797406519588,
+      "control": 0.6075743572072007,
+      "relative_gain": 0.023051307677196542,
+      "accuracy": 0.8038751830573392
+    },
+    {
+      "hypothesis": 77,
+      "stage": "secondary",
+      "score": 0.6075743572072007,
+      "control": 0.6075743572072007,
+      "relative_gain": 0.0,
+      "accuracy": 0.8016221696519095
+    },
+    {
+      "hypothesis": 78,
+      "stage": "secondary",
+      "score": 0.6007931619572615,
+      "control": 0.6075743572072007,
+      "relative_gain": -0.011161095213283567,
+      "accuracy": 0.7910893319815253
+    }
+  ],
+  "technical_cache_fits_disclosed": 18,
+  "unique_cache_fingerprints": 18,
+  "limitations": [
+    "Meta cross-fit is conditional on base OOF, not fully nested base-model evaluation.",
+    "Both public protocols have already been repeatedly examined; neither is a hidden private test.",
+    "Historical mutable ledger SHAs are recorded by producers; no immutable historical ledger snapshot was available for independent reconstruction."
+  ],
+  "artifact_sha256": {
+    "results/2026-10-24/sergey-scientific-v2/oof-cache-primary/calibration.npz": "6760905a61632d166bc46f9b3507030c3acdde5dccf55fa9c67f921938aca11b",
+    "data/multiclass/train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "data/multiclass/test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "data/multiclass/sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data/multiclass/data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+    "/Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/build_oof_cache.py": "90e473acebfdb332db8bebf2b2c1eea42e15ab5ddf4b9c61a6441cae1b569d51",
+    "results/2026-10-24/HYP-076-01-meta-primary/validation_predictions.npz": "8c2091cc64f90187eb1df84b69857a8b770dfcf25754d0f066b5978a310827f9",
+    "results/2026-10-24/HYP-076-01-meta-primary/state.json": "1e8cffeaf19f2fffbfc41e18229c9313a40503fe398b283d0ff17f30c9ebda6d",
+    "/Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/run_meta_study.py": "e610b218080c43f8c28f398dcc07adfeb879e7fe87b2b75ba665a6664e9ee496",
+    "/Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/meta/automl_meta_research.py": "3729578f6cb95071978b94e61fc32370ae06bac8e6bce3bbdf18c08e63894750",
+    "results/2026-10-24/HYP-077-01-meta-primary/validation_predictions.npz": "a905b37b52b3d1af7c74fa3b9506aaebb817f72817f932d5e32b436f93aa4c97",
+    "results/2026-10-24/HYP-077-01-meta-primary/state.json": "2cf414057b0429156114f48cb1eb19b8b780345da3972b4bb7352583c3751ff2",
+    "results/2026-10-24/HYP-078-01-meta-primary/validation_predictions.npz": "44601f778e5e16c63f1026008c85a10086b0cb77b2d2e3f8d969386921e3d3ac",
+    "results/2026-10-24/HYP-078-01-meta-primary/state.json": "91422e7eb4f347c851862a42de6e71ed9dd4e03a0e98a9ccf504ed0950800245",
+    "results/2026-10-24/sergey-scientific-v2/oof-cache-secondary/calibration.npz": "093ac74d24d27750b96f02be578956bacac632d85144128033d6c74918f8a548",
+    "results/2026-10-24/HYP-076-02-meta-secondary/validation_predictions.npz": "c7a9e0cb4d9efc1e0c95a9b7f65bae499a2b93a801ed6643245002bcbf53bc97",
+    "results/2026-10-24/HYP-076-02-meta-secondary/state.json": "5253f0bd8d45f21f274307338c239758b4fbf47d20649b62f0d45311838b949c",
+    "results/2026-10-24/HYP-077-02-meta-secondary/validation_predictions.npz": "57d91fd7f2c9f3fd18fc706a35db21ef6a32e6ddd29a089b2c86048b30c2e939",
+    "results/2026-10-24/HYP-077-02-meta-secondary/state.json": "2ba8b62a344110c847c16bd85f5fd1dead14ff18a7f623af0a80dfc14119ccb1",
+    "results/2026-10-24/HYP-078-02-meta-secondary/validation_predictions.npz": "96292238f64273fbc1d9767562005b5881860f5126acae54f8e61ac6e5c48ba6",
+    "results/2026-10-24/HYP-078-02-meta-secondary/state.json": "beb2e044abb91208ad092a5b0dd494f39312defe988e65f891f6d2723e784ef4",
+    "/Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/runtime/verify_meta.py": "b53bfe4b06420d5c7d762ca546e8c73af2a27d8be794fc7d5367fe3fff1b70a2",
+    "results/2026-10-24/sergey-scientific-v2/meta-independent-verification-v2.json": "179db8ac2a2c19a00158b4aa031b187b32ab5d0c498351fefc5e599c8019bce7",
+    "results/2026-10-24/sergey-scientific-v2/meta-independent-verification.json": "1bc46fec538f307247ead72b88e9d89cd66e68a5c01e65d6ab5953f592dd9c01"
+  },
+  "checks": [
+    {
+      "check": "primary.cache_completed",
+      "passed": true
+    },
+    {
+      "check": "primary.cache_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.data_sha.train.csv",
+      "passed": true
+    },
+    {
+      "check": "primary.data_sha.test.csv",
+      "passed": true
+    },
+    {
+      "check": "primary.data_sha.sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "primary.data_sha.data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "primary.split_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.cached_control_positions",
+      "passed": true
+    },
+    {
+      "check": "primary.outer_split_disjoint",
+      "passed": true
+    },
+    {
+      "check": "primary.target_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.class_order",
+      "passed": true
+    },
+    {
+      "check": "primary.reconstruction_disclosed",
+      "passed": true
+    },
+    {
+      "check": "primary.cache_builder_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.raw.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.raw.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.raw.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.raw.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.smote.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.smote.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.smote.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.smote.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.frequency.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.oof.frequency.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.frequency.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.frequency.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.nine_attempts",
+      "passed": true
+    },
+    {
+      "check": "primary.unique_fit_fingerprints",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.stored_split",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold0.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.stored_split",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold1.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.stored_split",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.fold2.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "primary.oof_coverage",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.raw.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.smote.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.outer.frequency.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.mechanism",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.class_counts",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.class_weights",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.full.converged",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.mechanism",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.class_counts",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.class_weights",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold0.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.mechanism",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.class_counts",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.class_weights",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold1.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.mechanism",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.class_counts",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.class_weights",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fold2.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.coverage",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.score",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.fit_count",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.coverage",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.score",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.fit_count",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold0.reuse",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold0.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold1.reuse",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold1.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold2.reuse",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fold2.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.coverage",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.score",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.fit_count",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.anchor_train_only",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.anchor_state",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.affine_train_score",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.affine_rule",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.full_train_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.full_fit_rows",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.cf_selection",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.standalone_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.standalone_metric",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.confusion",
+      "passed": true
+    },
+    {
+      "check": "primary.H76.per_class",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.confusion",
+      "passed": true
+    },
+    {
+      "check": "primary.H77.per_class",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.confusion",
+      "passed": true
+    },
+    {
+      "check": "primary.H78.per_class",
+      "passed": true
+    },
+    {
+      "check": "secondary.cache_completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.cache_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.data_sha.train.csv",
+      "passed": true
+    },
+    {
+      "check": "secondary.data_sha.test.csv",
+      "passed": true
+    },
+    {
+      "check": "secondary.data_sha.sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "secondary.data_sha.data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "secondary.split_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.cached_control_positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer_split_disjoint",
+      "passed": true
+    },
+    {
+      "check": "secondary.target_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.class_order",
+      "passed": true
+    },
+    {
+      "check": "secondary.reconstruction_disclosed",
+      "passed": true
+    },
+    {
+      "check": "secondary.cache_builder_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.raw.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.raw.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.raw.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.raw.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.smote.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.smote.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.smote.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.smote.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.frequency.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof.frequency.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.frequency.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.frequency.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.nine_attempts",
+      "passed": true
+    },
+    {
+      "check": "secondary.unique_fit_fingerprints",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.stored_split",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold0.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.stored_split",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold1.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.stored_split",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw_group_disjoint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.raw.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.smote.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.class_alignment",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.cache_assembly",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.input_hash_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.fingerprint",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.fold2.frequency.completed",
+      "passed": true
+    },
+    {
+      "check": "secondary.oof_coverage",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.raw.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.smote.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.outer.frequency.cached_model_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.mechanism",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.class_counts",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.class_weights",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.full.converged",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.mechanism",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.class_counts",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.class_weights",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold0.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.mechanism",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.class_counts",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.class_weights",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold1.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.mechanism",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.training_sha256",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.class_counts",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.class_weights",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.weight_mean_one",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.scaler_fit_only",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fold2.converged",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.coverage",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.score",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.fit_count",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.coverage",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.score",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.fit_count",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.conditional_disclosure",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold0.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold0.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold0.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold0.reuse",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold0.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold1.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold1.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold1.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold1.reuse",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold1.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold2.positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold2.training_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold2.fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold2.reuse",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fold2.warm_start",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.coverage",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.probabilities_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.score",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.fit_count",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.anchor_train_only",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.anchor_state",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.affine_train_score",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.affine_rule",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.full_train_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.full_fit_rows",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.cf_selection",
+      "passed": true
+    },
+    {
+      "check": "state.class_order",
+      "passed": true
+    },
+    {
+      "check": "state.protocol",
+      "passed": true
+    },
+    {
+      "check": "state.finite",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.standalone_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.standalone_metric",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.confusion",
+      "passed": true
+    },
+    {
+      "check": "secondary.H76.per_class",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.confusion",
+      "passed": true
+    },
+    {
+      "check": "secondary.H77.per_class",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.source_sha.run_meta_study.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.source_sha.automl_meta_research.py",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.evidence_cache_sha",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.state_training_scope",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.prediction_positions",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.truth_classes",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.predictions.shape",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.predictions.simplex",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.coefficient_replay",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.argmax_labels",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.f1_accuracy",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.relative_gain",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.no_new_base_tree_fits",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.confusion",
+      "passed": true
+    },
+    {
+      "check": "secondary.H78.per_class",
+      "passed": true
+    },
+    {
+      "check": "all_caches.18_distinct_fingerprints",
+      "passed": true
+    }
+  ]
+}

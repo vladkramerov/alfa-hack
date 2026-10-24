@@ -1,0 +1,38 @@
+{
+  "hypothesis": 82,
+  "stage": "secondary",
+  "data_hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "ec806bbddfef81621aa432ee6803b7a0c72d77a2f15418148739b9781eedfcdb",
+  "control": 0.6075743572072007,
+  "source_sha256": {
+    "learned_neighbors.py": "22ce9e5dc2169006fc55c5aa822a973d1c48c75a9cef0d3f40a0ebb9aa05da52",
+    "run_learned_neighbors.py": "95df34da5dfceb20f1432db2f8c1097302ea291f09a9dc0b5415a411f2d0ce0c",
+    "test_learned_neighbors.py": "ac6cd9be0befdc090510e62c36a7b72a7a1772e723a56379bc8af4deab2d8da1"
+  },
+  "ledger_sha256": "5f33cd2958375b56c27b10dfedd64a4a07e6c7219e9822869a733d9eb0e33ca8",
+  "card_sha256": "51dde498f4acf10e72e58b13bb29ffb4c03d50489e0716cad22e8bc12b97b845",
+  "commit": "24e3311f6ba958a67c740d5b0328cc34cb7e15d7",
+  "configuration": "fixed in HYP-082.md before fit",
+  "fit_rows": 69916,
+  "valid_rows": 17754,
+  "inner_fit_rows": 55704,
+  "inner_valid_rows": 14212,
+  "inner_groups_disjoint": true,
+  "outer_labels_used_for_fit": false,
+  "maximum_hypothesis_seconds": 900,
+  "total_budget_shared_between_protocols": true,
+  "command": "python work/spec012/nca/run_learned_neighbors.py",
+  "versions": {
+    "python": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "torch": "2.5.1",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  }
+}

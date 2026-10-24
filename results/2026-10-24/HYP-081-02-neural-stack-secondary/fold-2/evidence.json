@@ -1,0 +1,10 @@
+{
+  "status": "started",
+  "fold": 2,
+  "fold_split_key": "b6dd92c0b9db2b7d855e968aeb4e8fbe929276c22927ee318c72c73e8cc8ba65",
+  "inner_split_key": "f257bcd96976d253a27e696c4d8aabef427d8dc15ef0358bb1bd31fade05e4df",
+  "fit_rows": 46103,
+  "valid_rows": 23813,
+  "fit_fingerprint": "a2e950319589fb163dd6fa7aadc4aa8669eaf792bb22e4cca34fe3265edf29d4",
+  "total_elapsed": 77.1843587080948
+}

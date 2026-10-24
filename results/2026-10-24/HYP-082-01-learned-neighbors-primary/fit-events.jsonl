@@ -1,0 +1,4 @@
+{"phase": "inner_selection", "status": "started", "fit_rows": 56707}
+{"phase": "inner_selection", "status": "completed", "selected_epochs": 6}
+{"phase": "frozen_outer_refit", "status": "started", "fit_rows": 70529, "epochs": 6}
+{"phase": "frozen_outer_refit", "status": "completed", "epochs": 6}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 34.393120193568116,
+  "control": 34.520268654585415,
+  "relative_gain": 0.00368329871037687,
+  "seconds": 0.08226016699336469,
+  "new_tree_fits": 0,
+  "stage": "primary",
+  "mae": 16.285723795377553
+}

@@ -1,0 +1,30 @@
+{
+  "hypothesis": 78,
+  "stage": "secondary",
+  "control": 0.6075743572072007,
+  "cache_sha256": "093ac74d24d27750b96f02be578956bacac632d85144128033d6c74918f8a548",
+  "cache_evidence": {
+    "purpose": "Required calibration inputs for NEW H76-H78, NOT a baseline metric experiment",
+    "data_hashes": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    "split_key": "ec806bbddfef81621aa432ee6803b7a0c72d77a2f15418148739b9781eedfcdb",
+    "stage": "secondary",
+    "ledger_sha256": "4b6596b3d39bc628c6b4b85e97492a5a26d7fc8a25ff3c1421d0b28bd54e6ca0",
+    "reconstruction_disclosure": "9 component fits duplicate historical OOF configurations because raw arrays were never saved. Full outer-fit branches ARE reused, zero full branch/baseline fits. Outputs cached for all new meta hypotheses.",
+    "code_sha256": "90e473acebfdb332db8bebf2b2c1eea42e15ab5ddf4b9c61a6441cae1b569d51",
+    "commit": "24e3311f6ba958a67c740d5b0328cc34cb7e15d7"
+  },
+  "source_sha256": {
+    "run_meta_study.py": "e610b218080c43f8c28f398dcc07adfeb879e7fe87b2b75ba665a6664e9ee496",
+    "automl_meta_research.py": "3729578f6cb95071978b94e61fc32370ae06bac8e6bce3bbdf18c08e63894750"
+  },
+  "ledger_sha256": "a685b59bedabfd2ab6ec0a4eef51bf197c269e295acc7957248bc36dbb095640",
+  "fit_rows": 69916,
+  "valid_rows": 17754,
+  "outer_labels_used_for_fit": false,
+  "max_hypothesis_seconds": 900
+}

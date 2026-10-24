@@ -1,0 +1,59 @@
+{
+  "hypothesis": 82,
+  "public_model_fits_in_verification": 0,
+  "records": [
+    {
+      "stage": "primary",
+      "recomputed_macro_f1": 0.4600746394936919,
+      "checks": {
+        "data_sha256": true,
+        "source_sha256": true,
+        "outer_positions": true,
+        "outer_targets": true,
+        "outer_rows_disjoint": true,
+        "group_hashes": true,
+        "inner_group_disjoint": true,
+        "frozen_inner_protocol": true,
+        "probability_shape": true,
+        "probability_valid": true,
+        "argmax_labels": true,
+        "exact_macro_f1": true,
+        "exact_accuracy": true,
+        "epochs_only_inner": true,
+        "budget": true,
+        "model_fit_rows": true,
+        "model_memory_shape": true,
+        "serialized_prediction_reproduced": true
+      },
+      "all_passed": true,
+      "inner_checkpoint_note": "inner-model.joblib stores last selection epoch; scored outer model uses fresh frozen-best-epoch refit"
+    },
+    {
+      "stage": "secondary",
+      "recomputed_macro_f1": 0.48859849087204543,
+      "checks": {
+        "data_sha256": true,
+        "source_sha256": true,
+        "outer_positions": true,
+        "outer_targets": true,
+        "outer_rows_disjoint": true,
+        "group_hashes": true,
+        "inner_group_disjoint": true,
+        "frozen_inner_protocol": true,
+        "probability_shape": true,
+        "probability_valid": true,
+        "argmax_labels": true,
+        "exact_macro_f1": true,
+        "exact_accuracy": true,
+        "epochs_only_inner": true,
+        "budget": true,
+        "model_fit_rows": true,
+        "model_memory_shape": true,
+        "serialized_prediction_reproduced": true
+      },
+      "all_passed": true,
+      "inner_checkpoint_note": "inner-model.joblib stores last selection epoch; scored outer model uses fresh frozen-best-epoch refit"
+    }
+  ],
+  "all_passed": true
+}

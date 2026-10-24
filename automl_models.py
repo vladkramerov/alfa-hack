@@ -13,6 +13,15 @@ def canonical_candidate(candidate):
     result=dict(candidate)
     result['parameters']=dict(candidate.get('parameters',{}))
     strategy=result.get('strategy')
+    if strategy=='panel_change_hybrid':
+        if result.get('family')!='extra_trees' or result['parameters'] or result.get('feature_code','').strip():
+            raise ValueError('Panel change hybrid has fixed measured family/parameters/features')
+        if result.get('target_transform') not in [None,'log1p'] or result.get('panel_method') not in [None,'stable']:
+            raise ValueError('Panel change hybrid contract mismatch')
+        if any(k in result for k in ['blend_weights','component_parameters','meta_state','gate_parameters','class_multipliers']):
+            raise ValueError('Panel change hybrid has fixed weights and no embedded learned state')
+        result.update(preprocessing='panel-change-hybrid-v1',scale=False,max_outlier_fraction=0,target_transform='log1p')
+        return result
     if strategy=='panel_hybrid_memory':
         if result.get('family')!='extra_trees' or result['parameters'] or result.get('feature_code','').strip():
             raise ValueError('Panel hybrid has fixed measured family/parameters/features')
@@ -47,31 +56,57 @@ def canonical_candidate(candidate):
     elif strategy not in [None,'','full']:
         raise ValueError('Unsupported strategy')
     else:
-        result.update(preprocessing='full-v1',scale=True,max_outlier_fraction=.05)
+        policy=result.get('preprocessing') or 'full-v1'
+        # legacy_standard was historically coerced to full-v1; preserve that
+        # known alias, but do not silently accept misspelled new policies.
+        aliases={'full-v1':'full-v1','legacy_standard':'full-v1',
+                 'light':'light-v1','light-v1':'light-v1',
+                 'native':'native-v1','native-v1':'native-v1'}
+        if policy not in aliases: raise ValueError('Unsupported preprocessing policy')
+        policy=aliases[policy]
+        if policy=='native-v1' and result.get('family') not in {'lightgbm','catboost'}:
+            raise ValueError('Native preprocessing requires LightGBM or CatBoost')
+        result.update(preprocessing=policy,scale=policy=='full-v1',
+                      max_outlier_fraction=.05 if policy=='full-v1' else 0)
     if result.get('target_transform') not in [None,'none','log1p']: raise ValueError('Unsupported target transformation')
     return result
 
 
 class PreparedModel(BaseEstimator):
-    """Mandatory train-only preparation, bounded row filtering and invertible labels."""
-    def __init__(self,estimator,kind='regression',native=False,target_transform=None,feature_code=''):
+    """Versioned train-only preparation and invertible target/label encoding."""
+    def __init__(self,estimator,kind='regression',native=False,target_transform=None,feature_code='',preprocessing='full-v1',native_family=None):
         self.estimator=estimator; self.kind=kind; self.native=native
         self.target_transform=target_transform; self.feature_code=feature_code
+        self.preprocessing=preprocessing; self.native_family=native_family
     def fit(self,X,y):
         from automl_preprocessing import FullPreprocessor,TrainingOutlierFilter
         target=np.asarray(y)
         if self.kind=='regression' and self.target_transform=='log1p' and (np.any(target<=-1) or not np.isfinite(target).all()): raise ValueError('Invalid log1p target domain')
         self.features_=FeatureCode(self.feature_code).fit(X)
         featured=self.features_.transform(X)
-        self.outlier_filter_=TrainingOutlierFilter()
-        kept,target,self.keep_mask_=self.outlier_filter_.fit_filter(featured,target,classification=self.kind=='classification')
-        self.preprocessor_=FullPreprocessor(native=self.native)
+        if self.preprocessing=='full-v1':
+            self.outlier_filter_=TrainingOutlierFilter()
+            kept,target,self.keep_mask_=self.outlier_filter_.fit_filter(featured,target,classification=self.kind=='classification')
+            self.preprocessor_=FullPreprocessor(native=self.native)
+        elif self.preprocessing in {'light-v1','native-v1'}:
+            self.keep_mask_=np.ones(len(X),dtype=bool);kept=featured
+            mode='catboost' if self.preprocessing=='native-v1' and self.native_family=='catboost' else ('lightgbm' if self.native else None)
+            self.preprocessor_=LightPreprocessor(native_family=mode)
+        else: raise ValueError('Unsupported prepared model preprocessing')
         values=self.preprocessor_.fit_transform(kept,target)
         if self.kind=='classification':
             self.labels_=LabelEncoder().fit(target); self.classes_=self.labels_.classes_; target=self.labels_.transform(target)
         elif self.target_transform=='log1p': target=np.log1p(target)
-        self.estimator_=clone(self.estimator).fit(values,target)
+        fit_options={}
+        if self.preprocessing=='native-v1' and self.native_family=='catboost':
+            fit_options['cat_features']=self.preprocessor_.categorical_
+        self.estimator_=clone(self.estimator).fit(values,target,**fit_options)
         self.removed_positions_=np.flatnonzero(~self.keep_mask_)
+        if self.preprocessing!='full-v1':
+            self.audit_={'policy':self.preprocessing,'fit_original_rows':len(X),
+                         'fit_retained_rows':len(X),'target_transform':self.target_transform,
+                         'row_deletion':False,'preprocessing':self.preprocessor_.audit_}
+            return self
         numeric_values=values.select_dtypes(include='number').to_numpy(dtype=float) if isinstance(values,pd.DataFrame) else np.asarray(values[:,:len(self.preprocessor_.numeric_output_columns_)],dtype=float)
         deviations=numeric_values.std(axis=0) if numeric_values.shape[1] else np.empty(0)
         mean_error=float(np.max(np.abs(numeric_values.mean(axis=0)))) if numeric_values.shape[1] else 0.
@@ -151,8 +186,78 @@ class Encoder(TransformerMixin,BaseEstimator):
         return a if self.scale else a.astype(np.float32)
 
 
+class LightPreprocessor(TransformerMixin,BaseEstimator):
+    """Median numeric inputs and bounded categories, with no row deletion.
+
+    Statistics/categories are learned only in fit. Category tags distinguish
+    true missing values from literal strings such as '__MISSING__'.
+    """
+    def __init__(self,native_family=None): self.native_family=native_family
+    def fit(self,X,y=None):
+        from automl_preprocessing import MAX_DENSE_CELLS,MAX_ONEHOT_CATEGORIES
+        if not isinstance(X,pd.DataFrame) or not X.columns.is_unique or not len(X):
+            raise ValueError('Light preprocessing needs nonempty unique-column DataFrame')
+        if self.native_family not in {None,'lightgbm','catboost'}: raise ValueError('Unsupported native family')
+        self.feature_names_in_=list(X.columns)
+        self.numeric_=X.select_dtypes(include='number').columns.tolist()
+        self.categorical_=[c for c in X if c not in self.numeric_]
+        self.imputer_=SimpleImputer(strategy='median',keep_empty_features=True) if self.numeric_ else None
+        if self.imputer_ is not None:self.imputer_.fit(self._numbers(X))
+        categories=self._categories(X)
+        self.levels_={c:sorted(categories[c].unique()) for c in self.categorical_}
+        self.ohe_=None
+        if self.categorical_ and self.native_family is None:
+            self.ohe_=OneHotEncoder(handle_unknown='infrequent_if_exist',max_categories=MAX_ONEHOT_CATEGORIES,
+                                   sparse_output=False,dtype=np.float32).fit(categories)
+        width=len(self.numeric_)+(len(self.ohe_.get_feature_names_out()) if self.ohe_ is not None else len(self.categorical_))
+        self.fallback_=not width
+        if self.native_family is None and len(X)*max(1,width)>MAX_DENSE_CELLS:
+            raise MemoryError('Light dense output exceeds 32 million cells')
+        self.audit_={'policy':'light-v1' if self.native_family is None else 'native-v1',
+                     'n_fit':len(X),'numeric_columns':self.numeric_,'categorical_columns':self.categorical_,
+                     'native_family':self.native_family,'row_deletion':False,'quantile_transform':False,
+                     'scaling':False,'max_onehot_categories':MAX_ONEHOT_CATEGORIES,
+                     'numeric_imputation':'training_median','fallback_bias':self.fallback_}
+        return self
+    def _numbers(self,X):
+        values=X[self.numeric_].to_numpy(dtype=np.float64,na_value=np.nan,copy=True)
+        values[~np.isfinite(values)]=np.nan
+        return values
+    def _categories(self,X):
+        return pd.DataFrame({c:('v:'+X[c].astype('string')).fillna('m:').astype(object) for c in self.categorical_},index=X.index)
+    def transform(self,X):
+        from automl_preprocessing import MAX_DENSE_CELLS,FLOAT32_LIMIT
+        if not isinstance(X,pd.DataFrame) or any(c not in X for c in self.feature_names_in_):
+            raise ValueError('Light transform schema differs from fit')
+        if not len(X):
+            if self.native_family is not None:
+                output=pd.DataFrame(index=X.index,columns=self.numeric_,dtype=float)
+                for c in self.categorical_:output[c]=pd.Series(index=X.index,dtype=object)
+                if self.fallback_:output['__light_v1_bias']=np.zeros(0)
+                return output
+            return np.empty((0,max(1,len(self.numeric_)+(len(self.ohe_.get_feature_names_out()) if self.ohe_ is not None else 0))),dtype=np.float32)
+        values=self.imputer_.transform(self._numbers(X)) if self.imputer_ is not None else np.empty((len(X),0))
+        values=np.clip(values,-FLOAT32_LIMIT,FLOAT32_LIMIT)
+        categories=self._categories(X)
+        if self.native_family is not None:
+            output=pd.DataFrame(values,index=X.index,columns=self.numeric_)
+            for c in self.categorical_:
+                if self.native_family=='catboost':output[c]=categories[c]
+                else:output[c]=pd.Categorical(categories[c],categories=self.levels_[c])
+            if self.fallback_:output['__light_v1_bias']=0.
+            return output
+        width=len(self.numeric_)+(len(self.ohe_.get_feature_names_out()) if self.ohe_ is not None else 0)
+        if len(X)*max(1,width)>MAX_DENSE_CELLS:raise MemoryError('Light dense output exceeds 32 million cells')
+        if self.ohe_ is not None:values=np.column_stack([values,self.ohe_.transform(categories)])
+        return np.zeros((len(X),1),dtype=np.float32) if self.fallback_ else values.astype(np.float32)
+
+
 def build_pipeline(kind,candidate,threads=4):
     candidate=canonical_candidate(candidate)
+    if candidate.get('strategy')=='panel_change_hybrid':
+        if kind!='regression': raise ValueError('Panel change hybrid requires regression')
+        from automl_panel_change import PanelChangeHybridModel
+        return PanelChangeHybridModel(candidate,threads)
     if candidate.get('strategy')=='panel_hybrid_memory':
         if kind!='regression': raise ValueError('Panel hybrid requires regression')
         from automl_panel_memory import PanelHybridModel
@@ -197,7 +302,7 @@ def build_pipeline(kind,candidate,threads=4):
         settings=dict(iterations=500,depth=6,learning_rate=.05,l2_leaf_reg=3)
         settings.update(p); model=(CatBoostRegressor if regression else CatBoostClassifier)(**settings,random_seed=42,thread_count=threads,verbose=False,allow_writing_files=False)
     else: raise ValueError('Unsupported model family')
-    return PreparedModel(model,kind=kind,native=family=='lightgbm',target_transform=candidate.get('target_transform'),feature_code=candidate.get('feature_code',''))
+    return PreparedModel(model,kind=kind,native=family=='lightgbm',target_transform=candidate.get('target_transform'),feature_code=candidate.get('feature_code',''),preprocessing=candidate['preprocessing'],native_family=family if candidate['preprocessing']=='native-v1' else None)
 
 
 def predict_for_metric(model,X,metric):

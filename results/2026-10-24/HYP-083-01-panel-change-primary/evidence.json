@@ -1,0 +1,18 @@
+{
+  "hypothesis": 83,
+  "data_hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "ledger_sha256": "60b0e14b51834cd008c885ab602383fa80f21291d92e3dc6d35ad104899cb01e",
+  "source_sha256": {
+    "run_panel_changes.py": "bb18118f9aa717a17ae5eaf7febc7007a2c74a8e7af5587fe26dc44e52fe0c9f",
+    "automl_panel_change.py": "4b6caa7a0118fcea4227af7c50d639da07f97928accf455718289c9b66b52d10"
+  },
+  "control_predictions_sha256": "39d72bb9fde1e95fffcbff2211a1edf591dadecca854fa81a26bae1fb00d9df6",
+  "outer_targets_used_for_fit": false,
+  "fit_rows": 35000,
+  "valid_rows": 18308
+}

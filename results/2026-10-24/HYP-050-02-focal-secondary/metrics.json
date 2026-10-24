@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.608370390426356,
+  "control": 0.6075743572072007,
+  "relative_gain": 0.0013101823829668735,
+  "stage": "secondary",
+  "accuracy": 0.8074800045060269,
+  "model_fit_count": 1,
+  "objective_calls": 600,
+  "seconds": 32.22700237506069,
+  "total_seconds": 64.09558470803313,
+  "max_rss_bytes": 990117888,
+  "conclusion": "Подтверждена в проверенных условиях"
+}

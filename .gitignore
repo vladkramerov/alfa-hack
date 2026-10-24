@@ -32,3 +32,9 @@ results/**/quantile-validation-components.npz
 
 # Reproducible validation predictions are versioned explicitly; full fitted models stay local.
 results/**/*-submission.csv
+
+# Fitted research state stays local; source/metrics/OOF predictions are versioned.
+results/**/*.joblib
+results/**/*.pt
+results/**/sergey-scientific-v2/oof-cache-*/fold-*.npz
+results/**/neural-stack-*/fold-*/oof_predictions.npz

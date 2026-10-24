@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.6215797406519588,
+  "control": 0.6075743572072007,
+  "relative_gain": 0.023051307677196542,
+  "accuracy": 0.8038751830573392,
+  "seconds": 11.076192582957447,
+  "stage": "secondary",
+  "base_tree_fits": 0,
+  "normalized_meta_crossfit_score": 0.6190646904187408,
+  "meta_fit_count": 4,
+  "converged": true
+}

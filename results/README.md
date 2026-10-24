@@ -256,3 +256,41 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 | SPEC011 control | multiclass/primary | {'status': 'failed', 'error': 'RuntimeError: Fit already attempted; cached artifacts must be reused: 3fb365f23c2b8828985b78a680b332e4e219f64cb97300f137c0982509d2337c', 'seconds': 227.6893597082235} | [report](../results/2026-10-24/HYP-075-01-multiclass-fresh-oof/report.md) |
 
 - HYP-075 continuation: {"status": "completed", "metric": "macro_f1", "score": 0.64472256711304, "control": 0.6443063238768081, "relative_gain": 0.0006460331379759852, "accuracy": 0.8089376349104487, "weighted_f1": 0.8194299661202838}; full state/technical outcome: results/2026-10-24/HYP-075-02-multiclass-clean-runtime-continuation/report.md
+
+| H79 | HYP-079-01-neural-primary | 0.593065996862908 | [report](../results/2026-10-24/HYP-079-01-neural-primary/report.md) |
+
+| H79 | HYP-079-02-neural-secondary | 0.5679556502525948 | [report](../results/2026-10-24/HYP-079-02-neural-secondary/report.md) |
+
+| H76 | primary | 0.6435754122989765 | [report](../results/2026-10-24/HYP-076-01-meta-primary/report.md) |
+
+| H80 | HYP-080-01-neural-primary | 0.5906412343167926 | [report](../results/2026-10-24/HYP-080-01-neural-primary/report.md) |
+
+| H80 | HYP-080-02-neural-secondary | 0.5708403549513645 | [report](../results/2026-10-24/HYP-080-02-neural-secondary/report.md) |
+
+| H76 | secondary | 0.6215797406519588 | [report](../results/2026-10-24/HYP-076-02-meta-secondary/report.md) |
+
+| H77 | primary | 0.64472256711304 | [report](../results/2026-10-24/HYP-077-01-meta-primary/report.md) |
+
+| H77 | secondary | 0.6075743572072007 | [report](../results/2026-10-24/HYP-077-02-meta-secondary/report.md) |
+
+| H78 | primary | 0.6365166004610818 | [report](../results/2026-10-24/HYP-078-01-meta-primary/report.md) |
+
+| H78 | secondary | 0.6007931619572615 | [report](../results/2026-10-24/HYP-078-02-meta-secondary/report.md) |
+
+| H83 | primary | 34.99974030488235 | [report](../results/2026-10-24/HYP-083-01-panel-change-primary/report.md) |
+
+| H83 | secondary | 31.256809215027427 | [report](../results/2026-10-24/HYP-083-02-panel-change-secondary/report.md) |
+
+| H84 | primary | 34.393120193568116 | [report](../results/2026-10-24/HYP-084-01-panel-change-primary/report.md) |
+
+| H84 | secondary | 30.623728642319094 | [report](../results/2026-10-24/HYP-084-02-panel-change-secondary/report.md) |
+| H81 | primary | 0.6351657518194138 | [report](../results/2026-10-24/HYP-081-01-neural-stack-primary/report.md) |
+| H81 | secondary | 0.6176160023719055 | [report](../results/2026-10-24/HYP-081-02-neural-stack-secondary/report.md) |
+
+| H82 | HYP-082-01-learned-neighbors-primary | 0.4600746394936919 | [report](../results/2026-10-24/HYP-082-01-learned-neighbors-primary/report.md) |
+
+| H82 | HYP-082-02-learned-neighbors-secondary | 0.48859849087204543 | [report](../results/2026-10-24/HYP-082-02-learned-neighbors-secondary/report.md) |
+
+| H50 | HYP-050-01-focal-primary | 0.5812249311112445 | [report](../results/2026-10-24/HYP-050-01-focal-primary/report.md) |
+
+| H50 | HYP-050-02-focal-secondary | 0.608370390426356 | [report](../results/2026-10-24/HYP-050-02-focal-secondary/report.md) |

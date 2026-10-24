@@ -1,0 +1,202 @@
+{
+  "mechanism": "ModernNCA_inspired_own_CPU_adaptation",
+  "fit_rows": 69916,
+  "architecture": [
+    124,
+    128,
+    32
+  ],
+  "embedding_l2_normalized": true,
+  "temperature_initial": 0.1,
+  "temperature_bounds": [
+    0.02,
+    2.0
+  ],
+  "candidate_count": 4096,
+  "batch_size": 256,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0003,
+  "normalized_class_weights": [
+    3.571088592343309,
+    3.794878355267546,
+    1.4507609779556274,
+    0.8763564212919278,
+    1.1773530432788128,
+    0.7989469088237622,
+    0.6720254011054466,
+    1.5466915488370439,
+    4.694672192755776,
+    13.576969549953327
+  ],
+  "group_mask": "all_identical_raw_X",
+  "preprocessing": {
+    "fit_rows": 69916,
+    "numeric": [
+      "dur",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "sttl",
+      "dttl",
+      "sload",
+      "dload",
+      "sloss",
+      "dloss",
+      "sinpkt",
+      "dinpkt",
+      "sjit",
+      "djit",
+      "swin",
+      "stcpb",
+      "dtcpb",
+      "dwin",
+      "tcprtt",
+      "synack",
+      "ackdat",
+      "smean",
+      "dmean",
+      "trans_depth",
+      "response_body_len",
+      "ct_srv_src",
+      "ct_state_ttl",
+      "ct_dst_ltm",
+      "ct_src_dport_ltm",
+      "ct_dst_sport_ltm",
+      "ct_dst_src_ltm",
+      "is_ftp_login",
+      "ct_ftp_cmd",
+      "ct_flw_http_mthd",
+      "ct_src_ltm",
+      "ct_srv_dst",
+      "is_sm_ips_ports"
+    ],
+    "categorical": [
+      "proto",
+      "service",
+      "state"
+    ],
+    "numeric_medians": {
+      "dur": 0.0017385,
+      "spkts": 4.0,
+      "dpkts": 2.0,
+      "sbytes": 490.0,
+      "dbytes": 178.0,
+      "rate": 3086.419725,
+      "sttl": 254.0,
+      "dttl": 29.0,
+      "sload": 829633.09375,
+      "dload": 1618.2536624999998,
+      "sloss": 0.0,
+      "dloss": 0.0,
+      "sinpkt": 0.3230155,
+      "dinpkt": 0.007,
+      "sjit": 0.0,
+      "djit": 0.0,
+      "swin": 0.0,
+      "stcpb": 0.0,
+      "dtcpb": 0.0,
+      "dwin": 0.0,
+      "tcprtt": 0.0,
+      "synack": 0.0,
+      "ackdat": 0.0,
+      "smean": 73.0,
+      "dmean": 44.0,
+      "trans_depth": 0.0,
+      "response_body_len": 0.0,
+      "ct_srv_src": 5.0,
+      "ct_state_ttl": 1.0,
+      "ct_dst_ltm": 2.0,
+      "ct_src_dport_ltm": 1.0,
+      "ct_dst_sport_ltm": 1.0,
+      "ct_dst_src_ltm": 3.0,
+      "is_ftp_login": 0.0,
+      "ct_ftp_cmd": 0.0,
+      "ct_flw_http_mthd": 0.0,
+      "ct_src_ltm": 3.0,
+      "ct_srv_dst": 4.0,
+      "is_sm_ips_ports": 0.0
+    },
+    "quantiles": 1000,
+    "max_categories": 64,
+    "fit_only": true,
+    "output_distribution": "normal",
+    "features": 124
+  },
+  "training_trace": [
+    {
+      "epoch": 1,
+      "loss": 0.9152327685383693,
+      "temperature": 0.09319937974214554
+    },
+    {
+      "epoch": 2,
+      "loss": 0.8472888914045449,
+      "temperature": 0.08866186439990997
+    },
+    {
+      "epoch": 3,
+      "loss": 0.8310927486786601,
+      "temperature": 0.08542846888303757
+    },
+    {
+      "epoch": 4,
+      "loss": 0.8267897103674263,
+      "temperature": 0.08215078711509705
+    },
+    {
+      "epoch": 5,
+      "loss": 0.826387182381928,
+      "temperature": 0.07972504943609238
+    },
+    {
+      "epoch": 6,
+      "loss": 0.8130164367702898,
+      "temperature": 0.07773713767528534
+    },
+    {
+      "epoch": 7,
+      "loss": 0.8210014050674149,
+      "temperature": 0.07628253102302551
+    },
+    {
+      "epoch": 8,
+      "loss": 0.7969254156453869,
+      "temperature": 0.07417964935302734
+    },
+    {
+      "epoch": 9,
+      "loss": 0.7905522155740576,
+      "temperature": 0.07229956239461899
+    },
+    {
+      "epoch": 10,
+      "loss": 0.7903877154893765,
+      "temperature": 0.07094305008649826
+    },
+    {
+      "epoch": 11,
+      "loss": 0.7870014970414023,
+      "temperature": 0.0706503838300705
+    },
+    {
+      "epoch": 12,
+      "loss": 0.7912806577912743,
+      "temperature": 0.0699337050318718
+    },
+    {
+      "epoch": 13,
+      "loss": 0.7711468563110389,
+      "temperature": 0.06864270567893982
+    }
+  ],
+  "skipped_all_masked_rows": 0,
+  "epochs_run": 13,
+  "selected_epoch": 13,
+  "inner_score": null,
+  "final_temperature": 0.06864270567893982,
+  "selection": "frozen_epoch_refit",
+  "parameter_count": 20129
+}

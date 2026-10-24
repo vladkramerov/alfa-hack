@@ -67,7 +67,13 @@ def already_known(candidate,records,prior=None):
 
 
 def compatible_policy(candidate):
-    if candidate.get('strategy')=='panel_hybrid_memory':
+    if candidate.get('strategy') in [None,'','full'] and candidate.get('preprocessing') in {'light-v1','native-v1'}:
+        try:
+            from automl_models import canonical_candidate
+            expected=canonical_candidate(candidate)
+            return all(candidate.get(k)==expected[k] for k in ['preprocessing','scale','max_outlier_fraction'])
+        except (TypeError,ValueError,KeyError): return False
+    if candidate.get('strategy') in {'panel_hybrid_memory','panel_change_hybrid'}:
         try:
             from automl_models import canonical_candidate
             expected=canonical_candidate(candidate)

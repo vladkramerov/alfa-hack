@@ -1,0 +1,9 @@
+{
+  "training_command": "env PYTHONPATH=/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 VECLIB_MAXIMUM_THREADS=4 /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/.venv/bin/python -u run_neural.py --hypothesis 79",
+  "cwd": "/Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/neural",
+  "unit_tests": 5,
+  "unit_failed": 0,
+  "unit_command": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/.venv/bin/python -m unittest -v test_paper_neural.py",
+  "independent_verification": "verification.json",
+  "note": "Dated post-run execution metadata, 2026-10-24 Moscow. No refit. Small original adaptations, not full TabM."
+}

@@ -1,0 +1,49 @@
+{
+  "hypothesis": "HYP-081",
+  "stage": "secondary",
+  "role": "missing_neural_grouped_OOF_only",
+  "config": {
+    "bins": 16,
+    "embedding": 8,
+    "width": 128,
+    "depth": 2,
+    "dropout": 0.1,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0003,
+    "batch_size": 512,
+    "max_epochs": 30,
+    "patience": 6,
+    "category_cap": 64,
+    "threads": 4,
+    "seed": 42
+  },
+  "members": 1,
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "outer_split_key": "ec806bbddfef81621aa432ee6803b7a0c72d77a2f15418148739b9781eedfcdb",
+  "tree_cache": "results/2026-10-24/sergey-scientific-v2/oof-cache-secondary",
+  "tree_cache_sha256": {
+    "calibration.npz": "093ac74d24d27750b96f02be578956bacac632d85144128033d6c74918f8a548",
+    "folds.json": "705f912cdf1e7d850b7254689a7c0019f5ace5eebf59dcc9d53ccf2df8115fc5"
+  },
+  "reused_full_fit_prediction": "results/2026-10-24/HYP-079-02-neural-secondary/validation_predictions.npz",
+  "reused_full_fit_prediction_sha256": "dea9303d44b4bb971c1e6fbe671e5b21ec5b7f555890bdff30235efcbf8a3a06",
+  "source_sha256": {
+    "run_neural_oof.py": "0872993c42eeac0249816d14856d34b6782b9e1c7d0b4721572ebd73633f5ad0",
+    "paper_neural.py": "6d3cc8db7c9989841c735faa5b5f78bbba3dd7a7d992a2d5f7b162d95c167fc8"
+  },
+  "ledger_sha256_before_fit": "60b0e14b51834cd008c885ab602383fa80f21291d92e3dc6d35ad104899cb01e",
+  "commit": "24e3311f6ba958a67c740d5b0328cc34cb7e15d7",
+  "python": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "torch": "2.5.1",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "inner_protocol": "SGKF5 first fold seed42 inside each fixed tree OOF fit",
+  "training_model_fits_planned": 6,
+  "outer_model_fits": 0,
+  "outer_score_evaluations": 0,
+  "command": "env PYTHONPATH=/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 VECLIB_MAXIMUM_THREADS=4 /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/.venv/bin/python -u /Users/sergey_sahinov/Documents/Codex/2026-10-21/referenced-chatgpt-conversation-this-is-an/work/spec012/neural/run_neural_oof.py --stage secondary"
+}

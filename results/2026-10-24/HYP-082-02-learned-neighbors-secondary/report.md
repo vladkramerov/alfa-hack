@@ -1,0 +1,23 @@
+# H82 / secondary
+
+Registered before fit in HYP-082.md and SPEC012. ModernNCA-inspired learned metric, not an exact paper replication and not fixed-distance H52. Inner grouped validation selects epochs; fresh outer-fit refit uses the frozen epoch count. Outer labels are used once for scoring only. Total900s across both protocols.
+
+```json
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.48859849087204543,
+  "stage": "secondary",
+  "control": 0.6075743572072007,
+  "relative_gain": -0.19582107922072978,
+  "accuracy": 0.803030303030303,
+  "fit_rows": 69916,
+  "valid_rows": 17754,
+  "frozen_epochs": 13,
+  "model_fit_count": 2,
+  "seconds": 128.75335708307102,
+  "total_seconds": 207.2383247918915,
+  "max_rss_bytes": 1410400256,
+  "conclusion": "Не подтверждена по заданному критерию"
+}
+```

@@ -1,0 +1,11 @@
+{
+  "source_sha256": "516dc288a98cf6c08fb9cc618c4e471027c6fdab756fe9aed3168477d9a09601",
+  "ledger_sha256": "26b7c4fd3f5faeca2e5830746ca8b05649e4611bb1c0fa74e4a554b23c92670d",
+  "candidate": "normalized LR40 from3tree+PLE probabilities",
+  "parameters": {
+    "C": 0.1,
+    "max_iter": 3000,
+    "tol": 1e-05
+  },
+  "outer_labels_used_for_fit": false
+}

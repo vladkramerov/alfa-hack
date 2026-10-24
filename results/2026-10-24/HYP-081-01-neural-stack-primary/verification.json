@@ -1,0 +1,296 @@
+{
+  "status": "passed",
+  "passed": 72,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "data_sha",
+      "passed": true
+    },
+    {
+      "name": "train_sha",
+      "passed": true
+    },
+    {
+      "name": "ledger_sha",
+      "passed": true
+    },
+    {
+      "name": "source_run_neural_oof.py",
+      "passed": true
+    },
+    {
+      "name": "source_paper_neural.py",
+      "passed": true
+    },
+    {
+      "name": "tree_cache_calibration.npz",
+      "passed": true
+    },
+    {
+      "name": "tree_cache_folds.json",
+      "passed": true
+    },
+    {
+      "name": "fit_positions",
+      "passed": true
+    },
+    {
+      "name": "valid_positions",
+      "passed": true
+    },
+    {
+      "name": "outer_split_sha",
+      "passed": true
+    },
+    {
+      "name": "fit_labels",
+      "passed": true
+    },
+    {
+      "name": "fit_classes",
+      "passed": true
+    },
+    {
+      "name": "string_safe",
+      "passed": true
+    },
+    {
+      "name": "outer_groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "reused_full_prediction_sha",
+      "passed": true
+    },
+    {
+      "name": "reused_outer_exact",
+      "passed": true
+    },
+    {
+      "name": "reused_outer_positions",
+      "passed": true
+    },
+    {
+      "name": "reused_outer_classes",
+      "passed": true
+    },
+    {
+      "name": "fold0_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold0_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold0_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold0_inner_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold0_inner_subset",
+      "passed": true
+    },
+    {
+      "name": "fold0_inner_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold0_inner_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold0_split_sha",
+      "passed": true
+    },
+    {
+      "name": "fold0_inner_only_epoch_selection",
+      "passed": true
+    },
+    {
+      "name": "fold0_frozen_epochs",
+      "passed": true
+    },
+    {
+      "name": "fold0_epoch_budget",
+      "passed": true
+    },
+    {
+      "name": "fold0_fit_only_preprocessing",
+      "passed": true
+    },
+    {
+      "name": "fold0_saved_model_inference",
+      "passed": true
+    },
+    {
+      "name": "fold0_OOF_join",
+      "passed": true
+    },
+    {
+      "name": "fold0_OOF_labels",
+      "passed": true
+    },
+    {
+      "name": "fold0_OOF_classes",
+      "passed": true
+    },
+    {
+      "name": "fold1_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold1_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold1_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold1_inner_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold1_inner_subset",
+      "passed": true
+    },
+    {
+      "name": "fold1_inner_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold1_inner_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold1_split_sha",
+      "passed": true
+    },
+    {
+      "name": "fold1_inner_only_epoch_selection",
+      "passed": true
+    },
+    {
+      "name": "fold1_frozen_epochs",
+      "passed": true
+    },
+    {
+      "name": "fold1_epoch_budget",
+      "passed": true
+    },
+    {
+      "name": "fold1_fit_only_preprocessing",
+      "passed": true
+    },
+    {
+      "name": "fold1_saved_model_inference",
+      "passed": true
+    },
+    {
+      "name": "fold1_OOF_join",
+      "passed": true
+    },
+    {
+      "name": "fold1_OOF_labels",
+      "passed": true
+    },
+    {
+      "name": "fold1_OOF_classes",
+      "passed": true
+    },
+    {
+      "name": "fold2_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold2_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold2_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold2_inner_group_isolation",
+      "passed": true
+    },
+    {
+      "name": "fold2_inner_subset",
+      "passed": true
+    },
+    {
+      "name": "fold2_inner_fit_exact",
+      "passed": true
+    },
+    {
+      "name": "fold2_inner_valid_exact",
+      "passed": true
+    },
+    {
+      "name": "fold2_split_sha",
+      "passed": true
+    },
+    {
+      "name": "fold2_inner_only_epoch_selection",
+      "passed": true
+    },
+    {
+      "name": "fold2_frozen_epochs",
+      "passed": true
+    },
+    {
+      "name": "fold2_epoch_budget",
+      "passed": true
+    },
+    {
+      "name": "fold2_fit_only_preprocessing",
+      "passed": true
+    },
+    {
+      "name": "fold2_saved_model_inference",
+      "passed": true
+    },
+    {
+      "name": "fold2_OOF_join",
+      "passed": true
+    },
+    {
+      "name": "fold2_OOF_labels",
+      "passed": true
+    },
+    {
+      "name": "fold2_OOF_classes",
+      "passed": true
+    },
+    {
+      "name": "coverage_exactly_once",
+      "passed": true
+    },
+    {
+      "name": "saved_coverage_exact",
+      "passed": true
+    },
+    {
+      "name": "OOF_probability_normalization",
+      "passed": true
+    },
+    {
+      "name": "OOF_probabilities_finite",
+      "passed": true
+    },
+    {
+      "name": "no_outer_evaluation",
+      "passed": true
+    },
+    {
+      "name": "budget_for_head_reserved",
+      "passed": true
+    }
+  ],
+  "note": "No model training and no outer score; saved-state inference only."
+}

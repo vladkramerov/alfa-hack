@@ -1,0 +1,30 @@
+{"phase": "inner_selection", "epoch": 1, "loss": 0.9355532577903076, "temperature": 0.09571100771427155, "inner_macro_f1": 0.41031079616881766}
+{"phase": "inner_selection", "epoch": 2, "loss": 0.8645957826147062, "temperature": 0.09168876707553864, "inner_macro_f1": 0.43521988639116393}
+{"phase": "inner_selection", "epoch": 3, "loss": 0.8313103898253298, "temperature": 0.0882095918059349, "inner_macro_f1": 0.43553458594766753}
+{"phase": "inner_selection", "epoch": 4, "loss": 0.8058416770310233, "temperature": 0.08469109982252121, "inner_macro_f1": 0.44462434671635737}
+{"phase": "inner_selection", "epoch": 5, "loss": 0.8177054057976612, "temperature": 0.08150491118431091, "inner_macro_f1": 0.4484308813948955}
+{"phase": "inner_selection", "epoch": 6, "loss": 0.8118720214102917, "temperature": 0.07877302169799805, "inner_macro_f1": 0.4389228228855614}
+{"phase": "inner_selection", "epoch": 7, "loss": 0.8060556749802424, "temperature": 0.07638080418109894, "inner_macro_f1": 0.46091841539855005}
+{"phase": "inner_selection", "epoch": 8, "loss": 0.8012543869364387, "temperature": 0.07432958483695984, "inner_macro_f1": 0.4610022153972886}
+{"phase": "inner_selection", "epoch": 9, "loss": 0.7861851837192307, "temperature": 0.07245498895645142, "inner_macro_f1": 0.46049950923182115}
+{"phase": "inner_selection", "epoch": 10, "loss": 0.7840481627420604, "temperature": 0.07122378796339035, "inner_macro_f1": 0.4450002278687625}
+{"phase": "inner_selection", "epoch": 11, "loss": 0.7844405045852431, "temperature": 0.06987982243299484, "inner_macro_f1": 0.46629090958747144}
+{"phase": "inner_selection", "epoch": 12, "loss": 0.7779994757887996, "temperature": 0.06911572813987732, "inner_macro_f1": 0.45802899580737294}
+{"phase": "inner_selection", "epoch": 13, "loss": 0.7900399690076364, "temperature": 0.06776522099971771, "inner_macro_f1": 0.49369726543890496}
+{"phase": "inner_selection", "epoch": 14, "loss": 0.773657359723197, "temperature": 0.06730704754590988, "inner_macro_f1": 0.46885301223575465}
+{"phase": "inner_selection", "epoch": 15, "loss": 0.7743296668427815, "temperature": 0.06691239774227142, "inner_macro_f1": 0.48699791263798853}
+{"phase": "inner_selection", "epoch": 16, "loss": 0.7727039223615764, "temperature": 0.06600772589445114, "inner_macro_f1": 0.4892700309405611}
+{"phase": "inner_selection", "epoch": 17, "loss": 0.7563209149167401, "temperature": 0.06565678864717484, "inner_macro_f1": 0.47183247999795147}
+{"phase": "frozen_outer_refit", "epoch": 1, "loss": 0.9152327685383693, "temperature": 0.09319937974214554}
+{"phase": "frozen_outer_refit", "epoch": 2, "loss": 0.8472888914045449, "temperature": 0.08866186439990997}
+{"phase": "frozen_outer_refit", "epoch": 3, "loss": 0.8310927486786601, "temperature": 0.08542846888303757}
+{"phase": "frozen_outer_refit", "epoch": 4, "loss": 0.8267897103674263, "temperature": 0.08215078711509705}
+{"phase": "frozen_outer_refit", "epoch": 5, "loss": 0.826387182381928, "temperature": 0.07972504943609238}
+{"phase": "frozen_outer_refit", "epoch": 6, "loss": 0.8130164367702898, "temperature": 0.07773713767528534}
+{"phase": "frozen_outer_refit", "epoch": 7, "loss": 0.8210014050674149, "temperature": 0.07628253102302551}
+{"phase": "frozen_outer_refit", "epoch": 8, "loss": 0.7969254156453869, "temperature": 0.07417964935302734}
+{"phase": "frozen_outer_refit", "epoch": 9, "loss": 0.7905522155740576, "temperature": 0.07229956239461899}
+{"phase": "frozen_outer_refit", "epoch": 10, "loss": 0.7903877154893765, "temperature": 0.07094305008649826}
+{"phase": "frozen_outer_refit", "epoch": 11, "loss": 0.7870014970414023, "temperature": 0.0706503838300705}
+{"phase": "frozen_outer_refit", "epoch": 12, "loss": 0.7912806577912743, "temperature": 0.0699337050318718}
+{"phase": "frozen_outer_refit", "epoch": 13, "loss": 0.7711468563110389, "temperature": 0.06864270567893982}

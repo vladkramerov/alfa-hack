@@ -1,0 +1,22 @@
+{
+  "fit_original_rows": 46103,
+  "fit_model_rows": 46103,
+  "configuration": {
+    "task": "multiclass",
+    "family": "xgboost",
+    "parameters": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "reg_lambda": 1,
+      "tree_method": "hist",
+      "device": "cpu"
+    },
+    "policy": "legacy",
+    "features": null,
+    "encoder": {
+      "native": false,
+      "scale": false
+    }
+  }
+}

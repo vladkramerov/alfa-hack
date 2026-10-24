@@ -1,0 +1,197 @@
+{
+  "mechanism": "ModernNCA_inspired_own_CPU_adaptation",
+  "fit_rows": 56707,
+  "architecture": [
+    124,
+    128,
+    32
+  ],
+  "embedding_l2_normalized": true,
+  "temperature_initial": 0.1,
+  "temperature_bounds": [
+    0.02,
+    2.0
+  ],
+  "candidate_count": 4096,
+  "batch_size": 256,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0003,
+  "normalized_class_weights": [
+    3.583463261995691,
+    3.783537552630886,
+    1.439370801881853,
+    0.8755284670258346,
+    1.1920108456743126,
+    0.7887730235086747,
+    0.6773996397111067,
+    1.5547959941910765,
+    4.691332016413502,
+    14.345046999745822
+  ],
+  "group_mask": "all_identical_raw_X",
+  "preprocessing": {
+    "fit_rows": 56707,
+    "numeric": [
+      "dur",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "sttl",
+      "dttl",
+      "sload",
+      "dload",
+      "sloss",
+      "dloss",
+      "sinpkt",
+      "dinpkt",
+      "sjit",
+      "djit",
+      "swin",
+      "stcpb",
+      "dtcpb",
+      "dwin",
+      "tcprtt",
+      "synack",
+      "ackdat",
+      "smean",
+      "dmean",
+      "trans_depth",
+      "response_body_len",
+      "ct_srv_src",
+      "ct_state_ttl",
+      "ct_dst_ltm",
+      "ct_src_dport_ltm",
+      "ct_dst_sport_ltm",
+      "ct_dst_src_ltm",
+      "is_ftp_login",
+      "ct_ftp_cmd",
+      "ct_flw_http_mthd",
+      "ct_src_ltm",
+      "ct_srv_dst",
+      "is_sm_ips_ports"
+    ],
+    "categorical": [
+      "proto",
+      "service",
+      "state"
+    ],
+    "numeric_medians": {
+      "dur": 0.001108,
+      "spkts": 2.0,
+      "dpkts": 2.0,
+      "sbytes": 394.0,
+      "dbytes": 162.0,
+      "rate": 3592.060462,
+      "sttl": 254.0,
+      "dttl": 29.0,
+      "sload": 999828.375,
+      "dload": 1196.773193,
+      "sloss": 0.0,
+      "dloss": 0.0,
+      "sinpkt": 0.254353,
+      "dinpkt": 0.004,
+      "sjit": 0.0,
+      "djit": 0.0,
+      "swin": 0.0,
+      "stcpb": 0.0,
+      "dtcpb": 0.0,
+      "dwin": 0.0,
+      "tcprtt": 0.0,
+      "synack": 0.0,
+      "ackdat": 0.0,
+      "smean": 73.0,
+      "dmean": 44.0,
+      "trans_depth": 0.0,
+      "response_body_len": 0.0,
+      "ct_srv_src": 5.0,
+      "ct_state_ttl": 1.0,
+      "ct_dst_ltm": 2.0,
+      "ct_src_dport_ltm": 1.0,
+      "ct_dst_sport_ltm": 1.0,
+      "ct_dst_src_ltm": 3.0,
+      "is_ftp_login": 0.0,
+      "ct_ftp_cmd": 0.0,
+      "ct_flw_http_mthd": 0.0,
+      "ct_src_ltm": 3.0,
+      "ct_srv_dst": 4.0,
+      "is_sm_ips_ports": 0.0
+    },
+    "quantiles": 1000,
+    "max_categories": 64,
+    "fit_only": true,
+    "output_distribution": "normal",
+    "features": 124
+  },
+  "training_trace": [
+    {
+      "epoch": 1,
+      "loss": 0.9540180716451605,
+      "temperature": 0.09548791497945786,
+      "inner_macro_f1": 0.3987636458472782
+    },
+    {
+      "epoch": 2,
+      "loss": 0.8681116652851968,
+      "temperature": 0.09271129965782166,
+      "inner_macro_f1": 0.4515459962772401
+    },
+    {
+      "epoch": 3,
+      "loss": 0.8450770984239275,
+      "temperature": 0.08919309079647064,
+      "inner_macro_f1": 0.45364144504627335
+    },
+    {
+      "epoch": 4,
+      "loss": 0.8431868185203556,
+      "temperature": 0.08669312298297882,
+      "inner_macro_f1": 0.4306453793021386
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8370915222178901,
+      "temperature": 0.08431163430213928,
+      "inner_macro_f1": 0.4454327275865066
+    },
+    {
+      "epoch": 6,
+      "loss": 0.8140982650248643,
+      "temperature": 0.08216992020606995,
+      "inner_macro_f1": 0.4696411933548047
+    },
+    {
+      "epoch": 7,
+      "loss": 0.8021606232982187,
+      "temperature": 0.08064955472946167,
+      "inner_macro_f1": 0.46200345657824216
+    },
+    {
+      "epoch": 8,
+      "loss": 0.809591951284806,
+      "temperature": 0.07968996465206146,
+      "inner_macro_f1": 0.46044192314306953
+    },
+    {
+      "epoch": 9,
+      "loss": 0.8055269422811477,
+      "temperature": 0.07821139693260193,
+      "inner_macro_f1": 0.4658782168799561
+    },
+    {
+      "epoch": 10,
+      "loss": 0.7920157101424375,
+      "temperature": 0.07653803378343582,
+      "inner_macro_f1": 0.4680037593160641
+    }
+  ],
+  "skipped_all_masked_rows": 0,
+  "epochs_run": 10,
+  "selected_epoch": 6,
+  "inner_score": 0.4696411933548047,
+  "final_temperature": 0.07653803378343582,
+  "selection": "inner_only_macro_f1",
+  "parameter_count": 20129
+}

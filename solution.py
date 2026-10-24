@@ -41,6 +41,8 @@ def portfolio_candidates(kind,metric,training,training_y):
             from automl_panel_memory import panel_keys, PANEL_FIELDS
             key_years=pd.DataFrame({'key':panel_keys(training,PANEL_FIELDS),'year':training['Year_Factor'].to_numpy()})
             if (key_years['year']>key_years.groupby('key')['year'].transform('min')).sum()>=500:
+                candidates.append({'family':'extra_trees','parameters':{},'strategy':'panel_change_hybrid',
+                    'hypothesis':'Fixed 50/50 blend of causal panel history/dynamics and annual covariate-change forecast'})
                 candidates.append({'family':'extra_trees','parameters':{},'strategy':'panel_hybrid_memory',
                     'hypothesis':'Train-only causal panel dynamics combined with stable past-profile retrieval; fixed 50/50'})
         profile={'State_Factor','building_class','facility_type','floor_area','year_built','ELEVATION','Year_Factor'}

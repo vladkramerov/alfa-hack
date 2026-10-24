@@ -1,0 +1,21 @@
+{
+  "fit_original_rows": 46103,
+  "fit_model_rows": 46103,
+  "configuration": {
+    "task": "multiclass",
+    "family": "lightgbm",
+    "parameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "min_child_samples": 20,
+      "reg_lambda": 1
+    },
+    "policy": "legacy",
+    "features": "tagged_frequency_H17",
+    "encoder": {
+      "native": true,
+      "scale": false
+    }
+  }
+}

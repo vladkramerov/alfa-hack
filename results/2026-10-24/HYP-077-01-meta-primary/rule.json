@@ -1,0 +1,256 @@
+{
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "a": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "b": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "chosen_iteration": -1,
+  "audit": {
+    "mechanism": "affine_macro_f1_confusion_gradient_adaptation",
+    "selection_source": "training_meta_crossfit_only",
+    "steps": 50,
+    "pseudocount_total": 1.0,
+    "pseudocount_allocation": "uniform_diagonal",
+    "step_size": "2/(iteration+2)",
+    "macro_f1": 0.618892301601431,
+    "identity_macro_f1": 0.618892301601431,
+    "trajectory": [
+      {
+        "iteration": -1,
+        "macro_f1": 0.618892301601431
+      },
+      {
+        "iteration": 0,
+        "macro_f1": 0.5563750117825694
+      },
+      {
+        "iteration": 1,
+        "macro_f1": 0.5778013352802989
+      },
+      {
+        "iteration": 2,
+        "macro_f1": 0.5338773738030713
+      },
+      {
+        "iteration": 3,
+        "macro_f1": 0.554736440362636
+      },
+      {
+        "iteration": 4,
+        "macro_f1": 0.5473553209673325
+      },
+      {
+        "iteration": 5,
+        "macro_f1": 0.548548512731422
+      },
+      {
+        "iteration": 6,
+        "macro_f1": 0.5480626972472368
+      },
+      {
+        "iteration": 7,
+        "macro_f1": 0.5478905259934488
+      },
+      {
+        "iteration": 8,
+        "macro_f1": 0.5476417141464813
+      },
+      {
+        "iteration": 9,
+        "macro_f1": 0.5475692160570407
+      },
+      {
+        "iteration": 10,
+        "macro_f1": 0.5474953709930286
+      },
+      {
+        "iteration": 11,
+        "macro_f1": 0.5474326263340281
+      },
+      {
+        "iteration": 12,
+        "macro_f1": 0.5473341372692319
+      },
+      {
+        "iteration": 13,
+        "macro_f1": 0.5472929136862126
+      },
+      {
+        "iteration": 14,
+        "macro_f1": 0.547265569876134
+      },
+      {
+        "iteration": 15,
+        "macro_f1": 0.5472069519062484
+      },
+      {
+        "iteration": 16,
+        "macro_f1": 0.5471424316029002
+      },
+      {
+        "iteration": 17,
+        "macro_f1": 0.5471161371299406
+      },
+      {
+        "iteration": 18,
+        "macro_f1": 0.5470411684646166
+      },
+      {
+        "iteration": 19,
+        "macro_f1": 0.5470007047023796
+      },
+      {
+        "iteration": 20,
+        "macro_f1": 0.5469693807308016
+      },
+      {
+        "iteration": 21,
+        "macro_f1": 0.5469591264192037
+      },
+      {
+        "iteration": 22,
+        "macro_f1": 0.5469719274378501
+      },
+      {
+        "iteration": 23,
+        "macro_f1": 0.546948944349905
+      },
+      {
+        "iteration": 24,
+        "macro_f1": 0.5469250090321779
+      },
+      {
+        "iteration": 25,
+        "macro_f1": 0.546937825803269
+      },
+      {
+        "iteration": 26,
+        "macro_f1": 0.5469421811967129
+      },
+      {
+        "iteration": 27,
+        "macro_f1": 0.5469271815770289
+      },
+      {
+        "iteration": 28,
+        "macro_f1": 0.5469241367795129
+      },
+      {
+        "iteration": 29,
+        "macro_f1": 0.5469113200084218
+      },
+      {
+        "iteration": 30,
+        "macro_f1": 0.5469188545285723
+      },
+      {
+        "iteration": 31,
+        "macro_f1": 0.5468910899241912
+      },
+      {
+        "iteration": 32,
+        "macro_f1": 0.5468889756409578
+      },
+      {
+        "iteration": 33,
+        "macro_f1": 0.5468761588698667
+      },
+      {
+        "iteration": 34,
+        "macro_f1": 0.5468476527924986
+      },
+      {
+        "iteration": 35,
+        "macro_f1": 0.5468604853264802
+      },
+      {
+        "iteration": 36,
+        "macro_f1": 0.5468476527924986
+      },
+      {
+        "iteration": 37,
+        "macro_f1": 0.5468604853264802
+      },
+      {
+        "iteration": 38,
+        "macro_f1": 0.5468456055745858
+      },
+      {
+        "iteration": 39,
+        "macro_f1": 0.5468327730406043
+      },
+      {
+        "iteration": 40,
+        "macro_f1": 0.5468261205783602
+      },
+      {
+        "iteration": 41,
+        "macro_f1": 0.5468132893163152
+      },
+      {
+        "iteration": 42,
+        "macro_f1": 0.5468261205783602
+      },
+      {
+        "iteration": 43,
+        "macro_f1": 0.5468132893163152
+      },
+      {
+        "iteration": 44,
+        "macro_f1": 0.5468261205783602
+      },
+      {
+        "iteration": 45,
+        "macro_f1": 0.5468132893163152
+      },
+      {
+        "iteration": 46,
+        "macro_f1": 0.5468261205783602
+      },
+      {
+        "iteration": 47,
+        "macro_f1": 0.5468132893163152
+      },
+      {
+        "iteration": 48,
+        "macro_f1": 0.5468261205783602
+      },
+      {
+        "iteration": 49,
+        "macro_f1": 0.5467901069960529
+      }
+    ],
+    "calibrated_posteriors": false
+  }
+}

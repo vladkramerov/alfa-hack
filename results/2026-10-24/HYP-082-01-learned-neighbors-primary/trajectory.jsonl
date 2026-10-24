@@ -1,0 +1,16 @@
+{"phase": "inner_selection", "epoch": 1, "loss": 0.9540180716451605, "temperature": 0.09548791497945786, "inner_macro_f1": 0.3987636458472782}
+{"phase": "inner_selection", "epoch": 2, "loss": 0.8681116652851968, "temperature": 0.09271129965782166, "inner_macro_f1": 0.4515459962772401}
+{"phase": "inner_selection", "epoch": 3, "loss": 0.8450770984239275, "temperature": 0.08919309079647064, "inner_macro_f1": 0.45364144504627335}
+{"phase": "inner_selection", "epoch": 4, "loss": 0.8431868185203556, "temperature": 0.08669312298297882, "inner_macro_f1": 0.4306453793021386}
+{"phase": "inner_selection", "epoch": 5, "loss": 0.8370915222178901, "temperature": 0.08431163430213928, "inner_macro_f1": 0.4454327275865066}
+{"phase": "inner_selection", "epoch": 6, "loss": 0.8140982650248643, "temperature": 0.08216992020606995, "inner_macro_f1": 0.4696411933548047}
+{"phase": "inner_selection", "epoch": 7, "loss": 0.8021606232982187, "temperature": 0.08064955472946167, "inner_macro_f1": 0.46200345657824216}
+{"phase": "inner_selection", "epoch": 8, "loss": 0.809591951284806, "temperature": 0.07968996465206146, "inner_macro_f1": 0.46044192314306953}
+{"phase": "inner_selection", "epoch": 9, "loss": 0.8055269422811477, "temperature": 0.07821139693260193, "inner_macro_f1": 0.4658782168799561}
+{"phase": "inner_selection", "epoch": 10, "loss": 0.7920157101424375, "temperature": 0.07653803378343582, "inner_macro_f1": 0.4680037593160641}
+{"phase": "frozen_outer_refit", "epoch": 1, "loss": 0.9176392197739095, "temperature": 0.0942840427160263}
+{"phase": "frozen_outer_refit", "epoch": 2, "loss": 0.8612942029199058, "temperature": 0.08854225277900696}
+{"phase": "frozen_outer_refit", "epoch": 3, "loss": 0.8290984100744055, "temperature": 0.08497776091098785}
+{"phase": "frozen_outer_refit", "epoch": 4, "loss": 0.8388602247725483, "temperature": 0.08295075595378876}
+{"phase": "frozen_outer_refit", "epoch": 5, "loss": 0.820441880616102, "temperature": 0.08126012235879898}
+{"phase": "frozen_outer_refit", "epoch": 6, "loss": 0.8145595165764361, "temperature": 0.07994374632835388}

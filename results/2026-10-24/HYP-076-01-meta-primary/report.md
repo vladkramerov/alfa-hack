@@ -1,0 +1,20 @@
+# HYP-076 / primary
+
+[SPEC012](../../../docs/specs/SPEC-012-scientific-research.md). Calibration only current outer-fit, grouped meta-crossfit conditional on base-OOF; not fully nested base-model evaluation. Full branches reused, no new tree fits. All parameters preregistered.
+
+```json
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.6435754122989765,
+  "control": 0.64472256711304,
+  "relative_gain": -0.0017792999230664686,
+  "accuracy": 0.8110962020885596,
+  "seconds": 19.4023633338511,
+  "stage": "primary",
+  "base_tree_fits": 0,
+  "normalized_meta_crossfit_score": 0.6151956798037816,
+  "meta_fit_count": 4,
+  "converged": true
+}
+```

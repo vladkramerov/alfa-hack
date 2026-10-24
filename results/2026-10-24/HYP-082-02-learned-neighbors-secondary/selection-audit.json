@@ -1,0 +1,239 @@
+{
+  "mechanism": "ModernNCA_inspired_own_CPU_adaptation",
+  "fit_rows": 55704,
+  "architecture": [
+    124,
+    128,
+    32
+  ],
+  "embedding_l2_normalized": true,
+  "temperature_initial": 0.1,
+  "temperature_bounds": [
+    0.02,
+    2.0
+  ],
+  "candidate_count": 4096,
+  "batch_size": 256,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0003,
+  "normalized_class_weights": [
+    3.5721140218031957,
+    3.8391659830669322,
+    1.4592703108995486,
+    0.8738681602599007,
+    1.1830459985636863,
+    0.8063645108587572,
+    0.6693687586785452,
+    1.5160945603877332,
+    4.622546282945811,
+    14.035737578397283
+  ],
+  "group_mask": "all_identical_raw_X",
+  "preprocessing": {
+    "fit_rows": 55704,
+    "numeric": [
+      "dur",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes",
+      "rate",
+      "sttl",
+      "dttl",
+      "sload",
+      "dload",
+      "sloss",
+      "dloss",
+      "sinpkt",
+      "dinpkt",
+      "sjit",
+      "djit",
+      "swin",
+      "stcpb",
+      "dtcpb",
+      "dwin",
+      "tcprtt",
+      "synack",
+      "ackdat",
+      "smean",
+      "dmean",
+      "trans_depth",
+      "response_body_len",
+      "ct_srv_src",
+      "ct_state_ttl",
+      "ct_dst_ltm",
+      "ct_src_dport_ltm",
+      "ct_dst_sport_ltm",
+      "ct_dst_src_ltm",
+      "is_ftp_login",
+      "ct_ftp_cmd",
+      "ct_flw_http_mthd",
+      "ct_src_ltm",
+      "ct_srv_dst",
+      "is_sm_ips_ports"
+    ],
+    "categorical": [
+      "proto",
+      "service",
+      "state"
+    ],
+    "numeric_medians": {
+      "dur": 0.0025835,
+      "spkts": 4.0,
+      "dpkts": 2.0,
+      "sbytes": 504.0,
+      "dbytes": 178.0,
+      "rate": 3038.9424975,
+      "sttl": 254.0,
+      "dttl": 29.0,
+      "sload": 791681.8125,
+      "dload": 1710.2410885,
+      "sloss": 0.0,
+      "dloss": 0.0,
+      "sinpkt": 0.3404615,
+      "dinpkt": 0.007,
+      "sjit": 0.5976225,
+      "djit": 0.0,
+      "swin": 0.0,
+      "stcpb": 0.0,
+      "dtcpb": 0.0,
+      "dwin": 0.0,
+      "tcprtt": 0.0,
+      "synack": 0.0,
+      "ackdat": 0.0,
+      "smean": 73.0,
+      "dmean": 44.0,
+      "trans_depth": 0.0,
+      "response_body_len": 0.0,
+      "ct_srv_src": 4.0,
+      "ct_state_ttl": 1.0,
+      "ct_dst_ltm": 2.0,
+      "ct_src_dport_ltm": 1.0,
+      "ct_dst_sport_ltm": 1.0,
+      "ct_dst_src_ltm": 3.0,
+      "is_ftp_login": 0.0,
+      "ct_ftp_cmd": 0.0,
+      "ct_flw_http_mthd": 0.0,
+      "ct_src_ltm": 3.0,
+      "ct_srv_dst": 4.0,
+      "is_sm_ips_ports": 0.0
+    },
+    "quantiles": 1000,
+    "max_categories": 64,
+    "fit_only": true,
+    "output_distribution": "normal",
+    "features": 124
+  },
+  "training_trace": [
+    {
+      "epoch": 1,
+      "loss": 0.9355532577903076,
+      "temperature": 0.09571100771427155,
+      "inner_macro_f1": 0.41031079616881766
+    },
+    {
+      "epoch": 2,
+      "loss": 0.8645957826147062,
+      "temperature": 0.09168876707553864,
+      "inner_macro_f1": 0.43521988639116393
+    },
+    {
+      "epoch": 3,
+      "loss": 0.8313103898253298,
+      "temperature": 0.0882095918059349,
+      "inner_macro_f1": 0.43553458594766753
+    },
+    {
+      "epoch": 4,
+      "loss": 0.8058416770310233,
+      "temperature": 0.08469109982252121,
+      "inner_macro_f1": 0.44462434671635737
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8177054057976612,
+      "temperature": 0.08150491118431091,
+      "inner_macro_f1": 0.4484308813948955
+    },
+    {
+      "epoch": 6,
+      "loss": 0.8118720214102917,
+      "temperature": 0.07877302169799805,
+      "inner_macro_f1": 0.4389228228855614
+    },
+    {
+      "epoch": 7,
+      "loss": 0.8060556749802424,
+      "temperature": 0.07638080418109894,
+      "inner_macro_f1": 0.46091841539855005
+    },
+    {
+      "epoch": 8,
+      "loss": 0.8012543869364387,
+      "temperature": 0.07432958483695984,
+      "inner_macro_f1": 0.4610022153972886
+    },
+    {
+      "epoch": 9,
+      "loss": 0.7861851837192307,
+      "temperature": 0.07245498895645142,
+      "inner_macro_f1": 0.46049950923182115
+    },
+    {
+      "epoch": 10,
+      "loss": 0.7840481627420604,
+      "temperature": 0.07122378796339035,
+      "inner_macro_f1": 0.4450002278687625
+    },
+    {
+      "epoch": 11,
+      "loss": 0.7844405045852431,
+      "temperature": 0.06987982243299484,
+      "inner_macro_f1": 0.46629090958747144
+    },
+    {
+      "epoch": 12,
+      "loss": 0.7779994757887996,
+      "temperature": 0.06911572813987732,
+      "inner_macro_f1": 0.45802899580737294
+    },
+    {
+      "epoch": 13,
+      "loss": 0.7900399690076364,
+      "temperature": 0.06776522099971771,
+      "inner_macro_f1": 0.49369726543890496
+    },
+    {
+      "epoch": 14,
+      "loss": 0.773657359723197,
+      "temperature": 0.06730704754590988,
+      "inner_macro_f1": 0.46885301223575465
+    },
+    {
+      "epoch": 15,
+      "loss": 0.7743296668427815,
+      "temperature": 0.06691239774227142,
+      "inner_macro_f1": 0.48699791263798853
+    },
+    {
+      "epoch": 16,
+      "loss": 0.7727039223615764,
+      "temperature": 0.06600772589445114,
+      "inner_macro_f1": 0.4892700309405611
+    },
+    {
+      "epoch": 17,
+      "loss": 0.7563209149167401,
+      "temperature": 0.06565678864717484,
+      "inner_macro_f1": 0.47183247999795147
+    }
+  ],
+  "skipped_all_masked_rows": 0,
+  "epochs_run": 17,
+  "selected_epoch": 13,
+  "inner_score": 0.49369726543890496,
+  "final_temperature": 0.06565678864717484,
+  "selection": "inner_only_macro_f1",
+  "parameter_count": 20129
+}

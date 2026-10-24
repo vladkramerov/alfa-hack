@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "score": 0.6351657518194138,
+  "control": 0.64472256711304,
+  "relative_gain": -0.014823143753785462,
+  "stage": "primary",
+  "meta_fits": 1,
+  "tree_fits": 0,
+  "head_seconds": 7.511741624912247,
+  "selection": "fixed preregistered four-family normalized head; no outer tuning",
+  "warnings": []
+}

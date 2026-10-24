@@ -1,0 +1,52 @@
+{
+  "hypothesis": 50,
+  "stage": "secondary",
+  "first_actual_H50_test": true,
+  "data_hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "ec806bbddfef81621aa432ee6803b7a0c72d77a2f15418148739b9781eedfcdb",
+  "control": 0.6075743572072007,
+  "source_sha256": {
+    "focal_boosting.py": "05fd4e4b866f7f545f30f2eb4f8233ff706e0c250ff19a8be2a8cc27f2f51ed0",
+    "test_focal_boosting.py": "da63dfb8e8bfd30387f118df57b93d6c68d021fc069bdf6af5228d61d98b02cc",
+    "run_focal.py": "b32f619b107af9b97f05910ad29f06700d9b0f2c214d1bf3f53ed00b94163e64"
+  },
+  "Encoder_source_sha256": "e8d189bded88313bf86e4f104f537595c248a8c7b1ef5b38ab9836b772a44670",
+  "ledger_sha256": "eb47a5c91b89aeee2c7fc479186fd6b06f19811ef39c817080232bc5b188ae6a",
+  "card_sha256": "cd03a9c9a542e6afe7cf26aa81ac0778ef2d2b317c4c6e385b73b3213640e683",
+  "commit": "24e3311f6ba958a67c740d5b0328cc34cb7e15d7",
+  "fit_rows": 69916,
+  "valid_rows": 17754,
+  "outer_labels_used_for_fit": false,
+  "configuration": {
+    "estimators": 600,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "lambda": 1,
+    "tree_method": "hist",
+    "device": "cpu",
+    "threads": 4,
+    "gamma": 2,
+    "alpha": "inverse sqrt fit counts, sample mean1",
+    "gradient": "exact alpha*A*(p-y)",
+    "curvature": "positive diagonal surrogate, NOT exact Hessian",
+    "preprocessing": "legacy raw median/OHE, no scaling",
+    "early_stopping": false,
+    "calibration": false,
+    "SMOTE": false
+  },
+  "total_budget_seconds": 900,
+  "command": "python work/spec012/focal/run_focal.py",
+  "versions": {
+    "python": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "xgboost": "2.1.4",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  }
+}

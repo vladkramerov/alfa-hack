@@ -1,0 +1,138 @@
+{
+  "hypothesis": 79,
+  "stage": "secondary",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "official_train_sha",
+      "passed": true
+    },
+    {
+      "name": "all_data_sha",
+      "passed": true
+    },
+    {
+      "name": "saved_ledger_sha",
+      "passed": true
+    },
+    {
+      "name": "source_test_paper_neural.py",
+      "passed": true
+    },
+    {
+      "name": "source_run_neural.py",
+      "passed": true
+    },
+    {
+      "name": "source_paper_neural.py",
+      "passed": true
+    },
+    {
+      "name": "exact_fit_split",
+      "passed": true
+    },
+    {
+      "name": "exact_outer_split",
+      "passed": true
+    },
+    {
+      "name": "prediction_positions",
+      "passed": true
+    },
+    {
+      "name": "split_sha",
+      "passed": true
+    },
+    {
+      "name": "inner_split_sha",
+      "passed": true
+    },
+    {
+      "name": "outer_groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "inner_groups_disjoint",
+      "passed": true
+    },
+    {
+      "name": "inner_partition_exact",
+      "passed": true
+    },
+    {
+      "name": "all_predictions_string_safe",
+      "passed": true
+    },
+    {
+      "name": "outer_labels_exact",
+      "passed": true
+    },
+    {
+      "name": "classes_from_fit_only",
+      "passed": true
+    },
+    {
+      "name": "probability_shape",
+      "passed": true
+    },
+    {
+      "name": "finite_nonnegative_probabilities",
+      "passed": true
+    },
+    {
+      "name": "probability_normalization",
+      "passed": true
+    },
+    {
+      "name": "argmax_prediction",
+      "passed": true
+    },
+    {
+      "name": "independent_macro_f1",
+      "passed": true
+    },
+    {
+      "name": "independent_accuracy",
+      "passed": true
+    },
+    {
+      "name": "independent_weighted_f1",
+      "passed": true
+    },
+    {
+      "name": "epochs_selected_inner_only",
+      "passed": true
+    },
+    {
+      "name": "frozen_refit_epochs",
+      "passed": true
+    },
+    {
+      "name": "trace_no_outer_selection",
+      "passed": true
+    },
+    {
+      "name": "total_budget",
+      "passed": true
+    },
+    {
+      "name": "fit_only_preprocessing_state",
+      "passed": true
+    },
+    {
+      "name": "inner_fit_only_preprocessing_state",
+      "passed": true
+    },
+    {
+      "name": "saved_model_inference_probabilities",
+      "passed": true
+    },
+    {
+      "name": "saved_model_inference_labels",
+      "passed": true
+    }
+  ],
+  "passed": 32,
+  "failed": 0,
+  "note": "No model fit; statistics recomputed from fit rows and saved weights used only for inference."
+}
