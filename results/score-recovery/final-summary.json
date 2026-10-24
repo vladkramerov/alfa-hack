@@ -1,0 +1,115 @@
+{
+  "status": "completed",
+  "runs": [
+    {
+      "task": "regression",
+      "scope": "shadow",
+      "arm": "control",
+      "submission_score": 44.810780971017344,
+      "wall_seconds": 77.13603925000643,
+      "peak_rss_mb": null,
+      "memory_scope": null,
+      "submission_rows": 18308,
+      "submission_sha256": "9f266b94bd2239f2db0d0be39979d83d74a20466fd0fdbd12692a01fdabff989",
+      "archive_sha256": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+      "reused_from": "e2e-deployment.json: exact unchanged control",
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e/regression-shadow-control"
+    },
+    {
+      "task": "regression",
+      "scope": "shadow",
+      "arm": "candidate",
+      "submission_score": 37.57832956234321,
+      "wall_seconds": 627.8549695000111,
+      "peak_rss_mb": 908.796875,
+      "memory_scope": "partial since resume",
+      "submission_rows": 18308,
+      "submission_sha256": "d54bfa3e9ab6d0aa6995e5ac2392dc0ef571cdc9b995c02a7e5d49c330564564",
+      "archive_sha256": "044eb05d9e4afa3ed6e5fd879b417a0709bfe0ccd8195bbd0c716ce05b0495cd",
+      "reused_from": "e2e-deployment.json; classifier-only rollback; exact regression recipe replay passed; estimator/data/runtime unchanged",
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e-deployment/regression-shadow-candidate"
+    },
+    {
+      "task": "regression",
+      "scope": "original",
+      "arm": "candidate",
+      "submission_score": null,
+      "wall_seconds": 1461.8070738750102,
+      "peak_rss_mb": 1192.515625,
+      "memory_scope": "full sampled process tree",
+      "submission_rows": 22449,
+      "submission_sha256": "d3fd6f94bdd7f50699a86e6352959dc8c7b47b9602699502249a7f35e5c9e780",
+      "archive_sha256": "044eb05d9e4afa3ed6e5fd879b417a0709bfe0ccd8195bbd0c716ce05b0495cd",
+      "reused_from": "e2e-deployment.json; classifier-only rollback; exact regression recipe replay passed; estimator/data/runtime unchanged",
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e-deployment/regression-original-candidate"
+    },
+    {
+      "task": "multiclass",
+      "scope": "shadow",
+      "arm": "control",
+      "submission_score": 0.6494124789044244,
+      "wall_seconds": 317.7036400830257,
+      "peak_rss_mb": 1188.875,
+      "memory_scope": "full sampled process tree",
+      "submission_rows": 17141,
+      "submission_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+      "archive_sha256": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+      "reused_from": "e2e-deployment.json: exact unchanged control",
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e-deployment/multiclass-shadow-control"
+    },
+    {
+      "task": "multiclass",
+      "scope": "shadow",
+      "arm": "candidate",
+      "submission_score": 0.6494124789044244,
+      "wall_seconds": 261.491205333994,
+      "peak_rss_mb": 1121.140625,
+      "memory_scope": "full sampled process tree",
+      "submission_rows": 17141,
+      "submission_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+      "archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+      "reused_from": null,
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e-final/multiclass-shadow-candidate"
+    },
+    {
+      "task": "multiclass",
+      "scope": "original",
+      "arm": "candidate",
+      "submission_score": null,
+      "wall_seconds": 263.25618133399985,
+      "peak_rss_mb": 1173.046875,
+      "memory_scope": "full sampled process tree",
+      "submission_rows": 41166,
+      "submission_sha256": "bf1b7817d24ed597e1fa5ea1dd8df1cfaba6962afb3985ac46772171a843df86",
+      "archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+      "reused_from": null,
+      "local_directory": "/private/tmp/alfa-score-recovery-e2e-final/multiclass-original-candidate"
+    }
+  ],
+  "final_archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+  "tests_passed": 77,
+  "cleanroom_passed": 9,
+  "live_llm_calls": 0,
+  "boosters_uploaded": false,
+  "source_equivalence": {
+    "old_archive_sha256": "044eb05d9e4afa3ed6e5fd879b417a0709bfe0ccd8195bbd0c716ce05b0495cd",
+    "final_archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+    "byte_identical_modules": [
+      "solution.py",
+      "automl_data.py",
+      "automl_models.py",
+      "automl_worker.py",
+      "automl_runtime.py",
+      "automl_panel.py",
+      "requirements.txt"
+    ],
+    "changed_modules": [
+      "automl_engine.py",
+      "automl_llm.py"
+    ],
+    "change_scope": "Classifier defaults/proposal/schema rollback; regression branches retain deployment defaults. Exact recipe replay matches 15 shadow and20 original regression trials; all estimator/data/runtime modules byte-identical. API calls0 in both cases.",
+    "recipe_replay": "results/score-recovery/policy-replay.json",
+    "classification_exact_csv_equivalence": "results/score-recovery/classification-rollback-equivalence.json",
+    "qualification_note": "Regression arms reused, not falsely relabeled as runs of the new byte stream. Final classifier arms and all77 tests/9 cleanroom scenarios use final source."
+  }
+}

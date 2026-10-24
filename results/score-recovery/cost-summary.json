@@ -1,0 +1,8 @@
+{
+  "worker_completed_calls": 209,
+  "cached_worker_calls": 26,
+  "recorded_worker_fit_seconds": 3147.2364826701814,
+  "ablation_model_fit_seconds": 250.4482372099592,
+  "cancelled_or_unfinished_worker_requests": 10,
+  "note": "Costs counted once per physical worker directory; reused evidence not refit. Missing/cancelled-worker training time is not invented; these are measured lower bounds, not total billing."
+}

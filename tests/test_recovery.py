@@ -142,3 +142,16 @@ def test_default_policy_selects_on_latest_known_period_and_reports_no_independen
     assert summary['audit_status'] == 'external_evaluation_required'
     assert not summary['independent_search_and_audit']
     assert summary['final_refit']['status'] == 'completed'
+
+
+def test_rejected_classification_research_is_not_in_default_portfolio():
+    from automl_engine import offline_proposal
+    profile = {'type':'classification','metric':'macro_f1','shape':[2000,10],
+               'numeric_target_correlations':{},'categories':{'category':4},'nunique':{'x':20}}
+    control = canonical_candidate({'family':'lightgbm','parameters':{'n_estimators':120}})
+    xgb = canonical_candidate({'family':'xgboost','parameters':{'n_estimators':600}})
+    records = [{'status':'completed','candidate':control,'score':.55},
+               {'status':'completed','candidate':xgb,'score':.63,'diagnostics':{'per_class':{'rare':{'f1-score':.2,'support':20}}}}]
+    proposal = offline_proposal(profile,records,{candidate_key(control),candidate_key(xgb)})
+    assert proposal['family']=='xgboost' and proposal['decision_power']==.15
+    assert not proposal.get('early_stopping') and not proposal.get('blend_mode')

@@ -1,0 +1,27 @@
+{
+  "search": "stratified-group5:first:seed42:exact-feature-groups",
+  "audit": "external evaluation required",
+  "nested": false,
+  "search_policy": "deployment-group-or-random",
+  "search_key": "461733de45391d49950bbcf216427fbebf5a8d9c99eeed092d03827f80ad7fdd",
+  "audit_key": null,
+  "search_fit_rows": 56707,
+  "search_valid_rows": 13822,
+  "audit_rows": 13822,
+  "search_folds": [
+    {
+      "description": "stratified-group5:first:seed42:exact-feature-groups",
+      "fit_rows": 56707,
+      "valid_rows": 13822,
+      "key": "461733de45391d49950bbcf216427fbebf5a8d9c99eeed092d03827f80ad7fdd",
+      "weight": 1.0
+    }
+  ],
+  "search_aggregation": "single window",
+  "data_hashes": {
+    "train": "0cae6ad35aad2eedec880c2891d3840aeaf734e29d40985eb7c904ee5c8ea0cb",
+    "test": "aaa4c385deb703a2d3ab43c6d0dd034e6c907ee76b9f7d15dd69dc56d78ed135",
+    "sample_submission": "8fe6009f86c9b8e045e11add5f08da190ea73902abd12e9d175b790c2cf2c8ff",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  }
+}

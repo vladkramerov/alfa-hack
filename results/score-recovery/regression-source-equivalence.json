@@ -1,0 +1,21 @@
+{
+  "old_archive_sha256": "044eb05d9e4afa3ed6e5fd879b417a0709bfe0ccd8195bbd0c716ce05b0495cd",
+  "final_archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+  "byte_identical_modules": [
+    "solution.py",
+    "automl_data.py",
+    "automl_models.py",
+    "automl_worker.py",
+    "automl_runtime.py",
+    "automl_panel.py",
+    "requirements.txt"
+  ],
+  "changed_modules": [
+    "automl_engine.py",
+    "automl_llm.py"
+  ],
+  "change_scope": "Classifier defaults/proposal/schema rollback; regression branches retain deployment defaults. Exact recipe replay matches 15 shadow and20 original regression trials; all estimator/data/runtime modules byte-identical. API calls0 in both cases.",
+  "recipe_replay": "results/score-recovery/policy-replay.json",
+  "classification_exact_csv_equivalence": "results/score-recovery/classification-rollback-equivalence.json",
+  "qualification_note": "Regression arms reused, not falsely relabeled as runs of the new byte stream. Final classifier arms and all77 tests/9 cleanroom scenarios use final source."
+}

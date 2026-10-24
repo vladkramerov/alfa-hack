@@ -1,6 +1,6 @@
 # Alfa Hack AutoResearch
 
-Универсальный табличный AutoResearch для Boosters: ранний `submission.csv`, ограниченные worker-процессы, выбор по внутренней валидации, отдельный outer audit, безопасный DSL признаков и offline fallback при недоступном LLM.
+Универсальный табличный AutoResearch для Boosters: ранний `submission.csv`, ограниченные worker-процессы, регрессионный выбор по последним известным train-периодам и causal history, проверенный классификационный маршрут, безопасный DSL и offline fallback. Независимая оценка выполняется внешним masked benchmark; исправленный nested audit доступен опционально.
 
 - Текущее состояние и команды: [AGENTS.md](AGENTS.md).
 - Текущая ограниченная серия и сравнение команды: [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md).

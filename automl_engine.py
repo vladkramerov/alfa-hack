@@ -91,6 +91,7 @@ def offline_proposal(profile, observations, seen):
     proposals = []
     families = {r['candidate']['family'] for r in completed}
     classification = profile['type'] == 'classification'
+    classifier_research = classification and profile.get('classification_research', False)
     if not completed:
         proposals.append({'family': 'lightgbm', 'parameters': {'n_estimators': 120},
                           'hypothesis': 'Quick native-category boosting baseline before research.'})
@@ -110,7 +111,7 @@ def offline_proposal(profile, observations, seen):
              'hypothesis': 'Compare direct-loss boosting on automatically discovered causal history; cold starts retain raw features.'},
         ])
     if classification:
-        if profile['metric'] == 'macro_f1':
+        if classifier_research and profile['metric'] == 'macro_f1':
             frequency = [c for c, n in profile['categories'].items() if 3 <= n <= 10000][:8]
             proposals.append({'family': 'xgboost', 'parameters': {'n_estimators': 600},
                 'frequency_columns': frequency, 'decision_power': .3,
@@ -118,7 +119,7 @@ def offline_proposal(profile, observations, seen):
         if 'xgboost' not in families:
             proposals.append({'family': 'xgboost', 'parameters': {'n_estimators': 600},
                               'hypothesis': 'Test histogram boosting against the measured baseline.'})
-        if profile['metric'] == 'macro_f1':
+        if classifier_research and profile['metric'] == 'macro_f1':
             proposals.append({'family': 'lightgbm', 'early_stopping': True,
                 'parameters': {'n_estimators': 1200, 'num_leaves': 63, 'min_child_samples': 10,
                                'reg_lambda': 3, 'subsample': .8, 'colsample_bytree': .85},
@@ -182,7 +183,7 @@ def offline_proposal(profile, observations, seen):
             proposals.append({'family': 'blend', 'members': [best, diverse['candidate']], 'weights': [.8, .2],
                 'decision_power': best.get('decision_power', 0) if classification else 0,
                 'hypothesis': 'Test a conservative blend of the two measured distinct model families.'})
-            if (classification and profile['metric'] == 'macro_f1'
+            if (classifier_research and profile['metric'] == 'macro_f1'
                     and (best.get('early_stopping') or diverse['candidate'].get('early_stopping'))
                     and ordered[0]['score'] - diverse['score'] < .05):
                 proposals.insert(0, {'family': 'blend', 'blend_mode': 'geometric',
@@ -284,7 +285,8 @@ def main(task_path, started=None, threads=4):
         outer_fit, outer_valid, outer_description = validation_split(bundle)
         if not len(outer_fit) or not len(outer_valid):
             raise ValueError('No honest validation split is possible; retained the valid fallback submission')
-        deployment = os.getenv('AUTOML_VALIDATION_POLICY', 'deployment') != 'nested'
+        default_policy = 'nested' if bundle.task_type == 'classification' else 'deployment'
+        deployment = os.getenv('AUTOML_VALIDATION_POLICY', default_policy) != 'nested'
         nested = not deployment
         if deployment:
             windows = temporal_windows(bundle)
@@ -338,7 +340,8 @@ def main(task_path, started=None, threads=4):
             'data_hashes': bundle.hashes})
         seen = set()
         probability_cache = {}
-        max_experiments = min(64, max(0, int(os.getenv('AUTOML_MAX_EXPERIMENTS', '36'))))
+        default_trials = '16' if bundle.task_type == 'classification' else '36'
+        max_experiments = min(64, max(0, int(os.getenv('AUTOML_MAX_EXPERIMENTS', default_trials))))
         api_configured = all(os.getenv(k) for k in ('OPENAI_BASE_URL', 'OPENAI_API_KEY', 'OPENAI_MODEL'))
         llm_failures, llm_tokens = 0, 0
 

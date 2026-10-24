@@ -1,0 +1,82 @@
+{
+  "candidates": [
+    {
+      "family": "lightgbm",
+      "hypothesis": "Quick native-category boosting baseline before research.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "n_estimators": 120,
+        "num_leaves": 31,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0,
+        "subsample": 1.0
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    },
+    {
+      "family": "blend",
+      "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "members": [
+        {
+          "family": "xgboost",
+          "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [
+            "proto",
+            "service",
+            "state"
+          ],
+          "parameters": {
+            "colsample_bytree": 1.0,
+            "learning_rate": 0.05,
+            "max_depth": 6,
+            "n_estimators": 600,
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        },
+        {
+          "family": "extra_trees",
+          "hypothesis": "Compare random thresholds to observed boosting errors.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [],
+          "parameters": {
+            "max_depth": 24,
+            "max_features": 0.8,
+            "min_samples_leaf": 2,
+            "min_samples_split": 2,
+            "n_estimators": 200
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        }
+      ],
+      "weights": [
+        0.8,
+        0.2
+      ],
+      "class_weight_power": 0,
+      "decision_power": 0.5
+    }
+  ],
+  "search_score": 0.6236395108569888
+}

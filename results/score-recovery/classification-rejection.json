@@ -1,0 +1,8 @@
+{
+  "control_policy_macro_f1": 0.6494124789044244,
+  "new_policy_macro_f1": 0.6440935196396932,
+  "decision": "reject new classification default; preserve legacy classification policy",
+  "stopped_unnecessary_arm": "/private/tmp/alfa-score-recovery-e2e-deployment/multiclass-original-candidate",
+  "reason": "Final CSV regressed against the stronger equal-budget control.",
+  "all_artifacts_preserved": true
+}

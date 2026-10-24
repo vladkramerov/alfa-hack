@@ -1,39 +1,41 @@
 # Alfa Hack AutoResearch — рабочая память
 
-АКТУАЛЬНО: maxim/autoresearch; старая remote codex/research-optimized сохранена. Текущая серия score-recovery и E2E выполняется. ERRATUM: старые regression inner/audit использовали неверное отображение temporal-позиций и пересекались с outer год5. Не считать их независимыми. См. results/score-recovery/temporal-index-diagnosis.json и продолжение журнала.
+Общение по-русски. Минимальные связные изменения; без субагентов и Superpowers. Не трогать main/ivan_branch/sergey_branch, не применять reset/clean/force push. Секреты, данные и обученные модели не включать в Git/ZIP.
 
-Новые абляции: generic causal history ET outer RMSE36.129126; geometric XGB/LGB MacroF1 .644093520. Итог политики ещё проверяется. 75 tests и9 clean-room passed. Qwen URL/model отсутствуют, live calls0; версия ZIP для13.7676 неизвестна. Не повторять завершённые fit: score_recovery_e2e.py сохраняет frozen ZIP и результаты поэтапно.
+## Текущее состояние — 24.10.2026
 
-Общение по-русски. Изменения минимальны; без попутного рефакторинга, субагентов и Superpowers. Не трогать main, ivan_branch, sergey_branch; без reset/clean/force push, секретов и данных в Git/ZIP.
+Ветка `maxim/autoresearch`; старая remote `codex/research-optimized` сохранена. Checkpoints: `be9d9ae` (предыдущая серия), `384a5a7` (диагноз/механизмы), `4239100` (deployment selection). Оба прежних worktree сохранены. История — `docs/EXPERIMENT_LOG.md`; текущие машинные результаты — `results/score-recovery/`.
 
-## Состояние на 24.10.2026
+**ERRATUM:** прежние regression inner окна были локальными позициями внутри outer_fit, но применялись к исходному train. В search-fit попадали3556/3041 строк outer года5. Старые заявления о независимом audit неверны; численные результаты оставлены как exploratory. Исправленные окна/доказательство: `temporal-index-diagnosis.json`. Старую numeric-view серию не повторять.
 
-Ветка `maxim/autoresearch`, база `eab478a`. Импортированы незакоммиченные наработки `/Users/maxchibisov/Projects/HACKS/alfa-ultimate`, public-v1…v5 и тесты. Оба прежних worktree оставлены без изменений. Инвентаризация: `docs/sources/research-optimized-intake.json`. Исторический журнал сохранён; текущая серия и ограничения — **`docs/EXPERIMENT_LOG.md`**.
+Score13.7676 (118/186) и ориентир26.6404 сообщены пользователем. Версия ZIP неизвестна — пользователь подтвердил. Инвентаризация архивов/SHA: `submission-provenance.json`; ни одному архиву score не приписан.
 
-14 исследовательских fit, 631.22 секунды; серия остановлена. Повторять `numeric_views_study.py`/`numeric_control_audit.py` нельзя: использовать готовые результаты.
+## Архитектура
 
-## Архитектура и контракт
+`solution.py` → `automl_engine.py`: ранний атомарный fallback, сильный старт до LLM, default36 regression/16 classification (hard64) trials, до4 планов, дедупликация и резерв refit. Regression selection использует последние известные train-периоды; search score не independent audit. Classification сохраняет проверенный nested/legacy маршрут; новый boosting/geometric default отвергнут после ухудшения policy. Честная оценка — внешний masked test. `AUTOML_VALIDATION_POLICY=nested` сохраняет исправленный nested protocol.
 
-`solution.py` → `automl_engine.py`: ранний атомарный fallback, nested search/rolling windows, audit без выбора по outer. `automl_data.py` — схема/split/метрики/submission; `automl_models.py` — модели, безопасный DSL, дополнительные numeric views; `automl_worker.py` — изолированный fit и probability cache; `automl_runtime.py` — deadline/process/memory; `automl_llm.py` — bounded platform API и offline fallback.
+`automl_data.py` — схема/метрика/split/submission; `automl_models.py` — модели, безопасный DSL, grouped train-only stopping с полным refit, арифметические/геометрические blends; `automl_panel.py` — поиск entity key без test/target и strictly-past history; `automl_worker.py` — изолированный fit и выровненные probability caches; `automl_runtime.py` — deadline/memory/process; `automl_llm.py` — platform API, JSON wrappers, bounded reasoning compatibility fallback.
 
-Python3.12, до8CPU/32GB/3ч. `python3 solution.py task.md`; submission рядом с task. ZIP ≤100MB: только корневые `.py` и неизменённый официальный requirements. Никаких обязательных вложенных модулей/публичных имён полей/frozen pretrained state/сторонних LLM API. LLM только из OPENAI_API_KEY/BASE_URL/MODEL платформы; `.env.local` автоматически не загружается.
+Контракт: Python3.12,8CPU,32GB,до3ч; `python3 solution.py task.md`, CSV рядом с task. ZIP ≤100MB: корневые `.py` и неизменённый официальный requirements. Без embedded public meta-state, известных имён датасетов/полей, вложенных модулей и сторонних LLM API.
 
-## Сопоставимые метрики и проверенные гипотезы
+## Измерения
 
-- Regression outer `<5 → 5`, 35000/18308, key68ef0344…: current ET log-target **42.282936 → 42.012317 RMSE** с raw+signed-log (−0.640%). Это результат кандидата; финальная search policy заново не измерена. Лидер Sergey H73 **34.520269**, не превзойдён.
-- Classification group outer, 70529/17141, key239200bc…: прежний AutoResearch **0.637337946**, лидер Ivan H48 **0.649531162**. Новые варианты отсеяны по inner; новых outer fit нет.
-- NV1 ranks, NV2 signed-log, NV3 robust projections, NV4 ranks+projections проверены на обеих задачах; только NV2 продвинут в условную ET/log-target/RMSE очередь. JSON: `results/numeric-views-v1.json`, `results/numeric-control-audit.json`.
-- Inner regression: 0.65×period4+0.35×period3; classification nested exact-feature-group split. Полные ключи/хеши в JSON. Разные split не смешивать; outer публичный и исторически исследованный.
-- Не повторять full-v1, smearing/threshold/focal/OOF stacking, H52/H62 или causal panel H70…H74 под новым названием: сначала читать сохранённые результаты/историю.
+- Финальная regression policy на masked `<5→5`,35000/18308,key68ef0344…: старый ZIP **44.810781 → новый37.578330 RMSE (−16.14%)**. Selected:80/20 auto-history ET(log+signed-log)/LGB. Подтверждено фактическим итоговым CSV, не только отдельным fit.
+- Промежуточная новая nested-policy дала41.599136; не стала финальной. Generic history ET ablation:48.230237→40.499557 на исправленных period4/3; outer36.129126. Старое окно без истории не ухудшилось: cold fallback.
+- Classification ablation, nested group key64e73424…: XGB control inner.636708318; LGB+stopping.640445243; geometric.644824653. Frozen outer key239200bc…: .637337946→.644093520. Native CatBoost recipe .556644350 отвергнут. End-to-end новый default оказался хуже: .644093520 против .649412479. Откат подтверждён побайтно одинаковым CSV .649412479; новые class proposals/LLM schema opt-in, не default.
+- Team best на тех же outer: Sergey H73 RMSE34.520269, Ivan H48 MacroF1.649531162; не объявлять эти значения Boosters score. Разные splits не смешивать.
+- Пять направлений ограничены текущей серией: auto history; native boosting/stopping; cached geometric pooling; сильный старт/распределение бюджета; deployment-aligned selection. Mapping/bagging/checkpoint исправлены отдельно как ошибки. Не начинать новую серию до итогов текущего E2E.
 
-## Проверки и команды
+## Проверки и продолжение
 
-67 tests passed (`results/unit-research-optimized.xml`); 9 clean-room сценариев passed (`results/cleanroom-research-optimized.json`). Linux/официальный контейнер не проверен. `.env.local` имеет только ключ; BASE_URL/MODEL отсутствуют, live API не вызывался (`results/local-api-check.json`).
+77 tests passed (`unit-final.xml`),9 clean-room passed (`cleanroom-final.json`). Итоговый E2E завершён: `e2e-final.json`; контролей повторно не fit. Исходные задачи: reg22449/class41166 строк, refit completed;1461.81/263.26с,peak1.19/1.17GB. Regression arms переиспользованы после classifier-only rollback с точным replay15/20 recipes и byte-identical estimator/data/runtime: `regression-source-equivalence.json`; их исходный ZIP SHA сохранён. `experiments/score_recovery_e2e.py --resume` проверяет ZIP/source, пропускает готовые arms и подключается к сохранённому process-state. Артефакты/tmp сохранять; predictions не коммитить. Linux/официальный Docker и hidden score не проверены.
 
-Локально Python: `/private/tmp/alfa-research-venv/bin/python`; для native boosting macOS: `DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib`. Пакеты ML соответствуют официальным версиям (`results/research-environment.json`).
+`.env.local` ignored и автоматически агентом не читается. Есть ключ, нет OPENAI_BASE_URL/OPENAI_MODEL; live calls0. Не брать чужие значения из публичных репозиториев. Qwen reasoning-disable проверен только mocks; чужие наблюдения не считать проверкой нашего endpoint.
 
-- `python -m pytest -p no:cacheprovider -q tests` (HTTP mocks требуют localhost bind).
-- `python experiments/package_solution.py` → `dist/alfa_autoresearch_submission.zip` + manifest.
-- `python experiments/verify_package.py --output results/cleanroom-research-optimized.json`.
+Python: `/private/tmp/alfa-research-venv/bin/python`; macOS native libs: `DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib`.
 
-Далее: независимая проверка signed-log и frozen policy; универсальный поиск causal panel keys с проверкой стабильности; shrinkage-калибровка rare-class на disjoint OOF. Сначала проверить новизну и кэш, затем ограничить бюджет. Не выдавать candidate score за agent/Boosters score.
+- `python -m pytest -p no:cacheprovider -q tests` (localhost mocks требуют bind).
+- `python experiments/package_solution.py` — ZIP/manifest; frozen E2E SHA должен совпасть.
+- `python experiments/verify_package.py --output NEW_RESULT_PATH` — чистая распаковка.
+
+Серия завершена и остановлена. ZIP46651 байт, SHA256 e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641. Далее: ручной submit с фиксацией SHA и per-task логов; independent period/data и доверие entity key. Не повторять эту серию и не возвращать отвергнутый class default без новых доказательств. Никаких загрузок на Boosters без отдельного разрешения.

@@ -1,0 +1,31 @@
+{
+  "protocol": "Source-frozen CLI; masked external holdout then original public tasks. No API; no Boosters upload.",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "archive_sha256": {
+    "control": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+    "candidate": "c25be92e3cb0d7644d4c7310116c8a1c5cada3e3cb8512b04960760eefd46495"
+  },
+  "candidate_manifest": {
+    "archive": "candidate.zip",
+    "bytes": 46306,
+    "sha256": "c25be92e3cb0d7644d4c7310116c8a1c5cada3e3cb8512b04960760eefd46495",
+    "files": {
+      "solution.py": "3d87e231b70a735a859a5f61873c3ceec1ed611dbe0786dd2bbfd085a21a1d3c",
+      "automl_engine.py": "809fb316bb33e7cc291f0e352c19a2e1c312317d926dcfc8e20018c44bb2ce86",
+      "automl_data.py": "5140a1669081445bedb972284294245b79552a65df15f8b3d8d75a7fbb499427",
+      "automl_models.py": "c95e0c512dca7f5b3fdc21f36358c86cef3289da58f4e042f76a29454d250e7e",
+      "automl_worker.py": "2dfdbd67bb36415174a56db6a63d14b2a7bb5ced8c80b9432e8488051dc53e99",
+      "automl_llm.py": "088f8556427327c94be0d4d1411456ec0c14f4025d7afffb72ca3bb081c9c25f",
+      "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
+      "automl_panel.py": "4e9e30fcd0da5d1c52ef27e8fbdb02307cd546ae7e9bc01ba624fc7e5f687676",
+      "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "deterministic": true
+  },
+  "runs": [],
+  "limitations": [
+    "Local macOS, not official Docker.",
+    "Original test labels unknown.",
+    "Public holdouts have historical exposure."
+  ]
+}

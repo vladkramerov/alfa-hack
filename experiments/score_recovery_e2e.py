@@ -23,8 +23,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from automl_data import load_task, validation_split, split_key, score
 from package_solution import build
 
-OUT=ROOT/'results/score-recovery/e2e-deployment.json'
-WORK=Path('/private/tmp/alfa-score-recovery-e2e-deployment')
+OUT=ROOT/'results/score-recovery/e2e-final.json'
+WORK=Path('/private/tmp/alfa-score-recovery-e2e-final')
 DATA=ROOT/'drive-download-20261023T201455Z-1-001'
 
 
@@ -46,7 +46,7 @@ def run():
     digests={k:hashlib.sha256(v.read_bytes()).hexdigest() for k,v in archives.items()}
     report={'protocol':'Source-frozen CLI; masked external holdout then original public tasks. No API; no Boosters upload.',
             'python':sys.version,'archive_sha256':digests,'candidate_manifest':manifest,'runs':[],
-            'limitations':['Local macOS, not official Docker.','Original test labels unknown.','Public holdouts have historical exposure.']}
+            'limitations':['Local macOS, not official Docker.','Original test labels unknown.','Public holdouts have historical exposure.','Regression arms reused after classifier-only rollback; exact selection recipe replay and unchanged estimator/data/runtime verified. Their original source ZIP SHA is retained.']}
     if resume:
         report=json.loads(OUT.read_text())
         assert report['archive_sha256']==digests
@@ -58,10 +58,14 @@ def run():
         for scope,arm in [('shadow','control'),('shadow','candidate'),('original','candidate')]:
             if any((r['task'],r['scope'],r['arm'])==(task,scope,arm) for r in report['runs']):
                 continue
-            if scope=='shadow' and arm=='control' and task=='regression':
-                prior=json.loads((ROOT/'results/score-recovery/e2e.json').read_text())
-                record=next(x for x in prior['runs'] if x['task']=='regression' and x['scope']=='shadow' and x['arm']=='control')
-                record['reused_from']='e2e.json: exact unchanged source/data/budget control'
+            if arm=='control' or task=='regression':
+                prior=json.loads((ROOT/'results/score-recovery/e2e-deployment.json').read_text())
+                record=next(x for x in prior['runs'] if (x['task'],x['scope'],x['arm'])==(task,scope,arm))
+                if task=='regression' and arm=='candidate':
+                    assert json.loads((ROOT/'results/score-recovery/policy-replay.json').read_text())['status']=='passed'
+                    record['reused_from']='e2e-deployment.json; classifier-only rollback; exact regression recipe replay passed; estimator/data/runtime unchanged'
+                else:
+                    record['reused_from']='e2e-deployment.json: exact unchanged control'
                 if record['peak_rss_mb']==0: record['peak_rss_mb']=None
                 report['runs'].append(record);save();continue
             directory=WORK/f'{task}-{scope}-{arm}'
@@ -130,14 +134,14 @@ def run():
                     'wall_seconds':summary['seconds'] if existing else time.monotonic()-started,
                     'peak_rss_mb':peak if peak>0 else None,'budget_seconds':budget,
                     'resumed_existing_cli':existing,'memory_scope':'partial since resume' if existing else 'full sampled process tree',
-                    'trial_cap':16 if scope=='shadow' else 36,'threads':8,'api_calls':summary.get('llm_http_calls_reported'),
+                    'trial_cap':16 if scope=='shadow' or task=='multiclass' else 36,'threads':8,'api_calls':summary.get('llm_http_calls_reported'),
                     'external_split_key':split_key(fit,valid) if scope=='shadow' else None,
                     'submission_score':value,'metric':bundle.metric,'submission_rows':len(submission),
                     'submission_sha256':hashlib.sha256((directory/'submission.csv').read_bytes()).hexdigest(),
                     'local_directory':str(directory),'summary':summary}
             report['runs'].append(record);save()
             print(json.dumps({k:record[k] for k in ['task','scope','arm','wall_seconds','peak_rss_mb','submission_score']},ensure_ascii=False),flush=True)
-            destination=OUT.parent/f'deployment-{task}-{scope}-{arm}';destination.mkdir(exist_ok=resume)
+            destination=OUT.parent/f'final-{task}-{scope}-{arm}';destination.mkdir(exist_ok=resume)
             for name in ['summary.json','experiments.json','validation.json','audit.json','frozen_selection.json','llm.json']:
                 source=summaries[-1].parent/name
                 if source.exists():shutil.copy2(source,destination/name)

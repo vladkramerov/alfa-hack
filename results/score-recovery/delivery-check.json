@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "final_archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+  "archive_bytes": 46651,
+  "root_files": 9,
+  "root_sources_match": true,
+  "known_secret_scan": "passed",
+  "official_requirements": "exact",
+  "matches_final_e2e_and_cleanroom": true,
+  "regression_reuse": "explicit source-equivalence receipts; original source SHA retained",
+  "main_unchanged": true,
+  "boosters_uploaded": false
+}

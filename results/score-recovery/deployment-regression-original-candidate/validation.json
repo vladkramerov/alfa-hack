@@ -1,0 +1,34 @@
+{
+  "search": "temporal:Year_Factor:train_last=5:test_after_train + temporal:Year_Factor:train_last=4:test_after_train",
+  "audit": "external evaluation required",
+  "nested": false,
+  "search_policy": "deployment-rolling-origin",
+  "search_key": "03936978702374913a9258caa192502532f28b41413bec681b1240eae045c6c1",
+  "audit_key": null,
+  "search_fit_rows": 57054,
+  "search_valid_rows": 31254,
+  "audit_rows": 18308,
+  "search_folds": [
+    {
+      "description": "temporal:Year_Factor:train_last=5:test_after_train",
+      "fit_rows": 35000,
+      "valid_rows": 18308,
+      "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "weight": 0.65
+    },
+    {
+      "description": "temporal:Year_Factor:train_last=4:test_after_train",
+      "fit_rows": 22054,
+      "valid_rows": 12946,
+      "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+      "weight": 0.35
+    }
+  ],
+  "search_aggregation": "weighted mean across rolling windows",
+  "data_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  }
+}

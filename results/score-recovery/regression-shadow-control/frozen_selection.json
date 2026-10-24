@@ -1,0 +1,92 @@
+{
+  "candidates": [
+    {
+      "family": "lightgbm",
+      "hypothesis": "Quick native-category boosting baseline before research.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "n_estimators": 120,
+        "num_leaves": 31,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0,
+        "subsample": 1.0
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    },
+    {
+      "family": "blend",
+      "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "members": [
+        {
+          "family": "catboost",
+          "catboost_encoding": "onehot",
+          "hypothesis": "Measured train/test covariate shift: test removal of severely shifted numeric predictors on the untouched search fold.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "february_min_temp_c",
+            "january_max_temp_c",
+            "september_avg_temp_c"
+          ],
+          "frequency_columns": [],
+          "expert_column": "State_Factor",
+          "expert_min_rows": 529,
+          "max_expert_groups": 2,
+          "parameters": {
+            "depth": 6,
+            "iterations": 500,
+            "l2_leaf_reg": 3.0,
+            "learning_rate": 0.05
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        },
+        {
+          "family": "lightgbm",
+          "hypothesis": "Test per-State_Factor experts with a global fallback; interactions may be hidden from one global tree.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [],
+          "expert_column": "State_Factor",
+          "expert_min_rows": 529,
+          "max_expert_groups": 2,
+          "parameters": {
+            "colsample_bytree": 1.0,
+            "learning_rate": 0.05,
+            "max_depth": -1,
+            "min_child_samples": 20,
+            "n_estimators": 120,
+            "num_leaves": 31,
+            "reg_alpha": 0.0,
+            "reg_lambda": 0.0,
+            "subsample": 1.0
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        }
+      ],
+      "weights": [
+        0.8,
+        0.2
+      ],
+      "class_weight_power": 0,
+      "decision_power": 0
+    }
+  ],
+  "search_score": 51.97659225522412
+}

@@ -81,6 +81,9 @@ def propose(profile, observations, timeout=25):
         'members': {'type': 'array', 'items': {'type': 'object'}, 'maxItems': 3},
         'weights': {'type': 'array', 'items': {'type': 'number'}, 'maxItems': 3},
     }
+    if profile.get('type') == 'classification' and not profile.get('classification_research', False):
+        properties.pop('early_stopping', None)
+        properties.pop('blend_mode', None)
     schema = {'type': 'function', 'function': {'name': 'run_experiment',
         'description': 'Execute and measure one new research hypothesis on a fixed search split.',
         'parameters': {'type': 'object', 'properties': properties, 'required': ['hypothesis', 'family']}}}

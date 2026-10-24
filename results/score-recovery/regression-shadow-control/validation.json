@@ -1,0 +1,34 @@
+{
+  "search": "temporal:Year_Factor:train_last=3:test_after_train + temporal:Year_Factor:train_last=2:test_after_train",
+  "audit": "temporal:Year_Factor:train_last=4:test_after_train",
+  "nested": true,
+  "search_policy": "rolling-origin",
+  "search_key": "63d27fa0c70e791e677e19bd0a575370e39625ae8b5c23de867cb5b90fdb12e7",
+  "audit_key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+  "search_fit_rows": 13292,
+  "search_valid_rows": 19937,
+  "audit_rows": 12946,
+  "search_folds": [
+    {
+      "description": "temporal:Year_Factor:train_last=3:test_after_train",
+      "fit_rows": 11175,
+      "valid_rows": 10879,
+      "key": "fd388893bf9c1a6f64f42163808df351ad4067184218c929286b03f24f492585",
+      "weight": 0.65
+    },
+    {
+      "description": "temporal:Year_Factor:train_last=2:test_after_train",
+      "fit_rows": 2117,
+      "valid_rows": 9058,
+      "key": "49466ad0630b76fc069c5a5058730ae2d7423a7935cedbb8a8016bc5e0590140",
+      "weight": 0.35
+    }
+  ],
+  "search_aggregation": "weighted mean across rolling windows",
+  "data_hashes": {
+    "train": "0346134c5168084a910455c5d034032b61dd25d6a7bec89b7d11e68b5de133d2",
+    "test": "10f14bef4e483e0b6d36a7bea7ab2e0d1d727255708beff8576f88500b175dfd",
+    "sample_submission": "dc6d724b2ac23714ed17fbb012607e925633f777ccd4f6b93c0409f75aa0f813",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  }
+}

@@ -1,0 +1,838 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "first_submission_seconds": 0.9904047920135781,
+  "task_type": "classification",
+  "submission_rows": 17141,
+  "selected": {
+    "family": "blend",
+    "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "members": [
+      {
+        "family": "xgboost",
+        "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      {
+        "family": "extra_trees",
+        "hypothesis": "Compare random thresholds to observed boosting errors.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      }
+    ],
+    "weights": [
+      0.8,
+      0.2
+    ],
+    "class_weight_power": 0,
+    "decision_power": 0.5
+  },
+  "selected_search_score": 0.6236395108569888,
+  "search_selected": {
+    "family": "blend",
+    "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "members": [
+      {
+        "family": "xgboost",
+        "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      {
+        "family": "extra_trees",
+        "hypothesis": "Compare random thresholds to observed boosting errors.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      }
+    ],
+    "weights": [
+      0.8,
+      0.2
+    ],
+    "class_weight_power": 0,
+    "decision_power": 0.5
+  },
+  "has_disjoint_search_and_audit": true,
+  "independent_search_and_audit": true,
+  "audit": [
+    {
+      "candidate": {
+        "family": "lightgbm",
+        "hypothesis": "Quick native-category boosting baseline before research.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 120,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.5633812087629713,
+      "fit_rows": 56707,
+      "valid_rows": 13822,
+      "diagnostics": {
+        "per_class": {
+          "Analysis": {
+            "precision": 0.782608695652174,
+            "recall": 0.12162162162162163,
+            "f1-score": 0.21052631578947367,
+            "support": 148.0
+          },
+          "Backdoor": {
+            "precision": 0.34615384615384615,
+            "recall": 0.12857142857142856,
+            "f1-score": 0.1875,
+            "support": 140.0
+          },
+          "DoS": {
+            "precision": 0.391304347826087,
+            "recall": 0.13070539419087138,
+            "f1-score": 0.19595645412130638,
+            "support": 964.0
+          },
+          "Exploits": {
+            "precision": 0.6293761516188471,
+            "recall": 0.8948353293413174,
+            "f1-score": 0.7389893370421883,
+            "support": 2672.0
+          },
+          "Fuzzers": {
+            "precision": 0.7375438596491228,
+            "recall": 0.7198630136986301,
+            "f1-score": 0.7285961871750434,
+            "support": 1460.0
+          },
+          "Generic": {
+            "precision": 0.9986495611073599,
+            "recall": 0.9739874876522885,
+            "f1-score": 0.9861643607267878,
+            "support": 3037.0
+          },
+          "Normal": {
+            "precision": 0.929201538113549,
+            "recall": 0.9134978874805426,
+            "f1-score": 0.9212827988338192,
+            "support": 4497.0
+          },
+          "Reconnaissance": {
+            "precision": 0.9152298850574713,
+            "recall": 0.7739975698663426,
+            "f1-score": 0.8387096774193549,
+            "support": 823.0
+          },
+          "Shellcode": {
+            "precision": 0.6395348837209303,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.6832298136645962,
+            "support": 75.0
+          },
+          "Worms": {
+            "precision": 0.08333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.14285714285714285,
+            "support": 6.0
+          },
+          "accuracy": 0.8222399073940095,
+          "macro avg": {
+            "precision": 0.645293610223272,
+            "recall": 0.5890413065756376,
+            "f1-score": 0.5633812087629713,
+            "support": 13822.0
+          },
+          "weighted avg": {
+            "precision": 0.818494391158786,
+            "recall": 0.8222399073940095,
+            "f1-score": 0.8077692961686537,
+            "support": 13822.0
+          }
+        },
+        "largest_confusions": [
+          [
+            813,
+            "DoS",
+            "Exploits"
+          ],
+          [
+            323,
+            "Normal",
+            "Fuzzers"
+          ],
+          [
+            257,
+            "Fuzzers",
+            "Normal"
+          ],
+          [
+            164,
+            "Reconnaissance",
+            "Exploits"
+          ],
+          [
+            128,
+            "Exploits",
+            "DoS"
+          ],
+          [
+            117,
+            "Fuzzers",
+            "Exploits"
+          ],
+          [
+            106,
+            "Backdoor",
+            "Exploits"
+          ],
+          [
+            102,
+            "Analysis",
+            "Exploits"
+          ],
+          [
+            53,
+            "Generic",
+            "Exploits"
+          ],
+          [
+            50,
+            "Exploits",
+            "Reconnaissance"
+          ]
+        ],
+        "missing_fit_classes": []
+      },
+      "seconds": 6.431156875012675,
+      "fit_seconds": 5.8431726670241915,
+      "test_rows": 17141,
+      "model_audit": {
+        "fit_rows": 56707,
+        "input_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "output_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "dropped_columns": [],
+        "frequency_columns": [],
+        "categorical_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "target_transform": "none",
+        "model_family": "lightgbm",
+        "categorical_handling": "native_category"
+      },
+      "generated_code": false,
+      "training_reused": false,
+      "process": {
+        "status": "completed",
+        "returncode": 0,
+        "seconds": 7.078272124985233,
+        "peak_rss_mb": 449.828125
+      },
+      "directory": "audit-01"
+    },
+    {
+      "candidate": {
+        "family": "blend",
+        "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "extra_trees",
+            "hypothesis": "Compare random thresholds to observed boosting errors.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.5
+      },
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.6061048965889445,
+      "fit_rows": 56707,
+      "valid_rows": 13822,
+      "diagnostics": {
+        "per_class": {
+          "Analysis": {
+            "precision": 0.34177215189873417,
+            "recall": 0.18243243243243243,
+            "f1-score": 0.23788546255506607,
+            "support": 148.0
+          },
+          "Backdoor": {
+            "precision": 0.2926829268292683,
+            "recall": 0.17142857142857143,
+            "f1-score": 0.21621621621621623,
+            "support": 140.0
+          },
+          "DoS": {
+            "precision": 0.3578028747433265,
+            "recall": 0.7230290456431535,
+            "f1-score": 0.47870879120879123,
+            "support": 964.0
+          },
+          "Exploits": {
+            "precision": 0.7962690230731467,
+            "recall": 0.6070359281437125,
+            "f1-score": 0.6888936079847101,
+            "support": 2672.0
+          },
+          "Fuzzers": {
+            "precision": 0.6834654586636466,
+            "recall": 0.8267123287671233,
+            "f1-score": 0.7482951022938623,
+            "support": 1460.0
+          },
+          "Generic": {
+            "precision": 0.999326825984517,
+            "recall": 0.9776094830424761,
+            "f1-score": 0.9883488681757656,
+            "support": 3037.0
+          },
+          "Normal": {
+            "precision": 0.9699975204562361,
+            "recall": 0.8699132755170114,
+            "f1-score": 0.9172332942555685,
+            "support": 4497.0
+          },
+          "Reconnaissance": {
+            "precision": 0.8671052631578947,
+            "recall": 0.8007290400972054,
+            "f1-score": 0.8325963360707518,
+            "support": 823.0
+          },
+          "Shellcode": {
+            "precision": 0.5669291338582677,
+            "recall": 0.96,
+            "f1-score": 0.7128712871287128,
+            "support": 75.0
+          },
+          "Worms": {
+            "precision": 0.15789473684210525,
+            "recall": 0.5,
+            "f1-score": 0.24,
+            "support": 6.0
+          },
+          "accuracy": 0.8097236289972508,
+          "macro avg": {
+            "precision": 0.6033245915507143,
+            "recall": 0.6618890105071686,
+            "f1-score": 0.6061048965889445,
+            "support": 13822.0
+          },
+          "weighted avg": {
+            "precision": 0.8476413951552664,
+            "recall": 0.8097236289972508,
+            "f1-score": 0.8194713450568553,
+            "support": 13822.0
+          }
+        },
+        "largest_confusions": [
+          [
+            834,
+            "Exploits",
+            "DoS"
+          ],
+          [
+            505,
+            "Normal",
+            "Fuzzers"
+          ],
+          [
+            222,
+            "DoS",
+            "Exploits"
+          ],
+          [
+            103,
+            "Reconnaissance",
+            "DoS"
+          ],
+          [
+            100,
+            "Fuzzers",
+            "Normal"
+          ],
+          [
+            100,
+            "Fuzzers",
+            "DoS"
+          ],
+          [
+            98,
+            "Analysis",
+            "DoS"
+          ],
+          [
+            93,
+            "Exploits",
+            "Reconnaissance"
+          ],
+          [
+            89,
+            "Backdoor",
+            "DoS"
+          ],
+          [
+            53,
+            "Reconnaissance",
+            "Exploits"
+          ]
+        ],
+        "missing_fit_classes": []
+      },
+      "seconds": 26.532867583999177,
+      "fit_seconds": 25.275593708007364,
+      "test_rows": 17141,
+      "model_audit": {
+        "fit_rows": 56707,
+        "input_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "output_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "dropped_columns": [],
+        "frequency_columns": [],
+        "categorical_columns": [],
+        "target_transform": "none",
+        "model_family": "blend",
+        "categorical_handling": "onehot",
+        "blend_members": 2
+      },
+      "generated_code": false,
+      "training_reused": false,
+      "process": {
+        "status": "completed",
+        "returncode": 0,
+        "seconds": 27.359088292025262,
+        "peak_rss_mb": 823.1875
+      },
+      "directory": "audit-02"
+    }
+  ],
+  "final_refit": {
+    "status": "completed",
+    "mode": "refit",
+    "train_rows": 70529,
+    "seconds": 31.421881542017218,
+    "fit_seconds": 30.76254616701044,
+    "test_rows": 17141,
+    "model_audit": {
+      "fit_rows": 70529,
+      "input_columns": [
+        "dur",
+        "proto",
+        "service",
+        "state",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sttl",
+        "dttl",
+        "sload",
+        "dload",
+        "sloss",
+        "dloss",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "swin",
+        "stcpb",
+        "dtcpb",
+        "dwin",
+        "tcprtt",
+        "synack",
+        "ackdat",
+        "smean",
+        "dmean",
+        "trans_depth",
+        "response_body_len",
+        "ct_srv_src",
+        "ct_state_ttl",
+        "ct_dst_ltm",
+        "ct_src_dport_ltm",
+        "ct_dst_sport_ltm",
+        "ct_dst_src_ltm",
+        "is_ftp_login",
+        "ct_ftp_cmd",
+        "ct_flw_http_mthd",
+        "ct_src_ltm",
+        "ct_srv_dst",
+        "is_sm_ips_ports"
+      ],
+      "output_columns": [
+        "dur",
+        "proto",
+        "service",
+        "state",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sttl",
+        "dttl",
+        "sload",
+        "dload",
+        "sloss",
+        "dloss",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "swin",
+        "stcpb",
+        "dtcpb",
+        "dwin",
+        "tcprtt",
+        "synack",
+        "ackdat",
+        "smean",
+        "dmean",
+        "trans_depth",
+        "response_body_len",
+        "ct_srv_src",
+        "ct_state_ttl",
+        "ct_dst_ltm",
+        "ct_src_dport_ltm",
+        "ct_dst_sport_ltm",
+        "ct_dst_src_ltm",
+        "is_ftp_login",
+        "ct_ftp_cmd",
+        "ct_flw_http_mthd",
+        "ct_src_ltm",
+        "ct_srv_dst",
+        "is_sm_ips_ports"
+      ],
+      "dropped_columns": [],
+      "frequency_columns": [],
+      "categorical_columns": [],
+      "target_transform": "none",
+      "model_family": "blend",
+      "categorical_handling": "onehot",
+      "blend_members": 2
+    },
+    "generated_code": false,
+    "training_reused": false,
+    "process": {
+      "status": "completed",
+      "returncode": 0,
+      "seconds": 32.25792579201516,
+      "peak_rss_mb": 941.921875
+    },
+    "directory": "final-refit"
+  },
+  "validation": "stratified-group5:first:seed42:exact-feature-groups",
+  "audit_validation": "stratified-group5:first:seed42:exact-feature-groups",
+  "audit_status": "completed",
+  "audit_used_for_selection": false,
+  "best_submission_seconds": 193.44831041700672,
+  "experiments": 16,
+  "first_model_seconds": 14.786170375009533,
+  "search_window_count": 1,
+  "search_policy": "single",
+  "distinct_experiments": 16,
+  "llm_calls": 0,
+  "llm_http_calls_reported": 0,
+  "llm_token_upper_estimate": 0,
+  "duplicate_proposals": 0,
+  "rejected_proposals": 0,
+  "api_configured": false,
+  "llm_status": "unconfigured",
+  "score_limitation": "Search scores are adaptive, not Boosters scores. Deployment selection uses all known periods; its independent assessment is the external masked benchmark. Optional nested mode audits frozen candidates and has historically exposed public folds.",
+  "seconds": 261.1921798750118,
+  "budget_seconds": 1200.0,
+  "seconds_remaining": 938.8078072080098,
+  "training_seconds": 228.84626308307634,
+  "training_fraction": 0.8761604700132526,
+  "completed_model_fits": 11,
+  "cached_decision_experiments": 8
+}

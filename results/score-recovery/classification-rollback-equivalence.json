@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "score": 0.6494124789044244,
+  "prediction_rows": 17141,
+  "dataframe_predictions_identical": true,
+  "csv_bytes_identical": true,
+  "control_csv_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+  "candidate_csv_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+  "candidate_archive_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641"
+}
