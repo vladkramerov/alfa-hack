@@ -1,0 +1,11 @@
+[
+  {
+    "train.csv": true,
+    "test.csv": true,
+    "sample_submission.csv": false,
+    "template_columns_equal": true,
+    "template_rows_equal": true,
+    "template_id_equal": true,
+    "template_target_placeholders_equal": false
+  }
+]

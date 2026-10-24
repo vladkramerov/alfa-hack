@@ -1,0 +1,37 @@
+{
+  "refs": [
+    "codex/ultimate-autoresearch-20261023 eab478a039d1efd02c001f56f9984f1f623bad2d",
+    "codex/ultimate-autoresearch-20261024 eab478a039d1efd02c001f56f9984f1f623bad2d",
+    "main f5d7d872678ba14acf133db18d993e193b0039d8",
+    "maxim/autoresearch 052ebc1e4bfe5247c0fb5a69bfa94bc7ac7518ad",
+    "origin f5d7d872678ba14acf133db18d993e193b0039d8",
+    "origin/codex/research-optimized be9d9aec64c39a3a73a7507a742223a8d65a8dee",
+    "origin/ivan_branch fe674da9a6876705ea1a4056cb33ef713cb3af57",
+    "origin/main f5d7d872678ba14acf133db18d993e193b0039d8",
+    "origin/maxim/autoresearch 73d5aa4d87ae4c90d61ec2268bdeb71fab2aa98b",
+    "origin/sergey_branch 24e3311f6ba958a67c740d5b0328cc34cb7e15d7"
+  ],
+  "worktrees": "worktree /Users/maxchibisov/Projects/HACKS/alfa-hack\nHEAD 052ebc1e4bfe5247c0fb5a69bfa94bc7ac7518ad\nbranch refs/heads/maxim/autoresearch\n\nworktree /Users/maxchibisov/.codex/worktrees/ultimate-autoresearch-20261023/alfa-hack\nHEAD eab478a039d1efd02c001f56f9984f1f623bad2d\nbranch refs/heads/codex/ultimate-autoresearch-20261023\n\nworktree /Users/maxchibisov/Projects/HACKS/alfa-ultimate\nHEAD eab478a039d1efd02c001f56f9984f1f623bad2d\nbranch refs/heads/codex/ultimate-autoresearch-20261024\n\n",
+  "control_commit": "73d5aa4d87ae4c90d61ec2268bdeb71fab2aa98b",
+  "api_model_source": "authenticated /models; receipt api-model-discovery.json",
+  "research_prediction_directory": "/private/tmp/alfa-strongest-team",
+  "source_hashes": {
+    "automl_worker.py": "2dfdbd67bb36415174a56db6a63d14b2a7bb5ced8c80b9432e8488051dc53e99",
+    "automl_llm.py": "aa4aa72658700eef91a8f7ef9e5cef0420c33dfef55fac69918cc382a0fba84e",
+    "automl_residual.py": "9314046df5451b2e6a94536a3d75d425f40c48ef5bbe7fee58c8662c341d6625",
+    "automl_data.py": "5140a1669081445bedb972284294245b79552a65df15f8b3d8d75a7fbb499427",
+    "automl_models.py": "1b2d51fc99792aecb26c3e9fe8b9285d48715a3bed0efd0ce06cf9d5e27c82d3",
+    "automl_decision.py": "882248a07167174a0044ff80c875ce3924d0041c341f949a9f7a7503b98727b4",
+    "automl_panel.py": "8a2c87a41b8c4d8a8b6c498feb409d519263a27d7c8cf9f79a07d7e8520fec90",
+    "automl_engine.py": "8dead297fa346acdfda004430baa6b1ee720a3e59f5321afb48bfd75137e9804",
+    "automl_transfer.py": "2d4a50c2c3e38d0dee0e74203a6f830691a5c9deb835456ca98e3570eb57d4d9",
+    "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
+    "experiments/strongest_e2e.py": "d11b3871f78a8b35ea5ced7659b379a6d984bc7345f21380d23a2620dcb897e8",
+    "experiments/strongest_team.py": "1290db77324a9900af50a981915d784719afc17faab4cd5800527b86d90ac424",
+    "experiments/strongest_residual.py": "cae95b0bb1da8746833510f07b6be59e0e2d131aa3b62a1d35cf01e36d5ddedb",
+    "experiments/strongest_residual_strict.py": "40172626f67e84ca1129e122f78524971032d8fad00a46aec4da55190a9d3f29",
+    "experiments/strongest_decision.py": "b27d2412c111d56df5a14a80fb85477d49c922697b9ac0e9925b9983b22a194d",
+    "experiments/strongest_pool.py": "da1cbe491d23684ed4ad08e2690a7c1b515dbee45a01697fccc49c5dda4e0901",
+    "experiments/strongest_transport.py": "8377dcf382ca94897e37182b2be9ac8c7c163fcba4d409e0469ca0be22bba856"
+  }
+}

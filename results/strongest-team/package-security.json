@@ -1,0 +1,23 @@
+{
+  "archive_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "bytes": 49320,
+  "root_only": true,
+  "allowed_entries_only": true,
+  "files_match_manifest": true,
+  "official_requirements": true,
+  "local_key_absent_from_zip": true,
+  "env_ignored": true,
+  "env_tracked": false,
+  "modules": [
+    "solution.py",
+    "automl_engine.py",
+    "automl_data.py",
+    "automl_models.py",
+    "automl_worker.py",
+    "automl_llm.py",
+    "automl_runtime.py",
+    "automl_panel.py",
+    "automl_residual.py",
+    "requirements.txt"
+  ]
+}

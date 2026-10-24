@@ -2,7 +2,77 @@
   "status": "running",
   "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
   "source_commit": "d04ec918e6c2e4a9732ad0a9891923ec3c8941e0",
-  "runs": [],
+  "runs": [
+    {
+      "task": "regression",
+      "scope": "shadow",
+      "score": 36.95199237169711,
+      "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "seconds": 499.25229274999583,
+      "peak_rss_mb": 862.90625,
+      "rows": 18308,
+      "selected": {
+        "family": "extra_trees",
+        "panel_time_column": "Year_Factor",
+        "panel_strategy": "hybrid",
+        "numeric_view": "signed_log",
+        "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+        "target_transform": "log1p",
+        "feature_operations": [
+          {
+            "op": "mul",
+            "name": "research_product",
+            "left": "energy_star_rating",
+            "right": "days_below_minus7C"
+          },
+          {
+            "op": "div",
+            "name": "research_ratio",
+            "left": "energy_star_rating",
+            "right": "days_below_minus7C"
+          }
+        ],
+        "drop_columns": [
+          "april_min_temp_c",
+          "august_avg_temp_c",
+          "august_min_temp_c",
+          "cooling_degree_days_c",
+          "days_below_minus1C",
+          "december_avg_temp_c",
+          "december_max_temp_c",
+          "february_avg_temp_c",
+          "february_max_temp_c",
+          "february_min_temp_c",
+          "heating_degree_days_c",
+          "july_min_temp_c",
+          "march_avg_temp_c",
+          "march_max_temp_c",
+          "march_min_temp_c",
+          "may_avg_temp_c",
+          "september_avg_temp_c",
+          "september_min_temp_c",
+          "snowdepth_inches",
+          "snowfall_inches"
+        ],
+        "frequency_columns": [
+          "State_Factor",
+          "facility_type"
+        ],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "summary": "/private/tmp/alfa-strongest-e2e-v2/regression-shadow/agent_runs/20261024T133741150903Z/summary.json",
+      "submission_sha256": "920cb4eb5a5a6ea744c4757474e9f49c1ee0825f9048eb6d871e7c4b3310e065",
+      "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    }
+  ],
   "control_report": "results/score-recovery/e2e-final.json",
   "control_zip_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
   "protocol": "Fresh frozen CLI candidate; previous completed controls reused. Equal8CPU/1200s/cap16 shadow;1800s/default original. No API for controlled ML comparison; external outer repeatedly viewed."

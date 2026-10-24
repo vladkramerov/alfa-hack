@@ -1,0 +1,168 @@
+{
+  "status": "completed",
+  "rule": "paired one-SE, threshold1 fixed before replay",
+  "outer_read": false,
+  "trials": [
+    {
+      "id": "RUN-001",
+      "score": 49.871137614162365,
+      "accepted": true
+    },
+    {
+      "id": "RUN-002",
+      "score": 40.49955691365092,
+      "delta": -9.371580700511451,
+      "cluster_se": 0.7110353924151543,
+      "incumbent": "RUN-001",
+      "accepted": true
+    },
+    {
+      "id": "RUN-003",
+      "score": 38.97822885989853,
+      "delta": -1.521328053752391,
+      "cluster_se": 0.45160514345487285,
+      "incumbent": "RUN-002",
+      "accepted": true
+    },
+    {
+      "id": "RUN-004",
+      "score": 42.89367691195811,
+      "accepted": false
+    },
+    {
+      "id": "RUN-005",
+      "score": 48.23023673118337,
+      "accepted": false
+    },
+    {
+      "id": "RUN-006",
+      "score": 38.94581990830906,
+      "delta": -0.03240895158946554,
+      "cluster_se": 0.12173799114918152,
+      "incumbent": "RUN-003",
+      "accepted": false
+    },
+    {
+      "id": "RUN-007",
+      "score": 49.869121307964434,
+      "accepted": false
+    },
+    {
+      "id": "RUN-008",
+      "score": 57.50430011748385,
+      "accepted": false
+    },
+    {
+      "id": "RUN-009",
+      "score": 39.491903700486674,
+      "accepted": false
+    },
+    {
+      "id": "RUN-010",
+      "score": 38.88758729307486,
+      "delta": -0.09064156682367314,
+      "cluster_se": 0.13754140843292398,
+      "incumbent": "RUN-003",
+      "accepted": false
+    },
+    {
+      "id": "RUN-011",
+      "score": 39.696849560383654,
+      "accepted": false
+    },
+    {
+      "id": "RUN-012",
+      "score": 49.131711591214106,
+      "accepted": false
+    },
+    {
+      "id": "RUN-013",
+      "score": 38.900873947534706,
+      "delta": -0.07735491236382824,
+      "cluster_se": 0.1149299917865851,
+      "incumbent": "RUN-003",
+      "accepted": false
+    },
+    {
+      "id": "RUN-014",
+      "score": 38.85576239896389,
+      "delta": -0.12246646093463923,
+      "cluster_se": 0.11778781079085329,
+      "incumbent": "RUN-003",
+      "accepted": true
+    },
+    {
+      "id": "RUN-015",
+      "score": 39.698914219884045,
+      "accepted": false
+    },
+    {
+      "id": "RUN-016",
+      "score": 38.8449015664427,
+      "delta": -0.010860832521190439,
+      "cluster_se": 0.05613898535144999,
+      "incumbent": "RUN-014",
+      "accepted": false
+    }
+  ],
+  "selected_id": "RUN-014",
+  "selected_candidate": {
+    "family": "extra_trees",
+    "panel_time_column": "Year_Factor",
+    "panel_strategy": "hybrid",
+    "numeric_view": "signed_log",
+    "hypothesis": "Test interactions between the two strongest fit-only numeric associations.",
+    "target_transform": "log1p",
+    "feature_operations": [
+      {
+        "op": "mul",
+        "name": "research_product",
+        "left": "energy_star_rating",
+        "right": "days_below_minus7C"
+      },
+      {
+        "op": "div",
+        "name": "research_ratio",
+        "left": "energy_star_rating",
+        "right": "days_below_minus7C"
+      }
+    ],
+    "drop_columns": [
+      "april_min_temp_c",
+      "august_avg_temp_c",
+      "august_min_temp_c",
+      "cooling_degree_days_c",
+      "days_below_minus1C",
+      "december_avg_temp_c",
+      "december_max_temp_c",
+      "february_avg_temp_c",
+      "february_max_temp_c",
+      "february_min_temp_c",
+      "heating_degree_days_c",
+      "july_min_temp_c",
+      "march_avg_temp_c",
+      "march_max_temp_c",
+      "march_min_temp_c",
+      "may_avg_temp_c",
+      "september_avg_temp_c",
+      "september_min_temp_c",
+      "snowdepth_inches",
+      "snowfall_inches"
+    ],
+    "frequency_columns": [],
+    "parameters": {
+      "max_depth": 24,
+      "max_features": 0.8,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "n_estimators": 200
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "source_run": "/private/tmp/alfa-strongest-e2e-v2/regression-shadow/agent_runs/20261024T133741150903Z",
+  "group_columns": [
+    "floor_area",
+    "year_built"
+  ]
+}

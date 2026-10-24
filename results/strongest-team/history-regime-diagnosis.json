@@ -1,0 +1,32 @@
+{
+  "query_history_coverage": 0.6937404413371204,
+  "folds": [
+    {
+      "split": "search_split-01.npz",
+      "history_coverage": 0.7864977599258458,
+      "key_columns": [
+        "floor_area",
+        "year_built"
+      ]
+    },
+    {
+      "split": "search_split-02.npz",
+      "history_coverage": 0,
+      "key_columns": []
+    }
+  ],
+  "latest_only_replay": [
+    {
+      "arm": "control",
+      "weighted_id": "RUN-015",
+      "latest_id": "RUN-015",
+      "same": true
+    },
+    {
+      "arm": "candidate",
+      "weighted_id": "RUN-016",
+      "latest_id": "RUN-016",
+      "same": true
+    }
+  ]
+}
