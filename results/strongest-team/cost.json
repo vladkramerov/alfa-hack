@@ -1,0 +1,14 @@
+{
+  "research_tree_learner_fits": 8,
+  "research_statistics_calibration_retrieval_fits_separate": true,
+  "e2e_wall_seconds": 2324.2900655410194,
+  "e2e_completed_arms": 4,
+  "e2e_control_fits_reused": true,
+  "first_failed_dispatch_wall_seconds": 28.884767416020622,
+  "cleanroom_wall_seconds": 32.03863550000824,
+  "live_cli_wall_seconds": 7.618791124987183,
+  "generation_calls": 2,
+  "provider_reported_cost": 0.1089000751436,
+  "provider_currency_or_unit": "not established",
+  "limitation": "Worker fits include composite sublearners; recorded0seconds for2late trialtimeouts is not zero cost. E2Ewall includes them; nativefit count not inferred from worker count."
+}

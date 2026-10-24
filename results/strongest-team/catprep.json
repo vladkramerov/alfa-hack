@@ -1,0 +1,84 @@
+{
+  "status": "completed",
+  "hypothesis": "ST9",
+  "candidate": {
+    "family": "xgboost",
+    "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [
+      "proto",
+      "service",
+      "state"
+    ],
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "n_estimators": 600,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0
+    },
+    "class_weight_power": 0,
+    "decision_power": 0.3
+  },
+  "hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "folds": [
+    {
+      "stage": "inner",
+      "score": 0.6316983825718596,
+      "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+      "seconds": 14.756537833018228,
+      "preprocessing_seconds": 1.7183289590175264,
+      "group_crossfit": [
+        {
+          "fit": 38085,
+          "valid": 18622,
+          "group_overlap": 0
+        },
+        {
+          "fit": 37732,
+          "valid": 18975,
+          "group_overlap": 0
+        },
+        {
+          "fit": 37597,
+          "valid": 19110,
+          "group_overlap": 0
+        }
+      ],
+      "combinations": [
+        [
+          "proto"
+        ],
+        [
+          "service"
+        ],
+        [
+          "state"
+        ],
+        [
+          "proto",
+          "service"
+        ],
+        [
+          "proto",
+          "state"
+        ],
+        [
+          "service",
+          "state"
+        ]
+      ]
+    }
+  ],
+  "outer_adaptive": true,
+  "rss_mb": 887.921875
+}

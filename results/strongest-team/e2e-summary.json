@@ -1,0 +1,50 @@
+[
+  {
+    "task": "regression",
+    "scope": "shadow",
+    "status": "completed",
+    "refit": "completed",
+    "experiments": 16,
+    "rows": 18308,
+    "wall_seconds": 499.25229274999583,
+    "peak_rss_mb": 862.90625,
+    "selected_hybrid": true,
+    "submission_sha256": "920cb4eb5a5a6ea744c4757474e9f49c1ee0825f9048eb6d871e7c4b3310e065"
+  },
+  {
+    "task": "regression",
+    "scope": "original",
+    "status": "completed",
+    "refit": "completed",
+    "experiments": 19,
+    "rows": 22449,
+    "wall_seconds": 1310.3043596250063,
+    "peak_rss_mb": 1046.03125,
+    "selected_hybrid": true,
+    "submission_sha256": "bb05a4a3e2658c994302bf35712ce9f2e8274c51b87a5d070677fa7fd1b8bb7f"
+  },
+  {
+    "task": "classification",
+    "scope": "shadow",
+    "status": "completed",
+    "refit": "completed",
+    "experiments": 16,
+    "rows": 17141,
+    "wall_seconds": 252.45163125000545,
+    "peak_rss_mb": 1158.390625,
+    "selected_hybrid": false,
+    "submission_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3"
+  },
+  {
+    "task": "classification",
+    "scope": "original",
+    "status": "completed",
+    "refit": "completed",
+    "experiments": 15,
+    "rows": 41166,
+    "wall_seconds": 262.2817819160118,
+    "peak_rss_mb": 1186.234375,
+    "selected_hybrid": false,
+    "submission_sha256": "bf1b7817d24ed597e1fa5ea1dd8df1cfaba6962afb3985ac46772171a843df86"
+  }
+]

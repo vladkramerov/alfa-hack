@@ -1,9 +1,9 @@
 # Следующие действия
 
-Текущая серия завершена: [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md).
+Текущая strongest-team серия завершена; results/strongest-team/README.md и единый EXPERIMENT_LOG.md содержат все исходы. Действующая поставка улучшила regression policy на1.67%, classification сохранила; лучшие team research не превзойдены.
 
-1. Ручной Boosters-submit ZIP e12d6913… с сохранением per-task логов и связи score→SHA; автоматическая загрузка не разрешена.
-2. Проверка переноса на независимом временном окне/других данных, затем доверия и коллизий автоматически найденного entity key без известных публичных имён полей.
-3. Классификационный контроль сохранить; отвергнутые stopping/geometric defaults не возвращать без новой сравнительной оценки.
+1. Один контролируемый Boosters-submit только по отдельному поручению: ZIPf3a24044… с точной связью SHA→runID→per-tasklogs. Версия13.7676 неизвестна; обещать top10 по локальным метрикам нельзя.
+2. Ограниченное парное whole-policy сравнение onlineQwen vs frozenoffline: API/model теперь работают, но полное влияниеLLM на publicMLquality не измерено. Не повторять законченнуюofflineсерию.
+3. Свежая проверка лучших teamfusion/TabM H109/110 с task-local обучением смеси/genericroles и одинаковыми split/preprocessing/OS; cachedweights и просмотренныйouter не считать независимым подтверждением. Сначала получить опубликованные итоги, не дублировать pendingнейронныеfits.
 
-Qwen URL/model отсутствуют, live calls0; Linux/официальный контейнер не проверен.
+API https://changellenge.up.railway.app/v1, qwen/qwen3.8-27b изauthenticated/models. Ключ только localprocessenv/Boostersenv; .env.localнеGit/неZIP. Linux/официальныйcontainer ещё не проверен.

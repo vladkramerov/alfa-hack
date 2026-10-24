@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "bytes": 49320,
+  "matches_frozen_e2e": true,
+  "source_commit": "052ebc1e4bfe5247c0fb5a69bfa94bc7ac7518ad",
+  "source_files_match_archive_and_worktree": {
+    "solution.py": true,
+    "automl_engine.py": true,
+    "automl_data.py": true,
+    "automl_models.py": true,
+    "automl_worker.py": true,
+    "automl_llm.py": true,
+    "automl_runtime.py": true,
+    "automl_panel.py": true,
+    "automl_residual.py": true,
+    "requirements.txt": true
+  },
+  "other_refs_unchanged": true,
+  "legacy_worktrees": {
+    "/Users/maxchibisov/Projects/HACKS/alfa-ultimate": {
+      "head": "eab478a039d1efd02c001f56f9984f1f623bad2d",
+      "head_unchanged": true,
+      "dirty_status_sha256": "aac6cf6a2f756bd22e3dca86037f6a78d525b07fc2a75560f8bc84038a780de3",
+      "dirty_lines": 33
+    },
+    "/Users/maxchibisov/.codex/worktrees/ultimate-autoresearch-20261023/alfa-hack": {
+      "head": "eab478a039d1efd02c001f56f9984f1f623bad2d",
+      "head_unchanged": true,
+      "dirty_status_sha256": "8fccea66062f204529d8a6bb48d00e20b75fb193597d287d790611214b4e8ed8",
+      "dirty_lines": 33
+    }
+  },
+  "env_tracked": false,
+  "predictions_tracked": false,
+  "boosters_uploaded": false
+}

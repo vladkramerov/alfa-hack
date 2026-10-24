@@ -1,0 +1,39 @@
+{
+  "submissions": [
+    {
+      "task": "regression",
+      "scope": "shadow",
+      "path": "local_data/strongest-team/regression-shadow/submission.csv",
+      "sha256": "920cb4eb5a5a6ea744c4757474e9f49c1ee0825f9048eb6d871e7c4b3310e065",
+      "rows": 18308,
+      "source_zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "regression",
+      "scope": "original",
+      "path": "local_data/strongest-team/regression-original/submission.csv",
+      "sha256": "bb05a4a3e2658c994302bf35712ce9f2e8274c51b87a5d070677fa7fd1b8bb7f",
+      "rows": 22449,
+      "source_zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "classification",
+      "scope": "shadow",
+      "path": "local_data/strongest-team/classification-shadow/submission.csv",
+      "sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+      "rows": 17141,
+      "source_zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "classification",
+      "scope": "original",
+      "path": "local_data/strongest-team/classification-original/submission.csv",
+      "sha256": "bf1b7817d24ed597e1fa5ea1dd8df1cfaba6962afb3985ac46772171a843df86",
+      "rows": 41166,
+      "source_zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    }
+  ],
+  "scientific_prediction_archive_directory": "local_data/strongest-team/science",
+  "archive_files": 21,
+  "data_not_in_git": true
+}

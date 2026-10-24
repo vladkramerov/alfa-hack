@@ -1,7 +1,6 @@
 {
-  "status": "running",
+  "status": "completed",
   "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
-  "source_commit": "d04ec918e6c2e4a9732ad0a9891923ec3c8941e0",
   "runs": [
     {
       "task": "regression",
@@ -71,9 +70,162 @@
       "summary": "/private/tmp/alfa-strongest-e2e-v2/regression-shadow/agent_runs/20261024T133741150903Z/summary.json",
       "submission_sha256": "920cb4eb5a5a6ea744c4757474e9f49c1ee0825f9048eb6d871e7c4b3310e065",
       "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "regression",
+      "scope": "original",
+      "score": null,
+      "key": null,
+      "seconds": 1310.3043596250063,
+      "peak_rss_mb": 1046.03125,
+      "rows": 22449,
+      "selected": {
+        "family": "extra_trees",
+        "panel_time_column": "Year_Factor",
+        "panel_strategy": "hybrid",
+        "hypothesis": "Test interactions between the two strongest fit-only numeric associations.",
+        "target_transform": "log1p",
+        "feature_operations": [
+          {
+            "op": "mul",
+            "name": "research_product",
+            "left": "energy_star_rating",
+            "right": "january_avg_temp_c"
+          },
+          {
+            "op": "div",
+            "name": "research_ratio",
+            "left": "energy_star_rating",
+            "right": "january_avg_temp_c"
+          }
+        ],
+        "drop_columns": [],
+        "frequency_columns": [
+          "State_Factor",
+          "facility_type"
+        ],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "summary": "/private/tmp/alfa-strongest-e2e-v2/regression-original/agent_runs/20261024T134600673925Z/summary.json",
+      "submission_sha256": "bb05a4a3e2658c994302bf35712ce9f2e8274c51b87a5d070677fa7fd1b8bb7f",
+      "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "classification",
+      "scope": "shadow",
+      "score": 0.6494124789044244,
+      "key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "seconds": 252.45163125000545,
+      "peak_rss_mb": 1158.390625,
+      "rows": 17141,
+      "selected": {
+        "family": "blend",
+        "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "members": [
+          {
+            "family": "xgboost",
+            "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "extra_trees",
+            "hypothesis": "Compare random thresholds to observed boosting errors.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0.5
+      },
+      "summary": "/private/tmp/alfa-strongest-e2e-v2/classification-shadow/agent_runs/20261024T140755577093Z/summary.json",
+      "submission_sha256": "52ea6af7673c8c6dfe25b15b8794231b993dea8990d802353b5960dac50f28c3",
+      "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
+    },
+    {
+      "task": "classification",
+      "scope": "original",
+      "score": null,
+      "key": null,
+      "seconds": 262.2817819160118,
+      "peak_rss_mb": 1186.234375,
+      "rows": 41166,
+      "selected": {
+        "family": "xgboost",
+        "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      },
+      "summary": "/private/tmp/alfa-strongest-e2e-v2/classification-original/agent_runs/20261024T141208185117Z/summary.json",
+      "submission_sha256": "bf1b7817d24ed597e1fa5ea1dd8df1cfaba6962afb3985ac46772171a843df86",
+      "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88"
     }
   ],
   "control_report": "results/score-recovery/e2e-final.json",
   "control_zip_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
-  "protocol": "Fresh frozen CLI candidate; previous completed controls reused. Equal8CPU/1200s/cap16 shadow;1800s/default original. No API for controlled ML comparison; external outer repeatedly viewed."
+  "protocol": "Fresh frozen CLI candidate; previous completed controls reused. Equal8CPU/1200s/cap16 shadow;1800s/default original. No API for controlled ML comparison; external outer repeatedly viewed.",
+  "head_at_dispatch": "d04ec918e6c2e4a9732ad0a9891923ec3c8941e0",
+  "verified_runtime_source_commit": "052ebc1e4bfe5247c0fb5a69bfa94bc7ac7518ad",
+  "source_note": "Archive froze uncommitted runtime; all shipped bytes match this later commit. Actual4CLI arms executed the same archive."
 }

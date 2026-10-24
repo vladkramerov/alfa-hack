@@ -1,16 +1,17 @@
 {
   "archive": "alfa_autoresearch_submission.zip",
-  "bytes": 46651,
-  "sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+  "bytes": 49320,
+  "sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
   "files": {
     "solution.py": "3d87e231b70a735a859a5f61873c3ceec1ed611dbe0786dd2bbfd085a21a1d3c",
-    "automl_engine.py": "dbba5dc6f91702dca970330cd5a6be32a024d0fa546728a473b18e042c7379b1",
+    "automl_engine.py": "8dead297fa346acdfda004430baa6b1ee720a3e59f5321afb48bfd75137e9804",
     "automl_data.py": "5140a1669081445bedb972284294245b79552a65df15f8b3d8d75a7fbb499427",
-    "automl_models.py": "c95e0c512dca7f5b3fdc21f36358c86cef3289da58f4e042f76a29454d250e7e",
+    "automl_models.py": "1b2d51fc99792aecb26c3e9fe8b9285d48715a3bed0efd0ce06cf9d5e27c82d3",
     "automl_worker.py": "2dfdbd67bb36415174a56db6a63d14b2a7bb5ced8c80b9432e8488051dc53e99",
-    "automl_llm.py": "2c8512eb5c55dc15f38ad13f53a514bbf407db050f260361d6e781a556393e38",
+    "automl_llm.py": "aa4aa72658700eef91a8f7ef9e5cef0420c33dfef55fac69918cc382a0fba84e",
     "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
-    "automl_panel.py": "4e9e30fcd0da5d1c52ef27e8fbdb02307cd546ae7e9bc01ba624fc7e5f687676",
+    "automl_panel.py": "8a2c87a41b8c4d8a8b6c498feb409d519263a27d7c8cf9f79a07d7e8520fec90",
+    "automl_residual.py": "9314046df5451b2e6a94536a3d75d425f40c48ef5bbe7fee58c8662c341d6625",
     "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
   },
   "deterministic": true

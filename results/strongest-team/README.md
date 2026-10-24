@@ -6,6 +6,8 @@
 |---|---|---:|---|
 | Whole-agent control, regression | Maxim73d5aa4 |37.578330|maskedCLI `<5→5`,35000/18308,8CPU,1200sec,cap16|
 | Whole-agent control, classification | Maxim73d5aa4 |.649412479|maskedCLI group outer70529/17141,8CPU,1200sec,cap16|
+| Whole-agent new, regression |Maxim causal hybrid|**36.951992**|same masked CLI,−1.66675%;actualrefit|
+| Whole-agent new, classification |Maxim causal hybrid|**.649412479**|same maskedCLI,byte-identicalcontrolCSV|
 | Research reg, team |SergeyH73|34.520269|same temporal outer,Mac; fixed key|
 | Research reg, team |IvanH107|34.142888|sameouter,cachedcross-OS mixture,no fresh runtimequality|
 | Research reg, team |IvanH108blend|33.979840|sameouter,cachedH107+NumPyTabM-mini; not promoted|
@@ -26,6 +28,8 @@
 |ST6 H78 mechanism/current teacher|.636708318→.648375385|.637337946→.606339730|отклонить; переноса нет|
 |ST7 fixed stable/dynamic hybrid|period4 33.056728→30.716224|36.129126→36.111884|только кандидат дляwhole-policy,не объявлять победой|
 |ST7 inner-only simplex|period4 30.654919|36.083734|publicweightsне встраивать|
+|ST8 paired1SE replay|RUN14 вместоRUN16|новогоfitнет|недостаточнообоснования,нетdefault|
+|ST9 categorical groupOOF TE|.636708318→.631698383|не запускался|отклонить|
 
 JSON содержат ключи/хеши/параметры/время/RSS. Предсказания: /private/tmp/alfa-strongest-team, замороженные новые CLI: /private/tmp/alfa-strongest-e2e-v2. Часть ST1/2/4/pool — только обучение статистик/линейных/изотонических поправок; oldbase learnerfits0. ST6 needed2 fresh teachers дляtrainprobabilities (их нет в старых кэшах), внутреннийcontrol воспроизвёл cache побайтно/maxdiff0. Первая интеграционная ошибкаdispatch сохранена e2e-first-error.json; fallbackCSV валиден, qualityclaimнет.
 
@@ -33,4 +37,6 @@ JSON содержат ключи/хеши/параметры/время/RSS. П�
 
 Литература: [TabM](https://arxiv.org/abs/2410.24210) — уже исследуетсяИваном, недублировали; [TabR](https://arxiv.org/abs/2307.14338) — мотивирует supervisedretrieval, нашаST3 неTabR; [TabReD](https://arxiv.org/abs/2406.19380) — time-split иindustrialshift важнееIID; [TabDPT](https://arxiv.org/abs/2410.18164) — pretrainedstate противограничений. Публичные MUCG9/hilhool/NolReaction/ilove4fak проверены в прошлойсерии; no license/no foreigncodeimport, актуальные выводы results/score-recovery/external-sources.json.
 
-Статусwhole-policy: ожидается e2e-v2.json; только после него принимать илиоткатывать новыйdefault. КонтрольZIPсохранён.
+Итог: новыйdefault подтверждён как улучшение нашей offlineполитики по regression; classification сохранена. Все4CLI/refit completed (e2e-v2.json/e2e-summary.json);81tests,9cleanroomPASS. ActualQwenCLIнаsynthetic47rowscompleted за7.619sec:1tool-call,1LLMexperimentcompleted,reasoningtokens0. Всего2платныхgeneration вэтойсерии; usagecost.1089000751436 в неустановленных единицахпровайдера. ПолнаяpublicполитикасживойQwenнеоценена, этиметрикиoffline. LinuxDocker/hiddenнепроверены. Лучшиеteamresearchнепревзойдены.
+
+Поставка dist/alfa_autoresearch_submission.zip:49320B, SHA256 f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88;9rootpy+officialrequirements. Проверкаключа/структурыpackage-security.json, cleanroom.json совпадаетсзамороженнымsourceZIP. Прогнозыперенесенывignoredlocal_data/strongest-team,предыдущиекэшинеповреждены. Контрольe12…сохранён. НичегонеотправлялосьнаBoosters. ДальшеимеетсмыслконтролируемыйsubmitсSHA/logsтолькопоотдельномупоручению, нe обещаниеtop10.

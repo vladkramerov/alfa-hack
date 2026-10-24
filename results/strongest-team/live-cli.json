@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "archive_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "seconds": 7.618791124987183,
+  "rows": 47,
+  "summary_status": "completed",
+  "llm_calls": 1,
+  "api": [
+    {
+      "status": "ok",
+      "attempts": 1,
+      "finish_reason": "tool_calls",
+      "reasoning_disabled_requested": true,
+      "usage": {
+        "completion_tokens": 254,
+        "prompt_tokens": 3185,
+        "total_tokens": 3439,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0.079822921672
+      },
+      "estimated_tokens": 4374,
+      "seconds": 4.30202608401305
+    }
+  ],
+  "final_refit": "completed",
+  "workdir": "/private/tmp/alfa-strongest-live-cli",
+  "source": "synthetic only, no public data or secrets in report",
+  "experiment_sources": [
+    "adaptive_fallback",
+    "llm"
+  ],
+  "llm_experiments_completed": 1
+}
