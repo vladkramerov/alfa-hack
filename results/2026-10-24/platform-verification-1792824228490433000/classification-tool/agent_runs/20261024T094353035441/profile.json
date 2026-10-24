@@ -1,0 +1,48 @@
+{
+  "task": "Classification.\nPrimary metric: Macro F1.\nData: nested/inputs/train.csv nested/inputs/test.csv nested/inputs/sample_submission.csv nested/inputs/data_dictionary.csv",
+  "target": "response",
+  "id": "object_key",
+  "type": "classification",
+  "metric": "macro_f1",
+  "split": "stratified80/20:seed42",
+  "shape": [
+    80,
+    2
+  ],
+  "dtypes": {
+    "signal": "float64",
+    "kind": "object"
+  },
+  "missing": {
+    "signal": 0.0125,
+    "kind": 0.1
+  },
+  "categories": {
+    "kind": 3
+  },
+  "numeric_summary": {
+    "signal": {
+      "count": 79.0,
+      "mean": 0.2054563379661684,
+      "std": 0.8663181682501447,
+      "min": -1.9902864130247395,
+      "1%": -1.7780777370906973,
+      "50%": 0.1006632102397099,
+      "99%": 1.8233470809823538,
+      "max": 1.8483440835780385
+    }
+  },
+  "target_fit_summary": {
+    "positive": 47,
+    "negative": 33
+  },
+  "preprocessing_policy": "Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. panel-hybrid-memory-v1 adds strictly past state and training-only annual dynamics with a fixed 50/50 blend; older compatible strategies and full-v1 default remain available. No validation/test row deletion. Only task-local measured evidence may be reused; no pretrained calibration or public dataset score ships with this agent.",
+  "known": null,
+  "hashes": {
+    "train.csv": "909e1e1a47c0e4608c28fe9073cd1fd08a258b31157fff4b81527e57cfef17ed",
+    "test.csv": "9995f5b87db393c0ce49189858484b4b5e2feec58b62f79a1d396ac252e25927",
+    "sample_submission.csv": "9e2f8f7d0921b767fbb89663e1fd3702508db176b10dee3b5e7bb53b948e434f",
+    "data_dictionary.csv": "ec603c0b2a0a561489b7c83bf4535785879b838d03645140e7d7d15ac4d30c0a"
+  },
+  "split_key": "7cad86b6c8561197613f40a18684dfdc57e4ce7a794a9b87aa11615af1e8218e"
+}

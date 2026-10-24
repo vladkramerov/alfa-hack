@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 39.36689369458382,
+  "seconds": 20.192676458973438,
+  "fit_rows": 35000,
+  "valid_rows": 18308,
+  "description": "temporal:Year_Factor:last=5",
+  "frozen_public_meta_reused": false
+}

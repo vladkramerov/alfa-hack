@@ -1,0 +1,48 @@
+{
+  "hypothesis": "CONTROL-SPEC011",
+  "user_authorized_reproduction": true,
+  "task": "regression",
+  "stage": "secondary",
+  "candidate": {
+    "strategy": "temporal_profile_memory",
+    "parameters": {},
+    "family": "extra_trees",
+    "hypothesis": "HYP-069: verified past-only profile retrieval, final refit only",
+    "preprocessing": "temporal-profile-memory-v1",
+    "scale": false,
+    "max_outlier_fraction": 0,
+    "target_transform": "log1p"
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+  "description": "temporal:Year_Factor<4->4",
+  "fit_rows": 22054,
+  "valid_rows": 12946,
+  "ledger_sha256_before_fit": "0d67a319fdc61ad77dd029b779eb3ae2a067befc6a72434e14a82381773532f9",
+  "commit": "c85c10e31011909abc597c8efa87403b4b454bd6",
+  "source_sha256": {
+    "automl_next_reg.py": "52de1f880e2b77adf1d1b5182b67fb26dbe9a945d4e6b61a6d9fea0184dacd6d",
+    "automl_worker.py": "2e864601d00265a35e9708bdf556ab5b5e267d807f3c6fd33b333f536a09d514",
+    "automl_llm.py": "b045e5598bdcad98a698b476a26937041457cfd9638b9f14724f2743d7c943b8",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_models.py": "be94f1bd0635385ee0f015d736b6039909d2eaa966bc2b96c86d55f354e899b3",
+    "automl_known.py": "ee13d81b587df6c999dbdc8eec9efcffd4a85d0af37265b0f099e1c9516bd80e",
+    "automl_history.py": "2326759cf9f5bc0035429a2ca18fa97a9f7265f0ea1b0c671914570e673438b7",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_combo_policy.py": "8935f17b1cda3723cd0982a416c7fd40261a598bc0c2d01e8a1b18310a89325a",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_next_class.py": "2200fa118a5022ab7fdc61f5aedf5eda3f1a9e60bd7ddadfdff6e2d90c01bf36"
+  },
+  "python": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit"
+}

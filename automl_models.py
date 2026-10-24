@@ -13,6 +13,13 @@ def canonical_candidate(candidate):
     result=dict(candidate)
     result['parameters']=dict(candidate.get('parameters',{}))
     strategy=result.get('strategy')
+    if strategy=='panel_hybrid_memory':
+        if result.get('family')!='extra_trees' or result['parameters'] or result.get('feature_code','').strip():
+            raise ValueError('Panel hybrid has fixed measured family/parameters/features')
+        if result.get('target_transform') not in [None,'log1p'] or result.get('panel_method') not in [None,'stable']:
+            raise ValueError('Panel hybrid contract mismatch')
+        result.update(preprocessing='panel-hybrid-memory-v1',scale=False,max_outlier_fraction=0,target_transform='log1p')
+        return result
     if strategy in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking','temporal_profile_memory'}:
         from automl_combo_policy import canonical_combo
         return canonical_combo(result)
@@ -146,6 +153,10 @@ class Encoder(TransformerMixin,BaseEstimator):
 
 def build_pipeline(kind,candidate,threads=4):
     candidate=canonical_candidate(candidate)
+    if candidate.get('strategy')=='panel_hybrid_memory':
+        if kind!='regression': raise ValueError('Panel hybrid requires regression')
+        from automl_panel_memory import PanelHybridModel
+        return PanelHybridModel(candidate,threads)
     if candidate.get('strategy')=='temporal_profile_memory':
         if kind!='regression':raise ValueError('Temporal profile memory requires regression')
         from automl_temporal_memory import TemporalProfileModel

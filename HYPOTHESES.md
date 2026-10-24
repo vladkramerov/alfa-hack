@@ -1,5 +1,21 @@
 # Единый журнал гипотез
 
+## Актуальная серия Сергея — 24 октября 2026
+
+[Полный командный отчёт и все результаты](reports/TEAM_REPORT_2026-10-24.md). Изменения только в sergey_branch; источник ivan_branch4283105 не изменён. Сравнения ниже на одинаковом Mac окружении и одинаковых разбиениях.
+
+| ID | Механизм | Primary | Secondary | Решение |
+| --- | --- | ---: | ---: | --- |
+| [H70](docs/hypotheses/HYP-070.md) | Устойчивый профиль без ELEVATION | RMSE 34.572234 | RMSE 33.168528 | Проверена; уступила H73 по primary |
+| [H71](docs/hypotheses/HYP-071.md) | Последняя история и train-only доверие | RMSE 35.644019 | RMSE 30.479345 | Проверена; уступила H73 по primary |
+| [H72](docs/hypotheses/HYP-072.md) | Причинная модель годового изменения | RMSE 35.508072 | RMSE 31.450103 | Проверена; уступила H73 по primary |
+| [H73](docs/hypotheses/HYP-073.md) | Фиксированный 50/50 H70+H72 | RMSE 34.520269 | RMSE 31.046636 | **Внедрена** |
+| [H74](docs/hypotheses/HYP-074.md) | Лес исходного target по прошлому состоянию | RMSE 35.380471 | RMSE 31.498776 | Проверена; уступила H73 по primary |
+| [H75](docs/hypotheses/HYP-075.md) | OOF метамодель учится в текущем запуске | F1 0.644723 | F1 0.607574, reused control | **Внедрена**; первый технический исход сохранён |
+
+Контроли: H69 RMSE39.366894/42.443824; frozen H48 Macro-F1.644306 primary. H73 даёт−12.31%/−26.85% ошибки; H75 сохраняет классификацию с небольшим ростом. Это не hidden score и не многократное снижение ошибки. Все H70–H75 закрыты для повторов; новые идеи регистрировать до fit. Полная прежняя история ниже сохранена.
+
+
 SPEC009 актуальныйитог:10terminal9численныхоценок(9ID),22уникальныхfit,65независимыхсверок. H69memory — новыйbaselineRMSE39.39219382766771; H48MacroF1.6495311620074445сохранён. H53техническаяошибкабезscore, не отрицательнаянаучнаяпроверка. H65семантическаяпроверка6/8выявила2ошибки, затемисправлена8/8безpublicfit и с точнойнеизменностьюданных/split; H68platformprovenanceнедостаточноданных. [Отчёт](results/2026-10-24/series-alternatives-v1/ALTERNATIVES_REPORT.md). Не повторять завершённыеmodelконфигурации; остальныеproposedIDещёнезапущены.
 
 SPEC-008 завершена: семь новых комбинаций,63/63 независимых проверок,24 уникальныхfit,0 старых baselinevalidationrefit. Включены H43RMSE40.972997661684175 и H48MacroF1.6495311620074445; H42/H44/H46 проиграли, H45/H47 улучшили прежний incumbent, но уступили победителям. Все7 закрыты для повторов. [Отчёт](results/2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md).
@@ -395,3 +411,35 @@ Optuna: все16 параметрических попыток сохранен�
 ## SPEC011: работа Сергея, 2026-10-24
 
 Прямое поручение: прочитать ivan_branch, улучшать только sergey_branch, сравнить с лучшим архивом и подготовить ZIP. Разрешено воспроизведение нужных контролей из-за отсутствующих в Git сохранённых прогнозов. [SPEC011](docs/specs/SPEC-011-sergey-panel-research.md), [план](docs/plans/PLAN-011-sergey-panel-research.md). HYP-070 устойчивый panel-key без ELEVATION; HYP-071 train-only доверие последней истории. Обе запланированы, не оценивались.
+
+- SPEC011 HYP-070/primary: {"status": "completed", "metric": "rmse", "score": 34.57223439550667, "control": 39.36689369458382, "relative_gain": 0.12179419936647967, "fit_rows": 35000, "valid_rows": 18308, "seconds": 2.1158405831083655, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-070-01-regression-panel-primary/report.md). Не повторять.
+
+- SPEC011 HYP-070/secondary: {"status": "completed", "metric": "rmse", "score": 33.16852793035246, "control": 42.44382441274937, "relative_gain": 0.21853111991507476, "fit_rows": 22054, "valid_rows": 12946, "seconds": 1.6879073749296367, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-070-02-regression-panel-secondary/report.md). Не повторять.
+
+- SPEC011 HYP-071/primary: {"status": "completed", "metric": "rmse", "score": 35.644018601313206, "control": 39.36689369458382, "relative_gain": 0.09456867799002432, "fit_rows": 35000, "valid_rows": 18308, "seconds": 2.0370462918654084, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-071-01-regression-panel-primary/report.md). Не повторять.
+
+- SPEC011 HYP-071/secondary: {"status": "completed", "metric": "rmse", "score": 30.479345315103682, "control": 42.44382441274937, "relative_gain": 0.2818897510576774, "fit_rows": 22054, "valid_rows": 12946, "seconds": 1.6900388749781996, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-071-02-regression-panel-secondary/report.md). Не повторять.
+
+- SPEC011 до fit: HYP-072 causal panel dynamics зарегистрирована. Target=currentY-strictPastProfileEWmean; LGB600/.03/leaves15/min40/lambda10, causal features. [Карточка](docs/hypotheses/HYP-072.md). Не оценивалась.
+
+- SPEC011 HYP-072/primary: {"status": "completed", "metric": "rmse", "score": 35.50807162142269, "control": 39.36689369458382, "relative_gain": 0.09802201065440021, "fit_rows": 35000, "valid_rows": 18308, "seconds": 3.9134812080301344, "new_tree_model_fits": 1, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-072-01-regression-panel-primary/report.md). Не повторять.
+
+- SPEC011 HYP-072/secondary: {"status": "completed", "metric": "rmse", "score": 31.45010333851692, "control": 42.44382441274937, "relative_gain": 0.25901815461591937, "fit_rows": 22054, "valid_rows": 12946, "seconds": 2.602965916041285, "new_tree_model_fits": 1, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-072-02-regression-panel-secondary/report.md). Не повторять.
+
+- SPEC011 до fit/ensemble calculation: HYP-073 фиксированный50/50 H70+H72, без подбора веса поouter. [Карточка](docs/hypotheses/HYP-073.md). Не оценивалась.
+
+- SPEC011 HYP-073/primary: {"status": "completed", "metric": "rmse", "score": 34.520268654585415, "control": 39.36689369458382, "relative_gain": 0.12311423597704932, "fit_rows": 35000, "valid_rows": 18308, "seconds": 1.4653482499998063, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-073-01-regression-panel-primary/report.md). Не повторять.
+
+- SPEC011 HYP-073/secondary: {"status": "completed", "metric": "rmse", "score": 31.04663635241995, "control": 42.44382441274937, "relative_gain": 0.26852406016706426, "fit_rows": 22054, "valid_rows": 12946, "seconds": 1.2668844580184668, "new_tree_model_fits": 0, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-073-02-regression-panel-secondary/report.md). Не повторять.
+
+- SPEC011 до fit: HYP-074 прямое условное среднее causal panel state через randomized bagging (ET300/24/leaf4/features1). [Карточка](docs/hypotheses/HYP-074.md). Не оценивалась.
+
+- SPEC011 HYP-074/primary: {"status": "completed", "metric": "rmse", "score": 35.380471001626184, "control": 39.36689369458382, "relative_gain": 0.10126332862036558, "fit_rows": 35000, "valid_rows": 18308, "seconds": 8.46538483304903, "new_tree_model_fits": 1, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-074-01-regression-panel-primary/report.md). Не повторять.
+
+- SPEC011 HYP-074/secondary: {"status": "completed", "metric": "rmse", "score": 31.498776425082585, "control": 42.44382441274937, "relative_gain": 0.2578713897510868, "fit_rows": 22054, "valid_rows": 12946, "seconds": 4.020710707874969, "new_tree_model_fits": 1, "conclusion": "Подтверждена в проверенных условиях"}; [report](results/2026-10-24/HYP-074-02-regression-panel-secondary/report.md). Не повторять.
+
+- SPEC011 до fit: HYP-075 обучение OOF метамодели в текущем запуске без frozen public coefficients. Primary новый Mac fit; secondary переиспользует уже измеренный свежий OOF контроль. [Карточка](docs/hypotheses/HYP-075.md). Не оценивалась.
+
+- HYP-075 primary: {'status': 'failed', 'error': 'RuntimeError: Fit already attempted; cached artifacts must be reused: 3fb365f23c2b8828985b78a680b332e4e219f64cb97300f137c0982509d2337c', 'seconds': 227.6893597082235}; [report](results/2026-10-24/HYP-075-01-multiclass-fresh-oof/report.md). Не повторять.
+
+- HYP-075 continuation: {"status": "completed", "metric": "macro_f1", "score": 0.64472256711304, "control": 0.6443063238768081, "relative_gain": 0.0006460331379759852, "accuracy": 0.8089376349104487, "weighted_f1": 0.8194299661202838}; full state/technical outcome: results/2026-10-24/HYP-075-02-multiclass-clean-runtime-continuation/report.md

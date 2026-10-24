@@ -29,3 +29,6 @@ results/**/training-mask.npz
 results/**/domain-cross-fit-weights.npz
 results/**/residual-training-oof.npz
 results/**/quantile-validation-components.npz
+
+# Reproducible validation predictions are versioned explicitly; full fitted models stay local.
+results/**/*-submission.csv

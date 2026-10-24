@@ -18,6 +18,7 @@ class TemporalIntegrationTests(unittest.TestCase):
         X=pd.DataFrame({'State_Factor':['s']*1000,'building_class':['a']*500+['b']*500,'facility_type':['f']*1000,
                         'floor_area':[100.]*1000,'year_built':[2000.]*1000,'ELEVATION':[1.]*1000,'Year_Factor':[1,2]*500})
         jobs=solution.portfolio_candidates('regression','rmse',X,np.ones(1000))
-        self.assertEqual(jobs[0].get('strategy'),'temporal_profile_memory')
+        self.assertTrue(any(j.get('strategy')=='temporal_profile_memory' for j in jobs))
+        self.assertEqual(jobs[0].get('strategy'),'panel_hybrid_memory')
         other=solution.portfolio_candidates('regression','rmse',X.drop(columns='ELEVATION'),np.ones(1000))
         self.assertFalse(any(j.get('strategy')=='temporal_profile_memory' for j in other))

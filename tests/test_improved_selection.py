@@ -6,11 +6,19 @@ import numpy as np
 import pandas as pd
 
 from automl_history import already_known, candidate_key, compatible_policy, known_task
-from automl_known import KNOWN_TASKS
+from automl_known import KNOWN_TASKS as RUNTIME_KNOWN_TASKS
+import json
+from pathlib import Path
+KNOWN_TASKS = json.loads((Path(__file__).resolve().parents[1]/'results/2026-10-24/sergey-improvement-v1/offline-historical-evidence.json').read_text(encoding='utf8'))
 from automl_models import canonical_candidate
 
 
 class ImprovedSelectionTests(unittest.TestCase):
+    def test_runtime_contains_no_embedded_dataset_state(self):
+        self.assertEqual(RUNTIME_KNOWN_TASKS, [])
+        for prior in KNOWN_TASKS:
+            self.assertIsNone(known_task(prior['hashes'],prior['split_key'],prior['metric']))
+
     def test_group_experts_keeps_exact_unscaled_policy(self):
         c = canonical_candidate({'family': 'extra_trees', 'strategy': 'group_experts'})
         self.assertEqual(c['preprocessing'], 'group-experts-v1')
@@ -64,7 +72,8 @@ class ImprovedSelectionTests(unittest.TestCase):
             self.assertEqual(record['score'], expected)
             self.assertTrue(compatible_policy(record['candidate']))
             self.assertTrue(already_known(canonical_candidate({'family': record['candidate']['family'], 'strategy': strategy}), [], prior))
-            self.assertIs(known_task(prior['hashes'], prior['split_key'], metric), prior)
+            with patch('automl_history.KNOWN_TASKS', KNOWN_TASKS):
+                self.assertIs(known_task(prior['hashes'], prior['split_key'], metric), prior)
             self.assertIsNone(known_task({**prior['hashes'], 'train.csv': 'unknown'}, prior['split_key'], metric))
             self.assertIsNone(known_task(prior['hashes'], 'different split', metric))
         macro = next(t for t in KNOWN_TASKS if t['metric'] == 'macro_f1')

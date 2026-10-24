@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "cases": {
+    "87550d542a8d71a56b2e7caf11adf35b83c5bd5fe03b3930efc28d31aa9fd63a": {
+      "hashes": {
+        "train.csv": "909e1e1a47c0e4608c28fe9073cd1fd08a258b31157fff4b81527e57cfef17ed",
+        "test.csv": "9995f5b87db393c0ce49189858484b4b5e2feec58b62f79a1d396ac252e25927",
+        "sample_submission.csv": "9e2f8f7d0921b767fbb89663e1fd3702508db176b10dee3b5e7bb53b948e434f",
+        "data_dictionary.csv": "ec603c0b2a0a561489b7c83bf4535785879b838d03645140e7d7d15ac4d30c0a"
+      },
+      "split_key": "7cad86b6c8561197613f40a18684dfdc57e4ce7a794a9b87aa11615af1e8218e",
+      "metric": "macro_f1",
+      "known": null,
+      "records": [
+        {
+          "candidate_key": "32ab050f9b5504f708564a49c7e0bcbc4b85f09717f8608babaca48979f17b66",
+          "candidate": {
+            "family": "extra_trees",
+            "parameters": {
+              "n_estimators": 12,
+              "max_depth": 6
+            },
+            "hypothesis": "Synthetic interaction protocol check",
+            "preprocessing": "full-v1",
+            "scale": true,
+            "max_outlier_fraction": 0.05,
+            "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+          },
+          "status": "completed",
+          "metric": "macro_f1",
+          "score": 1.0,
+          "fit_rows": 80,
+          "valid_rows": 20,
+          "fit_retained_rows": 80,
+          "seconds": 0.19433741690590978,
+          "refit_candidate": {
+            "family": "extra_trees",
+            "parameters": {
+              "n_estimators": 12,
+              "max_depth": 6
+            },
+            "hypothesis": "Synthetic interaction protocol check",
+            "preprocessing": "full-v1",
+            "scale": true,
+            "max_outlier_fraction": 0.05,
+            "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+          }
+        }
+      ]
+    }
+  }
+}

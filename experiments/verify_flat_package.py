@@ -116,7 +116,7 @@ def main(archive_path=None):
     parent=ROOT/'results'/date/('platform-verification-'+str(time.time_ns())); parent.mkdir(parents=True,exist_ok=False)
     extracted=ROOT/'tmp'/('flat-'+str(time.time_ns())); extracted.mkdir(parents=True)
     with zipfile.ZipFile(archive_path) as archive:
-        optional={'automl_advanced.py','automl_combo_memory.py','automl_feature_sets.py','automl_reg_combo.py','automl_class_combo.py','automl_combo_policy.py','automl_temporal_memory.py'}
+        optional={'automl_advanced.py','automl_combo_memory.py','automl_feature_sets.py','automl_reg_combo.py','automl_class_combo.py','automl_combo_policy.py','automl_temporal_memory.py','automl_panel_memory.py'}
         expected_modules=MODULES | (optional & set(archive.namelist()))
         assert len(archive.namelist())==len(expected_modules) and set(archive.namelist())==expected_modules
         assert all('/' not in name and '\\' not in name for name in archive.namelist())

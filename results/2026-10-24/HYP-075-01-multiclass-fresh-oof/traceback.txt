@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/experiments/sergey_fresh_oof.py", line 37, in main
+    model=build_pipeline(b.task_type,c,threads=4).fit(b.X.iloc[fit],b.y.iloc[fit])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/automl_class_combo.py", line 271, in fit
+    self.branches_ = {c:ClassBranch(c,self._parameters(c),self.threads).fit(X,y) for c in components}
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/automl_class_combo.py", line 175, in fit
+    self.model_ = _fit_once(self.model_,values,self.labels_.transform(y),config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/automl_class_combo.py", line 18, in _fit_once
+    return fit_once(model, X, y, configuration)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/automl_combo_memory.py", line 43, in fit_once
+    if any(r['fingerprint']==fingerprint for r in previous):raise RuntimeError('Fit already attempted; cached artifacts must be reused: '+fingerprint)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Fit already attempted; cached artifacts must be reused: 3fb365f23c2b8828985b78a680b332e4e219f64cb97300f137c0982509d2337c

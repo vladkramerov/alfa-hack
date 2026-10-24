@@ -1,0 +1,54 @@
+{
+  "task": "Regression.\nPrimary metric: RMSE.\nData: nested/inputs/train.csv nested/inputs/test.csv nested/inputs/sample_submission.csv nested/inputs/data_dictionary.csv",
+  "target": "response",
+  "id": "object_key",
+  "type": "regression",
+  "metric": "rmse",
+  "split": "random80/20:seed42",
+  "shape": [
+    80,
+    2
+  ],
+  "dtypes": {
+    "signal": "float64",
+    "kind": "object"
+  },
+  "missing": {
+    "signal": 0.0125,
+    "kind": 0.0625
+  },
+  "categories": {
+    "kind": 3
+  },
+  "numeric_summary": {
+    "signal": {
+      "count": 79.0,
+      "mean": 0.1664022920672319,
+      "std": 0.8849860406713518,
+      "min": -1.8673605083314673,
+      "1%": -1.7510340380581773,
+      "50%": 0.0730087977694461,
+      "99%": 1.8233470809823538,
+      "max": 1.8483440835780385
+    }
+  },
+  "target_fit_summary": {
+    "count": 80.0,
+    "mean": 0.8041779399505197,
+    "std": 0.9560495119055165,
+    "min": -0.2503024015952099,
+    "1%": -0.15495087678229855,
+    "50%": 0.42394940244279916,
+    "99%": 3.4367673901368407,
+    "max": 3.4941696351082667
+  },
+  "preprocessing_policy": "Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. panel-hybrid-memory-v1 adds strictly past state and training-only annual dynamics with a fixed 50/50 blend; older compatible strategies and full-v1 default remain available. No validation/test row deletion. Only task-local measured evidence may be reused; no pretrained calibration or public dataset score ships with this agent.",
+  "known": null,
+  "hashes": {
+    "train.csv": "6924bb3b71fbb1b5497341c237294f306c9b4e5ad67210a02dab9ccce23a6293",
+    "test.csv": "9995f5b87db393c0ce49189858484b4b5e2feec58b62f79a1d396ac252e25927",
+    "sample_submission.csv": "8facd890874128a2abc1af4dc932bf72a63b75ebef2da718df3c2195c24ebbb3",
+    "data_dictionary.csv": "ec603c0b2a0a561489b7c83bf4535785879b838d03645140e7d7d15ac4d30c0a"
+  },
+  "split_key": "64a89a0d19ecfe3c41af48343fdb5fbad3cf67d525aaae651d24982f2cdeb87b"
+}

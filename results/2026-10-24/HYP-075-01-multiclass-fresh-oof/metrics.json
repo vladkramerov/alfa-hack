@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "RuntimeError: Fit already attempted; cached artifacts must be reused: 3fb365f23c2b8828985b78a680b332e4e219f64cb97300f137c0982509d2337c",
+  "seconds": 227.6893597082235
+}

@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "checks": 112,
+  "regression": [
+    {
+      "hypothesis": "HYP-070",
+      "stage": "primary",
+      "rmse": 34.57223439550667,
+      "control_rmse": 39.36689369458382,
+      "relative_gain": 0.12179419936647967,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-070",
+      "stage": "secondary",
+      "rmse": 33.16852793035246,
+      "control_rmse": 42.44382441274937,
+      "relative_gain": 0.21853111991507476,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-071",
+      "stage": "primary",
+      "rmse": 35.644018601313206,
+      "control_rmse": 39.36689369458382,
+      "relative_gain": 0.09456867799002432,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-071",
+      "stage": "secondary",
+      "rmse": 30.479345315103682,
+      "control_rmse": 42.44382441274937,
+      "relative_gain": 0.2818897510576774,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-072",
+      "stage": "primary",
+      "rmse": 35.50807162142269,
+      "control_rmse": 39.36689369458382,
+      "relative_gain": 0.09802201065440021,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-072",
+      "stage": "secondary",
+      "rmse": 31.45010333851692,
+      "control_rmse": 42.44382441274937,
+      "relative_gain": 0.25901815461591937,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-073",
+      "stage": "primary",
+      "rmse": 34.520268654585415,
+      "control_rmse": 39.36689369458382,
+      "relative_gain": 0.12311423597704932,
+      "cluster_bootstrap_95pct_gain_interval": [
+        0.09507839921741207,
+        0.15071324351242504
+      ]
+    },
+    {
+      "hypothesis": "HYP-073",
+      "stage": "secondary",
+      "rmse": 31.04663635241995,
+      "control_rmse": 42.44382441274937,
+      "relative_gain": 0.26852406016706426,
+      "cluster_bootstrap_95pct_gain_interval": [
+        0.2229326425345704,
+        0.316455198257766
+      ]
+    },
+    {
+      "hypothesis": "HYP-074",
+      "stage": "primary",
+      "rmse": 35.380471001626184,
+      "control_rmse": 39.36689369458382,
+      "relative_gain": 0.10126332862036558,
+      "cluster_bootstrap_95pct_gain_interval": null
+    },
+    {
+      "hypothesis": "HYP-074",
+      "stage": "secondary",
+      "rmse": 31.498776425082585,
+      "control_rmse": 42.44382441274937,
+      "relative_gain": 0.2578713897510868,
+      "cluster_bootstrap_95pct_gain_interval": null
+    }
+  ],
+  "classification": [
+    {
+      "stage": "primary",
+      "macro_f1": 0.6443063238768081,
+      "changed_classifier": false
+    },
+    {
+      "stage": "secondary",
+      "macro_f1": 0.6075743572072007,
+      "changed_classifier": false
+    }
+  ],
+  "classifier_dependencies_identical_to_reference": [
+    "automl_class_combo.py",
+    "automl_reg_combo.py",
+    "automl_advanced.py",
+    "automl_preprocessing.py",
+    "automl_combo_policy.py",
+    "automl_feature_sets.py"
+  ],
+  "bootstrap_replicates": 500,
+  "bootstrap_unit": "stable physical-profile cluster",
+  "bootstrap_limitation": "Descriptive paired uncertainty on repeatedly examined public data, not private generalization or selection-adjusted inference.",
+  "new_model_fits_in_verifier": 0,
+  "hidden_platform_score_verified": false
+}

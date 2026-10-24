@@ -1,0 +1,28 @@
+{
+  "hypothesis": "HYP-071",
+  "stage": "primary",
+  "configuration": {
+    "method": "reliability",
+    "fields": [
+      "State_Factor",
+      "building_class",
+      "facility_type",
+      "floor_area",
+      "year_built"
+    ],
+    "time_column": "Year_Factor",
+    "base": "read_only_cached_H43_feature_experts"
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "ledger_sha256_before_fit": "ac1f31da3b86ffbe6494b51c9c3e309902450b8871e4493463ce286a8c51139a",
+  "source_sha256": {
+    "automl_panel_memory.py": "4a0f522dc707dd063936e3589e365ba33c18c2699d6f76e252ea8b5f3055dac6",
+    "experiments/sergey_panel_study.py": "67f7b2076ae28dce2bcc5096affbe7d4daa31e71aaea2356ac4d26f58ebc9086"
+  }
+}

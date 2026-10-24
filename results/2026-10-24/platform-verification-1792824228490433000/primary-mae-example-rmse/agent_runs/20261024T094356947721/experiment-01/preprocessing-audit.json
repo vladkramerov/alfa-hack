@@ -1,0 +1,101 @@
+{
+  "policy": "full-v1",
+  "fit_original_rows": 80,
+  "fit_retained_rows": 76,
+  "target_transform": null,
+  "outliers": {
+    "n_input": 80,
+    "n_retained": 76,
+    "n_removed": 4,
+    "removed_fraction": 0.05,
+    "max_fraction": 0.05,
+    "max_removed": 4,
+    "classification": false,
+    "classes": {},
+    "reason": "filtered_negative_scores",
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "detector_numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "negative_score_candidates": 26,
+    "detector_parameters": {
+      "n_estimators": 100,
+      "max_samples": 80,
+      "contamination": "auto",
+      "random_state": 42,
+      "n_jobs": 4
+    },
+    "target_used_in_detector": false
+  },
+  "preprocessing": {
+    "policy": "full-v1",
+    "n_fit": 76,
+    "normalization_enabled": true,
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "categorical_columns": [
+      "kind"
+    ],
+    "numeric_output_columns": [
+      "signal",
+      "signal_square",
+      "signal__missing",
+      "signal_square__missing"
+    ],
+    "dropped_columns": [],
+    "continuous_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "missing_counts": {
+      "signal": 1,
+      "signal_square": 1
+    },
+    "missing_flag_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "scaler_mean": [
+      1.287189653110868e-12,
+      1.2873501606830136e-12,
+      0.013157894736842105,
+      0.013157894736842105
+    ],
+    "scaler_scale": [
+      1.2611734050061945,
+      1.2611734050061947,
+      0.11395071102426826,
+      0.11395071102426826
+    ],
+    "skewness_before": {
+      "signal": 0.06631878761473392,
+      "signal_square": 1.397713609720562,
+      "signal__missing": 8.71779788708134,
+      "signal_square__missing": 8.71779788708134
+    },
+    "skewness_after": {
+      "signal": 4.997967096166168e-11,
+      "signal_square": 4.9979175143699354e-11,
+      "signal__missing": 8.717797887081344,
+      "signal_square__missing": 8.717797887081344
+    },
+    "quantile_parameters": {
+      "output_distribution": "normal",
+      "n_quantiles": 76,
+      "subsample": null,
+      "random_state": 42
+    },
+    "native_categories": false,
+    "onehot_max_categories": 64,
+    "max_dense_cells": 32000000,
+    "fallback_bias": false
+  },
+  "normalized_training_mean_abs_max": 7.842716417814555e-09,
+  "normalized_training_std_error_max": 4.9971686122418646e-08
+}

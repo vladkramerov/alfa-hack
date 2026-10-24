@@ -224,3 +224,35 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 | HYP-052 | multiclass/confirmation | completed, macro_f1=0.4803098632106223 | [report](../results/2026-10-24/HYP-052-02-multiclass-confirmation-rewrite/report.md) |
 
 | HYP-052 | multiclass/control | completed, macro_f1=0.6103340454456273 | [report](../results/2026-10-24/HYP-052-03-multiclass-control-rewrite/report.md) |
+
+| SPEC011 control | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 39.36689369458382, 'seconds': 20.192676458973438, 'fit_rows': 35000, 'valid_rows': 18308, 'description': 'temporal:Year_Factor:last=5', 'frozen_public_meta_reused': False} | [report](../results/2026-10-24/sergey-improvement-v1/control-regression-primary/report.md) |
+
+| SPEC011 control | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 42.44382441274937, 'seconds': 13.359742125030607, 'fit_rows': 22054, 'valid_rows': 12946, 'description': 'temporal:Year_Factor<4->4', 'frozen_public_meta_reused': False} | [report](../results/2026-10-24/sergey-improvement-v1/control-regression-secondary/report.md) |
+
+| HYP-070 | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 34.57223439550667, 'control': 39.36689369458382, 'relative_gain': 0.12179419936647967, 'fit_rows': 35000, 'valid_rows': 18308, 'seconds': 2.1158405831083655, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-070-01-regression-panel-primary/report.md) |
+
+| HYP-070 | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 33.16852793035246, 'control': 42.44382441274937, 'relative_gain': 0.21853111991507476, 'fit_rows': 22054, 'valid_rows': 12946, 'seconds': 1.6879073749296367, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-070-02-regression-panel-secondary/report.md) |
+
+| HYP-071 | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 35.644018601313206, 'control': 39.36689369458382, 'relative_gain': 0.09456867799002432, 'fit_rows': 35000, 'valid_rows': 18308, 'seconds': 2.0370462918654084, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-071-01-regression-panel-primary/report.md) |
+
+| HYP-071 | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 30.479345315103682, 'control': 42.44382441274937, 'relative_gain': 0.2818897510576774, 'fit_rows': 22054, 'valid_rows': 12946, 'seconds': 1.6900388749781996, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-071-02-regression-panel-secondary/report.md) |
+
+| SPEC011 control | multiclass/primary | {'status': 'completed', 'metric': 'macro_f1', 'score': 0.6443063238768081, 'seconds': 105.055166374892, 'fit_rows': 70529, 'valid_rows': 17141, 'description': 'stratified-group5:first:seed42', 'frozen_public_meta_reused': True} | [report](../results/2026-10-24/sergey-improvement-v1/control-multiclass-primary/report.md) |
+
+| HYP-072 | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 35.50807162142269, 'control': 39.36689369458382, 'relative_gain': 0.09802201065440021, 'fit_rows': 35000, 'valid_rows': 18308, 'seconds': 3.9134812080301344, 'new_tree_model_fits': 1, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-072-01-regression-panel-primary/report.md) |
+
+| HYP-072 | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 31.45010333851692, 'control': 42.44382441274937, 'relative_gain': 0.25901815461591937, 'fit_rows': 22054, 'valid_rows': 12946, 'seconds': 2.602965916041285, 'new_tree_model_fits': 1, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-072-02-regression-panel-secondary/report.md) |
+
+| HYP-073 | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 34.520268654585415, 'control': 39.36689369458382, 'relative_gain': 0.12311423597704932, 'fit_rows': 35000, 'valid_rows': 18308, 'seconds': 1.4653482499998063, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-073-01-regression-panel-primary/report.md) |
+
+| HYP-073 | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 31.04663635241995, 'control': 42.44382441274937, 'relative_gain': 0.26852406016706426, 'fit_rows': 22054, 'valid_rows': 12946, 'seconds': 1.2668844580184668, 'new_tree_model_fits': 0, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-073-02-regression-panel-secondary/report.md) |
+
+| HYP-074 | regression/primary | {'status': 'completed', 'metric': 'rmse', 'score': 35.380471001626184, 'control': 39.36689369458382, 'relative_gain': 0.10126332862036558, 'fit_rows': 35000, 'valid_rows': 18308, 'seconds': 8.46538483304903, 'new_tree_model_fits': 1, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-074-01-regression-panel-primary/report.md) |
+
+| HYP-074 | regression/secondary | {'status': 'completed', 'metric': 'rmse', 'score': 31.498776425082585, 'control': 42.44382441274937, 'relative_gain': 0.2578713897510868, 'fit_rows': 22054, 'valid_rows': 12946, 'seconds': 4.020710707874969, 'new_tree_model_fits': 1, 'conclusion': 'Подтверждена в проверенных условиях'} | [report](../results/2026-10-24/HYP-074-02-regression-panel-secondary/report.md) |
+
+| SPEC011 control | multiclass/secondary | {'status': 'completed', 'metric': 'macro_f1', 'score': 0.6075743572072007, 'seconds': 300.48415337502956, 'fit_rows': 69916, 'valid_rows': 17754, 'description': 'stratified-group5:fold1:seed42', 'frozen_public_meta_reused': False} | [report](../results/2026-10-24/sergey-improvement-v1/control-multiclass-secondary/report.md) |
+
+| SPEC011 control | multiclass/primary | {'status': 'failed', 'error': 'RuntimeError: Fit already attempted; cached artifacts must be reused: 3fb365f23c2b8828985b78a680b332e4e219f64cb97300f137c0982509d2337c', 'seconds': 227.6893597082235} | [report](../results/2026-10-24/HYP-075-01-multiclass-fresh-oof/report.md) |
+
+- HYP-075 continuation: {"status": "completed", "metric": "macro_f1", "score": 0.64472256711304, "control": 0.6443063238768081, "relative_gain": 0.0006460331379759852, "accuracy": 0.8089376349104487, "weighted_f1": 0.8194299661202838}; full state/technical outcome: results/2026-10-24/HYP-075-02-multiclass-clean-runtime-continuation/report.md

@@ -1,0 +1,56 @@
+{
+  "fit_original_rows": 22054,
+  "fit_retained_rows": 22054,
+  "profile_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built",
+    "ELEVATION"
+  ],
+  "profile_count": 19673,
+  "same_profile_year_multiple_rows": 238,
+  "profile_is_proven_building_identity": false,
+  "strict_past_only": true,
+  "id_or_weather_as_key": false,
+  "age_decay": 0.5,
+  "maximum_memory_weight": 0.9,
+  "staleness_decay": 0.25,
+  "strategy": "temporal_profile_memory",
+  "base": {
+    "strategy": "reg_feature_experts",
+    "fit_original_rows": 22054,
+    "fit_retained_rows": 22054,
+    "row_deletion": false,
+    "validation_target_used": false,
+    "feature_numbers": [
+      29,
+      30,
+      31
+    ],
+    "experts": [
+      {
+        "group": "Commercial",
+        "fit_rows": 8685,
+        "weight": 0.9455634186173109,
+        "fitted": true
+      },
+      {
+        "group": "Residential",
+        "fit_rows": 13369,
+        "weight": 0.9639483740716707,
+        "fitted": true
+      }
+    ],
+    "group_column": "building_class",
+    "minimum_expert_rows": 500,
+    "shrinkage": 500.0,
+    "global_reused": false,
+    "encoder": {
+      "scale": false,
+      "native": false
+    },
+    "global_fit_rows": 22054
+  }
+}

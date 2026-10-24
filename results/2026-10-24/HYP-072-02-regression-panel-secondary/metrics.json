@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "score": 31.45010333851692,
+  "control": 42.44382441274937,
+  "relative_gain": 0.25901815461591937,
+  "fit_rows": 22054,
+  "valid_rows": 12946,
+  "seconds": 2.602965916041285,
+  "new_tree_model_fits": 1,
+  "conclusion": "Подтверждена в проверенных условиях"
+}

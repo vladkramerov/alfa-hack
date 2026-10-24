@@ -1,4 +1,4 @@
-"""Canonical experiment identities and portable, embedded previous evidence."""
+"""Canonical identities and task-local evidence; no embedded pretrained dataset state."""
 import ast
 import hashlib
 import json
@@ -67,6 +67,12 @@ def already_known(candidate,records,prior=None):
 
 
 def compatible_policy(candidate):
+    if candidate.get('strategy')=='panel_hybrid_memory':
+        try:
+            from automl_models import canonical_candidate
+            expected=canonical_candidate(candidate)
+            return all(candidate.get(k)==expected[k] for k in ['preprocessing','scale','max_outlier_fraction','target_transform'])
+        except (TypeError,ValueError,KeyError): return False
     if candidate.get('preprocessing')=='full-v1' and bool(candidate.get('scale')) and candidate.get('max_outlier_fraction')==.05 and candidate.get('strategy') in [None,'','full']: return True
     if candidate.get('strategy') in {'reg_feature_experts','reg_convex_blend','target_tail_mixture','smote_macro_f1','frequency_blend_macro_f1','probability_stacking','temporal_profile_memory'}:
         try:

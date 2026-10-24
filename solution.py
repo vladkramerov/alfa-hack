@@ -35,6 +35,14 @@ def portfolio_candidates(kind,metric,training,training_y):
     log_valid=kind=='regression' and np.isfinite(target).all() and np.all(target>-1)
     candidates=[]
     if log_valid:
+        panel={'State_Factor','building_class','facility_type','floor_area','year_built','Year_Factor'}
+        if panel.issubset(training.columns) and pd.api.types.is_numeric_dtype(training['Year_Factor']) and training['Year_Factor'].nunique()>=2:
+            # A cheap X-only eligibility gate; fit checks causal pairs and never sees validation labels.
+            from automl_panel_memory import panel_keys, PANEL_FIELDS
+            key_years=pd.DataFrame({'key':panel_keys(training,PANEL_FIELDS),'year':training['Year_Factor'].to_numpy()})
+            if (key_years['year']>key_years.groupby('key')['year'].transform('min')).sum()>=500:
+                candidates.append({'family':'extra_trees','parameters':{},'strategy':'panel_hybrid_memory',
+                    'hypothesis':'Train-only causal panel dynamics combined with stable past-profile retrieval; fixed 50/50'})
         profile={'State_Factor','building_class','facility_type','floor_area','year_built','ELEVATION','Year_Factor'}
         if profile.issubset(training.columns) and pd.api.types.is_numeric_dtype(training['Year_Factor']) and training['Year_Factor'].nunique()>=2:
             candidates.append({'family':'extra_trees','parameters':{},'strategy':'temporal_profile_memory',
@@ -54,7 +62,7 @@ def portfolio_candidates(kind,metric,training,training_y):
         candidates.append({'family':'xgboost','parameters':{},'strategy':'macro_f1_calibrated','calibration_folds':3,
                            'hypothesis':'Grouped OOF class decision multipliers for Macro-F1'})
         if {'proto','service','state'}.issubset(training.columns):
-            candidates.append({'family':'xgboost','parameters':{},'strategy':'probability_stacking',
+            candidates.insert(0,{'family':'xgboost','parameters':{},'strategy':'probability_stacking',
                 'hypothesis':'Regularized grouped OOF log-probability stack of raw, bounded SMOTE and frequency branches'})
     candidates.extend([{'family':'xgboost','parameters':{},'hypothesis':'Histogram boosting with full-v1'},
                        {'family':'extra_trees','parameters':{},'hypothesis':'Random thresholds with full-v1','target_transform':'log1p' if log_valid else 'none'},
@@ -102,7 +110,7 @@ def main(task_path):
              'categories':{c:training[c].nunique() for c in training.select_dtypes(exclude='number')},
              'numeric_summary':training.select_dtypes(include='number').replace([np.inf,-np.inf],np.nan).describe(percentiles=[.01,.5,.99]).to_dict(),
              'target_fit_summary':training_y.value_counts().to_dict() if bundle.task_type=='classification' else training_y.describe(percentiles=[.01,.5,.99]).to_dict(),
-             'preprocessing_policy':'Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. Older compatible strategies and full-v1 default remain available. No validation/test row deletion. Known scores require matching hashes/split/metric.',
+             'preprocessing_policy':'Versioned measured strategies: temporal-profile-memory-v1 retrieves strictly past targets for a fixed physical profile with feature-expert fallback; reg-feature-experts-v1 uses weather/group features; probability-stacking-v1 combines grouped training OOF branches. panel-hybrid-memory-v1 adds strictly past state and training-only annual dynamics with a fixed 50/50 blend; older compatible strategies and full-v1 default remain available. No validation/test row deletion. Only task-local measured evidence may be reused; no pretrained calibration or public dataset score ships with this agent.',
              'known':prior,'hashes':bundle.hashes,'split_key':split_key(fit,valid)}
     for earlier in sorted(root.parent.glob('*/profile.json')):
         if earlier.parent==root: continue

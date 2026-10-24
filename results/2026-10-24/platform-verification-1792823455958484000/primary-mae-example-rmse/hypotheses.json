@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "cases": {
+    "42ef340054ed6c1f31b099e2ff01cf94e0fbf005072d89bde10903457e1574e8": {
+      "hashes": {
+        "train.csv": "6924bb3b71fbb1b5497341c237294f306c9b4e5ad67210a02dab9ccce23a6293",
+        "test.csv": "9995f5b87db393c0ce49189858484b4b5e2feec58b62f79a1d396ac252e25927",
+        "sample_submission.csv": "8facd890874128a2abc1af4dc932bf72a63b75ebef2da718df3c2195c24ebbb3",
+        "data_dictionary.csv": "ec603c0b2a0a561489b7c83bf4535785879b838d03645140e7d7d15ac4d30c0a"
+      },
+      "split_key": "64a89a0d19ecfe3c41af48343fdb5fbad3cf67d525aaae651d24982f2cdeb87b",
+      "metric": "mae",
+      "known": null,
+      "records": [
+        {
+          "candidate_key": "32ab050f9b5504f708564a49c7e0bcbc4b85f09717f8608babaca48979f17b66",
+          "candidate": {
+            "family": "extra_trees",
+            "parameters": {
+              "n_estimators": 12,
+              "max_depth": 6
+            },
+            "hypothesis": "Synthetic interaction protocol check",
+            "preprocessing": "full-v1",
+            "scale": true,
+            "max_outlier_fraction": 0.05,
+            "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+          },
+          "status": "completed",
+          "metric": "mae",
+          "score": 0.39165203961422435,
+          "fit_rows": 80,
+          "valid_rows": 20,
+          "fit_retained_rows": 76,
+          "seconds": 0.23599929199554026,
+          "refit_candidate": {
+            "family": "extra_trees",
+            "parameters": {
+              "n_estimators": 12,
+              "max_depth": 6
+            },
+            "hypothesis": "Synthetic interaction protocol check",
+            "preprocessing": "full-v1",
+            "scale": true,
+            "max_outlier_fraction": 0.05,
+            "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+          }
+        }
+      ]
+    }
+  }
+}

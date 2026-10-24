@@ -1,0 +1,27 @@
+{
+  "fit_original_rows": 35000,
+  "fit_retained_rows": 35000,
+  "profile_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "time_column": "Year_Factor",
+  "method": "stable",
+  "profile_count": 15777,
+  "same_profile_year_multiple_rows": 463,
+  "profile_is_proven_building_identity": false,
+  "strict_past_only": true,
+  "id_as_key": false,
+  "training_pair_count": 18645,
+  "training_noise_variance": 94.73464077374231,
+  "training_between_variance": 4198.884057386572,
+  "query_rows": 18308,
+  "matched_rows": 12635,
+  "matched_fraction": 0.6901354599082369,
+  "mean_memory_weight": 0.4509392132689806,
+  "queries_with_same_profile_year_collisions": 393,
+  "no_query_targets_used": true
+}

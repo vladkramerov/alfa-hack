@@ -1,0 +1,116 @@
+{
+  "policy": "full-v1",
+  "fit_original_rows": 100,
+  "fit_retained_rows": 98,
+  "target_transform": null,
+  "outliers": {
+    "n_input": 100,
+    "n_retained": 98,
+    "n_removed": 2,
+    "removed_fraction": 0.02,
+    "max_fraction": 0.05,
+    "max_removed": 5,
+    "classification": true,
+    "classes": {
+      "positive": {
+        "before": 59,
+        "removed": 2,
+        "retained": 57,
+        "max_removed": 2,
+        "removed_fraction": 0.03389830508474576
+      },
+      "negative": {
+        "before": 41,
+        "removed": 0,
+        "retained": 41,
+        "max_removed": 0,
+        "removed_fraction": 0.0
+      }
+    },
+    "reason": "filtered_negative_scores",
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "detector_numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "negative_score_candidates": 30,
+    "detector_parameters": {
+      "n_estimators": 100,
+      "max_samples": 100,
+      "contamination": "auto",
+      "random_state": 42,
+      "n_jobs": 4
+    },
+    "target_used_in_detector": false
+  },
+  "preprocessing": {
+    "policy": "full-v1",
+    "n_fit": 98,
+    "normalization_enabled": true,
+    "numeric_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "categorical_columns": [
+      "kind"
+    ],
+    "numeric_output_columns": [
+      "signal",
+      "signal_square",
+      "signal__missing",
+      "signal_square__missing"
+    ],
+    "dropped_columns": [],
+    "continuous_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "missing_counts": {
+      "signal": 1,
+      "signal_square": 1
+    },
+    "missing_flag_columns": [
+      "signal",
+      "signal_square"
+    ],
+    "scaler_mean": [
+      9.98608225589295e-13,
+      9.985283575043603e-13,
+      0.01020408163265306,
+      0.01020408163265306
+    ],
+    "scaler_scale": [
+      1.2054954797819164,
+      1.2054954797819162,
+      0.10049854899791943,
+      0.10049854899791943
+    ],
+    "skewness_before": {
+      "signal": -0.3232338793527586,
+      "signal_square": 1.4824580891137045,
+      "signal__missing": 9.899494936611669,
+      "signal_square__missing": 9.899494936611669
+    },
+    "skewness_after": {
+      "signal": 4.44180862764359e-11,
+      "signal_square": 4.441813362720221e-11,
+      "signal__missing": 9.89949493661166,
+      "signal_square__missing": 9.89949493661166
+    },
+    "quantile_parameters": {
+      "output_distribution": "normal",
+      "n_quantiles": 98,
+      "subsample": null,
+      "random_state": 42
+    },
+    "native_categories": false,
+    "onehot_max_categories": 64,
+    "max_dense_cells": 32000000,
+    "fallback_bias": false
+  },
+  "normalized_training_mean_abs_max": 2.5848953091368383e-09,
+  "normalized_training_std_error_max": 1.8204909690844318e-08
+}

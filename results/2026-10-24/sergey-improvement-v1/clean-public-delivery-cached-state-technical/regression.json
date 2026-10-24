@@ -1,0 +1,164 @@
+{
+  "task": "regression",
+  "status": "passed",
+  "strategy": "panel_hybrid_memory",
+  "cached_selection_score_not_new_test_score": 34.520268654585415,
+  "rows": 22449,
+  "columns": [
+    "id",
+    "site_eui"
+  ],
+  "full_refits": 1,
+  "validation_refits": 0,
+  "seconds": 34.965363250114024,
+  "peak_process_tree_rss_bytes": 1668988928,
+  "command": [
+    "python3",
+    "solution.py",
+    "task.md"
+  ],
+  "cwd_contains_task_and_solution": true,
+  "clean_directory": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/tmp/sergey-platform-regression-1792823409612017000",
+  "source_sha256": {
+    "solution.py": "329a3a29e06b7b567519914a6f7b414491988cdcc97442d563aae31af6ab93cd",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_models.py": "65c4ce53a2a3121407591e5afd4a1346f1264638b5b1790d56132025dbf6dc78",
+    "automl_preprocessing.py": "1901fd01bd0cf544cdb3452ea5e6b1be2ea765c35549a2feb883b111c7cf3c8f",
+    "automl_history.py": "4d1eb4ab4fbaa303b5b91b1873a9abbd7722c065b0bfa30b5e66a4f35ad681e0",
+    "automl_known.py": "1cbd69dd45172c99a9653fa32bcbd8564f48d74fac0054147ca71001bb66ba3c",
+    "automl_llm.py": "43e4678c56852a1b49ce352c7dd4b3381bcc034c5bc977b50e2f3ab73bfd48d6",
+    "automl_worker.py": "2e864601d00265a35e9708bdf556ab5b5e267d807f3c6fd33b333f536a09d514",
+    "automl_advanced.py": "6b6d77fea23fa96e082e3e828714a426ede896ce802b55fe0bd857a08a3e990a",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_combo_policy.py": "8935f17b1cda3723cd0982a416c7fd40261a598bc0c2d01e8a1b18310a89325a",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "automl_panel_memory.py": "c6f93d492859a0baace8d69158aab742d371c5ebad6a488323fc4ee11b966baf",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "submission_sha256": "96ec0eccfe27c3a8718053f7ce75377e6ac98453c505a2efc15ca18aa7238d87",
+  "summary": {
+    "status": "completed",
+    "metric": "rmse",
+    "selected_score": 34.520268654585415,
+    "selected": {
+      "family": "extra_trees",
+      "parameters": {},
+      "strategy": "panel_hybrid_memory",
+      "preprocessing": "panel-hybrid-memory-v1",
+      "scale": false,
+      "max_outlier_fraction": 0,
+      "target_transform": "log1p",
+      "hypothesis": "HYP-073 measured on Mac; fixed stable-history/causal-dynamics blend"
+    },
+    "validation": "temporal:Year_Factor:last=5",
+    "cached_history": true,
+    "experiments": [],
+    "llm": [],
+    "seconds": 33.664570667082444,
+    "submission_rows": 22449,
+    "preprocessing_policy": "panel-hybrid-memory-v1",
+    "llm_calls": 0,
+    "llm_token_estimate": 0,
+    "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+  },
+  "audit": {
+    "fit_original_rows": 53308,
+    "fit_retained_rows": 53308,
+    "profile_fields": [
+      "State_Factor",
+      "building_class",
+      "facility_type",
+      "floor_area",
+      "year_built"
+    ],
+    "time_column": "Year_Factor",
+    "method": "stable",
+    "profile_count": 21428,
+    "same_profile_year_multiple_rows": 653,
+    "profile_is_proven_building_identity": false,
+    "strict_past_only": true,
+    "id_as_key": false,
+    "training_pair_count": 31056,
+    "training_noise_variance": 105.45331807358927,
+    "training_between_variance": 4106.565697417861,
+    "strategy": "panel_hybrid_memory",
+    "base": {
+      "strategy": "reg_feature_experts",
+      "fit_original_rows": 53308,
+      "fit_retained_rows": 53308,
+      "row_deletion": false,
+      "validation_target_used": false,
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "experts": [
+        {
+          "group": "Commercial",
+          "fit_rows": 21880,
+          "weight": 0.9776586237712243,
+          "fitted": true
+        },
+        {
+          "group": "Residential",
+          "fit_rows": 31428,
+          "weight": 0.9843397644700577,
+          "fitted": true
+        }
+      ],
+      "group_column": "building_class",
+      "minimum_expert_rows": 500,
+      "shrinkage": 500.0,
+      "global_reused": false,
+      "encoder": {
+        "scale": false,
+        "native": false
+      },
+      "global_fit_rows": 53308
+    },
+    "fixed_blend_weights": [
+      0.5,
+      0.5
+    ],
+    "dynamics": {
+      "fit_original_rows": 53308,
+      "fit_retained_rows": 53308,
+      "profile_fields": [
+        "State_Factor",
+        "building_class",
+        "facility_type",
+        "floor_area",
+        "year_built"
+      ],
+      "time_column": "Year_Factor",
+      "method": "stable",
+      "profile_count": 21428,
+      "same_profile_year_multiple_rows": 653,
+      "profile_is_proven_building_identity": false,
+      "strict_past_only": true,
+      "id_as_key": false,
+      "training_pair_count": 31056,
+      "training_noise_variance": 105.45331807358927,
+      "training_between_variance": 4106.565697417861,
+      "strategy": "causal_panel_dynamics",
+      "causal_model_rows": 31627,
+      "parameters": {
+        "n_estimators": 600,
+        "learning_rate": 0.03,
+        "num_leaves": 15,
+        "min_child_samples": 40,
+        "reg_lambda": 10.0,
+        "verbosity": -1,
+        "random_state": 42,
+        "n_jobs": 4,
+        "force_col_wise": true
+      },
+      "validation_targets_used": false,
+      "id_feature_used": false
+    }
+  }
+}

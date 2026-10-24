@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "metric": "mae",
+  "selected_score": 0.39165203961422435,
+  "selected": {
+    "family": "extra_trees",
+    "parameters": {
+      "n_estimators": 12,
+      "max_depth": 6
+    },
+    "hypothesis": "Synthetic interaction protocol check",
+    "preprocessing": "full-v1",
+    "scale": true,
+    "max_outlier_fraction": 0.05,
+    "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+  },
+  "validation": "random80/20:seed42",
+  "cached_history": false,
+  "experiments": [
+    {
+      "candidate_key": "32ab050f9b5504f708564a49c7e0bcbc4b85f09717f8608babaca48979f17b66",
+      "candidate": {
+        "family": "extra_trees",
+        "parameters": {
+          "n_estimators": 12,
+          "max_depth": 6
+        },
+        "hypothesis": "Synthetic interaction protocol check",
+        "preprocessing": "full-v1",
+        "scale": true,
+        "max_outlier_fraction": 0.05,
+        "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+      },
+      "status": "completed",
+      "metric": "mae",
+      "score": 0.39165203961422435,
+      "fit_rows": 80,
+      "valid_rows": 20,
+      "fit_retained_rows": 76,
+      "seconds": 0.19140199990943074,
+      "refit_candidate": {
+        "family": "extra_trees",
+        "parameters": {
+          "n_estimators": 12,
+          "max_depth": 6
+        },
+        "hypothesis": "Synthetic interaction protocol check",
+        "preprocessing": "full-v1",
+        "scale": true,
+        "max_outlier_fraction": 0.05,
+        "feature_code": "def engineer(X):\n    X = X.copy()\n    X[\"signal_square\"] = X[\"signal\"] ** 2\n    return X\n"
+      }
+    }
+  ],
+  "llm": [
+    {
+      "status": "ok",
+      "attempts": 1,
+      "usage": {},
+      "estimated_tokens": 3121
+    }
+  ],
+  "seconds": 2.2096491251140833,
+  "submission_rows": 3,
+  "preprocessing_policy": "full-v1",
+  "llm_calls": 1,
+  "llm_token_estimate": 3121,
+  "limitation": "Validation selection is exploratory, not a hidden-platform score; real API requires platform environment."
+}

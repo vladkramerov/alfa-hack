@@ -1,0 +1,32 @@
+{
+  "hypothesis": "HYP-073",
+  "stage": "secondary",
+  "configuration": {
+    "method": "fixed_panel_dynamics_blend",
+    "fields": [
+      "State_Factor",
+      "building_class",
+      "facility_type",
+      "floor_area",
+      "year_built"
+    ],
+    "time_column": "Year_Factor",
+    "base": "read_only_cached_H43_feature_experts",
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "hashes": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+  "ledger_sha256_before_fit": "37ec9dc6961a993d34bbd1cb244b6a2f5ad401a8d939d2c03c6033d9160d2328",
+  "source_sha256": {
+    "automl_panel_memory.py": "d4e4cf191e74fcda9ec995a5771b8ef74ee2f0ef5ffd12ef720c956ba1e2ad81",
+    "experiments/sergey_panel_study.py": "9856da8ed2d1e9e50b7fd4d2bf9ab2d0966289a395b0088dda8eae1556fe540a"
+  }
+}
