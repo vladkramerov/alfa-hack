@@ -1,0 +1,129 @@
+{
+  "status": "completed",
+  "hypothesis": "ST5",
+  "hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "folds": [
+    {
+      "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+      "seconds": 8.830009749974124,
+      "audit": {
+        "key_columns": [
+          "floor_area",
+          "year_built",
+          "facility_type",
+          "State_Factor",
+          "building_class",
+          "days_below_minus18C"
+        ],
+        "fit_rows": 22054,
+        "causal_fit_rows": 8867,
+        "strict_past": true,
+        "query_discovery": false
+      },
+      "grid": [
+        {
+          "weight": 0,
+          "score": 33.056728433725006
+        },
+        {
+          "weight": 0.25,
+          "score": 31.823671047050578
+        },
+        {
+          "weight": 0.5,
+          "score": 31.11819912466272
+        },
+        {
+          "weight": 0.75,
+          "score": 30.97638016771596
+        },
+        {
+          "weight": 1,
+          "score": 31.405850943876782
+        }
+      ]
+    },
+    {
+      "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+      "seconds": 0.012952375021995977,
+      "audit": {
+        "key_columns": [],
+        "fit_rows": 11175,
+        "causal_fit_rows": 0,
+        "strict_past": true,
+        "query_discovery": false
+      },
+      "grid": [
+        {
+          "weight": 0,
+          "score": 54.321952662084755
+        },
+        {
+          "weight": 0.25,
+          "score": 54.321952662084755
+        },
+        {
+          "weight": 0.5,
+          "score": 54.321952662084755
+        },
+        {
+          "weight": 0.75,
+          "score": 54.321952662084755
+        },
+        {
+          "weight": 1,
+          "score": 54.321952662084755
+        }
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "weight": 0,
+      "score": 40.49955691365092
+    },
+    {
+      "weight": 0.25,
+      "score": 39.69806961231254
+    },
+    {
+      "weight": 0.5,
+      "score": 39.239512862760435
+    },
+    {
+      "weight": 0.75,
+      "score": 39.14733054074504
+    },
+    {
+      "weight": 1,
+      "score": 39.426486545249574
+    }
+  ],
+  "frozen_weight": 0.75,
+  "outer": {
+    "score": 36.09695575060474,
+    "base_score": 36.12912637828505,
+    "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+    "seconds": 10.866016874992056,
+    "audit": {
+      "key_columns": [
+        "floor_area",
+        "year_built",
+        "facility_type",
+        "State_Factor",
+        "building_class"
+      ],
+      "fit_rows": 35000,
+      "causal_fit_rows": 18992,
+      "strict_past": true,
+      "query_discovery": false
+    },
+    "adaptively_viewed": true
+  },
+  "rss_mb": 489.890625
+}

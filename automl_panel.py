@@ -3,6 +3,41 @@ import numpy as np
 import pandas as pd
 
 
+def stable_panel_columns(X, time_column, columns):
+    """Refine an inferred key using feature-only recurrence and adjusted stability."""
+    helper = CausalPanelFeatures(time_column)
+    columns = list(columns)
+    periods = pd.to_numeric(X[time_column], errors='coerce').to_numpy(float)
+    def quality(cols):
+        _, coverage, unique = helper._quality(X, cols, periods)
+        return coverage * unique ** 4, coverage
+    current = quality(columns)
+    for _ in range(4):
+        options = [c for c in X if c not in columns + [time_column] and 2 <= X[c].nunique() <= 256]
+        choices = [(quality(columns + [c]), c) for c in options]
+        if not choices:
+            break
+        best, column = max(choices, key=lambda item: item[0][0])
+        if best[0] < current[0] + .002 or best[1] < .3:
+            break
+        columns.append(column)
+        current = best
+    keys = helper._keys(X, columns)
+    order = np.lexsort((periods, keys))
+    previous, next_ = order[:-1], order[1:]
+    same = (keys[previous] == keys[next_]) & (periods[previous] != periods[next_])
+    previous, next_ = previous[same], next_[same]
+    for col in X:
+        if col in columns + [time_column] or not 2 <= X[col].nunique() <= 256:
+            continue
+        values = X[col].astype('string').fillna('__MISSING__').to_numpy()
+        agreement = np.mean(values[previous] == values[next_]) if len(next_) else 0
+        chance = np.sum(X[col].value_counts(normalize=True, dropna=False).to_numpy() ** 2)
+        if (agreement - chance) / max(1e-12, 1 - chance) >= .99:
+            columns.append(col)
+    return columns
+
+
 class CausalPanelFeatures:
     def __init__(self, time_column):
         self.time_column = time_column

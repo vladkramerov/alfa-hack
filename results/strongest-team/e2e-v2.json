@@ -1,0 +1,9 @@
+{
+  "status": "running",
+  "zip_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "source_commit": "d04ec918e6c2e4a9732ad0a9891923ec3c8941e0",
+  "runs": [],
+  "control_report": "results/score-recovery/e2e-final.json",
+  "control_zip_sha256": "e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641",
+  "protocol": "Fresh frozen CLI candidate; previous completed controls reused. Equal8CPU/1200s/cap16 shadow;1800s/default original. No API for controlled ML comparison; external outer repeatedly viewed."
+}

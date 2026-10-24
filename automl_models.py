@@ -98,6 +98,13 @@ def canonical_candidate(candidate):
         if not isinstance(column, str) or not column or len(column) > 128 or family == 'blend':
             raise ValueError('Invalid panel_time_column')
         result['panel_time_column'] = column
+    strategy = candidate.get('panel_strategy', 'features')
+    if strategy not in {'features', 'hybrid'}:
+        raise ValueError('Unsupported panel_strategy')
+    if strategy == 'hybrid':
+        if family != 'extra_trees' or not result.get('panel_time_column') or candidate.get('expert_column'):
+            raise ValueError('Hybrid panel requires a global ExtraTrees temporal candidate')
+        result['panel_strategy'] = strategy
     view = candidate.get('numeric_view', 'none')
     if view not in {'none', 'rank', 'signed_log', 'projection', 'rank_projection'}:
         raise ValueError('Unsupported numeric_view')
@@ -757,6 +764,11 @@ def build_pipeline(kind, candidate, threads=4):
         raise ValueError('kind must be classification or regression')
     normalized = aliases[kind]
     canonical = canonical_candidate(candidate)
+    if canonical.get('panel_strategy') == 'hybrid':
+        if normalized != 'regression':
+            raise ValueError('Hybrid causal panel requires regression')
+        from automl_residual import CausalHybridModel
+        return CausalHybridModel(canonical, threads)
     if 'expert_column' in canonical:
         return GroupExpertModel(normalized, canonical, threads)
     return CandidateModel(normalized, canonical, threads)

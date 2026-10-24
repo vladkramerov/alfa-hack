@@ -1,0 +1,10 @@
+{
+  "base_url": "https://changellenge.up.railway.app/v1",
+  "key_present": true,
+  "paid_generations": 0,
+  "status": 200,
+  "model_ids": [
+    "qwen/qwen3.8-27b"
+  ],
+  "seconds": 0.4749943750211969
+}

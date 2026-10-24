@@ -1,0 +1,165 @@
+{
+  "status": "completed",
+  "hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "hypotheses": [
+    {
+      "transport": false,
+      "folds": [
+        {
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "base": 33.056728433725006,
+          "score": 30.47588557854683,
+          "seconds": 3.012816250004107,
+          "audit": {
+            "key_columns": [
+              "floor_area",
+              "year_built",
+              "facility_type"
+            ],
+            "rejected_keys": 211,
+            "retained_keys": 12758,
+            "pairs": 8537,
+            "uses_query_for_discovery": false,
+            "strict_past": true,
+            "transport": false
+          },
+          "linked": 9794
+        },
+        {
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "base": 54.321952662084755,
+          "score": 54.321952662084755,
+          "seconds": 0.011913249996723607,
+          "audit": {
+            "key_columns": [],
+            "pairs": 0
+          },
+          "linked": 0
+        }
+      ],
+      "score": 38.8220090577851
+    },
+    {
+      "transport": true,
+      "folds": [
+        {
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "base": 33.056728433725006,
+          "score": 31.052210554672214,
+          "seconds": 3.0238582089950796,
+          "audit": {
+            "key_columns": [
+              "floor_area",
+              "year_built",
+              "facility_type"
+            ],
+            "rejected_keys": 211,
+            "retained_keys": 12758,
+            "pairs": 8537,
+            "uses_query_for_discovery": false,
+            "strict_past": true,
+            "transport": true,
+            "coefficients": {
+              "energy_star_rating": -0.08043829444399517,
+              "ELEVATION": -0.001192009150091858,
+              "january_min_temp_c": -0.0016368779446840013,
+              "january_avg_temp_c": -0.002872299059701678,
+              "january_max_temp_c": -0.004579483463637271,
+              "february_min_temp_c": -0.0013950397682644642,
+              "february_avg_temp_c": -0.0022717768261985957,
+              "february_max_temp_c": -0.0005904036785599105,
+              "march_min_temp_c": -0.0016851441334269984,
+              "march_avg_temp_c": 0.0004235617640768215,
+              "march_max_temp_c": 0.0012274389509129887,
+              "april_min_temp_c": 7.727989567490655e-05,
+              "april_avg_temp_c": 9.669529992154518e-05,
+              "april_max_temp_c": -0.0013145771322556241,
+              "may_min_temp_c": -0.0023218809423081487,
+              "may_avg_temp_c": -0.004643330110034839,
+              "may_max_temp_c": -0.003799971241595815,
+              "june_min_temp_c": 0.0005537647815841741,
+              "june_avg_temp_c": 0.0051685859096823545,
+              "june_max_temp_c": -0.0031081192525104304,
+              "july_min_temp_c": -0.0008898333765159998,
+              "july_avg_temp_c": 0.00715175238027314,
+              "july_max_temp_c": 0.005362522601790153,
+              "august_min_temp_c": 0.0007982394634794971,
+              "august_avg_temp_c": 0.003134707018418635,
+              "august_max_temp_c": -0.006928972594190845,
+              "september_min_temp_c": 0.00019724876977388138,
+              "september_avg_temp_c": -0.0018204338984259157,
+              "september_max_temp_c": -0.0011725632095109597,
+              "october_min_temp_c": 0.004600241708677821,
+              "october_avg_temp_c": 0.0016927550140758906,
+              "october_max_temp_c": -0.003757089310753551,
+              "november_min_temp_c": 0.0038550447616481224,
+              "november_avg_temp_c": 0.00041505367473363704,
+              "november_max_temp_c": -0.0014974261186212247,
+              "december_min_temp_c": 0.005367757958211488,
+              "december_avg_temp_c": 0.001035813747616632,
+              "december_max_temp_c": -0.0030932108274951044,
+              "cooling_degree_days_c": 0.004006478690214688,
+              "heating_degree_days_c": 0.002477442233977846,
+              "precipitation_inches": 0.0011519044643948423,
+              "snowfall_inches": 0.0022120200775732992,
+              "snowdepth_inches": 0.0012276374698026787,
+              "avg_temp_c": -0.0027355963149016675,
+              "days_below_minus1C": 0.0005427912139684305,
+              "days_below_minus7C": 0.0005257944435182239,
+              "days_below_minus12C": 0.0025881807589941603,
+              "days_below_minus18C": 0.0,
+              "days_above_27C": 0.0010837168924205359,
+              "days_above_32C": 0.0010083689219398807,
+              "days_above_38C": 0.004138114801566584,
+              "days_above_43C": 0.010827188454189165,
+              "direction_max_wind_speed": 0.0028386886253982746,
+              "direction_peak_wind_speed": 0.012823430993235642,
+              "max_wind_speed": -0.012018912779555756,
+              "days_with_fog": 0.0007749432205279457
+            }
+          },
+          "linked": 9794
+        },
+        {
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "base": 54.321952662084755,
+          "score": 54.321952662084755,
+          "seconds": 0.012567291996674612,
+          "audit": {
+            "key_columns": [],
+            "pairs": 0
+          },
+          "linked": 0
+        }
+      ],
+      "score": 39.1966202922666
+    }
+  ],
+  "outer_previously_viewed": true,
+  "frozen_mode": false,
+  "outer": {
+    "base": 36.12912637828505,
+    "score": 36.763311970611774,
+    "seconds": 4.257406707998598,
+    "audit": {
+      "key_columns": [
+        "floor_area",
+        "year_built",
+        "facility_type"
+      ],
+      "rejected_keys": 244,
+      "retained_keys": 15524,
+      "pairs": 18282,
+      "uses_query_for_discovery": false,
+      "strict_past": true,
+      "transport": false
+    },
+    "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe"
+  },
+  "rss_mb": 410.484375
+}

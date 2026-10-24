@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "components": [
+    "base",
+    "stable",
+    "dynamics"
+  ],
+  "folds": [
+    {
+      "stage": "inner",
+      "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+      "components": [
+        33.056728433725006,
+        30.79627659462859,
+        31.405850943876782
+      ],
+      "fixed_hybrid": 30.71622373564441,
+      "pool": 30.65491859119087
+    },
+    {
+      "stage": "outer",
+      "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "components": [
+        36.12912637828505,
+        36.18350613038487,
+        36.510845452964546
+      ],
+      "fixed_hybrid": 36.11188433378045,
+      "pool": 36.083734336332114
+    }
+  ],
+  "outer_adaptive": true,
+  "frozen_weights": [
+    0.0,
+    0.6984536991585711,
+    0.3015463008414293
+  ],
+  "optimization_success": true
+}

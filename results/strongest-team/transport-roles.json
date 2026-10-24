@@ -1,0 +1,91 @@
+{
+  "status": "completed",
+  "variants": [
+    {
+      "mode": "log",
+      "folds": [
+        {
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "score": 33.00269461645326,
+          "audit": {
+            "key_columns": [
+              "floor_area",
+              "year_built",
+              "facility_type",
+              "State_Factor",
+              "building_class",
+              "days_below_minus18C"
+            ],
+            "rejected_keys": 207,
+            "retained_keys": 12766,
+            "pairs": 8544,
+            "uses_query_for_discovery": false,
+            "strict_past": true,
+            "transport": "log",
+            "driver": "energy_star_rating",
+            "driver_correlation": 0.28579700866990565
+          },
+          "seconds": 3.6396829590084963
+        },
+        {
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "score": 54.321952662084755,
+          "audit": {
+            "key_columns": [],
+            "pairs": 0
+          },
+          "seconds": 0.01514329097699374
+        }
+      ],
+      "score": 40.46443493242428
+    },
+    {
+      "mode": "isotonic",
+      "folds": [
+        {
+          "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+          "score": 30.492129422877703,
+          "audit": {
+            "key_columns": [
+              "floor_area",
+              "year_built",
+              "facility_type",
+              "State_Factor",
+              "building_class",
+              "days_below_minus18C"
+            ],
+            "rejected_keys": 207,
+            "retained_keys": 12766,
+            "pairs": 8544,
+            "uses_query_for_discovery": false,
+            "strict_past": true,
+            "transport": "isotonic",
+            "driver": "energy_star_rating",
+            "driver_correlation": 0.28579700866990565
+          },
+          "seconds": 4.253704250004375
+        },
+        {
+          "key": "b946d2003f783f34936e05b1b09a8ae312f48c504c04aca3145527824db1d198",
+          "score": 54.321952662084755,
+          "audit": {
+            "key_columns": [],
+            "pairs": 0
+          },
+          "seconds": 0.014336666994495317
+        }
+      ],
+      "score": 38.83256755660017
+    }
+  ],
+  "hypothesis": "ST4",
+  "data_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "outer_adaptive": true,
+  "frozen_mode": "isotonic",
+  "rss_mb": 387.34375
+}

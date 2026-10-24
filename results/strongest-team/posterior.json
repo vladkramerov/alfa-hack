@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "hypothesis": "ST6",
+  "candidate": {
+    "family": "xgboost",
+    "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [
+      "proto",
+      "service",
+      "state"
+    ],
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "n_estimators": 600,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0
+    },
+    "class_weight_power": 0,
+    "decision_power": 0.3
+  },
+  "hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "teacher_in_sample": true,
+  "folds": [
+    {
+      "stage": "inner",
+      "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+      "teacher_seconds": 12.051636999996845,
+      "base": 0.6367083180924042,
+      "cache_probability_max_difference": 0.0,
+      "calibration_seconds": 0.15087124999263324,
+      "audit": {
+        "initial_ce": 0.3227817041032616,
+        "selected_ce": 0.30901054004352574,
+        "optimizer_iterations": 11,
+        "expected_f1": 0.7622971022757985,
+        "teacher_oof": false,
+        "validation_targets_used": false
+      },
+      "ce_only": 0.6260341607498858,
+      "expected_f1": 0.6483753850955787
+    },
+    {
+      "stage": "outer",
+      "key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "teacher_seconds": 12.693674750014907,
+      "base": 0.6373379463394646,
+      "calibration_seconds": 0.18482466699788347,
+      "audit": {
+        "initial_ce": 0.3308265417877314,
+        "selected_ce": 0.3184138683896634,
+        "optimizer_iterations": 11,
+        "expected_f1": 0.7557345386388481,
+        "teacher_oof": false,
+        "validation_targets_used": false
+      },
+      "ce_only": 0.5879208923843353,
+      "expected_f1": 0.6063397295011471
+    }
+  ],
+  "frozen_mode": "expected_f1",
+  "rss_mb": 687.84375
+}
