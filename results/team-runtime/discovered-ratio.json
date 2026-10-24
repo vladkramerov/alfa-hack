@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "fits": [
+    {
+      "stage": "inner",
+      "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+      "base": 33.056728433725006,
+      "score": 30.36566227322218,
+      "audit": {
+        "recovered_prediction_after_receipt_bool_serialization_failure": true,
+        "model_not_refit": true
+      },
+      "seconds": null,
+      "rss_mb": null
+    },
+    {
+      "stage": "outer",
+      "key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "base": 36.12912637828505,
+      "score": 36.04324212156756,
+      "audit": {
+        "key_columns": [
+          "floor_area",
+          "year_built",
+          "facility_type",
+          "State_Factor",
+          "building_class"
+        ],
+        "strict_past": true,
+        "query_discovery": false,
+        "source_mechanism": "Ivan H83; generic roles, finite-pair discovery, percentile support",
+        "pairs": 18296,
+        "driver": "energy_star_rating",
+        "correlation": 0.5945688620333769,
+        "finite_pairs": 5276,
+        "percentile_support": true,
+        "group_column": "facility_type",
+        "last_query_linked": 12242
+      },
+      "seconds": 5.077054749999661,
+      "rss_mb": 382.390625
+    }
+  ],
+  "base_learner_fits": 0,
+  "protocol": "HT2 generic H83 transfer; finite-pair driver discovery rather than ST4 missing-zero deltas, inferred percent support, hierarchical category curves. Base frozen generic history ET. Latest temporal inner because older period has zero history; gate>=.5 RMSE improvement. One outer only after gate. Same repeatedly viewed outer; not independent."
+}

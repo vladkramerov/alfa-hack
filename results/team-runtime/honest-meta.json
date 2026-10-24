@@ -1,0 +1,96 @@
+{
+  "status": "completed",
+  "candidate": {
+    "family": "blend",
+    "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "members": [
+      {
+        "family": "xgboost",
+        "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      {
+        "family": "extra_trees",
+        "hypothesis": "Compare random thresholds to observed boosting errors.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      }
+    ],
+    "weights": [
+      0.8,
+      0.2
+    ],
+    "class_weight_power": 0,
+    "decision_power": 0.5
+  },
+  "hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "stages": [
+    {
+      "stage": "inner",
+      "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+      "folds": [
+        {
+          "key": "fb53e14b1fc34badef09d1417fcb7e65170141ccd63470a26d68724a198568fd",
+          "fit_rows": 38085,
+          "valid_rows": 18622
+        },
+        {
+          "key": "4641ad531ce4a98b1d31b547a6ea0ba776ad7f055c6f8dd6473a50b9c277984b",
+          "fit_rows": 37732,
+          "valid_rows": 18975
+        },
+        {
+          "key": "39baea30f5dae5ba6b712fdb03273cfb86c50ed2ef4396e886e75330b020e19c",
+          "fit_rows": 37597,
+          "valid_rows": 19110
+        }
+      ],
+      "base": 0.6061048965889445,
+      "score": 0.5999923544413285,
+      "seconds": 89.01648116702563,
+      "rss_mb": 1108.859375,
+      "teacher_model_fits": 8,
+      "meta_fits": 1
+    }
+  ],
+  "protocol": "HT1: H48 grouped3OOF log-probability inverse-sqrt LR(C=.1), transferred to own delivered XGB-frequency/ET teacher. ST6 in-sample defect removed. Inner improvement>=.002 required before one outer. Outer historically viewed; no independent claim. No public coefficients shipped.",
+  "decision": "reject_inner_no_outer_fit"
+}

@@ -1,0 +1,23 @@
+{
+  "protocol": "Post-run diagnostics of retained refit outputs. Outer repeatedly viewed. Not used to change delivered selection; not independent evidence. Learned coefficients excluded.",
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "selected_strategy": "macro_f1_calibrated",
+  "candidates": [
+    {
+      "directory": "/private/tmp/alfa-team-runtime-control-official-env/classification/agent_runs/20261024T175333181436/refit-01",
+      "strategy": "probability_stacking",
+      "outer": 0.6397416786290749,
+      "seconds": 77.84809191699605,
+      "meta_state_frozen": true,
+      "submission_sha256": "61c642107bcb336c8ab51815028d801d7d351808fc43f6687ad4b56a13124a00"
+    },
+    {
+      "directory": "/private/tmp/alfa-team-runtime-control-official-env/classification/agent_runs/20261024T175333181436/refit-02",
+      "strategy": "macro_f1_calibrated",
+      "outer": 0.6276158291318825,
+      "seconds": 19.394855749997078,
+      "meta_state_frozen": false,
+      "submission_sha256": "c7d869dc0d0cfef4b9b44ba66eb3d68b4743430f7325a6fe2474614a9cbeb663"
+    }
+  ]
+}

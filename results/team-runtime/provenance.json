@@ -1,0 +1,14 @@
+{
+  "source_files": {
+    "automl_ratio.py": "a95b88682d33d9327779a50c61e739e352950a2bf3e6fd5f2dc351213aa594f8",
+    "experiments/team_runtime_control.py": "0763c3c510b8d7f94b0936c8e2020afa6e91384a7cd1e17e8e612fe4976d816c",
+    "experiments/honest_meta_transfer.py": "5b84a01ad1e2b49e0189b6a61c86201267b6510f0d5ae46bf76fe19e859f08ef",
+    "experiments/discovered_ratio_study.py": "f8dad5c60d2380b3a6851024743d23e1efee663b0ee2bf33cc473eedbe80d079",
+    "experiments/group_hybrid_transfer.py": "efc36b868ddc42e438dd4cb3df29a8acf95676ec3c46a2cf161ed23e6c246333",
+    "tests/test_discovered_ratio.py": "009314f776612947ec884fb997885453cff4d5d0d68c84d7ce5e0e0e8f007ce7"
+  },
+  "verified_delivery_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "platform_runtime_changed": false,
+  "api_calls": 0,
+  "tests": "1 narrow ratio test passed; py_compile scripts; git diff --check"
+}

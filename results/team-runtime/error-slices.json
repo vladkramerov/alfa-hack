@@ -1,0 +1,26 @@
+{
+  "protocol": "Post-hoc error attribution only, previously viewed outer. No candidate/weight selection. Key inference is FIT-only; future test labels absent.",
+  "slices": [
+    {
+      "slice": "warm_unique",
+      "rows": 12242,
+      "team_policy": 19.924637653181758,
+      "own_policy": 21.99422123235679,
+      "generic_ratio_candidate": 21.791121348880537
+    },
+    {
+      "slice": "cold_or_ambiguous",
+      "rows": 6066,
+      "team_policy": 52.09925378802199,
+      "own_policy": 56.078929934876214,
+      "generic_ratio_candidate": 54.42965209405927
+    },
+    {
+      "slice": "all",
+      "rows": 18308,
+      "team_policy": 34.129124076475954,
+      "own_policy": 36.95199237169711,
+      "generic_ratio_candidate": 36.04324212156756
+    }
+  ]
+}

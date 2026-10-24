@@ -1,0 +1,73 @@
+{
+  "status": "failed",
+  "candidate": {
+    "family": "blend",
+    "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "members": [
+      {
+        "family": "xgboost",
+        "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      {
+        "family": "extra_trees",
+        "hypothesis": "Compare random thresholds to observed boosting errors.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      }
+    ],
+    "weights": [
+      0.8,
+      0.2
+    ],
+    "class_weight_power": 0,
+    "decision_power": 0.5
+  },
+  "hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "stages": [],
+  "protocol": "HT1: H48 grouped3OOF log-probability inverse-sqrt LR(C=.1), transferred to own delivered XGB-frequency/ET teacher. ST6 in-sample defect removed. Inner improvement>=.002 required before one outer. Outer historically viewed; no independent claim. No public coefficients shipped.",
+  "error": "TypeError: bundle.classes is list; array indexing before prediction checkpoint",
+  "completed_base_fits_without_scores": 8,
+  "completed_meta_fits_without_scores": 1,
+  "seconds": null,
+  "predictions_saved": false,
+  "repair_reason": "One necessary retry after checkpointing; no usable probabilities survived first failed measurement"
+}

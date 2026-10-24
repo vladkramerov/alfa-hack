@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "candidate": {
+    "family": "extra_trees",
+    "panel_time_column": "Year_Factor",
+    "numeric_view": "signed_log",
+    "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+    "target_transform": "log1p",
+    "feature_operations": [
+      {
+        "op": "mul",
+        "name": "research_product",
+        "left": "energy_star_rating",
+        "right": "days_below_minus7C"
+      },
+      {
+        "op": "div",
+        "name": "research_ratio",
+        "left": "energy_star_rating",
+        "right": "days_below_minus7C"
+      }
+    ],
+    "drop_columns": [
+      "april_min_temp_c",
+      "august_avg_temp_c",
+      "august_min_temp_c",
+      "cooling_degree_days_c",
+      "days_below_minus1C",
+      "december_avg_temp_c",
+      "december_max_temp_c",
+      "february_avg_temp_c",
+      "february_max_temp_c",
+      "february_min_temp_c",
+      "heating_degree_days_c",
+      "july_min_temp_c",
+      "march_avg_temp_c",
+      "march_max_temp_c",
+      "march_min_temp_c",
+      "may_avg_temp_c",
+      "september_avg_temp_c",
+      "september_min_temp_c",
+      "snowdepth_inches",
+      "snowfall_inches"
+    ],
+    "frequency_columns": [
+      "State_Factor",
+      "facility_type"
+    ],
+    "parameters": {
+      "max_depth": 24,
+      "max_features": 0.8,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "n_estimators": 200
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "stages": [
+    {
+      "stage": "inner",
+      "key": "f4bcbd8b5d6dc591adbec22f2abffc750efde0c2a8a9aed2b9917549277b9ae5",
+      "column": "building_class",
+      "base": 30.51805528432045,
+      "score": 31.51588569047211,
+      "seconds": 48.393473125004675,
+      "rss_mb": 681.453125,
+      "global_plus_expert_fits": 3,
+      "residual_fits": 1
+    }
+  ],
+  "protocol": "HT3 transfers H43/H73 pooled group experts into generic causal hybrid fallback. Choose lowest-cardinality categorical X-only partition2..8 with every group>=500. Shrink n/(n+500). Existing selected policy recipe retained, no new features/hyperparameters. Latestinner gain>=.3 RMSE before one outer; no outer tuning. These splits and recipe already adaptively explored.",
+  "decision": "reject_inner"
+}
