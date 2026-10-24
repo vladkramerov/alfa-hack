@@ -1,0 +1,8 @@
+{
+  "kind": "regression",
+  "stage": "inner",
+  "status": "started",
+  "started": "2026-10-24T14:08:27.924466+03:00",
+  "directory": "results\\2026-10-24\\HYP-108-01-regression-inner-tabm-mini",
+  "ledger_sha256": "15edaa3adc8b86ca0820a5b8e2e07108b3b8694af7efe653aab4794129453e60"
+}

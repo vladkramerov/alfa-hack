@@ -1,0 +1,30 @@
+{
+  "hypothesis": "HYP-073",
+  "family": "hadamard_ecoc_lightgbm",
+  "parameters": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_child_samples": 20,
+    "reg_lambda": 1,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 42
+  },
+  "decoder": "mean_Bernoulli_CE_clip1e-6",
+  "class_weight": "N/(K*nclass)_mean_normalized",
+  "preprocessing": "fitmedian_log1pnonnegative_standardize_clip8_OHE",
+  "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

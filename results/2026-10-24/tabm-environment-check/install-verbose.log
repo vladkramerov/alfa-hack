@@ -1,0 +1,10 @@
+Using pip 25.0.1 from C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\pip (python 3.12)
+Looking in indexes: https://download.pytorch.org/whl/cpu
+ERROR: Could not find a version that satisfies the requirement torch==2.5.1 (from versions: none)
+ERROR: No matching distribution found for torch==2.5.1
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{617d9f51-fd2d-4f4f-b31c-e94c829e8c1c}\AC\Temp\pip-build-tracker-cnxq3sft'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{617d9f51-fd2d-4f4f-b31c-e94c829e8c1c}\AC\Temp\pip-ephem-wheel-cache-ze18mw_m'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{617d9f51-fd2d-4f4f-b31c-e94c829e8c1c}\AC\Temp\pip-install-uflmnxkr'.
+You can safely remove it manually.

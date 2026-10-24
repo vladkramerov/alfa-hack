@@ -22,3 +22,5 @@ results/**/training-mask.npz
 results/**/domain-cross-fit-weights.npz
 results/**/residual-training-oof.npz
 results/**/quantile-validation-components.npz
+# Nested research probabilities stay local; splits/evidence remain reviewable.
+results/**/honest-raw-oof/fold-[0-9].npz

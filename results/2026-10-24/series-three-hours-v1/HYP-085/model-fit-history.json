@@ -1,0 +1,116 @@
+[
+  {
+    "recipe": {
+      "strategy": "conditional_lognormal_mean",
+      "version": 1,
+      "family": "catboost",
+      "parameters": {
+        "iterations": 800,
+        "depth": 6,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 10.0,
+        "loss_function": "RMSEWithUncertainty",
+        "allow_writing_files": false
+      },
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "target_transform": "log1p",
+      "loss": "Gaussian_negative_log_likelihood_on_log1p_y",
+      "raw_parameters": [
+        "conditional_log_mean_mu",
+        "conditional_log_standard_deviation"
+      ],
+      "prediction": "expm1(mu+0.5*min(exp(2*log_sigma),2))",
+      "variance_cap": 2.0,
+      "numerical_log_sigma_floor": -350.0,
+      "numerical_log_mean_bounds": [
+        0.0,
+        700.0
+      ],
+      "preprocessing": "fit_only_feature_composition_numeric_inf_to_nan_native_tagged_categories",
+      "class_or_global_smearing_factor": false,
+      "base_used": false,
+      "query_statistics": false,
+      "row_deletion": false,
+      "selection": "fixed_all_rounds_no_validation_earlystop"
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "3811e46f0ede54e38b90be12cad195e38977a81fc2eee06c08d576ee43e0ae33",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:20:13.703130+03:00",
+    "ledger_sha256": "0743f45d198e3038e7609b32ab9c3bf19a19100d6c6cd24b8ed93ff0a5f33b18",
+    "hypothesis": "HYP-085",
+    "metric": "rmse",
+    "score": 46.02178005161315,
+    "reference_score": 42.46005247026025,
+    "relative_gain": -0.08388420112875726,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 27.70299999997951,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:20:38.404603+03:00"
+  },
+  {
+    "recipe": {
+      "strategy": "conditional_lognormal_mean",
+      "version": 1,
+      "family": "catboost",
+      "parameters": {
+        "iterations": 800,
+        "depth": 6,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 10.0,
+        "loss_function": "RMSEWithUncertainty",
+        "allow_writing_files": false
+      },
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "target_transform": "log1p",
+      "loss": "Gaussian_negative_log_likelihood_on_log1p_y",
+      "raw_parameters": [
+        "conditional_log_mean_mu",
+        "conditional_log_standard_deviation"
+      ],
+      "prediction": "expm1(mu+0.5*min(exp(2*log_sigma),2))",
+      "variance_cap": 2.0,
+      "numerical_log_sigma_floor": -350.0,
+      "numerical_log_mean_bounds": [
+        0.0,
+        700.0
+      ],
+      "preprocessing": "fit_only_feature_composition_numeric_inf_to_nan_native_tagged_categories",
+      "class_or_global_smearing_factor": false,
+      "base_used": false,
+      "query_statistics": false,
+      "row_deletion": false,
+      "selection": "fixed_all_rounds_no_validation_earlystop"
+    },
+    "X_sha256": "c497a44bde73693d694d6f53f194448257446631c9c8e082893f19e4668c469a",
+    "y_sha256": "27785c7a36965dd3d16b7ab299477cefaad48b37f180851278f1c48e781c7830",
+    "fingerprint": "3a5fb732b117da55d69c99bd304a1ae3ad85b1c7f8b2be5bdd6977eb89f7af83",
+    "status": "completed",
+    "stage": "outer",
+    "started": "2026-10-24T02:26:38.553110+03:00",
+    "ledger_sha256": "ee36b4f3c81341242b03cfbf6e0a0cbbe76973407274dcaf3d96c03127586c19",
+    "hypothesis": "HYP-085",
+    "metric": "rmse",
+    "score": 44.12424608516781,
+    "reference_score": 39.39219382766771,
+    "relative_gain": -0.1201266494118556,
+    "fit_rows": 35000,
+    "valid_rows": 18308,
+    "seconds": 35.687999999994645,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:27:12.319792+03:00"
+  }
+]

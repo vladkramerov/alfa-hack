@@ -1,0 +1,27 @@
+{
+  "root": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-108-03-regression-outer-tabm-mini",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-tabm-mini-v1\\fit-history.json",
+  "kind": "regression",
+  "stage": "outer",
+  "fit_seconds": 240,
+  "frozen_weight": 0.0928330654623246,
+  "paths": {
+    "control": "results/2026-10-24/HYP-107-02-outer-sergey-fusion/validation_predictions.npz",
+    "split": "results/2026-10-24/HYP-070-04-outer-high-sprint/splits.npz",
+    "data": "data/regression/train.csv",
+    "target": "site_eui"
+  },
+  "source_sha256": {
+    "experimental_tabm.py": "cf299d088da3781a99ffc32f289b9113f57ddca63aeed8d9bb2f6267615e681d",
+    "experiments/tabm_trial.py": "853f36e3d9322d2aa8c50e1bb26a59be1331a33d047b4f2347168d339e792d22",
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8",
+    "docs/specs/SPEC-015-tabm-trial.md": "f618c11ad8043ddf546bb021ebb119d6546e381834252ebf54a53ebf5162b5e8",
+    "docs/hypotheses/HYP-108-tabm-mini.md": "19acc5abee97758b091228898970bc355491c5c20f354416505e6a0c34a8399d"
+  },
+  "input_sha256": {
+    "results/2026-10-24/HYP-107-02-outer-sergey-fusion/validation_predictions.npz": "32ca16115a0f21433914b59aa4065c7dc88cbdb646e631331fa2ee27ac80f228",
+    "results/2026-10-24/HYP-070-04-outer-high-sprint/splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb",
+    "data/regression/train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775"
+  }
+}

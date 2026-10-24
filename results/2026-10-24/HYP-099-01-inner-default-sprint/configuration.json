@@ -1,0 +1,48 @@
+{
+  "strategy": "global_temporal_entity_assignment",
+  "version": 1,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "exact_block": [
+    "State_Factor",
+    "building_class",
+    "facility_type"
+  ],
+  "donor_year": "global_latest_training_year_strictly_before_query_year",
+  "ambiguity": "reject_training_sameyear_collision_and_query_duplicate_keys",
+  "reserve_exact_H70_links": true,
+  "ambiguous_known_training_key": "baseline_unchanged",
+  "area_ratio_gate": [
+    0.95,
+    1.05
+  ],
+  "known_year_built_gap_cap": 20.0,
+  "cost": "abs(log(areaQ/areaD))/.05+known_year_gap/20+known_elevation_gap/100",
+  "unknown_or_zero_year_penalty": 0.5,
+  "unknown_elevation_penalty": 0.5,
+  "maximum_eligible_cost": 1.0,
+  "unmatched_dummy_cost": 1.000001,
+  "algorithm": "linear_sum_assignment_with_one_dummy_per_query",
+  "tie_order": "canonical_physical_feature_key_no_ID_no_target",
+  "max_assignment_cells": 4000000,
+  "cell_count": "N*(M+N)_including_dummies",
+  "oversized_block": "skip_with_audit_no_alternate_algorithm",
+  "transport": "caller_frozen_H70_beta_no_refit",
+  "rating_score": "inverse_normal_clipped_005_995",
+  "beta_cap": 2.0,
+  "log_change_cap": 1.5,
+  "alpha": 0.35,
+  "support_factor": "none",
+  "age_decay": 0.25,
+  "query_cohort_dependent": true,
+  "batch_invariant": false,
+  "physical_identity_proven": false,
+  "matching_uses_target": false,
+  "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+  "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+}

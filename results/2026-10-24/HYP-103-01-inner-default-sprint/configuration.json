@@ -1,0 +1,41 @@
+{
+  "hypothesis": "HYP-103",
+  "family": "ordered_honest_oof_contextual_catboost",
+  "parameters": {
+    "iterations": 400,
+    "depth": 5,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 10,
+    "thread_count": 2,
+    "loss_function": "MultiClass",
+    "random_seed": 42,
+    "verbose": false,
+    "allow_writing_files": false,
+    "boost_from_average": false,
+    "boosting_type": "Ordered"
+  },
+  "features": "raw_X_plus_K_teacher_logp",
+  "teacher": "caller_supplied_sorted_classes_normalize_clip1e-6",
+  "training_baseline": "log_teacher_probability",
+  "inference": "softmax(tree_RawFormulaVal_plus_query_log_teacher)",
+  "class_weight": "inverse_sqrt_class_count_mean_one",
+  "preprocessing": "numeric_inf_to_nan_categorical_tagged_strings",
+  "teacher_provenance": "caller_must_verify_grouped_oof_and_exact_global_positions",
+  "training_teacher": "H88_reused_true_grouped_raw_OOF",
+  "query_teacher": "held_out_raw_xgboost",
+  "H48_meta_state_used": false,
+  "change_from_H88": "only_boosting_type_Ordered",
+  "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

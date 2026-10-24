@@ -1,0 +1,51 @@
+[
+  {
+    "recipe": {
+      "strategy": "cached_H91_minus_H69_correction_amplitude",
+      "version": 1,
+      "optimizer": "inner_no_intercept_analytic_least_squares",
+      "amplitude_bounds": [
+        0.0,
+        2.0
+      ],
+      "zero_delta_amplitude": 1.0,
+      "prediction": "max(0,H69+amplitude*(H91-H69))",
+      "incremental_reference": "H91",
+      "primary_reference": "H69",
+      "strict_gain_epsilon": 1e-10
+    },
+    "X_sha256": "d04ac69a52973ae39516b28bc7356dbb351a1db395490e6a4c7233abdc116b6e",
+    "y_sha256": "91ffc09e14d85182f36d7f9a3f86c779a061f06babab387a7b7d92811a151dfe",
+    "fingerprint": "989e97dac7fcbb6fe84b690515757ce5505a015aa53c49b921fccbab15fd734b",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T03:06:24.891568+03:00",
+    "ledger_sha256": "e533ed3b549b9740b930ef5f2a2d0853f48d17ec010ae9e42c59af62049b1b96",
+    "hypothesis": "HYP-102",
+    "metric": "rmse",
+    "score": 30.449416831901488,
+    "reference_score": 42.46005247026025,
+    "H91_reference_score": 30.636363541581975,
+    "amplitude": 1.1289189550164425,
+    "incremental_gain_over_H91": 0.18694670968048754,
+    "eligible_for_outer": true,
+    "learner_fits": 0,
+    "old_model_refits": 0,
+    "parameter_fits": 1,
+    "configuration": {
+      "strategy": "cached_H91_minus_H69_correction_amplitude",
+      "version": 1,
+      "optimizer": "inner_no_intercept_analytic_least_squares",
+      "amplitude_bounds": [
+        0.0,
+        2.0
+      ],
+      "zero_delta_amplitude": 1.0,
+      "prediction": "max(0,H69+amplitude*(H91-H69))",
+      "incremental_reference": "H91",
+      "primary_reference": "H69",
+      "strict_gain_epsilon": 1e-10
+    },
+    "finished": "2026-10-24T03:06:24.930700+03:00"
+  }
+]

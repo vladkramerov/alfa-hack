@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "model_fits": 0,
+  "checks": {
+    "H78": {
+      "rows": 17141,
+      "classes_exact": true,
+      "all_labels_exact": true,
+      "max_probability_delta": 1.0269562977782698e-15,
+      "probability_tolerance_absolute": 1e-12,
+      "teacher_rebuilt_from_three_cached_branches": true,
+      "split_equal_to_original_H48": true,
+      "frozen_state": {
+        "classes": [
+          "Analysis",
+          "Backdoor",
+          "DoS",
+          "Exploits",
+          "Fuzzers",
+          "Generic",
+          "Normal",
+          "Reconnaissance",
+          "Shellcode",
+          "Worms"
+        ],
+        "gain": [
+          106.11940043604241,
+          85.15202750099722,
+          9.655887756389017,
+          5.885622626017124,
+          9.030586730642813,
+          4.373809756965848,
+          3.2949329951950155,
+          18.03939671677246,
+          130.58366691303792,
+          1340.571481026357
+        ],
+        "offset": [
+          -18.310310211175462,
+          -9.044221029717585,
+          -2.2533973271503815,
+          -2.012020668358899,
+          -3.380983033828314,
+          -2.1606430878721214,
+          -1.5023681509247986,
+          -7.59697101865465,
+          -59.3676443677155,
+          -570.7616806317758
+        ],
+        "theta": [
+          -0.04482892214085587,
+          -0.4623405985282955,
+          -0.4541877637360152,
+          0.05659656205549557,
+          0.5053943731349193,
+          0.059280929957358064,
+          0.21065982910740966,
+          0.5420105119854128,
+          0.0024701392281932053,
+          -0.27196504718354975,
+          -0.18791893602092574
+        ]
+      }
+    },
+    "H70": {
+      "rows": 18308,
+      "bit_exact": true,
+      "max_prediction_delta": 0.0,
+      "alpha": 0.95,
+      "configuration_exact": true,
+      "saved_base_is_H69_exact": true,
+      "split_equal_to_original_H69": true
+    },
+    "H69": {
+      "rows": 18308,
+      "cached_H43_baseline_bit_exact": true,
+      "cached_memory_composition_bit_exact": true,
+      "saved_H43_model_inference_max_delta": 1.0800249583553523e-12,
+      "production_base_configuration_matches_H43": true,
+      "memory_lookup_replayed_from_cached_outputs_not_refitted": true
+    }
+  },
+  "limitation": "Cached outer graph replay; future full-data refit determinism is not established.",
+  "source_sha256": {
+    "experiments/verify_sprint_adapter.py": "18167e1f46c7d795b73d194348b4edf565f66d1f5b6666a71dba3e9a7983040a",
+    "automl_sprint.py": "8f86ab24a288904063acfa17eb30c178321a6aef80618da655cf5962e2f4d0e6",
+    "automl_models.py": "377b1f8dcac8e4a12406647372d707d2edda6fe06a9e0391f92ecdd58b9deb65",
+    "automl_history.py": "27c405a30250b061da24ffd030a5ffed10ce4f897cfad8e03ce2b55b0948019b",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "sprint_regression.py": "10677e5d15418950e83118adec9b6a16e0b89021356b887af86e6feea6334b54",
+    "sprint_posterior.py": "bb520524499e155882cd415f717f7f3d76d8878bdaf5ac3253ae23148937495f",
+    "sprint_decision.py": "38d622e21831d8526e7c17054f6c0afc50a4244840dab04a746db4ad6ec2ee44"
+  },
+  "data_sha256": {
+    "regression": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "multiclass": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    }
+  },
+  "fit_guard_classes": [
+    "automl_sprint.SprintRegression",
+    "automl_sprint.SprintDecision",
+    "automl_class_combo.ClassCombination",
+    "automl_class_combo.ClassBranch",
+    "automl_reg_combo.FeatureGroupExperts",
+    "automl_reg_combo.RegressionComponent",
+    "automl_temporal_memory.TemporalProfileModel",
+    "automl_temporal_memory.ProfileHistory",
+    "sprint_regression.TemporalEntityLinker",
+    "sprint_decision.MacroF1Decision",
+    "sprint_posterior.CalibratedMacroDecision",
+    "catboost.core.CatBoostRegressor",
+    "catboost.core.CatBoostClassifier",
+    "lightgbm.sklearn.LGBMClassifier",
+    "sklearn.ensemble._forest.ExtraTreesRegressor",
+    "xgboost.sklearn.XGBClassifier"
+  ],
+  "fit_attempts": [],
+  "artifact_sha256": {
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\model.joblib": "492c18e49e43cda130f2de466584bd563c582ae3a6015efcc7e74d083152484f",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\audit.json": "e67b4ef92a071d5f4a25d2a915d53e57ba9617e6dd25bac5ba99f8e59be0c346",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\validation_predictions.npz": "1e1e874c2141c349f230ffbc3ae3e81dd0ccb252373965a86a76bb502c4c1834",
+    "results\\2026-10-24\\HYP-069-01-regression-alternatives\\validation_predictions.npz": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+    "results\\2026-10-24\\HYP-069-01-regression-alternatives\\profile-memory-components.npz": "dd32d72c87d78b3101521d7463de1d66a44b205fab2c75586690212f421360a1",
+    "results\\2026-10-23\\HYP-043-01-regression-combinations\\validation_predictions.npz": "f7010e4c6a223c7ff3830b0e49bab2978c44e2001bab07ca7c42d6889a6d6305",
+    "results\\2026-10-24\\HYP-078-02-outer-default-sprint\\audit.json": "d1c438e8a88aecb88be1dee7dca9c05811036975803cde876fb47f45c8f8c7d4",
+    "results\\2026-10-24\\HYP-078-02-outer-default-sprint\\validation_predictions.npz": "e86125def193ee64c0cd79364e0ef838271838d79973a137cc4261fe293ee00c",
+    "results\\2026-10-23\\HYP-048-01-multiclass-combinations\\learned-state.json": "e5f93cf3eac50b7de0807520ce9925f8a78c038ddb1dd4b072705a8f163cb63d",
+    "results\\2026-10-23\\HYP-048-01-multiclass-combinations\\validation_predictions.npz": "3ba6bb9eb7fe4ec6264cff4d1d85478afe483c3c05d63410cc157b4dc73293ec",
+    "results\\2026-10-23\\HYP-011-02-multiclass-none\\validation_predictions.npz": "46aa6d496c29d646ef4a6aaa45495f5fd03ea5a6d3d637e466f27864a8017ae5",
+    "results\\2026-10-23\\HYP-038-01-multiclass-spec006\\validation_predictions.npz": "68abaf2442c27d6ec5f885591f58614908242d6ce3cc5b43490a4ea674100458",
+    "results\\2026-10-23\\HYP-017-01-multiclass-frequency\\validation_predictions.npz": "cb65118335e7ce485cd7cfcc8c3878726b36f49bcca106dd6f41f246a9a74894",
+    "results\\2026-10-23\\series-combinations-v1\\cache\\regression-models\\e8f1ae324f84530c95bb9c98a0099ef6bce9d0191edd835d2249c2b288b4f521.joblib": "48d5a2bf8f84ce9e4705f555d58502ae02531cd151f2806233f1d17c8f411eab"
+  }
+}

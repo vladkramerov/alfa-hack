@@ -1,0 +1,83 @@
+{
+  "hypothesis": "HYP-100",
+  "strategy": "frozen_H78_plus_empirical_probability_offsets",
+  "version": 1,
+  "passes": 3,
+  "class_order": "ascending_training_count_then_sorted_class_index",
+  "initialization": "zero_offsets",
+  "objective": "actual_training_labels_macro_f1",
+  "coordinate_search": "exact_between_distinct_margin_groups_plus_outside_endpoints",
+  "strict_improvement_tolerance": 1e-12,
+  "float_ambiguous_candidates": "reject",
+  "training_teacher": "compatible_base_teacher_through_frozen_H78_state",
+  "outer_teacher": "H48_through_frozen_H78_state",
+  "H48_meta_state_used": true,
+  "query_statistics": false,
+  "output": "softmax(probability_plus_frozen_offset)_not_calibrated",
+  "input_state": {
+    "classes": [
+      "Analysis",
+      "Backdoor",
+      "DoS",
+      "Exploits",
+      "Fuzzers",
+      "Generic",
+      "Normal",
+      "Reconnaissance",
+      "Shellcode",
+      "Worms"
+    ],
+    "theta": [
+      -0.35285576319645306,
+      0.18355322290723847,
+      0.1876252727305554,
+      -0.21555622535171454,
+      -0.3695660836485733,
+      0.01620066101520792,
+      0.10839999217336051,
+      0.0483382667457046,
+      0.08034392951069085,
+      -0.04007101646191473,
+      0.0007319803794496217
+    ],
+    "gain": [
+      137.40797787116304,
+      146.0538131547175,
+      10.39163973703712,
+      5.540876673394013,
+      9.501492901701704,
+      4.322159780741411,
+      3.1831721520088134,
+      17.458388866574346,
+      156.9863359239215,
+      1373.74026015368
+    ],
+    "offset": [
+      -25.78447553676297,
+      -24.450263880424593,
+      -2.863070468236389,
+      -2.108372963353384,
+      -3.8881087207659575,
+      -2.1428607974418066,
+      -1.5035189019228121,
+      -7.676709633281947,
+      -72.21390313797636,
+      -665.9971604696716
+    ]
+  },
+  "input_state_refitted": false,
+  "training_meta_is_independent_OOF": false,
+  "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

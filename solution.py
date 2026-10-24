@@ -37,8 +37,12 @@ def portfolio_candidates(kind,metric,training,training_y):
     if log_valid:
         profile={'State_Factor','building_class','facility_type','floor_area','year_built','ELEVATION','Year_Factor'}
         if profile.issubset(training.columns) and pd.api.types.is_numeric_dtype(training['Year_Factor']) and training['Year_Factor'].nunique()>=2:
-            candidates.append({'family':'extra_trees','parameters':{},'strategy':'temporal_profile_memory',
-                'hypothesis':'Strictly past targets of a fixed physical profile with feature-expert fallback'})
+            if 'energy_star_rating' in training:
+                candidates.append({'family':'extra_trees','parameters':{},'strategy':'entity_linked_history',
+                    'hypothesis':'Unique physical entity histories with learned past-only rating transport and feature-expert fallback'})
+            else:
+                candidates.append({'family':'extra_trees','parameters':{},'strategy':'temporal_profile_memory',
+                    'hypothesis':'Strictly past targets of a fixed physical profile with feature-expert fallback'})
         grouping=[c for c in training.select_dtypes(exclude='number') if 2<=training[c].nunique()<=6]
         if 'building_class' in grouping: grouping.remove('building_class'); grouping.insert(0,'building_class')
         for column in grouping:

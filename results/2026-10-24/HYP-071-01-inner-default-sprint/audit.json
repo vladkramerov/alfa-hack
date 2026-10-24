@@ -1,0 +1,46 @@
+{
+  "strategy": "rating_normalized_regression",
+  "version": 1,
+  "family": "extra_trees",
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 24,
+    "min_samples_leaf": 2,
+    "max_features": 0.8
+  },
+  "features": [
+    29,
+    30,
+    31
+  ],
+  "loss": "original_scale_squared_error",
+  "sample_weight": "g_squared",
+  "normalizer": "temporal_past_only_isotonic_hierarchy",
+  "normalizer_minimum_rows": 30,
+  "class_shrinkage": 200.0,
+  "facility_shrinkage": 100.0,
+  "reference_scale": 100.0,
+  "scale_floor": 0.05,
+  "scale_cap": 10.0,
+  "first_year_scale": 1.0,
+  "fit_rows": 22054,
+  "temporal_normalizer_folds": [
+    {
+      "year": 2.0,
+      "fit_rows": 2117,
+      "valid_rows": 9058
+    },
+    {
+      "year": 3.0,
+      "fit_rows": 11175,
+      "valid_rows": 10879
+    }
+  ],
+  "training_scale_min": 0.18361285888812545,
+  "training_scale_max": 3.529736766952029,
+  "row_deletion": false,
+  "validation_target_used": false,
+  "base_refit": false,
+  "weight_min": 0.03371368194907067,
+  "weight_max": 12.459041643972963
+}

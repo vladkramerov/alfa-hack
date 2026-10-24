@@ -1,0 +1,9 @@
+{
+  "created": "2026-10-24T02:59:36.101787+03:00",
+  "hypothesis": "HYP-057",
+  "variant": "default",
+  "inner_score": 30.00420378193599,
+  "previous_best_inner": 30.636363541581975,
+  "reason": "preselected on inner before own outer",
+  "outer_adaptive_exploratory": true
+}

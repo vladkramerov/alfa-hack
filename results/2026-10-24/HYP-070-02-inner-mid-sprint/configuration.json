@@ -1,0 +1,21 @@
+{
+  "strategy": "temporal_entity_linking",
+  "version": 1,
+  "alpha": 0.8,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "donor": "latest_strictly_past",
+  "rating_score": "inverse_normal_clipped_005_995",
+  "pair_ridge": 20.0,
+  "group_shrinkage": 100.0,
+  "support_shrinkage": 0.25,
+  "age_decay": 0.25,
+  "beta_cap": 2.0,
+  "log_change_cap": 1.5
+}

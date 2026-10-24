@@ -1,0 +1,5 @@
+{
+  "family": "xgboost",
+  "strategy": "probability_stacking",
+  "parameters": {}
+}

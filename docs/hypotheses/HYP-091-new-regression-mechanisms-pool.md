@@ -1,0 +1,7 @@
+# HYP-091: pool new temporal and conditional-uncertainty mechanisms
+
+SPEC011,2026-10-24, before computing weights. Fixedcomponents H70 transport, H83 original-loss isotonictransport, H85 conditional-lognormalmean. H79 pairingH70/H76 failed and is not repeated; this new mixture adds independent conditionalvariance predictor ratherthan another current-target paneltree. Distinctnewcomponentset, userexplicitlyauthorizedcombiningimproved hypotheses. H85alonefailed but complementary residual possibility unknown.
+
+Fit nonnegative sum1 weights to INNER Year4 originalMSE only usingcachedpredictions, SLSQPmax200/ftol1e-12, gradientanalytic, fallback bestvertex ifworse/invalid; pruneweights<1e-8/renormalize. Bothnumeric tests manualsimplex/interior/boundary. No baselinefits. Reject beforeouter unless strictgain vsH70 and at least2activeweights. Freeze weights before any H85outerfit; H70/H83outercached, H85outeronepreviouslyunseenfit only ifneeded. Originalouterlabels neveroptimizeweights; repeatouterexploratory. GoalRMSE≤31.513755, separatelyfromanysmallgain. Alloutcomes/results/sourcehashes/parameterfitjournal retained.
+
+2026-10-24 outcome: [inner](../../results/2026-10-24/HYP-091-01-inner-multiblend-sprint/report.md), [outer](../../results/2026-10-24/HYP-091-02-outer-multiblend-sprint/report.md). RMSE34.21382789041039 противH69 39.39219382766771: -13.145665255181127%, цель20% не достигнута. Weights frozen before component H85 outer; дальнейший просмотр outer остается разведочным.

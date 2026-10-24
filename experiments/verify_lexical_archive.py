@@ -4,8 +4,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
-def main():
-    archive=ROOT/'dist/solution_alternative_v2.zip';out=ROOT/'results/2026-10-24'/('lexical-archive-'+str(time.time_ns()));out.mkdir()
+def main(archive_path=None):
+    archive=Path(archive_path).resolve() if archive_path else ROOT/'dist/solution_alternative_v2.zip';out=ROOT/'results/2026-10-24'/('lexical-archive-'+str(time.time_ns()));out.mkdir()
     extracted=ROOT/'tmp'/('lexical-flat-'+str(time.time_ns()));extracted.mkdir(parents=True)
     with zipfile.ZipFile(archive) as z:z.extractall(extracted)
     nested=out/'nested/inputs';nested.mkdir(parents=True)
@@ -32,4 +32,4 @@ def main():
        'synthetic_only':True,'public_validation_fits':0,'new_public_metrics':0,'summary':summary}
     (out/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')
     print(json.dumps({'status':'passed','verification':str(out/'verification.json'),'seconds':result['seconds']},ensure_ascii=False))
-if __name__=='__main__':main()
+if __name__=='__main__':main(sys.argv[1] if len(sys.argv)>1 else None)

@@ -1,0 +1,10 @@
+{
+  "created": "2026-10-24T12:41:43.903297+03:00",
+  "sources": {
+    "external_multilag.py": "5d56c27a5da0857c5470143f2da383a6ab6c147e9936a60292a4c1e62bf55f77",
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8",
+    "experiments/external_ideas_run.py": "349cdae0509d368c7e7da6aad87590d5701902433a017a654c29438874b08319"
+  },
+  "spec": "SPEC013",
+  "hypothesis": "HYP-105"
+}

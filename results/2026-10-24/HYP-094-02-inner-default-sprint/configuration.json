@@ -1,0 +1,33 @@
+{
+  "hypothesis": "HYP-094",
+  "family": "honest_oof_soft_macro_f1_numpy_mlp",
+  "hidden_size": 128,
+  "epochs": 40,
+  "learning_rate": 0.003,
+  "l2": 0.0001,
+  "objective": "0.5meanCE+0.5(1-softmacroF1)",
+  "full_batch": true,
+  "last_layer_initialization": "zero",
+  "preprocessing": "fitmedian_log1pnonnegative_standardize_clip8_OHE",
+  "teacher_columns": "sorted_training_classes",
+  "random_state": 42,
+  "threads": 2,
+  "training_teacher": "reused_H88_nested_grouped_oof_raw_xgboost",
+  "query_teacher": "original_held_out_raw_xgboost",
+  "H48_meta_state_used": false,
+  "new_teacher_fits": 0,
+  "teacher_provenance": "caller_must_verify_reused_honest_teacher_artifacts",
+  "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

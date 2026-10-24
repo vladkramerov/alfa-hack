@@ -1,0 +1,44 @@
+{
+  "strategy": "conditional_panel_transition",
+  "version": 1,
+  "family": "catboost",
+  "parameters": {
+    "iterations": 800,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 10.0,
+    "loss_function": "RMSE",
+    "random_seed": 42,
+    "thread_count": 4,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "alpha": 0.9,
+  "minimum_pairs": 32,
+  "target": "current_original_units",
+  "loss": "original_scale_squared_error",
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "training_pairs": "adjacent_strictly_past",
+  "query_donor": "latest_strictly_past",
+  "current_features": "raw_X_without_id_or_target",
+  "transition_features": [
+    "donor_target",
+    "donor_rating",
+    "rating_delta",
+    "donor_rating_missing",
+    "current_rating_missing",
+    "age"
+  ],
+  "weather_columns": "numeric_except_link_fields_year_rating",
+  "weather_features": "donor_value_and_current_minus_donor",
+  "matched_blend": "alpha*transition+(1-alpha)*baseline",
+  "unmatched_or_insufficient_pairs": "baseline",
+  "negative_prediction": "clip_zero"
+}

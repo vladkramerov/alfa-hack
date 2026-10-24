@@ -1,0 +1,43 @@
+{
+  "strategy": "proper_posterior_expected_macro_decision",
+  "version": 1,
+  "calibration": "unweighted_ce_scalar_temperature_and_class_bias",
+  "penalty": 0.01,
+  "iterations": 100,
+  "log_temperature_bounds": [
+    -2.3,
+    2.3
+  ],
+  "bias_bounds": [
+    -5.0,
+    5.0
+  ],
+  "probability_clip": 1e-06,
+  "decision": {
+    "hypothesis": "HYP-075",
+    "family": "affine_macro_f1_decision",
+    "iterations": 25,
+    "damping": 0.5,
+    "epsilon": 1e-08,
+    "objective": "mean(2*t/(training_prior+predicted_mass+epsilon))",
+    "selection": "best_expected_training_objective_on_fixed_path",
+    "initialization": "gain1_offset0_teacher_argmax",
+    "prior_correction": "none",
+    "teacher_columns": "sorted_training_classes",
+    "query_statistics": false,
+    "output": "softmax_affine_scores_not_calibrated"
+  },
+  "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

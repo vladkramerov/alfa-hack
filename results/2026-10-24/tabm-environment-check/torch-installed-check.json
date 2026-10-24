@@ -1,0 +1,12 @@
+{
+  "date_moscow": "2026-10-24",
+  "interpreter": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\.venv-ml\\Scripts\\python.exe",
+  "python_version": "3.12.14",
+  "torch_version": "2.5.1+cpu",
+  "required_version_matches": true,
+  "import_passed": true,
+  "tensor_check": [2.0, 3.0],
+  "cuda_available": false,
+  "exit_code": 0,
+  "new_model_fits": 0
+}

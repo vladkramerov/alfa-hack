@@ -1,0 +1,43 @@
+{
+  "hypothesis": "HYP-050",
+  "family": "teacher_residual_focal_lightgbm",
+  "parameters": {
+    "n_estimators": 200,
+    "learning_rate": 0.05,
+    "num_leaves": 63,
+    "min_child_samples": 30,
+    "reg_lambda": 5.0,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 42,
+    "deterministic": true,
+    "force_col_wise": true,
+    "boost_from_average": false,
+    "metric": "None"
+  },
+  "objective": "mean(-(1-p_true)^2*log(p_true))",
+  "gradient": "exact_multiclass_focal_derivative_times_N",
+  "curvature": "positive_CE_diagonal_max(p*(1-p),0.001)_not_exact_focal",
+  "teacher_baseline": "caller_supplied_log_normalized_p_clip1e-12",
+  "inference": "softmax(query_logteacher+tree_raw_scores)",
+  "preprocessing": "fitmedian_log1pnonnegative_standardize_clip8_OHE",
+  "query_statistics": false,
+  "class_weights": null,
+  "selection": "fixed_all_rounds_no_validation_earlystop",
+  "gamma": 2.0,
+  "ce_mixture_weight": 0.0,
+  "teacher_refit": false,
+  "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

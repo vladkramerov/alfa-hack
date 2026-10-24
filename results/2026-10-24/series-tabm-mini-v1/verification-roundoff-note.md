@@ -1,0 +1,7 @@
+# Техническое исправление независимой сверки, 24.10.2026
+
+Первый no-fit replay остановился при сравнении сохранённой регрессионной смеси с алгебраически эквивалентной формулой: max abs difference2.25731191e-06, tolerance1e-10. Научные predictions/metrics не изменялись и модели не переобучались.
+
+Причина: сохранённые raw predictions имеют float32, контроль float64; выражение w*raw в проверяющем коде выполнялось в float32, тогда как исходный runner сначала считал raw-control в float64. Проверяющая формула теперь явно переводит оба массива в float64 до умножения. Допуск не ослаблен. Итог отдельного повторного no-fit replay — verification.json.
+
+Вторая сверка после исправления арифметики обнаружила object dtype у сохранённого classification-y: `ValueError: Object arrays cannot be loaded when allow_pickle=False` ([лог](verification.log)). Это ошибка кодека артефакта, не обучения. Исходные NPZ сохранены, созданы отдельные validation_predictions_portable.npz с Unicode-labels и побитово прежними числовыми массивами. Собственные созданные этой сессией исходные архивы прочитаны однократно как trusted output; проверка впредь использует allow_pickle=False. [SHA и проверка неизменности всех значений](archive-codec-fix.json). Добавлен regression test кодека и исправлена будущая запись runner, без повторного научного fit. Финальный replay — [verification.json](verification.json), [лог](verification-codec.log).

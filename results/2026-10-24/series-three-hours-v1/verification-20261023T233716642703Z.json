@@ -1,0 +1,4265 @@
+{
+  "spec": "SPEC011",
+  "created_utc": "2026-10-23T23:37:57.843523+00:00",
+  "verifier": "experiments\\verify_sprint.py",
+  "verifier_sha256": "dbb7aa261e125f84ce9ff873836b4bf1492139ca8da7e797da7dec646e91dc8b",
+  "model_fits_performed": 0,
+  "runs": [
+    {
+      "directory": "results\\2026-10-24\\HYP-050-01-inner-default-sprint",
+      "hypothesis": "HYP-050",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 80,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.5991047549783951,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.020033922290584455
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "FocalTeacherBoost",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "a817c73d485b504199a393ed73d37cbb938a4a4dc6bff09ab70b1b78734763d1",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.5991047549783951,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-070-01-inner-low-sprint",
+      "hypothesis": "HYP-070",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 34.20894464756146,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.19432636896711347
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "TemporalEntityLinker",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "beta_cap",
+              "donor",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "pair_ridge",
+              "rating_score",
+              "strategy",
+              "support_shrinkage",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "161fa188ef4f67462e449ea8f48373eb2f5d448e8f1de6751399b7c88e94555c",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 34.20894464756146,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-070-02-inner-mid-sprint",
+      "hypothesis": "HYP-070",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 31.323933523598928,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.2622728493908775
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "TemporalEntityLinker",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "beta_cap",
+              "donor",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "pair_ridge",
+              "rating_score",
+              "strategy",
+              "support_shrinkage",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "bfb0b21c1f60fbb0a2dcfa3cb2dab6f50b1a770d3d4ba9685c1e733a3ebb3219",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 31.323933523598928,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-070-03-inner-high-sprint",
+      "hypothesis": "HYP-070",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 30.663255379972725,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.27783284296575483
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "TemporalEntityLinker",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "beta_cap",
+              "donor",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "pair_ridge",
+              "rating_score",
+              "strategy",
+              "support_shrinkage",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "ae9b31dd07d0f6d28fbe949bceae56ad14560df337025b699832dfe88a4b07c0",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 30.663255379972725,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-070-04-outer-high-sprint",
+      "hypothesis": "HYP-070",
+      "status": "completed",
+      "stage": "outer",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 34.318489927675174,
+            "reference_score": 39.39219382766771,
+            "relative_gain": 0.12879972926079947
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "TemporalEntityLinker",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "beta_cap",
+              "donor",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "pair_ridge",
+              "rating_score",
+              "strategy",
+              "support_shrinkage",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_rating_pairs"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "16999a20806566b7390cf428d00bcadc408af950432aef036224e833268d5fe1",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-069-01-regression-alternatives",
+            "prediction_sha256": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+            "source_data_sha256": {
+              "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 34.318489927675174,
+      "reference_score": 39.39219382766771,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-071-01-inner-default-sprint",
+      "hypothesis": "HYP-071",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 49.19259595219514,
+            "reference_score": 42.46005247026025,
+            "relative_gain": -0.15856182671112992
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "RatingNormalizedRegressor",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "row_deletion",
+              "temporal_normalizer_folds",
+              "training_scale_max",
+              "training_scale_min",
+              "validation_target_used",
+              "weight_max",
+              "weight_min"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "class_shrinkage",
+              "facility_shrinkage",
+              "family",
+              "features",
+              "first_year_scale",
+              "loss",
+              "normalizer",
+              "normalizer_minimum_rows",
+              "parameters",
+              "reference_scale",
+              "sample_weight",
+              "scale_cap",
+              "scale_floor",
+              "strategy",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "row_deletion",
+              "temporal_normalizer_folds",
+              "training_scale_max",
+              "training_scale_min",
+              "validation_target_used",
+              "weight_max",
+              "weight_min"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "956d08a530e7d82ac97dd272ddb2eee45a65792c523a95ab057774412664a128",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 49.19259595219514,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-072-01-inner-default-sprint",
+      "hypothesis": "HYP-072",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6090378831239697,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.03694603587130676
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "TeacherResidualF1Classifier",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "configuration",
+              "elapsed_seconds",
+              "encoder",
+              "epochs_completed",
+              "fit_rows",
+              "loss_history",
+              "teacher_columns",
+              "teacher_source",
+              "training_losses_are_independent_oof_scores"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "a6401a74a42aeaf46b581d6afe0ce6895e6e93f67dd213e7d74a972c5cc86f81",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6090378831239697,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-073-01-inner-default-sprint",
+      "hypothesis": "HYP-073",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 75,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.5803974034255268,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": -0.011817157210243803
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "ECOCClassifier",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "classes",
+              "code",
+              "configuration",
+              "elapsed_seconds",
+              "encoder",
+              "fit_rows",
+              "heads"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "c2e1339bd7063e79554f532082a025c384cc084619291778decf8a7bbcf15783",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.5803974034255268,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-074-01-inner-default-sprint",
+      "hypothesis": "HYP-074",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 76,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6143385510752261,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.045970936902638135
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "ContextualTeacherCorrector",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "categorical_columns",
+              "class_counts",
+              "classes",
+              "configuration",
+              "elapsed_seconds",
+              "fit_rows",
+              "numeric_columns",
+              "raw_columns",
+              "removed_rows",
+              "sample_weight_max",
+              "sample_weight_mean",
+              "sample_weight_min",
+              "teacher_columns",
+              "teacher_source"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "1e68e98bdc28fc4033faee3799e14a66796a9b6cd41c6d22a29b6b311e5fdcd6",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6143385510752261,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-075-01-inner-default-sprint",
+      "hypothesis": "HYP-075",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 76,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6212181165985486,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.05768406410801789
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "MacroF1Decision",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "class_prior",
+              "expected_objective_history",
+              "fit_rows",
+              "gain",
+              "initial_expected_macro_f1",
+              "offset",
+              "output_is_calibrated_posterior",
+              "prior_correction",
+              "selected_expected_macro_f1",
+              "selected_iteration",
+              "statistics_source",
+              "teacher_calibration_assumed_not_verified"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "class_prior",
+              "expected_objective_history",
+              "fit_rows",
+              "gain",
+              "initial_expected_macro_f1",
+              "offset",
+              "output_is_calibrated_posterior",
+              "prior_correction",
+              "selected_expected_macro_f1",
+              "selected_iteration",
+              "statistics_source",
+              "teacher_calibration_assumed_not_verified"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "ef96d38425bb380377f2b023fd75587234f6f5adf3196552d00b8c32fef382a7",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6212181165985486,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-076-01-inner-default-sprint",
+      "hypothesis": "HYP-076",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 77,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 32.91081846583218,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.22489925115180956
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "PanelTransitionRegressor",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "id_as_feature",
+              "pair_year_max",
+              "pair_year_min",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_pairs",
+              "transition_fitted",
+              "validation_target_used",
+              "weather_columns_fitted"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "alpha",
+              "ambiguity",
+              "current_features",
+              "family",
+              "link_fields",
+              "loss",
+              "matched_blend",
+              "minimum_pairs",
+              "negative_prediction",
+              "parameters",
+              "query_donor",
+              "strategy",
+              "target",
+              "transition_features",
+              "unmatched_or_insufficient_pairs",
+              "version",
+              "weather_columns",
+              "weather_features"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "id_as_feature",
+              "pair_year_max",
+              "pair_year_min",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_pairs",
+              "transition_fitted",
+              "validation_target_used",
+              "weather_columns_fitted"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "701e7388536be78f5949420b2ba4657a0ea965217e4149372d9e3f87296bf4d8",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 32.91081846583218,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-077-01-inner-default-sprint",
+      "hypothesis": "HYP-077",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 77,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6110510854211656,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.04037370794118915
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "LovaszTeacherBoost",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "classes",
+              "configuration",
+              "curvature_is_exact",
+              "elapsed_seconds",
+              "encoder",
+              "fit_rows",
+              "learner_fits",
+              "loss_history",
+              "removed_rows",
+              "teacher_columns",
+              "teacher_source",
+              "training_loss_is_independent_score"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "3add00240ee4b448c0377150bb963bf780258cbf449a4a667feefce51e9a3506",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6110510854211656,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-078-01-inner-default-sprint",
+      "hypothesis": "HYP-078",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 78,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6288481661155734,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.07067496306424931
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "CalibratedMacroDecision",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "decision",
+              "final_training_ce",
+              "fit_rows",
+              "initial_training_ce",
+              "optimizer_iterations",
+              "optimizer_success",
+              "query_statistics",
+              "statistics_source",
+              "teacher_oof_provenance_is_callers_responsibility",
+              "theta"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "decision",
+              "final_training_ce",
+              "fit_rows",
+              "initial_training_ce",
+              "optimizer_iterations",
+              "optimizer_success",
+              "query_statistics",
+              "statistics_source",
+              "teacher_oof_provenance_is_callers_responsibility",
+              "theta"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "80448e8c51932e54dc04c1007cbc895e2b81dba72535b95ae71223058cd018a5",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6288481661155734,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-078-02-outer-default-sprint",
+      "hypothesis": "HYP-078",
+      "status": "completed",
+      "stage": "outer",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 78,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6593084142037399,
+            "reference_score": 0.6495311620074445,
+            "relative_gain": 0.015052783866562612
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "CalibratedMacroDecision",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "decision",
+              "final_training_ce",
+              "fit_rows",
+              "initial_training_ce",
+              "optimizer_iterations",
+              "optimizer_success",
+              "query_statistics",
+              "statistics_source",
+              "teacher_oof_provenance_is_callers_responsibility",
+              "theta"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "decision",
+              "final_training_ce",
+              "fit_rows",
+              "initial_training_ce",
+              "optimizer_iterations",
+              "optimizer_success",
+              "query_statistics",
+              "statistics_source",
+              "teacher_oof_provenance_is_callers_responsibility",
+              "theta"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "9883bbfc7064d8a9ab4e8d9e501618317e16e9c52d362c81c4e5fe880a518529",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\HYP-011-02-multiclass-none\\validation_predictions.npz": "46aa6d496c29d646ef4a6aaa45495f5fd03ea5a6d3d637e466f27864a8017ae5",
+              "results\\2026-10-23\\HYP-038-01-multiclass-spec006\\validation_predictions.npz": "68abaf2442c27d6ec5f885591f58614908242d6ce3cc5b43490a4ea674100458",
+              "results\\2026-10-23\\HYP-017-01-multiclass-frequency\\validation_predictions.npz": "cb65118335e7ce485cd7cfcc8c3878726b36f49bcca106dd6f41f246a9a74894",
+              "results\\2026-10-23\\HYP-048-01-multiclass-combinations\\learned-state.json": "e5f93cf3eac50b7de0807520ce9925f8a78c038ddb1dd4b072705a8f163cb63d"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6593084142037399,
+      "reference_score": 0.6495311620074445,
+      "teacher_scope": "Base OOF plus in-sample H48 meta teacher for training; original outer repeatedly viewed/exploratory",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-080-01-inner-default-sprint",
+      "hypothesis": "HYP-080",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 80,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6140917642777984,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.04555075845661878
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "MacroTeacherBoost",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "97ab1018c7afdc18cff5969ea7e81bcace0b281cb883ee463bbc53dbd7caf90d",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6140917642777984,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-081-01-inner-default-sprint",
+      "hypothesis": "HYP-081",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 30.689409165993794,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.27721688079662216
+          }
+        },
+        {
+          "name": "inherited_H70_overlay_provenance_and_incremental_comparison",
+          "passed": true,
+          "detail": {
+            "verified_extra_fields": [
+              "inherited_prediction_sha256",
+              "transport_state_sha256"
+            ],
+            "source": "results\\2026-10-24\\HYP-070-03-inner-high-sprint",
+            "hashes": {
+              "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+              "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+            },
+            "incremental_H70_control_score": 30.663255379972725,
+            "overlay_score": 30.689409165993794,
+            "incremental_relative_gain_vs_H70": -0.0008529357270445399,
+            "incremental_improvement_over_H70": false,
+            "worker_reference_remains_H69": true,
+            "transport_state_used": true
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "FuzzyTemporalOverlay",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "matching_target_used",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "rejected_invalid_area_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "transport_state_fitted_here",
+              "transport_state_supplied",
+              "validation_target_used"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "ambiguity_margin",
+              "area_distance",
+              "area_tolerance",
+              "beta_cap",
+              "distance",
+              "donor",
+              "exact_block",
+              "exact_h70_profile",
+              "id_as_feature",
+              "link_fields",
+              "log_change_cap",
+              "missing_year",
+              "missing_year_distance",
+              "rating_score",
+              "strategy",
+              "support_shrinkage",
+              "transport",
+              "version",
+              "year_tolerance"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "matching_target_used",
+              "profiles",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "rejected_invalid_area_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "transport_state_fitted_here",
+              "transport_state_supplied",
+              "validation_target_used"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "b96b05f5bb8f4cff3deb27267f4493444ef4d4d55c9feeafdcfc83abc6e1e641",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 30.689409165993794,
+      "reference_score": 42.46005247026025,
+      "incremental_H70_comparison": {
+        "incremental_H70_control_score": 30.663255379972725,
+        "overlay_score": 30.689409165993794,
+        "incremental_relative_gain_vs_H70": -0.0008529357270445399,
+        "incremental_improvement_over_H70": false
+      },
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-082-01-inner-default-sprint",
+      "hypothesis": "HYP-082",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 80,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6150544797423486,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.047189874860210555
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "NetworkSemanticTeacherCorrector",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "classes",
+              "configuration",
+              "features",
+              "fit_original_rows",
+              "fit_retained_rows",
+              "fit_rows",
+              "learner",
+              "raw_columns",
+              "removed_rows"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "f11559c1d6f7f91685b7bbd74c355205345be80ca30b589927f1efb8fab7438d",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6150544797423486,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-083-01-inner-default-sprint",
+      "hypothesis": "HYP-083",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 30.651578052812432,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.278107862106828
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "OriginalLossTransport",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "adjacent_training_pairs",
+              "base_refit",
+              "fit_rows",
+              "global_curve_fitted",
+              "group_curves_fitted",
+              "group_pair_counts",
+              "id_as_feature",
+              "matching_target_used",
+              "old_h70_model_refit",
+              "original_scale_weight_sum",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_ratio_pairs",
+              "validation_target_used"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "curve_anchor",
+              "donor",
+              "group_column",
+              "group_minimum_pairs",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "loss",
+              "missing_rating_or_no_curve",
+              "model",
+              "out_of_bounds",
+              "rating_score",
+              "ratio_max",
+              "ratio_min",
+              "sample_weight",
+              "strategy",
+              "support_shrinkage",
+              "target",
+              "training_pairs",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "adjacent_training_pairs",
+              "base_refit",
+              "fit_rows",
+              "global_curve_fitted",
+              "group_curves_fitted",
+              "group_pair_counts",
+              "id_as_feature",
+              "matching_target_used",
+              "old_h70_model_refit",
+              "original_scale_weight_sum",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_ratio_pairs",
+              "validation_target_used"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "675d08b5ec892f333bc7f48cc3c2c4397b99c4f8b05e232bbad788d47782c94b",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 30.651578052812432,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-083-02-outer-default-sprint",
+      "hypothesis": "HYP-083",
+      "status": "completed",
+      "stage": "outer",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 34.32053895104047,
+            "reference_score": 39.39219382766771,
+            "relative_gain": 0.12874771328590204
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "OriginalLossTransport",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "adjacent_training_pairs",
+              "base_refit",
+              "fit_rows",
+              "global_curve_fitted",
+              "group_curves_fitted",
+              "group_pair_counts",
+              "id_as_feature",
+              "matching_target_used",
+              "old_h70_model_refit",
+              "original_scale_weight_sum",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_ratio_pairs",
+              "validation_target_used"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "curve_anchor",
+              "donor",
+              "group_column",
+              "group_minimum_pairs",
+              "group_shrinkage",
+              "link_fields",
+              "log_change_cap",
+              "loss",
+              "missing_rating_or_no_curve",
+              "model",
+              "out_of_bounds",
+              "rating_score",
+              "ratio_max",
+              "ratio_min",
+              "sample_weight",
+              "strategy",
+              "support_shrinkage",
+              "target",
+              "training_pairs",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "adjacent_training_pairs",
+              "base_refit",
+              "fit_rows",
+              "global_curve_fitted",
+              "group_curves_fitted",
+              "group_pair_counts",
+              "id_as_feature",
+              "matching_target_used",
+              "old_h70_model_refit",
+              "original_scale_weight_sum",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_ratio_pairs",
+              "validation_target_used"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "74a8d0efd9446fa42cabbc5458f57b5558d502a31799f76c61a66a250068c5cc",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-069-01-regression-alternatives",
+            "prediction_sha256": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+            "source_data_sha256": {
+              "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 34.32053895104047,
+      "reference_score": 39.39219382766771,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-084-01-inner-default-sprint",
+      "hypothesis": "HYP-084",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.5580393390877207,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": -0.049883929125849776
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "SignaturePosteriorClassifier",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "class_counts",
+              "class_prior",
+              "classes",
+              "configuration",
+              "fit_rows",
+              "id_as_feature",
+              "level_table_sizes",
+              "query_statistics",
+              "removed_rows",
+              "row_deletion",
+              "statistics_source",
+              "teacher_provenance",
+              "teacher_training_values_used",
+              "teacher_validated_only"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "5b158e023be4e390a8362fafd8def259657724b30779d5dc00103fb2d1120b42",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.5580393390877207,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-085-01-inner-default-sprint",
+      "hypothesis": "HYP-085",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 46.02178005161315,
+            "reference_score": 42.46005247026025,
+            "relative_gain": -0.08388420112875726
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "ConditionalLognormalRegressor",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "assumption",
+              "base_used",
+              "categorical_columns",
+              "configuration",
+              "elapsed_seconds",
+              "feature_audit",
+              "feature_columns",
+              "fit_original_rows",
+              "fit_retained_rows",
+              "fit_rows",
+              "objective_is_original_rmse",
+              "raw_columns",
+              "removed_rows"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "3811e46f0ede54e38b90be12cad195e38977a81fc2eee06c08d576ee43e0ae33",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 46.02178005161315,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-085-02-outer-default-sprint",
+      "hypothesis": "HYP-085",
+      "status": "completed",
+      "stage": "outer",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 79,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 44.12424608516781,
+            "reference_score": 39.39219382766771,
+            "relative_gain": -0.1201266494118556
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "ConditionalLognormalRegressor",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "assumption",
+              "base_used",
+              "categorical_columns",
+              "configuration",
+              "elapsed_seconds",
+              "feature_audit",
+              "feature_columns",
+              "fit_original_rows",
+              "fit_retained_rows",
+              "fit_rows",
+              "objective_is_original_rmse",
+              "raw_columns",
+              "removed_rows"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "3a5fb732b117da55d69c99bd304a1ae3ad85b1c7f8b2be5bdd6977eb89f7af83",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-069-01-regression-alternatives",
+            "prediction_sha256": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+            "source_data_sha256": {
+              "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 44.12424608516781,
+      "reference_score": 39.39219382766771,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-086-01-inner-default-sprint",
+      "hypothesis": "HYP-086",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 80,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 31.12117379943106,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.2670481549397787
+          }
+        },
+        {
+          "name": "inherited_H70_overlay_provenance_and_incremental_comparison",
+          "passed": true,
+          "detail": {
+            "verified_extra_fields": [
+              "inherited_prediction_sha256",
+              "transport_state_sha256"
+            ],
+            "source": "results\\2026-10-24\\HYP-070-03-inner-high-sprint",
+            "hashes": {
+              "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+              "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+            },
+            "incremental_H70_control_score": 30.663255379972725,
+            "overlay_score": 31.12117379943106,
+            "incremental_relative_gain_vs_H70": -0.014933783572027943,
+            "incremental_improvement_over_H70": false,
+            "worker_reference_remains_H69": true,
+            "transport_state_used": true
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "RatingStateSpaceHistory",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "matching_target_used",
+              "profiles",
+              "profiles_without_eligible_observations",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_filter_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "transport_state_fitted_here",
+              "transport_state_supplied",
+              "usable_filter_observations",
+              "validation_target_used"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "beta_cap",
+              "initial_state",
+              "link_fields",
+              "measurement_variance",
+              "missing_query_rating",
+              "no_eligible_history",
+              "observations",
+              "process_variance",
+              "query_mean",
+              "rating_score",
+              "state",
+              "strategy",
+              "support",
+              "support_shrinkage",
+              "transition",
+              "transport",
+              "variance_estimation",
+              "version"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "fit_rows",
+              "group_rating_betas",
+              "id_as_feature",
+              "matching_target_used",
+              "profiles",
+              "profiles_without_eligible_observations",
+              "rating_beta",
+              "rejected_ambiguous_profiles",
+              "retained_filter_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "transport_state_fitted_here",
+              "transport_state_supplied",
+              "usable_filter_observations",
+              "validation_target_used"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "79d270270952b9ec57a9b4daf76c1456ee19cbf8ad653c2d60984bb8e294ad85",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 31.12117379943106,
+      "reference_score": 42.46005247026025,
+      "incremental_H70_comparison": {
+        "incremental_H70_control_score": 30.663255379972725,
+        "overlay_score": 31.12117379943106,
+        "incremental_relative_gain_vs_H70": -0.014933783572027943,
+        "incremental_improvement_over_H70": false
+      },
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-087-01-inner-default-sprint",
+      "hypothesis": "HYP-087",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 80,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6254419869564557,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.06487561285240774
+          }
+        },
+        {
+          "name": "frozen_H78_calibration_and_label_free_query",
+          "passed": true,
+          "detail": {
+            "constructor_parameters": {
+              "calibration_state": {
+                "theta": [
+                  -0.35285576319645306,
+                  0.18355322290723847,
+                  0.1876252727305554,
+                  -0.21555622535171454,
+                  -0.3695660836485733,
+                  0.01620066101520792,
+                  0.10839999217336051,
+                  0.0483382667457046,
+                  0.08034392951069085,
+                  -0.04007101646191473,
+                  0.0007319803794496217
+                ]
+              }
+            },
+            "source_sha256": "c5c1b42d23731dc4e12ab996261ce7dd7016abde7f9560dd94d63dda2998fe2f",
+            "query_labels_absent_from_query_API_and_no_fit_calls": true,
+            "query_cohort_statistics_used": true,
+            "batch_invariant": false
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "CohortMacroDecision",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "calibration_refitted",
+              "classes",
+              "configuration",
+              "fit_rows",
+              "learner_fits",
+              "query_target_used"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "55d78eb7e9eaa3cdaa3ccdb5d48e93a7bc8d4bfeb8006013bc352ca781977908",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6254419869564557,
+      "reference_score": 0.5873380697311004,
+      "teacher_scope": "Held-out raw fold0; training teacher predictions in-sample; proxy is not full H48 validation",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-088-01-inner-default-sprint",
+      "hypothesis": "HYP-088",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 83,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.5978384913324375,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.017877985682325195
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "HonestContextCorrector",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "3fab924eb06794f8fecf799f7084c9a57f4f7281d6fb243fed3ef9bf6f26de45",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": true,
+          "detail": {
+            "artifacts": {
+              "results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib": "aa39bd4e31999d5ecf0f1d86262045357d979433978031989a69f05953a449a9"
+            },
+            "teacher_class_order_exact": true,
+            "teacher_train_sha256_exact": true
+          }
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.5978384913324375,
+      "reference_score": 0.5873380697311004,
+      "honest_teacher": {
+        "new_teacher_fits": 3,
+        "independent_training_oof": true,
+        "H48_meta_state_used": false,
+        "raw_query_is_separate_from_H48_comparison": true
+      },
+      "teacher_scope": "H88 grouped OOF RAW training teacher; held-out RAW query; separate cached H48 outer or RAW inner comparison",
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-089-01-inner-default-sprint",
+      "hypothesis": "HYP-089",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 82,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 31.05521238320071,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.26860164845645645
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "PanelDifferenceRegressor",
+            "audit_spreads_configuration": true,
+            "audit_explicit_fields": [
+              "base_refit",
+              "baseline_residual_target",
+              "delta_model_fitted",
+              "fit_rows",
+              "id_as_feature",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_pairs",
+              "validation_target_used",
+              "weather_columns_fitted"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": false,
+            "inherited_configuration_fields_checked": [
+              "age_decay",
+              "alpha",
+              "ambiguity",
+              "categorical_preprocessing",
+              "current_absolute_X",
+              "donor",
+              "features",
+              "fit_intercept",
+              "link_fields",
+              "log_change_cap",
+              "loss",
+              "minimum_pairs",
+              "missing_rating_interaction",
+              "model",
+              "numeric_preprocessing",
+              "prediction",
+              "ridge_alpha",
+              "solver",
+              "strategy",
+              "support_shrinkage",
+              "target",
+              "threads",
+              "tol",
+              "version",
+              "weather_columns"
+            ],
+            "explicit_audit_fields_have_diagnostic_semantics": [
+              "base_refit",
+              "baseline_residual_target",
+              "delta_model_fitted",
+              "fit_rows",
+              "id_as_feature",
+              "profiles",
+              "rejected_ambiguous_profiles",
+              "retained_profiles",
+              "row_deletion",
+              "strict_past_only",
+              "training_pairs",
+              "validation_target_used",
+              "weather_columns_fitted"
+            ]
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "a53135964b9ced09fed8167662ebb97a1ec7d99b9981ff3d0aec931fdaa7677c",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 31.05521238320071,
+      "reference_score": 42.46005247026025,
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-090-01-inner-default-sprint",
+      "hypothesis": "HYP-090",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 82,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+            "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+            "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+            "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+            "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 34.86994782367874,
+            "reference_score": 42.46005247026025,
+            "relative_gain": 0.1787587203736441
+          }
+        },
+        {
+          "name": "inherited_H70_overlay_provenance_and_incremental_comparison",
+          "passed": true,
+          "detail": {
+            "verified_extra_fields": [
+              "inherited_prediction_sha256",
+              "transport_state_sha256"
+            ],
+            "source": "results\\2026-10-24\\HYP-070-03-inner-high-sprint",
+            "hashes": {
+              "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+              "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+            },
+            "incremental_H70_control_score": 30.663255379972725,
+            "overlay_score": 34.86994782367874,
+            "incremental_relative_gain_vs_H70": -0.13719001428835767,
+            "incremental_improvement_over_H70": false,
+            "worker_reference_remains_H69": true,
+            "transport_state_used": false
+          }
+        },
+        {
+          "name": "missing_rating_actual_subset_learner_claim",
+          "passed": true,
+          "detail": {
+            "actual_subset_rows": 15800,
+            "actual_learner_claims": 1,
+            "X_y_and_configuration_fingerprints_exact": true,
+            "known_rating_H70_predictions_exact": true,
+            "H70_transport_beta_used": false,
+            "feature_reconstruction_BLAS_threads": 4
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "MissingRatingExpert",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [
+              "base_refit",
+              "base_source",
+              "categorical_columns",
+              "configuration",
+              "elapsed_seconds",
+              "expert_fit_count",
+              "expert_fit_mask",
+              "expert_fit_original_indices",
+              "expert_fit_positions",
+              "expert_fit_rows",
+              "feature_audit",
+              "fit_original_rows",
+              "fit_retained_rows",
+              "fit_rows",
+              "removed_rows",
+              "target_outlier_deletion"
+            ],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "6ab7b45de59aedd77549fd8813c12779d4d0ef5460e609679e47f0e47594d59c",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "compatible_saved_regression_reference",
+          "passed": true,
+          "detail": {
+            "source": "results\\2026-10-24\\HYP-062-03-regression-control-rewrite",
+            "prediction_sha256": "c5e2476154e7121c9865e9ae071052cfe0d01676405713188a00fbe7a32c908e",
+            "source_data_sha256": {
+              "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+              "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+              "sample": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+              "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+              "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+            }
+          }
+        }
+      ],
+      "metric": "rmse",
+      "score": 34.86994782367874,
+      "reference_score": 42.46005247026025,
+      "incremental_H70_comparison": {
+        "incremental_H70_control_score": 30.663255379972725,
+        "overlay_score": 34.86994782367874,
+        "incremental_relative_gain_vs_H70": -0.13719001428835767,
+        "incremental_improvement_over_H70": false
+      },
+      "verified": true
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-092-01-inner-default-sprint",
+      "hypothesis": "HYP-092",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 88,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6075155330908212,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.03435408736395824
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "HonestMacroTeacherBoost",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "a6a91b55041dc04cacc92782428da5117244445a13571663c9ad4001cae8f2ae",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": false,
+          "error": "ValueError: Per-run teacher provenance differs"
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6075155330908212,
+      "reference_score": 0.5873380697311004,
+      "verified": false
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-092-02-inner-extended-sprint",
+      "hypothesis": "HYP-092",
+      "status": "started",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "required_artifact_or_structure",
+          "passed": false,
+          "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\Alpha_Hackathon\\\\results\\\\2026-10-24\\\\HYP-092-02-inner-extended-sprint\\\\metrics.json'"
+        }
+      ],
+      "verified": false
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-093-02-inner-default-sprint",
+      "hypothesis": "HYP-093",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 88,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6002777710371685,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.022031095842284316
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "HonestLovaszTeacherBoost",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "68733ba7b1acb4d89fb3a30140723be12eeaae3a1f5d03c084685517c3f9c6da",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": false,
+          "error": "ValueError: Per-run teacher provenance differs"
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6002777710371685,
+      "reference_score": 0.5873380697311004,
+      "verified": false
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-094-02-inner-default-sprint",
+      "hypothesis": "HYP-094",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "attempt_evidence_exact",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "source_snapshot",
+          "passed": true,
+          "detail": {
+            "files": 88,
+            "sha256_exact": true
+          }
+        },
+        {
+          "name": "frozen_request",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "input_file_sha256",
+          "passed": true,
+          "detail": {
+            "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+            "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+            "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+            "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+          }
+        },
+        {
+          "name": "features_exclude_id_target",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "position_and_target_alignment",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "independent_metric_arithmetic",
+          "passed": true,
+          "detail": {
+            "score": 0.6192492910174916,
+            "reference_score": 0.5873380697311004,
+            "relative_gain": 0.054331947699220444
+          }
+        },
+        {
+          "name": "actual_configuration_vs_frozen",
+          "passed": true,
+          "detail": {
+            "constructor": "HonestResidualF1Classifier",
+            "audit_spreads_configuration": false,
+            "audit_explicit_fields": [],
+            "exact_frozen_defaults_and_parameters": true,
+            "fits": 0
+          }
+        },
+        {
+          "name": "fit_audit_configuration",
+          "passed": true,
+          "detail": {
+            "full_configuration_in_audit": true
+          }
+        },
+        {
+          "name": "fit_identity_registration",
+          "passed": true,
+          "detail": {
+            "fingerprint": "65dfba7cb42b5218b101b62bce590119d57cb7ca9ce1e330d014cdb0a1884c74",
+            "ledger_read_is_recorded_not_independently_observable": true
+          }
+        },
+        {
+          "name": "recorded_old_refits_zero",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "name": "teacher_provenance_class_order_and_predictions",
+          "passed": false,
+          "error": "ValueError: Per-run teacher provenance differs"
+        }
+      ],
+      "metric": "macro_f1",
+      "score": 0.6192492910174916,
+      "reference_score": 0.5873380697311004,
+      "verified": false
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-094-03-inner-long-sprint",
+      "hypothesis": "HYP-094",
+      "status": "started",
+      "stage": "inner",
+      "attempt_kind": "sprint_worker",
+      "checks": [
+        {
+          "name": "required_artifact_or_structure",
+          "passed": false,
+          "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\Alpha_Hackathon\\\\results\\\\2026-10-24\\\\HYP-094-03-inner-long-sprint\\\\metrics.json'"
+        }
+      ],
+      "verified": false
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-079-01-inner-combination-sprint",
+      "hypothesis": "HYP-079",
+      "stage": "inner",
+      "attempt_kind": "analytical_cached_combination",
+      "checks": [
+        {
+          "name": "analytical_source_snapshot_no_learner_fit",
+          "passed": true,
+          "detail": {
+            "source_sha256": "4183456cfc334da22df80a6ba4f139662968374dee1fe3f4a25e570d9436513c",
+            "learner_fit_calls_in_source": 0,
+            "initial_evidence_status": "started",
+            "terminal_status_from_metrics_and_claim": "completed"
+          }
+        },
+        {
+          "name": "analytical_source_hashes_and_inner_provenance",
+          "passed": true,
+          "detail": {
+            "results/2026-10-24/HYP-070-03-inner-high-sprint": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+            "results/2026-10-24/HYP-076-01-inner-default-sprint": "c83cf214e5929456275a9259c5004600a71173e4175a03f98a3daf512adadcc1"
+          }
+        },
+        {
+          "name": "analytical_independent_optimum_and_metric",
+          "passed": true,
+          "detail": {
+            "weight_h70": 1.0,
+            "weight_h76": 0.0,
+            "score": 30.663255379972725,
+            "control": 30.663255379972725,
+            "eligible_for_outer": false,
+            "scope": "inner_selected_combination_not_independent_outer_score"
+          }
+        },
+        {
+          "name": "analytical_parameter_fit_identity",
+          "passed": true,
+          "detail": {
+            "fingerprint": "cb744a383816b403006e4cea991383ea2869e2fad8cddc6b0e515bf5aac1cc21",
+            "parameter_fits": 1,
+            "learner_fits": 0
+          }
+        }
+      ],
+      "verified": true,
+      "status": "completed",
+      "metric": "rmse",
+      "score": 30.663255379972725,
+      "reference_score": 30.663255379972725
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint",
+      "hypothesis": "HYP-091",
+      "status": "completed",
+      "stage": "inner",
+      "attempt_kind": "analytical_cached_combination",
+      "checks": [
+        {
+          "name": "multiblend_frozen_source",
+          "passed": true,
+          "detail": {
+            "source_sha256": "816a2fb6fac455416f37d4b4c7e990130d9561f1621efe2bc7835cee4a2032c4",
+            "learner_fit_calls": 0
+          }
+        },
+        {
+          "name": "multiblend_component_provenance",
+          "passed": true,
+          "detail": {
+            "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+            "results\\2026-10-24\\HYP-083-01-inner-default-sprint\\validation_predictions.npz": "1d49466421d974be3d159a815016ef27f68f6e71cae781b1a560ea7f5d94bdd5",
+            "results\\2026-10-24\\HYP-085-01-inner-default-sprint\\validation_predictions.npz": "1d7b7318e78c38ac5da3332fe099198292837c0883f5e57538fb29b4b4d07aad"
+          }
+        },
+        {
+          "name": "multiblend_exact_prediction_and_metric",
+          "passed": true,
+          "detail": {
+            "score": 30.636363541581975,
+            "reference_H70": 30.663255379972725,
+            "relative_gain_vs_H70": 0.0008770053295878604,
+            "weights": [
+              0.43908725498434387,
+              0.5446376329320275,
+              0.016275112083628654
+            ],
+            "learner_fits": 0
+          }
+        },
+        {
+          "name": "multiblend_independent_selection_and_freeze",
+          "passed": true,
+          "detail": {
+            "independent_optimal_mse": 938.5867710519733,
+            "independent_weights": [
+              0.4390872549841759,
+              0.5446376329322016,
+              0.016275112083622496
+            ]
+          }
+        }
+      ],
+      "verified": true,
+      "metric": "rmse",
+      "score": 30.636363541581975,
+      "reference_score": 30.663255379972725
+    },
+    {
+      "directory": "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint",
+      "hypothesis": "HYP-091",
+      "status": "completed",
+      "stage": "outer",
+      "attempt_kind": "analytical_cached_combination",
+      "checks": [
+        {
+          "name": "multiblend_frozen_source",
+          "passed": true,
+          "detail": {
+            "source_sha256": "816a2fb6fac455416f37d4b4c7e990130d9561f1621efe2bc7835cee4a2032c4",
+            "learner_fit_calls": 0
+          }
+        },
+        {
+          "name": "multiblend_component_provenance",
+          "passed": true,
+          "detail": {
+            "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\validation_predictions.npz": "1e1e874c2141c349f230ffbc3ae3e81dd0ccb252373965a86a76bb502c4c1834",
+            "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\validation_predictions.npz": "31a9f7e328100d5c654c99ca7545753a1500ec17d5f48367202c9c65db0c541f",
+            "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\validation_predictions.npz": "9320e347a590607bdfe35e72bf1208ecee59dc47ed4b57684f0c4cf5104850dc"
+          }
+        },
+        {
+          "name": "multiblend_exact_prediction_and_metric",
+          "passed": true,
+          "detail": {
+            "score": 34.21382789041039,
+            "reference_H70": 34.318489927675174,
+            "relative_gain_vs_H70": 0.0030497273477169845,
+            "weights": [
+              0.43908725498434387,
+              0.5446376329320275,
+              0.016275112083628654
+            ],
+            "learner_fits": 0
+          }
+        },
+        {
+          "name": "multiblend_independent_selection_and_freeze",
+          "passed": true,
+          "detail": {
+            "inner_weights_exact": true,
+            "weights_frozen_before_H85_outer_fit": true,
+            "comparison_reference": "H70; 20pct target separately uses H69 original outer"
+          }
+        }
+      ],
+      "verified": true,
+      "metric": "rmse",
+      "score": 34.21382789041039,
+      "reference_score": 34.318489927675174
+    }
+  ],
+  "registry_errors": [],
+  "global_checks": [
+    {
+      "name": "original_rmse_control",
+      "passed": true,
+      "detail": {
+        "source": "results\\2026-10-24\\HYP-069-01-regression-alternatives",
+        "score": 39.39219382766771,
+        "predictions_sha256": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+        "source_data_sha256": {
+          "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+          "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+        }
+      }
+    },
+    {
+      "name": "original_macro_f1_control",
+      "passed": true,
+      "detail": {
+        "source": "results\\2026-10-23\\HYP-048-01-multiclass-combinations",
+        "score": 0.6495311620074445,
+        "predictions_sha256": "3ba6bb9eb7fe4ec6264cff4d1d85478afe483c3c05d63410cc157b4dc73293ec",
+        "source_data_sha256": {
+          "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+          "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+        }
+      }
+    }
+  ],
+  "registered_attempts": 35,
+  "completed_attempts": 33,
+  "registered_sprint_attempts": 32,
+  "analytical_attempts": 3,
+  "verified_completed_attempts": 30,
+  "all_attempts_terminal": false,
+  "all_completed_runs_verified": false,
+  "limitations": [
+    "No model is fitted by this verifier; historical raw teacher inference may be executed.",
+    "Old-refit absence and pre-fit ledger reads are checked against recorded claims, not a runtime trace.",
+    "Inner classification is raw fold0 proxy; H48 training meta teacher is in-sample.",
+    "An empty custom-objective loss history does not establish zero updates or convergence; LightGBM may copy bound objective objects.",
+    "Original outer has already been viewed; results are exploratory and say nothing about hidden platform labels."
+  ],
+  "passed": false,
+  "target": {
+    "scope": "original_outer_only_exploratory",
+    "tasks": {
+      "rmse": {
+        "control": 39.39219382766771,
+        "threshold": 31.51375506213417,
+        "best_new_outer": {
+          "directory": "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint",
+          "score": 34.21382789041039
+        },
+        "relative_gain": 0.13145665255181127,
+        "target_met": false
+      },
+      "macro_f1": {
+        "control": 0.6495311620074445,
+        "threshold": 0.7794373944089334,
+        "best_new_outer": {
+          "directory": "results\\2026-10-24\\HYP-078-02-outer-default-sprint",
+          "score": 0.6593084142037399
+        },
+        "relative_gain": 0.015052783866562612,
+        "target_met": false
+      }
+    },
+    "both_20pct_targets_met": false
+  }
+}

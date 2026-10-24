@@ -1,0 +1,21 @@
+{
+  "family": "tabm-mini-numpy",
+  "implementation": "research-v1",
+  "parameters": {
+    "batch_size": 256,
+    "epochs": 60,
+    "kind": "regression",
+    "learning_rate": 0.003,
+    "members": 8,
+    "seconds": 240,
+    "seed": 42,
+    "threads": 4,
+    "weight_decay": 0.0001,
+    "width": 64
+  },
+  "depth": 2,
+  "loss": "MSE",
+  "preprocessing": "fit-only-median-missing-quantilenormal256-ohe64-v1",
+  "checkpoint": "lowest-completed-epoch-training-loss",
+  "no_row_filter": true
+}

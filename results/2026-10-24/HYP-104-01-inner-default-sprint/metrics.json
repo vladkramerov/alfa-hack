@@ -1,0 +1,5 @@
+{
+  "status": "timeout",
+  "error": "TimeoutExpired: Command '['C:\\\\Users\\\\User\\\\PycharmProjects\\\\Alpha_Hackathon\\\\.venv-ml\\\\Scripts\\\\python.exe', '-X', 'utf8', '-u', 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\Alpha_Hackathon\\\\results\\\\2026-10-24\\\\series-three-hours-v1\\\\HYP-104\\\\source\\\\experiments\\\\sprint_worker.py', 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\Alpha_Hackathon\\\\results\\\\2026-10-24\\\\HYP-104-01-inner-default-sprint\\\\request.json']' timed out after 900.0 seconds",
+  "seconds": 900.0
+}

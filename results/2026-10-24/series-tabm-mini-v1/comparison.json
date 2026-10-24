@@ -1,0 +1,46 @@
+[
+  {
+    "kind": "regression",
+    "stage": "inner",
+    "score": 30.285884162436915,
+    "pure_score": 51.908456385388476,
+    "control_score": 30.59160391991867,
+    "selected_weight": 0.0928330654623246,
+    "seconds": 22.078000000008615,
+    "relative_gain": 0.009993583804303074,
+    "report": "results/2026-10-24/HYP-108-01-regression-inner-tabm-mini/report.md"
+  },
+  {
+    "kind": "classification",
+    "stage": "inner",
+    "score": 0.628945309907142,
+    "pure_score": 0.516402108331563,
+    "control_score": 0.6288481661155734,
+    "selected_weight": 0.1,
+    "seconds": 112.73399999999674,
+    "relative_gain": 0.00015447892957806933,
+    "report": "results/2026-10-24/HYP-108-02-classification-inner-tabm-mini/report.md"
+  },
+  {
+    "kind": "regression",
+    "stage": "outer",
+    "score": 33.97984036360298,
+    "pure_score": 51.85189626940788,
+    "control_score": 34.142888130110755,
+    "selected_weight": 0.0928330654623246,
+    "seconds": 29.703000000008615,
+    "relative_gain": 0.0047754532623729895,
+    "report": "results/2026-10-24/HYP-108-03-regression-outer-tabm-mini/report.md"
+  },
+  {
+    "kind": "classification",
+    "stage": "outer",
+    "score": 0.6602795926985132,
+    "pure_score": 0.5099944452622676,
+    "control_score": 0.6593084142037399,
+    "selected_weight": 0.1,
+    "seconds": 180.85899999999674,
+    "relative_gain": 0.0014730260889302654,
+    "report": "results/2026-10-24/HYP-108-04-classification-outer-tabm-mini/report.md"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "recipe": {
+      "strategy": "global_temporal_entity_assignment",
+      "version": 1,
+      "link_fields": [
+        "State_Factor",
+        "building_class",
+        "facility_type",
+        "floor_area",
+        "year_built"
+      ],
+      "exact_block": [
+        "State_Factor",
+        "building_class",
+        "facility_type"
+      ],
+      "donor_year": "global_latest_training_year_strictly_before_query_year",
+      "ambiguity": "reject_training_sameyear_collision_and_query_duplicate_keys",
+      "reserve_exact_H70_links": true,
+      "ambiguous_known_training_key": "baseline_unchanged",
+      "area_ratio_gate": [
+        0.95,
+        1.05
+      ],
+      "known_year_built_gap_cap": 20.0,
+      "cost": "abs(log(areaQ/areaD))/.05+known_year_gap/20+known_elevation_gap/100",
+      "unknown_or_zero_year_penalty": 0.5,
+      "unknown_elevation_penalty": 0.5,
+      "maximum_eligible_cost": 1.0,
+      "unmatched_dummy_cost": 1.000001,
+      "algorithm": "linear_sum_assignment_with_one_dummy_per_query",
+      "tie_order": "canonical_physical_feature_key_no_ID_no_target",
+      "max_assignment_cells": 4000000,
+      "cell_count": "N*(M+N)_including_dummies",
+      "oversized_block": "skip_with_audit_no_alternate_algorithm",
+      "transport": "caller_frozen_H70_beta_no_refit",
+      "rating_score": "inverse_normal_clipped_005_995",
+      "beta_cap": 2.0,
+      "log_change_cap": 1.5,
+      "alpha": 0.35,
+      "support_factor": "none",
+      "age_decay": 0.25,
+      "query_cohort_dependent": true,
+      "batch_invariant": false,
+      "physical_identity_proven": false,
+      "matching_uses_target": false,
+      "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+      "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "d4e9f75abe9f5d5c4e761918b1cc5bd86f4707a4f90c3a3107f8a908cc67d4f9",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:50:49.656015+03:00",
+    "ledger_sha256": "069109eb7ba25adc057bc8b8a7daa2f812373bd37e32e5a9ad8c5be8a53c3612",
+    "hypothesis": "HYP-099",
+    "metric": "rmse",
+    "score": 31.099625876123866,
+    "reference_score": 42.46005247026025,
+    "relative_gain": 0.2675556419082012,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 3.5,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:50:50.416776+03:00"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "start": "2026-10-24T01:15:07+03:00",
+  "deadline": "2026-10-24T04:15:07+03:00",
+  "budget_seconds": 10800,
+  "hypothesis_seconds": 900,
+  "both_metrics_required": true,
+  "reference_rmse": 39.39219382766771,
+  "reference_macro_f1": 0.6495311620074445,
+  "target_rmse": 31.51375506213417,
+  "target_macro_f1": 0.7794373944089334,
+  "status": "closed_target_not_met",
+  "spec": "docs/specs/SPEC-011-three-hour-improvement.md",
+  "plan": "docs/plans/PLAN-011-three-hour-improvement.md",
+  "closure": "results\\2026-10-24\\series-three-hours-v1\\search-closure.json"
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "recipe": {
+      "strategy": "conditional_panel_transition",
+      "version": 1,
+      "family": "catboost",
+      "parameters": {
+        "iterations": 800,
+        "depth": 6,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 10.0,
+        "loss_function": "RMSE",
+        "allow_writing_files": false
+      },
+      "alpha": 0.9,
+      "minimum_pairs": 32,
+      "target": "current_original_units",
+      "loss": "original_scale_squared_error",
+      "link_fields": [
+        "State_Factor",
+        "building_class",
+        "facility_type",
+        "floor_area",
+        "year_built"
+      ],
+      "ambiguity": "reject_profile_with_any_same_year_collision",
+      "training_pairs": "adjacent_strictly_past",
+      "query_donor": "latest_strictly_past",
+      "current_features": "raw_X_without_id_or_target",
+      "transition_features": [
+        "donor_target",
+        "donor_rating",
+        "rating_delta",
+        "donor_rating_missing",
+        "current_rating_missing",
+        "age"
+      ],
+      "weather_columns": "numeric_except_link_fields_year_rating",
+      "weather_features": "donor_value_and_current_minus_donor",
+      "matched_blend": "alpha*transition+(1-alpha)*baseline",
+      "unmatched_or_insufficient_pairs": "baseline",
+      "negative_prediction": "clip_zero"
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "701e7388536be78f5949420b2ba4657a0ea965217e4149372d9e3f87296bf4d8",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:04:24.820879+03:00",
+    "ledger_sha256": "69281bf37e78bcbde5dbacee14d86657acbe50c49ab6c9e86bdefd705cc3669f",
+    "hypothesis": "HYP-076",
+    "metric": "rmse",
+    "score": 32.91081846583218,
+    "reference_score": 42.46005247026025,
+    "relative_gain": 0.22489925115180956,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 10.375,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:04:32.112737+03:00"
+  }
+]

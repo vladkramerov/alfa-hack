@@ -1,0 +1,235 @@
+{
+  "status": "passed",
+  "model_fits": 0,
+  "checks": {
+    "H78": {
+      "rows": 17141,
+      "classes_exact": true,
+      "all_labels_exact": true,
+      "max_probability_delta": 1.0269562977782698e-15,
+      "probability_tolerance_absolute": 1e-12,
+      "teacher_rebuilt_from_three_cached_branches": true,
+      "split_equal_to_original_H48": true,
+      "frozen_state": {
+        "classes": [
+          "Analysis",
+          "Backdoor",
+          "DoS",
+          "Exploits",
+          "Fuzzers",
+          "Generic",
+          "Normal",
+          "Reconnaissance",
+          "Shellcode",
+          "Worms"
+        ],
+        "gain": [
+          106.11940043604241,
+          85.15202750099722,
+          9.655887756389017,
+          5.885622626017124,
+          9.030586730642813,
+          4.373809756965848,
+          3.2949329951950155,
+          18.03939671677246,
+          130.58366691303792,
+          1340.571481026357
+        ],
+        "offset": [
+          -18.310310211175462,
+          -9.044221029717585,
+          -2.2533973271503815,
+          -2.012020668358899,
+          -3.380983033828314,
+          -2.1606430878721214,
+          -1.5023681509247986,
+          -7.59697101865465,
+          -59.3676443677155,
+          -570.7616806317758
+        ],
+        "theta": [
+          -0.04482892214085587,
+          -0.4623405985282955,
+          -0.4541877637360152,
+          0.05659656205549557,
+          0.5053943731349193,
+          0.059280929957358064,
+          0.21065982910740966,
+          0.5420105119854128,
+          0.0024701392281932053,
+          -0.27196504718354975,
+          -0.18791893602092574
+        ]
+      }
+    },
+    "H70": {
+      "rows": 18308,
+      "bit_exact": true,
+      "max_prediction_delta": 0.0,
+      "alpha": 0.95,
+      "configuration_exact": true,
+      "saved_base_is_H69_exact": true,
+      "split_equal_to_original_H69": true
+    },
+    "H69": {
+      "rows": 18308,
+      "cached_H43_baseline_bit_exact": true,
+      "cached_memory_composition_bit_exact": true,
+      "saved_H43_model_inference_max_delta": 1.0800249583553523e-12,
+      "production_base_configuration_matches_H43": true,
+      "memory_lookup_replayed_from_cached_outputs_not_refitted": true
+    },
+    "H91": {
+      "rows": 18308,
+      "component_order": [
+        "H70",
+        "H83",
+        "H85"
+      ],
+      "frozen_inner_weights": [
+        0.43908725498434387,
+        0.5446376329320275,
+        0.016275112083628654
+      ],
+      "outer_weights_exactly_inner": true,
+      "weight_freeze_before_H85_outer_fit": true,
+      "components": {
+        "H70": {
+          "configuration_exact": true,
+          "audit_exact": true,
+          "data_and_split_exact": true,
+          "core_source_sha_exact": true,
+          "bit_exact": true,
+          "max_prediction_delta": 0.0
+        },
+        "H83": {
+          "configuration_exact": true,
+          "audit_exact": true,
+          "data_and_split_exact": true,
+          "core_source_sha_exact": true,
+          "bit_exact": true,
+          "max_prediction_delta": 0.0
+        },
+        "H85": {
+          "configuration_exact": true,
+          "audit_exact": true,
+          "data_and_split_exact": true,
+          "core_source_sha_exact": true,
+          "bit_exact": true,
+          "max_prediction_delta": 0.0
+        }
+      },
+      "saved_component_composition_bit_exact": true,
+      "cached_graph_bit_exact": true,
+      "cached_graph_max_prediction_delta": 0.0,
+      "shared_production_H69_baseline_identity": true,
+      "shared_base_graph_max_prediction_delta": 9.094947017729282e-13,
+      "prediction_tolerance_absolute": 1e-10,
+      "prediction_tolerance_relative": 1e-12,
+      "no_pool_weight_fit": true,
+      "no_new_scientific_metric": true
+    }
+  },
+  "limitation": "Cached outer graph replay; future full-data refit determinism is not established.",
+  "source_sha256": {
+    "experiments/verify_sprint_adapter.py": "f4813c27244ea3a434f1bc00b39fa3dbea6a23347a22536efee73399640f3935",
+    "automl_sprint.py": "8f86ab24a288904063acfa17eb30c178321a6aef80618da655cf5962e2f4d0e6",
+    "automl_models.py": "4f51de1694ba4705c6557456f5bbcb8974e9ef79f1bbce1476f3ba11b227d5fb",
+    "automl_history.py": "e4fbe088749ccad982a944474779ca6004a8102a944bb3a1134dc99a293157b1",
+    "automl_data.py": "457513d9001d97f4443f067db565dcf5f92eccd23376754e9d164995a6353ade",
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_reg_combo.py": "564aa3d43a1c7f6f47f761b4d79cbfbf1159976ecff9febbdbc93ec551fb6fdb",
+    "automl_temporal_memory.py": "1ef54418a431d331c511d3c8691bb906b1d707b36d2c390ab1019de6d6a84ae8",
+    "sprint_regression.py": "10677e5d15418950e83118adec9b6a16e0b89021356b887af86e6feea6334b54",
+    "sprint_posterior.py": "bb520524499e155882cd415f717f7f3d76d8878bdaf5ac3253ae23148937495f",
+    "sprint_decision.py": "38d622e21831d8526e7c17054f6c0afc50a4244840dab04a746db4ad6ec2ee44",
+    "automl_sprint_pool.py": "8da7249360d20d7c479e48282d970055cb1631ce92fb40ea8c33896611becca5",
+    "sprint_ratio_transport.py": "333e4e744688c2fe54cf5c22894ec083db6fa3ac29482253801f9c3b881fb26f",
+    "sprint_uncertainty.py": "7b76e26f25040a12a6c2c3636797d64c1410ba4d8d02ea8f0344d4feaa81aade",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "automl_feature_sets.py": "a906e0c86c7809588ecaa7902b0d32b0f9a9fbe234b960d5b4e8ffd50e9b0a99"
+  },
+  "data_sha256": {
+    "regression": {
+      "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+      "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+      "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+      "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    "multiclass": {
+      "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+      "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+      "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+      "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    }
+  },
+  "fit_guard_classes": [
+    "automl_sprint.SprintRegression",
+    "automl_sprint.SprintDecision",
+    "automl_class_combo.ClassCombination",
+    "automl_class_combo.ClassBranch",
+    "automl_reg_combo.FeatureGroupExperts",
+    "automl_reg_combo.RegressionComponent",
+    "automl_temporal_memory.TemporalProfileModel",
+    "automl_temporal_memory.ProfileHistory",
+    "sprint_regression.TemporalEntityLinker",
+    "sprint_ratio_transport.OriginalLossTransport",
+    "sprint_uncertainty.ConditionalLognormalRegressor",
+    "automl_sprint_pool.TemporalTransportPool",
+    "automl_sprint_pool._WithSharedBaseline",
+    "sklearn.isotonic.IsotonicRegression",
+    "sprint_decision.MacroF1Decision",
+    "sprint_posterior.CalibratedMacroDecision",
+    "catboost.core.CatBoostRegressor",
+    "catboost.core.CatBoostClassifier",
+    "lightgbm.sklearn.LGBMClassifier",
+    "sklearn.ensemble._forest.ExtraTreesRegressor",
+    "xgboost.sklearn.XGBClassifier"
+  ],
+  "fit_attempts": [],
+  "artifact_sha256": {
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\model.joblib": "492c18e49e43cda130f2de466584bd563c582ae3a6015efcc7e74d083152484f",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\audit.json": "e67b4ef92a071d5f4a25d2a915d53e57ba9617e6dd25bac5ba99f8e59be0c346",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\validation_predictions.npz": "1e1e874c2141c349f230ffbc3ae3e81dd0ccb252373965a86a76bb502c4c1834",
+    "results\\2026-10-24\\HYP-069-01-regression-alternatives\\validation_predictions.npz": "6bb884dafbb9c66ee752480a414646dcaee7078f6e7aa18030d883db8a8251fe",
+    "results\\2026-10-24\\HYP-069-01-regression-alternatives\\profile-memory-components.npz": "dd32d72c87d78b3101521d7463de1d66a44b205fab2c75586690212f421360a1",
+    "results\\2026-10-23\\HYP-043-01-regression-combinations\\validation_predictions.npz": "f7010e4c6a223c7ff3830b0e49bab2978c44e2001bab07ca7c42d6889a6d6305",
+    "results\\2026-10-24\\HYP-078-02-outer-default-sprint\\audit.json": "d1c438e8a88aecb88be1dee7dca9c05811036975803cde876fb47f45c8f8c7d4",
+    "results\\2026-10-24\\HYP-078-02-outer-default-sprint\\validation_predictions.npz": "e86125def193ee64c0cd79364e0ef838271838d79973a137cc4261fe293ee00c",
+    "results\\2026-10-23\\HYP-048-01-multiclass-combinations\\learned-state.json": "e5f93cf3eac50b7de0807520ce9925f8a78c038ddb1dd4b072705a8f163cb63d",
+    "results\\2026-10-23\\HYP-048-01-multiclass-combinations\\validation_predictions.npz": "3ba6bb9eb7fe4ec6264cff4d1d85478afe483c3c05d63410cc157b4dc73293ec",
+    "results\\2026-10-23\\HYP-011-02-multiclass-none\\validation_predictions.npz": "46aa6d496c29d646ef4a6aaa45495f5fd03ea5a6d3d637e466f27864a8017ae5",
+    "results\\2026-10-23\\HYP-038-01-multiclass-spec006\\validation_predictions.npz": "68abaf2442c27d6ec5f885591f58614908242d6ce3cc5b43490a4ea674100458",
+    "results\\2026-10-23\\HYP-017-01-multiclass-frequency\\validation_predictions.npz": "cb65118335e7ce485cd7cfcc8c3878726b36f49bcca106dd6f41f246a9a74894",
+    "results\\2026-10-23\\series-combinations-v1\\cache\\regression-models\\e8f1ae324f84530c95bb9c98a0099ef6bce9d0191edd835d2249c2b288b4f521.joblib": "48d5a2bf8f84ce9e4705f555d58502ae02531cd151f2806233f1d17c8f411eab",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\configuration.json": "9a941525246ccb7d33f81f98ebd44bf32a01cc44a4115eb9b802300e575bf246",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\data.json": "c2e39ca3f1f05488080b5d22775850ba3ff5251f09caf80ff13e58afcc8fb963",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\evidence.json": "83a2befa8b9483dca2cc395cbbd95991dd903f440ac4990c9f3397471c3e075e",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\model.joblib": "f2acc9ceda5c646dbf80911323ea5452dccacd99dd5db7eb410a511626c10917",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\audit.json": "39082858060f521feb5b642b3ba5f0dbd08b25ed13d797b60c13849aad599ae1",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\configuration.json": "30cd1e1f17dd247e4b7d319436c99e58c60510126251ea6faaf0730f645dbd82",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\data.json": "c2e39ca3f1f05488080b5d22775850ba3ff5251f09caf80ff13e58afcc8fb963",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\evidence.json": "ccabdad468841d284e8c197cd49db9b78c894a051cc57ec298eedb7189a7ebe4",
+    "results\\2026-10-24\\HYP-083-02-outer-default-sprint\\validation_predictions.npz": "31a9f7e328100d5c654c99ca7545753a1500ec17d5f48367202c9c65db0c541f",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\model.joblib": "257155016c28ba6c05df80e8bb5aaa18c1449e50be46842777b9666d66f51b17",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\audit.json": "3220043e3f7031fed1437a3a2e129fd7acea6a5bfc690b0dd06acb642ee72291",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\configuration.json": "ef5f004bb6231c141db1913f5cd6104dc09280eb193206e00fc103f1b59aef25",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\data.json": "c2e39ca3f1f05488080b5d22775850ba3ff5251f09caf80ff13e58afcc8fb963",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\evidence.json": "ba7a24845b74b48229c15abbfc55dc7815842c8f7094b3c39c72d59ba4ff1d5a",
+    "results\\2026-10-24\\HYP-085-02-outer-default-sprint\\validation_predictions.npz": "9320e347a590607bdfe35e72bf1208ecee59dc47ed4b57684f0c4cf5104850dc",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results\\2026-10-24\\HYP-083-01-inner-default-sprint\\validation_predictions.npz": "1d49466421d974be3d159a815016ef27f68f6e71cae781b1a560ea7f5d94bdd5",
+    "results\\2026-10-24\\HYP-085-01-inner-default-sprint\\validation_predictions.npz": "1d7b7318e78c38ac5da3332fe099198292837c0883f5e57538fb29b4b4d07aad",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\metrics.json": "b2dc36687fd97536eb48a3f634b83c9c6cfee3767a21c4c2d5a1509794ec6282",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\evidence.json": "720252eccd44cc0b7db5a3301d77504d45522e3af7ae2337697311fa940dfacb",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\source.py": "816a2fb6fac455416f37d4b4c7e990130d9561f1621efe2bc7835cee4a2032c4",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\validation_predictions.npz": "3f5a8b58a26a905dc2864b8ecc5ff81ccd8f48917d60241cbca97f324e4a454b",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\metrics.json": "e7d5d1a0b2af44f7b319300a49cfffe0f9ffb6349cbc828f4bb545dd0b28a129",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\evidence.json": "724d92404a79372eb51d981e96d0df66f2b48af94231318cd6c8ba269dd5c4db",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\source.py": "816a2fb6fac455416f37d4b4c7e990130d9561f1621efe2bc7835cee4a2032c4",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\validation_predictions.npz": "ca044d5fbcaec7532f152a28565838a344df28c99ca04360ba01a59220a302f7"
+  }
+}

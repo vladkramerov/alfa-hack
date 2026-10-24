@@ -1,5 +1,28 @@
 # Правила проекта для Codex
 
+## SPEC015: исследовательский TabM-mini, 24.10.2026
+
+Актуальное окружение после установки пользователем: `.venv-ml` Python3.12.14 теперь содержит разрешённый `torch==2.5.1+cpu`; import и tensor-operation PASS, CUDA=False, [проверка](results/2026-10-24/tabm-environment-check/torch-installed-check.json). Последующие упоминания отсутствия torch — исторические. H108 из-за появления backend не повторялась.
+
+[H108](docs/hypotheses/HYP-108-tabm-mini.md) завершена: самостоятельная NumPy-архитектура TabM-mini (не официальный PyTorch пакет), 4 новых fits/0 старых refits. Смеси с cached H107/H78: outer RMSE33.97984036360298 vs34.142888130110755 (0.4775%), Macro-F1.6602795926985132 vs.6593084142037399 (0.1473%); веса зафиксированы наinner. [Отчёт](results/2026-10-24/series-tabm-mini-v1/report.md), независимый no-fit replay4/4 PASS. Scientific результаты не менялись после двух технических исправлений verifier/NPZ codec; исходные артефакты сохранены. Старый outer exploratory, runtime-граф/hidden score не проверены. solution/baseline/ZIP/LLM schema не менялись, агент автоматически TabM ещё не выбирает. H108 не повторять из-за seed/имени/сменыbackend. Torch разрешён2.5.1, но пользователь установил2.14.1+cpu в другую .venv; .venv-ml безtorch на момент проверки. 5 existing test_report_sprint WinError5 воспроизведены отдельно, не объявлять всю suite зелёной.
+
+## Актуальное уточнение SPEC014: перенос в основу Сергея
+
+H107 новая композиция SergeyH73+IvanH70/H83/H85: cached RMSEinner30.591604/outer34.142888 vsSergey31.046636/34.520269 (outer1.0932%). Это cross-OS exploratory evidence, не отдельно измеренное качество runtime. Отдельный task-local вариант deliveries/sergey_ivan_fusion_v1 и dist/solution_sergey_ivan_fusion_v1.zip (67803байт), без встроенных public весов; classification unchanged.568unit/271base tests,fulltechnicalrefit295.578sec,22449cleanreplay,flat22files. [Отчёт](results/2026-10-24/series-sergey-ivan-fusion-v1/report.md). H107 не повторять;20%both не выполнены.
+
+
+## Актуальное уточнение SPEC013: внешние репозитории
+
+[Разбор3репозиториев](results/2026-10-24/external-repositories-review-v1/report.md),[SPEC013](docs/specs/SPEC-013-external-repository-ideas.md). Hilhoolимеетполезныеexactlags/greedykey, ночислаreg_h5исключаютState_11;NolReactionимеетдругиеgroupedsplits/положительныеиотрицательныеотчеты;mereska0—финансовыеновости,другойкейс. H105/H106зарегистрированыипровереныодинразбезстарыхrefits: RMSEinner32.016724/30.963254 vsSergey31.046636; H106только0.2686%innerwin, ниодиннепрошелзаранеегейт30.636364. Outerнепроводился,production/ZIPнеизменены.562unitPASS,независимаяарифметика/SHA/splits/nofitreplayPASS. ОбеH105/H106неповторять.
+
+
+## Актуальное уточнение 2026-10-24: сравнение с Sergey
+
+[SPEC012](docs/specs/SPEC-012-sergey-comparison.md): скачан неизменный sergey_branch@24e3311 и ZIP55183байт,271unitPASS. Sergey улучшил опубликованную пользовательскую базу4283105, а не последнюю незакоммиченную серию. [Сравнение](results/2026-10-24/branch-comparison-sergey-24e3311-v3/report.md): наши researchRMSE34.2138/F1.659308 противSergey34.5203/.644723 — номинально0.8877%/2.2623%, меньше5%; Windows/Mac и fixedmeta/freshmeta различаются. Никакой hidden/platformgain не доказан. Реальный API не проверен: у пользователя отсутствуют endpoint и точное API-id модели; ключ в source/results не сохранять и не отправлять на угаданный сервер.
+
+SPEC011 закрыта:48numeric evaluations/36ID +H104timeout900sec,49registered,48/48verified; [отчёт](results/2026-10-24/series-three-hours-v1/SEARCH_REPORT.md). Цель20%bothНЕвыполнена, фактические13.1457%RMSE/1.5053%F1 отH69/H48. Новыйbaseline/IvanZIPнепродвинуты. Старые проверки не повторять, branch-qualifiedIDs уSergey иIvan могут совпадатьномерами.
+
+
 ## Уточнения пользователя после grill-me, 2026-10-24
 
 SPEC010 завершена без улучшения: независимые H52/H62 проиграли дополнительным сопоставимым H48/H69 контролям (F1.480310 vs.610334; RMSE58.580325 vs42.460052). [113/113сверок](results/2026-10-24/series-clean-rewrite-v1/verification.json),257unit,4cleanCLI. **Не повторять H52/H62**; research_*.py/rewrite_solution.py — отдельная исследовательская реализация, не новая улучшенная поставка. Старые solution.py/baseline.json/solution_alternative_v2.zip сохранены; новогоZIPнет. [Отчёт](results/2026-10-24/series-clean-rewrite-v1/REPORT.md).

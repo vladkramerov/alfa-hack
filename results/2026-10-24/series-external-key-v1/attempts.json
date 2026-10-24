@@ -1,0 +1,28 @@
+[
+  {
+    "hypothesis": "HYP-106",
+    "stage": "inner",
+    "status": "completed",
+    "started": "2026-10-24T12:45:29.260977+03:00",
+    "directory": "results\\2026-10-24\\HYP-106-01-inner-external-key",
+    "ledger_sha256": "2e4d3d0a2108262d1f3605204feef0eae7a57dc315913246e5a581397f8aa1d2",
+    "frozen_source_sha256": "c55b91720ae101d71bfb93ba0b764635a2a6030763dbede42a3c329ba3fa89f9",
+    "request": {
+      "root": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon",
+      "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-106-01-inner-external-key",
+      "number": 106,
+      "stage": "inner",
+      "split": "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/splits.npz",
+      "control": "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/validation_predictions.npz",
+      "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-external-key-v1\\fit-history.json",
+      "selected_arm": null,
+      "input_sha256": {
+        "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/splits.npz": "5f955b517b3dacfeb0642198dd1d0038bc1047e877ae68fb4b6225167bb06513",
+        "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/validation_predictions.npz": "38e6f5095b7bafd2d3016df384182649dca5249ab06a2e842f84fbaa13b814e4",
+        "data/regression/train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "data/regression/test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095"
+      }
+    },
+    "seconds": 12.297000000020489
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "hypothesis": "HYP-091",
+  "stage": "inner",
+  "metric": "rmse",
+  "score": 30.636363541581975,
+  "reference_score": 30.663255379972725,
+  "weights": [
+    0.43908725498434387,
+    0.5446376329320275,
+    0.016275112083628654
+  ],
+  "eligible_for_outer": true,
+  "old_model_refits": 0,
+  "learner_fits": 0,
+  "parameter_fits": 1,
+  "fingerprint": "085a7c182c71a3990cc98ecec5e0d213487b1ec6333009517fd5248d4b6d9ae3",
+  "finished": "2026-10-24T02:26:29.469778+03:00"
+}

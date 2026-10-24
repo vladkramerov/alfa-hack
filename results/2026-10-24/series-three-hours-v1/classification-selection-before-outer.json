@@ -1,0 +1,9 @@
+{
+  "selected": "HYP-078",
+  "selected_inner_score": 0.6288481661155734,
+  "reference_inner_score": 0.5873380697311004,
+  "candidates": {"HYP-072": 0.6090378831239697,"HYP-073":0.5803974034255268,"HYP-074":0.6143385510752261,"HYP-075":0.6212181165985486,"HYP-077":0.6110510854211656,"HYP-078":0.6288481661155734},
+  "selection": "maximum_inner_macro_f1_before_any_classification_outer_fit_in_SPEC011",
+  "inner_is_raw_teacher_proxy_not_full_H48": true,
+  "outer_already_exploratory": true
+}

@@ -1,0 +1,91 @@
+{
+  "teacher": "raw_xgboost_grouped_oof",
+  "protocol": "H92_94_reused_honest_raw_teacher",
+  "stage": "outer",
+  "training_predictions": "grouped_oof_raw_teacher",
+  "independent_training_oof": true,
+  "independent_valid_predictions": true,
+  "H48_meta_state_used": false,
+  "old_model_refits": 0,
+  "comparison_reference_is_separate_from_raw_teacher": true,
+  "raw_component": {
+    "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+    "config": {
+      "policy": "legacy"
+    },
+    "artifacts": [
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz",
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+    ],
+    "fingerprint_includes_raw_X_y_positions": true,
+    "model_fits": 0
+  },
+  "query_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-011-02-multiclass-none\\validation_predictions.npz",
+  "query_artifact_sha256": "46aa6d496c29d646ef4a6aaa45495f5fd03ea5a6d3d637e466f27864a8017ae5",
+  "fit_positions_sha256": "7f2d8e1da6d0f24e442892512d7e218dcf089264bdc558473d152640213b41a5",
+  "valid_positions_sha256": "2d9fbd27d11acbf94243f3d25d5058a47c6eb73d38512da86084ecd3928fbdba",
+  "new_teacher_fits": 0,
+  "nested_folds": [],
+  "reused_original_outer_raw_oof": true,
+  "model_fits": 0,
+  "teacher_train_sha256": "5c9d90bceb12540bf3018b11a900d6cd782d320e79bff1cc6ec0c266f65c7a0a",
+  "reused_H88_teachers": true,
+  "comparison_baseline": "cached_H48_outer_or_RAW_inner",
+  "comparison_baseline_audit": {
+    "teacher": "H48",
+    "protocol": "original_outer_only",
+    "model_fits": 0,
+    "training_base_predictions": "grouped_oof",
+    "training_meta_predictions": "meta_in_sample",
+    "independent_training_oof": false,
+    "inner_validation_available": false,
+    "inner_unavailable_reason": "Frozen H48 meta learner used all original outer-fit labels",
+    "components": {
+      "raw": {
+        "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+        "config": {
+          "policy": "legacy"
+        },
+        "artifacts": [
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+        ],
+        "fingerprint_includes_raw_X_y_positions": true,
+        "model_fits": 0
+      },
+      "smote": {
+        "key": "2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121",
+        "config": {
+          "component": "smote",
+          "protocol": "H38-bounded-smotenc-v1",
+          "parameters": {}
+        },
+        "artifacts": [
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-0.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-1.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\2250de180e99bec0a78aaa722f03ed7987f5a5182c6aa069ee08bae45bf7e121\\fold-2.npz"
+        ],
+        "fingerprint_includes_raw_X_y_positions": true,
+        "model_fits": 0
+      },
+      "frequency": {
+        "key": "96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3",
+        "config": {
+          "component": "frequency",
+          "protocol": "H17-tagged-frequency-native-v1",
+          "parameters": {}
+        },
+        "artifacts": [
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-0.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-1.npz",
+          "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-combinations-v1\\cache\\96d07038fb1a22c457ab4166fb67812d01e5d42300507e149e714521eabb38d3\\fold-2.npz"
+        ],
+        "fingerprint_includes_raw_X_y_positions": true,
+        "model_fits": 0
+      }
+    },
+    "meta_state_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\HYP-048-01-multiclass-combinations\\learned-state.json"
+  }
+}

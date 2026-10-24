@@ -1,0 +1,62 @@
+{
+  "status": "review_completed",
+  "external_code_executed": false,
+  "external_training_data_used": false,
+  "external_platform_scores_independently_verified": false,
+  "repositories": [
+    {
+      "name": "hilhool",
+      "url": "https://github.com/hilhool/alfa-automl-agent",
+      "commit": "17bcb1dcbbad2519f2fc7810b4f70487251d433b",
+      "license_file": [],
+      "reviewed_source_sha256": {
+        "code/agent/entity.py": "bf7e0d8cfc056ef1b1bdfabeae7b7b29b5ec6385181f7b9621e117bbbb9b6747",
+        "code/agent/core.py": "21f77df42b108e5e561ef856637f9ebf984062469ff340d87452ad61f1d3d860",
+        "code/agent/postproc.py": "48470194beea6e87d741d3a63233efd9bf2792db74679156af55004117e9cd91",
+        "code/bench/make_tasks.py": "95c75e02ddebf21729403675f630b0ca84e0f5f125e2eb4ee7b828c70e353fbc",
+        "Проект_ ИИ-агент для разработки ML-моделей.md": "1672ef96f79db1ef85b25fe2d1ea478e5d7bdc4eacf1279ef493871b958b2d02"
+      }
+    },
+    {
+      "name": "NolReaction",
+      "url": "https://github.com/NolReaction/alfa-automl-agent",
+      "commit": "c7c49525db46ad4ac51b5a97bc8c6f7303786457",
+      "license_file": [],
+      "reviewed_source_sha256": {
+        "docs/rescue_classification_report.md": "53d6065ee7aa3e7837ad57fbde1d42b54d825beaf8ae7c68874a3426ea366469",
+        "docs/round4_regression_results.md": "6a055c829eb9c4154f8d735a3ebd5521e6d5cb132d0697b4996d759e50f571f5",
+        "docs/round5_regression_results.md": "37ec8839486ce7c26afc38ccce4633faf10a0cb16a12dad5d5dfae0c004f318c",
+        "docs/round6_regression_results.md": "67de0a908c41de35dd574e24dd3744f2654bc2b5770f9b86ca7a399d4ff641dd",
+        "agent/history_schema_proposer.py": "74677e9ca96ce31077f8876124ab9ae4553cf56f57bb17faea5cb57929b81ad8",
+        "agent/boosting_candidate.py": "9c133b3851a536c7255d91c2cbb79a22d88502e90bd8feac9aa5772f5ed49335"
+      }
+    },
+    {
+      "name": "mereska0",
+      "url": "https://github.com/mereska0/alfahack-solution",
+      "commit": "f3de736940a99f0e619c875ff12f357531bb06b1",
+      "license_file": [],
+      "reviewed_source_sha256": {
+        "README.md": "e1fa3dda6c400f140c08b2a3700d6859c08619c916382e159eb9eec95133da57",
+        "docs/database.md": "361aeee1bfb1cd5150b4109229c8789e69d2a74592d929c2b331bf16289bb3a6",
+        "ml/src/pipelines/ml_init.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ml/src/analisys/ml_init.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "comparability": {
+    "our_current_delivery": "Sergey24e3311 H73/H75",
+    "our_regression_primary": 34.520268654585415,
+    "our_regression_secondary": 31.04663635241995,
+    "our_classification_primary": 0.64472256711304,
+    "hilhool_reported_reg_h4": 30.11,
+    "hilhool_reported_reg_h5": 28.91,
+    "hilhool_reg_h5_excludes_State11": true,
+    "hilhool_grouped_classification_not_equivalent": true,
+    "NolReaction_regression_control_period5": 39.471458,
+    "NolReaction_new_period5_rejected": 47.640123,
+    "NolReaction_classification_new_finalists_rejected": true,
+    "NolReaction_classification_split_differs": true,
+    "mereska_case": "financial_news_analysis_not_tabular_automl"
+  }
+}

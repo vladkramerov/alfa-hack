@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "model_fits": 0,
+  "new_hypotheses_tested": 0,
+  "tasks": {
+    "regression": {
+      "metric": "rmse",
+      "original_windows_control": 39.39219382766771,
+      "our_best": 34.21382789041039,
+      "sergey_best": 34.520268654585415,
+      "our_gain_vs_original": 0.13145665255181127,
+      "our_nominal_gain_vs_sergey": 0.008877125703780318,
+      "nominal_at_least_five_percent_vs_sergey": false,
+      "same_fit_valid_positions": true,
+      "target_comparison_absolute_tolerance": 1e-10,
+      "max_target_numeric_delta": 5.684341886080802e-14,
+      "ours_source": "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint",
+      "sergey_source": "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-073-01-regression-panel-primary",
+      "controlled_cross_environment_comparison": false,
+      "sergey_same_environment_control": 39.36689369458382,
+      "sergey_gain_vs_his_control": 0.12311423597704932
+    },
+    "multiclass": {
+      "metric": "macro_f1",
+      "original_windows_control": 0.6495311620074445,
+      "our_best": 0.6593084142037399,
+      "sergey_best": 0.64472256711304,
+      "our_gain_vs_original": 0.015052783866562612,
+      "our_nominal_gain_vs_sergey": 0.022623447409345177,
+      "nominal_at_least_five_percent_vs_sergey": false,
+      "same_fit_valid_positions": true,
+      "target_comparison_absolute_tolerance": 0,
+      "max_target_numeric_delta": 0,
+      "ours_source": "results\\2026-10-24\\HYP-078-02-outer-default-sprint",
+      "sergey_source": "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-075-02-multiclass-clean-runtime-continuation",
+      "controlled_cross_environment_comparison": false,
+      "sergey_same_environment_control": 0.6443063238768081,
+      "sergey_gain_vs_his_control": 0.0006460331379759852
+    }
+  },
+  "sergey_commit": "24e3311f6ba958a67c740d5b0328cc34cb7e15d7",
+  "shared_original_commit": "4283105bc445d6511680901a714687300b77d29d",
+  "archive": "dist\\solution_sergey_panel_v1_24e3311.zip",
+  "archive_sha256": "cae8cdbd83e32ece12d4ee0fa1e14997916db861e8732fb5402ce4707f96534c",
+  "archive_bytes": 55183,
+  "requirements_exact": true,
+  "evidence_sha256": {
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\validation_predictions.npz": "ca044d5fbcaec7532f152a28565838a344df28c99ca04360ba01a59220a302f7",
+    "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-073-01-regression-panel-primary\\validation_predictions.npz": "39d72bb9fde1e95fffcbff2211a1edf591dadecca854fa81a26bae1fb00d9df6",
+    "results\\2026-10-24\\HYP-078-02-outer-default-sprint\\validation_predictions.npz": "e86125def193ee64c0cd79364e0ef838271838d79973a137cc4261fe293ee00c",
+    "tmp\\sergey-24e3311f6ba9\\results\\2026-10-24\\HYP-075-02-multiclass-clean-runtime-continuation\\validation_predictions.npz": "2de2f7d622da5bb5aab1c642da6f5fcf56247e47aa6de270c19ba7dbc3d4e13f"
+  },
+  "real_api_test": {
+    "status": "not_run",
+    "reason": "OPENAI_BASE_URL and exact API model id unavailable; supplied key not transmitted"
+  },
+  "platform_rank_independently_verified": false,
+  "limitations": [
+    "Our saved runs Windows, Sergey runs Mac; identical splits do not remove environment differences.",
+    "Our H78 freezes historical H48 meta/calibration; Sergey fresh task-local OOF stack has no embedded learned state.",
+    "All public splits repeatedly viewed; no hidden-platform metric conclusion.",
+    "HYP numbers collide between branches; names must be qualified by branch."
+  ]
+}

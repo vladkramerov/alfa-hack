@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "hypothesis": "HYP-081",
+  "stage": "inner",
+  "metric": "rmse",
+  "score": 30.689409165993794,
+  "reference_score": 42.46005247026025,
+  "relative_gain": 0.27721688079662216,
+  "fit_rows": 22054,
+  "valid_rows": 12946,
+  "fingerprint": "b96b05f5bb8f4cff3deb27267f4493444ef4d4d55c9feeafdcfc83abc6e1e641",
+  "seconds": 3.1410000000032596,
+  "old_baseline_refits": 0,
+  "inner_is_full_H48_pipeline_validation": null
+}

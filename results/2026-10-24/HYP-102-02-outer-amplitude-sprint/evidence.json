@@ -1,0 +1,57 @@
+{
+  "hypothesis": "HYP-102",
+  "stage": "outer",
+  "status": "completed",
+  "started": "2026-10-24T03:06:43.597596+03:00",
+  "configuration": {
+    "strategy": "cached_H91_minus_H69_correction_amplitude",
+    "version": 1,
+    "optimizer": "inner_no_intercept_analytic_least_squares",
+    "amplitude_bounds": [
+      0.0,
+      2.0
+    ],
+    "zero_delta_amplitude": 1.0,
+    "prediction": "max(0,H69+amplitude*(H91-H69))",
+    "incremental_reference": "H91",
+    "primary_reference": "H69",
+    "strict_gain_epsilon": 1e-10
+  },
+  "code_sha256": "84d96df3003b7fe35684e02489be02db5984661b8cb2a5f804623f04eaec2ee6",
+  "helper_source_sha256": {
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8"
+  },
+  "ledger_sha256": "a81f5c5103e101963984cf3f2c54188c51dc7377aca37f2bd76f388bbba64144",
+  "learner_fits": 0,
+  "old_model_refits": 0,
+  "frozen_amplitude_source": "results\\2026-10-24\\HYP-102-01-inner-amplitude-sprint\\metrics.json",
+  "frozen_amplitude_source_sha256": "78fe4f4c2a7e6ecf91a7488a5d2e250fe4f44af37afbe8a2ae066ca1beee11b3",
+  "input_sha256": {
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\validation_predictions.npz": "ca044d5fbcaec7532f152a28565838a344df28c99ca04360ba01a59220a302f7",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\metrics.json": "e7d5d1a0b2af44f7b319300a49cfffe0f9ffb6349cbc828f4bb545dd0b28a129",
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\evidence.json": "724d92404a79372eb51d981e96d0df66f2b48af94231318cd6c8ba269dd5c4db",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\validation_predictions.npz": "1e1e874c2141c349f230ffbc3ae3e81dd0ccb252373965a86a76bb502c4c1834",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\data.json": "c2e39ca3f1f05488080b5d22775850ba3ff5251f09caf80ff13e58afcc8fb963",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\teacher-audit.json": "f73ca2628a1ccd42e5cf2dcf8768db9d6bcd3dc4f4a1cbcb6b50c36d4e404fca",
+    "results\\2026-10-24\\HYP-102-01-inner-amplitude-sprint\\metrics.json": "78fe4f4c2a7e6ecf91a7488a5d2e250fe4f44af37afbe8a2ae066ca1beee11b3"
+  },
+  "data_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "split_sha256": {
+    "fit": "09a93a58043a825d53462348c82fcaf26fbba88cda0ae25507aa3ddba8cf1fa7",
+    "valid": "ccb567cf7d6f296deda721261c21b989cb922033b821e28c314d62d13d5b4fec"
+  },
+  "prediction_source_sha256": {
+    "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint\\validation_predictions.npz": "ca044d5fbcaec7532f152a28565838a344df28c99ca04360ba01a59220a302f7",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\validation_predictions.npz": "1e1e874c2141c349f230ffbc3ae3e81dd0ccb252373965a86a76bb502c4c1834",
+    "results\\2026-10-24\\HYP-070-04-outer-high-sprint\\splits.npz": "d65a40b253076339f9cb3ae4edc4ee626cfc6f2585fbd49efcee1d94f00fa4fb"
+  },
+  "finished": "2026-10-24T03:06:43.689462+03:00",
+  "amplitude": 1.1289189550164425,
+  "output_prediction_sha256": "d304a7bf62d46dbe226be71db6da29dd91083f772e6b725a1ec8bba99ab5b867"
+}

@@ -1,0 +1,36 @@
+{
+  "strategy": "fuzzy_temporal_overlay",
+  "version": 1,
+  "alpha": 0.5,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "exact_block": [
+    "State_Factor",
+    "building_class",
+    "facility_type"
+  ],
+  "area_tolerance": 0.001,
+  "area_distance": "absolute_gap_over_max_area",
+  "year_tolerance": 1.0,
+  "missing_year": "zero_or_nan_exact_unique_area_only",
+  "distance": "relative_area_gap/area_tolerance+absolute_year_gap/year_tolerance",
+  "ambiguity_margin": 0.5,
+  "missing_year_distance": 1.0,
+  "ambiguity": "reject_any_sameyear_collision_profile_then_distinct_profile_runnerup",
+  "donor": "latest_strictly_past",
+  "exact_h70_profile": "leave_baseline_unchanged",
+  "support_shrinkage": 0.25,
+  "age_decay": 0.25,
+  "beta_cap": 2.0,
+  "log_change_cap": 1.5,
+  "transport": "caller_frozen_h70_beta_and_group_betas_no_refit",
+  "rating_score": "inverse_normal_clipped_005_995",
+  "id_as_feature": false,
+  "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+  "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+}

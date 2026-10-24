@@ -1,0 +1,30 @@
+{
+  "hypothesis_id": "HYP-063",
+  "stage": "feature_only_support_diagnostic",
+  "status": "completed_after_output_serialization_error",
+  "model_fits": 0,
+  "metric_evaluations": 0,
+  "data_path": "data/regression/train.csv",
+  "declared_data_sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+  "columns_read": ["Year_Factor", "State_Factor", "building_class", "facility_type", "floor_area", "year_built"],
+  "target_column_read": false,
+  "csv_years_read_before_filter": "all",
+  "analyzed_year_filter": "Year_Factor < 4",
+  "thresholds": {
+    "relative_area_gap_max": 0.001,
+    "absolute_known_year_built_gap_max": 1.0,
+    "unknown_or_zero_year_requires_exact_area": true,
+    "runnerup_margin_min": 0.5,
+    "missing_year_distance": 1.0,
+    "reject_sameyear_collision_profiles": true
+  },
+  "statistics": [
+    {"year": 2, "fit_rows": 2117, "query_rows": 9058, "exact": 1633, "extra_any": 56, "extra_margin": 53, "rejected_margin": 3, "extra_area_changed": 31, "extra_missing_year": 19},
+    {"year": 3, "fit_rows": 11175, "query_rows": 10879, "exact": 6981, "extra_any": 516, "extra_margin": 423, "rejected_margin": 93, "extra_area_changed": 373, "extra_missing_year": 14}
+  ],
+  "attempts": [
+    {"implementation": "initial_scalar_readonly_stdin_script", "status": "output_error", "error": "TypeError: Object of type int32 is not JSON serializable", "model_fits": 0},
+    {"implementation": "vectorized_readonly_stdin_continuation", "status": "completed", "exit_code": 0, "observed_wall_time_seconds": 2.2499758, "model_fits": 0}
+  ],
+  "claim_limit": "Feature support only; physical identity, leakage, predictive quality and scientific hypothesis confirmation are not established."
+}

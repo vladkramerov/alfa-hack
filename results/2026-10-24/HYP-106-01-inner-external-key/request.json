@@ -1,0 +1,16 @@
+{
+  "root": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-106-01-inner-external-key",
+  "number": 106,
+  "stage": "inner",
+  "split": "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/splits.npz",
+  "control": "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/validation_predictions.npz",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-external-key-v1\\fit-history.json",
+  "selected_arm": null,
+  "input_sha256": {
+    "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/splits.npz": "5f955b517b3dacfeb0642198dd1d0038bc1047e877ae68fb4b6225167bb06513",
+    "tmp/sergey-24e3311f6ba9/results/2026-10-24/HYP-073-02-regression-panel-secondary/validation_predictions.npz": "38e6f5095b7bafd2d3016df384182649dca5249ab06a2e842f84fbaa13b814e4",
+    "data/regression/train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "data/regression/test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "regression",
+  "stage": "outer",
+  "status": "started",
+  "started": "2026-10-24T14:11:17.091036+03:00",
+  "directory": "results\\2026-10-24\\HYP-108-03-regression-outer-tabm-mini",
+  "ledger_sha256": "14974fb000b162fde1233e285e98461e60e609b3ca71b7fd9759071469cd3535"
+}

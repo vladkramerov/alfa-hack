@@ -1,0 +1,58 @@
+[
+  {
+    "recipe": {
+      "strategy": "fuzzy_temporal_overlay",
+      "version": 1,
+      "alpha": 0.5,
+      "link_fields": [
+        "State_Factor",
+        "building_class",
+        "facility_type",
+        "floor_area",
+        "year_built"
+      ],
+      "exact_block": [
+        "State_Factor",
+        "building_class",
+        "facility_type"
+      ],
+      "area_tolerance": 0.001,
+      "area_distance": "absolute_gap_over_max_area",
+      "year_tolerance": 1.0,
+      "missing_year": "zero_or_nan_exact_unique_area_only",
+      "distance": "relative_area_gap/area_tolerance+absolute_year_gap/year_tolerance",
+      "ambiguity_margin": 0.5,
+      "missing_year_distance": 1.0,
+      "ambiguity": "reject_any_sameyear_collision_profile_then_distinct_profile_runnerup",
+      "donor": "latest_strictly_past",
+      "exact_h70_profile": "leave_baseline_unchanged",
+      "support_shrinkage": 0.25,
+      "age_decay": 0.25,
+      "beta_cap": 2.0,
+      "log_change_cap": 1.5,
+      "transport": "caller_frozen_h70_beta_and_group_betas_no_refit",
+      "rating_score": "inverse_normal_clipped_005_995",
+      "id_as_feature": false,
+      "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+      "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "b96b05f5bb8f4cff3deb27267f4493444ef4d4d55c9feeafdcfc83abc6e1e641",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:11:51.514298+03:00",
+    "ledger_sha256": "2cb067ba14283d2e82b70b2563cd8ecbc940b294fbe3d61c1de7cb847256d4a0",
+    "hypothesis": "HYP-081",
+    "metric": "rmse",
+    "score": 30.689409165993794,
+    "reference_score": 42.46005247026025,
+    "relative_gain": 0.27721688079662216,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 3.1410000000032596,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:11:52.061837+03:00"
+  }
+]

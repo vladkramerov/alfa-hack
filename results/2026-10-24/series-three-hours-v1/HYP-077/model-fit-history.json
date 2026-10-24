@@ -1,0 +1,59 @@
+[
+  {
+    "recipe": {
+      "family": "teacher_residual_lovasz_lightgbm",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "num_leaves": 63,
+        "min_child_samples": 30,
+        "reg_lambda": 5.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "boost_from_average": false,
+        "metric": "None"
+      },
+      "ce_weight": 0.5,
+      "objective": "w*meanCE+(1-w)*mean_present_LovaszSoftmax",
+      "gradient": "exact_fullbatch_sort_subgradient_times_N",
+      "curvature": "positive_surrogate_max(w*p*(1-p),0.001)_not_exact",
+      "teacher_baseline": "caller_supplied_log_normalized_p_clip1e-12",
+      "inference": "softmax(query_logteacher+tree_raw_scores)",
+      "preprocessing": "fitmedian_log1pnonnegative_standardize_clip8_OHE",
+      "query_statistics": false,
+      "class_weights": null,
+      "selection": "fixed_all_rounds_no_validation_earlystop",
+      "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "3add00240ee4b448c0377150bb963bf780258cbf449a4a667feefce51e9a3506",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:04:31.416581+03:00",
+    "ledger_sha256": "69281bf37e78bcbde5dbacee14d86657acbe50c49ab6c9e86bdefd705cc3669f",
+    "hypothesis": "HYP-077",
+    "metric": "macro_f1",
+    "score": 0.6110510854211656,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.04037370794118915,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 40.562000000005355,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T02:05:02.294273+03:00"
+  }
+]

@@ -1,0 +1,8 @@
+{
+ "selected":"HYP-097",
+ "selection":"max_inner_macroF1_before_new_outer_score",
+ "candidates":{"HYP-078":0.6288481661155734,"HYP-088":0.5978384913324375,"HYP-092/default":0.6075155330908212,"HYP-092/extended":0.599340154183666,"HYP-093":0.6002777710371685,"HYP-094/default":0.6192492910174916,"HYP-094/long":0.6223414898157842,"HYP-095":0.6227569652507932,"HYP-096":0.6291379699977411,"HYP-097":0.6334156298867437,"HYP-098":0.6208270606519142,"HYP-100":0.550835584943435},
+ "new_candidate_pipeline":"honest_training_RAW_OOF_and_heldout_RAW_query",
+ "comparison_outer":"H48_saved_macroF1_0.6495311620074445",
+ "outer_already_viewed_exploratory":true
+}

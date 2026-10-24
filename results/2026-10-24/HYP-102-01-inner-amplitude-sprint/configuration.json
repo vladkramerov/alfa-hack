@@ -1,0 +1,14 @@
+{
+  "strategy": "cached_H91_minus_H69_correction_amplitude",
+  "version": 1,
+  "optimizer": "inner_no_intercept_analytic_least_squares",
+  "amplitude_bounds": [
+    0.0,
+    2.0
+  ],
+  "zero_delta_amplitude": 1.0,
+  "prediction": "max(0,H69+amplitude*(H91-H69))",
+  "incremental_reference": "H91",
+  "primary_reference": "H69",
+  "strict_gain_epsilon": 1e-10
+}

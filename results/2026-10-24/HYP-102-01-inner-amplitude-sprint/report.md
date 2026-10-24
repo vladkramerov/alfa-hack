@@ -1,0 +1,35 @@
+# H102 inner
+
+{
+  "status": "completed",
+  "hypothesis": "HYP-102",
+  "stage": "inner",
+  "metric": "rmse",
+  "score": 30.449416831901488,
+  "reference_score": 42.46005247026025,
+  "H91_reference_score": 30.636363541581975,
+  "amplitude": 1.1289189550164425,
+  "incremental_gain_over_H91": 0.18694670968048754,
+  "eligible_for_outer": true,
+  "learner_fits": 0,
+  "old_model_refits": 0,
+  "parameter_fits": 1,
+  "fingerprint": "989e97dac7fcbb6fe84b690515757ce5505a015aa53c49b921fccbab15fd734b",
+  "configuration": {
+    "strategy": "cached_H91_minus_H69_correction_amplitude",
+    "version": 1,
+    "optimizer": "inner_no_intercept_analytic_least_squares",
+    "amplitude_bounds": [
+      0.0,
+      2.0
+    ],
+    "zero_delta_amplitude": 1.0,
+    "prediction": "max(0,H69+amplitude*(H91-H69))",
+    "incremental_reference": "H91",
+    "primary_reference": "H69",
+    "strict_gain_epsilon": 1e-10
+  },
+  "finished": "2026-10-24T03:06:24.900525+03:00"
+}
+
+Cached predictions only; zero learner fits. Inner amplitude frozen before outer evaluation; viewed outer is exploratory. Primary reference H69; incremental improvement must beat H91.

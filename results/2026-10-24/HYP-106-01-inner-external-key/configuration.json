@@ -1,0 +1,16 @@
+{
+  "hypothesis": "HYP-106",
+  "strategy": "training_only_greedy_entity_key_memory",
+  "max_columns": 6,
+  "max_cardinality_fraction": 0.9,
+  "min_discovery_coverage": 0.2,
+  "max_target_within_std_ratio": 0.5,
+  "step_relative_gain": 0.01,
+  "discovery_query": "last_training_period_features_only",
+  "score": "coverage_div_mean_rows_per_key_period",
+  "history": "strictly_past_exponential_half_life_one",
+  "confidence": "min(.9,n/(n+1))*exp(-.25*max(0,gap-1))",
+  "missing_key": "no_match",
+  "fit_only": true,
+  "query_statistics": false
+}

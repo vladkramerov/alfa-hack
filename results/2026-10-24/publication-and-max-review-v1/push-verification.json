@@ -1,0 +1,11 @@
+{
+  "status": "published_and_remote_verified",
+  "branch": "ivan_branch",
+  "commit": "b234355d0554575c615e7b6004c0f8e4ff6bc889",
+  "remote_head": "b234355d0554575c615e7b6004c0f8e4ff6bc889",
+  "zip_sha256": "9a3924a53f6bf6191d27dd0717c44afc4137757557e469efe77c3eac28d1756a",
+  "zip_bytes": 67803,
+  "max_review_commit": "be9d9aec64c39a3a73a7507a742223a8d65a8dee",
+  "new_model_fits": 0,
+  "verified_utc": "2026-10-24T10:37:50.513562+00:00"
+}

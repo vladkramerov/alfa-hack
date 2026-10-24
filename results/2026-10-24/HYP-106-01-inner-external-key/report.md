@@ -1,0 +1,28 @@
+# HYP-106 inner
+
+Started before fit. SPEC013. Saved Sergey controls; no old refits.
+
+{
+  "status": "completed",
+  "hypothesis": "HYP-106",
+  "stage": "inner",
+  "metric": "rmse",
+  "score": 30.963253972816442,
+  "arm_scores": {
+    "pure": 31.15263063723188,
+    "blend75": 30.963253972816442
+  },
+  "selected_arm": "blend75",
+  "control_score": 31.04663635241995,
+  "selected_on": "inner_only",
+  "learner_fits": 0,
+  "parameter_fits": 1,
+  "old_model_refits": 0,
+  "fit_rows": 22054,
+  "valid_rows": 12946,
+  "eligible_for_outer": false,
+  "seconds": 11.90600000001723,
+  "fingerprint": "58cced6f80dc02bd615b7ca46705d6be831d11aa1377f735e38c63356c19de61"
+}
+
+Command: `.venv-ml/Scripts/python.exe -X utf8 -m experiments.external_ideas_run --number 106 --stage inner`.

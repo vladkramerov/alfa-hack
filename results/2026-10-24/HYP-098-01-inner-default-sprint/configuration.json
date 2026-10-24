@@ -1,0 +1,30 @@
+{
+  "hypothesis": "HYP-098",
+  "strategy": "exact_empirical_macro_f1_probability_offsets",
+  "version": 1,
+  "passes": 3,
+  "class_order": "ascending_training_count_then_sorted_class_index",
+  "initialization": "zero_offsets",
+  "objective": "actual_training_labels_macro_f1",
+  "coordinate_search": "exact_between_distinct_margin_groups_plus_outside_endpoints",
+  "strict_improvement_tolerance": 1e-12,
+  "float_ambiguous_candidates": "reject",
+  "training_teacher": "reused_H88_grouped_oof_RAW",
+  "outer_teacher": "original_grouped_oof_RAW_with_H11_query",
+  "H48_meta_state_used": false,
+  "query_statistics": false,
+  "output": "softmax(probability_plus_frozen_offset)_not_calibrated",
+  "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

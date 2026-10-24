@@ -1,0 +1,20 @@
+TabM-mini epoch=10 train_loss=0.6742150 sec=0.1
+TabM-mini epoch=20 train_loss=0.5346717 sec=0.1
+TabM-mini epoch=30 train_loss=0.4049682 sec=0.1
+TabM-mini epoch=40 train_loss=0.2921484 sec=0.1
+test_classifier_preserves_labels_and_averages_probabilities (tests.test_tabm_trial.TabMMiniTests.test_classifier_preserves_labels_and_averages_probabilities) ... ok
+test_gradients_match_finite_differences_for_every_parameter (tests.test_tabm_trial.TabMMiniTests.test_gradients_match_finite_differences_for_every_parameter) ... ok
+test_independent_ensemble_heads_are_not_collapsed (tests.test_tabm_trial.TabMMiniTests.test_independent_ensemble_heads_are_not_collapsed) ... ok
+test_invalid_targets_and_resource_settings_fail_before_fit (tests.test_tabm_trial.TabMMiniTests.test_invalid_targets_and_resource_settings_fail_before_fit) ... ok
+test_preprocessing_is_fit_only_unknown_missing_and_reordered_columns (tests.test_tabm_trial.TabMMiniTests.test_preprocessing_is_fit_only_unknown_missing_and_reordered_columns) ... ok
+TabM-mini epoch=10 train_loss=0.5299115 sec=0.0
+TabM-mini epoch=20 train_loss=0.2563817 sec=0.0
+TabM-mini epoch=30 train_loss=0.1495668 sec=0.0
+TabM-mini epoch=40 train_loss=0.0901361 sec=0.0
+TabM-mini epoch=50 train_loss=0.0664785 sec=0.0
+test_regression_learns_and_is_pickle_and_batch_invariant (tests.test_tabm_trial.TabMMiniTests.test_regression_learns_and_is_pickle_and_batch_invariant) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.142s
+
+OK

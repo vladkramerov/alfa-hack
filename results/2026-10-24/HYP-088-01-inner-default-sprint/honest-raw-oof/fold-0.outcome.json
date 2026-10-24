@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "finished": "2026-10-24T02:29:20.545156+03:00",
+  "prediction_sha256": "b6d1e717734585eceb3400400ef73de807a92573c7ab3601adeba936003a5d9f",
+  "fit_rows": 31611,
+  "valid_rows": 15464
+}

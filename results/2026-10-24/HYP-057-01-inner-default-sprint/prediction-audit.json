@@ -1,0 +1,9 @@
+{
+  "query_rows": 12946,
+  "query_known_rating_rows": 10066,
+  "query_matched_past_rows": 9794,
+  "eligible_unmatched_known_rows": 2362,
+  "expert_applied_rows": 2362,
+  "matched_or_missing_unchanged": true,
+  "query_statistics": false
+}

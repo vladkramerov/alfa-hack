@@ -1,5 +1,11 @@
 # Результаты проверок
 
+SPEC015 / H108: [TabM-mini trial](2026-10-24/series-tabm-mini-v1/report.md), 4 новых fits/0oldrefits; outer смеси RMSE33.979840/F1.660280, относительные выигрыши0.4775%/0.1473%; independent replay4/4PASS. NumPy research, baseline/ZIP не менялись; 5 существующих test_report_sprint ошибок WinError5 сохранены в отчёте. [Разрешённые зависимости и сетевые ошибки](2026-10-24/tabm-environment-check/report.md).
+
+Обзор конференционных методов регрессии и классификации 2025–2026: [отчёт](2026-10-24/conference-methods-research-v1/report.md), [12 первичных источников](2026-10-24/conference-methods-research-v1/sources.json); литературный ресерч, 0 новых fit и 0 платформенных отправок.
+
+HYP-063 feature-only: [report](2026-10-24/HYP-063-01-feature-only-audit/report.md), нольmodelfits/qualitymetrics; техническийJSONTypeErrorисохранённоеуспешноепродолжение, безtarget.
+
 Новая поставка SPEC009: [solution_alternative_v2.zip](../dist/solution_alternative_v2.zip),61 330байт/16rootfiles; RMSE39.392194 и MacroF1.649531. [9численныхоценок+1техническийисход](2026-10-24/series-alternatives-v1/ALTERNATIVES_REPORT.md),65independentchecks/22newfits;206units. [H65CSVисправление](2026-10-24/HYP-065-02-schema-codec-fix/verification.json), [H68неполнаядиагностикаscore](2026-10-24/HYP-068-01-platform-provenance/report.md). СтарыеZIP/негативныеотчётысохранены, hidden scoreнеизмерен.
 
 Актуальная поставка SPEC-008: [solution_combined_metrics.zip](../dist/solution_combined_metrics.zip),57110байт; H43RMSE40.972998/H48Macro-F1.649531. [Семь сравнений](2026-10-23/series-combinations-v1/COMBINATIONS_REPORT.md),63проверки/24новыхfitбезповторов; [baseline](../baseline.json). Состояния приёмки ZIP фиксируются отдельными отчётами, скрытый score не измерен. Крупные OOFcache/модели/синтетические данные сохраняются локально и исключены из Git.
@@ -224,3 +230,129 @@ SPEC-002: два датасета, inner для выбора, заранее з�
 | HYP-052 | multiclass/confirmation | completed, macro_f1=0.4803098632106223 | [report](../results/2026-10-24/HYP-052-02-multiclass-confirmation-rewrite/report.md) |
 
 | HYP-052 | multiclass/control | completed, macro_f1=0.6103340454456273 | [report](../results/2026-10-24/HYP-052-03-multiclass-control-rewrite/report.md) |
+
+| HYP-070 | inner/low | completed; rmse=34.20894464756146; reference=42.46005247026025 | [report](2026-10-24/HYP-070-01-inner-low-sprint/report.md) |
+
+| HYP-070 | inner/mid | completed; rmse=31.323933523598928; reference=42.46005247026025 | [report](2026-10-24/HYP-070-02-inner-mid-sprint/report.md) |
+
+| HYP-070 | inner/high | completed; rmse=30.663255379972725; reference=42.46005247026025 | [report](2026-10-24/HYP-070-03-inner-high-sprint/report.md) |
+
+| HYP-072 | inner/default | completed; macro_f1=0.6090378831239697; reference=0.5873380697311004 | [report](2026-10-24/HYP-072-01-inner-default-sprint/report.md) |
+
+| HYP-071 | inner/default | completed; rmse=49.19259595219514; reference=42.46005247026025 | [report](2026-10-24/HYP-071-01-inner-default-sprint/report.md) |
+
+| HYP-073 | inner/default | completed; macro_f1=0.5803974034255268; reference=0.5873380697311004 | [report](2026-10-24/HYP-073-01-inner-default-sprint/report.md) |
+
+| HYP-070 | outer/high | completed; rmse=34.318489927675174; reference=39.39219382766771 | [report](2026-10-24/HYP-070-04-outer-high-sprint/report.md) |
+
+| HYP-074 | inner/default | completed; macro_f1=0.6143385510752261; reference=0.5873380697311004 | [report](2026-10-24/HYP-074-01-inner-default-sprint/report.md) |
+
+| HYP-075 | inner/default | completed; macro_f1=0.6212181165985486; reference=0.5873380697311004 | [report](2026-10-24/HYP-075-01-inner-default-sprint/report.md) |
+
+| HYP-076 | inner/default | completed; rmse=32.91081846583218; reference=42.46005247026025 | [report](2026-10-24/HYP-076-01-inner-default-sprint/report.md) |
+
+| HYP-077 | inner/default | completed; macro_f1=0.6110510854211656; reference=0.5873380697311004 | [report](2026-10-24/HYP-077-01-inner-default-sprint/report.md) |
+
+| HYP-078 | inner/default | completed; macro_f1=0.6288481661155734; reference=0.5873380697311004 | [report](2026-10-24/HYP-078-01-inner-default-sprint/report.md) |
+
+HYP-079 inner completed: RMSE=30.663255379972725 vsH70=30.663255379972725; w70=1.0; [report](2026-10-24/HYP-079-01-inner-combination-sprint/report.md). Повтор не запускать.
+
+| HYP-078 | outer/default | completed; macro_f1=0.6593084142037399; reference=0.6495311620074445 | [report](2026-10-24/HYP-078-02-outer-default-sprint/report.md) |
+
+| HYP-080 | inner/default | completed; macro_f1=0.6140917642777984; reference=0.5873380697311004 | [report](2026-10-24/HYP-080-01-inner-default-sprint/report.md) |
+
+| HYP-081 | inner/default | completed; rmse=30.689409165993794; reference=42.46005247026025 | [report](2026-10-24/HYP-081-01-inner-default-sprint/report.md) |
+
+| HYP-050 | inner/default | completed; macro_f1=0.5991047549783951; reference=0.5873380697311004 | [report](2026-10-24/HYP-050-01-inner-default-sprint/report.md) |
+
+| HYP-083 | inner/default | completed; rmse=30.651578052812432; reference=42.46005247026025 | [report](2026-10-24/HYP-083-01-inner-default-sprint/report.md) |
+
+| HYP-082 | inner/default | completed; macro_f1=0.6150544797423486; reference=0.5873380697311004 | [report](2026-10-24/HYP-082-01-inner-default-sprint/report.md) |
+
+| HYP-087 | inner/default | completed; macro_f1=0.6254419869564557; reference=0.5873380697311004 | [report](2026-10-24/HYP-087-01-inner-default-sprint/report.md) |
+
+| HYP-084 | inner/default | completed; macro_f1=0.5580393390877207; reference=0.5873380697311004 | [report](2026-10-24/HYP-084-01-inner-default-sprint/report.md) |
+
+| HYP-085 | inner/default | completed; rmse=46.02178005161315; reference=42.46005247026025 | [report](2026-10-24/HYP-085-01-inner-default-sprint/report.md) |
+
+| HYP-086 | inner/default | completed; rmse=31.12117379943106; reference=42.46005247026025 | [report](2026-10-24/HYP-086-01-inner-default-sprint/report.md) |
+
+| HYP-083 | outer/default | completed; rmse=34.32053895104047; reference=39.39219382766771 | [report](2026-10-24/HYP-083-02-outer-default-sprint/report.md) |
+
+HYP-091/inner completed RMSE=30.636363541581975 vsH70=30.663255379972725 weights=[0.43908725498434387, 0.5446376329320275, 0.016275112083628654] [report](2026-10-24/HYP-091-01-inner-multiblend-sprint/report.md). Повтор не запускать.
+
+| HYP-085 | outer/default | completed; rmse=44.12424608516781; reference=39.39219382766771 | [report](2026-10-24/HYP-085-02-outer-default-sprint/report.md) |
+
+HYP-091/outer completed RMSE=34.21382789041039 vsH70=34.318489927675174 weights=[0.43908725498434387, 0.5446376329320275, 0.016275112083628654] [report](2026-10-24/HYP-091-02-outer-multiblend-sprint/report.md). Повтор не запускать.
+
+| HYP-089 | inner/default | completed; rmse=31.05521238320071; reference=42.46005247026025 | [report](2026-10-24/HYP-089-01-inner-default-sprint/report.md) |
+
+| HYP-090 | inner/default | completed; rmse=34.86994782367874; reference=42.46005247026025 | [report](2026-10-24/HYP-090-01-inner-default-sprint/report.md) |
+
+| HYP-088 | inner/default | completed; macro_f1=0.5978384913324375; reference=0.5873380697311004 | [report](2026-10-24/HYP-088-01-inner-default-sprint/report.md) |
+
+HYP-093 registration preflight stopped,0fit; [report](2026-10-24/HYP-093-01-registration-preflight-failure/report.md).
+
+HYP-094 registration preflight stopped,0fit; [report](2026-10-24/HYP-094-01-registration-preflight-failure/report.md).
+
+| HYP-092 | inner/default | completed; macro_f1=0.6075155330908212; reference=0.5873380697311004 | [report](2026-10-24/HYP-092-01-inner-default-sprint/report.md) |
+
+| HYP-094 | inner/default | completed; macro_f1=0.6192492910174916; reference=0.5873380697311004 | [report](2026-10-24/HYP-094-02-inner-default-sprint/report.md) |
+
+| HYP-093 | inner/default | completed; macro_f1=0.6002777710371685; reference=0.5873380697311004 | [report](2026-10-24/HYP-093-02-inner-default-sprint/report.md) |
+
+| HYP-094 | inner/long | completed; macro_f1=0.6223414898157842; reference=0.5873380697311004 | [report](2026-10-24/HYP-094-03-inner-long-sprint/report.md) |
+
+| HYP-092 | inner/extended | completed; macro_f1=0.599340154183666; reference=0.5873380697311004 | [report](2026-10-24/HYP-092-02-inner-extended-sprint/report.md) |
+
+| HYP-096 | inner/default | completed; macro_f1=0.6291379699977411; reference=0.5873380697311004 | [report](2026-10-24/HYP-096-01-inner-default-sprint/report.md) |
+
+| HYP-097 | inner/default | completed; macro_f1=0.6334156298867437; reference=0.5873380697311004 | [report](2026-10-24/HYP-097-01-inner-default-sprint/report.md) |
+
+| HYP-095 | inner/default | completed; macro_f1=0.6227569652507932; reference=0.5873380697311004 | [report](2026-10-24/HYP-095-01-inner-default-sprint/report.md) |
+
+| HYP-100 | inner/default | completed; macro_f1=0.550835584943435; reference=0.5873380697311004 | [report](2026-10-24/HYP-100-01-inner-default-sprint/report.md) |
+
+| HYP-098 | inner/default | completed; macro_f1=0.6208270606519142; reference=0.5873380697311004 | [report](2026-10-24/HYP-098-01-inner-default-sprint/report.md) |
+
+| HYP-099 | inner/default | completed; rmse=31.099625876123866; reference=42.46005247026025 | [report](2026-10-24/HYP-099-01-inner-default-sprint/report.md) |
+
+| HYP-097 | outer/default | completed; macro_f1=0.6384122468214593; reference=0.6495311620074445 | [report](2026-10-24/HYP-097-02-outer-default-sprint/report.md) |
+
+| HYP-057 | inner/default | completed; rmse=30.00420378193599; reference=42.46005247026025 | [report](2026-10-24/HYP-057-01-inner-default-sprint/report.md) |
+
+| HYP-057 | outer/default | completed; rmse=43.038591928820146; reference=39.39219382766771 | [report](2026-10-24/HYP-057-02-outer-default-sprint/report.md) |
+
+| HYP-101 | inner/default | completed; macro_f1=0.6178371238873426; reference=0.5873380697311004 | [report](2026-10-24/HYP-101-01-inner-default-sprint/report.md) |
+
+HYP-102/inner completed RMSE=30.449416831901488 vsH91=30.636363541581975 amplitude=1.1289189550164425 [report](2026-10-24/HYP-102-01-inner-amplitude-sprint/report.md). Повтор не запускать.
+
+HYP-102/outer completed RMSE=34.50690731292415 vsH91=34.21382789041039 amplitude=1.1289189550164425 [report](2026-10-24/HYP-102-02-outer-amplitude-sprint/report.md). Повтор не запускать.
+
+| HYP-103 | inner/default | completed; macro_f1=0.597392348204526; reference=0.5873380697311004 | [report](2026-10-24/HYP-103-01-inner-default-sprint/report.md) |
+
+| HYP-104 | inner/default | timeout; None=None; reference=None | [report](2026-10-24/HYP-104-01-inner-default-sprint/report.md) |
+
+SPEC012 [сравнение Sergey24e3311](2026-10-24/branch-comparison-sergey-24e3311-v3/report.md): no new public fits,271unitPASS, API unavailable, номинальныйwin<5%. [v1technical](2026-10-24/branch-comparison-sergey-24e3311-v1/report.md),[v2floatCSVtechnical](2026-10-24/branch-comparison-sergey-24e3311-v2/report.md) сохранены.
+
+HYP-105/inner: {"status": "completed", "hypothesis": "HYP-105", "stage": "inner", "metric": "rmse", "score": 32.01672432373479, "arm_scores": {"pure": 34.56623580026114, "blend75": 32.01672432373479}, "selected_arm": "blend75", "control_score": 31.04663635241995, "selected_on": "inner_only", "learner_fits": 1, "old_model_refits": 0, "fit_rows": 22054, "valid_rows": 12946, "eligible_for_outer": false, "seconds": 8.094000000011874, "fingerprint": "c0523370162349ee4ad3a8f474ce60306f6f816758b3a35777060ad20b0228de"}; [report](2026-10-24/HYP-105-01-inner-external-multilag/report.md). Не повторять.
+
+HYP-106/inner: {"status": "completed", "hypothesis": "HYP-106", "stage": "inner", "metric": "rmse", "score": 30.963253972816442, "arm_scores": {"pure": 31.15263063723188, "blend75": 30.963253972816442}, "selected_arm": "blend75", "control_score": 31.04663635241995, "selected_on": "inner_only", "learner_fits": 0, "parameter_fits": 1, "old_model_refits": 0, "fit_rows": 22054, "valid_rows": 12946, "eligible_for_outer": false, "seconds": 11.90600000001723, "fingerprint": "58cced6f80dc02bd615b7ca46705d6be831d11aa1377f735e38c63356c19de61"}; [report](2026-10-24/HYP-106-01-inner-external-key/report.md). Не повторять.
+
+SPEC013 [обзорhilhool/NolReaction/mereska0 и H105/H106](2026-10-24/external-repositories-review-v1/report.md):562unitPASS,2nofitpredictionreplaysPASS; новыхouterfit0,новыйZIPнепродвинут.
+
+HYP-107/inner: RMSE=30.59160391991867; Sergey=31.04663635241995; Ivan=30.636363541581975; passes_gate=True; [report](2026-10-24/HYP-107-01-inner-sergey-fusion/report.md). Проверка завершена, не повторять.
+
+HYP-107/outer: RMSE=34.142888130110755; Sergey=34.520268654585415; Ivan=34.21382789041039; passes_gate=True; [report](2026-10-24/HYP-107-02-outer-sergey-fusion/report.md). Проверка завершена, не повторять.
+
+[SPEC014 H107 / перенос Sergey+Ivan](2026-10-24/series-sergey-ivan-fusion-v1/report.md): cached RMSE34.142888, технически проверенный отдельный ZIP67803B; hidden/runtime-quality gain не доказан.
+
+HYP-108 regression/inner: {"status": "completed", "hypothesis": "HYP-108", "kind": "regression", "stage": "inner", "metric": "rmse", "score": 30.285884162436915, "pure_score": 51.908456385388476, "control_score": 30.59160391991867, "selected_weight": 0.0928330654623246, "arm_scores": [[0.0, 30.59160391991867], [1.0, 51.908456385388476], [0.0928330654623246, 30.285884162436915]], "eligible_for_outer": true, "fit_rows": 22054, "valid_rows": 12946, "new_learner_fits": 1, "old_model_refits": 0, "seconds": 22.078000000008615, "fingerprint": "a8693ed5c731db38153494a3515b7b07d9089ac106c3661809032a9b12153c95"}; Подтверждена в проверенных условиях; [report](2026-10-24/HYP-108-01-regression-inner-tabm-mini/report.md). Не повторять.
+
+HYP-108 classification/inner: {"status": "completed", "hypothesis": "HYP-108", "kind": "classification", "stage": "inner", "metric": "macro_f1", "score": 0.628945309907142, "pure_score": 0.516402108331563, "control_score": 0.6288481661155734, "selected_weight": 0.1, "arm_scores": [[0.0, 0.6288481661155734], [0.1, 0.628945309907142], [0.25, 0.6280732998577576], [0.5, 0.6275732038748059], [0.75, 0.5795224999605784], [1.0, 0.516402108331563]], "eligible_for_outer": true, "fit_rows": 47075, "valid_rows": 23454, "new_learner_fits": 1, "old_model_refits": 0, "seconds": 112.73399999999674, "fingerprint": "3e84a88ffd5e8ab248016817e68359b370fb34597eeca51e505ea3b36d980839"}; Подтверждена в проверенных условиях; [report](2026-10-24/HYP-108-02-classification-inner-tabm-mini/report.md). Не повторять.
+
+HYP-108 regression/outer: {"status": "completed", "hypothesis": "HYP-108", "kind": "regression", "stage": "outer", "metric": "rmse", "score": 33.97984036360298, "pure_score": 51.85189626940788, "control_score": 34.142888130110755, "selected_weight": 0.0928330654623246, "arm_scores": [[0.0928330654623246, 33.97984036360298]], "eligible_for_outer": true, "fit_rows": 35000, "valid_rows": 18308, "new_learner_fits": 1, "old_model_refits": 0, "seconds": 29.703000000008615, "fingerprint": "25d738cbcd0c15a587fe2865dcb6d1f73a1b362f2eea10a0fe95d6ad15c5150d"}; Подтверждена в проверенных условиях; [report](2026-10-24/HYP-108-03-regression-outer-tabm-mini/report.md). Не повторять.
+
+HYP-108 classification/outer: {"status": "completed", "hypothesis": "HYP-108", "kind": "classification", "stage": "outer", "metric": "macro_f1", "score": 0.6602795926985132, "pure_score": 0.5099944452622676, "control_score": 0.6593084142037399, "selected_weight": 0.1, "arm_scores": [[0.1, 0.6602795926985132]], "eligible_for_outer": true, "fit_rows": 70529, "valid_rows": 17141, "new_learner_fits": 1, "old_model_refits": 0, "seconds": 180.85899999999674, "fingerprint": "c2c69474d79a3fd304178c8bf26539e6051ee93e589791b76061c9a7edebabf9"}; Подтверждена в проверенных условиях; [report](2026-10-24/HYP-108-04-classification-outer-tabm-mini/report.md). Не повторять.
+
+SPEC016 explicit ZIP control regression/inner: {"status": "completed", "kind": "regression", "stage": "inner", "role": "explicit_previous_zip_control", "metric": "rmse", "score": 30.656905391248326, "fit_rows": 22054, "valid_rows": 12946, "seconds": 146.59399999998277, "zip_sha256": "9a3924a53f6bf6191d27dd0717c44afc4137757557e469efe77c3eac28d1756a", "actual_archived_factory": true, "previous_quality_trials_replayed": false}; [report](../results/2026-10-24/ZIP-CONTROL-regression-inner-torch-v1/report.md). Не повторять.

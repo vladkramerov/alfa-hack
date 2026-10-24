@@ -1,0 +1,63 @@
+[
+  {
+    "recipe": {
+      "strategy": "unlabeled_cohort_expected_macro_decision",
+      "version": 1,
+      "iterations": 25,
+      "damping": 0.5,
+      "epsilon": 1e-08,
+      "calibration_state": {
+        "theta": [
+          -0.35285576319645306,
+          0.18355322290723847,
+          0.1876252727305554,
+          -0.21555622535171454,
+          -0.3695660836485733,
+          0.01620066101520792,
+          0.10839999217336051,
+          0.0483382667457046,
+          0.08034392951069085,
+          -0.04007101646191473,
+          0.0007319803794496217
+        ]
+      },
+      "query_labels_used": false,
+      "query_prior": "mean_calibrated_query_posterior",
+      "batch_invariant": false,
+      "query_statistics": true,
+      "initialization": "teacher_argmax",
+      "selection": "best_query_expected_objective",
+      "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "55d78eb7e9eaa3cdaa3ccdb5d48e93a7bc8d4bfeb8006013bc352ca781977908",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:20:20.307016+03:00",
+    "ledger_sha256": "0743f45d198e3038e7609b32ab9c3bf19a19100d6c6cd24b8ed93ff0a5f33b18",
+    "hypothesis": "HYP-087",
+    "metric": "macro_f1",
+    "score": 0.6254419869564557,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.06487561285240774,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 10.062999999994645,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T02:20:20.787439+03:00"
+  }
+]

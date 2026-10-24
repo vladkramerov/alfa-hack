@@ -1,0 +1,82 @@
+{
+  "hypothesis": "HYP-084",
+  "strategy": "hierarchical_signature_posterior_pooling",
+  "version": 1,
+  "signature_fields": [
+    "proto",
+    "service",
+    "state",
+    "sttl",
+    "dttl",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes"
+  ],
+  "levels": [
+    [
+      "proto",
+      "service",
+      "state"
+    ],
+    [
+      "proto",
+      "service",
+      "state",
+      "sttl",
+      "dttl"
+    ],
+    [
+      "proto",
+      "service",
+      "state",
+      "sttl",
+      "dttl",
+      "spkts",
+      "dpkts"
+    ],
+    [
+      "proto",
+      "service",
+      "state",
+      "sttl",
+      "dttl",
+      "spkts",
+      "dpkts",
+      "sbytes",
+      "dbytes"
+    ]
+  ],
+  "categorical": "exact_tagged_tuple",
+  "ttl_bins": "floor(value/32)",
+  "packet_and_byte_bins": "floor(log2(1+value))",
+  "numeric_missing": "nonfinite_or_nonnumeric_distinct_from_zero",
+  "numeric_negative": "distinct_invalid_token",
+  "selection": "most_specific_training_support_at_least_8",
+  "minimum_support": 8,
+  "prior": "unweighted_empirical_training_class_prior",
+  "prior_strength": 20.0,
+  "posterior": "(counts+20*pi)/(n+20)",
+  "alpha": ".5*n/(n+50)",
+  "maximum_alpha": 0.5,
+  "pooling": "(1-alpha)*teacher+alpha*signature_posterior",
+  "unseen_or_unsupported": "unchanged_teacher",
+  "teacher_fit_usage": "validation_only_no_statistics_or_weight_selection",
+  "class_order": "sorted_lexical_training_classes",
+  "query_statistics": false,
+  "id_as_feature": false,
+  "row_deletion": false,
+  "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+  "teacher_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ]
+}

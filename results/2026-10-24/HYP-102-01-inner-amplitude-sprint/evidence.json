@@ -1,0 +1,55 @@
+{
+  "hypothesis": "HYP-102",
+  "stage": "inner",
+  "status": "completed",
+  "started": "2026-10-24T03:06:24.801074+03:00",
+  "configuration": {
+    "strategy": "cached_H91_minus_H69_correction_amplitude",
+    "version": 1,
+    "optimizer": "inner_no_intercept_analytic_least_squares",
+    "amplitude_bounds": [
+      0.0,
+      2.0
+    ],
+    "zero_delta_amplitude": 1.0,
+    "prediction": "max(0,H69+amplitude*(H91-H69))",
+    "incremental_reference": "H91",
+    "primary_reference": "H69",
+    "strict_gain_epsilon": 1e-10
+  },
+  "code_sha256": "84d96df3003b7fe35684e02489be02db5984661b8cb2a5f804623f04eaec2ee6",
+  "helper_source_sha256": {
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8"
+  },
+  "ledger_sha256": "e533ed3b549b9740b930ef5f2a2d0853f48d17ec010ae9e42c59af62049b1b96",
+  "learner_fits": 0,
+  "old_model_refits": 0,
+  "input_sha256": {
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\validation_predictions.npz": "3f5a8b58a26a905dc2864b8ecc5ff81ccd8f48917d60241cbca97f324e4a454b",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\metrics.json": "b2dc36687fd97536eb48a3f634b83c9c6cfee3767a21c4c2d5a1509794ec6282",
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\evidence.json": "720252eccd44cc0b7db5a3301d77504d45522e3af7ae2337697311fa940dfacb",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\splits.npz": "6a1f08073f4fab3bc70181409618f526c62202d34f28e8dc30275567548064c7",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\data.json": "b6088e76a0f4c61f4c8dd82c9736c780b9700354bf46ffaff50cd1aadd8a9dfe",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\teacher-audit.json": "7364b23395768540e1af4ffadbdd5d3e1cce194aad58d0445f0172ba27dad07b"
+  },
+  "data_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+    "task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+  },
+  "split_sha256": {
+    "fit": "02ad24b29ea25d1a288860d3a050c703bd22278c73cca29e2e0d37f5e4ab1673",
+    "valid": "4e51314198fdde569b81da86ed23fa5a945e8fb4bfceeda0556c2065acd99ec0"
+  },
+  "prediction_source_sha256": {
+    "results\\2026-10-24\\HYP-091-01-inner-multiblend-sprint\\validation_predictions.npz": "3f5a8b58a26a905dc2864b8ecc5ff81ccd8f48917d60241cbca97f324e4a454b",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\splits.npz": "6a1f08073f4fab3bc70181409618f526c62202d34f28e8dc30275567548064c7"
+  },
+  "finished": "2026-10-24T03:06:24.900525+03:00",
+  "amplitude": 1.1289189550164425,
+  "output_prediction_sha256": "8d200d61fcffa5cab3e0da411de8d6d1617d509172b34eb756de9f56fa6d623d"
+}

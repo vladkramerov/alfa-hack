@@ -1,0 +1,9 @@
+Looking in indexes: https://download.pytorch.org/whl/cpu
+ERROR: Could not find a version that satisfies the requirement torch==2.5.1 (from versions: none)
+ERROR: No matching distribution found for torch==2.5.1
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{813f2e00-ea1f-4dc4-8a43-d291b1340779}\AC\Temp\pip-build-tracker-o9deapuu'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{813f2e00-ea1f-4dc4-8a43-d291b1340779}\AC\Temp\pip-ephem-wheel-cache-rve1rohy'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\User\AppData\Local\Packages\sandbox.{813f2e00-ea1f-4dc4-8a43-d291b1340779}\AC\Temp\pip-install-4g2z0tev'.
+You can safely remove it manually.

@@ -1,0 +1,22 @@
+# H79 inner new temporal combination
+
+{
+  "status": "completed",
+  "hypothesis": "HYP-079",
+  "stage": "inner",
+  "metric": "rmse",
+  "score": 30.663255379972725,
+  "reference_score": 30.663255379972725,
+  "weight_h70": 1.0,
+  "weight_h76": 0.0,
+  "eligible_for_outer": false,
+  "old_model_refits": 0,
+  "source_prediction_hashes": {
+    "results/2026-10-24/HYP-070-03-inner-high-sprint": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results/2026-10-24/HYP-076-01-inner-default-sprint": "c83cf214e5929456275a9259c5004600a71173e4175a03f98a3daf512adadcc1"
+  },
+  "fingerprint": "cb744a383816b403006e4cea991383ea2869e2fad8cddc6b0e515bf5aac1cc21",
+  "finished": "2026-10-24T02:06:29.720330+03:00"
+}
+
+Only inner Year4 used to select weight; outer scores not used. No old learner refits.

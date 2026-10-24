@@ -1,0 +1,12 @@
+{
+  "status": "started",
+  "started": "2026-10-24T14:26:41.507192+03:00",
+  "role": "explicit_previous_zip_control",
+  "ledger_sha256": "566f16282186fc2b59da10d7c104d502ac569b29d91dd98d7c34c0d586adfaf5",
+  "rows": 22054,
+  "candidate": {
+    "family": "extra_trees",
+    "strategy": "sergey_ivan_fusion",
+    "parameters": {}
+  }
+}

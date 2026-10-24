@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "kind": "regression",
+      "stage": "inner",
+      "score": 30.285884162436915,
+      "pure_score": 51.908456385388476,
+      "source_sha": true,
+      "input_sha": true,
+      "split": true,
+      "target_alignment": true,
+      "prediction_replay": true,
+      "metric_replay": true,
+      "no_leakage": true,
+      "frozen_weight": true
+    },
+    {
+      "kind": "classification",
+      "stage": "inner",
+      "score": 0.628945309907142,
+      "pure_score": 0.516402108331563,
+      "source_sha": true,
+      "input_sha": true,
+      "split": true,
+      "target_alignment": true,
+      "prediction_replay": true,
+      "metric_replay": true,
+      "no_leakage": true,
+      "frozen_weight": true
+    },
+    {
+      "kind": "regression",
+      "stage": "outer",
+      "score": 33.97984036360298,
+      "pure_score": 51.85189626940788,
+      "source_sha": true,
+      "input_sha": true,
+      "split": true,
+      "target_alignment": true,
+      "prediction_replay": true,
+      "metric_replay": true,
+      "no_leakage": true,
+      "frozen_weight": true
+    },
+    {
+      "kind": "classification",
+      "stage": "outer",
+      "score": 0.6602795926985132,
+      "pure_score": 0.5099944452622676,
+      "source_sha": true,
+      "input_sha": true,
+      "split": true,
+      "target_alignment": true,
+      "prediction_replay": true,
+      "metric_replay": true,
+      "no_leakage": true,
+      "frozen_weight": true
+    }
+  ],
+  "unique_new_learner_fits": 4,
+  "old_model_refits": 0,
+  "verification_model_fits": 0
+}

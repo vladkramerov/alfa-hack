@@ -1,0 +1,39 @@
+{
+  "hypothesis": "HYP-090",
+  "strategy": "observable_missing_rating_expert",
+  "version": 1,
+  "family": "catboost",
+  "parameters": {
+    "iterations": 800,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 20.0,
+    "loss_function": "RMSE",
+    "random_seed": 42,
+    "thread_count": 2,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "feature_numbers": [
+    29,
+    30,
+    31
+  ],
+  "feature_statistics_source": "missing_rating_train_subset_only",
+  "target_transform": "none",
+  "loss": "original_scale_squared_error",
+  "gate": "nonfinite_numeric_energy_star_rating_including_coercion_failure",
+  "zero_rating": "observed",
+  "minimum_training_missing_rows": 300,
+  "expert_weight": 0.7,
+  "base_weight": 0.3,
+  "known_rating_or_insufficient_support": "supplied_H70_unchanged",
+  "negative_expert_prediction": "clip_zero_before_blend",
+  "preprocessing": "numeric_inf_to_nan_native_tagged_categories",
+  "base_refit": false,
+  "query_statistics": false,
+  "target_outlier_deletion": false,
+  "selection": "fixed_all_rounds_no_validation_earlystop",
+  "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+  "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+}

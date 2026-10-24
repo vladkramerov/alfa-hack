@@ -1,0 +1,11 @@
+{
+  "created": "2026-10-24T12:45:29.216197+03:00",
+  "sources": {
+    "external_multilag.py": "5d56c27a5da0857c5470143f2da383a6ab6c147e9936a60292a4c1e62bf55f77",
+    "research_memory.py": "03fc4b51d24971c76d96b8e2bd74193f1f2c54e1d91c6aff3260f7d2ae9499f8",
+    "experiments/external_ideas_run.py": "74fef1a4ab31332c277e0177eeb4e3ad083ca7467943b6565a941de9f57a660e",
+    "external_key.py": "5346bf800d82220284afd158dd9bbe49968366d1e39d1d100c03fe4cecb56135"
+  },
+  "spec": "SPEC013",
+  "hypothesis": "HYP-106"
+}

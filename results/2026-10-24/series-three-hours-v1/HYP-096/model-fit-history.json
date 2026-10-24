@@ -1,0 +1,64 @@
+[
+  {
+    "recipe": {
+      "strategy": "proper_posterior_expected_macro_decision",
+      "version": 1,
+      "calibration": "unweighted_ce_scalar_temperature_and_class_bias",
+      "penalty": 0.01,
+      "iterations": 100,
+      "log_temperature_bounds": [
+        -2.3,
+        2.3
+      ],
+      "bias_bounds": [
+        -5.0,
+        5.0
+      ],
+      "probability_clip": 1e-06,
+      "decision": {
+        "family": "affine_macro_f1_decision",
+        "iterations": 25,
+        "damping": 0.5,
+        "epsilon": 1e-08,
+        "objective": "mean(2*t/(training_prior+predicted_mass+epsilon))",
+        "selection": "best_expected_training_objective_on_fixed_path",
+        "initialization": "gain1_offset0_teacher_argmax",
+        "prior_correction": "none",
+        "teacher_columns": "sorted_training_classes",
+        "query_statistics": false,
+        "output": "softmax_affine_scores_not_calibrated"
+      },
+      "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "c4a7aa72fb8c655108fea78126511da6838e2fc43780ea6d8fb3ab0808eb8db0",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:40:17.972465+03:00",
+    "ledger_sha256": "071ebba994a39a574bcc683c8614465bff11696698bf7de15162b36b06f39613",
+    "hypothesis": "HYP-096",
+    "metric": "macro_f1",
+    "score": 0.6291379699977411,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.0711683822670951,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 17.469000000011874,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T02:40:18.698125+03:00"
+  }
+]

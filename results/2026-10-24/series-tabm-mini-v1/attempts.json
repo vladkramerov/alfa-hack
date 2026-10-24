@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "regression",
+    "stage": "inner",
+    "status": "completed",
+    "started": "2026-10-24T14:08:27.924466+03:00",
+    "directory": "results\\2026-10-24\\HYP-108-01-regression-inner-tabm-mini",
+    "ledger_sha256": "15edaa3adc8b86ca0820a5b8e2e07108b3b8694af7efe653aab4794129453e60",
+    "seconds": 23.64000000001397,
+    "finished": "2026-10-24T14:08:51.592878+03:00"
+  },
+  {
+    "kind": "classification",
+    "stage": "inner",
+    "status": "completed",
+    "started": "2026-10-24T14:08:53.745712+03:00",
+    "directory": "results\\2026-10-24\\HYP-108-02-classification-inner-tabm-mini",
+    "ledger_sha256": "d9b628d88d4b6aaab0f5fe4a192cbfca8517bfa8c7af5200f9f997a8e79d2b30",
+    "seconds": 114.70300000000861,
+    "finished": "2026-10-24T14:10:48.454893+03:00"
+  },
+  {
+    "kind": "regression",
+    "stage": "outer",
+    "status": "completed",
+    "started": "2026-10-24T14:11:17.091036+03:00",
+    "directory": "results\\2026-10-24\\HYP-108-03-regression-outer-tabm-mini",
+    "ledger_sha256": "14974fb000b162fde1233e285e98461e60e609b3ca71b7fd9759071469cd3535",
+    "seconds": 31.328000000008615,
+    "finished": "2026-10-24T14:11:48.427017+03:00"
+  },
+  {
+    "kind": "classification",
+    "stage": "outer",
+    "status": "completed",
+    "started": "2026-10-24T14:11:57.474277+03:00",
+    "directory": "results\\2026-10-24\\HYP-108-04-classification-outer-tabm-mini",
+    "ledger_sha256": "7fd03919ca0662df673d4ea3d16c4d8a6da9b8f822da1be70a69afbaf60d61a8",
+    "seconds": 182.64100000000326,
+    "finished": "2026-10-24T14:15:00.122709+03:00"
+  }
+]

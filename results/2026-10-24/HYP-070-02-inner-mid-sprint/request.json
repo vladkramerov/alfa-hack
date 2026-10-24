@@ -1,0 +1,10 @@
+{
+  "number": 70,
+  "stage": "inner",
+  "parameters": {
+    "alpha": 0.8
+  },
+  "repo_root": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-070-02-inner-mid-sprint",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-three-hours-v1\\HYP-070\\model-fit-history.json"
+}

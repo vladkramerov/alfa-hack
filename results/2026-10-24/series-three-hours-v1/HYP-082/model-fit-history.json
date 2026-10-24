@@ -1,0 +1,111 @@
+[
+  {
+    "recipe": {
+      "family": "network_semantic_contextual_catboost",
+      "version": 1,
+      "representation": {
+        "version": 1,
+        "drop_columns": [
+          "stcpb",
+          "dtcpb"
+        ],
+        "ttl_columns": [
+          "sttl",
+          "dttl"
+        ],
+        "ttl_initial_buckets": [
+          32,
+          64,
+          128,
+          255
+        ],
+        "ttl_initial_rule": "least_bucket_greater_or_equal_to_observed",
+        "ttl_valid_range": [
+          1,
+          255
+        ],
+        "ttl_invalid_and_zero_derived": "missing_raw_retained",
+        "hop_fraction": "(initial-observed)/initial",
+        "directional_pairs": [
+          [
+            "spkts",
+            "dpkts"
+          ],
+          [
+            "sbytes",
+            "dbytes"
+          ],
+          [
+            "sload",
+            "dload"
+          ]
+        ],
+        "directional_formula": "(source-destination)/(abs(source)+abs(destination)+1)",
+        "loss_fractions": [
+          "sloss/(spkts+1)",
+          "dloss/(dpkts+1)"
+        ],
+        "rtt_residual": "tcprtt-(synack+ackdat)",
+        "numeric_infinity": "missing",
+        "zero_indicators": false,
+        "scaling": "none",
+        "learned_statistics": false,
+        "query_cohort_statistics": false
+      },
+      "learner": {
+        "family": "contextual_catboost_teacher_residual",
+        "parameters": {
+          "iterations": 400,
+          "depth": 5,
+          "learning_rate": 0.05,
+          "l2_leaf_reg": 10,
+          "loss_function": "MultiClass",
+          "allow_writing_files": false,
+          "boost_from_average": false
+        },
+        "features": "raw_X_plus_K_teacher_logp",
+        "teacher": "caller_supplied_sorted_classes_normalize_clip1e-6",
+        "training_baseline": "log_teacher_probability",
+        "inference": "softmax(tree_RawFormulaVal_plus_query_log_teacher)",
+        "class_weight": "inverse_sqrt_class_count_mean_one",
+        "preprocessing": "numeric_inf_to_nan_categorical_tagged_strings",
+        "teacher_provenance": "caller_responsibility_no_teacher_fit_or_cache_loading"
+      },
+      "teacher_source": "caller_supplied_provenance",
+      "query_statistics": false,
+      "row_deletion": false,
+      "parameters_selected_from_validation": false,
+      "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "f11559c1d6f7f91685b7bbd74c355205345be80ca30b589927f1efb8fab7438d",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:15:25.284533+03:00",
+    "ledger_sha256": "004c69d1b8829e3cdaed933e9b301a4b4c7fe1f49ec3a3bb7984c5eb76a39c89",
+    "hypothesis": "HYP-082",
+    "metric": "macro_f1",
+    "score": 0.6150544797423486,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.047189874860210555,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 212.26500000001397,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T02:18:48.544982+03:00"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "strategy": "original_loss_temporal_ratio",
+  "version": 1,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "donor": "latest_strictly_past",
+  "training_pairs": "adjacent_strictly_past",
+  "rating_score": "inverse_normal_clipped_005_995",
+  "model": "increasing_isotonic_delta_rating_score_to_consumption_ratio",
+  "target": "current_y/donor_y_unclipped",
+  "sample_weight": "donor_y_squared",
+  "loss": "exact_original_unit_squared_error",
+  "out_of_bounds": "clip",
+  "curve_anchor": null,
+  "missing_rating_or_no_curve": "ratio_one",
+  "group_column": "facility_type",
+  "group_minimum_pairs": 100,
+  "group_shrinkage": 200.0,
+  "log_change_cap": 1.5,
+  "ratio_min": 0.22313016014842982,
+  "ratio_max": 4.4816890703380645,
+  "alpha": 0.95,
+  "support_shrinkage": 0.25,
+  "age_decay": 0.25
+}

@@ -1,0 +1,18 @@
+{
+  "started": "2026-10-24T02:06:29.701149+03:00",
+  "status": "started",
+  "configuration": {
+    "strategy": "H70_H76_convex_temporal_combination",
+    "selection": "analytic_least_squares_inner_only",
+    "sources": [
+      "results/2026-10-24/HYP-070-03-inner-high-sprint",
+      "results/2026-10-24/HYP-076-01-inner-default-sprint"
+    ]
+  },
+  "source_prediction_hashes": {
+    "results/2026-10-24/HYP-070-03-inner-high-sprint": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results/2026-10-24/HYP-076-01-inner-default-sprint": "c83cf214e5929456275a9259c5004600a71173e4175a03f98a3daf512adadcc1"
+  },
+  "ledger_sha256": "0932dbe19bfc6a71be60dae2fccf98c3f17f02c66ffad3bda6eaf9999f29bdc8",
+  "code_sha256": "4183456cfc334da22df80a6ba4f139662968374dee1fe3f4a25e570d9436513c"
+}

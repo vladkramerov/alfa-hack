@@ -1,0 +1,57 @@
+[
+  {
+    "recipe": {
+      "strategy": "observable_missing_rating_expert",
+      "version": 1,
+      "family": "catboost",
+      "parameters": {
+        "iterations": 800,
+        "depth": 6,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 20.0,
+        "loss_function": "RMSE",
+        "allow_writing_files": false
+      },
+      "feature_numbers": [
+        29,
+        30,
+        31
+      ],
+      "feature_statistics_source": "missing_rating_train_subset_only",
+      "target_transform": "none",
+      "loss": "original_scale_squared_error",
+      "gate": "nonfinite_numeric_energy_star_rating_including_coercion_failure",
+      "zero_rating": "observed",
+      "minimum_training_missing_rows": 300,
+      "expert_weight": 0.7,
+      "base_weight": 0.3,
+      "known_rating_or_insufficient_support": "supplied_H70_unchanged",
+      "negative_expert_prediction": "clip_zero_before_blend",
+      "preprocessing": "numeric_inf_to_nan_native_tagged_categories",
+      "base_refit": false,
+      "query_statistics": false,
+      "target_outlier_deletion": false,
+      "selection": "fixed_all_rounds_no_validation_earlystop",
+      "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+      "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "6ab7b45de59aedd77549fd8813c12779d4d0ef5460e609679e47f0e47594d59c",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:29:12.568741+03:00",
+    "ledger_sha256": "acb2edd214e3b3970ef525703e9939c8992679561bdb6b9529565e6955baf3e6",
+    "hypothesis": "HYP-090",
+    "metric": "rmse",
+    "score": 34.86994782367874,
+    "reference_score": 42.46005247026025,
+    "relative_gain": 0.1787587203736441,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 15.312000000005355,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T02:29:24.887934+03:00"
+  }
+]

@@ -1,0 +1,7 @@
+{
+ "selected":"HYP-083",
+ "selection":"minimum_inner_RMSE_before_H83_outer_score",
+ "candidates":{"HYP-070":30.663255379972725,"HYP-076":32.91081846583218,"HYP-081":30.689409165993794,"HYP-083":30.651578052812432,"HYP-085":46.02178005161315,"HYP-086":31.12117379943106},
+ "outer_is_reused_exploratory":true,
+ "H89_not_implemented_or_scored_at_selection":true
+}

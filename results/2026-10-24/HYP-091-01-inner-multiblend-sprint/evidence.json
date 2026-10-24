@@ -1,0 +1,24 @@
+{
+  "status": "started",
+  "started": "2026-10-24T02:26:29.443405+03:00",
+  "configuration": {
+    "strategy": "new_temporal_transport_conditional_uncertainty_pool",
+    "components": [
+      "H70",
+      "H83",
+      "H85"
+    ],
+    "optimizer": "inner_only_SLSQP_original_MSE_simplex",
+    "maxiter": 200,
+    "ftol": 1e-12,
+    "weight_pruning": 1e-08
+  },
+  "stage": "inner",
+  "source_sha256": {
+    "results\\2026-10-24\\HYP-070-03-inner-high-sprint\\validation_predictions.npz": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+    "results\\2026-10-24\\HYP-083-01-inner-default-sprint\\validation_predictions.npz": "1d49466421d974be3d159a815016ef27f68f6e71cae781b1a560ea7f5d94bdd5",
+    "results\\2026-10-24\\HYP-085-01-inner-default-sprint\\validation_predictions.npz": "1d7b7318e78c38ac5da3332fe099198292837c0883f5e57538fb29b4b4d07aad"
+  },
+  "code_sha256": "816a2fb6fac455416f37d4b4c7e990130d9561f1621efe2bc7835cee4a2032c4",
+  "ledger_sha256": "cb9de402a1a67d31e7844aff10d37ce8524a198c02515764b7782512467170c8"
+}

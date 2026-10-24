@@ -1,0 +1,47 @@
+[
+  {
+    "recipe": {
+      "family": "teacher_residual_numpy_mlp",
+      "hidden_size": 128,
+      "epochs": 40,
+      "learning_rate": 0.003,
+      "l2": 0.0001,
+      "objective": "0.5meanCE+0.5(1-softmacroF1)",
+      "full_batch": true,
+      "last_layer_initialization": "zero",
+      "preprocessing": "fitmedian_log1pnonnegative_standardize_clip8_OHE",
+      "teacher_columns": "sorted_training_classes",
+      "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "a6401a74a42aeaf46b581d6afe0ce6895e6e93f67dd213e7d74a972c5cc86f81",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T01:53:44.496932+03:00",
+    "ledger_sha256": "2e3b861a88f1b15e0415069967cb1668f73cda6baf11445b715cac8c5c916dc5",
+    "hypothesis": "HYP-072",
+    "metric": "macro_f1",
+    "score": 0.6090378831239697,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.03694603587130676,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 12.71899999998277,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T01:53:49.360047+03:00"
+  }
+]

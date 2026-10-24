@@ -1,0 +1,59 @@
+[
+  {
+    "recipe": {
+      "family": "ordered_honest_oof_contextual_catboost",
+      "parameters": {
+        "iterations": 400,
+        "depth": 5,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 10,
+        "loss_function": "MultiClass",
+        "allow_writing_files": false,
+        "boost_from_average": false,
+        "boosting_type": "Ordered"
+      },
+      "features": "raw_X_plus_K_teacher_logp",
+      "teacher": "caller_supplied_sorted_classes_normalize_clip1e-6",
+      "training_baseline": "log_teacher_probability",
+      "inference": "softmax(tree_RawFormulaVal_plus_query_log_teacher)",
+      "class_weight": "inverse_sqrt_class_count_mean_one",
+      "preprocessing": "numeric_inf_to_nan_categorical_tagged_strings",
+      "teacher_provenance": "caller_must_verify_grouped_oof_and_exact_global_positions",
+      "training_teacher": "H88_reused_true_grouped_raw_OOF",
+      "query_teacher": "held_out_raw_xgboost",
+      "H48_meta_state_used": false,
+      "change_from_H88": "only_boosting_type_Ordered",
+      "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "4a961f5838e609ea85d62797cb8fc019c21e037a1d3a8e9ce92064e264554298",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T03:02:58.224776+03:00",
+    "ledger_sha256": "b4c2e98b67e6e09fba29300ba7b7b19e3b3036f40ca47b9a0303c38b9bf8e292",
+    "hypothesis": "HYP-103",
+    "metric": "macro_f1",
+    "score": 0.597392348204526,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.017118383758145946,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 610.2810000000172,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T03:12:54.024007+03:00"
+  }
+]

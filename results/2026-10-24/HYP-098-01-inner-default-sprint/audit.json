@@ -1,0 +1,259 @@
+{
+  "fit_rows": 47075,
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "class_counts": [
+    521,
+    478,
+    3342,
+    8864,
+    4888,
+    10877,
+    14928,
+    2858,
+    285,
+    34
+  ],
+  "offset": [
+    0.2372767148775825,
+    0.1438291076313961,
+    0.14801690043337573,
+    -0.13080755872934127,
+    -0.05797780437095207,
+    0.26982891683572807,
+    -0.243577898665403,
+    -0.23127511879418966,
+    0.23630244440951462,
+    0.13815530247390645
+  ],
+  "class_visit_order": [
+    "Worms",
+    "Shellcode",
+    "Backdoor",
+    "Analysis",
+    "Reconnaissance",
+    "DoS",
+    "Fuzzers",
+    "Exploits",
+    "Generic",
+    "Normal"
+  ],
+  "objective": "actual_training_labels_macro_f1",
+  "initial_training_macro_f1": 0.5978892788435359,
+  "selected_training_macro_f1": 0.631373796567271,
+  "training_macro_f1_history": [
+    0.5978892788435359,
+    0.6006503329505225,
+    0.6015645162846558,
+    0.6030713186318539,
+    0.606717196149529,
+    0.6068948071112575,
+    0.6246263191037142,
+    0.6252851132338748,
+    0.6259866083790038,
+    0.6260360135069287,
+    0.6293183957787785,
+    0.6295051869202373,
+    0.6298023623384897,
+    0.6299138046180647,
+    0.6300792223638078,
+    0.6303030902002564,
+    0.6304386446194193,
+    0.6310787304612846,
+    0.631373796567271
+  ],
+  "accepted_steps": [
+    {
+      "pass": 1,
+      "class": "Worms",
+      "offset": 0.13815530247390645,
+      "score": 0.6006503329505225,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Shellcode",
+      "offset": 0.2365961201097906,
+      "score": 0.6015645162846558,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Backdoor",
+      "offset": 0.13654338162879603,
+      "score": 0.6030713186318539,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Analysis",
+      "offset": 0.2412099501725013,
+      "score": 0.606717196149529,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Reconnaissance",
+      "offset": -0.1676834967458312,
+      "score": 0.6068948071112575,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "DoS",
+      "offset": 0.14801690043337573,
+      "score": 0.6246263191037142,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Fuzzers",
+      "offset": 0.05558306094828591,
+      "score": 0.6252851132338748,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Exploits",
+      "offset": -0.13080755872934127,
+      "score": 0.6259866083790038,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Generic",
+      "offset": 0.20279036453561156,
+      "score": 0.6260360135069287,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 1,
+      "class": "Normal",
+      "offset": -0.17381114829689026,
+      "score": 0.6293183957787785,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Shellcode",
+      "offset": 0.23630244440951462,
+      "score": 0.6295051869202373,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Backdoor",
+      "offset": 0.1438291076313961,
+      "score": 0.6298023623384897,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Analysis",
+      "offset": 0.2372767148775825,
+      "score": 0.6299138046180647,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Reconnaissance",
+      "offset": -0.15587029782197961,
+      "score": 0.6300792223638078,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Fuzzers",
+      "offset": -0.05797780437095207,
+      "score": 0.6303030902002564,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Generic",
+      "offset": 0.26982891683572807,
+      "score": 0.6304386446194193,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 2,
+      "class": "Normal",
+      "offset": -0.243577898665403,
+      "score": 0.6310787304612846,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    },
+    {
+      "pass": 3,
+      "class": "Reconnaissance",
+      "offset": -0.23127511879418966,
+      "score": 0.631373796567271,
+      "improved": true,
+      "candidate_intervals": 28590,
+      "float_ambiguous_rejected": 0
+    }
+  ],
+  "passes_completed": 3,
+  "query_statistics": false,
+  "training_macro_f1_is_independent_evaluation": false,
+  "configuration": {
+    "hypothesis": "HYP-098",
+    "strategy": "exact_empirical_macro_f1_probability_offsets",
+    "version": 1,
+    "passes": 3,
+    "class_order": "ascending_training_count_then_sorted_class_index",
+    "initialization": "zero_offsets",
+    "objective": "actual_training_labels_macro_f1",
+    "coordinate_search": "exact_between_distinct_margin_groups_plus_outside_endpoints",
+    "strict_improvement_tolerance": 1e-12,
+    "float_ambiguous_candidates": "reject",
+    "training_teacher": "reused_H88_grouped_oof_RAW",
+    "outer_teacher": "original_grouped_oof_RAW_with_H11_query",
+    "H48_meta_state_used": false,
+    "query_statistics": false,
+    "output": "softmax(probability_plus_frozen_offset)_not_calibrated"
+  }
+}

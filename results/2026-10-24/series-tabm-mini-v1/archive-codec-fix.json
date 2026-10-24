@@ -1,0 +1,16 @@
+[
+  {
+    "run": "results\\2026-10-24\\HYP-108-02-classification-inner-tabm-mini",
+    "original_sha256": "bfb264eca62b1bc81bf00955c6cf7f2daa21890b46069844982c06c21deff811",
+    "portable_sha256": "cb99cc097242e894d7c0060d87fa01f92097d5d47d8ab49ac8f3dde94285227d",
+    "all_values_unchanged": true,
+    "new_model_fits": 0
+  },
+  {
+    "run": "results\\2026-10-24\\HYP-108-04-classification-outer-tabm-mini",
+    "original_sha256": "f22a06ac7ecaf1dffc7457461865c5fc350914bc92c7cfa781954e9d8781f3b5",
+    "portable_sha256": "d030f3abe1d03a344a574c2a7c3af7da48e42612f469e58e34d7331715b13946",
+    "all_values_unchanged": true,
+    "new_model_fits": 0
+  }
+]

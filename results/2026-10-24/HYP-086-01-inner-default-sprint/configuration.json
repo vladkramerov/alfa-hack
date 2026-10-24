@@ -1,0 +1,31 @@
+{
+  "strategy": "rating_normalized_state_space_history",
+  "version": 1,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "state": "log_y_minus_frozen_facility_beta_times_rating_score",
+  "transition": "Gaussian_local_level_random_walk",
+  "process_variance": 0.01,
+  "measurement_variance": 0.04,
+  "variance_estimation": "none_fixed_Q_R",
+  "initial_state": "first_usable_z_P_equals_R",
+  "observations": "strictly_past_positive_y_finite_rating",
+  "rating_score": "inverse_normal_clipped_005_995",
+  "transport": "caller_frozen_h70_beta_no_refit",
+  "beta_cap": 2.0,
+  "query_mean": "exp(mu+beta*q+.5*(P+Q*age+R))",
+  "missing_query_rating": "leave_compatible_H70_baseline_unchanged",
+  "no_eligible_history": "leave_baseline_unchanged",
+  "alpha": 0.95,
+  "support_shrinkage": 0.25,
+  "age_decay": 0.25,
+  "support": "count_usable_filtered_observations",
+  "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+  "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+}

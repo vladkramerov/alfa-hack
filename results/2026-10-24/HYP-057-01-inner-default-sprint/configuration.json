@@ -1,0 +1,49 @@
+{
+  "hypothesis": "HYP-057",
+  "strategy": "monotone_known_rating_unmatched_expert",
+  "version": 1,
+  "family": "lightgbm",
+  "parameters": {
+    "n_estimators": 700,
+    "learning_rate": 0.04,
+    "num_leaves": 31,
+    "min_child_samples": 40,
+    "reg_lambda": 10.0,
+    "objective": "regression",
+    "monotone_constraints_method": "basic",
+    "random_state": 42,
+    "n_jobs": 2,
+    "verbosity": -1
+  },
+  "feature_numbers": [
+    29,
+    30
+  ],
+  "feature_statistics_source": "known_rating_train_subset_only",
+  "encoder": "native_categorical_no_scale",
+  "constraint_rule": "raw_energy_star_rating_minus_one_all_other_encoded_features_zero",
+  "monotone_semantics": "research_assumption_not_established_causal_law",
+  "monotonicity_scope": "expert_with_other_features_fixed_not_arbitrary_H70_blend",
+  "target_transform": "none",
+  "loss": "original_scale_squared_error",
+  "minimum_training_known_rows": 300,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "query_gate": "finite_rating_and_no_unambiguous_strictly_past_H70_profile",
+  "zero_rating": "observed",
+  "expert_weight": 0.7,
+  "base_weight": 0.3,
+  "negative_expert_prediction": "clip_zero_before_blend",
+  "base_refit": false,
+  "query_statistics": false,
+  "target_outlier_deletion": false,
+  "selection": "fixed_all_rounds_no_validation_earlystop",
+  "transport_state_sha256": "ee6fd74444dc083ca4fb746f74d69da396cde59e5458bc9e83eaa7dd5f5df523",
+  "inherited_prediction_sha256": "9720246ab029e2674ded2be15fe439a9e04d81b37a8851cc6e0f375f27e08979"
+}

@@ -1,0 +1,21 @@
+{
+  "scientific_replay": "4/4 PASS",
+  "new_tests_passed": 7,
+  "suite_tests": 575,
+  "suite_errors": [
+    "ERROR: test_existing_pair_never_changes (test_report_sprint.ReportPublicationTests.test_existing_pair_never_changes)",
+    "ERROR: test_second_create_failure_cleans_outputs_and_allows_retry (test_report_sprint.ReportPublicationTests.test_second_create_failure_cleans_outputs_and_allows_retry)",
+    "ERROR: test_second_publish_collision_preserves_existing_file_and_rolls_back_own (test_report_sprint.ReportPublicationTests.test_second_publish_collision_preserves_existing_file_and_rolls_back_own)",
+    "ERROR: test_second_write_failure_closes_fds_cleans_outputs_and_allows_retry (test_report_sprint.ReportPublicationTests.test_second_write_failure_closes_fds_cleans_outputs_and_allows_retry)",
+    "ERROR: test_success_only_publishes_complete_files (test_report_sprint.ReportPublicationTests.test_success_only_publishes_complete_files)"
+  ],
+  "protected_file_sha256": {
+    "solution.py": "2db97fff4e128197d663259e1eb16aa289b2d959789790e99fbd713e1d1436f5",
+    "baseline.json": "1e962d39cc22cbdc193142a4a87713688d003355e9c47237a0b0a83ab101f1e3",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "automl_models.py": "4f51de1694ba4705c6557456f5bbcb8974e9ef79f1bbce1476f3ba11b227d5fb",
+    "automl_llm.py": "b045e5598bdcad98a698b476a26937041457cfd9638b9f14724f2743d7c943b8"
+  },
+  "new_fits": 4,
+  "old_refits": 0
+}

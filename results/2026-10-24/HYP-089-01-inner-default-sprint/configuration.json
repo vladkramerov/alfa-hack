@@ -1,0 +1,42 @@
+{
+  "strategy": "within_entity_difference_ridge",
+  "version": 1,
+  "link_fields": [
+    "State_Factor",
+    "building_class",
+    "facility_type",
+    "floor_area",
+    "year_built"
+  ],
+  "ambiguity": "reject_profile_with_any_same_year_collision",
+  "training_pairs": "adjacent_strictly_past",
+  "donor": "latest_strictly_past",
+  "target": "current_y_minus_donor_y_original_units",
+  "loss": "original_unit_squared_error",
+  "model": "Ridge",
+  "ridge_alpha": 100.0,
+  "solver": "lsqr",
+  "tol": 1e-06,
+  "fit_intercept": true,
+  "numeric_preprocessing": "fit_only_median_then_StandardScaler",
+  "categorical_preprocessing": "fit_only_facility_OneHotEncoder_unknown_ignore",
+  "features": [
+    "donor_y",
+    "age",
+    "donor_y*delta_inverse_normal_rating_score",
+    "donor_rating_missing",
+    "current_rating_missing",
+    "numeric_weather_deltas",
+    "facility_type"
+  ],
+  "weather_columns": "numeric_X_except_link_fields_year_rating_id_target_label",
+  "missing_rating_interaction": 0.0,
+  "current_absolute_X": false,
+  "prediction": "clip(donor_y+predicted_delta,donor_y*exp(-cap),donor_y*exp(cap))",
+  "log_change_cap": 1.5,
+  "minimum_pairs": 32,
+  "alpha": 0.95,
+  "support_shrinkage": 0.25,
+  "age_decay": 0.25,
+  "threads": 4
+}

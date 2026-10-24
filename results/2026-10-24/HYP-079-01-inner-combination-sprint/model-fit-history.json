@@ -1,0 +1,32 @@
+[
+  {
+    "recipe": {
+      "strategy": "H70_H76_convex_temporal_combination",
+      "selection": "analytic_least_squares_inner_only",
+      "sources": [
+        "results/2026-10-24/HYP-070-03-inner-high-sprint",
+        "results/2026-10-24/HYP-076-01-inner-default-sprint"
+      ]
+    },
+    "X_sha256": "f55dedaf4d4a1e2b6c0c2c6558bd95db7e4fac359249b43367b26990996be4e3",
+    "y_sha256": "91ffc09e14d85182f36d7f9a3f86c779a061f06babab387a7b7d92811a151dfe",
+    "fingerprint": "cb744a383816b403006e4cea991383ea2869e2fad8cddc6b0e515bf5aac1cc21",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T02:06:29.717329+03:00",
+    "ledger_sha256": "0932dbe19bfc6a71be60dae2fccf98c3f17f02c66ffad3bda6eaf9999f29bdc8",
+    "hypothesis": "HYP-079",
+    "metric": "rmse",
+    "score": 30.663255379972725,
+    "reference_score": 30.663255379972725,
+    "weight_h70": 1.0,
+    "weight_h76": 0.0,
+    "eligible_for_outer": false,
+    "old_model_refits": 0,
+    "source_prediction_hashes": {
+      "results/2026-10-24/HYP-070-03-inner-high-sprint": "76195cebd5c95d03095ec49b6c2679e4e48fdf6f43c949581516957909f8c372",
+      "results/2026-10-24/HYP-076-01-inner-default-sprint": "c83cf214e5929456275a9259c5004600a71173e4175a03f98a3daf512adadcc1"
+    },
+    "finished": "2026-10-24T02:06:29.722328+03:00"
+  }
+]

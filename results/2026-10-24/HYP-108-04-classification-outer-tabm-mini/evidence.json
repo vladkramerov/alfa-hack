@@ -1,0 +1,8 @@
+{
+  "kind": "classification",
+  "stage": "outer",
+  "status": "started",
+  "started": "2026-10-24T14:11:57.474277+03:00",
+  "directory": "results\\2026-10-24\\HYP-108-04-classification-outer-tabm-mini",
+  "ledger_sha256": "7fd03919ca0662df673d4ea3d16c4d8a6da9b8f822da1be70a69afbaf60d61a8"
+}

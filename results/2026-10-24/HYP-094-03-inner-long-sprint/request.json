@@ -1,0 +1,10 @@
+{
+  "number": 94,
+  "stage": "inner",
+  "parameters": {
+    "epochs": 150
+  },
+  "repo_root": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon",
+  "output": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-094-03-inner-long-sprint",
+  "history": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\series-three-hours-v1\\HYP-094\\model-fit-history.json"
+}

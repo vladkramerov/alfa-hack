@@ -1,0 +1,54 @@
+[
+  {
+    "recipe": {
+      "family": "contextual_catboost_teacher_residual",
+      "parameters": {
+        "iterations": 400,
+        "depth": 5,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 10,
+        "loss_function": "MultiClass",
+        "allow_writing_files": false,
+        "boost_from_average": false
+      },
+      "features": "raw_X_plus_K_teacher_logp",
+      "teacher": "caller_supplied_sorted_classes_normalize_clip1e-6",
+      "training_baseline": "log_teacher_probability",
+      "inference": "softmax(tree_RawFormulaVal_plus_query_log_teacher)",
+      "class_weight": "inverse_sqrt_class_count_mean_one",
+      "preprocessing": "numeric_inf_to_nan_categorical_tagged_strings",
+      "teacher_provenance": "caller_responsibility_no_teacher_fit_or_cache_loading",
+      "teacher_train_sha256": "82af7c34ccc27bc09250dec044219fc03866a4004f83aaf9f88a79478350c5bd",
+      "teacher_classes": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ]
+    },
+    "X_sha256": "51a473ce3a051e1fd1e7d40d21ba7a3e22f2f622004c50f1a6d1cd13263b915c",
+    "y_sha256": "588c2aa155825650095dc532372cca5537eb4ddc183343c169e2137fd7f497df",
+    "fingerprint": "1e68e98bdc28fc4033faee3799e14a66796a9b6cd41c6d22a29b6b311e5fdcd6",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T01:55:31.058208+03:00",
+    "ledger_sha256": "ed90ab330f7715211b1f0b22df3841dc293b08a41caf0f7c9c81f20483059cd9",
+    "hypothesis": "HYP-074",
+    "metric": "macro_f1",
+    "score": 0.6143385510752261,
+    "reference_score": 0.5873380697311004,
+    "relative_gain": 0.045970936902638135,
+    "fit_rows": 47075,
+    "valid_rows": 23454,
+    "seconds": 201.5460000000021,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": false,
+    "finished": "2026-10-24T01:58:43.924231+03:00"
+  }
+]

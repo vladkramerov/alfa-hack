@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "hypothesis": "HYP-094",
+  "stage": "inner",
+  "metric": "macro_f1",
+  "score": 0.6223414898157842,
+  "reference_score": 0.5873380697311004,
+  "relative_gain": 0.05959671590964529,
+  "fit_rows": 47075,
+  "valid_rows": 23454,
+  "fingerprint": "23af11957ae2b86419dca972e6d7b3ac26d7dec0e1d7ffea7ccd7a668f451f6e",
+  "seconds": 33.64100000000326,
+  "old_baseline_refits": 0,
+  "inner_is_full_H48_pipeline_validation": false
+}

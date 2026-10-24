@@ -1,0 +1,19 @@
+{
+  "checked_date_moscow": "2026-10-24",
+  "scope": "tabular classification and regression; literature review, no model fits",
+  "conference_2026_crosscheck": "https://icml.cc/Downloads/2026",
+  "sources": [
+    {"id":"S01","method":"TabICLv2","venue":"ICML 2026","url":"https://arxiv.org/abs/2602.11139v2","code":"https://github.com/soda-inria/tabicl"},
+    {"id":"S02","method":"TabPack","venue":"ICML 2026","url":"https://arxiv.org/abs/2607.05380v1","code":"https://github.com/yandex-research/tabpack"},
+    {"id":"S03","method":"TabM","venue":"ICLR 2025","url":"https://proceedings.iclr.cc/paper_files/paper/2025/file/c1ba41c694834aeef91ae161711d4939-Paper-Conference.pdf","code":"https://github.com/yandex-research/tabm"},
+    {"id":"S04","method":"ModernNCA","venue":"ICLR 2025","url":"https://proceedings.iclr.cc/paper_files/paper/2025/file/ecd294194d5155432aab533f7ce0f6fe-Paper-Conference.pdf","code":"https://github.com/LAMDA-Tabular/TALENT"},
+    {"id":"S05","method":"Mitra","venue":"NeurIPS 2025","url":"https://proceedings.neurips.cc/paper_files/paper/2025/hash/177d68f4adef163b7b123b5c5adb3c60-Abstract-Conference.html"},
+    {"id":"S06","method":"TabDPT","venue":"NeurIPS 2025","url":"https://proceedings.neurips.cc/paper_files/paper/2025/hash/fc0e3f908a2116ba529ad0a1530a3675-Abstract-Conference.html","code":"https://github.com/layer6ai-labs/TabDPT"},
+    {"id":"S07","method":"LimiX-2M","venue":"ICML 2026","url":"https://arxiv.org/abs/2606.04485v2","code":"https://github.com/limix-ldm-ai/LimiX"},
+    {"id":"S08","method":"RFRBoost","venue":"ICML 2025","url":"https://proceedings.mlr.press/v267/zozoulenko25a.html"},
+    {"id":"S09","method":"TabArena and cross-model ensembling","venue":"NeurIPS 2025, Datasets and Benchmarks","url":"https://proceedings.neurips.cc/paper_files/paper/2025/hash/1697e3fb412da11dc9488249f9e7bbc9-Abstract-Datasets_and_Benchmarks_Track.html"},
+    {"id":"S10","method":"Multi-output conformal regression","venue":"ICML 2025","url":"https://proceedings.mlr.press/v267/dheur25a.html"},
+    {"id":"S11","method":"TabICL v1","venue":"ICML 2025","url":"https://proceedings.mlr.press/v267/qu25d.html"},
+    {"id":"S12","method":"TabPFNv2","venue":"Nature 2025, journal not conference","url":"https://www.nature.com/articles/s41586-024-08328-6"}
+  ]
+}

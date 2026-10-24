@@ -1,0 +1,48 @@
+[
+  {
+    "recipe": {
+      "strategy": "rating_normalized_regression",
+      "version": 1,
+      "family": "extra_trees",
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": 24,
+        "min_samples_leaf": 2,
+        "max_features": 0.8
+      },
+      "features": [
+        29,
+        30,
+        31
+      ],
+      "loss": "original_scale_squared_error",
+      "sample_weight": "g_squared",
+      "normalizer": "temporal_past_only_isotonic_hierarchy",
+      "normalizer_minimum_rows": 30,
+      "class_shrinkage": 200.0,
+      "facility_shrinkage": 100.0,
+      "reference_scale": 100.0,
+      "scale_floor": 0.05,
+      "scale_cap": 10.0,
+      "first_year_scale": 1.0
+    },
+    "X_sha256": "1b6158fb5db3f9551b44f2f50dd66069f13faecef185e4db5027a53ebb45c156",
+    "y_sha256": "991d6a0d978ce665dba167ac4861ec515e4222a5aeca618194200185d3db2070",
+    "fingerprint": "956d08a530e7d82ac97dd272ddb2eee45a65792c523a95ab057774412664a128",
+    "status": "completed",
+    "stage": "inner",
+    "started": "2026-10-24T01:54:58.129171+03:00",
+    "ledger_sha256": "98b273567bf7730c429935fa4479b6542a89482a1698a4521a61574e7a04e422",
+    "hypothesis": "HYP-071",
+    "metric": "rmse",
+    "score": 49.19259595219514,
+    "reference_score": 42.46005247026025,
+    "relative_gain": -0.15856182671112992,
+    "fit_rows": 22054,
+    "valid_rows": 12946,
+    "seconds": 16.51600000000326,
+    "old_baseline_refits": 0,
+    "inner_is_full_H48_pipeline_validation": null,
+    "finished": "2026-10-24T01:55:12.080313+03:00"
+  }
+]

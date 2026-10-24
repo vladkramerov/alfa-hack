@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "hypothesis": "HYP-102",
+  "stage": "outer",
+  "metric": "rmse",
+  "score": 34.50690731292415,
+  "reference_score": 39.39219382766771,
+  "H91_reference_score": 34.21382789041039,
+  "amplitude": 1.1289189550164425,
+  "incremental_gain_over_H91": -0.29307942251375607,
+  "eligible_for_outer": false,
+  "learner_fits": 0,
+  "old_model_refits": 0,
+  "parameter_fits": 0,
+  "fingerprint": null,
+  "configuration": {
+    "strategy": "cached_H91_minus_H69_correction_amplitude",
+    "version": 1,
+    "optimizer": "inner_no_intercept_analytic_least_squares",
+    "amplitude_bounds": [
+      0.0,
+      2.0
+    ],
+    "zero_delta_amplitude": 1.0,
+    "prediction": "max(0,H69+amplitude*(H91-H69))",
+    "incremental_reference": "H91",
+    "primary_reference": "H69",
+    "strict_gain_epsilon": 1e-10
+  },
+  "finished": "2026-10-24T03:06:43.689462+03:00"
+}

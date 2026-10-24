@@ -1,0 +1,31 @@
+{
+  "hypothesis": "HYP-105",
+  "strategy": "causal_exact_multilag_native_lgb",
+  "parameters": {
+    "n_estimators": 1200,
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "colsample_bytree": 0.8,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "reg_lambda": 5.0,
+    "objective": "regression",
+    "random_state": 42,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "force_col_wise": true
+  },
+  "target_transform": "none",
+  "lags": [
+    1,
+    2,
+    3
+  ],
+  "history_collision": "reject_whole_profile",
+  "native_nan": true,
+  "changing_columns": "top3_fit_Spearman_rate01_99_min100pairs",
+  "early_stopping": false,
+  "query_statistics": false,
+  "source_idea": "hilhool17bcb1_exactlags_independent_implementation"
+}

@@ -1,0 +1,109 @@
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+C:\Users\User\PycharmProjects\Alpha_Hackathon\.venv-ml\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+{"status": "completed", "metric": "macro_f1", "selected_score": 0.9, "cached_history": false, "seconds": 0.09299999999348074, "submission_rows": 2}
+TabM-mini epoch=10 train_loss=0.6742150 sec=0.1
+TabM-mini epoch=20 train_loss=0.5346717 sec=0.1
+TabM-mini epoch=30 train_loss=0.4049682 sec=0.1
+TabM-mini epoch=40 train_loss=0.2921484 sec=0.1
+TabM-mini epoch=10 train_loss=0.5299115 sec=0.1
+TabM-mini epoch=20 train_loss=0.2563817 sec=0.1
+TabM-mini epoch=30 train_loss=0.1495668 sec=0.1
+TabM-mini epoch=40 train_loss=0.0901361 sec=0.1
+TabM-mini epoch=50 train_loss=0.0664785 sec=0.1
+======================================================================
+ERROR: test_existing_pair_never_changes (test_report_sprint.ReportPublicationTests.test_existing_pair_never_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 113, in test_existing_pair_never_changes
+    self.publish(paths)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 15, in publish
+    helper(paths, ['# Synthetic report\n', json.dumps({'synthetic': True}) + '\n'])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\report_sprint.py", line 213, in publish_pair
+    os.link(temp, path)  # Exclusive creation; never replace an existing path.
+    ^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ╨Ю╤В╨║╨░╨╖╨░╨╜╨╛ ╨▓ ╨┤╨╛╤Б╤В╤Г╨┐╨╡: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpkveurwsu\\.REPORT.md.74lnuaoz.tmp' -> 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpkveurwsu\\REPORT.md'
+
+======================================================================
+ERROR: test_second_create_failure_cleans_outputs_and_allows_retry (test_report_sprint.ReportPublicationTests.test_second_create_failure_cleans_outputs_and_allows_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 42, in test_second_create_failure_cleans_outputs_and_allows_retry
+    self.publish(paths)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 15, in publish
+    helper(paths, ['# Synthetic report\n', json.dumps({'synthetic': True}) + '\n'])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\report_sprint.py", line 213, in publish_pair
+    os.link(temp, path)  # Exclusive creation; never replace an existing path.
+    ^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ╨Ю╤В╨║╨░╨╖╨░╨╜╨╛ ╨▓ ╨┤╨╛╤Б╤В╤Г╨┐╨╡: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpxxgfohuh\\.REPORT.md.byfgtcps.tmp' -> 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpxxgfohuh\\REPORT.md'
+
+======================================================================
+ERROR: test_second_publish_collision_preserves_existing_file_and_rolls_back_own (test_report_sprint.ReportPublicationTests.test_second_publish_collision_preserves_existing_file_and_rolls_back_own)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 105, in test_second_publish_collision_preserves_existing_file_and_rolls_back_own
+    self.publish(paths)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 15, in publish
+    helper(paths, ['# Synthetic report\n', json.dumps({'synthetic': True}) + '\n'])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\report_sprint.py", line 213, in publish_pair
+    os.link(temp, path)  # Exclusive creation; never replace an existing path.
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 101, in collide
+    return original(source, destination)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ╨Ю╤В╨║╨░╨╖╨░╨╜╨╛ ╨▓ ╨┤╨╛╤Б╤В╤Г╨┐╨╡: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmp9do8aner\\.REPORT.md._epkpinl.tmp' -> 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmp9do8aner\\REPORT.md'
+
+======================================================================
+ERROR: test_second_write_failure_closes_fds_cleans_outputs_and_allows_retry (test_report_sprint.ReportPublicationTests.test_second_write_failure_closes_fds_cleans_outputs_and_allows_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 75, in test_second_write_failure_closes_fds_cleans_outputs_and_allows_retry
+    self.publish(paths)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 15, in publish
+    helper(paths, ['# Synthetic report\n', json.dumps({'synthetic': True}) + '\n'])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\report_sprint.py", line 213, in publish_pair
+    os.link(temp, path)  # Exclusive creation; never replace an existing path.
+    ^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ╨Ю╤В╨║╨░╨╖╨░╨╜╨╛ ╨▓ ╨┤╨╛╤Б╤В╤Г╨┐╨╡: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpuplasa9h\\.REPORT.md.oaifg0vb.tmp' -> 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpuplasa9h\\REPORT.md'
+
+======================================================================
+ERROR: test_success_only_publishes_complete_files (test_report_sprint.ReportPublicationTests.test_success_only_publishes_complete_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 89, in test_success_only_publishes_complete_files
+    self.publish(paths)
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 15, in publish
+    helper(paths, ['# Synthetic report\n', json.dumps({'synthetic': True}) + '\n'])
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\experiments\report_sprint.py", line 213, in publish_pair
+    os.link(temp, path)  # Exclusive creation; never replace an existing path.
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\Alpha_Hackathon\tests\test_report_sprint.py", line 86, in inspect_publish
+    return original(source, destination)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ╨Ю╤В╨║╨░╨╖╨░╨╜╨╛ ╨▓ ╨┤╨╛╤Б╤В╤Г╨┐╨╡: 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpnjwkjfdh\\.REPORT.md.8ot67tyl.tmp' -> 'C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\tmp\\tmpnjwkjfdh\\REPORT.md'
+
+----------------------------------------------------------------------
+Ran 575 tests in 28.418s
+
+FAILED (errors=5)

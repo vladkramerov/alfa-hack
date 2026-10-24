@@ -1,0 +1,99 @@
+{
+  "teacher": "raw_xgboost_grouped_oof",
+  "protocol": "H88_honest_raw_context",
+  "stage": "inner",
+  "training_predictions": "grouped_oof_raw_teacher",
+  "independent_training_oof": true,
+  "independent_valid_predictions": true,
+  "H48_meta_state_used": false,
+  "old_model_refits": 0,
+  "comparison_reference_is_separate_from_raw_teacher": true,
+  "raw_component": {
+    "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+    "config": {
+      "policy": "legacy"
+    },
+    "artifacts": [
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz",
+      "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+    ],
+    "fingerprint_includes_raw_X_y_positions": true,
+    "model_fits": 0
+  },
+  "query_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+  "query_artifact_sha256": "ee279231b8e26edc5b9fb3e5040f68af45e46002e5eb041ae6f76fc9feeeb4f4",
+  "fit_positions_sha256": "9c103e8617c52f8bf018490948fa05d4b2d6e6792c3e931056b2324a7363d099",
+  "valid_positions_sha256": "7c27bb3ff7112ea804726aeb0a037a9c456dc8828f5ef0925c3f38bacd7312cb",
+  "new_teacher_fits": 3,
+  "nested_folds": [
+    {
+      "fold": 0,
+      "reused": false,
+      "fit_rows": 31611,
+      "valid_rows": 15464,
+      "started_evidence": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-0.started.json",
+      "outcome": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-0.outcome.json",
+      "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-0.npz",
+      "prediction_sha256": "b6d1e717734585eceb3400400ef73de807a92573c7ab3601adeba936003a5d9f",
+      "raw_groups_disjoint": true
+    },
+    {
+      "fold": 1,
+      "reused": false,
+      "fit_rows": 31897,
+      "valid_rows": 15178,
+      "started_evidence": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-1.started.json",
+      "outcome": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-1.outcome.json",
+      "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-1.npz",
+      "prediction_sha256": "59cb815fc9b9c25f2031148bb60e17bd272a4df9fc8d56372302ee04cf5f3468",
+      "raw_groups_disjoint": true
+    },
+    {
+      "fold": 2,
+      "reused": false,
+      "fit_rows": 30642,
+      "valid_rows": 16433,
+      "started_evidence": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-2.started.json",
+      "outcome": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-2.outcome.json",
+      "artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-24\\HYP-088-01-inner-default-sprint\\honest-raw-oof\\fold-2.npz",
+      "prediction_sha256": "a7506682cefd4cccc4803d5b2272a83fbe3c515873a3a504424e0214076f0c97",
+      "raw_groups_disjoint": true
+    }
+  ],
+  "historical_nested_key": "0820ffb22d47a62430da78db5821e7533c0929e78d0b46cbd2ddba4cd18366a4",
+  "training_oof_rows": 47075,
+  "source_hashes": {
+    "automl_class_combo.py": "a1cc7bf3d4e3caa4775e5e6a4dff03d550a82e88fde21ec2617f83df9ced34f3",
+    "automl_models.py": "377b1f8dcac8e4a12406647372d707d2edda6fe06a9e0391f92ecdd58b9deb65",
+    "automl_combo_memory.py": "4ef6e9beb7cc5d32f5c041dca1fcf4f302e1e9baab9a8de8dbf027e81e75c5ca",
+    "sprint_contextual.py": "c9b23ff85fd48fa8198199b5dbdc628196702242344b8e9ede15582c3a291626",
+    "sprint_honest.py": "2d93d192906211bd3b63f87a78318cbdbcd3ddcacb29870543f3c210d2adbf5e",
+    "sprint_crossfit_cache.py": "656d61fca6d3f8381937585fc4e41dd8baffe547420a8b5a4cff88ff62d4dd0a"
+  },
+  "expected_nested_folds": 3,
+  "model_fits": 3,
+  "teacher_train_sha256": "a8827d2e8a4643b5b24a6876f1a59bb56b5f8df1c772404874bc258c3820a161",
+  "comparison_baseline": "cached_H48_outer_or_RAW_inner",
+  "comparison_baseline_audit": {
+    "teacher": "raw_fold_0",
+    "model_fits": 0,
+    "training_predictions": "in_sample_raw_teacher",
+    "independent_valid_predictions": true,
+    "H48_meta_state_used": false,
+    "model_artifact": "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0-model.joblib",
+    "component": {
+      "key": "ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d",
+      "config": {
+        "policy": "legacy"
+      },
+      "artifacts": [
+        "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-0.npz",
+        "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-1.npz",
+        "C:\\Users\\User\\PycharmProjects\\Alpha_Hackathon\\results\\2026-10-23\\series-twenty-hypotheses-v1\\cache\\ab8b8d7a20e78d6c294210972ef512d75679770e01a62d47f65d949fcdc6a95d\\fold-2.npz"
+      ],
+      "fingerprint_includes_raw_X_y_positions": true,
+      "model_fits": 0
+    }
+  }
+}

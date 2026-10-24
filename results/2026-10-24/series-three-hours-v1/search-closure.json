@@ -1,0 +1,44 @@
+{
+  "status": "search_closed_target_not_met",
+  "observed_utc": "2026-10-24T09:29:10.284219+00:00",
+  "original_deadline": "2026-10-24T04:15:07+03:00",
+  "evaluations_completed": 48,
+  "registered_attempts": 49,
+  "unique_completed_hypotheses": 36,
+  "target": {
+    "scope": "original_outer_only_exploratory",
+    "tasks": {
+      "rmse": {
+        "control": 39.39219382766771,
+        "threshold": 31.51375506213417,
+        "best_new_outer": {
+          "directory": "results\\2026-10-24\\HYP-091-02-outer-multiblend-sprint",
+          "score": 34.21382789041039
+        },
+        "relative_gain": 0.13145665255181127,
+        "target_met": false
+      },
+      "macro_f1": {
+        "control": 0.6495311620074445,
+        "threshold": 0.7794373944089334,
+        "best_new_outer": {
+          "directory": "results\\2026-10-24\\HYP-078-02-outer-default-sprint",
+          "score": 0.6593084142037399
+        },
+        "relative_gain": 0.015052783866562612,
+        "target_met": false
+      }
+    },
+    "both_20pct_targets_met": false
+  },
+  "verification": {
+    "latest_verification": "results\\2026-10-24\\series-three-hours-v1\\verification-20261024T092345253469Z.json",
+    "sha256": "c1ea6c3b67fb2588cb6b47fdf2e6e5aad9d67acf3158fbc3c606cedc6d123535",
+    "created_utc": "2026-10-24T09:25:49.383485+00:00",
+    "passed": true
+  },
+  "H104": "timeout900sec_no_score_no_repeat",
+  "production_promoted": false,
+  "new_ivan_archive_created": false,
+  "new_work_steering": "download Sergey commit24e3311, compare saved metrics; real API unavailable"
+}
