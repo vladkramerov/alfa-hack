@@ -503,12 +503,27 @@ def main(task_path, started=None, threads=4):
                                       'final-refit', max(.1, budget.remaining() - .5))
             if refit['status'] == 'completed':
                 publish(directory)
+        # Preserve a full-training baseline CSV before spending time on optional
+        # complement calibration. Failure/timeout here cannot replace that CSV.
+        neural_refit = None
+        if (refit and refit['status'] == 'completed' and bundle.task_type == 'regression'
+                and bundle.metric == 'rmse' and selected.get('panel_time_column')
+                and not selected.get('neural_complement')
+                and budget.remaining() > max(300., fit_seconds * 4)):
+            complement = canonical_candidate({**selected, 'neural_complement': True})
+            neural_refit, directory = execute(complement, 'refit', root / 'search_split-01.npz',
+                'neural-complement-refit', min(600., max(.1, budget.remaining() - .5)))
+            calibration = neural_refit.get('model_audit', {}).get('neural_complement', {})
+            if neural_refit['status'] == 'completed' and calibration.get('status') == 'accepted':
+                publish(directory)
+                selected = complement
         audit_completed = any(r['status'] == 'completed' and
             candidate_key(r['candidate']) == candidate_key(best) for r in audit)
         summary.update(status='completed' if selected else 'fallback', selected=selected,
             selected_search_score=best_score, search_selected=best,
             has_disjoint_search_and_audit=nested, independent_search_and_audit=nested and audit_completed,
             audit=audit, final_refit=refit, validation=inner_description, audit_validation=outer_description,
+            neural_complement_refit=neural_refit,
             audit_status='external_evaluation_required' if deployment else 'completed' if audit_completed else 'skipped_or_failed',
             audit_used_for_selection=False,
             best_submission_seconds=best_seconds, experiments=len(records),
@@ -526,6 +541,8 @@ def main(task_path, started=None, threads=4):
     validate_submission(bundle, pd.read_csv(bundle.task_path.parent / 'submission.csv'))
     elapsed = time.monotonic() - budget.started
     executed = records + summary.get('audit', []) + ([summary['final_refit']] if summary.get('final_refit') else [])
+    if summary.get('neural_complement_refit'):
+        executed.append(summary['neural_complement_refit'])
     actual_fit_seconds = sum(float(r.get('fit_seconds', 0.)) for r in executed)
     summary.update(seconds=elapsed, budget_seconds=budget.seconds,
                    seconds_remaining=budget.remaining(), training_seconds=actual_fit_seconds,

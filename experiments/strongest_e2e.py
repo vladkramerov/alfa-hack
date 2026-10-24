@@ -6,21 +6,21 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from automl_data import load_task,validation_split,score,split_key
 from automl_runtime import child_environment
 revision=sys.argv[1] if len(sys.argv)>1 else ''
-assert revision in ['', '-v2']
+assert revision in ['', '-v2', '-neural']
 WORK=Path('/private/tmp/alfa-strongest-e2e'+revision);WORK.mkdir(exist_ok=True)
-OUT=ROOT/('results/strongest-team/e2e'+revision+'.json');ZIP=ROOT/('dist/alfa_strongest_candidate'+revision.replace('-','_')+'.zip');digest=hashlib.sha256(ZIP.read_bytes()).hexdigest()
+OUT=ROOT/('results/neural-transfer/e2e.json' if revision=='-neural' else 'results/strongest-team/e2e'+revision+'.json');ZIP=ROOT/('dist/alfa_neural_candidate.zip' if revision=='-neural' else 'dist/alfa_strongest_candidate'+revision.replace('-','_')+'.zip');digest=hashlib.sha256(ZIP.read_bytes()).hexdigest()
 if OUT.exists():
  report=json.loads(OUT.read_text());assert report['zip_sha256']==digest
 else:
  report={'status':'running','zip_sha256':digest,'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'runs':[],
-         'control_report':'results/score-recovery/e2e-final.json','control_zip_sha256':'e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641',
+         'control_report':'results/strongest-team/e2e-v2.json' if revision=='-neural' else 'results/score-recovery/e2e-final.json','control_zip_sha256':'f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88' if revision=='-neural' else 'e12d691382bc280fae5b2063e2a28ca2d21a18847f1c23f786522dafd464a641',
          'protocol':'Fresh frozen CLI candidate; previous completed controls reused. Equal8CPU/1200s/cap16 shadow;1800s/default original. No API for controlled ML comparison; external outer repeatedly viewed.'}
 def save():OUT.write_text(json.dumps(report,indent=2,ensure_ascii=False))
 for task,folder in [('regression','Регрессия'),('classification','Многоклассовая классификация')]:
  b=load_task(ROOT/'drive-download-20261023T201455Z-1-001'/folder/'task.md');fit,valid,_=validation_split(b)
  for scope in ['shadow','original']:
   if any(r['task']==task and r['scope']==scope for r in report['runs']):continue
-  if task=='regression' and scope=='original' and report['runs'][0]['score']>=37.57832956234321:
+  if task=='regression' and scope=='original' and report['runs'][0]['score']>=(36.95199237169711 if revision=='-neural' else 37.57832956234321):
    report['regression_rejected']=True;save();break
   directory=WORK/f'{task}-{scope}';directory.mkdir(exist_ok=True)
   with zipfile.ZipFile(ZIP) as z:z.extractall(directory)

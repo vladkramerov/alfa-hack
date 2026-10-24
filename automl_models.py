@@ -98,6 +98,11 @@ def canonical_candidate(candidate):
         if not isinstance(column, str) or not column or len(column) > 128 or family == 'blend':
             raise ValueError('Invalid panel_time_column')
         result['panel_time_column'] = column
+    complement = candidate.get('neural_complement', False)
+    if not isinstance(complement, bool) or complement and not result.get('panel_time_column'):
+        raise ValueError('neural_complement requires a temporal candidate')
+    if complement:
+        result['neural_complement'] = True
     strategy = candidate.get('panel_strategy', 'features')
     if strategy not in {'features', 'hybrid'}:
         raise ValueError('Unsupported panel_strategy')
@@ -764,6 +769,11 @@ def build_pipeline(kind, candidate, threads=4):
         raise ValueError('kind must be classification or regression')
     normalized = aliases[kind]
     canonical = canonical_candidate(candidate)
+    if canonical.get('neural_complement'):
+        if normalized != 'regression':
+            raise ValueError('Neural complement supports temporal regression only')
+        from automl_neural import NeuralComplement
+        return NeuralComplement(canonical, threads)
     if canonical.get('panel_strategy') == 'hybrid':
         if normalized != 'regression':
             raise ValueError('Hybrid causal panel requires regression')

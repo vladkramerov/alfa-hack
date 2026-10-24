@@ -1,0 +1,37 @@
+{
+  "candidate_sha256": "6123460e0fef19320bfa7623a807041db531458491a5878fbe35b3873a5e25d9",
+  "candidate_bytes": 54921,
+  "runtime_sources_match_frozen_zip": {
+    "solution.py": true,
+    "automl_engine.py": true,
+    "automl_data.py": true,
+    "automl_models.py": true,
+    "automl_worker.py": true,
+    "automl_llm.py": true,
+    "automl_runtime.py": true,
+    "automl_panel.py": true,
+    "automl_residual.py": true,
+    "automl_neural.py": true,
+    "automl_torch_tabm.py": true,
+    "requirements.txt": true
+  },
+  "root_entries": [
+    "solution.py",
+    "automl_engine.py",
+    "automl_data.py",
+    "automl_models.py",
+    "automl_worker.py",
+    "automl_llm.py",
+    "automl_runtime.py",
+    "automl_panel.py",
+    "automl_residual.py",
+    "automl_neural.py",
+    "automl_torch_tabm.py",
+    "requirements.txt"
+  ],
+  "official_requirements_unchanged": true,
+  "secret_scan": "passed",
+  "old_delivery_preserved_sha256": "f3a24044b90fb638df00872ab82c7ee0a91dd7d7f1bdb20b35a2a90065150c88",
+  "validation_scope": "84unit tests, syntheticbothneural, fullregshadowcompleted. Original/class CLI pending, no full promotion yet.",
+  "api_calls": 0
+}

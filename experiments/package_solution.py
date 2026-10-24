@@ -8,7 +8,8 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_REQUIREMENTS_SHA256 = '9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6'
 MODULES = ('solution.py', 'automl_engine.py', 'automl_data.py', 'automl_models.py',
-           'automl_worker.py', 'automl_llm.py', 'automl_runtime.py', 'automl_panel.py', 'automl_residual.py', 'requirements.txt')
+           'automl_worker.py', 'automl_llm.py', 'automl_runtime.py', 'automl_panel.py', 'automl_residual.py',
+           'automl_neural.py', 'automl_torch_tabm.py', 'requirements.txt')
 
 
 def build(output=None, source_root=None):

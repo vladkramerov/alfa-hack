@@ -1,0 +1,7 @@
+{
+  "source_commit": "fe674da9a6876705ea1a4056cb33ef713cb3af57",
+  "source_path": "automl_torch_tabm.py",
+  "sha256": "f32427b197424ad27d6b5b6f2618d14e753baa12109df37ea71485ea56436f79",
+  "import": "Exact team source; research only, not in verified ZIP",
+  "prior_status": "H109/H110 planned in team branch, no completed metrics at current ref; own teacher and whole policy differ from planned team fusion control"
+}

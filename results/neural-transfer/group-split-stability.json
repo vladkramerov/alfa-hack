@@ -1,0 +1,11 @@
+{
+  "fit_rows": 70529,
+  "original_hash_vs_roundtrip_hash_different_rows": 0,
+  "exact_numeric_different_cells": 0,
+  "same_group_equivalence": true,
+  "scientific_inner_key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+  "CLI_inner_mapped_key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+  "scientific_inner_valid_rows": 13822,
+  "CLI_inner_valid_rows": 13822,
+  "valid_overlap": 13822
+}

@@ -1,0 +1,15 @@
+{
+  "torch": "2.5.1",
+  "runs": [
+    {
+      "kind": "regression",
+      "status": "passed",
+      "epochs": 2
+    },
+    {
+      "kind": "classification",
+      "status": "passed",
+      "epochs": 2
+    }
+  ]
+}
