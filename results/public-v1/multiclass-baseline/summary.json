@@ -1,0 +1,452 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "first_submission_seconds": 1.0967657500004862,
+  "task_type": "classification",
+  "submission_rows": 41166,
+  "selected": {
+    "family": "lightgbm",
+    "hypothesis": "Quick native-category boosting baseline before research.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "learning_rate": 0.05,
+      "max_depth": -1,
+      "min_child_samples": 20,
+      "n_estimators": 120,
+      "num_leaves": 31,
+      "reg_alpha": 0.0,
+      "reg_lambda": 0.0,
+      "subsample": 1.0
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "selected_search_score": 0.5633812087629713,
+  "search_selected": {
+    "family": "lightgbm",
+    "hypothesis": "Quick native-category boosting baseline before research.",
+    "target_transform": "none",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "learning_rate": 0.05,
+      "max_depth": -1,
+      "min_child_samples": 20,
+      "n_estimators": 120,
+      "num_leaves": 31,
+      "reg_alpha": 0.0,
+      "reg_lambda": 0.0,
+      "subsample": 1.0
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "independent_search_and_audit": true,
+  "audit": [
+    {
+      "candidate": {
+        "family": "lightgbm",
+        "hypothesis": "Quick native-category boosting baseline before research.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 120,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "status": "completed",
+      "metric": "macro_f1",
+      "score": 0.5620165761870941,
+      "fit_rows": 70529,
+      "valid_rows": 17141,
+      "diagnostics": {
+        "per_class": {
+          "Analysis": {
+            "precision": 0.7317073170731707,
+            "recall": 0.14218009478672985,
+            "f1-score": 0.23809523809523808,
+            "support": 211.0
+          },
+          "Backdoor": {
+            "precision": 0.6129032258064516,
+            "recall": 0.12025316455696203,
+            "f1-score": 0.20105820105820105,
+            "support": 158.0
+          },
+          "DoS": {
+            "precision": 0.4750830564784053,
+            "recall": 0.1196652719665272,
+            "f1-score": 0.19117647058823528,
+            "support": 1195.0
+          },
+          "Exploits": {
+            "precision": 0.625,
+            "recall": 0.9129640900791236,
+            "f1-score": 0.7420232500618352,
+            "support": 3286.0
+          },
+          "Fuzzers": {
+            "precision": 0.7247461250668092,
+            "recall": 0.7373572593800979,
+            "f1-score": 0.7309973045822102,
+            "support": 1839.0
+          },
+          "Generic": {
+            "precision": 0.9980837667670408,
+            "recall": 0.9766943477096169,
+            "f1-score": 0.9872732196046574,
+            "support": 3733.0
+          },
+          "Normal": {
+            "precision": 0.9300622482607104,
+            "recall": 0.912848158131177,
+            "f1-score": 0.9213748072911944,
+            "support": 5565.0
+          },
+          "Reconnaissance": {
+            "precision": 0.9048192771084337,
+            "recall": 0.7384464110127827,
+            "f1-score": 0.8132106118029236,
+            "support": 1017.0
+          },
+          "Shellcode": {
+            "precision": 0.6495726495726496,
+            "recall": 0.6440677966101694,
+            "f1-score": 0.6468085106382979,
+            "support": 118.0
+          },
+          "Worms": {
+            "precision": 0.11428571428571428,
+            "recall": 0.21052631578947367,
+            "f1-score": 0.14814814814814814,
+            "support": 19.0
+          },
+          "accuracy": 0.8228808120879761,
+          "macro avg": {
+            "precision": 0.6766263380419386,
+            "recall": 0.5515002910022659,
+            "f1-score": 0.5620165761870941,
+            "support": 17141.0
+          },
+          "weighted avg": {
+            "precision": 0.8229494573841613,
+            "recall": 0.8228808120879761,
+            "f1-score": 0.8057971389546409,
+            "support": 17141.0
+          }
+        },
+        "largest_confusions": [
+          [
+            1004,
+            "DoS",
+            "Exploits"
+          ],
+          [
+            411,
+            "Normal",
+            "Fuzzers"
+          ],
+          [
+            311,
+            "Fuzzers",
+            "Normal"
+          ],
+          [
+            243,
+            "Reconnaissance",
+            "Exploits"
+          ],
+          [
+            143,
+            "Fuzzers",
+            "Exploits"
+          ],
+          [
+            133,
+            "Analysis",
+            "Exploits"
+          ],
+          [
+            126,
+            "Backdoor",
+            "Exploits"
+          ],
+          [
+            105,
+            "Exploits",
+            "DoS"
+          ],
+          [
+            70,
+            "Generic",
+            "Exploits"
+          ],
+          [
+            59,
+            "Exploits",
+            "Reconnaissance"
+          ]
+        ],
+        "missing_fit_classes": []
+      },
+      "seconds": 5.409169374994235,
+      "test_rows": 41166,
+      "model_audit": {
+        "fit_rows": 70529,
+        "input_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "output_columns": [
+          "dur",
+          "proto",
+          "service",
+          "state",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports"
+        ],
+        "dropped_columns": [],
+        "frequency_columns": [],
+        "categorical_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "target_transform": "none",
+        "model_family": "lightgbm",
+        "categorical_handling": "native_category"
+      },
+      "generated_code": false,
+      "process": {
+        "status": "completed",
+        "returncode": 0,
+        "seconds": 6.351140292012133,
+        "peak_rss_mb": 507.3125
+      },
+      "directory": "audit-01"
+    }
+  ],
+  "final_refit": {
+    "status": "completed",
+    "mode": "refit",
+    "train_rows": 87670,
+    "seconds": 5.272578125004657,
+    "test_rows": 41166,
+    "model_audit": {
+      "fit_rows": 87670,
+      "input_columns": [
+        "dur",
+        "proto",
+        "service",
+        "state",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sttl",
+        "dttl",
+        "sload",
+        "dload",
+        "sloss",
+        "dloss",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "swin",
+        "stcpb",
+        "dtcpb",
+        "dwin",
+        "tcprtt",
+        "synack",
+        "ackdat",
+        "smean",
+        "dmean",
+        "trans_depth",
+        "response_body_len",
+        "ct_srv_src",
+        "ct_state_ttl",
+        "ct_dst_ltm",
+        "ct_src_dport_ltm",
+        "ct_dst_sport_ltm",
+        "ct_dst_src_ltm",
+        "is_ftp_login",
+        "ct_ftp_cmd",
+        "ct_flw_http_mthd",
+        "ct_src_ltm",
+        "ct_srv_dst",
+        "is_sm_ips_ports"
+      ],
+      "output_columns": [
+        "dur",
+        "proto",
+        "service",
+        "state",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sttl",
+        "dttl",
+        "sload",
+        "dload",
+        "sloss",
+        "dloss",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "swin",
+        "stcpb",
+        "dtcpb",
+        "dwin",
+        "tcprtt",
+        "synack",
+        "ackdat",
+        "smean",
+        "dmean",
+        "trans_depth",
+        "response_body_len",
+        "ct_srv_src",
+        "ct_state_ttl",
+        "ct_dst_ltm",
+        "ct_src_dport_ltm",
+        "ct_dst_sport_ltm",
+        "ct_dst_src_ltm",
+        "is_ftp_login",
+        "ct_ftp_cmd",
+        "ct_flw_http_mthd",
+        "ct_src_ltm",
+        "ct_srv_dst",
+        "is_sm_ips_ports"
+      ],
+      "dropped_columns": [],
+      "frequency_columns": [],
+      "categorical_columns": [
+        "proto",
+        "service",
+        "state"
+      ],
+      "target_transform": "none",
+      "model_family": "lightgbm",
+      "categorical_handling": "native_category"
+    },
+    "generated_code": false,
+    "process": {
+      "status": "completed",
+      "returncode": 0,
+      "seconds": 6.292582041001879,
+      "peak_rss_mb": 557.90625
+    },
+    "directory": "final-refit"
+  },
+  "validation": "stratified-group5:first:seed42:exact-feature-groups",
+  "audit_validation": "stratified-group5:first:seed42:exact-feature-groups",
+  "best_submission_seconds": 15.143843083002139,
+  "experiments": 1,
+  "distinct_experiments": 1,
+  "llm_calls": 0,
+  "llm_token_upper_estimate": 0,
+  "duplicate_proposals": 0,
+  "rejected_proposals": 0,
+  "score_limitation": "Search scores are adaptive. Audit is a fixed baseline/selected gate; neither is a Boosters score.",
+  "seconds": 27.852765082992846,
+  "budget_seconds": 600.0,
+  "seconds_remaining": 572.1472260840237,
+  "training_seconds": 5.082002667011693
+}

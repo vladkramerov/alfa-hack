@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "task_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "replicates": 200,
+  "seed": 20261023,
+  "analyses": [
+    {
+      "metric": "rmse",
+      "baseline": 57.86553092977038,
+      "selected": 43.70058963959562,
+      "delta_selected_minus_baseline": -14.16494129017476,
+      "ci95_delta": [
+        -15.13578285753798,
+        -13.034784134055926
+      ],
+      "bootstrap_mean_delta": -14.179023065398718,
+      "bootstrap_standard_error": 0.5502865574251633,
+      "replicates": 200,
+      "seed": 20261023,
+      "rows": 18308,
+      "groups": 18286,
+      "status": "completed",
+      "run": "/private/tmp/alfa-work-v5/regression-adaptive/agent_runs/20261023T215343216040Z",
+      "search_selected": {
+        "family": "catboost",
+        "catboost_encoding": "onehot",
+        "hypothesis": "Measured train/test covariate shift: test removal of severely shifted numeric predictors on the untouched search fold.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [
+          "august_avg_temp_c",
+          "cooling_degree_days_c",
+          "june_max_temp_c"
+        ],
+        "frequency_columns": [],
+        "expert_column": "State_Factor",
+        "expert_min_rows": 1396,
+        "max_expert_groups": 4,
+        "parameters": {
+          "depth": 6,
+          "iterations": 500,
+          "l2_leaf_reg": 3.0,
+          "learning_rate": 0.05
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "baseline_candidate": {
+        "family": "lightgbm",
+        "hypothesis": "Quick native-category boosting baseline before research.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 120,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "validation": "temporal:Year_Factor:train_last=5:test_after_train",
+      "audit_validation_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "audit_used_for_selection": false,
+      "uncertainty_scope": "conditional within the audited year-5 period; not uncertainty for future years",
+      "grouping": "bootstrap exact duplicate raw validation feature rows as clusters",
+      "limitations": [
+        "Unknown temporal, site, household, or other flow dependencies are not represented unless they produce identical raw feature rows.",
+        "The interval describes this validation population; it does not estimate task-to-task or future-regime uncertainty."
+      ]
+    }
+  ],
+  "method": "Paired percentile cluster bootstrap over saved audit predictions; no model fitting.",
+  "test_targets_read": false
+}

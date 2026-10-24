@@ -88,6 +88,20 @@ def canonical_candidate(candidate):
     if family not in FAMILIES:
         raise ValueError('Unsupported model family')
     result = {'family': family}
+    view = candidate.get('numeric_view', 'none')
+    if view not in {'none', 'rank', 'signed_log', 'projection', 'rank_projection'}:
+        raise ValueError('Unsupported numeric_view')
+    if view != 'none':
+        if family == 'blend':
+            raise ValueError('Numeric views belong in explicit blend members')
+        result['numeric_view'] = view
+    if family == 'catboost':
+        encoding = candidate.get('catboost_encoding', 'onehot')
+        if encoding not in {'native', 'onehot'}:
+            raise ValueError('catboost_encoding must be native or onehot')
+        result['catboost_encoding'] = encoding
+    elif 'catboost_encoding' in candidate:
+        raise ValueError('catboost_encoding applies only to CatBoost')
     if 'hypothesis' in candidate:
         result['hypothesis'] = str(candidate['hypothesis'])[:500]
     if candidate.get('target_transform', 'none') not in {'none', 'log1p'}:
@@ -102,10 +116,20 @@ def canonical_candidate(candidate):
     if not isinstance(frequency, list) or len(frequency) > 12 or any(not isinstance(x, str) or not x or len(x) > 128 or '\x00' in x for x in frequency):
         raise ValueError('frequency_columns must contain at most 12 column names')
     result['frequency_columns'] = sorted(set(frequency))
+    expert_column = candidate.get('expert_column')
+    if expert_column is not None:
+        if not isinstance(expert_column, str) or not expert_column or len(expert_column) > 128 or '\x00' in expert_column:
+            raise ValueError('expert_column must name one existing column')
+        result['expert_column'] = expert_column
+        result['expert_min_rows'] = int(_bounded_number(candidate.get('expert_min_rows', 300), 50, 10000, 'expert_min_rows'))
+        result['max_expert_groups'] = int(_bounded_number(candidate.get('max_expert_groups', 16), 2, 40, 'max_expert_groups'))
+    elif any(key in candidate for key in ('expert_min_rows', 'max_expert_groups')):
+        raise ValueError('expert_min_rows and max_expert_groups require expert_column')
     if family == 'blend':
         if (result['feature_operations'] or result['drop_columns'] or result['frequency_columns']
-                or result['target_transform'] != 'none' or candidate.get('class_weight_power', 0)):
-            raise ValueError('Blend transformations and class weighting belong in explicit members')
+                or result['target_transform'] != 'none' or candidate.get('class_weight_power', 0)
+                or expert_column is not None):
+            raise ValueError('Blend transformations and group experts belong in explicit members')
         members, weights = candidate.get('members'), candidate.get('weights')
         if not isinstance(members, list) or not 2 <= len(members) <= 3:
             raise ValueError('blend requires 2 or 3 explicit members')
@@ -116,6 +140,8 @@ def canonical_candidate(candidate):
             if not isinstance(member, dict) or member.get('family') == 'blend':
                 raise ValueError('nested blends are not supported')
             item = canonical_candidate(member)
+            # Blends consume member probabilities; member-only argmax correction has no effect.
+            item['decision_power'] = 0
             normalized.append(item)
         raw = [_bounded_number(x, 0, 1, 'blend weight') for x in weights]
         total = sum(raw)
@@ -222,6 +248,56 @@ def _clean_infinities(X):
     return X
 
 
+class _NumericViews:
+    """Append bounded numerical views; learn distributions only from fit rows."""
+    def __init__(self, mode):
+        self.mode = mode
+
+    def fit(self, X):
+        self.columns_ = list(X.select_dtypes(include='number').columns)[:128]
+        self.tables_ = {}
+        self.names_ = []
+        if self.mode in {'rank', 'rank_projection'}:
+            for c in self.columns_:
+                values = X[c].to_numpy(dtype=float, na_value=np.nan)
+                self.tables_[c] = np.sort(values[np.isfinite(values)])
+        if self.mode in {'projection', 'rank_projection'} and self.columns_:
+            numeric = X[self.columns_].replace([np.inf, -np.inf], np.nan)
+            self.center_ = numeric.median().fillna(0).to_numpy(dtype=float)
+            scale = (numeric.quantile(.75) - numeric.quantile(.25)).to_numpy(dtype=float)
+            self.scale_ = np.where(np.isfinite(scale) & (scale > 1e-12), scale, 1.)
+            width = min(12, len(self.columns_))
+            self.rotation_ = np.random.default_rng(1729).normal(size=(len(self.columns_), width)) / np.sqrt(len(self.columns_))
+        if self.mode in {'rank', 'rank_projection', 'signed_log'}:
+            self.names_ += [f'__research_{self.mode}_{i}' for i in range(len(self.columns_))]
+        if self.mode in {'projection', 'rank_projection'} and self.columns_:
+            self.names_ += [f'__research_projection_{i}' for i in range(self.rotation_.shape[1])]
+        if set(self.names_) & set(X.columns):
+            raise ValueError('Numeric view name collides with input column')
+        return self
+
+    def transform(self, X):
+        if self.mode == 'none' or not self.columns_:
+            return X
+        generated = {}
+        if self.mode in {'rank', 'rank_projection', 'signed_log'}:
+            for i, c in enumerate(self.columns_):
+                values = X[c].to_numpy(dtype=float, na_value=np.nan)
+                if self.mode == 'signed_log':
+                    result = np.sign(values) * np.log1p(np.abs(values))
+                else:
+                    table = self.tables_[c]
+                    result = (np.searchsorted(table, values, side='left') + np.searchsorted(table, values, side='right')) / (2 * max(1, len(table)))
+                generated[self.names_[i]] = np.where(np.isfinite(values), result, np.nan)
+        if self.mode in {'projection', 'rank_projection'}:
+            matrix = X[self.columns_].to_numpy(dtype=float, na_value=np.nan)
+            matrix = np.clip((matrix - self.center_) / self.scale_, -10, 10)
+            matrix = np.nan_to_num(matrix, nan=0., posinf=10., neginf=-10.) @ self.rotation_
+            for i in range(matrix.shape[1]):
+                generated[f'__research_projection_{i}'] = matrix[:, i]
+        return pd.concat([X, pd.DataFrame(generated, index=X.index)], axis=1)
+
+
 class CandidateModel:
     """sklearn-like estimator; all learned preprocessing is fitted on fit(X, y)."""
     def __init__(self, kind, candidate, threads=4):
@@ -259,6 +335,8 @@ class CandidateModel:
         out = out.drop(columns=drops)
         self.frequency_ = _FrequencyFeatures(self.candidate.get('frequency_columns', [])).fit(out)
         out = _clean_infinities(self.frequency_.transform(out))
+        self.numeric_view_ = _NumericViews(self.candidate.get('numeric_view', 'none')).fit(out)
+        out = self.numeric_view_.transform(out)
         if not len(out.columns):
             raise ValueError('Candidate removed every feature')
         self.columns_ = list(out.columns)
@@ -268,7 +346,7 @@ class CandidateModel:
                        'frequency_columns': list(self.frequency_.tables_),
                        'categorical_columns': [], 'target_transform': self.candidate.get('target_transform', 'none'),
                        'model_family': self.family_,
-                       'categorical_handling': {'catboost': 'native_catboost', 'lightgbm': 'native_category',
+                       'categorical_handling': {'catboost': self.candidate.get('catboost_encoding', 'onehot'), 'lightgbm': 'native_category',
                            'xgboost': 'onehot_max_categories_32'}.get(self.family_, 'onehot')}
         return out
 
@@ -278,6 +356,7 @@ class CandidateModel:
         out = _clean_infinities(self.engineer_(X))
         out = out.drop(columns=[c for c in self.candidate.get('drop_columns', []) if c in out])
         out = self.frequency_.transform(out)
+        out = self.numeric_view_.transform(out)
         return _clean_infinities(out.reindex(columns=self.columns_))
 
     def fit(self, X, y):
@@ -321,8 +400,8 @@ class CandidateModel:
         else:
             y_fit = np.asarray(y_series, dtype=float)
             if self.candidate.get('target_transform') == 'log1p':
-                if np.any(y_fit < 0):
-                    raise ValueError('log1p target transform requires nonnegative targets')
+                if np.any(y_fit <= -1):
+                    raise ValueError('log1p target transform requires targets greater than -1')
                 y_fit = np.log1p(y_fit)
             sample_weight = None
             self.classes_ = None
@@ -330,7 +409,8 @@ class CandidateModel:
         matrix = self.preprocessor_.fit_transform(Xf)
         self.audit_['categorical_columns'] = self.categorical_columns_
         kwargs = {'sample_weight': sample_weight} if sample_weight is not None and self.candidate.get('class_weight_power', 0) else {}
-        if self.candidate['family'] == 'catboost' and self.categorical_columns_:
+        if (self.candidate['family'] == 'catboost' and self.categorical_columns_
+                and self.candidate['catboost_encoding'] == 'native'):
             kwargs['cat_features'] = self.categorical_columns_
         self.model_.fit(matrix, y_fit, **kwargs)
         return self
@@ -354,6 +434,8 @@ class CandidateModel:
                     learning_rate=params.get('learning_rate', .05), l2_leaf_reg=params.get('l2_leaf_reg', 3.0),
                     thread_count=self.threads, random_seed=42, verbose=False, allow_writing_files=False,
                     loss_function='RMSE' if self.is_regression_ else 'MultiClass')
+                if self.candidate['catboost_encoding'] == 'onehot':
+                    return model, _preprocessor(X, numeric, categorical)
                 return model, _NativeFrame(frame, categorical)
             import lightgbm as lgb
             for col in categorical:
@@ -442,6 +524,104 @@ class CandidateModel:
         return np.argmax(probabilities, axis=1)
 
 
+class GroupExpertModel:
+    """Per-value experts with one global fallback for sparse or unseen groups.
+
+    The mechanism is only used when a candidate explicitly names a categorical
+    column. Experts are trained on fit rows only; a group is eligible when it
+    contains enough rows. Classification probabilities are smoothed toward the
+    global model so a class absent from one group does not receive zero mass.
+    """
+    def __init__(self, kind, candidate, threads=4):
+        self.kind = kind
+        self.candidate = canonical_candidate(candidate)
+        if 'expert_column' not in self.candidate:
+            raise ValueError('GroupExpertModel requires expert_column')
+        self.threads = max(1, min(8, int(threads)))
+        self.feature_code_ = ''
+        self.audit_ = {}
+
+    def _base_candidate(self):
+        return {key: value for key, value in self.candidate.items()
+                if key not in ('expert_column', 'expert_min_rows', 'max_expert_groups')}
+
+    def _keys(self, X):
+        return X[self.candidate['expert_column']].astype('string').fillna('__MISSING__')
+
+    def fit(self, X, y):
+        if not isinstance(X, pd.DataFrame):
+            X = pd.DataFrame(X)
+        column = self.candidate['expert_column']
+        if column not in X:
+            raise ValueError('Unknown expert_column: ' + column)
+        y_series = y if isinstance(y, pd.Series) else pd.Series(y, index=X.index)
+        self.global_ = CandidateModel(self.kind, self._base_candidate(), self.threads).fit(X, y_series)
+        self.classes_ = self.global_.classes_
+        self.priors_ = getattr(self.global_, 'priors_', None)
+        keys = self._keys(X)
+        counts = keys.value_counts()
+        minimum = self.candidate['expert_min_rows']
+        eligible = [key for key, count in counts.items() if count >= minimum]
+        eligible.sort(key=lambda key: (-int(counts[key]), str(key)))
+        limit = self.candidate['max_expert_groups']
+        self.experts_, skipped = {}, []
+        for key in eligible[:limit]:
+            mask = (keys == key).to_numpy()
+            local_y = y_series[mask]
+            if self.kind != 'regression' and local_y.nunique() < 2:
+                skipped.append(str(key))
+                continue
+            try:
+                self.experts_[key] = CandidateModel(
+                    self.kind, self._base_candidate(), self.threads).fit(X.loc[mask], local_y)
+            except (ValueError, TypeError):
+                skipped.append(str(key))
+        if not self.experts_:
+            # Keep the candidate usable: a global fallback is still a measured model.
+            self.audit_['expert_fallback_only'] = True
+        self.audit_.update({
+            'expert_column': column,
+            'expert_groups': {str(key): int(counts[key]) for key in sorted(self.experts_, key=str)},
+            'expert_models': len(self.experts_),
+            'expert_skipped_groups': skipped[:20],
+            'expert_min_rows': minimum,
+            'expert_fallback': 'global',
+            'global_model': self.global_.audit_,
+        })
+        self.feature_code_ = self.global_.feature_code_
+        return self
+
+    def predict(self, X):
+        if self.kind == 'regression':
+            result = np.asarray(self.global_.predict(X), dtype=float).reshape(-1)
+            keys = self._keys(X)
+            for key, model in self.experts_.items():
+                mask = (keys == key).to_numpy()
+                if mask.any():
+                    result[mask] = np.asarray(model.predict(X.loc[mask]), dtype=float).reshape(-1)
+            return result
+        return self.classes_[np.argmax(self.predict_proba(X), axis=1)]
+
+    def predict_proba(self, X):
+        if self.kind == 'regression':
+            raise AttributeError('Regression candidates do not expose predict_proba')
+        result = np.asarray(self.global_.predict_proba(X), dtype=float).copy()
+        keys = self._keys(X)
+        target = {_class_key(value): index for index, value in enumerate(self.classes_)}
+        for key, model in self.experts_.items():
+            mask = (keys == key).to_numpy()
+            if not mask.any():
+                continue
+            local = np.asarray(model.predict_proba(X.loc[mask]), dtype=float)
+            aligned = np.zeros((int(mask.sum()), len(self.classes_)), dtype=float)
+            for source, label in enumerate(model.classes_):
+                if _class_key(label) in target:
+                    aligned[:, target[_class_key(label)]] = local[:, source]
+            result[mask] = .85 * aligned + .15 * result[mask]
+        sums = result.sum(axis=1, keepdims=True)
+        return result / np.maximum(sums, 1e-15)
+
+
 class _NativeFrame:
     def __init__(self, frame, categorical):
         self.frame = frame
@@ -486,5 +666,7 @@ def build_pipeline(kind, candidate, threads=4):
     if kind not in aliases:
         raise ValueError('kind must be classification or regression')
     normalized = aliases[kind]
-    model = CandidateModel(normalized, candidate, threads)
-    return model
+    canonical = canonical_candidate(candidate)
+    if 'expert_column' in canonical:
+        return GroupExpertModel(normalized, canonical, threads)
+    return CandidateModel(normalized, canonical, threads)

@@ -1,0 +1,121 @@
+{
+  "status": "completed",
+  "task_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "replicates": 200,
+  "seed": 20261023,
+  "analyses": [
+    {
+      "metric": "rmse",
+      "baseline": 57.86553092977038,
+      "selected": 52.65107337559415,
+      "delta_selected_minus_baseline": -5.214457554176228,
+      "ci95_delta": [
+        -6.164559670503567,
+        -4.315836927982813
+      ],
+      "bootstrap_mean_delta": -5.201669074833584,
+      "bootstrap_standard_error": 0.5249663223149004,
+      "replicates": 200,
+      "seed": 20261023,
+      "rows": 18308,
+      "groups": 18286,
+      "status": "completed",
+      "run": "/private/tmp/alfa-public-v2/regression-adaptive/agent_runs/20261023T203842354729Z",
+      "search_selected": {
+        "family": "blend",
+        "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "members": [
+          {
+            "family": "catboost",
+            "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "State_Factor",
+              "facility_type"
+            ],
+            "parameters": {
+              "depth": 6,
+              "iterations": 500,
+              "l2_leaf_reg": 3.0,
+              "learning_rate": 0.05
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          {
+            "family": "extra_trees",
+            "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+            "target_transform": "log1p",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          }
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "baseline_candidate": {
+        "family": "lightgbm",
+        "hypothesis": "Quick native-category boosting baseline before research.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 120,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "validation": "temporal:Year_Factor:train_last=5:test_after_train",
+      "audit_validation_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+      "audit_used_for_selection": false,
+      "uncertainty_scope": "conditional within the audited year-5 period; not uncertainty for future years",
+      "grouping": "bootstrap exact duplicate raw validation feature rows as clusters",
+      "limitations": [
+        "Unknown temporal, site, household, or other flow dependencies are not represented unless they produce identical raw feature rows.",
+        "The interval describes this validation population; it does not estimate task-to-task or future-regime uncertainty."
+      ]
+    },
+    {
+      "status": "not_applicable",
+      "metric": "rmse",
+      "run": "/private/tmp/alfa-public-v2/regression-baseline/agent_runs/20261023T203835347739Z",
+      "reason": "Frozen search winner is the baseline; there is no distinct paired candidate."
+    }
+  ],
+  "method": "Paired percentile cluster bootstrap over saved audit predictions; no model fitting.",
+  "test_targets_read": false
+}

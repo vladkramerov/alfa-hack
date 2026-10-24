@@ -65,9 +65,18 @@ class TaskLoadingTests(unittest.TestCase):
 
     def test_unknown_and_ambiguous_primary_metric_fail(self):
         with self.assertRaisesRegex(ValueError, 'Unsupported explicit metric'):
-            infer_metric('Primary metric: SMAPE')
+            infer_metric('Primary metric: BLEU')
         with self.assertRaisesRegex(ValueError, 'Ambiguous metric'):
             infer_metric('Primary metric: RMSE and MAE')
+
+    def test_multiclass_probability_metric_requires_explicit_class_columns(self):
+        self.write_csv('train.csv', pd.DataFrame({'x': [1, 2, 3, 4, 5, 6], 'target': ['a', 'b', 'c', 'a', 'b', 'c']}))
+        self.write_csv('test.csv', pd.DataFrame({'x': [7, 8]}))
+        self.write_csv('sample_submission.csv', pd.DataFrame({'target': [0., 0.]}))
+        task = self.root / 'task.md'
+        task.write_text('Primary metric: LogLoss\n', encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'one column named for each class'):
+            load_task(task)
 
     def test_declared_id_missing_from_sample_fails_clearly(self):
         train = self.write_csv('train.csv', pd.DataFrame({'id': [1, 2], 'x': [0, 1], 'target': [2, 3]}))

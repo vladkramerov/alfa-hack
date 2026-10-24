@@ -1,0 +1,12 @@
+{
+  "known_local_key_scan": "passed: staged files and uncompressed ZIP members",
+  "data_and_env_staging_check": "passed",
+  "official_requirements": "byte-identical to intake copy",
+  "archive_bytes": 41690,
+  "archive_sha256": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+  "cleanroom_sha_matches": true,
+  "unit_tests": 67,
+  "cleanroom_scenarios": 9,
+  "main_ref_unchanged": "f5d7d87",
+  "whitespace_note": "Historical source snapshot public-v1 and sandbox-failure XML preserved verbatim; active code diff check clean."
+}

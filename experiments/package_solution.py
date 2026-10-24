@@ -11,15 +11,16 @@ MODULES = ('solution.py', 'automl_engine.py', 'automl_data.py', 'automl_models.p
            'automl_worker.py', 'automl_llm.py', 'automl_runtime.py', 'requirements.txt')
 
 
-def build(output=None):
+def build(output=None, source_root=None):
+    source = Path(source_root) if source_root else ROOT
     destination = Path(output) if output else ROOT / 'dist' / 'alfa_autoresearch_submission.zip'
     destination.parent.mkdir(parents=True, exist_ok=True)
-    if hashlib.sha256((ROOT / 'requirements.txt').read_bytes()).hexdigest() != OFFICIAL_REQUIREMENTS_SHA256:
+    if hashlib.sha256((source / 'requirements.txt').read_bytes()).hexdigest() != OFFICIAL_REQUIREMENTS_SHA256:
         raise ValueError('requirements.txt differs from the original organizer file')
     hashes = {}
     with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for name in MODULES:
-            content = (ROOT / name).read_bytes()
+            content = (source / name).read_bytes()
             if name.endswith('.py'):
                 compile(content, name, 'exec')
             hashes[name] = hashlib.sha256(content).hexdigest()
@@ -42,5 +43,6 @@ def build(output=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output')
+    parser.add_argument('--source-root', help='Optional immutable source snapshot for historical reproduction')
     args = parser.parse_args()
-    print(json.dumps(build(args.output), indent=2))
+    print(json.dumps(build(args.output, args.source_root), indent=2))

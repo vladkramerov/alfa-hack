@@ -1,0 +1,78 @@
+{
+  "candidates": [
+    {
+      "family": "lightgbm",
+      "hypothesis": "Quick native-category boosting baseline before research.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "n_estimators": 120,
+        "num_leaves": 31,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0,
+        "subsample": 1.0
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    },
+    {
+      "family": "blend",
+      "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "members": [
+        {
+          "family": "catboost",
+          "hypothesis": "Add train-only category prevalence for categorical structure missed by the incumbent.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [
+            "State_Factor",
+            "facility_type"
+          ],
+          "parameters": {
+            "depth": 6,
+            "iterations": 500,
+            "l2_leaf_reg": 3.0,
+            "learning_rate": 0.05
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        },
+        {
+          "family": "extra_trees",
+          "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+          "target_transform": "log1p",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [],
+          "parameters": {
+            "max_depth": 24,
+            "max_features": 0.8,
+            "min_samples_leaf": 2,
+            "min_samples_split": 2,
+            "n_estimators": 200
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        }
+      ],
+      "weights": [
+        0.8,
+        0.2
+      ],
+      "class_weight_power": 0,
+      "decision_power": 0
+    }
+  ],
+  "search_score": 43.643868793419564
+}

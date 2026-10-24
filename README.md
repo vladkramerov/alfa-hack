@@ -1,14 +1,16 @@
-# Alfa Hack: AutoResearch ML agent
+# Alfa Hack AutoResearch
 
-Универсальный агент для табличной регрессии и классификации. Читает `task.md`, строит валидацию, исследует модели и признаки, сохраняет `submission.csv` рядом с описанием задачи.
+Универсальный табличный AutoResearch для Boosters: ранний `submission.csv`, ограниченные worker-процессы, выбор по внутренней валидации, отдельный outer audit, безопасный DSL признаков и offline fallback при недоступном LLM.
 
-```bash
-python3 solution.py /path/to/task.md
-python3 experiments/package_solution.py
-```
+- Текущее состояние и команды: [AGENTS.md](AGENTS.md).
+- Текущая ограниченная серия и сравнение команды: [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md).
+- Предыдущие public-v1…v5: [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md).
+- Официальный контракт: [docs/PLATFORM_CONTRACT.md](docs/PLATFORM_CONTRACT.md).
 
-Архив для платформы: `dist/alfa_autoresearch_submission.zip`. Он содержит только корневые Python-модули и оригинальный `requirements.txt`; данные и обученные модели не включены.
+Запуск на Python 3.12: `python3 solution.py task.md`. Разрешённые зависимости — неизменённый официальный `requirements.txt`.
 
-Контекст и продолжение работы: [AGENTS.md](AGENTS.md), [состояние исследования](docs/RESEARCH_STATE.md), [реестр гипотез](docs/HYPOTHESES.md), [контракт платформы](docs/PLATFORM_CONTRACT.md). Локальные метрики не являются score Boosters. Отправка архива на платформу выполняется пользователем.
+Сборка: `python experiments/package_solution.py`.
+Проверка чистой распаковки: `python experiments/verify_package.py`.
+Тесты: `python -m pytest -p no:cacheprovider -q tests`.
 
-Для разработки нужен Python 3.12 и разрешённые библиотеки из `requirements.txt`. Проверки используют также `pytest`; платформа в нём не нуждается. На macOS для LightGBM/XGBoost нужен локальный OpenMP runtime. Параметры тестовых запусков: `AUTOML_TIME_LIMIT` (не более 10200 секунд), `AUTOML_MAX_EXPERIMENTS`, `AUTOML_THREADS` (не более 8). Без переменных `OPENAI_BASE_URL`, `OPENAI_API_KEY`, `OPENAI_MODEL` действует исследовательский fallback; с ними LLM получает измеренные результаты и управляет следующими экспериментами.
+LLM получает только `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL` из окружения платформы. Локальный `.env.local` автоматически не загружается агентом, не коммитится и не включается в ZIP.

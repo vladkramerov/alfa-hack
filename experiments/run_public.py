@@ -14,10 +14,19 @@ from package_solution import build, ROOT
 
 
 def run(data_root, work_root, output, budget=600, experiments=10):
-    manifest = build()
     data_root, work_root = Path(data_root), Path(work_root)
+    work_root.mkdir(parents=True, exist_ok=True)
+    archive_snapshot = work_root / 'source_snapshot.zip'
+    if archive_snapshot.exists():
+        raise ValueError(f'Refusing to overwrite a source snapshot: {archive_snapshot}')
+    manifest = build(archive_snapshot)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
+    source_snapshot = output / 'source'
+    source_snapshot.mkdir(exist_ok=False)
+    with zipfile.ZipFile(archive_snapshot) as archive:
+        archive.extractall(source_snapshot)
+    (output / 'source-manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
     records = []
     for task, folder in [('regression', 'Регрессия'), ('multiclass', 'Многоклассовая классификация')]:
         for mode, trials in [('baseline', 1), ('adaptive', experiments)]:
@@ -27,7 +36,7 @@ def run(data_root, work_root, output, budget=600, experiments=10):
             directory.mkdir(parents=True)
             for name in ('task.md', 'train.csv', 'test.csv', 'sample_submission.csv', 'data_dictionary.csv'):
                 shutil.copy2(data_root / folder / name, directory / name)
-            with zipfile.ZipFile(ROOT / 'dist' / 'alfa_autoresearch_submission.zip') as archive:
+            with zipfile.ZipFile(archive_snapshot) as archive:
                 archive.extractall(directory)
             env = {k: v for k, v in os.environ.items() if not k.startswith('OPENAI_')}
             env.update(AUTOML_TIME_LIMIT=str(budget), AUTOML_MAX_EXPERIMENTS=str(trials),
@@ -49,7 +58,7 @@ def run(data_root, work_root, output, budget=600, experiments=10):
             record = {'task': task, 'mode': mode, 'process_returncode': process.returncode,
                 'wall_seconds': time.monotonic() - started, 'archive_sha256': manifest['sha256'],
                 'summary': json.loads((source / 'summary.json').read_text()),
-                'workspace': str(directory), 'result_directory': str(copied.relative_to(ROOT))}
+                'workspace': str(directory), 'result_directory': str(copied.relative_to(output))}
             records.append(record)
             (output / 'runs.json').write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding='utf-8')
             print(json.dumps({'task': task, 'mode': mode, 'seconds': record['wall_seconds'],

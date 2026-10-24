@@ -1,0 +1,31 @@
+{
+  "preserved_worktrees": {
+    "/Users/maxchibisov/Projects/HACKS/alfa-hack": {
+      "head": "eab478a039d1efd02c001f56f9984f1f623bad2d",
+      "status": " M .gitignore\n M automl_data.py\n M automl_engine.py\n M automl_llm.py\n M automl_models.py\n M automl_worker.py\n M experiments/package_solution.py\n M experiments/run_public.py\n M experiments/verify_package.py\n M solution.py\n M tests/test_data.py\n M tests/test_models.py\n M tests/test_runtime.py\n?? baseline.py\n?? docs/ACCEPTANCE.md\n?? docs/ARCHITECTURE.md\n?? docs/EXPERIMENTS.md\n?? docs/NEXT_STEPS.md\n?? docs/SUBMISSION.md\n?? docs/VALIDATION.md\n?? experiments/audit_uncertainty.py\n?? experiments/numeric_views_study.py\n?? experiments/rolling_study.py\n?? experiments/summarize_research.py\n?? results/cleanroom-v5.json\n?? results/numeric-views-v1.json\n?? results/public-v1/\n?? results/public-v2/\n?? results/public-v3/\n?? results/public-v4/\n?? results/public-v5/\n?? results/research_registry.json\n?? results/unit-research-optimized.xml\n?? results/unit-v3.xml\n?? tests/test_numeric_views.py\n?? tests/test_profile.py\n?? tests/test_temporal_research.py\n?? tests/test_worker_cache.py\n"
+    },
+    "/Users/maxchibisov/Projects/HACKS/alfa-ultimate": {
+      "head": "eab478a039d1efd02c001f56f9984f1f623bad2d",
+      "status": " M automl_data.py\n M automl_engine.py\n M automl_llm.py\n M automl_models.py\n M automl_worker.py\n M experiments/package_solution.py\n M experiments/run_public.py\n M experiments/verify_package.py\n M solution.py\n M tests/test_data.py\n M tests/test_models.py\n M tests/test_runtime.py\n?? dist/\n?? docs/ACCEPTANCE.md\n?? docs/ARCHITECTURE.md\n?? docs/EXPERIMENTS.md\n?? docs/NEXT_STEPS.md\n?? docs/SUBMISSION.md\n?? docs/VALIDATION.md\n?? experiments/audit_uncertainty.py\n?? experiments/rolling_study.py\n?? experiments/summarize_research.py\n?? results/cleanroom-v5.json\n?? results/public-v1/\n?? results/public-v2/\n?? results/public-v3/\n?? results/public-v4/\n?? results/public-v5/\n?? results/research_registry.json\n?? results/unit-v3.xml\n?? tests/test_profile.py\n?? tests/test_temporal_research.py\n?? tests/test_worker_cache.py\n"
+    },
+    "/Users/maxchibisov/.codex/worktrees/ultimate-autoresearch-20261023/alfa-hack": {
+      "head": "eab478a039d1efd02c001f56f9984f1f623bad2d",
+      "status": " M automl_data.py\n M automl_engine.py\n M automl_llm.py\n M automl_models.py\n M automl_worker.py\n M experiments/package_solution.py\n M experiments/run_public.py\n M experiments/verify_package.py\n M tests/test_data.py\n M tests/test_models.py\n M tests/test_runtime.py\n?? dist/\n?? docs/ACCEPTANCE.md\n?? docs/ARCHITECTURE.md\n?? docs/EXPERIMENTS.md\n?? docs/NEXT_STEPS.md\n?? docs/SUBMISSION.md\n?? docs/VALIDATION.md\n?? experiments/audit_uncertainty.py\n?? experiments/rolling_study.py\n?? experiments/summarize_research.py\n?? results/cleanroom-final.json\n?? results/public-v1/\n?? results/public-v2/\n?? results/public-v3/\n?? results/public-v4/\n?? results/research_registry.json\n?? results/rolling-study.json\n?? results/unit-final.xml\n?? results/unit-v4.xml\n?? tests/test_profile.py\n?? tests/test_temporal_research.py\n?? tests/test_worker_cache.py\n"
+    }
+  },
+  "import_source": "/Users/maxchibisov/Projects/HACKS/alfa-ultimate",
+  "original_intake_files": "Original .gitignore and requirements.txt retained as ignored .intake files and /private/tmp/alfa-intake-original copies. Public files, PDF, baseline and .env.local untouched.",
+  "branches": "* codex/research-optimized             eab478a Build portable nested AutoResearch agent with bounded execution and contract tests\n+ codex/ultimate-autoresearch-20261023 eab478a (/Users/maxchibisov/.codex/worktrees/ultimate-autoresearch-20261023/alfa-hack) Build portable nested AutoResearch agent with bounded execution and contract tests\n+ codex/ultimate-autoresearch-20261024 eab478a (/Users/maxchibisov/Projects/HACKS/alfa-ultimate) Build portable nested AutoResearch agent with bounded execution and contract tests\n  main                                 f5d7d87 [origin/main] Initial commit\n  remotes/origin/HEAD                  -> origin/main\n  remotes/origin/ivan_branch           4283105 Add independent diagnostic agent and record rejected H52/H62 experiments\n  remotes/origin/main                  f5d7d87 Initial commit\n  remotes/origin/sergey_branch         24e3311 Improve causal panel research, remove embedded pretrained state, and publish verified team delivery\n",
+  "initial_checkout": {
+    "branch": "main",
+    "head": "f5d7d87",
+    "untracked": [
+      ".DS_Store",
+      ".gitignore",
+      "baseline.py",
+      "requirements.txt",
+      "drive-download-20261023T201455Z-1-001/",
+      "Альфа Хак_AutoML .pdf"
+    ]
+  }
+}

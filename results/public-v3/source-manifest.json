@@ -1,0 +1,16 @@
+{
+  "archive": "source_snapshot.zip",
+  "bytes": 30652,
+  "sha256": "c370d0a1ded7a106c3696132980423292f3028af06fa532ae7aa38df618236fa",
+  "files": {
+    "solution.py": "fee801cab2d8b9f94660bcf5c9023e15d5e1420aedbfd5ab5f63f9878b63e21c",
+    "automl_engine.py": "4b2a1358fccc873d795a553729556035f362c31771de5108631c91b34102d2e4",
+    "automl_data.py": "ed4ed23cedcea841bdb8dc2be95a93e87f1fb255039a5f0f4b2ff1705b94d0fb",
+    "automl_models.py": "4321d370275c9bb3d4e0f51392400801edb3fc3325c4778b257e2ffc45a35b4b",
+    "automl_worker.py": "5316fdece14f20082770faf43ed09a5a45da18dc2a17c38c5556a13dbe00d8bd",
+    "automl_llm.py": "a10cc3033020f007a6bd130d06c43ed41796d6da6ad31fd4a56acdd9e92e0d2a",
+    "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "deterministic": true
+}

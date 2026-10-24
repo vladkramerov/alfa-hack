@@ -1,37 +1,35 @@
 # Alfa Hack AutoResearch — рабочая память
 
-Язык общения — русский. Цель: универсальный исследовательский ML-агент и проверенный ZIP для Boosters. Задание пользователя хранится локально в `/Users/maxchibisov/.codex/attachments/c9e0282d-79d7-4115-9835-088a6257b821/pasted-text-1.txt`.
+Общение по-русски. Изменения минимальны; без попутного рефакторинга, субагентов и Superpowers. Не трогать main, ivan_branch, sergey_branch; без reset/clean/force push, секретов и данных в Git/ZIP.
 
-## Текущий этап
+## Состояние на 24.10.2026
 
-2026-10-23: ветки изучены; плоский AutoResearch-агент реализован. Ветка `codex/ultimate-autoresearch-20261023` создана от `origin/main` (`f5d7d87`) в отдельном worktree. Исходный checkout и пользовательские файлы не изменять. Источники: `ivan_branch` (`a6a1b94`) и `sergey_branch` (`d9022e2`).
+Ветка `codex/research-optimized`, база `eab478a`. Импортированы незакоммиченные наработки `/Users/maxchibisov/Projects/HACKS/alfa-ultimate`, public-v1…v5 и тесты. Оба прежних worktree оставлены без изменений. Инвентаризация: `docs/sources/research-optimized-intake.json`. Исторический журнал сохранён; текущая серия и ограничения — **`docs/EXPERIMENT_LOG.md`**.
 
-Пройдены 45 unit/integration/failure tests (`results/unit-v2.xml`) и 9 clean-room сценариев (`results/cleanroom.json`, первоначальный архив). Публичное сравнение baseline/adaptive v1 выполняется в `/private/tmp/alfa-public-v1`; не перезапускать живой процесс без проверки. Его snapshot старее текущих ограниченных defaults ET/RF и audit без выбора по outer. Финальные метрики и повтор clean-room на финальном архиве ещё требуются.
+14 исследовательских fit, 631.22 секунды; серия остановлена. Повторять `numeric_views_study.py`/`numeric_control_audit.py` нельзя: использовать готовые результаты.
 
-## Обязательный контракт
+## Архитектура и контракт
 
-- Python 3.12, 8 CPU, 32 GB RAM, до 3 часов на задачу; без внешнего интернета и установки пакетов.
-- ZIP до 100 MB: только корневые `.py` и неизменённый официальный `requirements.txt`.
-- Запуск `python3 solution.py task.md`; `submission.csv` рядом с `task.md`, атомарная запись и ранний fallback.
-- LLM: только предоставленные организатором `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL`; значения не придумывать и не публиковать.
-- Никаких данных, моделей, ключей в Git/ZIP. Приватные задачи неизвестны; публичные имена не хардкодить.
-- Разрешена публикация собственной ветки, без merge. Отправка на Boosters требует отдельного разрешения.
+`solution.py` → `automl_engine.py`: ранний атомарный fallback, nested search/rolling windows, audit без выбора по outer. `automl_data.py` — схема/split/метрики/submission; `automl_models.py` — модели, безопасный DSL, дополнительные numeric views; `automl_worker.py` — изолированный fit и probability cache; `automl_runtime.py` — deadline/process/memory; `automl_llm.py` — bounded platform API и offline fallback.
 
-## Продолжение
+Python3.12, до8CPU/32GB/3ч. `python3 solution.py task.md`; submission рядом с task. ZIP ≤100MB: только корневые `.py` и неизменённый официальный requirements. Никаких обязательных вложенных модулей/публичных имён полей/frozen pretrained state/сторонних LLM API. LLM только из OPENAI_API_KEY/BASE_URL/MODEL платформы; `.env.local` автоматически не загружается.
 
-Читайте `docs/RESEARCH_STATE.md`, `docs/HYPOTHESES.md`, `docs/EXPERIMENTS.md`, затем актуальный код. Проверяйте новизну эксперимента, фиксируйте split, seed, метрику, wall time и ограничения. Не называйте локальную метрику результатом Boosters.
+## Сопоставимые метрики и проверенные гипотезы
 
-## Архитектура и команды
+- Regression outer `<5 → 5`, 35000/18308, key68ef0344…: current ET log-target **42.282936 → 42.012317 RMSE** с raw+signed-log (−0.640%). Это результат кандидата; финальная search policy заново не измерена. Лидер Sergey H73 **34.520269**, не превзойдён.
+- Classification group outer, 70529/17141, key239200bc…: прежний AutoResearch **0.637337946**, лидер Ivan H48 **0.649531162**. Новые варианты отсеяны по inner; новых outer fit нет.
+- NV1 ranks, NV2 signed-log, NV3 robust projections, NV4 ranks+projections проверены на обеих задачах; только NV2 продвинут в условную ET/log-target/RMSE очередь. JSON: `results/numeric-views-v1.json`, `results/numeric-control-audit.json`.
+- Inner regression: 0.65×period4+0.35×period3; classification nested exact-feature-group split. Полные ключи/хеши в JSON. Разные split не смешивать; outer публичный и исторически исследованный.
+- Не повторять full-v1, smearing/threshold/focal/OOF stacking, H52/H62 или causal panel H70…H74 под новым названием: сначала читать сохранённые результаты/историю.
 
-`solution.py` → `automl_engine.py`: ранний атомарный fallback, nested search и фиксированный парный audit; outer не выбирает модель. `automl_data.py`: task/schema/metrics/submission; `automl_models.py`: модели и DSL → исполняемый Python; `automl_worker.py`: изолированный fit; `automl_runtime.py`: deadline/process/memory; `automl_llm.py`: bounded platform API. История прошлого публичного исследования не встраивается в платформенный код.
+## Проверки и команды
 
-Локальный Python 3.12: `/private/tmp/alfa-research-venv/bin/python`. Для macOS LightGBM/XGBoost: `DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib`; это dev runtime, в ZIP не входит. Docker daemon локально недоступен. Реальные API credentials отсутствуют; используются HTTP mocks, не настоящий Qwen endpoint.
+67 tests passed (`results/unit-research-optimized.xml`); 9 clean-room сценариев passed (`results/cleanroom-research-optimized.json`). Linux/официальный контейнер не проверен. `.env.local` имеет только ключ; BASE_URL/MODEL отсутствуют, live API не вызывался (`results/local-api-check.json`).
 
-- Тесты: `python -m pytest -p no:cacheprovider -q tests` (localhost mocks требуют разрешённого bind).
-- Сборка: `python experiments/package_solution.py`.
-- Чистая проверка: `python experiments/verify_package.py`.
-- Публичные прогоны: `python experiments/run_public.py --data-root PATH --work-root NEW_TMP_PATH`.
+Локально Python: `/private/tmp/alfa-research-venv/bin/python`; для native boosting macOS: `DYLD_FALLBACK_LIBRARY_PATH=/private/tmp/alfa-openmp/libomp/23.1.4/lib`. Пакеты ML соответствуют официальным версиям (`results/research-environment.json`).
 
-## Следующие действия
+- `python -m pytest -p no:cacheprovider -q tests` (HTTP mocks требуют localhost bind).
+- `python experiments/package_solution.py` → `dist/alfa_autoresearch_submission.zip` + manifest.
+- `python experiments/verify_package.py --output results/cleanroom-research-optimized.json`.
 
-Дождаться v1, проверить метрики и стоимость; сравнить с текущими bounded defaults/scheduler, провести финальные публичные и clean-room проверки, обновить документы и журнал новых гипотез, secret scan, коммиты и push собственной ветки. Исторический лучший regression — ExtraTrees log1p RMSE42.196700; classification XGBoost MacroF1 .591451371 (outer уже использован ранее, не hidden score). Новые результаты не выдумывать. Не переносить обязательный full-v1: он ухудшил обе метрики.
+Далее: независимая проверка signed-log и frozen policy; универсальный поиск causal panel keys с проверкой стабильности; shrinkage-калибровка rare-class на disjoint OOF. Сначала проверить новизну и кэш, затем ограничить бюджет. Не выдавать candidate score за agent/Boosters score.

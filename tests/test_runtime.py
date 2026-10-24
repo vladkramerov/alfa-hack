@@ -31,6 +31,14 @@ class RuntimeTests(unittest.TestCase):
         self.assertGreater(budget.reserve(), 0)
         self.assertLess(budget.reserve(), budget.remaining())
 
+    def test_memory_guard_stops_a_worker_and_records_peak_usage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            script = Path(tmp) / 'memory.py'
+            script.write_text('import time\nx = bytearray(8 * 1024 * 1024)\ntime.sleep(30)\n')
+            result = run_child(script, [], Path(tmp) / 'run', 3., memory_mb=1)
+            self.assertEqual(result['status'], 'memory_limit')
+            self.assertGreater(result['peak_rss_mb'], 1.)
+
 
 if __name__ == '__main__':
     unittest.main()

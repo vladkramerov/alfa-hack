@@ -1,0 +1,92 @@
+{
+  "status": "completed",
+  "task_hashes": {
+    "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "replicates": 200,
+  "seed": 20261023,
+  "analyses": [
+    {
+      "metric": "macro_f1",
+      "baseline": 0.5620165761870941,
+      "selected": 0.6373379463394646,
+      "delta_selected_minus_baseline": 0.0753213701523705,
+      "ci95_delta": [
+        0.05203483279635538,
+        0.09875509229987106
+      ],
+      "bootstrap_mean_delta": 0.07507635883906953,
+      "bootstrap_standard_error": 0.012401930528096487,
+      "replicates": 200,
+      "seed": 20261023,
+      "rows": 17141,
+      "groups": 10841,
+      "status": "completed",
+      "run": "/private/tmp/alfa-public-v2/multiclass-adaptive/agent_runs/20261023T204357097876Z",
+      "search_selected": {
+        "family": "xgboost",
+        "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      },
+      "baseline_candidate": {
+        "family": "lightgbm",
+        "hypothesis": "Quick native-category boosting baseline before research.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": -1,
+          "min_child_samples": 20,
+          "n_estimators": 120,
+          "num_leaves": 31,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "validation": "stratified-group5:first:seed42:exact-feature-groups",
+      "audit_validation_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+      "audit_used_for_selection": false,
+      "uncertainty_scope": "conditional on this outer validation split",
+      "grouping": "bootstrap exact duplicate raw validation feature rows as clusters",
+      "limitations": [
+        "Unknown temporal, site, household, or other flow dependencies are not represented unless they produce identical raw feature rows.",
+        "The interval describes this validation population; it does not estimate task-to-task or future-regime uncertainty."
+      ]
+    },
+    {
+      "status": "not_applicable",
+      "metric": "macro_f1",
+      "run": "/private/tmp/alfa-public-v2/multiclass-baseline/agent_runs/20261023T204329276740Z",
+      "reason": "Frozen search winner is the baseline; there is no distinct paired candidate."
+    }
+  ],
+  "method": "Paired percentile cluster bootstrap over saved audit predictions; no model fitting.",
+  "test_targets_read": false
+}

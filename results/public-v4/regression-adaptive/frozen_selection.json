@@ -1,0 +1,105 @@
+{
+  "candidates": [
+    {
+      "family": "lightgbm",
+      "hypothesis": "Quick native-category boosting baseline before research.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "n_estimators": 120,
+        "num_leaves": 31,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0,
+        "subsample": 1.0
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    },
+    {
+      "family": "blend",
+      "hypothesis": "Test a conservative blend of the two measured distinct model families.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "members": [
+        {
+          "family": "extra_trees",
+          "hypothesis": "Test interactions between the two strongest fit-only numeric associations.",
+          "target_transform": "none",
+          "feature_operations": [
+            {
+              "op": "mul",
+              "name": "research_product",
+              "left": "energy_star_rating",
+              "right": "days_below_minus7C"
+            },
+            {
+              "op": "div",
+              "name": "research_ratio",
+              "left": "energy_star_rating",
+              "right": "days_below_minus7C"
+            }
+          ],
+          "drop_columns": [
+            "april_avg_temp_c",
+            "april_min_temp_c",
+            "august_avg_temp_c",
+            "cooling_degree_days_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "december_min_temp_c",
+            "february_min_temp_c",
+            "june_max_temp_c",
+            "may_min_temp_c",
+            "september_avg_temp_c",
+            "september_min_temp_c"
+          ],
+          "frequency_columns": [
+            "State_Factor",
+            "facility_type"
+          ],
+          "parameters": {
+            "max_depth": 24,
+            "max_features": 0.8,
+            "min_samples_leaf": 2,
+            "min_samples_split": 2,
+            "n_estimators": 200
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        },
+        {
+          "family": "catboost",
+          "catboost_encoding": "native",
+          "hypothesis": "Compare native categorical statistics with measured one-hot boosting, without assuming either encoding always wins.",
+          "target_transform": "none",
+          "feature_operations": [],
+          "drop_columns": [],
+          "frequency_columns": [],
+          "parameters": {
+            "depth": 6,
+            "iterations": 500,
+            "l2_leaf_reg": 3.0,
+            "learning_rate": 0.05
+          },
+          "class_weight_power": 0,
+          "decision_power": 0
+        }
+      ],
+      "weights": [
+        0.8,
+        0.2
+      ],
+      "class_weight_power": 0,
+      "decision_power": 0
+    }
+  ],
+  "search_score": 47.84062006790076
+}

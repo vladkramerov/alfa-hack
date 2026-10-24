@@ -60,10 +60,15 @@ def propose(profile, observations, timeout=25):
         'family': {'enum': ['lightgbm', 'xgboost', 'catboost', 'extra_trees', 'random_forest', 'linear', 'blend']},
         'parameters': {'type': 'object'},
         'target_transform': {'enum': ['none', 'log1p']},
+        'numeric_view': {'enum': ['none', 'signed_log'], 'description': 'Append sign(x)*log1p(abs(x)) views to at most 128 numeric columns, retaining raw features. Measured benefit for log-target ExtraTrees regression; validate on this task before selecting.'},
+        'catboost_encoding': {'enum': ['onehot', 'native'], 'description': 'CatBoost only: compare train-only one-hot encoding vs native categorical statistics.'},
         'feature_operations': {'type': 'array', 'maxItems': 24, 'items': {'type': 'object'},
             'description': 'Ordered row-wise operations {op,name,left,right}; op add/sub/mul/div/log1p/abs. left/right are existing numeric column names. log1p clips negatives to zero; division replaces zero denominators with missing. Generates actual Python. No free Python or I/O.'},
         'drop_columns': {'type': 'array', 'items': {'type': 'string'}, 'maxItems': 64},
         'frequency_columns': {'type': 'array', 'items': {'type': 'string'}},
+        'expert_column': {'type': 'string', 'description': 'Train one base model per value of this categorical column with a global fallback. Only groups with expert_min_rows fit rows are eligible; at most max_expert_groups are used.'},
+        'expert_min_rows': {'type': 'integer', 'minimum': 50, 'maximum': 10000},
+        'max_expert_groups': {'type': 'integer', 'minimum': 2, 'maximum': 40},
         'class_weight_power': {'type': 'number', 'minimum': 0, 'maximum': 1},
         'decision_power': {'type': 'number', 'minimum': 0, 'maximum': 1},
         'members': {'type': 'array', 'items': {'type': 'object'}, 'maxItems': 3},
@@ -78,11 +83,14 @@ def propose(profile, observations, timeout=25):
         'using run_experiment, based on the primary metric, fit-only profile, measured errors and time. '
         'You can change model family, parameters, target transformation, train-only frequency features, '
         'generate feature_operations compiled into actual row-wise Python, select features via drop_columns, '
+        'or test additive signed-log numeric_view for randomized regression trees. '
+        'train per-value experts for one categorical column with expert_column and a global fallback, '
         'or blend 2-3 explicit candidate dictionaries. '
         'For classification, class_weight_power raises inverse training class frequency to this power; '
         'decision_power multiplies probabilities by inverse training class priors before argmax only. '
         'Use decision_power only for hard-label metrics; it has no effect on ROC AUC or log loss. '
         'Neither uses validation targets. No compulsory scaling/outlier deletion is applied to trees. '
+        'CatBoost supports onehot (default) and native categorical encoding as separate hypotheses. '
         'Only train-fitted transformations; no dataset-specific assumptions or public target names. '
         'Do not repeat evaluated configurations, even after changing hypothesis text or seeds. '
         'Use per-class precision/recall/F1 or residual tails to target a concrete failure. '

@@ -1,0 +1,66 @@
+{
+  "status": "completed",
+  "metric": "rmse",
+  "first_submission_seconds": 0.9373937920026947,
+  "task_type": "regression",
+  "submission_rows": 22449,
+  "selected": {
+    "family": "extra_trees",
+    "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+    "target_transform": "log1p",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "max_features": 1.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 300
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "selected_search_score": 43.8233008020708,
+  "search_selected": {
+    "family": "extra_trees",
+    "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+    "target_transform": "log1p",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "max_features": 1.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 300
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "independent_search_and_audit": true,
+  "audit": [],
+  "final_refit": {
+    "status": "timeout",
+    "process": {
+      "status": "timeout",
+      "returncode": -9,
+      "seconds": 209.47916791701573,
+      "peak_rss_mb": 596.734375
+    },
+    "directory": "final-refit"
+  },
+  "validation": "temporal:Year_Factor:train_last=4:test_after_train",
+  "audit_validation": "temporal:Year_Factor:train_last=5:test_after_train",
+  "best_submission_seconds": 131.67265362499165,
+  "experiments": 6,
+  "distinct_experiments": 6,
+  "llm_calls": 0,
+  "llm_token_upper_estimate": 0,
+  "duplicate_proposals": 0,
+  "rejected_proposals": 0,
+  "score_limitation": "Search scores are adaptive. Audit is a fixed baseline/selected gate; neither is a Boosters score.",
+  "seconds": 599.5298334999825,
+  "budget_seconds": 600.0,
+  "seconds_remaining": 0.47016191700822674,
+  "training_seconds": 260.8937002920138
+}

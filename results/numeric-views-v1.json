@@ -1,0 +1,442 @@
+{
+  "protocol": "Fixed four recipes, existing public-v5 controls; select by inner only, audit one frozen winner per task.",
+  "limitation": "Historically exposed public folds, no hidden-platform estimate.",
+  "source_sha256": {
+    "automl_models.py": "127eba50f256ca31cc6a6aadf6b2a9fe06aea93e81408ebde0cb0134a8e1f7c3",
+    "experiments/numeric_views_study.py": "d36d084374eca1cbfa0b180ac9a433ea0382135687f7de3ae8bfefed4103fac9"
+  },
+  "training_seconds": 571.9784097889788,
+  "tasks": {
+    "regression": {
+      "metric": "rmse",
+      "data_hashes": {
+        "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      "validation": {
+        "search": "temporal:Year_Factor:train_last=4:test_after_train + temporal:Year_Factor:train_last=3:test_after_train",
+        "audit": "temporal:Year_Factor:train_last=5:test_after_train",
+        "nested": true,
+        "search_policy": "rolling-origin",
+        "search_key": "31db0c0e20a43eecd1d9f17ff800eb6ecd94ba948986e8792f8d4b3b46569a5f",
+        "audit_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+        "search_fit_rows": 33229,
+        "search_valid_rows": 23825,
+        "audit_rows": 18308,
+        "search_folds": [
+          {
+            "description": "temporal:Year_Factor:train_last=4:test_after_train",
+            "fit_rows": 22054,
+            "valid_rows": 12946,
+            "key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+            "weight": 0.65
+          },
+          {
+            "description": "temporal:Year_Factor:train_last=3:test_after_train",
+            "fit_rows": 11175,
+            "valid_rows": 10879,
+            "key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+            "weight": 0.35
+          }
+        ],
+        "search_aggregation": "weighted mean across rolling windows",
+        "data_hashes": {
+          "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+          "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+          "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+          "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+        }
+      },
+      "control_candidate": {
+        "family": "extra_trees",
+        "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+        "target_transform": "log1p",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [],
+        "parameters": {
+          "max_depth": 24,
+          "max_features": 0.8,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "class_weight_power": 0,
+        "decision_power": 0
+      },
+      "control_inner": 46.97171096607024,
+      "control_outer": 42.19670002719412,
+      "control_source": "results/public-v5/regression-adaptive",
+      "experiments": [
+        {
+          "mode": "rank",
+          "candidate": {
+            "family": "extra_trees",
+            "numeric_view": "rank",
+            "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+            "target_transform": "log1p",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          "folds": [
+            {
+              "key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+              "score": 46.17169813038103,
+              "weight": 0.65,
+              "fit_seconds": 75.2665618339961
+            },
+            {
+              "key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+              "score": 48.38983780578096,
+              "weight": 0.35,
+              "fit_seconds": 30.132881416007876
+            }
+          ],
+          "score": 46.948047016771,
+          "status": "completed"
+        },
+        {
+          "mode": "signed_log",
+          "candidate": {
+            "family": "extra_trees",
+            "numeric_view": "signed_log",
+            "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+            "target_transform": "log1p",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          "folds": [
+            {
+              "key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+              "score": 46.23130704480678,
+              "weight": 0.65,
+              "fit_seconds": 71.54186925000977
+            },
+            {
+              "key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+              "score": 47.942104841848355,
+              "weight": 0.35,
+              "fit_seconds": 28.371633665985428
+            }
+          ],
+          "score": 46.830086273771336,
+          "status": "completed"
+        },
+        {
+          "mode": "projection",
+          "candidate": {
+            "family": "extra_trees",
+            "numeric_view": "projection",
+            "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+            "target_transform": "log1p",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          "folds": [
+            {
+              "key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+              "score": 46.78433455338629,
+              "weight": 0.65,
+              "fit_seconds": 43.848694957996486
+            },
+            {
+              "key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+              "score": 47.57760654249275,
+              "weight": 0.35,
+              "fit_seconds": 17.5099884159863
+            }
+          ],
+          "score": 47.06197974957355,
+          "status": "completed"
+        },
+        {
+          "mode": "rank_projection",
+          "candidate": {
+            "family": "extra_trees",
+            "numeric_view": "rank_projection",
+            "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+            "target_transform": "log1p",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [],
+            "parameters": {
+              "max_depth": 24,
+              "max_features": 0.8,
+              "min_samples_leaf": 2,
+              "min_samples_split": 2,
+              "n_estimators": 200
+            },
+            "class_weight_power": 0,
+            "decision_power": 0
+          },
+          "folds": [
+            {
+              "key": "4b4a548301d6cc91e82371731255d62505096520f201505aec67f2cd94aaffb4",
+              "score": 46.47856636117678,
+              "weight": 0.65,
+              "fit_seconds": 85.18811420802376
+            },
+            {
+              "key": "52607b5d8439fd004a7e85822885427d44b706dce5e2a96864c93d38ce9691d2",
+              "score": 48.73031542833657,
+              "weight": 0.35,
+              "fit_seconds": 33.9527080830012
+            }
+          ],
+          "score": 47.266678534682704,
+          "status": "completed"
+        }
+      ],
+      "frozen_selection": "signed_log",
+      "selected_outer": 42.012317102393645,
+      "audit_fit_seconds": 127.69711445798748
+    },
+    "multiclass": {
+      "metric": "macro_f1",
+      "data_hashes": {
+        "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      "validation": {
+        "search": "stratified-group5:first:seed42:exact-feature-groups",
+        "audit": "stratified-group5:first:seed42:exact-feature-groups",
+        "nested": true,
+        "search_policy": "single",
+        "search_key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+        "audit_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+        "search_fit_rows": 56707,
+        "search_valid_rows": 13822,
+        "audit_rows": 17141,
+        "search_folds": [
+          {
+            "description": "stratified-group5:first:seed42:exact-feature-groups",
+            "fit_rows": 56707,
+            "valid_rows": 13822,
+            "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+            "weight": 1.0
+          }
+        ],
+        "search_aggregation": "single window",
+        "data_hashes": {
+          "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+          "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+          "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+          "dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+        }
+      },
+      "control_candidate": {
+        "family": "xgboost",
+        "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+        "target_transform": "none",
+        "feature_operations": [],
+        "drop_columns": [],
+        "frequency_columns": [
+          "proto",
+          "service",
+          "state"
+        ],
+        "parameters": {
+          "colsample_bytree": 1.0,
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "n_estimators": 600,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0
+        },
+        "class_weight_power": 0,
+        "decision_power": 0.3
+      },
+      "control_inner": 0.6367083180924042,
+      "control_outer": 0.6373379463394646,
+      "control_source": "results/public-v5/multiclass-adaptive",
+      "experiments": [
+        {
+          "mode": "rank",
+          "candidate": {
+            "family": "xgboost",
+            "numeric_view": "rank",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0.3
+          },
+          "folds": [
+            {
+              "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+              "score": 0.610423228034205,
+              "weight": 1.0,
+              "fit_seconds": 14.427248749998398
+            }
+          ],
+          "score": 0.610423228034205,
+          "status": "completed"
+        },
+        {
+          "mode": "signed_log",
+          "candidate": {
+            "family": "xgboost",
+            "numeric_view": "signed_log",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0.3
+          },
+          "folds": [
+            {
+              "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+              "score": 0.6150148105376763,
+              "weight": 1.0,
+              "fit_seconds": 14.258872750011506
+            }
+          ],
+          "score": 0.6150148105376763,
+          "status": "completed"
+        },
+        {
+          "mode": "projection",
+          "candidate": {
+            "family": "xgboost",
+            "numeric_view": "projection",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0.3
+          },
+          "folds": [
+            {
+              "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+              "score": 0.6317124820951154,
+              "weight": 1.0,
+              "fit_seconds": 12.573985124996398
+            }
+          ],
+          "score": 0.6317124820951154,
+          "status": "completed"
+        },
+        {
+          "mode": "rank_projection",
+          "candidate": {
+            "family": "xgboost",
+            "numeric_view": "rank_projection",
+            "hypothesis": "Low per-class F1 for ['Analysis', 'Backdoor', 'DoS']; test soft training-prior decision correction 0.3.",
+            "target_transform": "none",
+            "feature_operations": [],
+            "drop_columns": [],
+            "frequency_columns": [
+              "proto",
+              "service",
+              "state"
+            ],
+            "parameters": {
+              "colsample_bytree": 1.0,
+              "learning_rate": 0.05,
+              "max_depth": 6,
+              "n_estimators": 600,
+              "reg_alpha": 0.0,
+              "reg_lambda": 1.0,
+              "subsample": 1.0
+            },
+            "class_weight_power": 0,
+            "decision_power": 0.3
+          },
+          "folds": [
+            {
+              "key": "64e73424ce486e921aedb067cc48f1ab45c9cd439d5d866a969404a3c222a143",
+              "score": 0.6338855940261034,
+              "weight": 1.0,
+              "fit_seconds": 17.208736874978058
+            }
+          ],
+          "score": 0.6338855940261034,
+          "status": "completed"
+        }
+      ],
+      "frozen_selection": "control",
+      "selected_outer": 0.6373379463394646
+    }
+  },
+  "status": "completed"
+}

@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "synthetic_quality_checked": true,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "archive": {
+    "archive": "alfa_autoresearch_submission.zip",
+    "bytes": 41690,
+    "sha256": "5afbf6c679623a51a494281821963fe86cd7ead3bb907381e83bd865400ed703",
+    "files": {
+      "solution.py": "3d87e231b70a735a859a5f61873c3ceec1ed611dbe0786dd2bbfd085a21a1d3c",
+      "automl_engine.py": "55a4d4b44760ca67ce70c3461261ea5d7500d47b90d96f1450c4fcfa954e1059",
+      "automl_data.py": "5140a1669081445bedb972284294245b79552a65df15f8b3d8d75a7fbb499427",
+      "automl_models.py": "127eba50f256ca31cc6a6aadf6b2a9fe06aea93e81408ebde0cb0134a8e1f7c3",
+      "automl_worker.py": "f56085d8b25940a688a47bab87b547a4619349db2239f43224a7d05e5f5f6fb9",
+      "automl_llm.py": "87c413535faf0854f3f9b2352d2ec6d8823658b5fa7bec0238fc48060f7b8d13",
+      "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
+      "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "deterministic": true
+  },
+  "scenarios": [
+    {
+      "scenario": "01-rmse-regression",
+      "status": "passed",
+      "seconds": 4.734330750012305,
+      "experiments": 2,
+      "first_submission_seconds": 0.6069032079831231,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 0.13090920749161206,
+      "constant_control_metric": 2.056142229587094,
+      "improvement_over_control": 1.925233022095482,
+      "seed": 1729
+    },
+    {
+      "scenario": "02-mae-regression",
+      "status": "passed",
+      "seconds": 4.730976457998622,
+      "experiments": 2,
+      "first_submission_seconds": 0.5977170830010436,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 0.10370920080282964,
+      "constant_control_metric": 1.607487259060787,
+      "improvement_over_control": 1.5037780582579572,
+      "seed": 1729
+    },
+    {
+      "scenario": "03-r2-regression",
+      "status": "passed",
+      "seconds": 4.6145870000182185,
+      "experiments": 2,
+      "first_submission_seconds": 0.6062985000025947,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 0.995529518607768,
+      "constant_control_metric": -0.10285955393142165,
+      "improvement_over_control": 1.0983890725391896,
+      "seed": 1729
+    },
+    {
+      "scenario": "04-macro_f1-classification",
+      "status": "passed",
+      "seconds": 3.9363244169799145,
+      "experiments": 2,
+      "first_submission_seconds": 0.5701687500113621,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 1.0,
+      "constant_control_metric": 0.25974025974025977,
+      "improvement_over_control": 0.7402597402597402,
+      "seed": 1729
+    },
+    {
+      "scenario": "05-micro_f1-classification",
+      "status": "passed",
+      "seconds": 3.922244250017684,
+      "experiments": 2,
+      "first_submission_seconds": 0.5715954159968533,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 1.0,
+      "constant_control_metric": 0.6382978723404256,
+      "improvement_over_control": 0.36170212765957444,
+      "seed": 1729
+    },
+    {
+      "scenario": "06-accuracy-classification",
+      "status": "passed",
+      "seconds": 3.9131230829807464,
+      "experiments": 2,
+      "first_submission_seconds": 0.5637887500051875,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 1.0,
+      "constant_control_metric": 0.6382978723404256,
+      "improvement_over_control": 0.36170212765957444,
+      "seed": 1729
+    },
+    {
+      "scenario": "07-roc_auc-binary",
+      "status": "passed",
+      "seconds": 3.77685012499569,
+      "experiments": 2,
+      "first_submission_seconds": 0.589545458991779,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 1.0,
+      "constant_control_metric": 0.5,
+      "improvement_over_control": 0.5,
+      "seed": 1729
+    },
+    {
+      "scenario": "08-log_loss-binary",
+      "status": "passed",
+      "seconds": 3.8009520420164336,
+      "experiments": 2,
+      "first_submission_seconds": 0.6070319580030628,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 0.04666354174034018,
+      "constant_control_metric": 0.6795973085272106,
+      "improvement_over_control": 0.6329337667868704,
+      "seed": 1729
+    },
+    {
+      "scenario": "09-log_loss-classification",
+      "status": "passed",
+      "seconds": 4.254979208984878,
+      "experiments": 2,
+      "first_submission_seconds": 0.5827792500203941,
+      "final_refit": "completed",
+      "llm_calls": 0,
+      "test_metric": 0.0008496968330835595,
+      "constant_control_metric": 0.9689164977987446,
+      "improvement_over_control": 0.968066800965661,
+      "seed": 1729
+    }
+  ],
+  "workspace": "/private/tmp/alfa-cleanroom-research-final",
+  "real_llm_api": false,
+  "limitation": "Local macOS Python 3.12 runtime; not the organizer Docker container."
+}

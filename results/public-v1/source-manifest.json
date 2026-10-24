@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "bed25342e8742c28475a8db0c758edfb3e0391d8fd64fce7cb0a7d34c8ee89ab",
+  "files": {
+    "solution.py": "fee801cab2d8b9f94660bcf5c9023e15d5e1420aedbfd5ab5f63f9878b63e21c",
+    "automl_engine.py": "118187fe50a387364c90f5c868f1a78b3c1e4de9dcd9675dd229d978e5b9b3bf",
+    "automl_data.py": "4ac0fa087f84e3f00f02aec19975209755bcafd1b5793c7982415f75da9fdecf",
+    "automl_models.py": "963733b3c75ff7bd9d61afbac9c2e48edbfe954687d12fc382302d8e7a79cc3c",
+    "automl_worker.py": "4d03227e1b26a485331ecfe894884351e532fcdd7c13ad2fcb4f347134a7abfd",
+    "automl_llm.py": "6d6d5e54881b301f3550be498d3107e32547d9f40d507c9b78d41afcd1c191b4",
+    "automl_runtime.py": "6eafc44be767228c71cd9aea57b8353e1b4a2745fd02eb77d97e65c9f0f5b80f",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "all_four_runs_share_identical_source": true
+}

@@ -1,0 +1,50 @@
+{
+  "candidates": [
+    {
+      "family": "lightgbm",
+      "hypothesis": "Quick native-category boosting baseline before research.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [],
+      "frequency_columns": [],
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "n_estimators": 120,
+        "num_leaves": 31,
+        "reg_alpha": 0.0,
+        "reg_lambda": 0.0,
+        "subsample": 1.0
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    },
+    {
+      "family": "catboost",
+      "catboost_encoding": "onehot",
+      "hypothesis": "Measured train/test covariate shift: test removal of severely shifted numeric predictors on the untouched search fold.",
+      "target_transform": "none",
+      "feature_operations": [],
+      "drop_columns": [
+        "august_avg_temp_c",
+        "cooling_degree_days_c",
+        "june_max_temp_c"
+      ],
+      "frequency_columns": [],
+      "expert_column": "State_Factor",
+      "expert_min_rows": 1396,
+      "max_expert_groups": 4,
+      "parameters": {
+        "depth": 6,
+        "iterations": 500,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.05
+      },
+      "class_weight_power": 0,
+      "decision_power": 0
+    }
+  ],
+  "search_score": 45.43946864699612
+}

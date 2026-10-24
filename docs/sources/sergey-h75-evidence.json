@@ -1,0 +1,29 @@
+{
+  "hashes": {
+    "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+    "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+  },
+  "split_key": "239200bc6da7d2190167f04a816e82fd7fc2c29ec36eca7f72c29ff1a19fef32",
+  "archive_sha256": "cae8cdbd83e32ece12d4ee0fa1e14997916db861e8732fb5402ce4707f96534c",
+  "request": {
+    "task_path": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/tmp/sergey-platform-multiclass-1792823890790389000/task.md",
+    "candidate": {
+      "family": "xgboost",
+      "parameters": {},
+      "strategy": "probability_stacking",
+      "hypothesis": "Regularized grouped OOF log-probability stack of raw, bounded SMOTE and frequency branches",
+      "preprocessing": "probability-stacking-v1",
+      "scale": false,
+      "max_outlier_fraction": 0,
+      "target_transform": "none"
+    },
+    "mode": "evaluate",
+    "output": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/tmp/sergey-platform-multiclass-1792823890790389000/agent_runs/20261024T093812286598/experiment-01",
+    "split_path": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/tmp/sergey-platform-multiclass-1792823890790389000/agent_runs/20261024T093812286598/splits.npz",
+    "threads": 4
+  },
+  "source_directory": "/Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/tmp/sergey-platform-multiclass-1792823890790389000/agent_runs/20261024T093812286598/experiment-01",
+  "reuse_reason": "H75 separate runner reached duplicate existing full branches after fresh OOF. Guard interruption preserved; the already-required clean archive run supplies the same full train-only protocol without starting an extra recovery fit."
+}

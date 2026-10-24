@@ -66,6 +66,15 @@ def test_regression_log_target_and_feature_operations():
     assert pred.shape == (3,)
     assert np.isfinite(pred).all()
     assert (pred > 0).all()
+
+
+def test_log_target_uses_its_actual_mathematical_domain():
+    X = pd.DataFrame({'x': np.arange(12, dtype=float)})
+    candidate = {'family': 'extra_trees', 'parameters': {'n_estimators': 50}, 'target_transform': 'log1p'}
+    model = build_pipeline('regression', candidate).fit(X, np.linspace(-.5, 2, len(X)))
+    assert np.isfinite(model.predict(X)).all()
+    with pytest.raises(ValueError, match='greater than -1'):
+        build_pipeline('regression', candidate).fit(X, np.linspace(-1, 2, len(X)))
     assert model.predict(X.iloc[:1]).shape == (1,)
 
 
@@ -110,6 +119,55 @@ def test_xgboost_binary_classification_uses_binary_objective():
     assert model.predict_proba(X.iloc[:4]).shape == (4, 2)
 
 
+@pytest.mark.parametrize('encoding', ['native', 'onehot'])
+def test_catboost_categorical_representations_are_distinct_usable_candidates(encoding):
+    X, y = _classification_data()
+    candidate = {'family': 'catboost', 'catboost_encoding': encoding,
+                 'parameters': {'iterations': 50, 'depth': 4}}
+    model = build_pipeline('classification', candidate).fit(X, y)
+    future = pd.DataFrame({'amount': [np.nan, 4.], 'kind': ['unseen', None]})
+    assert model.predict_proba(future).shape == (2, 3)
+    assert model.audit_['categorical_handling'] == encoding
+    other = {**candidate, 'catboost_encoding': 'onehot' if encoding == 'native' else 'native'}
+    assert candidate_key(candidate) != candidate_key(other)
+
+
+def test_group_experts_train_only_eligible_groups_and_keep_global_fallback():
+    rng = np.random.default_rng(77)
+    n = 420
+    group = np.asarray(['a', 'b', 'c'])[rng.integers(0, 3, n)]
+    signal = rng.normal(size=n)
+    noise = rng.normal(size=n)
+    X = pd.DataFrame({'segment': group, 'signal': signal, 'noise': noise})
+    y = (100 + 3 * signal + np.where(group == 'a', 6., np.where(group == 'b', -4., 0.)) + .1 * noise)
+    candidate = {'family': 'extra_trees', 'parameters': {'n_estimators': 60, 'max_depth': 8},
+                 'target_transform': 'log1p', 'expert_column': 'segment',
+                 'expert_min_rows': 100, 'max_expert_groups': 2}
+    model = build_pipeline('regression', candidate, threads=2).fit(X, y)
+    self_prediction = model.predict(X)
+    assert np.isfinite(self_prediction).all()
+    assert model.audit_['expert_column'] == 'segment'
+    assert model.audit_['expert_models'] == 2
+    assert model.audit_['expert_skipped_groups'] == []
+    unseen = pd.DataFrame({'segment': ['unseen'], 'signal': [0.], 'noise': [0.]})
+    assert np.isfinite(model.predict(unseen)).all()
+    assert candidate_key(candidate) != candidate_key({**candidate, 'expert_column': 'noise'})
+
+    labels = pd.Series(np.where(y > 103, 'high', 'low'))
+    classifier = build_pipeline('classification', {**candidate, 'target_transform': 'none'}, threads=2).fit(X, labels)
+    probabilities = classifier.predict_proba(X)
+    assert probabilities.shape == (n, 2)
+    np.testing.assert_allclose(probabilities.sum(axis=1), 1)
+    assert classifier.audit_['expert_models'] >= 1
+
+
+def test_blend_rejects_group_experts_outside_members():
+    with pytest.raises(ValueError, match='Blend transformations and group experts'):
+        canonical_candidate({'family': 'blend', 'expert_column': 'kind',
+                             'members': [{'family': 'extra_trees'}, {'family': 'linear'}],
+                             'weights': [.5, .5]})
+
+
 def test_blend_is_bounded_and_aligns_probabilities():
     X, y = _classification_data()
     candidate = {'family': 'blend', 'members': [
@@ -120,6 +178,9 @@ def test_blend_is_bounded_and_aligns_probabilities():
     assert model.predict_proba(X).shape == (len(X), len(model.classes_))
     assert len(model.predict(X)) == len(X)
     assert model.feature_code_ == ''
+    adjusted_members = {**candidate, 'members': [
+        {**candidate['members'][0], 'decision_power': .5}, candidate['members'][1]]}
+    assert candidate_key(candidate) == candidate_key(adjusted_members)
 
 
 def test_canonicalization_ignores_nonsemantic_fields_and_rejects_code_and_nested_blends():

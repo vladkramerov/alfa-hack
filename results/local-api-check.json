@@ -1,0 +1,9 @@
+{
+  "status": "not_run_missing_configuration",
+  "missing": [
+    "OPENAI_BASE_URL",
+    "OPENAI_MODEL"
+  ],
+  "baseline_contract": "AsyncOpenAI reads environment, no explicit endpoint or model ID in original baseline.",
+  "local_env_loaded_in_process_only": true
+}

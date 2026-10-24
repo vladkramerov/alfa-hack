@@ -14,3 +14,8 @@ submission.csv
 *.npz
 dist/*.zip
 tmp/
+
+.env.local
+*.intake
+drive-download-*/
+/Альфа Хак_AutoML .pdf

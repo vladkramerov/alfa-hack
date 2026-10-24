@@ -11,24 +11,31 @@ from sklearn import metrics
 from sklearn.model_selection import GroupShuffleSplit, StratifiedGroupKFold, train_test_split
 
 
-LOWER_IS_BETTER = {'rmse', 'mae', 'mse', 'rmsle', 'mape', 'log_loss'}
-CLASSIFICATION_METRICS = {'binary_f1', 'micro_f1', 'macro_f1', 'weighted_f1', 'accuracy', 'balanced_accuracy', 'roc_auc', 'log_loss'}
-REGRESSION_METRICS = {'rmse', 'mae', 'mse', 'rmsle', 'mape', 'r2'}
+LOWER_IS_BETTER = {'rmse', 'mae', 'mse', 'rmsle', 'mape', 'smape', 'medae', 'log_loss'}
+CLASSIFICATION_METRICS = {'binary_f1', 'micro_f1', 'macro_f1', 'weighted_f1', 'accuracy',
+                          'balanced_accuracy', 'roc_auc', 'log_loss', 'cohen_kappa', 'mcc'}
+REGRESSION_METRICS = {'rmse', 'mae', 'mse', 'rmsle', 'mape', 'smape', 'medae', 'r2', 'explained_variance'}
 _METRIC_PATTERNS = {
     'balanced_accuracy': r'\bbalanced[\s_-]*accuracy\b',
     'binary_f1': r'\b(?:binary[\s_-]*f1|f1[\s_-]*binary)\b',
-    'micro_f1': r'\b(?:micro[\s_-]*f1|f1[\s_-]*micro|f1(?:[\s_-]*score)?)\b',
+    'micro_f1': r'\b(?:micro[\s_-]*f1|f1[\s_-]*micro)\b',
     'weighted_f1': r'\b(?:weighted[\s_-]*f1|f1[\s_-]*weighted)\b',
-    'macro_f1': r'\b(?:macro[\s_-]*f1|f1[\s_-]*macro)\b',
-    'roc_auc': r'\b(?:roc[\s_-]*auc|auc)\b',
-    'log_loss': r'\b(?:log[\s_-]*loss|cross[\s_-]*entropy)\b',
-    'rmse': r'\b(?:rmse|root[\s_-]+mean[\s_-]+squared[\s_-]+error)\b',
-    'mae': r'\b(?:mae|mean[\s_-]+absolute[\s_-]+error)\b',
+    'macro_f1': r'\b(?:macro[\s_-]*f1|f1[\s_-]*macro|macro[\s_-]*f[\s_-]*measure)\b',
+    'roc_auc': r'\b(?:roc[\s_-]*auc|auc[\s_-]*roc|area[\s_-]+under[\s_-]+(?:the[\s_-]+)?roc|auc)\b',
+    'log_loss': r'\b(?:log[\s_-]*loss|cross[\s_-]*entropy|logarithmic[\s_-]+loss)\b',
+    'rmse': r'\b(?:rmse|root[\s_-]+mean[\s_-]+squared[\s_-]+error|среднеквадратичн\w*\s+ошибк\w*)\b',
+    'mae': r'\b(?:mae|mean[\s_-]+absolute[\s_-]+error|средн\w*\s+абсолютн\w*\s+ошибк\w*)\b',
     'mse': r'\b(?:mse|mean[\s_-]+squared[\s_-]+error)\b',
     'rmsle': r'\b(?:rmsle|root[\s_-]+mean[\s_-]+squared[\s_-]+logarithmic[\s_-]+error)\b',
     'mape': r'\b(?:mape|mean[\s_-]+absolute[\s_-]+percentage[\s_-]+error)\b',
-    'r2': r'\b(?:r2|r\^2|r²|r[\s_-]*squared|coefficient[\s_-]+of[\s_-]+determination)\b',
+    'smape': r'\b(?:smape|symmetric[\s_-]+mean[\s_-]+absolute[\s_-]+percentage[\s_-]+error)\b',
+    'medae': r'\b(?:medae|median[\s_-]+absolute[\s_-]+error)\b',
+    'r2': r'\b(?:r2|r\^2|r²|r[\s_-]*squared|coefficient[\s_-]+of[\s_-]+determination|коэффициент[\s_-]+детерминации)\b',
     'accuracy': r'\b(?:accuracy|точност[ьи])\b',
+    'cohen_kappa': r'\b(?:cohen[\s_-]*kappa|kappa[\s_-]*score)\b',
+    'mcc': r'\b(?:mcc|matthews[\s_-]+correlation)\b',
+    'explained_variance': r'\bexplained[\s_-]+variance\b',
+    'f1': r'\b(?:f1|f[\s_-]*score|f[\s_-]*measure)\b',
 }
 _DECLARATION = re.compile(r'\b(?:(?P<primary>primary|main|основн\w*)\s+)?(?:(?:evaluation|quality)\s+)?(?:metric|метрик\w*)\b', re.I)
 _SECONDARY = re.compile(r'\b(?:secondary|auxiliary|example\w*|diagnostic\w*|дополнител\w*|вторичн\w*|справочн\w*|пример\w*)\b', re.I)
@@ -44,8 +51,19 @@ def _metric_mentions(text):
     return {key for _, _, key in accepted}
 
 
-def infer_metric(text, default=None):
-    """Extract one declared primary metric; reject unknown or conflicting declarations."""
+def _canonical_metric(name):
+    # A bare "F1" means scikit-learn's default binary/micro average; explicit
+    # macro/weighted/binary declarations always win during span de-duplication.
+    return 'micro_f1' if name == 'f1' else name
+
+
+def infer_metric(text, default=None, strict=True):
+    """Extract one declared primary metric.
+
+    ``strict=False`` is used only as a last-resort contract fallback: an
+    unsupported or conflicting metric never prevents a valid submission from
+    being produced. The chosen fallback is recorded in ``TaskData.warnings``.
+    """
     lines = [re.sub(r'[*`]', '', line).strip() for line in text.splitlines()]
     declarations = []
     for i, line in enumerate(lines):
@@ -67,17 +85,22 @@ def infer_metric(text, default=None):
         rank = max(item[0] for item in declarations)
         chosen = [item for item in declarations if item[0] == rank]
         unknown = [fragment for _, fragment, names in chosen if not names]
-        if unknown:
+        if unknown and strict:
             raise ValueError('Unsupported explicit metric: ' + repr(unknown[0]))
         names = set().union(*(item[2] for item in chosen))
     else:
         names = _metric_mentions(text)
+    names = {_canonical_metric(name) for name in names}
     if len(names) > 1:
-        raise ValueError('Ambiguous metric: ' + ', '.join(sorted(names)))
+        if strict:
+            raise ValueError('Ambiguous metric: ' + ', '.join(sorted(names)))
+        names = set()
     if names:
         return next(iter(names))
     if default not in CLASSIFICATION_METRICS | REGRESSION_METRICS:
-        raise ValueError('Primary metric is missing or unsupported')
+        if strict:
+            raise ValueError('Primary metric is missing or unsupported')
+        return None
     return default
 
 
@@ -234,9 +257,14 @@ class TaskData:
     classes: tuple | None = None
     positive_class: object | None = None
     group_column: str | None = None
+    features: tuple | None = None
+    warnings: tuple = ()
+    metric_source: str = 'declared'
 
     @property
     def X(self):
+        if self.features is not None:
+            return self.train.loc[:, list(self.features)]
         excluded = [self.target] + ([self.id_column] if self.id_column else [])
         return self.train.drop(columns=excluded)
 
@@ -255,7 +283,9 @@ class TaskData:
                 frame = frame.iloc[positions]
             except (KeyError, TypeError):
                 raise ValueError('Sample IDs do not match test IDs')
-        return frame.drop(columns=[self.id_column], errors='ignore')[self.X.columns]
+        columns = list(self.features) if self.features is not None else list(self.X.columns)
+        frame = frame.drop(columns=[c for c in (self.id_column, self.target) if c], errors='ignore')
+        return frame.reindex(columns=columns)
 
     @property
     def hashes(self):
@@ -270,6 +300,65 @@ def _ordered_classes(values):
         return tuple(sorted(unique, key=lambda value: (type(value).__name__, str(value))))
 
 
+def _target_looks_numeric(series):
+    if pd.api.types.is_numeric_dtype(series):
+        return True
+    text = series.dropna().astype(str).str.strip()
+    if not len(text):
+        return False
+    converted = pd.to_numeric(text.str.replace(',', '.', regex=False), errors='coerce')
+    return bool(converted.notna().mean() > .98)
+
+
+def _default_metric(task_type, classes):
+    if task_type == 'regression':
+        return 'rmse'
+    if classes is not None and len(classes) == 2:
+        return 'binary_f1'
+    return 'macro_f1'
+
+
+def _choose_target(train, test, text, roles):
+    declared = _text_declared_column(text, 'target')
+    options = [c for c in roles.get('target', []) if c in train.columns]
+    if declared:
+        if declared not in train.columns:
+            raise ValueError('Declared target column is absent from train: ' + declared)
+        if declared in test.columns and not test[declared].isna().all():
+            raise ValueError('Declared target column contains values in test: ' + declared)
+        return declared
+    if len(options) == 1:
+        return options[0]
+    train_only = [c for c in train.columns if c not in test.columns]
+    if len(train_only) == 1:
+        return train_only[0]
+    # Target-like names are a conservative last structural hint, never a
+    # requirement tied to the public datasets.
+    named = [c for c in train_only if re.search(r'(^|_)(target|label|outcome|y|response|class|цель)(_|$)', str(c), re.I)]
+    if len(named) == 1:
+        return named[0]
+    raise ValueError('Target is ambiguous; declare it in task.md or data dictionary')
+
+
+def _choose_identifier(train, test, sample, text, roles, target):
+    declared = _text_declared_column(text, 'id')
+    options = [c for c in roles.get('id', []) if c in train.columns and c in test.columns]
+    if declared:
+        if declared not in train.columns or declared not in test.columns:
+            raise ValueError('Declared ID column is absent from train/test: ' + declared)
+        return declared
+    if len(options) == 1:
+        return options[0]
+    if len(options) > 1:
+        raise ValueError('Ambiguous identifier in data dictionary')
+    common = [c for c in sample.columns if c in test.columns and c in train.columns and c != target]
+    matching = [c for c in common if sample[c].is_unique and test[c].is_unique and
+                len(sample[c]) == len(test[c]) and set(sample[c]) == set(test[c])]
+    if len(matching) > 1:
+        raise ValueError('Ambiguous identifier matching sample and test')
+    return matching[0] if matching else None
+
+
 def load_task(path):
     path = Path(path).resolve()
     text = path.read_text(encoding='utf-8-sig')
@@ -278,39 +367,18 @@ def load_task(path):
     test = pd.read_csv(paths['test'])
     sample = pd.read_csv(paths['sample_submission'])
     dictionary = pd.read_csv(paths['dictionary']) if paths['dictionary'] else pd.DataFrame()
+    warnings = []
     roles, _ = _schema_roles(dictionary)
-    target_declared = _text_declared_column(text, 'target')
-    target_options = [c for c in roles.get('target', []) if c in train.columns and c not in test.columns]
-    if target_declared:
-        if target_declared not in train or target_declared in test:
-            raise ValueError('Declared target column is not a training-only column: ' + target_declared)
-        target = target_declared
-    elif len(target_options) == 1:
-        target = target_options[0]
-    else:
-        extra = [c for c in train.columns if c not in test.columns]
-        if len(extra) != 1:
-            raise ValueError('Target is ambiguous; declare it in task.md or data dictionary')
-        target = extra[0]
+    target = _choose_target(train, test, text, roles)
     if train[target].isna().any():
-        raise ValueError('Training target contains missing values')
-    explicit_id = _text_declared_column(text, 'id')
-    id_options = [c for c in roles.get('id', []) if c in train.columns and c in test.columns]
-    if explicit_id:
-        if explicit_id not in train or explicit_id not in test:
-            raise ValueError('Declared ID column is absent from train/test: ' + explicit_id)
-        identifier = explicit_id
-    elif len(id_options) == 1:
-        identifier = id_options[0]
-    else:
-        common = [c for c in sample.columns if c in test.columns and c in train.columns and c != target]
-        matching = [c for c in common if sample[c].is_unique and test[c].is_unique and
-                    len(sample[c]) == len(test[c]) and set(sample[c]) == set(test[c])]
-        if len(id_options) > 1:
-            raise ValueError('Ambiguous identifier in data dictionary')
-        if len(matching) > 1:
-            raise ValueError('Ambiguous identifier matching sample and test')
-        identifier = matching[0] if matching else None
+        # A handful of missing targets cannot be learned; keep rows only if a
+        # small minority is affected, otherwise the contract is invalid.
+        missing = int(train[target].isna().sum())
+        if missing > max(1, int(len(train) * .02)):
+            raise ValueError('Training target contains too many missing values')
+        train = train.loc[train[target].notna()].reset_index(drop=True)
+        warnings.append(f'dropped {missing} rows with missing target')
+    identifier = _choose_identifier(train, test, sample, text, roles, target)
     if identifier:
         if identifier not in sample:
             raise ValueError('Sample submission is missing the declared ID column')
@@ -321,33 +389,91 @@ def load_task(path):
     elif len(sample) != len(test):
         raise ValueError('Sample/test row count mismatch')
     excluded = {target, identifier}
-    train_features = [c for c in train if c not in excluded]
-    test_features = [c for c in test if c not in excluded]
-    if set(train_features) != set(test_features):
-        raise ValueError('Train/test predictor schemas differ')
+    train_features = [c for c in train.columns if c not in excluded]
     if identifier:
+        # Align future rows to the sample order before the identifier is removed
+        # from the predictor frame.
         test = test.set_index(identifier, drop=False).loc[sample[identifier].to_list()].reset_index(drop=True)
-    elif len(sample) != len(test):
-        raise ValueError('Sample/test row count mismatch')
-    metric_text = text
-    metric_default = None
-    metric = infer_metric(metric_text, default=metric_default)
+    test = test.drop(columns=[target] if target in test.columns else [], errors='ignore')
+    test_features = [c for c in test.columns if c not in excluded]
+    features = [c for c in train_features if c in test_features]
+    extra_train = [c for c in train_features if c not in test_features]
+    extra_test = [c for c in test_features if c not in train_features]
+    if extra_train:
+        warnings.append('train-only predictors ignored: ' + ', '.join(map(str, extra_train[:10])))
+    if extra_test:
+        warnings.append('test-only predictors ignored: ' + ', '.join(map(str, extra_test[:10])))
+    if not features:
+        raise ValueError('No shared predictors between train and test')
+    metric = None
+    metric_source = 'declared'
+    try:
+        metric = infer_metric(text, strict=True)
+    except ValueError as exc:
+        if 'Unsupported explicit metric' in str(exc) or 'Ambiguous metric' in str(exc):
+            # A declared but unsupported or conflicting primary metric is a
+            # contract error, never a silent substitution.
+            raise
+        warnings.append(str(exc)[:300])
+        metric = infer_metric(text, strict=False)
+        metric_source = 'inferred'
+    numeric_target = _target_looks_numeric(train[target])
+    if metric is None:
+        # Infer task type from the target and dataset structure, never from a
+        # public target name.
+        unique = int(train[target].nunique(dropna=True))
+        textual = re.search(r'classification|классификац|classify', text, re.I)
+        if textual:
+            task_type = 'classification'
+        elif re.search(r'regression|регресс', text, re.I):
+            task_type = 'regression'
+        elif numeric_target and (unique > max(20, int(len(train) * .01)) or not np.allclose(
+                pd.to_numeric(train[target], errors='coerce').dropna() % 1, 0)):
+            task_type = 'regression'
+        else:
+            task_type = 'classification'
+        classes_preview = _ordered_classes(train[target]) if task_type == 'classification' else None
+        metric = _default_metric(task_type, classes_preview)
+        metric_source = 'inferred_default'
+        warnings.append(f'metric inferred as {metric}')
     task_type = 'classification' if metric in CLASSIFICATION_METRICS else 'regression'
-    if task_type == 'classification' and pd.api.types.is_numeric_dtype(train[target]) and re.search(r'regression|регресс', text, re.I):
-        raise ValueError('Task description and primary metric disagree about task type')
+    if task_type == 'regression':
+        if not numeric_target:
+            # A declared regression metric on a categorical target is a contract
+            # conflict; classification is the only safe executable fallback.
+            warnings.append('regression metric on non-numeric target; using classification')
+            numeric_target = False
+        if not numeric_target:
+            task_type = 'classification'
+            metric = _default_metric(task_type, _ordered_classes(train[target]))
+            metric_source = 'inferred_default'
+    if task_type == 'regression' and not pd.api.types.is_numeric_dtype(train[target]):
+        converted = pd.to_numeric(train[target].astype(str).str.replace(',', '.', regex=False), errors='coerce')
+        if converted.isna().any():
+            raise ValueError('Regression target cannot be parsed as numeric')
+        train[target] = converted.astype(float)
+        warnings.append('converted regression target to numeric')
     classes = _ordered_classes(train[target]) if task_type == 'classification' else None
+    if task_type == 'classification' and classes is not None and len(classes) < 2:
+        raise ValueError('Classification target has fewer than two classes')
+    if metric in ('roc_auc', 'log_loss') and len(classes) > 2:
+        probability_columns = [c for c in sample if c != identifier]
+        if set(map(str, probability_columns)) != set(map(str, classes)):
+            raise ValueError('Multiclass probability output must have one column named for each class')
     positive_text = _text_declared_column(text, 'positive_class')
     positive_class = None
     if positive_text is not None:
         matches = [value for value in classes or () if str(value) == positive_text]
         if len(matches) != 1:
-            raise ValueError('Declared positive class does not match a target label')
-        positive_class = matches[0]
+            warnings.append('declared positive class not found; using default')
+        else:
+            positive_class = matches[0]
     group_declared = _text_declared_column(text, 'group')
-    group_options = [c for c in roles.get('group', []) if c in train_features]
-    group_column = group_declared if group_declared in train_features else (group_options[0] if len(group_options) == 1 else None)
+    group_options = [c for c in roles.get('group', []) if c in features]
+    group_column = group_declared if group_declared in features else (group_options[0] if len(group_options) == 1 else None)
     return TaskData(path, text, paths, train, test, sample, dictionary, target, identifier,
-                    task_type, metric, classes, positive_class, group_column)
+                    task_type, metric, classes, positive_class, group_column,
+                    tuple(features), tuple(warnings), metric_source)
 
 
 def _time_values(series):
@@ -360,7 +486,7 @@ def _time_values(series):
     return None
 
 
-def _temporal_split(bundle):
+def _temporal_candidate(bundle):
     candidates = []
     for column in bundle.X.columns:
         if not re.search(r'year|period|date|time|год|период|дата|врем', str(column), re.I):
@@ -370,13 +496,26 @@ def _temporal_split(bundle):
         if values is None or test_values is None:
             continue
         unique = np.unique(values.to_numpy())
-        numeric_period = pd.api.types.is_numeric_dtype(bundle.X[column]) and 3 <= len(unique) <= 100
+        numeric_period = pd.api.types.is_numeric_dtype(bundle.X[column]) and 3 <= len(unique) <= 200
         parsed_date = not pd.api.types.is_numeric_dtype(bundle.X[column]) and len(unique) >= 3
-        if (numeric_period or parsed_date) and test_values.min() > values.max():
-            candidates.append((column, values, unique))
+        if not (numeric_period or parsed_date) or test_values.min() <= values.max():
+            continue
+        # Prefer a compact, ordered period column with enough rows per period.
+        counts = pd.Series(values.to_numpy()).value_counts()
+        small = int((counts < max(20, int(len(values) * .01))).sum())
+        score = (len(unique), small, 0 if re.search(r'year|год', str(column), re.I) else 1)
+        candidates.append((score, column, values, unique))
     if not candidates:
         return None
-    column, values, unique = candidates[0]
+    _, column, values, unique = sorted(candidates, key=lambda item: item[0])[0]
+    return column, values, unique
+
+
+def _temporal_split(bundle):
+    candidate = _temporal_candidate(bundle)
+    if candidate is None:
+        return None
+    column, values, unique = candidate
     last = unique[-1]
     fit = np.flatnonzero(values.to_numpy() < last)
     valid = np.flatnonzero(values.to_numpy() == last)
@@ -388,6 +527,77 @@ def _temporal_split(bundle):
 
 def _stable_groups(X):
     return pd.util.hash_pandas_object(X, index=False).to_numpy(dtype=np.uint64)
+
+
+def _groups_for(bundle):
+    X = bundle.X
+    group_col = getattr(bundle, 'group_column', None)
+    if group_col and group_col in X:
+        return X[group_col].astype('string').fillna('__MISSING_GROUP__').to_numpy(), f'group:{group_col}'
+    return _stable_groups(X), 'exact-feature-groups'
+
+
+def _disjoint_temporal_fit(fit, valid, groups):
+    """Drop fit rows whose exact/group identity also occurs in the future window."""
+    overlap = set(groups[valid])
+    keep = np.asarray([groups[index] not in overlap for index in fit], dtype=bool)
+    return fit[keep]
+
+
+def _ensure_classes_in_fit(fit, valid, y, classes):
+    y = np.asarray(y)
+    fit_labels = set(pd.unique(y[fit])) if len(fit) else set()
+    missing = [label for label in classes or () if label not in fit_labels]
+    if not missing:
+        return fit, valid, []
+    move = np.asarray([value in set(missing) for value in y[valid]], dtype=bool)
+    return np.concatenate([fit, valid[move]]), valid[~move], missing
+
+
+def temporal_windows(bundle):
+    """Rolling-origin windows, newest first.
+
+    The newest window is the closest available proxy for a future test period.
+    For a task whose test period is beyond all training periods this is a more
+    honest selection signal than a random split, and using the newest window
+    avoids selecting a model on a stale year. The previous window is retained
+    as a stability check, not as a second opportunity to tune on the audit.
+    """
+    candidate = _temporal_candidate(bundle)
+    if candidate is None:
+        return []
+    column, values, unique = candidate
+    groups, _ = _groups_for(bundle)
+    labels = np.asarray(bundle.y)
+    windows = []
+    for period in list(unique[-2:])[::-1]:
+        fit = np.flatnonzero(values.to_numpy() < period)
+        valid = np.flatnonzero(values.to_numpy() == period)
+        if not len(fit) or not len(valid):
+            continue
+        fit = _disjoint_temporal_fit(fit, valid, groups)
+        if not len(fit):
+            continue
+        description = f'temporal:{column}:train_last={period}:test_after_train'
+        if bundle.task_type == 'classification':
+            fit, valid, missing = _ensure_classes_in_fit(fit, valid, labels, bundle.classes)
+            if missing:
+                description += ':classes-only-in-fit=' + ','.join(map(str, missing[:8]))
+            fit, valid, singleton_classes = _move_singletons_to_fit(fit, valid, bundle.y, groups)
+            if singleton_classes:
+                description += f':singleton-classes-kept-in-fit={len(singleton_classes)}'
+        if len(valid):
+            windows.append({'fit': np.sort(fit), 'valid': np.sort(valid),
+                            'description': description, 'period': str(period)})
+    if not windows:
+        return []
+    if len(windows) == 1:
+        windows[0]['weight'] = 1.0
+    else:
+        total = .65 + .35
+        windows[0]['weight'] = .65 / total
+        windows[1]['weight'] = .35 / total
+    return windows
 
 
 def _move_singletons_to_fit(fit, valid, y, groups):
@@ -408,26 +618,13 @@ def _move_singletons_to_fit(fit, valid, y, groups):
 def validation_split(bundle):
     X, y = bundle.X, bundle.y
     positions = np.arange(len(y))
+    groups, group_desc = _groups_for(bundle)
     group_col = getattr(bundle, 'group_column', None)
-    if group_col and group_col in X:
-        groups = X[group_col].astype('string').fillna('__MISSING_GROUP__').to_numpy()
-        group_desc = f'group:{group_col}'
-    else:
-        groups = _stable_groups(X)
-        group_desc = 'exact-feature-groups'
     has_duplicates = len(np.unique(groups)) < len(groups)
-    temporal = _temporal_split(bundle)
-    if temporal is not None:
-        temporal_fit, temporal_valid, temporal_desc = temporal
-        if set(groups[temporal_fit]).isdisjoint(set(groups[temporal_valid])):
-            if bundle.task_type == 'regression':
-                return temporal_fit, temporal_valid, temporal_desc
-            temporal_fit, temporal_valid, singleton_classes = _move_singletons_to_fit(
-                temporal_fit, temporal_valid, y, groups)
-            if len(temporal_valid):
-                if singleton_classes:
-                    temporal_desc += f':singleton-classes-kept-in-fit={len(singleton_classes)}'
-                return np.sort(temporal_fit), np.sort(temporal_valid), temporal_desc
+    windows = temporal_windows(bundle)
+    if windows:
+        primary = windows[0]
+        return primary['fit'], primary['valid'], primary['description']
     if bundle.task_type == 'regression':
         if has_duplicates or group_col:
             fit, valid = next(GroupShuffleSplit(n_splits=1, test_size=.2, random_state=42).split(X, y, groups))
@@ -448,8 +645,10 @@ def validation_split(bundle):
         except ValueError:
             fit, valid = train_test_split(positions, test_size=.2, random_state=42)
             description = 'random80/20:seed42:stratification-impossible'
-    fit, valid, singleton_classes = _move_singletons_to_fit(fit, valid, y, groups)
-    description += f':singleton-classes-kept-in-fit={len(singleton_classes)}' if singleton_classes else ''
+    singleton_classes = []
+    if bundle.task_type == 'classification':
+        fit, valid, singleton_classes = _move_singletons_to_fit(fit, valid, y, groups)
+        description += f':singleton-classes-kept-in-fit={len(singleton_classes)}' if singleton_classes else ''
     if not len(valid):
         # Use only groups that contain no singleton label, preserving the train-only constraint.
         counts = pd.Series(y).value_counts(dropna=False)
@@ -487,12 +686,21 @@ def score(metric, y, prediction, classes=None, positive_class=None):
     if metric == 'mse': return float(metrics.mean_squared_error(y_array, pred))
     if metric == 'mae': return float(metrics.mean_absolute_error(y_array, pred))
     if metric == 'mape': return float(metrics.mean_absolute_percentage_error(y_array, pred))
+    if metric == 'smape':
+        denominator = np.abs(y_array) + np.abs(pred)
+        ratio = np.divide(2 * np.abs(y_array - pred), denominator,
+                          out=np.zeros_like(denominator, dtype=float), where=denominator > 0)
+        return float(np.mean(ratio) * 100)
+    if metric == 'medae': return float(metrics.median_absolute_error(y_array, pred))
     if metric == 'rmsle':
         if np.any(y_array < 0): raise ValueError('RMSLE requires nonnegative actual targets')
         return float(np.sqrt(metrics.mean_squared_log_error(y_array, np.maximum(pred, 0))))
     if metric == 'r2': return float(metrics.r2_score(y_array, pred))
+    if metric == 'explained_variance': return float(metrics.explained_variance_score(y_array, pred))
     if metric == 'accuracy': return float(metrics.accuracy_score(y_array, pred))
     if metric == 'balanced_accuracy': return float(metrics.balanced_accuracy_score(y_array, pred))
+    if metric == 'cohen_kappa': return float(metrics.cohen_kappa_score(y_array, pred))
+    if metric == 'mcc': return float(metrics.matthews_corrcoef(y_array, pred))
     if metric in ('binary_f1', 'micro_f1', 'macro_f1', 'weighted_f1'):
         labels = _class_order(y_array, classes)
         if metric == 'binary_f1':
@@ -540,7 +748,9 @@ def score(metric, y, prediction, classes=None, positive_class=None):
 
 
 def better(metric, a, b):
-    if metric not in LOWER_IS_BETTER | {'r2', 'accuracy', 'balanced_accuracy', 'roc_auc', 'binary_f1', 'micro_f1', 'macro_f1', 'weighted_f1'}:
+    if metric not in LOWER_IS_BETTER | {'r2', 'explained_variance', 'accuracy', 'balanced_accuracy',
+                                        'roc_auc', 'binary_f1', 'micro_f1', 'macro_f1',
+                                        'weighted_f1', 'cohen_kappa', 'mcc'}:
         raise ValueError('Unsupported metric: ' + str(metric))
     if b is None: return np.isfinite(a)
     return np.isfinite(a) and (a < b if metric in LOWER_IS_BETTER else a > b)
@@ -627,3 +837,131 @@ def atomic_submission(bundle, frame, destination=None):
     frame.to_csv(temporary, index=False)
     validate_submission(bundle, pd.read_csv(temporary))
     os.replace(temporary, target)
+
+
+def _bootstrap_frames(task_path):
+    """Resolve the minimum needed to write a valid file without semantic parsing."""
+    task_path = Path(task_path).resolve()
+    base = task_path.parent
+    text = task_path.read_text(encoding='utf-8-sig', errors='replace') if task_path.is_file() else ''
+    try:
+        paths = resolve_paths(task_path, text)
+        return paths, pd.read_csv(paths['train']), pd.read_csv(paths['test']), pd.read_csv(paths['sample_submission'])
+    except Exception:
+        pass
+    files = sorted(p for p in base.rglob('*.csv') if 'agent_runs' not in p.parts)
+    if not files:
+        raise FileNotFoundError('No CSV files near task.md')
+    frames = {}
+    for path in files:
+        try:
+            frames[path] = pd.read_csv(path, nrows=200)
+        except (OSError, UnicodeError, pd.errors.ParserError):
+            continue
+    if not frames:
+        raise FileNotFoundError('No readable CSV files near task.md')
+    by_name = lambda pattern: [p for p in frames if re.search(pattern, p.stem, re.I)]
+    sample_candidates = by_name(r'sample[_ -]?submission|submission[_ -]?sample|sample')
+    dictionary = by_name(r'dictionary|schema|metadata')
+    if dictionary:
+        frames.pop(dictionary[0], None)
+    if not sample_candidates:
+        rows = {p: len(frame) for p, frame in frames.items()}
+        candidates = [p for p, frame in frames.items() if len(frame.columns) <= 3]
+        if candidates:
+            sample_candidates = sorted(candidates, key=lambda p: (len(frames[p].columns), -rows[p]))
+    if not sample_candidates:
+        raise ValueError('Cannot identify sample_submission.csv')
+    sample_path = sample_candidates[0]
+    sample = frames[sample_path]
+    remaining = [p for p in frames if p != sample_path]
+    train_path = next((p for p in remaining if re.search(r'(^|[_ -])train(ing)?([_ -]|$)', p.stem, re.I)), None)
+    test_path = next((p for p in remaining if p != train_path and re.search(r'(^|[_ -])test(ing)?([_ -]|$)', p.stem, re.I)), None)
+    if train_path is None:
+        train_path = max(remaining, key=lambda p: (len(frames[p].columns), len(frames[p]))) if remaining else None
+    if test_path is None:
+        test_rows = len(sample)
+        candidates = [p for p in remaining if p != train_path and len(frames[p]) == test_rows]
+        test_path = candidates[0] if candidates else (remaining[0] if remaining else None)
+    if train_path is None or test_path is None:
+        raise ValueError('Cannot identify train/test CSVs')
+    return {'train': train_path, 'test': test_path, 'sample_submission': sample_path,
+            'dictionary': dictionary[0] if dictionary else None}, frames[train_path], frames[test_path], sample
+
+
+def bootstrap_submission(task_path):
+    """Write a structurally valid early submission with zero model training.
+
+    This intentionally avoids metric/model assumptions: it only needs enough
+    structure to fill sample_submission. Any later, stronger result replaces it
+    atomically.
+    """
+    try:
+        task_path = Path(task_path).resolve()
+        paths, train, test, sample = _bootstrap_frames(task_path)
+        target = None
+        try:
+            text = task_path.read_text(encoding='utf-8-sig', errors='replace')
+            declared = _text_declared_column(text, 'target')
+            if declared in train.columns:
+                target = declared
+        except Exception:
+            pass
+        if target is None:
+            extra = [c for c in train.columns if c not in test.columns]
+            if len(extra) == 1:
+                target = extra[0]
+        output_columns = list(sample.columns)
+        id_column = output_columns[0] if len(output_columns) > 1 else None
+        if id_column is None and len(sample.columns) == 1:
+            id_column = None
+        values = output_columns[1:] if id_column else output_columns
+        frame = sample.copy()
+        if target is not None and target in train.columns:
+            target_values = train[target]
+            numeric = _target_looks_numeric(target_values)
+            unique = int(target_values.nunique(dropna=True))
+            classification = not numeric or unique <= min(50, max(2, int(len(target_values) * .02)))
+            if classification:
+                labels = pd.unique(target_values.dropna())
+                fill = labels[0] if len(labels) else 0
+                for column in values:
+                    frame[column] = fill
+            else:
+                numeric_values = pd.to_numeric(target_values, errors='coerce')
+                fill = float(numeric_values.mean()) if numeric_values.notna().any() else 0.
+                for column in values:
+                    frame[column] = fill
+        else:
+            for column in values:
+                if pd.api.types.is_numeric_dtype(sample[column]):
+                    frame[column] = 0.
+                else:
+                    frame[column] = 'unknown'
+        # Probability-like submissions: spread the fallback rather than leaving
+        # a single class with all mass, which is invalid for some metrics.
+        if len(values) > 1:
+            for column in values:
+                frame[column] = 1. / len(values)
+        for column in output_columns:
+            if frame[column].isna().any():
+                raise ValueError('fallback contains missing values')
+        destination = task_path.parent / 'submission.csv'
+        temporary = destination.with_name(destination.name + '.bootstrap.tmp')
+        frame.to_csv(temporary, index=False)
+        os.replace(temporary, destination)
+        return destination
+    except Exception:
+        return None
+
+
+def emergency_submission(task_path):
+    """Final safety net used by solution.py after unexpected failures."""
+    path = Path(task_path).resolve().parent / 'submission.csv'
+    if path.is_file():
+        try:
+            if len(pd.read_csv(path)) > 0:
+                return path
+        except Exception:
+            pass
+    return bootstrap_submission(task_path)

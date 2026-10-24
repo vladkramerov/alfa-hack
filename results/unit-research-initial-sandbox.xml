@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="66" time="13.429" timestamp="2026-10-24T10:24:39.315922+03:00" hostname="MacBook-Pro-Max.local"><testcase classname="tests.test_data.TaskLoadingTests" name="test_arbitrary_filenames_and_optional_dictionary_fallback" time="0.007" /><testcase classname="tests.test_data.TaskLoadingTests" name="test_declared_id_missing_from_sample_fails_clearly" time="0.004" /><testcase classname="tests.test_data.TaskLoadingTests" name="test_missing_required_role_fails" time="0.001" /><testcase classname="tests.test_data.TaskLoadingTests" name="test_multiclass_probability_metric_requires_explicit_class_columns" time="0.003" /><testcase classname="tests.test_data.TaskLoadingTests" name="test_role_links_dictionary_schema_and_sample_order" time="0.004" /><testcase classname="tests.test_data.TaskLoadingTests" name="test_unknown_and_ambiguous_primary_metric_fail" time="0.001" /><testcase classname="tests.test_data.SplitTests" name="test_all_singleton_classes_are_retained_when_no_safe_validation_exists" time="0.002" /><testcase classname="tests.test_data.SplitTests" name="test_classification_can_use_temporal_split_without_crossing_groups" time="0.002" /><testcase classname="tests.test_data.SplitTests" name="test_date_split_accepts_high_cardinality_dates_when_test_is_later" time="0.009" /><testcase classname="tests.test_data.SplitTests" name="test_duplicate_rows_never_cross_split_for_classification_or_regression" time="0.003" /><testcase classname="tests.test_data.SplitTests" name="test_public_temporal_split_requires_later_test_period" time="0.002" /><testcase classname="tests.test_data.SplitTests" name="test_singleton_class_is_kept_in_fit_and_limitation_is_reported" time="0.001" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_binary_auc_respects_explicit_positive_class" time="0.002" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_fallback_submission_has_valid_rows" time="0.001" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_log_loss_uses_named_class_order" time="0.000" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_metric_aliases_and_directions" time="0.001" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_multiclass_probability_columns_are_remapped_once_to_sample_order" time="0.001" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_single_column_probability_fallback_uses_positive_class" time="0.001" /><testcase classname="tests.test_data.MetricAndSubmissionTests" name="test_submission_validates_sample_order_and_atomic_write" time="0.003" /><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_cli_evaluates_generated_feature_and_feeds_diagnostics_to_next_proposal" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">self = &lt;test_engine.EngineReliabilityTests testMethod=test_cli_evaluates_generated_feature_and_feeds_diagnostics_to_next_proposal&gt;
+
+    def test_cli_evaluates_generated_feature_and_feeds_diagnostics_to_next_proposal(self):
+        operation = {'family': 'linear', 'hypothesis': 'Use measured interaction',
+                     'feature_operations': [{'op': 'mul', 'name': 'measured_product',
+                                             'left': 'measurement', 'right': 'other'}]}
+&gt;       with tempfile.TemporaryDirectory() as tmp, MockAPI([operation, 'stop']) as api:
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_engine.py:68: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:457: in __init__
+    self.server_bind()
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/http/server.py:140: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x141d95850&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_engine_deduplicates_identical_candidate_despite_new_hypothesis" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">self = &lt;test_engine.EngineReliabilityTests testMethod=test_engine_deduplicates_identical_candidate_despite_new_hypothesis&gt;
+
+    def test_engine_deduplicates_identical_candidate_despite_new_hypothesis(self):
+        first = {'family': 'linear', 'parameters': {'alpha': 2.0},
+                 'hypothesis': 'Try a regularized linear fit'}
+        repeated = {'family': 'linear', 'parameters': {'alpha': 2.0},
+                    'hypothesis': 'A different explanation for the same fit'}
+&gt;       with tempfile.TemporaryDirectory() as tmp, MockAPI([first, repeated, 'stop']) as api:
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_engine.py:68: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:457: in __init__
+    self.server_bind()
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/http/server.py:140: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x141ddfd70&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_llm_http_failures_empty_invalid_repeated_and_timeout_are_single_attempts" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">self = &lt;test_engine.EngineReliabilityTests testMethod=test_llm_http_failures_empty_invalid_repeated_and_timeout_are_single_attempts&gt;
+
+    def test_llm_http_failures_empty_invalid_repeated_and_timeout_are_single_attempts(self):
+&gt;       with MockAPI(['empty', 'http500', 'invalid_json', 'stop', 'stop', 'delay']) as api:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_engine.py:68: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:457: in __init__
+    self.server_bind()
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/http/server.py:140: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x141ddddf0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_run_child_kills_worker_process_tree_on_timeout" time="0.205" /><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_two_second_budget_child_timeout_preserves_fallback" time="0.020" /><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_unknown_explicit_metric_fails_before_engine_starts" time="0.004" /><testcase classname="tests.test_engine.EngineReliabilityTests" name="test_unknown_feature_fails_worker_and_keeps_valid_fallback_submission" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">self = &lt;test_engine.EngineReliabilityTests testMethod=test_unknown_feature_fails_worker_and_keeps_valid_fallback_submission&gt;
+
+    def test_unknown_feature_fails_worker_and_keeps_valid_fallback_submission(self):
+        operation = {'family': 'linear', 'hypothesis': 'Bad column probe',
+                     'feature_operations': [{'op': 'mul', 'name': 'broken_product',
+                                             'left': 'missing_feature', 'right': 'other'}]}
+&gt;       with tempfile.TemporaryDirectory() as tmp, MockAPI([operation, 'stop']) as api:
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_engine.py:68: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:457: in __init__
+    self.server_bind()
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/http/server.py:140: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x141ddde50&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_llm.LLMTests" name="test_context_retains_diagnostics_as_valid_json" time="0.002" /><testcase classname="tests.test_llm.LLMTests" name="test_empty_and_malformed_responses" time="0.000" /><testcase classname="tests.test_llm.LLMTests" name="test_http_error_is_redacted_and_one_attempt" time="0.001" /><testcase classname="tests.test_llm.LLMTests" name="test_missing_credentials_never_calls_network" time="0.000" /><testcase classname="tests.test_llm.LLMTests" name="test_valid_tool_action" time="0.000" /><testcase classname="tests.test_models" name="test_rf_classification_labels_probabilities_frequency_and_generated_features" time="0.073" /><testcase classname="tests.test_models" name="test_decision_power_changes_only_predicted_decision" time="0.096" /><testcase classname="tests.test_models" name="test_integer_labels_keep_numeric_dtype_and_macro_f1_compatibility" time="0.047" /><testcase classname="tests.test_models" name="test_regression_log_target_and_feature_operations" time="0.035" /><testcase classname="tests.test_models" name="test_log_target_uses_its_actual_mathematical_domain" time="0.047" /><testcase classname="tests.test_models" name="test_native_boosting_families_are_usable[catboost]" time="0.138" /><testcase classname="tests.test_models" name="test_native_boosting_families_are_usable[lightgbm]" time="0.152" /><testcase classname="tests.test_models" name="test_native_boosting_families_are_usable[xgboost]" time="0.066" /><testcase classname="tests.test_models" name="test_xgboost_binary_classification_uses_binary_objective" time="0.017" /><testcase classname="tests.test_models" name="test_catboost_categorical_representations_are_distinct_usable_candidates[native]" time="0.013" /><testcase classname="tests.test_models" name="test_catboost_categorical_representations_are_distinct_usable_candidates[onehot]" time="0.008" /><testcase classname="tests.test_models" name="test_group_experts_train_only_eligible_groups_and_keep_global_fallback" time="0.238" /><testcase classname="tests.test_models" name="test_blend_rejects_group_experts_outside_members" time="0.000" /><testcase classname="tests.test_models" name="test_blend_is_bounded_and_aligns_probabilities" time="0.145" /><testcase classname="tests.test_models" name="test_canonicalization_ignores_nonsemantic_fields_and_rejects_code_and_nested_blends" time="0.000" /><testcase classname="tests.test_models" name="test_canonicalization_is_idempotent_for_native_lightgbm_defaults" time="0.000" /><testcase classname="tests.test_models" name="test_tree_family_defaults_are_bounded_and_part_of_candidate_identity" time="0.000" /><testcase classname="tests.test_numeric_views" name="test_rank_is_fit_only_and_preserves_raw" time="0.001" /><testcase classname="tests.test_numeric_views" name="test_projection_bounded_deterministic_and_nondefault_index" time="0.004" /><testcase classname="tests.test_numeric_views" name="test_numeric_modes_are_distinct_and_validated" time="0.001" /><testcase classname="tests.test_numeric_views" name="test_fit_predict_both_tasks[rank]" time="0.034" /><testcase classname="tests.test_numeric_views" name="test_fit_predict_both_tasks[signed_log]" time="0.037" /><testcase classname="tests.test_numeric_views" name="test_fit_predict_both_tasks[projection]" time="0.035" /><testcase classname="tests.test_numeric_views" name="test_fit_predict_both_tasks[rank_projection]" time="0.035" /><testcase classname="tests.test_profile.ProfileTests" name="test_drift_uses_test_features_but_profile_excludes_validation_targets" time="0.004" /><testcase classname="tests.test_runtime.RuntimeTests" name="test_budget_caps_platform_limit" time="0.000" /><testcase classname="tests.test_runtime.RuntimeTests" name="test_kills_hanging_worker_before_deadline" time="0.258" /><testcase classname="tests.test_runtime.RuntimeTests" name="test_memory_guard_stops_a_worker_and_records_peak_usage" time="0.162" /><testcase classname="tests.test_runtime.RuntimeTests" name="test_secret_free_worker_environment" time="0.001" /><testcase classname="tests.test_temporal_research.TemporalResearchTests" name="test_short_budget_keeps_one_temporal_search_window" time="3.682" /><testcase classname="tests.test_temporal_research.TemporalResearchTests" name="test_two_rolling_windows_are_disjoint_past_only_and_weighted" time="6.626" /><testcase classname="tests.test_worker_cache.WorkerProbabilityCacheTests" name="test_cache_rejects_different_positions" time="0.026" /><testcase classname="tests.test_worker_cache.WorkerProbabilityCacheTests" name="test_cache_rejects_different_training_candidate" time="0.018" /><testcase classname="tests.test_worker_cache.WorkerProbabilityCacheTests" name="test_cache_rejects_invalid_probabilities" time="0.021" /><testcase classname="tests.test_worker_cache.WorkerProbabilityCacheTests" name="test_cached_decision_power_matches_real_refit_and_sample_order" time="0.036" /></testsuite></testsuites>

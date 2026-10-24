@@ -13,6 +13,7 @@ import zipfile
 
 import numpy as np
 import pandas as pd
+from sklearn.metrics import accuracy_score, f1_score, log_loss, mean_absolute_error, mean_squared_error, r2_score, roc_auc_score
 
 from package_solution import build, ROOT, MODULES, OFFICIAL_REQUIREMENTS_SHA256
 
@@ -27,13 +28,13 @@ def fixture(directory, metric, kind='regression', seed=1729, probability=False):
     frame = pd.DataFrame({'reference_key': [f'item-{i:05d}' for i in range(n + m)],
                           'measurement': a, 'other': b, 'segment': rng.choice(['oak', 'pine', 'birch'], n + m)})
     if kind == 'regression':
-        y = 5 + 2 * a[:n] - b[:n] + .1 * rng.normal(size=n)
+        y = 5 + 2 * a - b + .1 * rng.normal(size=n + m)
     elif kind == 'binary':
-        y = np.where(a[:n] + b[:n] > 0, 0, 7)
+        y = np.where(a + b > 0, 0, 7)
     else:
-        y = np.where(a[:n] > .5, 'copper', np.where(b[:n] > .3, 'silver', 'gold'))
+        y = np.where(a > .5, 'copper', np.where(b > .3, 'silver', 'gold'))
     train = frame.iloc[:n].copy()
-    train['unknown_outcome'] = y
+    train['unknown_outcome'] = y[:n]
     test = frame.iloc[n:].copy()
     train.to_csv(nested / 'observations.csv', index=False)
     test.to_csv(nested / 'queries.csv', index=False)
@@ -52,8 +53,69 @@ def fixture(directory, metric, kind='regression', seed=1729, probability=False):
     if kind == 'binary' and probability:
         description += 'Positive class: 0\nPredict positive-class probability.\n'
     (directory / 'task.md').write_text(description, encoding='utf-8')
+    # Holdout truth exists only in this parent-process metadata, never in CSV or child environment.
     return {'rows': m, 'kind': kind, 'metric': metric, 'probability': probability,
-            'sample': sample, 'classes': set(map(str, np.unique(y)))}
+            'sample': sample, 'classes': tuple(sorted(map(str, np.unique(y)))),
+            'train_truth': np.asarray(y[:n]).copy(),
+            'test_truth': np.asarray(y[n:][::-1]).copy(), 'seed': seed,
+            'positive_class': '0' if kind == 'binary' else None}
+
+
+def _metric_from_submission(output, metadata):
+    metric = metadata['metric']
+    truth = np.asarray(metadata['test_truth'])
+    if metadata['kind'] == 'regression':
+        actual = truth.astype(float)
+        predicted = output['unknown_outcome'].to_numpy(dtype=float)
+        if metric == 'rmse':
+            return float(np.sqrt(mean_squared_error(actual, predicted)))
+        if metric == 'mae':
+            return float(mean_absolute_error(actual, predicted))
+        if metric == 'r2':
+            return float(r2_score(actual, predicted))
+        raise ValueError(f'Unsupported synthetic metric: {metric}')
+    truth = np.asarray(truth, dtype=str)
+    if not metadata['probability']:
+        predicted = output['unknown_outcome'].astype(str).to_numpy()
+        if metric == 'accuracy':
+            return float(accuracy_score(truth, predicted))
+        average = {'macro_f1': 'macro', 'micro_f1': 'micro'}[metric]
+        return float(f1_score(truth, predicted, labels=list(metadata['classes']),
+                              average=average, zero_division=0))
+    classes = list(metadata['classes'])
+    if metadata['kind'] == 'binary':
+        positive = metadata['positive_class']
+        positive_probability = output['unknown_outcome'].to_numpy(dtype=float)
+        probabilities = np.column_stack([
+            positive_probability if label == positive else 1 - positive_probability
+            for label in classes])
+        if metric == 'roc_auc':
+            return float(roc_auc_score(truth == positive, positive_probability))
+    else:
+        # The template intentionally lists probability columns in reverse class order.
+        probabilities = output.loc[:, classes].to_numpy(dtype=float)
+    return float(log_loss(truth, probabilities, labels=classes))
+
+
+def _constant_control(metadata):
+    sample = metadata['sample'].copy()
+    train = np.asarray(metadata['train_truth'])
+    if metadata['kind'] == 'regression':
+        sample['unknown_outcome'] = float(np.mean(train))
+    else:
+        labels, counts = np.unique(train.astype(str), return_counts=True)
+        classes = list(metadata['classes'])
+        priors = {label: count / len(train) for label, count in zip(labels, counts)}
+        if not metadata['probability']:
+            maximum = max(counts)
+            sample['unknown_outcome'] = min(label for label, count in zip(labels, counts)
+                                            if count == maximum)
+        elif metadata['kind'] == 'binary':
+            sample['unknown_outcome'] = priors[metadata['positive_class']]
+        else:
+            for label in classes:
+                sample[label] = priors.get(label, 0.0)
+    return sample
 
 
 def check_output(directory, metadata):
@@ -77,7 +139,17 @@ def check_output(directory, metadata):
     summary = json.loads(summaries[-1].read_text())
     assert summary['status'] == 'completed', summary
     assert summary['final_refit']['status'] == 'completed', summary
-    return summary
+    return summary, output
+
+
+def _child_environment(workspace):
+    # Keep runtime essentials while ensuring no source API credentials reach the clean-room child.
+    allowed = ('PATH', 'HOME', 'TMPDIR', 'TEMP', 'TMP', 'SYSTEMROOT', 'WINDIR', 'LANG',
+               'LC_ALL', 'DYLD_FALLBACK_LIBRARY_PATH', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS')
+    env = {key: os.environ[key] for key in allowed if key in os.environ}
+    env.update(AUTOML_TIME_LIMIT='45', AUTOML_MAX_EXPERIMENTS='2', AUTOML_THREADS='2',
+               PYTHONDONTWRITEBYTECODE='1', MPLCONFIGDIR=str(workspace / 'matplotlib'))
+    return env
 
 
 def verify(output, keep=None):
@@ -99,21 +171,29 @@ def verify(output, keep=None):
             assert all('/' not in name and '\\' not in name for name in archive.namelist())
             archive.extractall(directory)
         assert hashlib.sha256((directory / 'requirements.txt').read_bytes()).hexdigest() == OFFICIAL_REQUIREMENTS_SHA256
-        env = {k: v for k, v in os.environ.items() if not k.startswith('OPENAI_')}
-        env.update(AUTOML_TIME_LIMIT='45', AUTOML_MAX_EXPERIMENTS='2', AUTOML_THREADS='2',
-                   PYTHONDONTWRITEBYTECODE='1', MPLCONFIGDIR=str(workspace / 'matplotlib'))
+        env = _child_environment(workspace)
         started = time.monotonic()
         process = subprocess.run([sys.executable, 'solution.py', 'task.md'], cwd=directory,
             env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=55)
         (directory / 'cli.log').write_text(process.stdout, encoding='utf-8')
         if process.returncode:
             raise RuntimeError(f'{directory.name}: CLI failed\n{process.stdout[-5000:]}')
-        summary = check_output(directory, metadata)
+        summary, submission = check_output(directory, metadata)
+        test_score = _metric_from_submission(submission, metadata)
+        control_score = _metric_from_submission(_constant_control(metadata), metadata)
+        lower_is_better = metadata['metric'] in {'rmse', 'mae', 'log_loss'}
+        improvement = control_score - test_score if lower_is_better else test_score - control_score
+        assert improvement > 1e-12, (
+            f'{directory.name}: synthetic holdout did not beat constant control '
+            f'(candidate={test_score:.9g}, control={control_score:.9g})')
         records.append({'scenario': directory.name, 'status': 'passed', 'seconds': time.monotonic() - started,
             'experiments': summary['experiments'], 'first_submission_seconds': summary['first_submission_seconds'],
-            'final_refit': summary['final_refit']['status'], 'llm_calls': summary['llm_calls']})
+            'final_refit': summary['final_refit']['status'], 'llm_calls': summary['llm_calls'],
+            'test_metric': test_score, 'constant_control_metric': control_score,
+            'improvement_over_control': improvement, 'seed': metadata['seed']})
         print(json.dumps(records[-1]), flush=True)
-    report = {'status': 'passed', 'python': sys.version, 'archive': manifest,
+    report = {'status': 'passed', 'synthetic_quality_checked': True,
+              'python': sys.version, 'archive': manifest,
               'scenarios': records, 'workspace': str(workspace), 'real_llm_api': False,
               'limitation': 'Local macOS Python 3.12 runtime; not the organizer Docker container.'}
     Path(output).parent.mkdir(parents=True, exist_ok=True)

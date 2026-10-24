@@ -1,0 +1,33 @@
+{
+  "reason": "Legacy H12 used dense onehot without the current scaling; current-code paired control required to isolate numerical-view effect.",
+  "candidate": {
+    "family": "extra_trees",
+    "hypothesis": "Fit-only target is right-skewed; compare log-target randomized trees with boosting.",
+    "target_transform": "log1p",
+    "feature_operations": [],
+    "drop_columns": [],
+    "frequency_columns": [],
+    "parameters": {
+      "max_depth": 24,
+      "max_features": 0.8,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "n_estimators": 200
+    },
+    "class_weight_power": 0,
+    "decision_power": 0
+  },
+  "metric": "rmse",
+  "score": 42.2829358682379,
+  "split_key": "68ef03446e22982a2ce32859ef7bdf4139ff943c133f1c1de95394f92d7f66fe",
+  "description": "temporal:Year_Factor:train_last=5:test_after_train",
+  "data_hashes": {
+    "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+  },
+  "fit_seconds": 59.24546662499779,
+  "study_plus_control_fit_seconds": 631.2238764139765,
+  "model_source_sha256": "127eba50f256ca31cc6a6aadf6b2a9fe06aea93e81408ebde0cb0134a8e1f7c3"
+}
