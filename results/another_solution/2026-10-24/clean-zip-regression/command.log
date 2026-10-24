@@ -1,0 +1,25 @@
+20:23:30 INFO agent: условие: task.md; данные: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task; выход: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task/submission.csv (task.md)
+20:23:30 INFO agent: старт: лимит 120 с, запас 20 с, n_jobs=4, режим: по времени
+20:23:31 INFO agent: train (53308, 64), test (22449, 63), LLM: LLM выключена (LLM_DISABLED=1)
+20:23:31 INFO agent.task: task: type=regression target=site_eui id=id metric=rmse proba=False
+20:23:31 INFO agent.task: task note: тип задачи по метрике rmse: регрессия
+20:23:31 INFO agent.task: task note: метрика названа в условии: rmse
+20:23:31 INFO agent: данные: {"id_columns": ["facility_type"]} (0 с)
+20:23:31 INFO agent: найден период: Year_Factor (test целиком позже train) -> валидация вперёд по времени
+20:23:31 INFO agent.structure: ключ объекта: ['floor_area', 'year_built', 'facility_type'] (уникальность в периоде 0.984, повторяемость между периодами 0.57)
+20:23:31 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task/submission.csv (22449 строк)
+20:23:32 INFO agent: валидация по времени: [(22054, 12946), (35000, 18308)]
+20:23:32 INFO agent: валидация как тест: в тесте новых категорий 0.00%, из проверки фолдов убраны строки с новыми категориями [258, 3192]
+20:23:32 INFO agent: известные объекты: в проверке 82%, в тесте 79%
+20:23:42 INFO agent: exp0 [baseline] Baseline: модель по умолчанию без генерации признаков: rmse=40.19974 ±3.50007 за 10 с
+20:23:42 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task/submission.csv (22449 строк)
+20:23:42 INFO agent: лучший: exp0:lgbm, rmse=40.19973 (B=40.26177), постобработка={'clip': [1.001169302, 993.4282595]}
+20:23:42 INFO agent: разбор ошибок: {"sse_share_top1pct_rows": 0.478, "rmse_without_top1pct": 29.1866, "rmse_known_objects": 36.5956, "rmse_new_objects": 53.5478, "new_objects_share": 0.181, "heavy_segments": ["State_Factor=State_8: 15% ошибки при 6% строк", "State_Factor=State_4: 8% ошибки при 5% строк", "building_class=Commercial: 61% ошибки при 41% строк", "building_class=Residential: 39% ошибки при 59% строк", "facility_type=Industrial: 8% ошибки при 1% строк", "facility_type=Education_College_or_university: 6% ошибки при 1% строк"]}
+20:23:42 INFO agent: исследование остановлено: достигнут лимит итераций (0)
+20:23:49 INFO agent: exp1 [bagging] Усреднение по seed: exp0 с seed +1: rmse=40.59498 ±3.28125 за 7 с
+20:24:00 INFO agent: exp2 [bagging] Усреднение по seed: exp0 с seed +2: rmse=40.17846 ±3.47095 за 11 с
+20:24:00 INFO agent: усреднение по 3 seed: B=40.18091 против 40.26177 у одного запуска -> берём
+20:24:00 INFO agent: финал: одиночная B=40.18091, ансамбль B=нет -> seed-bag(3):exp0 (ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A)
+20:24:00 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task/submission.csv (22449 строк)
+20:24:00 INFO agent.export: код решения выгружен: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-regression/task/.agent_work/solution_code.zip
+20:24:00 INFO agent: готово за 31 с; Budget(elapsed=31s, left=69s, research_left=59s)

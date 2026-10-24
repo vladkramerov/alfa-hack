@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "archive_sha256": "efa97f675a8c80409eedccacbd19d0a1c0d44100180ccabbd974aedf2da64d31",
+  "cases": [
+    {
+      "status": "passed",
+      "task": "regression",
+      "command": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "archive_sha256": "efa97f675a8c80409eedccacbd19d0a1c0d44100180ccabbd974aedf2da64d31",
+      "root_files_copied": 30,
+      "source_matches_manifest": true,
+      "submission_rows": 22449,
+      "submission_columns": [
+        "id",
+        "site_eui"
+      ],
+      "sample_id_order_exact": true,
+      "seconds": 31.09244020911865,
+      "peak_process_tree_RSS_bytes": 763101184,
+      "budget_seconds": 120,
+      "MAX_ITERATIONS": 0,
+      "N_JOBS": 4,
+      "llm_disabled": true,
+      "real_LLM_tested": false,
+      "test_targets_available": false,
+      "note": "Technical clean-entrypoint/CSV check; reduced smoke budget, not the 300s quality comparison or a 3h Docker test",
+      "submission_sha256": "466b979b7ddb8479890fcc3beba799913576d2d08a7f643ce7cd3bf9233c41ec"
+    },
+    {
+      "status": "passed",
+      "task": "multiclass",
+      "command": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "archive_sha256": "efa97f675a8c80409eedccacbd19d0a1c0d44100180ccabbd974aedf2da64d31",
+      "root_files_copied": 30,
+      "source_matches_manifest": true,
+      "submission_rows": 41166,
+      "submission_columns": [
+        "id",
+        "attack_cat"
+      ],
+      "sample_id_order_exact": true,
+      "seconds": 49.3621197079774,
+      "peak_process_tree_RSS_bytes": 800161792,
+      "budget_seconds": 120,
+      "MAX_ITERATIONS": 0,
+      "N_JOBS": 4,
+      "llm_disabled": true,
+      "real_LLM_tested": false,
+      "test_targets_available": false,
+      "note": "Technical clean-entrypoint/CSV check; reduced smoke budget, not the 300s quality comparison or a 3h Docker test",
+      "submission_sha256": "6603cf1161c27ef03b1d6be14f015ebaaa3486a944c3ffd08d906797f8021648"
+    }
+  ],
+  "platform_submission_sent": false
+}

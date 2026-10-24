@@ -1,0 +1,112 @@
+{
+  "status": "completed",
+  "task": "multiclass",
+  "metric": "macro_f1",
+  "oof_score": 0.6534905279816051,
+  "holdout_B_score": 0.6481770971418532,
+  "selected": "exp0:lgbm",
+  "members": {
+    "0": 1.0
+  },
+  "post": {
+    "weights": [
+      0.25,
+      0.37499999999999994,
+      0.78125,
+      0.625,
+      0.37499999999999994,
+      0.625,
+      0.37499999999999994,
+      0.32000000000000006,
+      0.25,
+      1.0
+    ]
+  },
+  "experiments": [
+    {
+      "exp_id": 0,
+      "hypothesis": "Baseline: модель по умолчанию без генерации признаков",
+      "source": "baseline",
+      "parent_id": null,
+      "spec": {
+        "model": "lgbm",
+        "params": {},
+        "features": [],
+        "feature_code": null,
+        "drop_columns": [],
+        "target_transform": null,
+        "class_weight": "sqrt",
+        "tune_trials": 0,
+        "tune_seconds": 0.0,
+        "gen_features": [],
+        "feature_search": null,
+        "search_seconds": 0.0,
+        "entity_mode": null,
+        "objective": null
+      },
+      "ok": true,
+      "cv_mean": 0.637839,
+      "cv_std": 0.012926,
+      "duration_s": 98.8,
+      "error": null,
+      "top_features": {
+        "sttl": 0.1451,
+        "service": 0.1275,
+        "proto": 0.1192,
+        "sbytes": 0.1077,
+        "smean": 0.0774,
+        "ct_dst_sport_ltm": 0.0599,
+        "ct_srv_dst": 0.0497,
+        "ct_dst_src_ltm": 0.0455,
+        "dmean": 0.0405,
+        "dbytes": 0.0272
+      },
+      "conclusion": ""
+    },
+    {
+      "exp_id": 1,
+      "hypothesis": "Чистка: значения-заглушки (0 у года/площади, -999, 9999) считать пропусками",
+      "source": "fallback",
+      "parent_id": 0,
+      "spec": {
+        "model": "lgbm",
+        "params": {},
+        "features": [
+          "placeholders_as_missing"
+        ],
+        "feature_code": null,
+        "drop_columns": [],
+        "target_transform": null,
+        "class_weight": "sqrt",
+        "tune_trials": 0,
+        "tune_seconds": 0.0,
+        "gen_features": [],
+        "feature_search": null,
+        "search_seconds": 0.0,
+        "entity_mode": null,
+        "objective": null
+      },
+      "ok": true,
+      "cv_mean": 0.637839,
+      "cv_std": 0.012926,
+      "duration_s": 87.6,
+      "error": null,
+      "top_features": {
+        "sttl": 0.1451,
+        "service": 0.1275,
+        "proto": 0.1192,
+        "sbytes": 0.1077,
+        "smean": 0.0774,
+        "ct_dst_sport_ltm": 0.0599,
+        "ct_srv_dst": 0.0497,
+        "ct_dst_src_ltm": 0.0455,
+        "dmean": 0.0405,
+        "dbytes": 0.0272
+      },
+      "conclusion": ""
+    }
+  ],
+  "seconds": 193.71368791605346,
+  "real_llm_tested": false,
+  "archived_source_unchanged": true
+}

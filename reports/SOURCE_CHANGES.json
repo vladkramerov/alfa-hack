@@ -1,0 +1,13 @@
+{
+  "changed_files": [
+    "ag_config.py",
+    "ag_finalize.py"
+  ],
+  "unchanged_files": 28,
+  "original_bytes_preserved_in_commit": "568fc9879e677371b75fb879d49011cc6c2377f6",
+  "original_archive_sha256": "cbf5de846d8a4a4f760e9574a60d47c42c1adeb7b340fd655f5d296b41589547",
+  "reason": {
+    "ag_finalize.py": "AS002 bounded simplex refinement of existing RMSE ensemble only",
+    "ag_config.py": "Hard cap 1..8 CPUs including N_JOBS override"
+  }
+}

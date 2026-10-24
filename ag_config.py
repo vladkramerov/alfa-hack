@@ -37,7 +37,7 @@ def detect_cpus() -> int:
             n = min(n, max(1, int(int(quota) / int(period))))
     except (OSError, ValueError):
         pass
-    return n
+    return min(8, max(1, n))
 
 
 @dataclass
@@ -52,7 +52,7 @@ class Config:
     # и начинается финализация.
     research_end_fraction: float = 0.90
 
-    n_jobs: int = field(default_factory=lambda: _env_int("N_JOBS", detect_cpus()))
+    n_jobs: int = field(default_factory=lambda: min(8, max(1, _env_int("N_JOBS", detect_cpus()))))
     seed: int = 42
     n_folds: int = 5
 

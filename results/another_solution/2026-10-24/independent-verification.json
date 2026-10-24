@@ -1,0 +1,226 @@
+{
+  "status": "passed",
+  "checks": 38,
+  "failed": 0,
+  "details": [
+    {
+      "name": "regression-A-B-disjoint",
+      "passed": true
+    },
+    {
+      "name": "regressionoriginal-y",
+      "passed": true
+    },
+    {
+      "name": "regressionoriginal-finite",
+      "passed": true
+    },
+    {
+      "name": "regressionoriginal-OOF",
+      "passed": true
+    },
+    {
+      "name": "regressionoriginal-B",
+      "passed": true
+    },
+    {
+      "name": "regressionAS001-y",
+      "passed": true
+    },
+    {
+      "name": "regressionAS001-finite",
+      "passed": true
+    },
+    {
+      "name": "regressionAS001-OOF",
+      "passed": true
+    },
+    {
+      "name": "regressionAS001-B",
+      "passed": true
+    },
+    {
+      "name": "regressionAS002-y",
+      "passed": true
+    },
+    {
+      "name": "regressionAS002-finite",
+      "passed": true
+    },
+    {
+      "name": "regressionAS002-OOF",
+      "passed": true
+    },
+    {
+      "name": "regressionAS002-B",
+      "passed": true
+    },
+    {
+      "name": "regressionAS003-y",
+      "passed": true
+    },
+    {
+      "name": "regressionAS003-finite",
+      "passed": true
+    },
+    {
+      "name": "regressionAS003-OOF",
+      "passed": true
+    },
+    {
+      "name": "regressionAS003-B",
+      "passed": true
+    },
+    {
+      "name": "regression-integrated-OOF-parity",
+      "passed": true
+    },
+    {
+      "name": "regression-integrated-test-parity",
+      "passed": true
+    },
+    {
+      "name": "multiclass-A-B-disjoint",
+      "passed": true
+    },
+    {
+      "name": "multiclassoriginal-y",
+      "passed": true
+    },
+    {
+      "name": "multiclassoriginal-finite",
+      "passed": true
+    },
+    {
+      "name": "multiclassoriginal-OOF",
+      "passed": true
+    },
+    {
+      "name": "multiclassoriginal-B",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS001-y",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS001-finite",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS001-OOF",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS001-B",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS002-y",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS002-finite",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS002-OOF",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS002-B",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS003-y",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS003-finite",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS003-OOF",
+      "passed": true
+    },
+    {
+      "name": "multiclassAS003-B",
+      "passed": true
+    },
+    {
+      "name": "multiclass-integrated-OOF-parity",
+      "passed": true
+    },
+    {
+      "name": "multiclass-integrated-test-parity",
+      "passed": true
+    }
+  ],
+  "records": [
+    {
+      "task": "regression",
+      "case": "original",
+      "metric": "rmse",
+      "oof": 29.373823495698232,
+      "B": 28.685722725959646,
+      "artifact_sha256": "92b6692303856d6468404f3db909731aa9fde3bcf83b4d9140d46a797df707af"
+    },
+    {
+      "task": "regression",
+      "case": "AS001",
+      "metric": "rmse",
+      "oof": 29.373823495698232,
+      "B": 28.685722725959646,
+      "artifact_sha256": "92b6692303856d6468404f3db909731aa9fde3bcf83b4d9140d46a797df707af"
+    },
+    {
+      "task": "regression",
+      "case": "AS002",
+      "metric": "rmse",
+      "oof": 29.34207680247969,
+      "B": 28.64439520546687,
+      "artifact_sha256": "202a0d5a5303a37fb00f75423ebbcb1551f1009374bbdb588fb8ab151ce2ebb4"
+    },
+    {
+      "task": "regression",
+      "case": "AS003",
+      "metric": "rmse",
+      "oof": 29.373823495698232,
+      "B": 28.685722725959646,
+      "artifact_sha256": "92b6692303856d6468404f3db909731aa9fde3bcf83b4d9140d46a797df707af"
+    },
+    {
+      "task": "multiclass",
+      "case": "original",
+      "metric": "macro_f1",
+      "oof": 0.6534905279816051,
+      "B": 0.6481770971418532,
+      "artifact_sha256": "6409b3990771d2c8e8ea8854ba34a51b908f7d88c0238d54f1bf79cd9d4cdc95"
+    },
+    {
+      "task": "multiclass",
+      "case": "AS001",
+      "metric": "macro_f1",
+      "oof": 0.6531702899869024,
+      "B": 0.6517756575501228,
+      "artifact_sha256": "6409b3990771d2c8e8ea8854ba34a51b908f7d88c0238d54f1bf79cd9d4cdc95"
+    },
+    {
+      "task": "multiclass",
+      "case": "AS002",
+      "metric": "macro_f1",
+      "oof": 0.6534905279816051,
+      "B": 0.6481770971418532,
+      "artifact_sha256": "6409b3990771d2c8e8ea8854ba34a51b908f7d88c0238d54f1bf79cd9d4cdc95"
+    },
+    {
+      "task": "multiclass",
+      "case": "AS003",
+      "metric": "macro_f1",
+      "oof": 0.6534905279816051,
+      "B": 0.6481770971418532,
+      "artifact_sha256": "6409b3990771d2c8e8ea8854ba34a51b908f7d88c0238d54f1bf79cd9d4cdc95"
+    }
+  ],
+  "new_model_fits": 0
+}

@@ -1,0 +1,30 @@
+# AS002/regression
+
+Only cached original OOF/test predictions, no model refits. A for fitting, B for selection; exploratory local validation.
+
+```json
+{
+  "status": "completed",
+  "metric": "rmse",
+  "oof_score": 29.34207680247969,
+  "holdout_B_score": 28.64439520546687,
+  "control_oof_score": 29.373823495698232,
+  "control_holdout_B_score": 28.685722725959646,
+  "relative_gain_B": 0.001440699991685234,
+  "relative_gain_OOF": 0.0010807817791644737,
+  "selected": "refined-ensemble",
+  "members": {
+    "3": 0.07142857142857142,
+    "5": 0.4710067392401735,
+    "7": 0.131672280881322,
+    "4": 0.08374434993774389,
+    "1": 0.09058644709509416,
+    "0": 0.15156161141709507
+  },
+  "post": {},
+  "choice_reason": "ансамбль взят: выигрыш на B +1.37%, лучше в 97% бутстрэп-выборок",
+  "seconds": 0.10242208396084607,
+  "new_tree_fits": 0,
+  "win_rate_vs_original_on_B": 0.905
+}
+```

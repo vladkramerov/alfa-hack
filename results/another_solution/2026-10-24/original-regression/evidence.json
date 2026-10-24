@@ -1,0 +1,48 @@
+{
+  "stage": "original archive baseline before changes",
+  "archive_sha256": "cbf5de846d8a4a4f760e9574a60d47c42c1adeb7b340fd655f5d296b41589547",
+  "source_sha256": {
+    "ag_exec_runner.py": "d862f5d82833a91a75627f315c735c2774a028a3759da0fd96fd419ca50499fc",
+    "ag_budget.py": "9af6476ef99c3893f6f2fb8e1d39085a909dab76cf3ac37db5e60d99938f23c0",
+    "ag_llm_client.py": "2c574e041276a84126a12e52531ec7b7decbb4892404ac9052b6624d4f222a78",
+    "ag_ml_models.py": "fc670e83d0c3b6354a4d0ecd1d88f978155f5c38603991d0dde0f8b1b171d2fd",
+    "ag_export.py": "e2e4b34d6b7b5961068b2739c69675831d0b9960c977c7567eb4da65a03851d6",
+    "ag_ml_dataset.py": "4f43aec8d6a7604c407cd31ce664c317aa53b078aeaeb38f0ebf694bc32215c7",
+    "solution.py": "fd87902635560656774c7d38be7bc2394bf52bf94f439f6ec8c792bbd1f44b66",
+    "ag_ml_preprocess.py": "cdb1034e42671619966d55e91faa2d9e1e743f8ad6fb66dd30c06507d677fe86",
+    "ag_ml_shift.py": "3039ea7bd899a098810adf46021da18f66200e9138aec386fa69b54e7eeea6c3",
+    "ag_config.py": "635168f30efc4c7285b4060fdac5e91b596b2bff312251eb9241f7b8b1e6c705",
+    "ag_io_contract.py": "610c293b392d88e14015ab177543701215740339e17a0dc91cdd024953f389c7",
+    "ag_schemas.py": "c1ebdb949b9ee161912c186e4ed253db35ff5e40c7ca6af27ef8b6ca21845632",
+    "ag_ml_features.py": "b55468a285179a124cf4eb1f6fd7388984aaab6c4e5732245010a9ee13c32cb0",
+    "ag_ml_supervised.py": "285af85864183e482d1282817ccac310d079ac7793d1951cae854b26d69e4ace",
+    "ag_ml_validation.py": "a646f42fc74d10f159686f210acc8efa4db1ec7903ddd3cc9958dc816dee32c0",
+    "ag_finalize.py": "7a485842776815c087b4753db91a861d0ef86626db029af44c7adf38e48490a5",
+    "ag_ml_metrics.py": "dca3d9617c984ca7333f76a6357677dc2798ad0df3ebde03240f3775f72018e8",
+    "ag_understand_task_reader.py": "85e80f942388703240f5dfb75abdbb3bc8f90b6de5abfe1b529e1d713bcd993a",
+    "ag_llm_prompts.py": "b122542d4da4606b21f128adcf0992cba4b93bb4884f62bf968f26c80cd9b595",
+    "ag_research_planner.py": "45084b01b8eecbc9c2362003a6a18d2be121a6ea3a0547e03de5d62fca0658af",
+    "ag_ml_pipeline.py": "49febdf67a70e57089f797ae01cffeb7a217878e76acb83270c039329ce2abb8",
+    "ag_ml_feature_search.py": "2b107266854b43509a5edc8e40b521d44fce31ece75e87c394d8207c32793b95",
+    "ag_research_diagnostics.py": "7109093feca8e9f8a05353324a6cd12c8880ed7439fb9b8236a023c55a02ff4c",
+    "ag_research_memory.py": "edeadc26fdeab47a7e4642a1a0e6684bb57420ba1e24ee1b54253a80b3a6b974",
+    "ag_understand_profiler.py": "b26e6b3108dde0dcc8bd899b25d10e29290ef14ab50c3b64b18baecf0c260690",
+    "ag_ml_structure.py": "50f632111a873a899c9e707905b1e16298c47e62482e3c009f71d30709a40048",
+    "ag_orchestrator.py": "4e67114a22917ec220da7c1b6f6350bc530c97c39571a121243aabece02de075",
+    "ag_research_advisor.py": "fe9b0262a74c467a7e6d25f2b6721bd431b9ff012c5e69bc482b02175ccdc9d6",
+    "ag_research_fallback.py": "74abf388b313699b5be68540599d07e9199172c43786c52c9e5fd8a3736f31ae"
+  },
+  "data_sha256": {
+    "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+  },
+  "budget": {
+    "TIME_LIMIT": 300,
+    "MAX_ITERATIONS": 3,
+    "N_JOBS": 4,
+    "TUNE_TRIALS": 0,
+    "LLM_DISABLED": 1
+  },
+  "branch": "another_solution"
+}

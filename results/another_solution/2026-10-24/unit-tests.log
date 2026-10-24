@@ -1,0 +1,11 @@
+test_cpu_limit_applies_to_environment (test_refinement.RefinementTests.test_cpu_limit_applies_to_environment) ... ok
+test_fitted_weights_do_not_depend_on_B_targets (test_refinement.RefinementTests.test_fitted_weights_do_not_depend_on_B_targets) ... ok
+test_optimizer_failure_keeps_original (test_refinement.RefinementTests.test_optimizer_failure_keeps_original) ... ok
+test_other_metrics_keep_original_behavior (test_refinement.RefinementTests.test_other_metrics_keep_original_behavior) ... ok
+test_refines_existing_mixture_and_respects_simplex (test_refinement.RefinementTests.test_refines_existing_mixture_and_respects_simplex) ... ok
+test_rejects_refinement_that_hurts_B (test_refinement.RefinementTests.test_rejects_refinement_that_hurts_B) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK

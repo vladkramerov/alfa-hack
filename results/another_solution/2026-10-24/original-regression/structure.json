@@ -1,0 +1,17 @@
+{
+  "validation": "time",
+  "period": "Year_Factor",
+  "entity_key": [
+    "floor_area",
+    "year_built",
+    "facility_type"
+  ],
+  "test_like_removed": [
+    258,
+    3192
+  ],
+  "seen_share": {
+    "valid": 0.819,
+    "test": 0.793
+  }
+}

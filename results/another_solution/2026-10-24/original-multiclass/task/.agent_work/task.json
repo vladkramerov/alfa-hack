@@ -1,0 +1,31 @@
+{
+ "task_type": "multiclass",
+ "target": "attack_cat",
+ "id_col": "id",
+ "metric": "macro_f1",
+ "submission_columns": [
+  "id",
+  "attack_cat"
+ ],
+ "proba_output": false,
+ "classes": [
+  "Analysis",
+  "Backdoor",
+  "DoS",
+  "Exploits",
+  "Fuzzers",
+  "Generic",
+  "Normal",
+  "Reconnaissance",
+  "Shellcode",
+  "Worms"
+ ],
+ "description": "# Классификация типов сетевых атак UNSW-NB15\n\n## Задача\n\nПостройте модель многоклассовой классификации, которая по характеристикам\nсетевого потока определяет тип атаки. Одна строка соответствует одному\nзафиксированному сетевому flow. Целевая переменная `attack_cat` принимает\nодно из десяти значений: `Normal`, `Generic`, `Exploits`, `Fuzzers`, `DoS`,\n`Reconnaissance`, `Analysis`, `Backdoor`, `Shellcode`, `Worms`.\n\nКлассы существенно несбалансированы: `Normal` и `Generic` встречаются\nзначительно чаще, чем `Worms`, `Shellcode` и `Analysis`. Поэтому основной\nметрикой выбран Macro F1, а не Accuracy.\n\n## Данные\n\nПути указаны относительно каталога этого Markdown-файла:\n\n- `multiclass/participants/train.csv` — 87 670 строк с признаками и таргетом;\n- `multiclass/participants/test.csv` — 41 166 строк с признаками без таргета;\n- `multiclass/participants/data_dictionary.csv` — описание всех полей;\n- `multiclass/participants/sample_submission.csv` — шаблон ответа; значения в нём не являются правильными ответами.\n\nВ `train.csv` 44 столбца: 42 входных признака, идентификатор `id` и таргет\n`attack_cat`. В `test.csv` 43 столбца: те же признаки и `id`, без таргета.\nCSV используют UTF-8, запятую как разделитель и точку как десятичный разделитель.\n\nTest — stratified-выборка 50% из официального hold-out split UNSW-NB15.\nКолонка `label` (бинарная метка normal/attack) в данных отсутствует,\nпоскольку является утечкой для задачи определения конкретного типа атаки.\n\n## Группы признаков\n\n- базовые пара",
+ "notes": [
+  "метрика названа в условии: macro_f1"
+ ],
+ "targets": [],
+ "group_col": null,
+ "ordinal": false,
+ "positive_class": null
+}

@@ -1,0 +1,183 @@
+[
+  {
+    "hypothesis": "AS001",
+    "task": "regression",
+    "path": "results/another_solution/2026-10-24/AS001-regression",
+    "status": "not_applicable_unchanged",
+    "metric": "rmse",
+    "oof_score": 29.373823495698232,
+    "holdout_B_score": 28.685722725959646,
+    "control_oof_score": 29.373823495698232,
+    "control_holdout_B_score": 28.685722725959646,
+    "relative_gain_B": -0.0,
+    "relative_gain_OOF": -0.0,
+    "selected": "ensemble",
+    "members": {
+      "3": 0.143,
+      "5": 0.429,
+      "7": 0.143,
+      "1": 0.143,
+      "0": 0.143
+    },
+    "post": {},
+    "choice_reason": "ансамбль взят: выигрыш на B +1.23%, лучше в 94% бутстрэп-выборок",
+    "seconds": 0.05735899996943772,
+    "new_tree_fits": 0
+  },
+  {
+    "hypothesis": "AS001",
+    "task": "multiclass",
+    "path": "results/another_solution/2026-10-24/AS001-multiclass",
+    "status": "completed",
+    "metric": "macro_f1",
+    "oof_score": 0.6531702899869024,
+    "holdout_B_score": 0.6517756575501228,
+    "control_oof_score": 0.6534905279816051,
+    "control_holdout_B_score": 0.6481770971418532,
+    "relative_gain_B": 0.005551816662664362,
+    "relative_gain_OOF": -0.0004900422898122317,
+    "selected": "exp0:lgbm",
+    "members": {
+      "0": 1.0
+    },
+    "post": {
+      "weights": [
+        0.3333333333333333,
+        0.5,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.6666666666666666
+      ]
+    },
+    "choice_reason": "ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A",
+    "seconds": 1.8765549999661744,
+    "new_tree_fits": 0,
+    "win_rate_vs_original_on_B": 0.945
+  },
+  {
+    "hypothesis": "AS002",
+    "task": "regression",
+    "path": "results/another_solution/2026-10-24/AS002-regression",
+    "status": "completed",
+    "metric": "rmse",
+    "oof_score": 29.34207680247969,
+    "holdout_B_score": 28.64439520546687,
+    "control_oof_score": 29.373823495698232,
+    "control_holdout_B_score": 28.685722725959646,
+    "relative_gain_B": 0.001440699991685234,
+    "relative_gain_OOF": 0.0010807817791644737,
+    "selected": "refined-ensemble",
+    "members": {
+      "3": 0.07142857142857142,
+      "5": 0.4710067392401735,
+      "7": 0.131672280881322,
+      "4": 0.08374434993774389,
+      "1": 0.09058644709509416,
+      "0": 0.15156161141709507
+    },
+    "post": {},
+    "choice_reason": "ансамбль взят: выигрыш на B +1.37%, лучше в 97% бутстрэп-выборок",
+    "seconds": 0.10242208396084607,
+    "new_tree_fits": 0,
+    "win_rate_vs_original_on_B": 0.905
+  },
+  {
+    "hypothesis": "AS002",
+    "task": "multiclass",
+    "path": "results/another_solution/2026-10-24/AS002-multiclass",
+    "status": "not_applicable_unchanged",
+    "metric": "macro_f1",
+    "oof_score": 0.6534905279816051,
+    "holdout_B_score": 0.6481770971418532,
+    "control_oof_score": 0.6534905279816051,
+    "control_holdout_B_score": 0.6481770971418532,
+    "relative_gain_B": 0.0,
+    "relative_gain_OOF": 0.0,
+    "selected": "exp0:lgbm",
+    "members": {
+      "0": 1.0
+    },
+    "post": {
+      "weights": [
+        0.25,
+        0.37499999999999994,
+        0.78125,
+        0.625,
+        0.37499999999999994,
+        0.625,
+        0.37499999999999994,
+        0.32000000000000006,
+        0.25,
+        1.0
+      ]
+    },
+    "choice_reason": "ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A",
+    "seconds": 0.10617995890788734,
+    "new_tree_fits": 0
+  },
+  {
+    "hypothesis": "AS003",
+    "task": "regression",
+    "path": "results/another_solution/2026-10-24/AS003-regression",
+    "status": "not_applicable_unchanged",
+    "metric": "rmse",
+    "oof_score": 29.373823495698232,
+    "holdout_B_score": 28.685722725959646,
+    "control_oof_score": 29.373823495698232,
+    "control_holdout_B_score": 28.685722725959646,
+    "relative_gain_B": -0.0,
+    "relative_gain_OOF": -0.0,
+    "selected": "ensemble",
+    "members": {
+      "3": 0.143,
+      "5": 0.429,
+      "7": 0.143,
+      "1": 0.143,
+      "0": 0.143
+    },
+    "post": {},
+    "choice_reason": "ансамбль взят: выигрыш на B +1.23%, лучше в 94% бутстрэп-выборок",
+    "seconds": 0.048571249935775995,
+    "new_tree_fits": 0
+  },
+  {
+    "hypothesis": "AS003",
+    "task": "multiclass",
+    "path": "results/another_solution/2026-10-24/AS003-multiclass",
+    "status": "completed",
+    "metric": "macro_f1",
+    "oof_score": 0.6534905279816051,
+    "holdout_B_score": 0.6481770971418532,
+    "control_oof_score": 0.6534905279816051,
+    "control_holdout_B_score": 0.6481770971418532,
+    "relative_gain_B": 0.0,
+    "relative_gain_OOF": 0.0,
+    "selected": "exp0:lgbm",
+    "members": {
+      "0": 1.0
+    },
+    "post": {
+      "weights": [
+        0.25,
+        0.37499999999999994,
+        0.78125,
+        0.625,
+        0.37499999999999994,
+        0.625,
+        0.37499999999999994,
+        0.32000000000000006,
+        0.25,
+        1.0
+      ]
+    },
+    "choice_reason": "ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A",
+    "seconds": 0.0938599999062717,
+    "new_tree_fits": 0,
+    "win_rate_vs_original_on_B": 0.0
+  }
+]

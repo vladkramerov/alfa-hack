@@ -1,0 +1,18 @@
+20:15:13 INFO agent: условие: task.md; данные: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task; выход: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task/submission.csv (task.md)
+20:15:13 INFO agent: старт: лимит 300 с, запас 24 с, n_jobs=4, режим: по времени
+20:15:14 INFO agent: train (87670, 44), test (41166, 43), LLM: LLM выключена (LLM_DISABLED=1)
+20:15:14 INFO agent.task: task: type=multiclass target=attack_cat id=id metric=macro_f1 proba=False
+20:15:14 INFO agent.task: task note: метрика названа в условии: macro_f1
+20:15:14 INFO agent: данные: {"id_columns": ["proto"]} (0 с)
+20:15:14 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task/submission.csv (41166 строк)
+20:16:54 INFO agent: exp0 [baseline] Baseline: модель по умолчанию без генерации признаков: macro_f1=0.63784 ±0.01293 за 99 с
+20:16:56 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task/submission.csv (41166 строк)
+20:16:56 INFO agent: лучший: exp0:lgbm, macro_f1=0.65349 (B=0.64818), постобработка={'weights': [0.25, 0.37499999999999994, 0.78125, 0.625, 0.37499999999999994, 0.625, 0.37499999999999994, 0.32000000000000006, 0.25, 1.0]}
+20:16:56 INFO agent: разбор ошибок: {"worst_classes": {"Backdoor": {"f1": 0.229, "recall": 0.139, "n": 873}, "Analysis": {"f1": 0.271, "recall": 0.178, "n": 1000}, "DoS": {"f1": 0.476, "recall": 0.774, "n": 6132}, "Worms": {"f1": 0.667, "recall": 0.723, "n": 65}}, "top_confusions": ["Exploits -> DoS: 6089", "Normal -> Fuzzers: 2920", "DoS -> Exploits: 1242", "Reconnaissance -> DoS: 786"]}
+20:18:24 INFO agent: exp1 [fallback] Чистка: значения-заглушки (0 у года/площади, -999, 9999) считать пропусками: macro_f1=0.63784 ±0.01293 за 88 с
+20:18:24 INFO agent: исследование остановлено: время исследования закончилось (осталось 58 с, эксперимент ~93 с)
+20:18:26 INFO agent: финал: одиночная B=0.64818, ансамбль B=нет -> exp0:lgbm (ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A)
+20:18:26 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task/submission.csv (41166 строк)
+20:18:27 INFO agent.export: код решения выгружен: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-multiclass/task/.agent_work/solution_code.zip
+20:18:27 INFO agent: готово за 194 с; Budget(elapsed=194s, left=82s, research_left=54s)
+BASELINE_RESULT {"status": "completed", "task": "multiclass", "metric": "macro_f1", "oof_score": 0.6534905279816051, "holdout_B_score": 0.6481770971418532, "selected": "exp0:lgbm", "members": {"0": 1.0}, "post": {"weights": [0.25, 0.37499999999999994, 0.78125, 0.625, 0.37499999999999994, 0.625, 0.37499999999999994, 0.32000000000000006, 0.25, 1.0]}, "seconds": 193.71368791605346, "real_llm_tested": false, "archived_source_unchanged": true}

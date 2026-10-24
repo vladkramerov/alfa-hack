@@ -1,0 +1,580 @@
+{
+ "n_train": 87670,
+ "n_test": 41166,
+ "n_features": 42,
+ "n_categorical": 3,
+ "n_datetime": 0,
+ "duplicated_rows_share": 0.3815,
+ "columns": [
+  {
+   "name": "dur",
+   "dtype": "numeric",
+   "nunique": 39673,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0016,
+    44.3005
+   ],
+   "skew": 7.57,
+   "desc": "Длительность flow [с]"
+  },
+  {
+   "name": "proto",
+   "dtype": "categorical",
+   "nunique": 133,
+   "null": 0.0,
+   "top": [
+    "tcp",
+    "udp",
+    "unas"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Протокол передачи (tcp, udp, …) [протокол]"
+  },
+  {
+   "name": "service",
+   "dtype": "categorical",
+   "nunique": 13,
+   "null": 0.0,
+   "top": [
+    "-",
+    "dns",
+    "http"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Сетевой сервис (http, ftp, …); «-» если не определён [сервис]"
+  },
+  {
+   "name": "state",
+   "dtype": "categorical",
+   "nunique": 9,
+   "null": 0.0,
+   "top": [
+    "INT",
+    "FIN",
+    "CON"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Состояние соединения (FIN, CON, INT, …) [состояние]"
+  },
+  {
+   "name": "spkts",
+   "dtype": "numeric",
+   "nunique": 365,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    2.0,
+    234.0
+   ],
+   "skew": 39.36,
+   "desc": "Число пакетов source → destination [пакеты]"
+  },
+  {
+   "name": "dpkts",
+   "dtype": "numeric",
+   "nunique": 347,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    2.0,
+    421.24
+   ],
+   "skew": 40.37,
+   "desc": "Число пакетов destination → source [пакеты]"
+  },
+  {
+   "name": "sbytes",
+   "dtype": "numeric",
+   "nunique": 4694,
+   "null": 0.0,
+   "p01_p50_p99": [
+    46.0,
+    464.0,
+    77666.15
+   ],
+   "skew": 43.77,
+   "desc": "Объём данных source → destination [байты]"
+  },
+  {
+   "name": "dbytes",
+   "dtype": "numeric",
+   "nunique": 4353,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    164.0,
+    475818.08
+   ],
+   "skew": 43.32,
+   "desc": "Объём данных destination → source [байты]"
+  },
+  {
+   "name": "rate",
+   "dtype": "numeric",
+   "nunique": 40528,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    3163.9849,
+    1000000.003
+   ],
+   "skew": 3.33,
+   "desc": "Число транзакций в секунду [trans/s]"
+  },
+  {
+   "name": "sttl",
+   "dtype": "numeric",
+   "nunique": 10,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    254.0,
+    254.0
+   ],
+   "skew": -0.68,
+   "desc": "Time to live (source → destination) [TTL]"
+  },
+  {
+   "name": "dttl",
+   "dtype": "numeric",
+   "nunique": 5,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    29.0,
+    252.0
+   ],
+   "skew": 0.88,
+   "desc": "Time to live (destination → source) [TTL]"
+  },
+  {
+   "name": "sload",
+   "dtype": "numeric",
+   "nunique": 42785,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    863501.625,
+    800000000.0
+   ],
+   "skew": 8.8,
+   "desc": "Нагрузка source [bit/s]"
+  },
+  {
+   "name": "dload",
+   "dtype": "numeric",
+   "nunique": 40609,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    1519.3472,
+    14626771.23
+   ],
+   "skew": 4.71,
+   "desc": "Нагрузка destination [bit/s]"
+  },
+  {
+   "name": "sloss",
+   "dtype": "numeric",
+   "nunique": 287,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    38.0
+   ],
+   "skew": 43.41,
+   "desc": "Потери/повторы пакетов source [пакеты]"
+  },
+  {
+   "name": "dloss",
+   "dtype": "numeric",
+   "nunique": 281,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    180.0
+   ],
+   "skew": 44.94,
+   "desc": "Потери/повторы пакетов destination [пакеты]"
+  },
+  {
+   "name": "sinpkt",
+   "dtype": "numeric",
+   "nunique": 39953,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.001,
+    0.2936,
+    60000.66
+   ],
+   "skew": 7.9,
+   "desc": "Межпакетный интервал source [мс]"
+  },
+  {
+   "name": "dinpkt",
+   "dtype": "numeric",
+   "nunique": 38776,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.006,
+    449.6889
+   ],
+   "skew": 28.85,
+   "desc": "Межпакетный интервал destination [мс]"
+  },
+  {
+   "name": "sjit",
+   "dtype": "numeric",
+   "nunique": 40179,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    28879.9037
+   ],
+   "skew": 17.66,
+   "desc": "Jitter source [мс]"
+  },
+  {
+   "name": "djit",
+   "dtype": "numeric",
+   "nunique": 39616,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    9440.4914
+   ],
+   "skew": 27.57,
+   "desc": "Jitter destination [мс]"
+  },
+  {
+   "name": "swin",
+   "dtype": "numeric",
+   "nunique": 8,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    255.0
+   ],
+   "skew": 0.17,
+   "desc": "TCP window source [байты]"
+  },
+  {
+   "name": "stcpb",
+   "dtype": "numeric",
+   "nunique": 38629,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    4201407977.35
+   ],
+   "skew": 1.08,
+   "desc": "TCP base sequence number source [номер]"
+  },
+  {
+   "name": "dtcpb",
+   "dtype": "numeric",
+   "nunique": 38531,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    4198905529.51
+   ],
+   "skew": 1.08,
+   "desc": "TCP base sequence number destination [номер]"
+  },
+  {
+   "name": "dwin",
+   "dtype": "numeric",
+   "nunique": 4,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    255.0
+   ],
+   "skew": 0.19,
+   "desc": "TCP window destination [байты]"
+  },
+  {
+   "name": "tcprtt",
+   "dtype": "numeric",
+   "nunique": 24042,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    0.2766
+   ],
+   "skew": 3.84,
+   "desc": "Round-trip time TCP-соединения [мс]"
+  },
+  {
+   "name": "synack",
+   "dtype": "numeric",
+   "nunique": 22984,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    0.1545
+   ],
+   "skew": 4.95,
+   "desc": "Время SYN → SYN-ACK [мс]"
+  },
+  {
+   "name": "ackdat",
+   "dtype": "numeric",
+   "nunique": 21912,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    0.1438
+   ],
+   "skew": 5.69,
+   "desc": "Время SYN-ACK → ACK [мс]"
+  },
+  {
+   "name": "smean",
+   "dtype": "numeric",
+   "nunique": 1274,
+   "null": 0.0,
+   "p01_p50_p99": [
+    45.0,
+    73.0,
+    1137.0
+   ],
+   "skew": 3.72,
+   "desc": "Средний размер пакета source [байты]"
+  },
+  {
+   "name": "dmean",
+   "dtype": "numeric",
+   "nunique": 1229,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    44.0,
+    1252.0
+   ],
+   "skew": 2.82,
+   "desc": "Средний размер пакета destination [байты]"
+  },
+  {
+   "name": "trans_depth",
+   "dtype": "numeric",
+   "nunique": 7,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "skew": 205.48,
+   "desc": "Глубина HTTP pipelining [уровень]"
+  },
+  {
+   "name": "response_body_len",
+   "dtype": "numeric",
+   "nunique": 1555,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    3924.0
+   ],
+   "skew": 63.78,
+   "desc": "Размер HTTP response body [байты]"
+  },
+  {
+   "name": "ct_srv_src",
+   "dtype": "numeric",
+   "nunique": 52,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    5.0,
+    41.0
+   ],
+   "skew": 1.52,
+   "desc": "Число conn. с тем же service и source IP [счётчик]"
+  },
+  {
+   "name": "ct_state_ttl",
+   "dtype": "numeric",
+   "nunique": 5,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    1.0,
+    6.0
+   ],
+   "skew": 0.91,
+   "desc": "Счётчик по state и TTL [счётчик]"
+  },
+  {
+   "name": "ct_dst_ltm",
+   "dtype": "numeric",
+   "nunique": 49,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    2.0,
+    34.0
+   ],
+   "skew": 2.04,
+   "desc": "Число conn. с тем же destination IP [счётчик]"
+  },
+  {
+   "name": "ct_src_dport_ltm",
+   "dtype": "numeric",
+   "nunique": 47,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    1.0,
+    34.0
+   ],
+   "skew": 2.17,
+   "desc": "Число conn. с тем же source IP и dest port [счётчик]"
+  },
+  {
+   "name": "ct_dst_sport_ltm",
+   "dtype": "numeric",
+   "nunique": 32,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    1.0,
+    18.0
+   ],
+   "skew": 1.7,
+   "desc": "Число conn. с тем же dest IP и source port [счётчик]"
+  },
+  {
+   "name": "ct_dst_src_ltm",
+   "dtype": "numeric",
+   "nunique": 53,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    3.0,
+    41.0
+   ],
+   "skew": 1.55,
+   "desc": "Число conn. с той же парой source/dest IP [счётчик]"
+  },
+  {
+   "name": "is_ftp_login",
+   "dtype": "numeric",
+   "nunique": 4,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "skew": 10.11,
+   "desc": "FTP-сессия с логином и паролем [0/1]"
+  },
+  {
+   "name": "ct_ftp_cmd",
+   "dtype": "numeric",
+   "nunique": 4,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "skew": 10.11,
+   "desc": "Число FTP-команд в сессии [счётчик]"
+  },
+  {
+   "name": "ct_flw_http_mthd",
+   "dtype": "numeric",
+   "nunique": 10,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "skew": 22.78,
+   "desc": "Число HTTP GET/POST в flow [счётчик]"
+  },
+  {
+   "name": "ct_src_ltm",
+   "dtype": "numeric",
+   "nunique": 49,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    3.0,
+    34.0
+   ],
+   "skew": 1.84,
+   "desc": "Число conn. с тем же source IP [счётчик]"
+  },
+  {
+   "name": "ct_srv_dst",
+   "dtype": "numeric",
+   "nunique": 52,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    4.0,
+    40.0
+   ],
+   "skew": 1.52,
+   "desc": "Число conn. с тем же service и dest IP [счётчик]"
+  },
+  {
+   "name": "is_sm_ips_ports",
+   "dtype": "numeric",
+   "nunique": 2,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "desc": "Source и dest IP/порты совпадают [0/1]"
+  }
+ ],
+ "conflicting_duplicates_share": 0.1691,
+ "class_counts": {
+  "Normal": 28000,
+  "Generic": 20000,
+  "Exploits": 16696,
+  "Fuzzers": 9092,
+  "DoS": 6132,
+  "Reconnaissance": 5245,
+  "Analysis": 1000,
+  "Backdoor": 873,
+  "Shellcode": 567,
+  "Worms": 65
+ },
+ "imbalance_ratio": 430.8,
+ "possible_leaks": [],
+ "data": {
+  "id_columns": [
+   "proto"
+  ]
+ },
+ "structure": {
+  "validation": "random",
+  "period": null,
+  "entity_key": null
+ }
+}

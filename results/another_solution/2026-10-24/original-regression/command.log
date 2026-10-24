@@ -1,0 +1,40 @@
+20:15:04 INFO agent: условие: task.md; данные: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task; выход: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (task.md)
+20:15:04 INFO agent: старт: лимит 300 с, запас 24 с, n_jobs=4, режим: по времени
+20:15:04 INFO agent: train (53308, 64), test (22449, 63), LLM: LLM выключена (LLM_DISABLED=1)
+20:15:04 INFO agent.task: task: type=regression target=site_eui id=id metric=rmse proba=False
+20:15:04 INFO agent.task: task note: тип задачи по метрике rmse: регрессия
+20:15:04 INFO agent.task: task note: метрика названа в условии: rmse
+20:15:04 INFO agent: данные: {"id_columns": ["facility_type"]} (0 с)
+20:15:04 INFO agent: найден период: Year_Factor (test целиком позже train) -> валидация вперёд по времени
+20:15:05 INFO agent.structure: ключ объекта: ['floor_area', 'year_built', 'facility_type'] (уникальность в периоде 0.984, повторяемость между периодами 0.57)
+20:15:05 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:05 INFO agent: валидация по времени: [(22054, 12946), (35000, 18308)]
+20:15:05 INFO agent: валидация как тест: в тесте новых категорий 0.00%, из проверки фолдов убраны строки с новыми категориями [258, 3192]
+20:15:05 INFO agent: известные объекты: в проверке 82%, в тесте 79%
+20:15:11 INFO agent: exp0 [baseline] Baseline: модель по умолчанию без генерации признаков: rmse=40.19974 ±3.50007 за 6 с
+20:15:11 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:11 INFO agent: лучший: exp0:lgbm, rmse=40.19973 (B=40.26177), постобработка={'clip': [1.001169302, 993.4282595]}
+20:15:11 INFO agent: разбор ошибок: {"sse_share_top1pct_rows": 0.478, "rmse_without_top1pct": 29.1866, "rmse_known_objects": 36.5956, "rmse_new_objects": 53.5478, "new_objects_share": 0.181, "heavy_segments": ["State_Factor=State_8: 15% ошибки при 6% строк", "State_Factor=State_4: 8% ошибки при 5% строк", "building_class=Commercial: 61% ошибки при 41% строк", "building_class=Residential: 39% ошибки при 59% строк", "facility_type=Industrial: 8% ошибки при 1% строк", "facility_type=Education_College_or_university: 6% ошибки при 1% строк"]}
+20:15:14 INFO agent: exp1 [fallback] История объекта (floor_area, year_built, facility_type): таргет того же объекта : rmse=31.59690 ±0.59887 за 3 с
+20:15:14 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:14 INFO agent: лучший: exp1:lgbm, rmse=31.59690 (B=31.09346), постобработка=нет
+20:15:14 INFO agent: разбор ошибок: {"sse_share_top1pct_rows": 0.567, "rmse_without_top1pct": 20.8872, "rmse_known_objects": 23.9957, "rmse_new_objects": 53.9335, "new_objects_share": 0.181, "heavy_segments": ["State_Factor=State_4: 13% ошибки при 5% строк", "State_Factor=State_8: 10% ошибки при 6% строк", "building_class=Commercial: 58% ошибки при 41% строк", "building_class=Residential: 42% ошибки при 59% строк", "facility_type=Multifamily_Uncategorized: 40% ошибки при 58% строк", "facility_type=Office_Uncategorized: 10% ошибки при 17% строк"]}
+20:15:20 INFO agent: exp2 [fallback] Раздельная модель: для объектов с историей — изменение таргета относительно прош: rmse=30.08797 ±0.32401 за 7 с
+20:15:20 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:20 INFO agent: лучший: exp2:lgbm, rmse=30.08797 (B=29.42711), постобработка={'clip': [1.001169302, 993.4282595]}
+20:15:20 INFO agent: разбор ошибок: {"sse_share_top1pct_rows": 0.547, "rmse_without_top1pct": 20.3459, "rmse_known_objects": 21.7318, "rmse_new_objects": 53.5066, "new_objects_share": 0.181, "heavy_segments": ["State_Factor=State_4: 14% ошибки при 5% строк", "State_Factor=State_8: 9% ошибки при 6% строк", "building_class=Commercial: 60% ошибки при 41% строк", "building_class=Residential: 40% ошибки при 59% строк", "facility_type=Education_College_or_university: 5% ошибки при 1% строк", "facility_type=Multifamily_Uncategorized: 38% ошибки при 58% строк"]}
+20:15:28 INFO agent: exp3 [fallback] Чистка: значения-заглушки (0 у года/площади, -999, 9999) считать пропусками: rmse=30.00861 ±0.34340 за 8 с
+20:15:28 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:28 INFO agent: лучший: exp3:lgbm, rmse=30.00861 (B=29.33343), постобработка={'clip': [1.001169302, 993.4282595]}
+20:15:28 INFO agent: разбор ошибок: {"sse_share_top1pct_rows": 0.547, "rmse_without_top1pct": 20.3076, "rmse_known_objects": 21.6663, "rmse_new_objects": 53.3805, "new_objects_share": 0.181, "heavy_segments": ["State_Factor=State_4: 14% ошибки при 5% строк", "State_Factor=State_8: 9% ошибки при 6% строк", "building_class=Commercial: 60% ошибки при 41% строк", "building_class=Residential: 40% ошибки при 59% строк", "facility_type=Education_College_or_university: 5% ошибки при 1% строк", "facility_type=Multifamily_Uncategorized: 37% ошибки при 58% строк"]}
+20:15:28 INFO agent: исследование остановлено: достигнут лимит итераций (3)
+20:15:37 INFO agent: exp4 [bagging] Усреднение по seed: exp3 с seed +1: rmse=29.86651 ±0.35590 за 8 с
+20:15:43 INFO agent: exp5 [bagging] Усреднение по seed: exp3 с seed +2: rmse=29.81453 ±0.33038 за 7 с
+20:15:51 INFO agent: exp6 [bagging] Усреднение по seed: exp3 с seed +3: rmse=29.80784 ±0.29330 за 8 с
+20:15:59 INFO agent: exp7 [bagging] Усреднение по seed: exp3 с seed +4: rmse=29.83523 ±0.34625 за 8 с
+20:15:59 INFO agent: усреднение по 5 seed: B=29.04192 против 29.33343 у одного запуска -> берём
+20:15:59 INFO agent: финал: одиночная B=29.04192, ансамбль B=28.68572 -> ensemble (ансамбль взят: выигрыш на B +1.23%, лучше в 94% бутстрэп-выборок)
+20:15:59 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/submission.csv (22449 строк)
+20:15:59 INFO agent.export: код решения выгружен: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/original-regression/task/.agent_work/solution_code.zip
+20:15:59 INFO agent: готово за 56 с; Budget(elapsed=56s, left=220s, research_left=192s)
+BASELINE_RESULT {"status": "completed", "task": "regression", "metric": "rmse", "oof_score": 29.373823495698232, "holdout_B_score": 28.685722725959646, "selected": "ensemble", "members": {"3": 0.143, "5": 0.429, "7": 0.143, "1": 0.143, "0": 0.143}, "post": {}, "seconds": 55.46894450020045, "real_llm_tested": false, "archived_source_unchanged": true}

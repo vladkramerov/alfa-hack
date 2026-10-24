@@ -1,0 +1,11 @@
+{
+  "seed": 0,
+  "draws": 200,
+  "win_rate": 0.905,
+  "relative_gain_95_percentile_interval": [
+    -0.0008665120368516188,
+    0.0035522719798248567
+  ],
+  "unit": "paired OOF rows",
+  "caveat": "Same public OOF/B already used for validation selection; not an independent hidden score"
+}

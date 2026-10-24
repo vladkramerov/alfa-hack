@@ -193,7 +193,7 @@ def _standardized(runs: list[RunResult]) -> list[tuple[np.ndarray, np.ndarray]]:
     return out
 
 
-def greedy_ensemble(metric: M.Metric, y: np.ndarray, runs: list[RunResult], A: np.ndarray, B: np.ndarray,
+def _coarse_ensemble(metric: M.Metric, y: np.ndarray, runs: list[RunResult], A: np.ndarray, B: np.ndarray,
                     max_models: int, steps: int = 25, step_gain: float = 1e-3) -> Solution | None:
     """Caruana: жадно добавляем модели (с повторами) по качеству на половине A.
     Шаг принимается, только если улучшает A хотя бы на step_gain (относительно): модель, которая
@@ -377,3 +377,35 @@ def trivial_prediction(task: TaskSpec, y: np.ndarray, n_test: int) -> np.ndarray
         return np.full(n_test, float(np.median(y)) if med else float(np.mean(y)))
     prior = np.bincount(y, minlength=len(task.classes)) / len(y)
     return np.tile(prior, (n_test, 1))
+
+
+# AS002: bounded refinement of existing RMSE ensemble weights; no new model training.
+def greedy_ensemble(metric,y,runs,A,B,max_models,steps=25,step_gain=1e-3):
+    old=_coarse_ensemble(metric,y,runs,A,B,max_models,steps,step_gain)
+    runs=[r for r in runs if r.oof is not None][:max_models]
+    if metric.name!='rmse' or len(runs)<2 or np.asarray(runs[0].oof).ndim!=1:return old
+    from scipy.optimize import minimize
+    matrix=np.column_stack([r.oof[A] for r in runs]);actual=np.asarray(y)[A]
+    scale=max(float(np.std(actual)),1e-6);matrix=matrix/scale;target=actual/scale
+    w0=np.zeros(len(runs))
+    if old is not None:
+        for i,r in enumerate(runs):w0[i]=old.members.get(r.exp_id,0.)
+    else:w0[0]=1.
+    w0/=w0.sum()
+    def fun(w):
+        residual=matrix@w-target
+        return float(residual@residual/len(target)+1e-4*np.sum((w-w0)**2))
+    def jac(w):return 2*matrix.T@(matrix@w-target)/len(target)+2e-4*(w-w0)
+    fitted=minimize(fun,w0,jac=jac,method='SLSQP',bounds=[(0.,1.)]*len(w0),constraints={'type':'eq','fun':lambda w:w.sum()-1.,'jac':lambda w:np.ones(len(w))},options={'maxiter':100,'ftol':1e-10})
+    if not fitted.success or not np.isfinite(fitted.x).all():return old
+    weights=.5*w0+.5*fitted.x
+    weights=np.maximum(weights,0);weights/=weights.sum()
+    if np.count_nonzero(weights>1e-8)<2:return old
+    oof=sum(w*r.oof for w,r in zip(weights,runs));test=sum(w*np.asarray(r.test_pred) for w,r in zip(weights,runs))
+    post=fit_postprocess(metric,y,oof,A,B)
+    candidate=Solution('refined-ensemble',oof,test,post,_cv(metric,y,oof,post,A,B),M.score(metric,y[B],oof[B],post),{r.exp_id:float(w) for w,r in zip(weights,runs) if w>1e-8})
+    reference=old if old is not None else Solution('reference',runs[0].oof,runs[0].test_pred,fit_postprocess(metric,y,runs[0].oof,A,B))
+    reference.holdout_b=M.score(metric,y[B],reference.oof[B],reference.post)
+    # Preserve the source agent's significance and minimum-gain requirements.
+    selected = choose(metric, y, reference, candidate, B, min_gain=.0005, confidence=.8).solution
+    return selected if old is not None else (candidate if selected is candidate else None)

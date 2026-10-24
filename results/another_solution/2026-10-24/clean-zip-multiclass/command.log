@@ -1,0 +1,16 @@
+20:23:30 INFO agent: условие: task.md; данные: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task; выход: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task/submission.csv (task.md)
+20:23:30 INFO agent: старт: лимит 120 с, запас 20 с, n_jobs=4, режим: по времени
+20:23:31 INFO agent: train (87670, 44), test (41166, 43), LLM: LLM выключена (LLM_DISABLED=1)
+20:23:31 INFO agent.task: task: type=multiclass target=attack_cat id=id metric=macro_f1 proba=False
+20:23:31 INFO agent.task: task note: метрика названа в условии: macro_f1
+20:23:31 INFO agent: данные: {"id_columns": ["proto"]} (0 с)
+20:23:31 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task/submission.csv (41166 строк)
+20:24:13 INFO agent: exp0 [baseline] Baseline: модель по умолчанию без генерации признаков: macro_f1=0.64073 ±0.01319 за 42 с
+20:24:15 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task/submission.csv (41166 строк)
+20:24:15 INFO agent: лучший: exp0:lgbm, macro_f1=0.64647 (B=0.64006), постобработка={'weights': [0.5, 0.3, 0.78125, 0.625, 0.4, 1.0, 0.5, 0.3, 0.25, 1.0]}
+20:24:15 INFO agent: разбор ошибок: {"worst_classes": {"Backdoor": {"f1": 0.197, "recall": 0.115, "n": 873}, "Analysis": {"f1": 0.279, "recall": 0.215, "n": 1000}, "DoS": {"f1": 0.481, "recall": 0.797, "n": 6132}, "Worms": {"f1": 0.644, "recall": 0.723, "n": 65}}, "top_confusions": ["Exploits -> DoS: 6251", "Normal -> Fuzzers: 2743", "DoS -> Exploits: 1073", "Fuzzers -> Normal: 850"]}
+20:24:15 INFO agent: исследование остановлено: достигнут лимит итераций (0)
+20:24:18 INFO agent: финал: одиночная B=0.64006, ансамбль B=нет -> exp0:lgbm (ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A)
+20:24:18 INFO agent.finalize: сабмит записан: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task/submission.csv (41166 строк)
+20:24:18 INFO agent.export: код решения выгружен: /Users/sergey_sahinov/Desktop/alpha_hack/alfa-hack/results/another_solution/2026-10-24/clean-zip-multiclass/task/.agent_work/solution_code.zip
+20:24:18 INFO agent: готово за 49 с; Budget(elapsed=49s, left=51s, research_left=41s)

@@ -1,0 +1,10 @@
+{
+  "working_branch": "another_solution",
+  "other_branch_refs_readonly": {
+    "sergey_branch": "0efccdb0b4fc56f1c50fb20bff4f0728fa55a609",
+    "ivan_branch": "4283105bc445d6511680901a714687300b77d29d",
+    "main": "f5d7d872678ba14acf133db18d993e193b0039d8"
+  },
+  "branch_switches_performed": 0,
+  "push_destination": "origin HEAD:refs/heads/another_solution"
+}

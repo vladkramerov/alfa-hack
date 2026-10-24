@@ -1,0 +1,848 @@
+{
+ "n_train": 53308,
+ "n_test": 22449,
+ "n_features": 62,
+ "n_categorical": 3,
+ "n_datetime": 0,
+ "duplicated_rows_share": 0.0061,
+ "columns": [
+  {
+   "name": "Year_Factor",
+   "dtype": "numeric",
+   "nunique": 5,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    4.0,
+    5.0
+   ],
+   "skew": -0.46,
+   "desc": "Код года наблюдения; календарный год анонимизирован [код года]"
+  },
+  {
+   "name": "State_Factor",
+   "dtype": "categorical",
+   "nunique": 7,
+   "null": 0.0,
+   "top": [
+    "State_6",
+    "State_1",
+    "State_2"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Код штата; действительное название анонимизировано [категория]"
+  },
+  {
+   "name": "building_class",
+   "dtype": "categorical",
+   "nunique": 2,
+   "null": 0.0,
+   "top": [
+    "Residential",
+    "Commercial"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Класс здания: Residential или Commercial [категория]"
+  },
+  {
+   "name": "facility_type",
+   "dtype": "categorical",
+   "nunique": 60,
+   "null": 0.0,
+   "top": [
+    "Multifamily_Uncategorized",
+    "Office_Uncategorized",
+    "Education_Other_classroom"
+   ],
+   "test_unseen_share": 0.0,
+   "desc": "Назначение здания [категория]"
+  },
+  {
+   "name": "floor_area",
+   "dtype": "numeric",
+   "nunique": 17519,
+   "null": 0.0,
+   "p01_p50_p99": [
+    14473.05,
+    93180.0,
+    1250000.0
+   ],
+   "skew": 6.51,
+   "desc": "Площадь здания [ft²]"
+  },
+  {
+   "name": "year_built",
+   "dtype": "numeric",
+   "nunique": 167,
+   "null": 0.032,
+   "p01_p50_p99": [
+    1896.0,
+    1950.0,
+    2011.0
+   ],
+   "skew": -13.84,
+   "desc": "Год постройки; исходные нули и пропуски сохранены [год]"
+  },
+  {
+   "name": "energy_star_rating",
+   "dtype": "numeric",
+   "nunique": 101,
+   "null": 0.417,
+   "p01_p50_p99": [
+    1.0,
+    66.0,
+    100.0
+   ],
+   "skew": -0.5,
+   "desc": "Рейтинг энергоэффективности ENERGY STAR [баллы]"
+  },
+  {
+   "name": "ELEVATION",
+   "dtype": "numeric",
+   "nunique": 178,
+   "null": 0.0,
+   "p01_p50_p99": [
+    2.4,
+    21.3,
+    256.0
+   ],
+   "skew": 9.75,
+   "desc": "Высота местоположения здания; единица в словаре соревнования не указана [исходная, не уточнена]"
+  },
+  {
+   "name": "january_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 56,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -22.7778,
+    -13.3333,
+    5.0
+   ],
+   "skew": 1.11,
+   "desc": "Минимальная температура в январе [°C]"
+  },
+  {
+   "name": "january_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 153,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -5.8871,
+    -1.1296,
+    12.8315
+   ],
+   "skew": 1.06,
+   "desc": "Средняя температура в январе [°C]"
+  },
+  {
+   "name": "january_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 47,
+   "null": 0.0,
+   "p01_p50_p99": [
+    7.2222,
+    15.0,
+    25.0
+   ],
+   "skew": 0.52,
+   "desc": "Максимальная температура в январе [°C]"
+  },
+  {
+   "name": "february_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 49,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -25.0,
+    -9.4444,
+    5.5556
+   ],
+   "skew": 0.27,
+   "desc": "Минимальная температура в феврале [°C]"
+  },
+  {
+   "name": "february_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 157,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -9.0575,
+    1.0615,
+    13.7798
+   ],
+   "skew": 0.42,
+   "desc": "Средняя температура в феврале [°C]"
+  },
+  {
+   "name": "february_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 43,
+   "null": 0.0,
+   "p01_p50_p99": [
+    6.1111,
+    13.3333,
+    25.5556
+   ],
+   "skew": 0.03,
+   "desc": "Максимальная температура в феврале [°C]"
+  },
+  {
+   "name": "march_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 52,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -18.8889,
+    -6.6667,
+    8.3333
+   ],
+   "skew": 0.23,
+   "desc": "Минимальная температура в марте [°C]"
+  },
+  {
+   "name": "march_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 155,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.2957,
+    4.5251,
+    16.353
+   ],
+   "skew": 0.97,
+   "desc": "Средняя температура в марте [°C]"
+  },
+  {
+   "name": "march_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 42,
+   "null": 0.0,
+   "p01_p50_p99": [
+    15.0,
+    18.8889,
+    29.4444
+   ],
+   "skew": 0.42,
+   "desc": "Максимальная температура в марте [°C]"
+  },
+  {
+   "name": "april_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 34,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -4.4444,
+    0.5556,
+    8.3333
+   ],
+   "skew": 0.61,
+   "desc": "Минимальная температура в апреле [°C]"
+  },
+  {
+   "name": "april_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 151,
+   "null": 0.0,
+   "p01_p50_p99": [
+    9.0,
+    12.3611,
+    16.5463
+   ],
+   "skew": 1.29,
+   "desc": "Средняя температура в апреле [°C]"
+  },
+  {
+   "name": "april_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 33,
+   "null": 0.0,
+   "p01_p50_p99": [
+    25.0,
+    27.2222,
+    32.7778
+   ],
+   "skew": 0.63,
+   "desc": "Максимальная температура в апреле [°C]"
+  },
+  {
+   "name": "may_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 35,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.5556,
+    8.8889,
+    10.5556
+   ],
+   "skew": -1.11,
+   "desc": "Минимальная температура в мае [°C]"
+  },
+  {
+   "name": "may_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 154,
+   "null": 0.0,
+   "p01_p50_p99": [
+    15.0448,
+    17.7778,
+    20.9483
+   ],
+   "skew": -0.01,
+   "desc": "Средняя температура в мае [°C]"
+  },
+  {
+   "name": "may_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 38,
+   "null": 0.0,
+   "p01_p50_p99": [
+    27.2222,
+    31.6667,
+    33.3333
+   ],
+   "skew": -0.39,
+   "desc": "Максимальная температура в мае [°C]"
+  },
+  {
+   "name": "june_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 36,
+   "null": 0.0,
+   "p01_p50_p99": [
+    5.0,
+    10.5556,
+    14.4444
+   ],
+   "skew": -0.91,
+   "desc": "Минимальная температура в июне [°C]"
+  },
+  {
+   "name": "june_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 150,
+   "null": 0.0,
+   "p01_p50_p99": [
+    17.9167,
+    21.7685,
+    24.1111
+   ],
+   "skew": -1.34,
+   "desc": "Средняя температура в июне [°C]"
+  },
+  {
+   "name": "june_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 43,
+   "null": 0.0,
+   "p01_p50_p99": [
+    30.5556,
+    32.7778,
+    41.1111
+   ],
+   "skew": 1.85,
+   "desc": "Максимальная температура в июне [°C]"
+  },
+  {
+   "name": "july_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 31,
+   "null": 0.0,
+   "p01_p50_p99": [
+    8.8889,
+    17.2222,
+    17.7778
+   ],
+   "skew": -1.38,
+   "desc": "Минимальная температура в июле [°C]"
+  },
+  {
+   "name": "july_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 149,
+   "null": 0.0,
+   "p01_p50_p99": [
+    18.7186,
+    25.9767,
+    26.8011
+   ],
+   "skew": -1.58,
+   "desc": "Средняя температура в июле [°C]"
+  },
+  {
+   "name": "july_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 41,
+   "null": 0.0,
+   "p01_p50_p99": [
+    32.2222,
+    35.5556,
+    40.0
+   ],
+   "skew": -0.22,
+   "desc": "Максимальная температура в июле [°C]"
+  },
+  {
+   "name": "august_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 31,
+   "null": 0.0,
+   "p01_p50_p99": [
+    5.0,
+    16.1111,
+    17.2222
+   ],
+   "skew": -1.67,
+   "desc": "Минимальная температура в августе [°C]"
+  },
+  {
+   "name": "august_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 155,
+   "null": 0.0,
+   "p01_p50_p99": [
+    19.4534,
+    23.6649,
+    26.0932
+   ],
+   "skew": -0.96,
+   "desc": "Средняя температура в августе [°C]"
+  },
+  {
+   "name": "august_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 41,
+   "null": 0.0,
+   "p01_p50_p99": [
+    26.6667,
+    32.7778,
+    40.0
+   ],
+   "skew": 0.68,
+   "desc": "Максимальная температура в августе [°C]"
+  },
+  {
+   "name": "september_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 36,
+   "null": 0.0,
+   "p01_p50_p99": [
+    4.4444,
+    11.1111,
+    13.3333
+   ],
+   "skew": -0.51,
+   "desc": "Минимальная температура в сентябре [°C]"
+  },
+  {
+   "name": "september_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 153,
+   "null": 0.0,
+   "p01_p50_p99": [
+    15.7963,
+    20.6296,
+    23.5833
+   ],
+   "skew": -0.54,
+   "desc": "Средняя температура в сентябре [°C]"
+  },
+  {
+   "name": "september_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 37,
+   "null": 0.0,
+   "p01_p50_p99": [
+    26.6667,
+    33.8889,
+    40.5556
+   ],
+   "skew": -0.91,
+   "desc": "Максимальная температура в сентябре [°C]"
+  },
+  {
+   "name": "october_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 39,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -5.0,
+    3.3333,
+    12.7778
+   ],
+   "skew": 0.12,
+   "desc": "Минимальная температура в октябре [°C]"
+  },
+  {
+   "name": "october_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 155,
+   "null": 0.0,
+   "p01_p50_p99": [
+    10.6004,
+    14.4713,
+    20.8781
+   ],
+   "skew": 1.48,
+   "desc": "Средняя температура в октябре [°C]"
+  },
+  {
+   "name": "october_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 34,
+   "null": 0.0,
+   "p01_p50_p99": [
+    23.3333,
+    25.5556,
+    37.7778
+   ],
+   "skew": 1.57,
+   "desc": "Максимальная температура в октябре [°C]"
+  },
+  {
+   "name": "november_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 44,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -12.7778,
+    -2.7778,
+    7.7778
+   ],
+   "skew": -0.04,
+   "desc": "Минимальная температура в ноябре [°C]"
+  },
+  {
+   "name": "november_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 149,
+   "null": 0.0,
+   "p01_p50_p99": [
+    5.3796,
+    7.3889,
+    15.3611
+   ],
+   "skew": 0.81,
+   "desc": "Средняя температура в ноябре [°C]"
+  },
+  {
+   "name": "november_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 37,
+   "null": 0.0,
+   "p01_p50_p99": [
+    15.0,
+    21.1111,
+    27.2222
+   ],
+   "skew": -0.06,
+   "desc": "Максимальная температура в ноябре [°C]"
+  },
+  {
+   "name": "december_min_temp_c",
+   "dtype": "numeric",
+   "nunique": 41,
+   "null": 0.0,
+   "p01_p50_p99": [
+    -11.1111,
+    -3.3333,
+    5.0
+   ],
+   "skew": -0.09,
+   "desc": "Минимальная температура в декабре [°C]"
+  },
+  {
+   "name": "december_avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 151,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.2097,
+    5.2599,
+    13.7724
+   ],
+   "skew": 0.75,
+   "desc": "Средняя температура в декабре [°C]"
+  },
+  {
+   "name": "december_max_temp_c",
+   "dtype": "numeric",
+   "nunique": 36,
+   "null": 0.0,
+   "p01_p50_p99": [
+    14.4444,
+    20.0,
+    22.2222
+   ],
+   "skew": -0.34,
+   "desc": "Максимальная температура в декабре [°C]"
+  },
+  {
+   "name": "cooling_degree_days_c",
+   "dtype": "numeric",
+   "nunique": 151,
+   "null": 0.0,
+   "p01_p50_p99": [
+    168.3333,
+    706.6667,
+    878.3333
+   ],
+   "skew": -0.85,
+   "desc": "Годовая сумма превышений средней суточной температуры над 18⅓ °C [°C·сутки]"
+  },
+  {
+   "name": "heating_degree_days_c",
+   "dtype": "numeric",
+   "nunique": 157,
+   "null": 0.0,
+   "p01_p50_p99": [
+    820.5556,
+    2477.7778,
+    3458.8889
+   ],
+   "skew": -1.22,
+   "desc": "Годовая сумма недостатка средней суточной температуры относительно 18⅓ °C [°C·сутки]"
+  },
+  {
+   "name": "precipitation_inches",
+   "dtype": "numeric",
+   "nunique": 159,
+   "null": 0.0,
+   "p01_p50_p99": [
+    4.16,
+    41.75,
+    72.81
+   ],
+   "skew": -0.96,
+   "desc": "Годовое количество осадков [дюймы]"
+  },
+  {
+   "name": "snowfall_inches",
+   "dtype": "numeric",
+   "nunique": 60,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    29.6,
+    50.0
+   ],
+   "skew": -0.32,
+   "desc": "Годовое количество выпавшего снега [дюймы]"
+  },
+  {
+   "name": "snowdepth_inches",
+   "dtype": "numeric",
+   "nunique": 53,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    64.0,
+    463.0
+   ],
+   "skew": 0.27,
+   "desc": "Годовой показатель глубины снежного покрова; способ агрегации не уточнён [дюймы]"
+  },
+  {
+   "name": "avg_temp_c",
+   "dtype": "numeric",
+   "nunique": 160,
+   "null": 0.0,
+   "p01_p50_p99": [
+    9.8889,
+    13.3372,
+    17.4437
+   ],
+   "skew": 0.58,
+   "desc": "Средняя температура за год [°C]"
+  },
+  {
+   "name": "days_below_minus1C",
+   "dtype": "numeric",
+   "nunique": 73,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    63.0,
+    124.0
+   ],
+   "skew": 0.01,
+   "desc": "Количество дней с температурой ниже порога ≈ -1 °C [дни]"
+  },
+  {
+   "name": "days_below_minus7C",
+   "dtype": "numeric",
+   "nunique": 35,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    11.0,
+    59.0
+   ],
+   "skew": 0.77,
+   "desc": "Количество дней с температурой ниже порога ≈ -7 °C [дни]"
+  },
+  {
+   "name": "days_below_minus12C",
+   "dtype": "numeric",
+   "nunique": 28,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    1.0,
+    35.0
+   ],
+   "skew": 2.25,
+   "desc": "Количество дней с температурой ниже порога ≈ -12 °C [дни]"
+  },
+  {
+   "name": "days_below_minus18C",
+   "dtype": "numeric",
+   "nunique": 18,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    17.0
+   ],
+   "skew": 5.0,
+   "desc": "Количество дней с температурой ниже порога ≈ -18 °C [дни]"
+  },
+  {
+   "name": "days_above_27C",
+   "dtype": "numeric",
+   "nunique": 102,
+   "null": 0.0,
+   "p01_p50_p99": [
+    27.0,
+    75.0,
+    136.0
+   ],
+   "skew": 0.17,
+   "desc": "Количество дней с температурой выше порога ≈ 27 °C [дни]"
+  },
+  {
+   "name": "days_above_32C",
+   "dtype": "numeric",
+   "nunique": 85,
+   "null": 0.0,
+   "p01_p50_p99": [
+    1.0,
+    12.0,
+    52.0
+   ],
+   "skew": 4.55,
+   "desc": "Количество дней с температурой выше порога ≈ 32 °C [дни]"
+  },
+  {
+   "name": "days_above_38C",
+   "dtype": "numeric",
+   "nunique": 40,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    10.0
+   ],
+   "skew": 19.77,
+   "desc": "Количество дней с температурой выше порога ≈ 38 °C [дни]"
+  },
+  {
+   "name": "days_above_43C",
+   "dtype": "numeric",
+   "nunique": 9,
+   "null": 0.0,
+   "p01_p50_p99": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "skew": 70.98,
+   "desc": "Количество дней с температурой выше порога ≈ 43 °C [дни]"
+  },
+  {
+   "name": "direction_max_wind_speed",
+   "dtype": "numeric",
+   "nunique": 10,
+   "null": 0.494,
+   "p01_p50_p99": [
+    1.0,
+    1.0,
+    360.0
+   ],
+   "skew": 1.12,
+   "desc": "Направление ветра при максимальной скорости; 360 — север, 180 — юг [угловые градусы]"
+  },
+  {
+   "name": "direction_peak_wind_speed",
+   "dtype": "numeric",
+   "nunique": 8,
+   "null": 0.507,
+   "p01_p50_p99": [
+    1.0,
+    1.0,
+    360.0
+   ],
+   "skew": 1.24,
+   "desc": "Направление ветра при пиковом порыве [угловые градусы]"
+  },
+  {
+   "name": "max_wind_speed",
+   "dtype": "numeric",
+   "nunique": 16,
+   "null": 0.494,
+   "p01_p50_p99": [
+    1.0,
+    1.0,
+    19.2
+   ],
+   "skew": 1.2,
+   "desc": "Максимальная скорость ветра; единица в словаре соревнования не указана [исходная, не уточнена]"
+  },
+  {
+   "name": "days_with_fog",
+   "dtype": "numeric",
+   "nunique": 36,
+   "null": 0.618,
+   "p01_p50_p99": [
+    12.0,
+    99.0,
+    176.0
+   ],
+   "skew": 0.83,
+   "desc": "Количество дней с туманом [дни]"
+  }
+ ],
+ "conflicting_duplicates_share": 0.0101,
+ "target": {
+  "mean": 83.9616,
+  "std": 58.7145,
+  "min": 1.0012,
+  "max": 993.4283,
+  "skew": 4.76,
+  "nonnegative": true,
+  "zero_share": 0.0
+ },
+ "possible_leaks": [],
+ "data": {
+  "id_columns": [
+   "facility_type"
+  ]
+ },
+ "structure": {
+  "validation": "time",
+  "period": "Year_Factor",
+  "entity_key": [
+   "floor_area",
+   "year_built",
+   "facility_type"
+  ],
+  "test_like_removed": [
+   258,
+   3192
+  ],
+  "seen_share": {
+   "valid": 0.819,
+   "test": 0.793
+  }
+ }
+}

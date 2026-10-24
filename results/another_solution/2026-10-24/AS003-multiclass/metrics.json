@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "metric": "macro_f1",
+  "oof_score": 0.6534905279816051,
+  "holdout_B_score": 0.6481770971418532,
+  "control_oof_score": 0.6534905279816051,
+  "control_holdout_B_score": 0.6481770971418532,
+  "relative_gain_B": 0.0,
+  "relative_gain_OOF": 0.0,
+  "selected": "exp0:lgbm",
+  "members": {
+    "0": 1.0
+  },
+  "post": {
+    "weights": [
+      0.25,
+      0.37499999999999994,
+      0.78125,
+      0.625,
+      0.37499999999999994,
+      0.625,
+      0.37499999999999994,
+      0.32000000000000006,
+      0.25,
+      1.0
+    ]
+  },
+  "choice_reason": "ансамбль не собран: ни одна модель не улучшила лучшую одиночную на половине A",
+  "seconds": 0.0938599999062717,
+  "new_tree_fits": 0,
+  "win_rate_vs_original_on_B": 0.0
+}
