@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+.venv/
+__pycache__/
+*.pyc
+data/
+runs/
+tmp/
+*.zip
+*.joblib
+*.pt
+# Historical untracked results remain local; new delivery files are added explicitly.
